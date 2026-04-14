@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0501",
+    "title": "Negative affect, deep acting, and customer compensation as responses to customer mistreatment: The effect of customer-based perspective-taking",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2020.102532",
+    "abstract": "Customer service employees often deal with customer mistreatment, eliciting negative affect, which subsequently influences service performance. Using affective events theory (Weiss & Cropanzano, 1996) as the theoretical framework, perspective taking was examined as an intervention to influence negative affect elicited from customer mistreatment in two experiments. Study 1 examined and found that customer perspective taking led to less negative affect, and subsequently more customer compensation and more deep acting through serial mediation effects. Study 2 tested the moderating effect of the service failure locus of causality (i.e., hotel or customer). The most important theoretical contribution is understanding how having employees shift the focus away from their own emotions, towards why a customer is being rude or difficult, influences deep acting and customer compensation via reduced negative affect. This paper provides a promising intervention and training tool that hospitality organizations can use to influence employee service recovery strategies and customer service. © 2020"
+  },
+  {
+    "article_id": "CS_0502",
+    "title": "The double-edged sword effect of service recovery awareness of frontline employees: From a job demands-resources perspective",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2020.102536",
+    "abstract": "Drawing on job demands-resources (JD-R) theory, this study examines the double-edged sword effect of service recovery awareness (SRA) on post-recovery satisfaction via frontline employees’ (FLEs) emotional responses (including emotional exhaustion and work engagement). The moderating effect of perceived psychological empowerment (PPE) was also assessed. Dyadic and matched responses from 267 five-star hotel FLEs and customers indicated that SRA is appraised as a challenging demand that is positively associated with post-recovery satisfaction through work engagement. However, SRA is also considered a hindrance demand that leads to emotional exhaustion, which is negatively related to post-recovery satisfaction. PPE amplified the impact of SRA on work engagement and buffered the impact of SRA on emotional exhaustion. The theoretical contribution, managerial implications, and suggestions for future research of this study are discussed in detail. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0503",
+    "title": "Examining consumer emotion and behavior in online reviews of hotels when expecting managerial response",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2020.102559",
+    "abstract": "This study finds that consumer emotion and the associated review behaviors for hotels differ depending on whether consumers expect online managerial responses (MRs). Among consumers expecting MRs, the extremely dissatisfied consumers reveal excessively negative emotions in their reviews/complaints to providers. For consumers with high ratings, only those praising a service provider express very positive or affirming emotions in reviews. The two categories of consumers—suggesting and criticizing consumers—have different review behaviors. We categorize attributes into excitement, frustration, or double-sided attributes depending on the positive, negative, or nonsignificant relationship between detailed descriptions and consumer emotion. Consumers who expect MRs will transform more double-sided attributes into frustration attributes. When consumers expect MRs, either strong positive or negative impressions of certain attributes cause consumers to focus on them in reviews. This tendency results in reduced linguistic diversity across comments and categorization of extreme positive or negative emotionality. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0504",
+    "title": "Discrete emotional responses and face-to-face complaining: The joint effect of service failure type and culture",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2020.102613",
+    "abstract": "Understanding customer responses to service failures enable practitioners to minimize the negative impact of service failures. The purpose of this study is to examine the joint effect of service failure type and culture (power distance) on two discrete negative emotions and investigate the mediating role of discrete negative emotions in driving face-to-face complaining and switching behavior across two cultures (The US and China). Our findings suggest that customers in a high-power distance culture (China) feel higher levels of anger and disappointment following a process (vs. outcome) failure, and therefore, are more likely to complain face-to-face and switch. Whereas customers in a low-power distance culture (US) only feel higher levels of disappointment following an outcome (vs. process) failure, yet prefer to switch silently. Our findings provide hospitality firms with practical implications on employee training and how to proactively identify service failures that customers are unlikely to complain about. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0505",
+    "title": "Understanding homophily of service failure within the hotel guest cycle: Applying NLP-aspect-based sentiment analysis to the hospitality industry",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2020.102678",
+    "abstract": "Online complaints have become increasingly influential on the purchasing behavior of customers in recent years. In an effort analyze large quantities of textual complaints and detail the various aspects of them, Aspect-Based Sentiment Analysis was looked to as an ideal framework to take on the task. This study set out to synthesize specific service failure items and categorize them into the groupings related to the hotel guest cycle and the corresponding operations, then compare the patterns of expression used by Asian and Non-Asian guests as the related their hotel experiences. A total of 390,236 online complaint terms posted about 353 hotels in the UK by hotel guests from 63 nations were manually derived from TripAdvisor for analysis. With consideration given to the homophily theory, we posited that Asian and non-Asian guests would exhibit similarities and differences with respect to the service failures they encountered when presented with various items of service. The results confirmed this as Asian guests were shown to encounter more service failures with respect to the engineering segment of operations (e.g. hotel room equipment issues), while non-Asian guests encountered more service failures on the housekeeping end of operations (e.g. toilets, public areas, cleanliness, and bedding). By organizing the failures according the four stages of the guest cycle, it was observed that approximately 80% of the service failures occurred during the occupancy period. This study contributes to the existing literature on hotel guest satisfaction both with respect to the methodology it uses and the new findings it presents on differences in perceptions of service failures members among different cultures. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0506",
+    "title": "Managing customers’ undesirable responses towards hospitality service brands during service failure: The moderating role of other customer perception",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.102873",
+    "abstract": "This research examines how perceived service failure severity (SFS) in an interactive multi-actor service context may lead to customer retaliation and revisit intention via sequential mediation of dissatisfaction and brand hate. The research also examines how other customer perception, reflected in appearance (OCP-A), similarity (OCP-S) and behaviour (OCP-B), conditions these relationships. In this attempt, the research employs two-experimental studies (Studies 1 & 2) and two self-reported surveys (Studies 3 & 4). Findings from Study 1 establish that service failure leads to retaliation via sequential mediation of dissatisfaction and brand hate. This study also supports that other customer perception can shape the adverse effect of service failure severity on dissatisfaction. Further, in Study 2 it is established that OCP-B is more influential (over OCP-S and OCP-A) in mitigating the adverse effect of SFS on dissatisfaction. Followed by this, Study 3 extends the findings into a different setting, and also confirms the external validity of Studies 1 and 2. Finally, Study 4 incorporates the transactional vs. relational orientation of customers, and the findings elucidate that OCP-B (over OCP-A and OCP-S) dominates in mitigating dissatisfaction for relational customers. However, no such dominance is observed for transactional customers. The findings from the research provide novel insights for managing service failure in hospitality sector. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0507",
+    "title": "How should I respond to a complaining customer? A model of Cognitive-Emotive-Behavioral from the perspective of restaurant service employees",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.102882",
+    "abstract": "Many studies on coping have been conducted in diverse industries but within the hospitality industry, studies on how employees cope with customer complaints have only just begun, despite the task being one of the most significant stressors amongst service employees. The aim of this paper was to explore the cognitive appraisals, emotional elicitations, emotional coping behavior and complaint handling behavior of service employees. In-depth interviews were conducted with a total of 26 frontline restaurant employees. The results show that service employees engaged in different cognitive appraisals and emotional reactions in response to different customer complaints. Subsequently, they engaged in different emotional coping behaviors including both positive and negative of avoidance and approach. Theoretically, a model was developed to depict a holistic picture of Cognitive-Emotive-Behavioral in a complaint-handling context. The findings might assist industry practitioners to devise better complaint handling and coping strategies to enhance both customer and employee satisfaction. © 2021"
+  },
+  {
+    "article_id": "CS_0508",
+    "title": "Severe service failures and online vindictive word of mouth: The effect of coping strategies",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.102911",
+    "abstract": "This study proposes an integrative model that investigates the role of coping strategies in the relationship between severe service failures and online vindictive word of mouth (OVWOM) behavior. While the mechanism of online negative word of mouth (ONWOM) have been widely studied, the underlying processes by which OVWOM develops remain unclear, specifically when it comes to the use of OVWOM as a coping mechanism. Achieving a better understanding of the mechanism by which OVWOM develops is important given its potential to significantly harm a firm's image, loyalty and market share. The results of a survey of restaurant customers confirm the role of the psychological and situational factors that result in OVWOM behavior as a strategy to cope with severe service failures. Accordingly, this study provides an initial response to calls for research on the role of situational and personal factors that explain retaliation behavior in response to severe service failures. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0509",
+    "title": "Stakeholders of the world, unite!: Hospitality in the time of COVID-19",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.102922",
+    "abstract": "The COVID-19 pandemic created a global, complex crisis, without a clear end in sight, presenting an existential threat to many hospitality businesses. Drawing on stakeholder theory, we develop a framework for recovery strategy development for COVID-19, which engages salient stakeholders in the process of recognizing challenges, rationalizing changes needed and refashioning ways of working. The framework is used to analyze the process of development of a recovery strategy for a boutique hotel in England, UK, via a case study methodology. The analysis brings to the fore the interdependencies between the hotel owners and its employees, customers, governments, suppliers and communities, at local, national and international levels. Moreover, the analysis shows how collaborating with these stakeholders leads to the identification of revenue streams for the hotel, operational modifications and even the development of new commercial partnerships. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0510",
+    "title": "Listen to their heart: Why does active listening enhance customer satisfaction after a service failure?",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.102956",
+    "abstract": "A service employee's active listening plays a crucial role in restoring a damaged customer relationship. However, previous studies reveal little about how listening to customer complaints operates in recovering a service failure. The purpose of this research is to explore when and why the employee's active listening has a positive influence on customer response. We define active listening as (1) listening to customers’ concerns before apologizing and (2) verbally acknowledging them. Using scenario-based experiments, we demonstrate that active listening improves customer satisfaction, which in turn increases tip size (Study 1). Moreover, we find that active listening fosters customers’ perceptions of preferential treatment, which lead to greater customer satisfaction (Study 2). Yet, such positive effects of active listening diminish when customers are unexpectedly offered a complimentary service such as a room upgrade. The implications for academic researchers and marketing managers are discussed. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0511",
+    "title": "Tell us your concern, and we shall together address! Role of service booking channels and brand equity on post-failure outcomes",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.102982",
+    "abstract": "The extant literature on service failure and recovery has overlooked the post-service failure evaluations when customers interact through different online service booking channels, such as direct websites (Direct) and online travel agents (OTAs). In this study, following the attribution theory and the expectation disconfirmation framework, we analyse the impact of service failure across service booking channels (direct vs. OTA) and its influence on post-service failure outcomes. Besides this, the study also examines the moderating roles of co-created service recovery and brand equity between channel type and post-recovery outcomes. A between-subjects experimental design revealed that when a service failure occurs in a direct (vs. OTA) website, it creates adverse outcomes of higher magnitude. The results also suggest that, in the case of a direct channel, co-created service recovery generates favourable service outcomes when the channel carries low brand equity. However, in the case of an OTA, the use of co-created service recovery works better when that OTA carries high level of brand equity. Further, the results also supported that these post-recovery outcomes are driven by recovery satisfaction and channel engagement. Thus, this study findings offer novel insights into online service recovery literature and managerial practice, primarily for efficient design and execution of recovery efforts across channels. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0512",
+    "title": "A pathway to consumer forgiveness in the sharing economy: The role of relationship norms",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.103041",
+    "abstract": "The emergence of peer-to-peer accommodations has revolutionized the hospitality industry. Yet, research on peer-to-peer service failures and consumer forgiveness remains scant. This paper shows that relationship type—whether communal (“Airbnb host”) or exchange (“hotel”)—influences consumer forgiveness in a post-recovery context. Across five studies, this research demonstrates how peer providers (focusing on communal norms) versus conventional providers (focusing on exchange norms) influence consumer forgiveness and their responses to service recovery efforts. Our findings indicate that focusing on social service recovery is particularly effective for Airbnb hosts. These findings have important implications for crafting effective service recovery strategies based on the type of accommodation provider-customer relationship. Finally, our findings can also help peer-to-peer and conventional hospitality providers alleviate consumers’ negative responses to service failures. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0513",
+    "title": "Disentangling the dynamics of service failure and service recovery in peer-to-peer accommodations: A triadic perspective",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2021.103086",
+    "abstract": "Drawing upon attribution theory, this study investigates the nuances of service failure and service recovery by examining the triadic, multi-directional relationships between platform providers (e.g., Airbnb), service providers (e.g., hosts), and customers (e.g., visitors) in the peer-to-peer accommodation ecosystem. Across two pretests and two experiments, our results show that guest-caused failure (vs. host-caused or platform-caused failure) leads to the least negative outcomes in terms of recovery satisfaction and repurchase intention toward a host/platform. Also, single recovery (i.e., host or platform) is more effective than customer-involved recovery (i.e., joint host–guest or joint platform–guest). Furthermore, when the locus of causality of service failure lies with the host, host recovery (vs. joint host–guest recovery) positively influences repurchase intention toward a host. A familiar platform can buffer the platform–guest relationship. The findings generate new insight into the dynamics of the multi-actor ecosystem of the sharing economy. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0514",
+    "title": "Ethical leadership, trust in organization and their impacts on critical hotel employee outcomes",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103153",
+    "abstract": "Drawing on social exchange, social learning, and reformulation of attitude theories, our paper proposes a research model and empirically tests the interrelationships of ethical leadership, trust in organization, absenteeism, social loafing behavior, and service recovery performance. Data collected from hotel customer-contact employees two weeks apart and their direct supervisors in Nigeria were utilized to test the aforesaid linkages via structural equation modeling. The findings reveal that ethical leadership fosters employees’ trust in organization and service recovery performance, while it mitigates their absenteeism. In addition, trust in organization triggers service recovery performance, while it is a panacea to absenteeism and social loafing behavior. The abovementioned findings implicitly suggest that trust in organization mediates the influence of ethical leadership on absenteeism, social loafing behavior, and service recovery performance. The findings emphasize the need for ethical leadership, which fosters trust in organization and service recovery performance and alleviates absenteeism. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0515",
+    "title": "Hospitality employees’ affective experience of shame, self-efficacy beliefs and job behaviors: The alleviating role of error tolerance",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103162",
+    "abstract": "Service management researchers have clearly demonstrated that customers experience various emotions in service failure situations. In comparison, hospitality employees’ emotional experiences in such situations, are relatively unknown, as they are often required to hide experienced emotions and express emotions in ways consistent with industry standards. To address this gap, we examine the typical emotional experience of shame in the wake of service failure and explain how it influences employees’ job behaviors—service recovery performance and organizational citizenship behavior—via self-efficacy beliefs. Furthermore, we draw on social information processing to introduce error tolerance as a social persuasion buffer that mitigates the negative effects of shame on self-efficacy perceptions. Survey data collected from 217 subordinate-supervisor dyads employed in restaurant settings reveal that shame experienced weakened employees’ self-efficacy beliefs, and these weakened beliefs were in turn negatively associated with job behaviors. Finally, error tolerance significantly moderated the relationship between shame and self-efficacy. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0516",
+    "title": "Power of apologetic responses in online travel community",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103208",
+    "abstract": "Many prior studies confirmed the effectiveness of applying managerial response strategy on the performance of service providers. However, studies focusing on the effect of the specific types of managerial response remain limited. Thus, based on a longitudinal dataset, the present study uses a machine-learning method to identify the apologetic responses and investigates their effectiveness on hotels’ subsequent review volume. Results show that the proportion of reviews that received apologetic responses significantly improved the hotels’ future review volume. This positive effect is amplified if hotels previously have more expert reviews, more reviews from leisure customers, and higher overall ratings. Hotel managers can improve the effectiveness of apologetic response strategies by mostly targeting negative reviews and writing the response contends, including the information of explanation and commitment. The findings of this study can present implications to relevant literature and active hotel managers. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0517",
+    "title": "Automated, human, or semi-automated service in restaurants? An investigation of technology-enabled service designs and customer attribution",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103217",
+    "abstract": "Self-serving bias tends to lead customers to attribute ideal outcomes to themselves while blaming external factors for non-ideal outcomes. This attribution process complicates the current service configuration owing to service increasingly incorporating automated or semi-automated processes where the traditional human services are replaced or reduced. This research provides insights into how such changing service dynamics may impact restaurant customers' attribution behavior. By utilizing a 2 × 3 between-subject scenario-based experimental design, this study shows that restaurant service types (automated, employee, and semi-automated services) and service outcomes (with and without service failure) influence consumer attribution and subsequent service satisfaction. This study allows a better understanding of how customers perceive a service failure and the absence of service failure when such services interface with technology-enabled hospitality configurations. © 2022"
+  },
+  {
+    "article_id": "CS_0518",
+    "title": "Leveraging data analytics to understand the relationship between restaurants’ safety violations and COVID-19 transmission",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103241",
+    "abstract": "This paper leverages natural language processing, spatial analysis, and statistical analysis to examine the relationship between restaurants’ safety violations and COVID-19 cases. We used location-based consumers’ complaints data during the early stage of business reopening in Florida, USA. First, statistical analysis was conducted to examine the correlation between restaurants’ safety violations and COVID-19 transmission. Second, a neural network-based deep learning model was developed to perform topic modeling based on consumers’ complaints. Third, spatial modeling of the complaints’ geographic distributions was performed to identify the hotspots of consumers’ complaints and COVID-19 cases. The results reveal a positive relationship between consumers’ complaints about restaurants’ safety violations and COVID-19 cases. In particular, consumers’ complaints about personal protection measures had the highest correlation with COVID-19 cases, followed by environmental safety measures. Our analytical methods and findings shed light on customers’ behavioral shifts and hospitality businesses’ adaptive practices during a pandemic. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0519",
+    "title": "More than words: Understanding how valence and content affect review value",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103274",
+    "abstract": "This paper combines sentiment analysis with latent Dirichlet allocation model to study how review valence and content categories (i.e., the specific way in which a review describing positive or negative sentiment) affect its value. We find five categories of customer complaints toward hotels, namely, facility complaints, environment complaints, food complaints, service complaints and money complaints. Econometric analyses show that reviews with the same valance while describing distinct experiences have different impacts on reader's evaluations of review value. For example, service complaints are perceived as more helpful compared with facility complaints or money complaints. Furthermore, we investigate how hotel grades moderate the impact of review content characteristics on its perceived value. Results show that service complaints posted on high-end hotels’ pages receive significantly more helpful votes than those posted on low-end hotels’ pages. These nuanced yet important differences can only be revealed by mining meaning from text data, going beyond valence. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0520",
+    "title": "Investigating the effects of service recovery strategies on consumer forgiveness and post-trust in the food delivery sector",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103341",
+    "abstract": "Underpinned by coping theory, this study investigates the extent to which service recovery strategies (e.g., firm-level apologies; compensation; feedback loops) stimulate customer forgiveness and post-trust following service failure. Adopting a two-stage explanatory sequential mixed-method, it investigates the interplay between prior knowledge of service providers, service failure incident familiarity, recovery strategies, forgiveness, and consumer evaluations within an Iranian food delivery platform. Survey responses (n = 925) reveal the role of recovery strategies in stimulating forgiveness and post-trust following service failure. Multi-group analyses reveal gender differences therein. Quantitative findings are extended narratively by customer interviews (n = 45), which suggest proactive, open, and immediate recovery protocol enactment holds greatest value in avoiding negative consumer responses to service failure, mitigating negative outcomes (e.g., anger, frustration). This study thus expands extant understanding of foodservice platform consumption behaviors, providing valuable practical insight for industry stakeholders with regards to the nuances of service failure and recovery in the digital age. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0521",
+    "title": "An interactive service recovery framework combining demand and supply approaches",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2022.103413",
+    "abstract": "The ability of a business to engage in service recovery should not be restricted by the type of business model or its pre-dominant service delivery methods. Using a mixed method approach, this research presents a unique addition to business logic literature in a foodservice operation. Qualitative interviews demonstrate how customers perceive the business logic of foodservice when assessing the linkages between various service recovery touchpoints. Results of a quantitative experiment demonstrate that service providers’ facilitation can yield a considerable range of emotional and physical inputs depending on the corresponding business logic. Additionally, the voluntary customer role in facilitation supports the ability of the foodservice operation to deliver satisfactory service recovery. The boundary conditions of customer-brand identification and complaining effort also contribute as major sources of innovative service recovery. Supporting the research framework, implications were identified for foodservice operators in co-creating value with their customers during service recovery. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0522",
+    "title": "Luxury hospitality: A systematic literature review and research agenda",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2023.103597",
+    "abstract": "This article provides a systematic literature review of the hospitality, leisure, tourism, business, and management literature on luxury hospitality. We use a data-driven quantitative method (i.e., bibliometric review) to provide an integrated view of extant luxury hospitality research. The bibliographic coupling analysis allowed us to outline the field's intellectual structure and identify six clusters: (1) digital interactions, online reviews, and complaint handling; (2) brand attributes and service encounters; (3) status consumption and premium pricing; (4) service quality and consumer experiences; (5) sustainable practices and workplace environment; and (6) workforce-related traits. Furthermore, we identified 114 theoretical lenses, with the most frequently used theories being: (1) social exchange theory; (2) social identity theory; (3) theory of leisure class; (4) stimulus-organism-response theory; and (5) theory of uniqueness. Finally, building on our analyses, we outline a further research agenda. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0523",
+    "title": "Customers’ intention to compliment and complain via AI-enabled platforms: A self-disclosure perspective",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2023.103628",
+    "abstract": "Building upon the communication privacy management theory, the research reveals the effect of self-disclosure on the identified mechanisms of perceived emotional value, performance expectancy, and privacy concerns, which in turn, influence customers' intention to compliment and complain via AI-enabled platforms. Findings from two quasi-experiments with 439 valid responses from U.S. customers suggest that customers are more likely to express their feelings when low self-disclosure AI technology is presented. The results suggest a prominent role of privacy concerns in mediating the effect of self-disclosure on customers’ intention to compliment and complain. The effects of self-disclosure also channel through perceived emotional value and performance expectancy when customers want to leave a compliment. The moderating effect of reward timing was examined. Similarities and differences between customers’ intentions to compliment or complain using AI-enabled platforms are discussed to provide theoretical and practical implications. © 2023"
+  },
+  {
+    "article_id": "CS_0524",
+    "title": "Understanding smart service failure: The case of smart restaurants",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103714",
+    "abstract": "Is smart dining a smart choice? This research steers away from the positive connotation of smart service to embark on the smart service failure phenomenon. It draws on expectancy disconfirmation theory with data collection from two studies. Findings reveal a triadic model of service failure in smart eateries with respect to core smartness failure, smartness servicescape failure, and smartness interactivity failure. These primary failure categories are attributed to patrons’ overexpectations from smart services, as well as their personal needs and smart performance-induced cognitive evaluations. Importantly, social media hype seems to play a major role in customers’ overexpectation. This research on one hand enriches the discourse on smart dining and restaurants, while on the other hand, it bridges the gap between smart service and service failure by providing a field inquiry to answer questions such as why smart services fail and how usage of technology could backfire when services are dominated by smart devices with little employee intervention. In essence, this work contributes to the smart service literature by understanding the drawbacks of technology. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0525",
+    "title": "Is her (his) gender matched or not matched with me? Gender (dis)match effect between customers and gendered service robots",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103723",
+    "abstract": "This study examines whether the match between customers and gendered service robot influences customer satisfaction towards service robots, so-called gender (dis)match effect. Two experimental studies are employed to test hypotheses using scenario-based online survey. Study 1 evidenced the gender (dis)match effect, supporting that female robots are favored by both male and female customers, while male robots are not preferred by female customers, which varies by the level of anthropomorphism. Study 2 explores service failure situations, evidencing the gender (dis)match effect even after service failure. The research reveals that female robots are preferred by both female and male customers, which is moderated by the level of anthropomorphism. Such effect is also found to happen in both positive and failure service encounters. Specifically, customers show a higher tolerance towards opposite gender robots in a failure encounter. The findings offer valuable theoretical and practical implications for hospitality industry. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0526",
+    "title": "Effects of third-party observer empathy when viewing interactions between robots and customers: The moderating role of robot eeriness",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103729",
+    "abstract": "As service robots become increasingly common in the marketplace, more research is necessary to better understand customer perceptions of and responses to those robots, especially in the context of service failures. This paper investigates service robots from the perspective of a customer as a third-party observer, specifically examining the effect of the customer's empathy toward the robot on downstream customer responses and the moderating role of robot eeriness on that effect. Namely, we find that for a low eeriness robot (e.g., a robotic “arm”), customer responses generally become more desirable as empathy increases (i.e., complaint intentions and dissatisfaction are lower, and satisfaction is higher). Meanwhile, for a high eeriness robot (e.g., a humanoid robot), those same customer responses generally become less desirable as empathy increases. The findings have implications for scholarship on robotic automation in services marketing and for marketers seeking to implement service robots in customer-facing contexts. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0527",
+    "title": "Hospitality employees and digital transformation: The mediating roles of alienation and motivation",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103731",
+    "abstract": "Digital transformation (DT) brings disruptive changes to organizational structure, customer experience, and operational processes. Limited information is available on employee work status and performance. We used job demands-resources model to discuss the influence of job characteristics on work engagement through employee work status. Employee work status in DT was defined by alienation and motivation, and the mechanism of job characteristics influence job performance was delineated. We collected 425 valid questionnaires taking Taiwanese hospitality employees as the research object, and conducted path analysis by structural equation modelling. Job demands of service recovery awareness and digital competence at work and job resources of job support, perceived psychological empowerment, and training significantly affect employee alienation and motivation, respectively. Alienation and motivation significantly affect work engagement, and mediate the relationships between job characteristics and work engagement fully. This study proposes specific suggestions for talent training and retention of the hospitality industry in DT era. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0528",
+    "title": "It takes two to empower: Customer responses to empowerment recovery in the context of robot service failure",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103759",
+    "abstract": "Service robots have been gradually adopted by various providers. However, despite their significant potential in various service scenarios, robots can make mistakes during service interactions. Drawing on the concept of customer empowerment (CE), this study contributes to the existing literature by comparing the difference in the empowerment perceptions of younger and older customers toward robots and human employees. This study further examined empowerment strategies among two adult age groups in the context of robot service recovery and provided empirical evidence regarding the role of CE in service remediation. The results of the first experimental study revealed that older customers felt less empowered when encountering robot service failures than human service failures. The results from the follow-up two experiments indicate that the “wooden barrel effect” exists for effective recovery strategies to achieve empowerment perception and then, post-recovery customer satisfaction; that is, empowerment recovery strategies might succeed only when both information-sharing and compensation options are provided. These findings provide evidence-based guidance for policymakers and service providers in executing robot service recovery. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0529",
+    "title": "How service quality affects consumer revisit behavior in chain restaurants: Lessons from COVID-19",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103774",
+    "abstract": "Comparison studies in the context of Taiwanese and Chinese restaurant chains remain scarce. This research utilized a comparison study to examine the key distinctions between Taiwanese and Chinese restaurant chains in their response to COVID-19 pandemic. Additionally, this paper also focused on the indirect effects of service quality on customer revisit intention during pandemic. The first study involved a renowned Taiwanese restaurant chain and revealed that service quality impacts revisit intention through brand equity and safety management system. The second study involved a popular Chinese hotpot restaurant chain and demonstrated that service quality affects revisit intention through gratification and reputation. Additionally, the moderating effects of safety perceived and perceived value were considered critical on revisit intention. This study highlighted adapting to local market conditions while prioritizing safety and customer satisfaction amid pandemic. It enriches academic discourse and offer practical insights for post-pandemic business recovery strategies. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0530",
+    "title": "Can service robots recover themselves? The effect of service recovery agents and robot service failure types on customer response",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103951",
+    "abstract": "As service robots become more widely deployed, the risk of service failures has increased, making it crucial to understand how service enterprises can effectively recover from such failures. Drawing on role congruity theory, we explore the performance of different recovery agents across various robot failure contexts. Through three experiments, we demonstrate that customer forgiveness and satisfaction improve for process failures caused by robots when service recovery is handled by human staff or a warm robot. Conversely, recovery efforts by human staff or a competent robot boost customer forgiveness and satisfaction in response to outcome failures triggered by robots. In addition, perceived role congruity acts as a mediator in the above interaction effects. Moreover, proactive recovery moderates these effects. This study offers a nuanced understanding of service recovery by refining robot service failure and recovery agent typologies, thereby enriching research in robot service recovery. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0531",
+    "title": "Does service innovation reduce customer defection intentions among disappointed customers? A latent growth modeling approach in the hotel sector",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.103954",
+    "abstract": "Despite the importance of service innovation research, it remains unclear how service innovation paradoxically induces customer defections during service failures. Using a three time-lag interval design, our findings show that customers’ negative responses to hotel betrayals outweigh their positive responses to service innovations. Thus, we demonstrate that service innovation does not always positively impact organizational performance. Similar outcomes arise when examining the insignificance of static online reviews and review change rates. We find that while customers experiencing hotel service failures are likelier to end their relationships with said hotels as their negative perceptions increase, their experiences are unaffected by the rate at which the hotel implements service innovations. Finally, online reviews directly and indirectly affect defection intentions in service failure contexts, especially when time is a factor. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0532",
+    "title": "Human-robot collaboration in service recovery: Examining apology styles, comfort emotions, and customer retention",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.104028",
+    "abstract": "This research employs a serial mediation model to explore how different levels of human-robot collaboration, apology styles, and emotional responses affect customer intentions after a service failure, based on a scenario-based experiment with 311 participants, analyzed using MANCOVA and PROCESS Macro Model 6. Our findings reveal that human-robot collaboration configurations where robots play a significant role, either augmenting or replacing humans, are more effective. Economic apologies are more impactful when the robot leads the recovery, while social apologies work best when human staff are involved. Comfort emotions and robot continuance usage sequentially mediate the relationship between human-robot collaboration and behavioral intentions. This is the first paper to integrate frontline technology with traditional recovery methods, highlighting the effectiveness of human-robot collaboration in enhancing customer retention. Practically, this research provides essential guidance for robot and AI designs in services, enabling service managers to effectively manage human-robot task allocation and customer loyalty in a robot-mediated service recovery. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0533",
+    "title": "Influencing customer compensation expectations in service failures: Comparing the roles of service robots and human employees",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.104031",
+    "abstract": "This research addresses a critical gap in understanding how service failures by robots versus human employees shape customer compensation expectations in the hospitality industry. While substantial literature explores service failure, the nuanced impacts of failure severity and the interplay with different types of service providers – robotic or human – have not been thoroughly examined. Through three experimental studies, we discover that customers expect higher compensation when service failures involve robots and that this expectation is further influenced by the severity of the failure, which intensifies compensation expectations across both types of service providers. Moreover, our analysis reveals that blame attribution mediates the relationship between service provider type and compensation expectations, with severity of failure moderating this mediation effect. These findings offer insights for service firms aiming to navigate the challenges posed by integrating service robots, suggesting the importance of tailored service recovery strategies to maintain customer satisfaction and loyalty. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0534",
+    "title": "The effect of perceived brand betrayal on brand hate, avoidance-like and attack-like strategies: A comparative study of customers with/without past negative experiences",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.104056",
+    "abstract": "This study explores the impact of perceived brand betrayal on two types of brand hate and their subsequent effects on consumer behavioral responses. It also investigates how these relationships vary between customers with/without past negative experiences. Data about luxury hotels were obtained using an online survey in Iran. Partial least squares structural equation modeling was used for data analysis. The findings indicate that perceived betrayal positively influences passive and active brand hate, leading to negative behavioral responses. Moreover, a significant difference was found between the two groups of customers with/without past negative experiences regarding the effect of perceived betrayal on active hate and the effect of active hate on negative behavioral responses. By applying appraisal theory, this study provides a unique contribution by examining avoidance and attack strategies as behavioral consequences of service failures and comparing their impacts on customers with/without past negative experiences. © 2024 The Authors"
+  },
+  {
+    "article_id": "CS_0535",
+    "title": "Understanding customer complaints from negative online hotel reviews: A BERT-based deep learning approach",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.104057",
+    "abstract": "This paper utilizes the deep learning model based on BERT-BiLSTM-CRF in combination with the econometric model to examine how hotel customers’ complaints toward diverse service attributes contribute to their overall satisfaction. With our model, seven types of customer complaints, including service, facility, cleanliness, price, location, dining, and noise, can be automatically identified from hotel online reviews, achieving an F1 of 0.82 and a recall of 0.85. Econometrics analyses show that different types of complaints have varying degrees of impact on customer satisfaction. For example, in the hotel industry, service complaints show a stronger negative effect than cleanliness complaints, facility complaints, etc. Furthermore, the results of the robustness check show that our conclusions are consistent before and after COVID-19. Our findings contribute to the customer dissatisfaction literature and offer practical implications for service failure management in online travel platforms. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0536",
+    "title": "How to make consumers tolerate robotic service failures",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2024.104059",
+    "abstract": "Many companies are now using service robots to partially replace human employees. Despite robots service failures are inevitable, very little is understood about how to mitigate the negative impact of consumers’ attitudes towards robot service failures. This research aims to investigate how the appearance and personality anthropomorphism affect consumer satisfaction and behavioral intentions toward service failure. Findings indicate that consumers tend to express more positive attitudes after experiencing robot service failures on a humanoid robot or an extroverted robot. Moreover, the interaction effect of appearance and personality anthropomorphism is demonstrated and the mediating role of social distance is also examined. The research findings provide insights for marketing practitioners and humanoid robot designers. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0537",
+    "title": "Are highly anthropomorphic service robots more likely to be forgiven by customers after service failures? A mind perception perspective",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104103",
+    "abstract": "Service robot failures are inevitable in the tourism and hospitality industry, so customer forgiveness is crucial. Based on mind perception theory, this study explored the mechanism of service robots’ anthropomorphism level affecting customer forgiveness. Using four scenario-based experiments, the results indicate that highly anthropomorphic service robots are more likely to be forgiven by customers, with perceived experience and perceived agency being the underlying psychological mechanisms. When service robots are relatively less cute, high anthropomorphism can lead to higher perceived experience and perceived agency of customers, and thus, higher forgiveness. By contrast, when service robots are highly cute, the effect of anthropomorphism is not significant. Moreover, high anthropomorphism enhances forgiveness in low-power than high-power customers. Our study complements extant research on service robot anthropomorphism in service failure scenarios and offers a way to mitigate their negative impact. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0538",
+    "title": "An eye for an eye: Exploring how human-robot service attributes affect customers’ negative electronic word-of-mouth",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104104",
+    "abstract": "The integration of artificial intelligence and robotics has revolutionized the hospitality industry, significantly influencing customer cognition, emotion and behavior. However, the impact mechanism of robotic service failures warrants further investigation. This research explores the relationship between human-robot service attributes and customers’ negative electronic word-of-mouth (e-WOM). A mixed-method research design was adopted. Study 1 employs a content analysis with 219 negative online reviews whereas Study 2 conducts a combined online and offline questionnaire survey of 575 customers who have experienced robotic services. Results indicate that incompetence of robots and social loafing of employees both positively influence negative e-WOM by reducing perceived value and intensifying negative emotions. Higher levels of robot task interdependence enhance the negative impact of robot incompetence on perceived value. The research findings can effectively guide tourism and hospitality organizations to take measures to reduce negative e-WOM, especially in the context of robot services. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0539",
+    "title": "Warmhearted cues: A study of the impact of social mindfulness on trust repair by intelligent customer service in service recovery",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104131",
+    "abstract": "With the rapid development of artificial intelligence, intelligent customer service system based on intelligent recognition and natural language interaction has become a key factor to improve service quality in many service industries. However, the phenomenon of “high capability and low enthusiasm” in service recovery has become one of the major challenges in the development, design and deployment of intelligent customer service. This study explores the impact of customers' perception of intelligent customer service's social mindfulness cues on the trust restoration mechanism in human-computer interaction service recovery from the perspective of customers' perceptions, which expands new clues that can help restore trust. In addition, this study examines how customer perceptions of social mindfulness changes affect the trust repair process under different levels of time urgency (high vs low) and in different task-oriented scenarios (practical vs hedonic). Results from the experiments suggest that providing high social mindfulness level of service can be more effective in recovering trust, particularly for high time urgency and practical task scenarios. The findings of this study provide important strategic references for service organisations in building design frameworks for intelligent customer service and developing recovery strategies. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0540",
+    "title": "Longitudinal impact of perceived fairness after service failures: Evidence from online travel agencies",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104177",
+    "abstract": "The drivers of customer repurchase intentions following service recovery are dynamic and it is vital to accurately identify them. Yet, how the relationship between perceived fairness and its outcomes evolves remains unclear. Using a longitudinal examination of customers who use online travel agencies, this study tests research gaps using a latent growth model. The findings demonstrate that customers’ perceptions of fairness and their behavioral intentions are more pronounced immediately following a service failure and moderate slowly over time. Notably, recovery satisfaction increases during the early stage of recovery efforts and then decreases during its later phase. Avoidance intentions, however, continue on a downward slope. Analysis indicates that the effect of diluted recovery satisfaction during late-stage recovery is not directly related to avoidance intentions. Indeed, this study reveals that recovery satisfaction is limited in reducing avoidance intentions under conditions where it declines slowly. These findings suggest that perceived fairness is the underlying mechanism of service recovery theory. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0541",
+    "title": "The Impacts of Corporate Digital Irresponsibility (CDiR) and Corporate Digital Responsibility (CDR) Communications on Consumers’ Brand Perceptions",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104184",
+    "abstract": "With the increasing utilization of digital technologies and data in the hospitality industry, hospitality organizations’ responsibility to manage digital technologies and data in an ethical, fair, and protective way has become more important than ever. While corporate digital responsibility (CDR) is expected to affect consumers’ perceptions of a brand, the impacts of corporate digital irresponsibility (CDiR) and CDR on consumers’ brand perceptions have not been examined. Thus, this study aims to examine the negative effects of CDiR as a brand's psychological contract violation and CDR communication as a recovery strategy on consumers’ brand perceptions. By conducting a mixed-design experiment, this study found that CDiR negatively affects consumers’ brand attitude, thereby leading to an increased switch intention. Furthermore, the findings indicated that abstract messages about CDR practices can adversely affect consumers’ brand perceptions, while specific messages can alleviate the negative impacts of CDiR, as they increase credibility and reduce image wash. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0542",
+    "title": "Breaking the mold: Is there a gender stereotype when robot service failures happen?",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104210",
+    "abstract": "The application of service robots has been reshaping service practices and experiences in the hospitality and tourism industry. It is common for robots to be assigned human-specific characteristics (either humanlike or non-humanlike) and gender-specific traits (either feminine or masculine). Three experimental studies were conducted to explore how robot human-likeness and robot gender influence customers’ emotional, attitudinal, and behavioral responses in different service failure scenarios. The results suggest that customers have more negative attitudinal and emotional responses, whereas less negative behavioral response toward humanoid robots (with apparent feminine features) compared to non-humanoid robots (with masculine features), leading to the generation of spurious loyalty when service failure happens. This is mediated by customer affection induced by the service robots. The findings provide valuable insights into the design and implementation of robots in hospitality and tourism services to meet customer expectations, dimmish the potential risks, and enhance customer experiences. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0543",
+    "title": "Artificial intelligence (AI) technology, its applications and the use of AI powered devices in hospitality service experience creation and delivery",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104212",
+    "abstract": "The rapid advancement of artificial intelligence (AI) is transforming the hospitality industry, enhancing service delivery, customer experiences, and operational efficiency. AI-powered innovations such as generative AI, service robots, autonomous systems, and smart assistants are streamlining operations, personalizing guest interactions, and optimizing resource management. While AI's benefits for businesses and customers are well-documented, its broader impacts on employees, customer behavior, and ethical considerations remain underexplored. This special issue of the International Journal of Hospitality Management addresses these gaps by presenting cutting-edge research on AI applications in hospitality. The featured studies explore AI-driven customer engagement, workforce adaptation, service recovery, and sustainability. By highlighting emerging trends and evidence-based insights, this issue informs industry leaders, policymakers, and academics about AI's opportunities and challenges, emphasizing the need for a balanced approach between technological innovation and human-centric service excellence © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0544",
+    "title": "Unravelling the influence of service failure on negative customer engagement: The moderating role of service recovery",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104242",
+    "abstract": "This study examines negative customer engagement through the influences of service failure, service recovery, (dis)satisfaction with service recovery, and perceived severity of service failure by adopting a mixed-method approach. Based on the qualitative study which identified the most frequent service failures and recoveries in hotels, a scenario-based experiment was designed to test the proposed relationships. The results show that service failure impacts the perceived severity of service failure but is contingent upon the type of service recovery. (Dis)satisfaction with service recovery, which is influenced by perceived severity of service failure determines negative customer engagement. Moreover, the relationships among the perceived severity of service failure, (dis)satisfaction with service recovery, and disengaged behaviour are curvilinear. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0545",
+    "title": "Robots' anthropomorphic designs: Psychological mechanism of consumer acceptance in restaurant contexts of service success, failure, and recovery",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104322",
+    "abstract": "Anthropomorphic designs significantly affect the acceptance of service robots; however, consumer perceptions vary widely. This study examined how different anthropomorphic designs (mechanoid, animal-like, and humanoid) influence emotional and cognitive responses and acceptance in service scenarios (success, failure, and recovery). Study 1 explored anthropomorphism in successful services by focusing on emotions, perceived competence, warmth, and acceptance. It found that animal-like robots evoked the most positive emotions and warmth, while humanoid robots displayed higher competence but also elicited more negative emotions. Study 2 investigated failure contexts, considering failure attribution, and revealed that the interaction between anthropomorphic designs and failure severity affects psychological responses. Severe failures reduced warmth toward humanoid robots but paradoxically increased it for animal-like and mechanoid robots. Study 3 explored service recovery, considering recovery attribution, and showed that human intervention improves recovery perceptions, highlighting the need for intervention in mechanoid robot recovery and enhancing self-correction in animal-like and humanoid robots. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0546",
+    "title": "Service failures in ethnic restaurants: Dialect usage serves as a forward-focused way to alleviate negative post-failure consequences",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104391",
+    "abstract": "This research delves into an under-explored area—proactive service recovery—by testing the recovery effectiveness of dialect usage in ethnic restaurants in the pre-failure stage. We scrutinize whether and how dialect usage interacts with customer consumption motivation in influencing post-failure customer reactions through three experiments. Results indicate that the presence (vs. absence) of dialects leads customers with hedonic-dominant motivations to show lower negative word-of-mouth, while dialect usage does not help reduce negative word-of-mouth when customers hold utilitarian-dominant motivations. Additionally, the sequential mediating roles of moral authenticity and psychological contract breach have been confirmed. This research enriches the literature on dialect and service recovery. Meanwhile, it offers managers guidance on utilizing dialects in ethnic restaurants to build resistance against possible service failures. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0547",
+    "title": "The leadership inclusion framework: Conceptualization and application in hospitality",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2025.104487",
+    "abstract": "This study developed and tested the Leadership Inclusion Framework (LIF) to enhance leaders’ inclusion in hospitality organizations. Using survey data from 308 hospitality managers, exploratory factor analysis (EFA) confirmed distinct constructs and measurement reliability, followed by confirmatory factor analysis (CFA) to verify the framework's fit with empirical data (Phase 1). A hierarchical SEM tested hypotheses on the final model (Phase 2). Individual inclusion significantly increases employees’ organizational citizenship behaviors, customer performance, and service recovery performance. Organizational inclusion significantly increases employees’ customer performance and service recovery performance. Societal inclusion significantly increases employees’ customer performance and organizational citizenship behaviors. Implications for theory and industry are discussed. © 2025"
+  },
+  {
+    "article_id": "CS_0548",
+    "title": "Escalation of consumer outrage: Unraveling the amplifying conditions driving online vengeance in online travel agencies",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2026.104582",
+    "abstract": "The literature suggests that double deviation—an initial service failure followed by an unfair or ineffective recovery—is a key driver of online vengeance. Building on this, and using appraisal theory of emotions, this paper develops an appraisal-layer framework that, across three studies, tests three amplifiers—resource-congruent injustice, intrinsic service criticality, and negative social cues—to explain when online travel agencies' problems escalate into vindictive negative word-of-mouth (VNWOM). Study 1 offers an extension of the matching hypothesis to double-deviation contexts: congruent resource loss (distributive unfairness after outcome failures; interactional unfairness after process failures) increases VNWOM intentions, whereas procedural congruence does not. Study 2 proposes intrinsic service criticality as the baseline importance of a service type (e.g., cost at risk, interdependence with other trip elements, reversibility) that shapes appraisals before any failure occurs; Studies 2A–2B show flights/accommodations were perceived as more critical than car rentals on this dimension, and higher criticality predicts stronger VNWOM under identical double-deviation scripts, independent of perceived severity. Study 3 identifies negative social cues (exposure to others’ negative reviews) as an amplifying factor of consumer online vengeance and shows that this effect on VNWOM intentions is only modestly and partially mediated by anger. Theoretically, the study introduces appraisal-layer amplifiers that sway how double deviations are interpreted in OTA contexts. Practically, it offers guardrails to avoid same-domain “double hits,” prioritize high-criticality bookings, and respond transparently to negative reviews to curb VNWOM. © 2026"
+  },
+  {
+    "article_id": "CS_0549",
+    "title": "Anthropomorphic service robots in service failure: The roles of warmth, competence, and failure severity in shaping complaint intentions",
+    "journal": "International Journal of Hospitality Management",
+    "journal_impact_factor": 6.448,
+    "doi": "10.1016/j.ijhm.2026.104624",
+    "abstract": "As service robots become more prevalent in frontline service delivery, understanding their role in handling customer complaints is critical. Drawing on the stereotype content model, this study examines how robot anthropomorphism influences customers’ willingness to complain, mediated by perceived warmth and competence. Two independent scenario-based experimental studies were conducted (Study 1: humanoid robot, N = 354; Study 2: non-humanoid robot, N = 351). Using a combination of structural equation modelling (SEM) for testing the overall theoretical structure and Hayes’ PROCESS macro (Model 4 and Model 15) for estimating mediation, moderation, and conditional indirect effects, we examined how perceived anthropomorphism shapes complaint intentions under varying levels of service failure severity. Results show that humanoid robots foster higher complaint intention through warmth and competence perceptions. Failure severity moderates the mediator–outcome paths, producing distinct conditional effects across mild versus severe failures: competence drives complaint intentions in severe failures, whereas warmth is more salient in mild ones. These patterns are consistent for humanoid robots but less stable for non-humanoids. By integrating stereotype content theory with service recovery research, this study advances understanding of human–robot interactions in hospitality and provides actionable guidelines for deploying service robots in complaint handling. © 2026"
+  },
+  {
+    "article_id": "CS_0550",
+    "title": "Umbrella pricing and cartel size",
+    "journal": "International Journal of Industrial Organization",
+    "journal_impact_factor": 1.713,
+    "doi": "10.1016/j.ijindorg.2023.103032",
+    "abstract": "It is generally assumed that bigger scale and scope of private antitrust enforcement promotes effective competition. This has motivated several North American and European courts to uphold redress claims not only from clients of a detected cartel but also plaintiffs who were exposed to ‘umbrella pricing’, i.e. equilibrium price increases by non-colluding competitors. The paper shows that the presumed deterrence effects of obliging infringing firms to compensate aggrieved customers of non-infringing firms can be dominated by adverse cartel size effects: liability for umbrella damages primarily constrains small partial cartels. It thereby improves the comparative profitability and stability of large ones. More encompassing cartels can form, prices rise, and welfare falls. © 2023 Elsevier B.V."
+  }
+]

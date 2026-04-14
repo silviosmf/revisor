@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1901",
+    "title": "Property Rights to Client Relationships and Financial Advisor Incentives",
+    "journal": "Journal of Finance",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jofi.13058",
+    "abstract": "We study the effect of a change in property rights on employee behavior in the financial advice industry. Our identification comes from staggered firm-level entry into the Protocol for Broker Recruiting, which waived nonsolicitation clauses for advisor transitions among member firms, effectively transferring ownership of client relationships from the firm to the advisor. After the shock, advisors appear to tend to client relationships more by investing in client-facing industry licenses, shifting to fee-based advising, and reducing customer complaints. Our findings support property rights based investment theories of the firm and document offsetting costs to restricting labor mobility. © 2021 the American Finance Association"
+  },
+  {
+    "article_id": "CS_1902",
+    "title": "Standing in my customer's shoes: Effects of customer-oriented perspective taking on proactive service performance",
+    "journal": "Journal of Occupational and Organizational Psychology",
+    "journal_impact_factor": null,
+    "doi": "10.1111/joop.12247",
+    "abstract": "We develop a theoretical framework that delineates the process by which customer-oriented perspective taking contributes to employees’ proactive service performance. Drawing from motivated information processing and proactivity perspectives, the model hypothesizes that employees’ customer-oriented perspective taking enhances their role breadth self-efficacy (RBSE), which in turn enhances proactive customer service performance and proactive complaint-handling performance. A three-wave, time-lagged study, involving 145 frontline employees and their immediate supervisors in the Chinese hospitality industry, tests the research model. The results of structural equation modelling show taking customers’ perspectives results in a high level of RBSE. This relationship grows stronger if employees exhibit a strongly proactive personality. A high level of RBSE also mediates the interactive effects of customer-oriented perspective taking and proactive personality on proactive customer service performance and proactive complaint-handling performance. These findings provide insights for research on perspective taking, RBSE, and proactive service performance. Practitioner points: Taking customers’ perspectives results in a more satisfactory service encounter and significantly enhances employees’ service performance. Organizations should work to increase their employees’ customer-oriented perspective taking capabilities. Service organizations could use intervening mechanisms in the service marketing process to help employees enhance their confidence in proactively expanding their roles. © 2018 The Authors. Journal of Occupational and Organizational Psychology published by John Wiley & Sons Ltd on behalf of British Psychological Society"
+  },
+  {
+    "article_id": "CS_1903",
+    "title": "Dynamic Attribution in Chain Liability: Managing Recovery From Environmental Supply Chain Incidents",
+    "journal": "Journal of Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jscm.12349",
+    "abstract": "Environmental supply chain incidents caused by upstream suppliers are increasingly scrutinized by end-customers. Although prior research on chain liability suggests that greater incident severity leads to more negative customer reactions and more substantive recovery efforts mitigate these effects, important dynamics in these variables have not yet been fully examined. This study advances a dynamic perspective on attribution theory and introduces forgiveness as a key process variable in how companies might recover from environmental chain liability incidents. Using a vignette experiment, we examine how multiple types of incident severity (environmental impact, human health risk, and physical proximity) and recovery strategies (apology, restitution, and monitoring) interact to influence customer forgiveness and repurchase intentions. The results reveal that an incident's human health risk and physical proximity reduce repurchase intentions independently without compounding effects and that recovery through monitoring and restitution independently increases forgiveness and repurchase intentions but loses effectiveness when combined. These findings refine current knowledge of chain liability by challenging several current assumptions about incident severity and recovery and highlight the need for a more nuanced approach to managing environmental supply chain incidents. © 2025 The Author(s). Journal of Supply Chain Management published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_1904",
+    "title": "Gamification From Below as by Form of Resistance: Algorithm Control, Precarity, and Resistance Dynamic of Indonesian Gig Workers",
+    "journal": "New Technology, Work and Employment",
+    "journal_impact_factor": null,
+    "doi": "10.1111/ntwe.12324",
+    "abstract": "In the digital gig economy, algorithms serve as primary tools for controlling workers within the labor process. One form of this control is through gamification, which aims to align labor supply with consumer demand, encourage quality service, and enforce worker discipline. This study surveyed of 662 couriers or gig workers in Gojek's Gosend Sameday service. Findings of this study show that Gosend Sameday drivers receive low pay and lack social protection. In light of these precarious conditions, Gojek builds the gamification scheme to incentivize hard work. In responding to the gamification created unilaterally by Gojek (gamification from above), many drivers rejected it. Resistance manifests in two forms: infrapolitics and collective resistance. Infrapolitics is part of the weapon of the weak, which is carried out by rejecting unsatisfactory orders, voicing complaints on social media, and exploiting loopholes in the Gojek driver application. Conversely, collective resistance was carried out with mass actions, strikes, picketing, organizing, and forming unions to build gamification from below. This study contributes to the understanding of how infrapolitics can inadvertently consent to platform capitalism hegemonic regime, suggesting that while drivers may it rejects gamification, the platform continues to influence labor dynamics. Collective resistance, on the other hand, challenges gamification from above and attempts to build gamification from below to create a fairer labor environment for platform drivers. © 2024 Brian Towers (BRITOW) and John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1905",
+    "title": "Is Your Retailer a Friend or Foe: When Should the Manufacturer Allow Its Retailer to Refurbish?",
+    "journal": "Production and Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1111/poms.13548",
+    "abstract": "Refurbishing of used products is increasingly being recognized as a value recovery strategy in sustainable operations. Hence, manufacturers, retailers, as well as third-party firms, engage in refurbishing. Manufacturers, to some extent, can deter other players from refurbishing through various means such as product design, intellectual property, and restricting access to spare parts and diagnostic tools. While previous research has extensively examined the question of whether a manufacturer should allow an independent third-party player to refurbish used products, the question of whether a manufacturer should allow his retailer to refurbish them, to our knowledge, remains unanswered. In this study, we examine whether a manufacturer should refurbish used products himself or allow his retailer to refurbish them. We compare two closed-loop supply chain structures: Model-M, where the manufacturer refurbishes used products; and Model-R, where the retailer refurbishes. In a two-period setting, new products are sold in both periods and some of the first-period products are refurbishable in the second period. We show that when either (i) the refurbishability of used products is low and the attractiveness of refurbishing (value of the refurbished product as compared to the refurbishing cost) is either moderate or sufficiently high, or (ii) the refurbishability is high and the attractiveness of refurbishing is moderate, the manufacturer, despite forgoing profits and facing competition from refurbished products, is better off with letting the retailer refurbish used products (Model-R) than with refurbishing them himself (Model-M). Identifying a novel mechanism through which the manufacturer benefits in Model-R is our key theoretical contribution to the closed-loop supply chain literature. Moreover, we provide some useful and interesting insights to policymakers related to customer welfare and the environment. We also analyze the performances of these models (Model-M and Model-R) in terms of supply chain efficiency. In addition, we discuss how some of our key results change if a third-party refurbisher coexists with the manufacturer and the retailer. Our results not only support some of the current policies and practices but also shed some light on their limitations and suggest some avenues for improvement. © 2021 Production and Operations Management Society"
+  },
+  {
+    "article_id": "CS_1906",
+    "title": "Voice-based AI in call center customer service: A natural field experiment",
+    "journal": "Production and Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1111/poms.13953",
+    "abstract": "Voice-based artificial intelligence (AI) systems have been recently deployed to replace traditional interactive voice response (IVR) systems in call center customer service. However, there is little evidence that sheds light on how the implementation of AI systems impacts customer behavior, as well as AI systems’ effects on call center customer service performance. By leveraging the proprietary data obtained from a natural field experiment in a large telecommunication company, we examine how the introduction of a voice-based AI system affects call length, customers’ demand for human service, and customer complaints in call center customer service. We find that the implementation of the AI system temporarily increases the duration of machine service and customers’ demand for human service; however, it persistently reduces customer complaints. Furthermore, our results reveal interesting heterogeneity in the effectiveness of the voice-based AI system. For relatively simple service requests, the AI system reduces customer complaints for both experienced and inexperienced customers. However, for complex requests, customers appear to learn from the prior experience of interacting with the AI system, which leads to fewer complaints. Moreover, the AI-based system has a significantly larger effect on reducing customer complaints for older and female customers as well as for customers who have had extensive experience using the IVR system. Finally, we find that speech-recognition failures in customer-AI interactions lead to increases in customers’ demand for human service and customer complaints. The results from this study provide implications for the implementation of an AI system in call center operations. © 2023 Production and Operations Management Society."
+  },
+  {
+    "article_id": "CS_1907",
+    "title": "Frontline Workers and Civic Tech: Bridging the Responsiveness Gap in Digital Client Encounters",
+    "journal": "Public Administration Review",
+    "journal_impact_factor": null,
+    "doi": "10.1111/puar.70066",
+    "abstract": "As governments increasingly digitalize client encounters, there are growing concerns that standardized platforms may reduce bureaucratic responsiveness, particularly for historically underserved communities. We examine whether frontline workers help close that gap through their use of civic-tech platforms. Analyzing 8037 service requests from Newark's Open311 system (2019–2022) using machine learning classification and spatial analysis, we find that frontline workers submitted nearly 25% of all requests on this platform. Worker submissions concentrated in low-income areas, while resident requests clustered in more affluent neighborhoods. Interviews reveal that human-centered design features encourage frontline worker reporting, while their community commitment and organizational priorities explain proactive engagement in underserved areas. We conceptualize this pattern of engagement as digitally afforded discretion, where frontline workers leverage platform features to address community needs before formal complaints arise. Our findings suggest that human-centered digital platforms can complement frontline discretion, offering novel insight into how technology and human judgment interact to shape equity and responsiveness. © 2025 The Author(s). Public Administration Review published by Wiley Periodicals LLC on behalf of American Society for Public Administration."
+  },
+  {
+    "article_id": "CS_1908",
+    "title": "Quality and congestion in environmental goods: The road to the Wangapeka",
+    "journal": "Dimensions of Trade Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1142/9789813207615_0016",
+    "abstract": "An increasing complaint heard among New Zealand residents is that their enjoyment of local environmental resources is being diminished by increased congestion from foreign visitors. This paper considers a model of vertical differentiation in which foreign high-value and domestic low-value consumers incur congestion costs in using a common resource. We demonstrate that reducing quality in the face of increased foreign demand is optimal absent discriminatory prices (but not otherwise). We also consider the provision of multiple environmental goods and demonstrate that providing differential qualities may be optimal even if domestic consumers do not use the high-quality resources at all. © 2018 by World Scientific Publishing Co. Pte. Ltd. All rights reserved."
+  },
+  {
+    "article_id": "CS_1909",
+    "title": "How complaining customers make companies listen and influence product development",
+    "journal": "International Journal of Innovation Management",
+    "journal_impact_factor": 1.639,
+    "doi": "10.1142/S1363919616500018",
+    "abstract": "The analysis in this paper shows how complaining customers can make companies listen to them by spurring the mobilisation of various actors into a hybrid collective strong enough to influence companies' product development. Customers as sources of innovation have been analysed previously in the literature, whereas the process of how complaining users mobilise support to influence companies has received less attention and is not well understood. This study uncovers the processes that made it possible for a 17-year-old Norwegian to become pivotal in constructing a problematisation, which emerged to become so strong as to alter the Norwegian Coca-Cola Company's earlier decision to cease production of a product in a certain size. The analysis uses constructs from actor-network theory (ANT) and shows how a single dissatisfied individual was able to become a spokesperson who, through different processes, mobilised a heterogeneous group of consumers into a loosely connected hybrid collective. The spokesperson acted on behalf of the hybrid collective and put growing pressure on a multinational company, influencing its decision making. In this case, the complaining customer did not exit, nor did he become a lead user, but rather became a hybrid customer who actively tried to mobile others in his desire for a product. The study reports on a process analysis of the means by which the company was induced to reinstate a discontinued product. The analysis is divided into three episodes, each marking a critical phase for the collective. This opens up the way for an examination of the processes of mobilisation, interessement, enrolment and mobilisation, revealing the margins of manoeuvre and how these are negotiated and delimited in the process. © 2016 Imperial College Press."
+  },
+  {
+    "article_id": "CS_1910",
+    "title": "Discovering design principles for health behavioral change support systems: A text mining approach",
+    "journal": "ACM Transactions on Management Information Systems",
+    "journal_impact_factor": 5.07,
+    "doi": "10.1145/3055534",
+    "abstract": "Behavioral Change Support Systems (BCSSs) aim to change users' behavior and lifestyle. These systems have been gaining popularity with the proliferation of wearable devices and recent advances in mobile technologies. In this article, we extend the existing literature by discovering design principles for health BCSSs based on a systematic analysis of users' feedback. Usingmobile diabetes applications as an example of Health BCSSs, we use topicmodeling to discover design principles from online user reviews. We demonstrate the importance of the design principles through analyzing their existence in users' complaints. Overall, the results highlight the necessity of going beyond the techno-centric approach used in current practice and incorporating the social and organizational features into persuasive systems design, as well as integrating with medical devices and other systems in their usage context. © 2017 ACM."
+  },
+  {
+    "article_id": "CS_1911",
+    "title": "A two-step information accumulation strategy for learning from highly imbalanced data",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3132847.3132940",
+    "abstract": "Highly imbalanced data is common in the real world and it is important but difficult to train an effective classifier. In this paper, Our major point is that the imbalance is the observed phenomenon but not the cause of the problem. The challenge is that useful information is been overshadowed in the large scale of data in both majority and minority classes. We propose a novel two-step strategy, InformationAccumulation, which first selects the most discriminative data by the Zooming-in phase, and then leverages unlabeled data by pseudo active learning and self-training in the phase of Learning from Learned Results. Comparative experiments are conducted on large-scale highly imbalanced real customer service data on complaint detection task (where less than 2% of data is positive). The results on eight state-of-the-art classification algorithms show that significant improvements are observed on the performances of all algorithms with Information Accumulation (for example, the FMeasure score of Xgboost is increased by 197% from 0.115 to 0.347), which demonstrates the effectiveness and general applicability of the proposed strategy. This work explores a new idea on dealing with highly imbalanced data that we do not aim to balance the training examples as usual, but focus on finding the most discriminative information from labeled data and the learning results of unlabeled data. © 2017 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CS_1912",
+    "title": "When the umpire is also a player: Bias in private label product recommendations on E-commerce marketplaces",
+    "journal": "FAccT 2021 - Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3442188.3445944",
+    "abstract": "Algorithmic recommendations mediate interactions between millions of customers and products (in turn, their producers and sellers) on large e-commerce marketplaces like Amazon. In recent years, the producers and sellers have raised concerns about the fairness of black-box recommendation algorithms deployed on these marketplaces. Many complaints are centered around marketplaces biasing the algorithms to preferentially favor their own 'private label' products over competitors. These concerns are exacerbated as marketplaces increasingly de-emphasize or replace 'organic' recommendations with ad-driven 'sponsored' recommendations, which include their own private labels. While these concerns have been covered in popular press and have spawned regulatory investigations, to our knowledge, there has not been any public audit of these marketplace algorithms. In this study, we bridge this gap by performing an end-to-end systematic audit of related item recommendations on Amazon. We propose a network-centric framework to quantify and compare the biases across organic and sponsored related item recommendations. Along a number of our proposed bias measures, we find that the sponsored recommendations are significantly more biased toward Amazon private label products compared to organic recommendations. While our findings are primarily interesting to producers and sellers on Amazon, our proposed bias measures are generally useful for measuring link formation bias in any social or content networks. © 2021 ACM."
+  },
+  {
+    "article_id": "CS_1913",
+    "title": "SATAR: A Self-supervised Approach to Twitter Account Representation Learning and its Application in Bot Detection",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3459637.3481949",
+    "abstract": "Twitter has become a major social media platform since its launching in 2006, while complaints about bot accounts have increased recently. Although extensive research efforts have been made, the state-of-the-art bot detection methods fall short of generalizability and adaptability. Specifically, previous bot detectors leverage only a small fraction of user information and are often trained on datasets that only cover few types of bots. As a result, they fail to generalize to real-world scenarios on the Twittersphere where different types of bots co-exist. Additionally, bots in Twitter are constantly evolving to evade detection. Previous efforts, although effective once in their context, fail to adapt to new generations of Twitter bots. To address the two challenges of Twitter bot detection, we propose SATAR, a self-supervised representation learning framework of Twitter users, and apply it to the task of bot detection. In particular, SATAR generalizes by jointly leveraging the semantics, property and neighborhood information of a specific user. Meanwhile, SATAR adapts by pre-training on a massive number of self-supervised users and fine-tuning on detailed bot detection scenarios. Extensive experiments demonstrate that SATAR outperforms competitive baselines on different bot detection datasets of varying information completeness and collection time. SATAR is also proved to generalize in real-world scenarios and adapt to evolving generations of social media bots. © 2021 ACM."
+  },
+  {
+    "article_id": "CS_1914",
+    "title": "How to Compensate After a Data Breach? Investigating Compensation Types and Role of Fairness in Customer Repatronage Intentions",
+    "journal": "Data Base for Advances in Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3583581.3583588",
+    "abstract": "Data breach recovery is often likened to service failure recovery. Like service failure recovery, compensation is a major factor toward data breach recovery. However, compensation involves different types, which may have varying effects on data breach recovery. This study investigates the effect of compensation types on customer's repatronage intentions to organizations that have suffered a data breach. Three compensation types were identified in this study: monetary, service, and psychological compensation. The findings of this study indicate that only service and psychological compensation have a significant effect on customers' perceptions of being treated fairly by the organization following a data breach. Furthermore, service compensation impacts the trust a customer regains in the company. Monetary compensation did not play a statistically significant role in the data breach recovery process. In turn, both perceived fairness and regained trust influences customer repatronage intentions. This study contributes to the information privacy field by identifying the types of compensation that are impactful to re-engage individuals who suffered PII related data breach. Copyright © 2023 owner/author(s)."
+  },
+  {
+    "article_id": "CS_1915",
+    "title": "Investigating the Impact of Multimodality and External Knowledge in Aspect-level Complaint and Sentiment Analysis",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3583780.3614937",
+    "abstract": "Automated complaint analysis is vital for generating critical insights, which in turn enhance customer satisfaction, product quality, and overall business performance. Nevertheless, conventional methods frequently fail to capture the nuances of aspect-level complaints and inadequately utilize external knowledge, thus creating a gap in effective complaint detection and analysis. In response to this issue, we proactively explore the role of external knowledge and multimodality in this domain. This leads to the development of MGasD (Multimodal Generative framework for aspect-based complaint and sentiment Detection), a multimodal knowledge-infused unified framework. MGasD diverges from traditional methods by reframing the complaint detection problem as a multimodal text-to-text generation task. Significantly, our research includes the development of a novel aspect-level dataset. Annotated for both complaint and sentiment categories across diverse domains such as books, electronics, edibles, fashion, and miscellaneous, this dataset provides a comprehensive platform for the concurrent study of complaints and sentiment. This resource facilitates a more robust understanding of consumer feedback. Our proposed methodology establishes a benchmark performance in the novel aspect-based complaint and sentiment detection tasks based on extensive evaluation. We also demonstrate that our model consistently outperforms all other baselines and state-of-the-art models in both full and few-shot settings. © 2023 Copyright held by the owner/author(s). Publication rights licensed to ACM."
+  },
+  {
+    "article_id": "CS_1916",
+    "title": "A Supervised BERT Model for Identifying Core-Intent Bearing Phrases in e-Commerce Queries",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3627673.3679072",
+    "abstract": "In the realm of e-Commerce, a fundamental problem is accurate interpretation of users' core intent. The intent is often subtly expressed implicitly or stated explicitly with the usage of verbose tokens or key phrases in a user query. In this work, we focus on the later class of problems where we identify a subset of query tokens which are the primary intent bearing phrases that convey explicit intents. We did not solve this as an intent detection problem but rather an immutable component detection problem because we believe that discovering the immutable phrases in a query entails that those are the intent bearing phrases. Furthermore, identifying a certain set of query tokens as immutable ensures better downstream processing in terms of unprecedented token handling, query category detection or query rewrites. We have developed a BERT based supervised learned model which can identify core-intent tokens, thereby improving F1 score over the baseline by over 35%. Furthermore, we integrated our proposed approach for a query recovery strategy which produces approximately 11.9% improvement in offline relevance scores compared to the production model. © 2024 Owner/Author."
+  },
+  {
+    "article_id": "CS_1917",
+    "title": "Research on Hotel Service Quality Management Based on Data Mining of Online Reviews",
+    "journal": "Proceedings of 2025 International Conference on Management Science and Computer Engineering, MSCE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3760023.3760068",
+    "abstract": "The service quality of hotels is an important factor influencing customers’ hotel choices. This study takes the Grand Hyatt Guangzhou as a research case. It uses the Octopus Collector to collect online review texts from Ctrip over the past three years. Then, with the help of ROST CM6 software, it analyzes the online texts, extracts the high - frequency words in customers’ evaluations of the hotel’s service quality, and classifies them into evaluation indicators. Finally, it constructs an evaluation index framework for the service quality of the hotel in this research case. The primary and secondary indicators are as follows: Core Services (service response efficiency, professional qualities of employees, additional services), Facilities and Equipment (functional facilities, maintenance status), Hygiene and Environment (air quality, cleanliness), and Experience and Perception (location convenience, comfort, cost - performance). Furthermore, it analyzes the emotional tendencies of the high - frequency words, explores the positive and negative emotional attributes of customers, and understands customers’ needs and the hotel’s deficiencies. Finally, practical suggestions are put forward, with the expectation of providing reference for the management of hotel service quality. © 2025 Copyright held by the owner/author(s)"
+  },
+  {
+    "article_id": "CS_1918",
+    "title": "AI-Driven Consumer Trust Enhancement in E-commerce: A Dynamic Sentiment-Based Marketing Framework for Cross-Platform Personalization",
+    "journal": "ICEME 2025 - Proceedings of the 2025 16th International Conference on E-business, Management and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3760557.3760601",
+    "abstract": "Artificial Intelligence (AI) transforms e-commerce by leveraging sentiment analysis to uncover consumer preferences, yet its role in trust enhancement remains underexplored. This study proposes a dynamic trust-building framework integrating AI-driven sentiment analysis with trust dimensions (ability, integrity, benevolence) to design cross-platform personalized marketing strategies. Analyzing consumer review datasets from Amazon, Taobao, and eBay, we identify platform-specific sentiment-trust patterns (e.g., Amazon's emphasis on ability, Taobao's on benevolence). The framework tailors marketing interventions, such as transparent quality certifications and service recovery, projecting a 15% trust score increase and 10% conversion uplift based on simulated A/B testing. Incorporating explainable AI (XAI) ensures transparency, while eco-friendly promotions align with sustainable consumption. This study addresses gaps in sentiment-trust integration and cross-platform personalization, offering theoretical insights and practical strategies for e-commerce. © 2025 Copyright held by the owner/author(s)."
+  },
+  {
+    "article_id": "CS_1919",
+    "title": "Design and Profit Allocation in Two-Echelon Heterogeneous Cooperative Logistics Network Optimization",
+    "journal": "Journal of Advanced Transportation",
+    "journal_impact_factor": 1.627,
+    "doi": "10.1155/2018/4607493",
+    "abstract": "In modern supply chain, logistics companies usually operate individually and optimization researches often concentrate on solving problems related to separate networks. Consequences like the complexity of urban transportation networks and long distance deliveries or pickups and pollution are leading problems to more expenses and more complaints from environment protection organizations. A solution approach to these issues is proposed in this article and consists in the adoption of two-echelon heterogeneous cooperative logistics networks (THCLN). The optimization methodology includes the formation of cooperative coalitions, the reallocation of customers to appropriate logistics facilities, and the determination of the best profit allocation scheme. First, a mixed integer linear programing model is introduced to minimize the total operating cost of nonempty coalitions. Thus, the Genetic Algorithm (GA) and the Particle Swarm Optimization (PSO) algorithm are hybridized to propose GA-PSO heuristics. GA-PSO is employed to provide good solutions to customer clustering units' reallocation problem. In addition, a negotiation process is established based on logistics centers as coordinators. The case study of Chongqing city is conducted to verify the feasibility of THCLN in practice. The grand coalition and two heterogeneous subcoalitions are designed, and the collective profit is distributed based on cooperative game theory. The Minimum Cost Remaining Savings (MCRS) model is used to determine good allocation schemes and strictly monotonic path principles are considered to evaluate and decide the most appropriate coalition sequence. Comparisons proved the combination of GA-PSO and MCRS better as results are found closest to the core center. Therefore, the proposed approach can be implemented in real world environment, increase the reliability of urban logistics network, and allow decision makers to improve service efficiency. © 2018 Yong Wang et al."
+  },
+  {
+    "article_id": "CS_1920",
+    "title": "Priority-based cloud computing architecture for multimedia-enabled heterogeneous vehicular users",
+    "journal": "Journal of Advanced Transportation",
+    "journal_impact_factor": 1.627,
+    "doi": "10.1155/2018/6235379",
+    "abstract": "In recent days, vehicles have been equipped with smart devices that offer various multimedia-related applications and services, such as smart driving assistance, traffic congestions, weather forecasting, road safety alarms, and many entertainment and comfort applications. Thus, these smart vehicles produce a large amount of multimedia-related data that require fast and real-time processing. However, due to constrained computing and storage capacities, such huge amounts of multimedia-related data cannot be processed in on-board standalone devices. Thus, multimedia cloud computing (MCC) has emerged as an economical and scalable computing technology that can process multimedia-related data efficiently while providing improved Quality of Service (QoS) to vehicular users from anywhere, at any time and on any device, at reduced costs. However, there are certain challenges, such as fast service response time and resource cost optimization, that can severely affect the performance of the MCC. Therefore, to tackle these issues, in this paper, we propose a dynamic priority-based architecture for the MCC. In the proposed scheme, we divide multimedia processing into four different subphases, while computing resources to each computing server are assigned dynamically, according to the workload, in order to process multimedia tasks according to the multimedia user Quality of Experience (QoE) requirements. The performance of the proposed scheme is evaluated in terms of service response time and resource cost optimization using the CloudSim simulator. © 2018 Amjad Ali et al."
+  },
+  {
+    "article_id": "CS_1921",
+    "title": "An Approach for Discovering Urban Transport Service Problem Based on Hotline",
+    "journal": "Journal of Advanced Transportation",
+    "journal_impact_factor": 1.627,
+    "doi": "10.1155/2023/5667360",
+    "abstract": "This paper presents a methodology for actively discovering knowledge in transport hotline databases by analyzing complaints reported by citizens, aiming to assist transportation management departments in planning actions to investigate and improve service quality. The proposed model uses text mining techniques and applies latent Dirichlet allocation (LDA) to identify topics that are related to transportation services. Consequently, we actively analyzed over 230,000 phone calls occurring in a certain province between 1st January and 31st December 2021. Specifically, we actively analyzed nearly 22,000 phone calls about the taxi industry within a selected city, and identified six topics, including lost and found (27.1%), car blocking (20.6%), attitude and behavior (17.1%), online car-hailing (12.8%), illegal operations (11.2%), and fare issues (11.2%). By actively referring to past and ongoing best practices, we actively recommend several policy implications. The proposed method thus actively transforms the service center record into a customer feedback-based assessment system to intently monitor drivers' professionalism while efficiently addressing customers' complaints and concerns. © 2023 Ruo-yu Wu et al."
+  },
+  {
+    "article_id": "CS_1922",
+    "title": "Social accountability by people with disabilities and barriers to access public services; [Accountability social de pessoas com deficiência e barreiras para o acesso a serviços públicos]",
+    "journal": "Revista de Contabilidade e Organizacoes",
+    "journal_impact_factor": null,
+    "doi": "10.11606/issn.1982-6486.rco.2023.218207",
+    "abstract": "Social accountability may serve as a viable strength to interrogate and engage in discussion regarding the expansion of access for people with disabilities to public services and for social participatory spaces. Based on a case study of the ombudsman hotline for the Brazilian federal highway police, we exemplify how the barriers present in the ombudsman hotline restrict social accountability. We identify by the analysis of published documents and individual complaints from service users that accessibility for people with disabilities is not a central theme in the strategic plan for the police force. Moreover, the adopted online platform for the service users to submit their feedback or complaints within the system reduces the abilities of people with disabilities to exercise social accountability. © 2023 FEA-RP/USP. Todos os direitos reservados."
+  },
+  {
+    "article_id": "CS_1923",
+    "title": "Law and the spirit of inquiry: Essays in honour of Sir Louis Blom-Cooper, QC",
+    "journal": "Law and the Spirit of Inquiry: Essays in Honour of Sir Louis Blom-Cooper, QC",
+    "journal_impact_factor": null,
+    "doi": "10.1163/9789004641167",
+    "abstract": "This rich and fascinating collection of essays, in honour of Sir Louis Blom-Cooper, reflects the high regard in which he is held throughout the world. In his Foreword to the book, Lord Woolf, the Master of the Rolls, emphasises the contribution which Sir Louis has made, `in so many capacities. Of course as an advocate and an eminent Queen's Counsel (both in England and Wales and Northern Ireland); he frequently appeared for those who are disadvantaged against the establishment ... Louis' commitment has been on an international scale and in many of the out-of-the-way parts of the world he has a near-hero status. Not many Queen's Counsel will, for example, have been prepared to make the near 6-week journey to St. Helena to defend a client ... His extraordinary range of writing should not be forgotten. Besides his numerous articles for legal journals, he was the author of many books ... His writing demonstrates not only his erudition but also the breadth of his interests. Alas, not many lawyers or judges share Sir Louis' concern about the literary quality of their writing ... As part of his contribution to justice, I include his Chairmanship of the Press Council ... One of the most difficult and sensitive areas in which to achieve justice arises where the freedom of media and the press come into conflict with the rights of the individual to have his privacy respected ... not only was Sir Louis a distinguished last Chairman of the Press Council, he was responsible for the issue of a Code of Practice which was in some ways the precursor of the Code of the New Press Complaints Commission.' `Louis has also been a great campaigner for law reform. He has many achievements to his credit but I suspect that the cause which was closest to his heart was penal reform. A number of extremely authoritative contributions to this Festschrift therefore focus on some of the areas of reform for which Sir Louis campaigned ... However, it is in connection with the Inquiries that he has conducted that Sir Louis has found the most important outlet for his abundant talents. His creativity, his powers of analysis, his understanding and ability to relate to the public have again and again been called on by the government of the day and other institutions, both in this country and abroad, when matters of great public concern have arisen.' All the distinguished contributors to this Festschrift have known and esteemed Sir Louis in one or more of his multifarious capacities. They and the editors dedicate this volume to this remarkable man with their admiration and warm affection. © Kluwer Law International 1999. All rights reserved."
+  },
+  {
+    "article_id": "CS_1924",
+    "title": "Letting the computers take over: Using Ai to solve marketing problems",
+    "journal": "California Management Review",
+    "journal_impact_factor": 3.768,
+    "doi": "10.1177/0008125619859318",
+    "abstract": "Artificial intelligence (AI) has proven to be useful in many applications from automating cars to providing customer service responses. However, though many firms want to take advantage of AI to improve marketing, they lack a process by which to execute a Marketing AI project. This article discusses the use of AI to provide support for marketing decisions. Based on the established Cross-Industry Standard Process for Data Mining (CRISP-DM) framework, it creates a process for managers to use when executing a Marketing AI project and discusses issues that might arise. It explores how this framework was used to develop three cutting-edge Marketing AI applications. © The Regents of the University of California 2019."
+  },
+  {
+    "article_id": "CS_1925",
+    "title": "Career stage dependent effects of law firm governance: A multilevel study of professional-client misconduct",
+    "journal": "Human Relations",
+    "journal_impact_factor": 2.886,
+    "doi": "10.1177/0018726718796157",
+    "abstract": "Are governance practices employed by professional service firms equally effective in preventing professional-client misconduct for professionals at different stages of their career? Drawing upon professional-agency theory and the literature documenting professional career patterns, we develop a multilevel theoretical model to answer this question. We test our model in the empirical context of the Dutch legal profession, using firm-level survey data on 142 law firms and individual-level archival data from the 2994 lawyers working for these firms to explain 97 formally adjudicated complaints of professional-client misconduct committed by individual lawyers registered with the Amsterdam Bar Association. We find that the ‘orthodox’ distinction between informal behavioral and formal outcome-based governance practices is too course-grained to receive empirical support, and that firm-level governance practices only reduce professional-client misconduct when they are specifically targeted at the career stage of the lawyers employed. Our findings not only allow us to develop a finer-grained version of Sharma’s professional-agency model, but may also be practically useful in developing firm-level governance practices targeted at different strata of professionals. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_1926",
+    "title": "Knocking sovereign customers off their pedestals? When contact staff educate, amateurize, and penalize deviant customers",
+    "journal": "Human Relations",
+    "journal_impact_factor": 2.886,
+    "doi": "10.1177/0018726720950443",
+    "abstract": "Promoted by marketing discourses, customer sovereignty is characterized by the cult of the customer and the belief that contact staff have to serve the customer. However, research shows that customers adopt improper conduct, such as fraudulent or aggressive behaviors. While largely tolerated, these behaviors prove damaging for contact staff and could eventually lead them to react. How do frontline actors react to such behaviors, which prevent them from developing customer relations in accordance with the mythical discourse? This is the question our article explores. To do so, we use Becker’s interactionism approach to deviance, and investigate how frontline actors in five organizations deal with customer complaints they consider as ‘deviant’. Our results show that when faced with behaviors that they no longer wish to tolerate, contact staff educate, amateurize, or penalize the customer. This research contributes by conceptualizing three alternative forms of relations to customer sovereignty, which contact staff attempt to legitimize through internal and external resources. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_1927",
+    "title": "The Unintended Consequence of Price-Based Service Recovery Incentives",
+    "journal": "Journal of Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0022242919859325",
+    "abstract": "Subscription-based service providers (e.g., newspapers, internet services) often issue price-based incentives to recover from service failures. However, because considerable time may pass between when providers issue a recovery incentive and when service contracts are due for renewal, it is unclear whether recovery incentives can improve customer retention in the long run. The authors investigate this question by examining 6,919 contract renewal decisions of newspaper subscribers who received varying levels of recovery incentives after newspaper delivery failures. In contrast to conventional wisdom, they find that recovery incentives are associated with lower contract renewal likelihoods. They rationalize this finding using the economic theory of reference prices and further demonstrate that firms could mitigate the unintended consequence of recovery incentives by reminding subscribers of the original price at touch points following the recovery, discounting the renewal price, and prolonging the duration between the recovery and renewal. The authors also show that the intensity of promotions in the external environment at the time of administering recovery incentives, and that acquiring subscribers by communicating the value of the subscription service, can influence the long-term effectiveness of recovery incentives. For subscription-based service providers, the authors propose a decision support model to optimize recovery and renewal incentives and demonstrate its utility within this empirical context. © American Marketing Association 2019."
+  },
+  {
+    "article_id": "CS_1928",
+    "title": "When and Why Saying “Thank You” Is Better Than Saying “Sorry” in Redressing Service Failures: The Role of Self-Esteem",
+    "journal": "Journal of Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0022242919889894",
+    "abstract": "In their initial recovery efforts after a service failure, service providers need to decide what to communicate to consumers to restore their satisfaction. Prior work has primarily examined apology (saying “sorry”) as a symbolic recovery strategy; the current research suggests appreciation (saying “thank you”) as an alternative, often more effective strategy. Drawing from research on linguistic framing and self-view, the authors reason that the shift of focus in the service provider–consumer interaction, from emphasizing service providers’ fault and accountability (apology) to spotlighting consumers’ merits and contributions (appreciation), can increase consumers’ self-esteem and, in turn, postrecovery satisfaction. Across multiple service failure contexts, Studies 1a–1e establish the superiority of appreciation in redressing service failures. By measuring and manipulating self-esteem and examining the moderating role of narcissism and recovery timing, Studies 2–5 provide converging evidence for consumers’ state self-esteem as the underlying mechanism. Studies 6 and 7 go beyond examining appreciation in isolation and show that it is as effective as recovery messages that combine appreciation and apology (Study 6) and that its superiority over apology holds when service providers combine symbolic and utilitarian recovery (Study 7). © American Marketing Association 2019."
+  },
+  {
+    "article_id": "CS_1929",
+    "title": "Negative Reviews, Positive Impact: Consumer Empathetic Responding to Unfair Word of Mouth",
+    "journal": "Journal of Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0022242920924389",
+    "abstract": "This research documents how negative reviews, when perceived as unfair, can activate feelings of empathy toward firms that have been wronged. Six studies and four supplemental experiments provide converging evidence that this experienced empathy for the firm motivates supportive consumer responses such as paying higher purchase prices and reporting increased patronage intentions. Importantly, this research highlights factors that can increase or decrease empathy toward a firm. For instance, adopting the reviewer’s perspective when evaluating an unfair negative review can reduce positive consumer responses to a firm, whereas conditions that enhance the ability to experience empathy—such as when reviews are highly unfair, when the identity of the employee is made salient, or when the firm responds in an empathetic manner—can result in positive consumer responses toward the firm. Overall, this work extends the understanding of consumers’ responses to word of mouth in the marketplace by highlighting the role of perceived (un)fairness. The authors discuss the theoretical and practical implications of the findings for better management of consumer reviews. © American Marketing Association 2020."
+  },
+  {
+    "article_id": "CS_1930",
+    "title": "Turning Complaining Customers into Loyal Customers: Moderators of the Complaint Handling–Customer Loyalty Relationship",
+    "journal": "Journal of Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0022242920929029",
+    "abstract": "Firms spend substantial resources responding to customer complaints, and the marketing profession has a long history of supporting that enterprise to promote customer loyalty. The authors question whether this response is always warranted or whether its effectiveness instead depends on economic, industry, customer–firm, product/service, and customer segment factors that may alter the firm’s incentives to compete on complaint management. To consider this question, they integrate economic and marketing theories and investigate factors that influence the complaint recovery–customer loyalty relationship via a sample of 35,597 complaining customers spanning a ten-year period across economic sectors, industries, and firms. Overall, the authors find that the recovery–loyalty relationship is stronger in faster-growing economies, for industries with more competition, for luxury products, and for customers with higher satisfaction and higher expectations of customization. Conversely, the recovery–loyalty relationship is weaker when customers’ expectations of product/service reliability are higher, for manufactured goods, and for men compared with women. The authors discuss implications of these results for managers, policy makers, and researchers for more effective management of customer complaints. © American Marketing Association 2020."
+  },
+  {
+    "article_id": "CS_1931",
+    "title": "Complaint Publicization in Social Media",
+    "journal": "Journal of Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00222429211002183",
+    "abstract": "Firms are increasingly turning to social media platforms for complaint handling. Previous research and practitioners’ reports highlight the benefits of complaint handling on social media, urging firms to provide prompt and detailed responses to complaints. However, little research has explored the possible drawbacks of such practices, especially when responses inadvertently further publicize complaints. Utilizing two unique data sets in a series of observational and quasiexperimental analyses, this research provides the first evidence of “complaint publicization” in social media, a phenomenon in which firm responses to complaints on popular social media platforms increase the potential public exposure of complaints. This negative effect can outweigh any positive customer care–signaling impact from firm responses. The authors show that a response strategy that engenders a high level of complaint publicization (e.g., providing detailed responses through multiple communication exchanges with a complainant) could negatively impact perceived quality and firm value, diminish the positive impact of a firm’s own posts, and increase the volume of future complaints. Additional analyses reveal that these adverse impacts are stronger for firms that are targeted by retail investors. The authors also uncover specific response strategies and styles that could mitigate these effects. © American Marketing Association 2021."
+  },
+  {
+    "article_id": "CS_1932",
+    "title": "Complaint De-Escalation Strategies on Social Media",
+    "journal": "Journal of Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00222429221119977",
+    "abstract": "To date, the literature offers multiple suggestions for how to recover from service failures, albeit without explicitly addressing customers’ negative, high-arousal states evoked by the failure. The few studies that do address ways to improve negative emotions after failures focus on face-to-face interactions only. Because many customers today prefer to complain on social media, firms must learn how to effectively de-escalate negative, high-arousal emotions through text-based exchanges to achieve successful service recoveries. With three field studies using natural language processing tools and three preregistered controlled experiments, the current research identifies ways to mitigate negative arousal in text-based social media complaining, specifically, active listening and empathy. In detail, increasing active listening and empathy in the firm response evokes gratitude among customers in high-arousal states, even if the actual failure is not (yet) recovered. These findings provide a new theoretical perspective on the role of customer arousal in service failures and recoveries as well as managerially relevant implications for dealing with public social media complaints. © The Author(s) 2022."
+  },
+  {
+    "article_id": "CS_1933",
+    "title": "Religious Belief, Religious Priming, and Negative Word of Mouth",
+    "journal": "Journal of Marketing Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00222437211011196",
+    "abstract": "This research examines the effects of religious belief and religious priming on negative word-of-mouth (NWOM) behavior. Drawing on social exchange and norm paradigms, the authors theorize and find evidence of the unique effects of religious belief and religious priming on NWOM in everyday service failure encounters. Specifically, they find that religious belief is associated with higher NWOM, driven by a greater sensitivity to violations of fairness norms, which in turn reduces forgiveness. However, exposure to religious priming attenuates NWOM among more religious consumers by reducing sensitivity to violations of fairness norms, which in turn enhances forgiveness. A field study involving over 1.2 million online reviews of actual restaurant experiences, in addition to four lab studies, provides support for the theorized effects. This study sheds light on the religion–forgiveness discrepancy by establishing the mediating role of sensitivity to fairness violations on the relationship between religion and forgiveness in the NWOM context. Further, the results demonstrate the importance of religion as a strategic variable in the management of service failure experiences, providing theoretical implications for the literature on the effects of religion on consumer behavior. © American Marketing Association 2021."
+  },
+  {
+    "article_id": "CS_1934",
+    "title": "Detecting Routines: Applications to Ridesharing Customer Relationship Management",
+    "journal": "Journal of Marketing Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00222437231189185",
+    "abstract": "Routines shape many aspects of day-to-day consumption. While prior research has established the importance of habits in consumer behavior, little work has been done to understand the implications of routines—which the authors define as repeated behaviors with recurring, temporal structures—for customer management. One reason for this dearth is the difficulty of measuring routines from transaction data, particularly when routines vary substantially across customers. The authors propose a new approach for doing so, which they apply in the context of ridesharing. They model customer-level routines with Bayesian nonparametric Gaussian processes, leveraging a novel kernel that allows for flexible yet precise estimation of routines. These Gaussian processes are nested in inhomogeneous Poisson processes of usage, allowing the authors to estimate customers’ routines and decompose their usage into routine and nonroutine parts. They show the value of detecting routines for customer relationship management in the context of ridesharing, where they find that routines are associated with higher future usage and activity rates, and more resilience to service failures. Moreover, the authors show how these outcomes vary by the types of routines customers have, and by whether trips are part of the customer's routine, suggesting a role for routines in segmentation and targeting. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_1935",
+    "title": "Keep It Simple? Consumer Perceptions of Brand Simplicity and Risk",
+    "journal": "Journal of Marketing Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00222437241248413",
+    "abstract": "Evoking simplicity in marketing communications has become popular among marketing practitioners, but little is known about its effects on consumers and firms. The current work focuses on consumers’ perceptions of the simplicity or complexity of brands and a previously overlooked consequence of those perceptions. Results from six experiments and analysis of a proprietary customer satisfaction dataset from Consumer Reports (N = 147,600) show that when consumers think brands are simple, they judge them to be less likely to experience product or service failures. Although these lower risk judgments could be positive for brands, they can also lead consumers to punish simpler brands more in the event of failures. Results also suggest that consumers’ simplicity/complexity perceptions reflect the dimensionality of their mental representations of brands, and the relationship between simplicity and lower risk is attenuated when additional brand dimensionality is framed in terms of redundancy. The findings cast doubt on the degree to which evoking simplicity is a uniformly positive marketing strategy and encourage practitioners to more thoughtfully consider simplicity's implications for consumer and firm welfare. © American Marketing Association 2024."
+  },
+  {
+    "article_id": "CS_1936",
+    "title": "Cross-Channel Effects of Failure in a Retailer's Mobile App",
+    "journal": "Journal of Marketing Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00222437251318660",
+    "abstract": "Failures in omnichannel retailers’ mobile apps can significantly impact shoppers’ purchases. The authors leverage a natural experiment involving an exogenous failure in a large omnichannel retailer's app that made the app unavailable. They examine the impact of the app failure on purchases in both online (website, mobile app) and offline (store) channels using a difference-in-differences approach. The findings show a substantial adverse effect of the app failure on shoppers’ frequency, quantity, and monetary value of purchases, leading to short-term revenue losses of up to $1.08 million, with an additional $1.89 million in potential long-term revenue erosion. The effects are heterogeneous across channels and shoppers. The decline in purchases across channels stems from reduced purchases in stores (vs. online). The decline in store purchases is predominantly explained by the search discontinuation mechanism, wherein shoppers who use the app for search but complete their purchases in stores curtail their offline purchases following the app failure. The effect on purchases in the retailer's online channel is insignificant, aligning with the channel-switching mechanism, wherein shoppers who use the app primarily to purchase simply pivot to another online channel. Furthermore, shoppers with a lower monetary value of past purchases and more recent purchases are more sensitive to an app failure than others. © American Marketing Association 2025"
+  },
+  {
+    "article_id": "CS_1937",
+    "title": "The Impacts of Service Failure and Recovery Efforts on Airline Customers’ Emotions and Satisfaction",
+    "journal": "Journal of Travel Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0047287518789285",
+    "abstract": "Using online customer reviews for airline services, this study examines the impacts of various attributes of airline service failures and subsequent recovery actions on customer consumption emotions, satisfaction, and recommendation likelihood through text mining, sentiment analysis, and path analysis. Findings suggest that causes, magnitude, and consequences of service failures influence customers’ positive and negative emotions. Providing compensation for the current trip, either monetary or nonmonetary, can alleviate customers’ negative emotions, while providing compensation for future travel does not have any impact on emotions. Findings further suggest that positive employee attitudes, behaviors, and prompt service recovery actions generate more positive emotions while alleviating negative emotions compared to compensations provided. Service failures and timely, reliable, and satisfactory recovery actions have greater influences on travelers who fly with full-service airlines and in business class compared with travelers who fly with low-cost airlines and in economy class. Customers’ emotions influence their satisfaction and recommendation likelihood. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_1938",
+    "title": "Beyond a Single Firm and Internal Focus Service Failure/Recovery: Multiple Providers and External Service Recoveries",
+    "journal": "Journal of Travel Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0047287520974443",
+    "abstract": "Moving beyond the traditional focus on single service providers and internal service recoveries, this article extends service failure/recovery research by examining the effect on consumer evaluations and behavior of (1) a series of service failures that involve multiple entities in the creation of customer experiences; (2) an external service recovery, that is, a recovery implemented by a firm other than the one that caused the service failure; and (3) a joint service provider recovery, in contrast to the prevalent focus on a single firm service recovery. Employing two experiments, findings confirmed that a firm unaffiliated with the firm that caused the service failure benefits more from an external service recovery than an affiliated firm. Surprisingly, external recoveries by affiliated entities themselves, and compared to the internal recovery by the entity that caused the failure, did not significantly impact consumer evaluations and behavior. Study implications and future research directions are discussed. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_1939",
+    "title": "Bad Intentions: Customers’ Negative Reactions to Intentional Failures and Mitigating Conditions",
+    "journal": "Journal of Travel Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00472875211044221",
+    "abstract": "Intentional service failures (e.g., overbooking or overcharging) have received little scholarly attention, despite their regular occurrence and immense costs. Using a multi-method approach combining experimental and field data from online reviews, it was found that intentional (vs. unintentional) failures lead to greater negative word of mouth (nWOM) and patronage reduction. This research extends these findings by demonstrating that intentional failures are less harmful when the failure is reversible (vs. irreversible) and occurs at an employee (vs. firm) level. Further, while either psychological (e.g., apology) or monetary compensation is effective in mitigating the consequences of intentional failures at an employee level, a combined service recovery (psychological and monetary) is the best solution when the failure is at a firm level. Drawing on attribution theory, the article unveils the key role of trust (as opposed to justice) as the mechanism to explain the effects of intentionality on customers’ nWOM and patronage reduction. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_1940",
+    "title": "When We Practice to Deceive: Service Worker Manipulation and (Mis)Behavior on Cruise Ships",
+    "journal": "Journal of Travel Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00472875231153126",
+    "abstract": "Studies of service delivery often assume that any deviance from service protocols when interacting with customers is largely due to service worker ineptitude or incompetence; this is particularly the case with customer deception or manipulation. This contrasts with studies which report that service workers frequently act in deviant ways. In tourist settings, service quality is paramount, and any attempts to deceive or manipulate customers is tantamount to service failure. This study explores service worker deception and manipulation on cruise ships through a series of in-depth interviews (n = 50) via the lens of “Deviant Leisure.” This study finds that manipulation is a quotidian practice on cruise ships, including the manipulation by cruise ship frontline employees (including the manipulation of customers, co-workers, subordinates, and superordinates), and the manipulation of cruise ship frontline employees (including manipulation by customers, co-workers, and managers). The paper concludes with a discussion of contributions to theory and practice. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_1941",
+    "title": "Assessing a Model of Customer Rage: Does Customer Entitlement Moderate Relationships Between Rage Emotions, Expressions and Behaviors?",
+    "journal": "Journal of Travel Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00472875231213992",
+    "abstract": "Across travel and tourism services research, studies investigating “customer rage” typically prioritize the direct point-of-consumption, often within airport, airline, or hotel contexts. However, the sector is awash with intermediaries (e.g., travel agencies, insurance brokers, booking platforms), which serve as primary points-of-contact capable of shaping customer expectations. Accordingly, the consequences of service failure therein are nuanced and complex. Yet, extant research often portrays service failure as unilateral (i.e., solely the firm in question’s responsibility), overlooking one core demand-side characteristic: the customer’s sense of entitlement. Thus, while this study draws upon the Iranian travel agency setting (as a service intermediary) to assess a model of customer rage, it also explores whether customer entitlement moderates the relationships between customers’ rage emotions, expressions, and behaviors. Doing so, 736 survey responses were analyzed. Findings demonstrate how customer rage emerges in response to service failure, alongside the conditions under which customer entitlement moderates relationships therein. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_1942",
+    "title": "Airline Social Media Recovery Satisfaction: Has COVID Changed Everything?",
+    "journal": "Journal of Travel Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00472875241228498",
+    "abstract": "This study deals with airlines’ handling of customer complaints pre- and post-Covid 19. Authors extracted airlines’ responses regarding redress, timeliness, apology, credibility, facilitation, and attentiveness and analyzed them pre- and post-pandemic. The results indicate the differential impacts of organizational responses on recovery satisfaction pre- and post-pandemic. Attentiveness (timeliness) had a significant role only pre- (post-) pandemic. Redress, credibility and facilitation remained crucial in both scenarios. Further, pre-pandemic results showed that the impact of organizational responses (credibility, timeliness, and facilitation) on recovery satisfaction was greater for failures associated with core rather than augmented elements of airline service. In the post-pandemic scenario, the impact of organizational responses on consumers’ recovery satisfaction was the same for both categories of service failures. Thus, post-pandemic, airlines may emphasize redress, credibility, timeliness, and facilitation responses in their social media posts for both service failure types. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_1943",
+    "title": "Can a Viral Blunder Damage Auditor Brand Name Reputation? Evidence From Envelopegate",
+    "journal": "Journal of Accounting, Auditing and Finance",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0148558X241264431",
+    "abstract": "“Envelopegate” is a term used to describe PricewaterhouseCoopers’ (PwC)’s service failure that occurred during the 2017 Academy Awards ceremony (“the Oscars”). For PwC, the error resulted in immediate and unprecedented negative publicity, which was driven by a viral response on social media and other online media platforms. Thus, Envelopegate offers a unique opportunity to observe the potential spillover effects of negative viral events on the brand name reputation of an audit firm. Using intraday and daily client stock returns, we find a significant negative market response for PwC audit clients within the first minute of trading on the day following Envelopegate. The negative market effect is driven by clients with higher demand for auditor reputation, but we find no evidence that results are driven by any specific audit market region. Thus, our research underscores the susceptibility of an audit firm’s brand value to negative viral events, even when the event is unrelated to audit services. The findings of this study should be of interest to scholars exploring how audit firms form and maintain reputations as well as to professional service firms that engage in highly visible client services as part of their strategic efforts to enhance brand value. © The Author(s) 2024"
+  },
+  {
+    "article_id": "CS_1944",
+    "title": "More Than Meets the Eye: The Role of Immigration Background for Social Identity Effects",
+    "journal": "Journal of Management",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0149206320929080",
+    "abstract": "The number of immigrants worldwide has grown rapidly in recent years, and their integration poses challenges, such as cultural and language barriers, for organizations and societies. Securing and maintaining employment is a key challenge for immigrants, yet management research has devoted little attention to migration. We aim to contribute to the emerging literature on this topic by utilizing a multistudy approach with objective and time-lagged field data from 14,327 mail carriers nested in 737 units of a large Swiss logistics firm and an experimental audio vignette study with 262 participants from the United Kingdom. We investigate whether (in)congruence in terms of immigration background between employees and customers is linked to customer complaints. Controlling for service quality, we find that both congruence scenarios (both or neither migrants) are associated with fewer complaints, the latter suggesting that migrants identify with each other despite national and cultural differences. Results from the two incongruence scenarios show increased complaints. In Study 1, we find that units that receive more complaints experience higher rates of voluntary employee withdrawal behaviors (short-term absenteeism and voluntary turnover), highlighting how unfair customer complaints can hurt organizations twice, by increasing the risk of loss in both customers and employees. In Study 2, we replicate the immigrant identity effect at the individual level and find that social attraction mediates the (in)congruence–complaints link. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_1945",
+    "title": "Evolutionary strategies in live-streaming e-commerce: A four-player game model analysis",
+    "journal": "Human Systems Management",
+    "journal_impact_factor": 2.045,
+    "doi": "10.1177/01672533251317071",
+    "abstract": "Background: Live-streaming e-commerce has boomed during the COVID-19 pandemic, leveraging short video platforms to fulfill social and shopping needs. However, its development is hampered by issues like misleading advertising by hosts, weak consumer protection, and inadequate platform oversight. Objective: This study aims to address these challenges and propose solutions for a healthy live-streaming e-commerce ecosystem. Methods: A four-player game model is constructed, considering interactions between live-streaming hosts, consumers, platforms, and suppliers. MATLAB is employed to analyze the model and identify optimal strategies for each player. Results: The model demonstrates that government regulation is essential. It incentivizes positive behavior from platforms and hosts while balancing consumer protection with potential misuse of complaint systems. Conclusions: Without government regulation, the live-streaming e-commerce industry cannot develop sustainably. This research highlights the importance of a multifaceted approach, including reducing consumer protection costs and implementing proactive government regulations for both platforms and hosts. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_1946",
+    "title": "HDFC Life: A Consumer’s Quest for Justice",
+    "journal": "Vikalpa",
+    "journal_impact_factor": null,
+    "doi": "10.1177/02560909231165614",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_1947",
+    "title": "DESerting clients? A Study Investigating Evidence-based Measures Supporting the Long-term Employment of Neurodiverse Australians",
+    "journal": "Management and Labour Studies",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0258042X19882519",
+    "abstract": "Employment outcomes for Australians with disability are weak and worsening. Aiming to assist in better understanding and redressing this troubling policy issue, this investigative research aims to (a) determine as to whether or not a significant relationship exists between disability type (i.e., physical or psychiatric) and long-term employment; and (b) identify evidence-based measures that might assist to improve the long-term employment of neurodiverse disability employment services (DES) clients. Addressing the first of these aims, an IBM SPSS-based chi-square analysis was conducted utilizing disability employment data sourced from the Australian Government. Targeting the second aim, a literature search was conducted utilizing Google Scholar, and thematic analysis was, then, applied on the results of this enquiry. Results of the chi-square analysis reveal that a DES client’s disability type appears to be associated with whether or not they attain long-term employment. From the 79 possibly relevant articles obtained from the Google Scholar enquiry, 13 were deemed relevant after applying the inclusion criteria. Thematic analysis constructed themes of resourcing, personalized support and education. In addition to offering a good practice employment guide based upon these themes, the study concludes by challenging Australian policymakers to consider the kinds of DES provider results that might not warrant reward. © 2019 XLRI Jamshedpur, School of Business Management & Human Resources."
+  },
+  {
+    "article_id": "CS_1948",
+    "title": "How does information technology-based service degradation influence consumers’ use of services? An information technology-based service degradation decision theory",
+    "journal": "Journal of Information Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0268396219856019",
+    "abstract": "Information technology is crucial for modern services. Service delivery may include a complex mix of information technology and telecommunication providers, global networks and customers’ information technology devices. This research focuses on service failures that are caused by information technology problems, which we conceptualize as information technology-based service degradation (ITSD). When information technology-based service degradation occurs in a modern service, the information technology problem may originate from the service provider, another partner or any information technology equipment involved. But the customer may not be able to pinpoint the source of the problem immediately. We argue that existing research can only partially explain customers’ behavior following information technology-based service degradation; current research cannot account for the way in which information technology characteristics in information technology-based service degradation influence customers’ decisions to continue using or rejecting the service. To fulfill this gap, we interviewed information technology-based services’ customers. Our interviews suggest that the reasons affecting customers’ behavior may change and have differing importance during the information technology-based service degradation experience. We theorized the information technology-based service degradation experience into five stages: blaming, bypassing, tolerating, abandoning and overcoming. The first two stages contain stage-specific factors influencing the progression of service usage, and the final three stages contain stage-specific factors that matter in the decision to use or quit the service. As a new contribution, we propose a stage theory for explaining customers’ behavior following information technology-based service degradation. Our results outline new research directions in information technology-based service degradation, including further testing and refinement of our proposed theory in the case of different services. For service providers, our findings provide new information for improving service recovery strategies to keep customers engaged. © Association for Information Technology Trust 2019."
+  },
+  {
+    "article_id": "CS_1949",
+    "title": "Procedural Justice and the Unintended Role of Street-Level Bureaucrats in Prompting Citizens to Act as Vigilantes",
+    "journal": "American Review of Public Administration",
+    "journal_impact_factor": null,
+    "doi": "10.1177/02750740221148192",
+    "abstract": "What role do the perceptions of clients about the procedural justice that street-level bureaucrats (SLBs) use when implementing policy play in prompting citizens to engage in vigilante actions? Using qualitative methods, we examine the unintended effects of SLBs’ implementation of policy on citizens’ vigilantism. We contribute to the literature by showing that procedural justice on the street level is in fact an important factor in citizens’ decisions to act as vigilantes. Our findings identified three significant factors in these decisions: the citizens’ ability to voice their complaint, the sense that they were treated respectfully and their trust that the police officers would do what they could to deal with their complaint. Furthermore, we also demonstrated that citizens and SLBs do not share the same perceptions of the role of the police as service providers, and that this gap increases citizens’ motivations to act independently. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_1950",
+    "title": "Macromarketing Metrics of Consumer Well-Being: An Update",
+    "journal": "Journal of Macromarketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0276146720968096",
+    "abstract": "This commentary updates much of the research related to the various constructs and metrics of consumer well-being. Specifically, I review the research to date concerning several conceptualizations and metrics of consumer well-being from both public and academic sectors. Public sector metrics include Cost of Living, Total Consumption Expenditure, Consumer Complaint, and Quality. Selected contributions to consumer well-being metrics from the academic sector include Shopping Satisfaction, Shopping Well-Being, Possession Satisfaction, Acquisition/Possession Satisfaction, Consumption Life Cycle, Community, Need Satisfaction, Perceived Value in Life, and Bottom-up Spillover. I then provide some thoughts about how these metrics can be improved and ideas that may spur future research. In doing so, I address issues related to construct validity to public sector metrics by demonstrating association with human development measures. Metrics from the academic sector can also be improved by testing association with newly established constructs of well-being (e.g., eudaimonia, social well-being) and introducing moderating effects of individual differences (e.g., consumer involvement, consumer lifestyle) as well as product-related differences (e.g., experiential versus material consumption; marketplace activities related to luxury versus nonluxury goods and services; and products beneficial to society versus “sin” products). © The Author(s) 2020."
+  }
+]

@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1301",
+    "title": "Information-centric publish-subscribe mechanisms for Intelligent Transportation Systems",
+    "journal": "Proceedings - 2017 IEEE International Conference on Service Operations and Logistics, and Informatics, SOLI 2017",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SOLI.2017.8120994",
+    "abstract": "Emerging services for Intelligent Transport Systems put the information content at the centre of the communication process, require a seamless support of mobile users, and target a real-time and asynchronous data dissemination. The Information-Centric Networking paradigm has all the potentials to fulfill these requirements, thanks to its ability to distribute contents through publish-subscribe communication mechanism, also in mobile conditions. Unfortunately, most of publish-subscribe models proposed in the literature consider static scenarios. The work presented herein formulates two publish-subscribe schemes, based on the pull-based and push-based approaches, discusses their behavior through simplified examples, and evaluates the communication overhead they incur in realistic scenarios through computer simulations. © 2017 IEEE."
+  },
+  {
+    "article_id": "CA_1302",
+    "title": "Chat2Code: A Chatbot for Model Specification and Code Generation, the Case of Smart Contracts",
+    "journal": "Proceedings - 2023 IEEE International Conference on Software Services Engineering, SSE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SSE60056.2023.00018",
+    "abstract": "The potential of automatic code generation through Model-Driven Engineering (MDE) frameworks has yet to be realized. Beyond their ability to help software professionals write more accurate, reusable code, MDE frameworks could make programming accessible for a new class of domain experts. However, domain experts have been slow to embrace these tools, as they still need to learn how to specify their applications' requirements using the concrete syntax (i.e., textual or graphical) of the new and unified domain-specific language. Conversational interfaces (chatbots) could smooth the learning process and offer a more interactive way for domain experts to specify their application requirements and generate the desired code. If integrated with MDE frameworks, chatbots may offer domain experts with richer domain vocabulary without sacrificing the power of agnosticism that unified modelling frameworks provide. In this paper, we discuss the challenges of integrating chatbots within MDE frameworks and then examine a specific application: The auto-generation of smart contract code based on conversational syntax. We demonstrate how this can be done and evaluate our approach by conducting a user experience survey to assess the usability and functionality of the chatbot framework. The paper concludes by drawing attention to the potential benefits of leveraging Language Models (LLMs) in this context. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1303",
+    "title": "Investigation of new features of the virtual semantic environment prototype in the development and application of infrastructure of highly automated and intelligent transport systems",
+    "journal": "Proceedings - 2020 2nd International Conference on Control Systems, Mathematical Modeling, Automation and Energy Efficiency, SUMMA 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SUMMA50634.2020.9280633",
+    "abstract": "The report presents recommendations for system integration of modern information and communication technologies and automation tools with transport infrastructure, vehicles and user services based on a prototype of a virtual semantic environment. The accompanying system changes, aimed at providing a set of innovative services for various modes of transport, are presumably designed at achieving sustainable mobility through improving the efficiency, safety and environmental friendliness of the transport process and improving the infrastructure of highly automated and intelligent transport systems. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1304",
+    "title": "Solving the Regional Power Grid Restoration Problem with the Prototype of the Hybrid Intelligent Multi-Agent System of Heterogeneous Thinking",
+    "journal": "Proceedings - 2020 2nd International Conference on Control Systems, Mathematical Modeling, Automation and Energy Efficiency, SUMMA 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SUMMA50634.2020.9280796",
+    "abstract": "The practical problem solving process in dynamic environments, besides, is characterized by a lack of time for decision-making, the interdependence of the performed actions and the complexity of correcting erroneous decisions. The traditionally applied collective problem solving in such conditions is ineffective, because by the time the agreed decision is made it becomes irrelevant. In this regard, it is necessary to develop informational intelligent systems capable of relevantly simulating the collective reasoning of experts and offering recommendations to the user of the systems, reducing the time of his reaction to events occurring in the control object. For these purposes, hybrid intelligent multi-agent systems of heterogeneous thinking have been proposed. In this paper, the use of the laboratory prototype of such a system to solve one of the problems with dynamic environment is considered, namely regional power grid restoration planning after large-scale emergencies. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1305",
+    "title": "The Design of a Decision Support System for Computation of Carsharing Pricing Areas and Its Influence on Vehicle Distribution",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2020.3028997",
+    "abstract": "Carsharing offers an ecologically friendly alternative to private car ownership, helping alleviate urban mobility problems and pave the way to a sustainable future for transportation. However, several obstacles in carsharing service management must be overcome in order to take full advantage of its potential as a mainstream mode of transportation. Among others, substantial barriers to involvement include challenges of vehicle supply and demand management. Against this background, in this article, we develop decision support system for the construction of pricing areas via a design science research approach. The pricing areas influence user rental behavior by adding a fee for returning vehicles in low-demand areas and granting a discount for returning vehicles in high-demand areas. To evaluate the output of the decision support system, a set of constructed pricing areas was tested for one year in a real-world car sharing system. The results reveal that pricing areas reduce the need for vehicle relocations while facilitating better vehicle availability. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1306",
+    "title": "Why Do People Use Artificial Intelligence (AI)-Enabled Voice Assistants?",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2021.3117884",
+    "abstract": "Artificial-Intelligence-enabled voice assistants, such as Alexa and Siri, are increasingly replacing search engines as consumers actively employ the former to accomplish a variety of their day-to-day tasks. Technology providers as well as marketers increasingly work to leverage the use of voice assistants to engage their customers and offer them more personalized value propositions. This article examines the various consumption values associated with the use of voice assistants. Based on a theoretical framework rooted in the 'theory of consumption values' (TCV), we undertake a mixed-methods approach that comprises interviews with experts (n = 5) and consumers (n = 30) as well as a cross-sectional survey with active users of voice assistants (n = 371). The article considers five consumption values - social identity, convenience, personification, perceived usefulness, and perceived playfulness - and two types of usage of voice assistants - information search and task function. Our findings contextualize and extend the TCV framework using voice assistant technology and obtain empirical support for the interrelation of consumption values. We find that social identity and personification have a strong positive association with both usefulness and playfulness. Furthermore, usefulness and playfulness are positively associated with information search and task function. In addition, trust and frequency of use significantly (and positively) moderate the association between usefulness and usage of voice assistants. Technology providers and marketers can capitalize on these findings to develop various voice-enabled applications and services that enhance the consumer experience and consumer engagement. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1307",
+    "title": "Chatbot Adoption: A Multiperspective Systematic Review and Future Research Agenda",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2023.3298360",
+    "abstract": "Studies on Chatbot adoption are gaining traction across different fields. Previous studies have outlined several drivers of Chatbot adoption through the lenses of various technology adoption theories. However, these studies have not been thoroughly reviewed and synthesized. Therefore, this article aims to analyze the technology adoption theories, antecedents, moderators, domains, methodologies, and participants through a multiperspective viewpoint. Out of 3942 studies collected, 219 studies were analyzed. The main findings indicated that the technology acceptance model, social presence theory, and computers are social actors are the main dominant theories in explaining Chatbot adoption. Most studies focused on examining the usage intention of Chatbots, with limited investigations on actual use and continuous intention. Nearly 63% of the analyzed studies did not employ moderators, and those that did tend to do so most frequently focused on gender, Chatbot/technical experience, and age. This article presents a fresh viewpoint that deepens our understanding of Chatbot adoption and proposes several agendas for future research. The agenda incorporates research directions for Chatbots adoption in general and generative artificial intelligence in specific. It also offers several theoretical contributions and provides relevant information to Chatbot developers, decision-makers, practitioners, IT vendors, and policymakers. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1308",
+    "title": "Light Trumps Shadow? How Generative AI Agent’s Language Arousal Influences Users’ Interactive Willingness: Evidence From Multimodal Analysis",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2025.3608461",
+    "abstract": "This study investigates how language arousal in generative AI systems influences users’ interaction willingness, examining the roles of social identity and visual atmosphere. Drawing on the limited capacity model of motivated mediated message processing (LC4MP) and social identity theory, we constructed a theoretical model integrating language arousal, social identity, visual atmosphere, and interaction willingness, and analyzed 8809 interactions from Character. AI using multimodal methods combining linguistic analysis and visual processing. Our findings reveal that high-arousal language significantly increases interaction willingness, with social identity mediating this relationship. Most notably, we discovered a “psychological defense-curiosity paradox”: shadow visual atmospheres, despite triggering initial defensive reactions, enhance engagement more effectively than light atmospheres, challenging conventional “brighter is better” design assumptions. This research advances theory by repositioning language arousal as a direct causal variable in AI interaction, extending cognitive processing models to human–AI contexts, and demonstrating how visual elements strategically modulate psychological responses. These insights provide valuable direction for developing emotionally intelligent AI systems that effectively balance linguistic stimulation and visual atmosphere to create more engaging human–AI experiences. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1309",
+    "title": "Emotional Resonance and Self-Esteem: The Role of Humanlike Competencies From Mental Health Chatbots",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2025.3625427",
+    "abstract": "The rapid diffusion of artificial intelligence (AI) is accelerating the adoption of mental health chatbots (MHCs) as scalable tools for psychological support. Grounded in media naturalness theory (MNT) and computers are social actors paradigm, this study empirically investigates how MHCs’ humanlike competencies—cognitive, relational, and emotional—influence users’ self-esteem (termed AI-enabled self-esteem), through the mediating mechanism of emotional resonance. We conducted an online survey in Credamo and obtained 451 valid responses from experienced MHC users. Using a hybrid approach that combines structural equation modeling (SEM) and necessary condition analysis, we found that all three humanlike competencies positively predict emotional resonance and are identified as its necessary conditions. Emotional resonance, in turn, is positively associated with AI-enabled self-esteem. Notably, relational competency demonstrates the strongest effect on emotional resonance, challenging the common emphasis on emotional competency in human–chatbot interaction (HCI) design. Furthermore, the ordinary least squares regression corroborates the SEM results, and mediation analyses indicate a partial mediating role of emotional resonance, validating the robustness of our results. This study advocates for the design and adoption of MHCs with humanlike competencies. It also contributes to theoretical discourse on HCI literature and offers actionable guidance for MHC design and development. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1310",
+    "title": "The Impact of Blockchain Implementation on Received and Provided Trade Credit",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2025.3640643",
+    "abstract": "Trade credit is a financing tool used in supply chain management. Blockchain can improve transparency among transaction parties and reduce transaction costs through consensus mechanisms and automation, offering a more efficient solution for managing trade credit. This study investigates how and to what extent blockchain affects trade credit. The empirical analysis is based on data from firms listed on the Shanghai and Shenzhen stock exchanges (A-share market) during the period 2015–2022. The results show that blockchain implementation reduces received trade credit from suppliers, whereas it increases provided trade credit to customers. A series of robustness procedures—including alternative variable constructions, lagged specifications, alternative identification strategies, and placebo-based Monte Carlo simulations—confirm the validity and stability of the empirical findings. This study further investigates the mechanisms of how blockchain implementation affects trade credit. The results show that blockchain implementation further reduces received trade credit from more centralized suppliers. In addition, the results also indicate that more trade credit will be provided to customers with a higher level of demand uncertainty. This study offers a comprehensive view of how firms utilize blockchain to improve trade credit efficiency. Managerial implications based on the research findings are also provided. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1311",
+    "title": "Managing Coupled Electricity and Carbon Markets: A Multi-Agent Equilibrium Perspective",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2026.3653209",
+    "abstract": "Clarifying the interaction between electricity and carbon markets is critical for coordinated market design and the low-carbon transition. However, most existing studies treat carbon prices as exogenous and overlook electricity consumers, thereby limiting explanatory power for real-world market dynamics. This study fills these gaps by developing a unified framework to examine the endogenous, bidirectional linkages between the two markets. Specifically, we construct a multi-agent decision-making model that incorporates the production, consumption, and abatement decisions of both producers and consumers. The results show that electricity and carbon prices have asymmetric effects on firm behavior, with carbon prices playing a central role in shaping abatement. Social welfare exhibits an inverted-U-shaped relationship with the allowance cap, suggesting the need for policymakers to calibrate cap levels within a welfare-enhancing range and to introduce stabilization mechanisms to prevent price collapses. Under a fixed cap, reallocating allowances between producers and consumers does not alter the carbon price, emissions, or welfare, with carbon costs passed through to electricity prices. Furthermore, benchmark allocation delivers stronger emission-reduction incentives than historical allocation and increases social welfare by up to 70%, underscoring its policy superiority. Methodological rigor is established through a suite of verification procedures, including 10000 Monte Carlo simulation runs calibrated with real market data, multi-parameter sensitivity and scenario analyses, and confidence interval evaluations, thereby demonstrating the statistical stability of equilibrium outcomes. Overall, this research offers theoretical and practical insights for improving the efficiency, stability, and decarbonization effectiveness of coupled electricity and carbon markets. © 2026 IEEE."
+  },
+  {
+    "article_id": "CA_1312",
+    "title": "Module-Targeted AI Chatbot Deployment and Counselors’ Prosocial Contributions in Online Health Community",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2026.3656422",
+    "abstract": "Strategically introducing artificial intelligence (AI) chatbots into online health communities (OHCs) to foster user engagement has become increasingly common, but it also creates competitive pressure and replacement risks for professional counselors who make similar prosocial contributions. We investigate how module-targeted AI chatbot deployment affects professional counselors’ prosocial contributions across a focal module (with AI deployment) and another neighbor module (without AI deployment). We developed a theoretical framework by integrating Protection Motivation Theory with the displacement effect, validating our conjectures using a longitudinal dataset from a leading Chinese OHC. Utilizing a difference-in-differences (DID) approach with rigorous robustness checks, we find that AI deployment significantly bolstered counselors’ prosocial contributions in the focal module, while neighbor module activity remained stable. The key mechanism underlying counselors’ heterogeneous responses lies in individual competence rather than economic incentives. Specifically, high-competence counselors exhibited a pronounced bifurcated response: they amplified both the quantity and semantic quality of their contributions in the focal module, while simultaneously retrenching along both dimensions in the neighbor module. Our findings reveal how counselors adapt their prosocial efforts when AI is deployed in a specific module and the displacement effects caused by such asymmetric intervention, providing practical insights for platform managers to deploy module-targeted AI chatbots effectively. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1313",
+    "title": "Embedding CAs in Organizational Ecosystems: Accomplishments and Future Research",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2026.3675417",
+    "abstract": "Conversational Agents (CAs), such as chatbots and voice assistants, are increasingly integrated into organizational processes, yet research remains fragmented. We conduct a literature review from 2015 to June 2025 across leading information systems journals to examine CA application and governance within organizational contexts. We synthesize and analyze the articles along three interconnected dimensions: (1) CA application and affordance, outlining how CAs are designed and deployed across diverse organizational functions; (2) user perception and experience, showing how the user-agent interactions elicit users' cognitive and affective responses that ultimately drive CA success or failure; and (3) outcomes and ethics in relation to CA governance, revealing CAs' tangible impacts and inherent ethical tensions. Synthesizing these insights, we discuss the evolution of CAs from peripheral assistants to core service providers, a trajectory defined by collaboration and tensions inherent in human-CA partnerships. We present an integrative framework that positions CAs as strategic organizational capabilities, highlighting the anthropomorphism dilemma in CA design and the trust and autonomy paradoxes in human-CA collaboration. Our research presents a roadmap outlining future directions of conversational technologies and provides actionable guidelines for practitioners seeking to embed CAs effectively, ethically, and sustainably within complex organizational settings. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CA_1314",
+    "title": "Development of an Unmanned Ground Vehicle for Pesticide Spraying in Chilli Crop",
+    "journal": "Proceedings of 2023 IEEE Technology and Engineering Management Conference - Asia Pacific, TEMSCON-ASPAC 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCON-ASPAC59527.2023.10531348",
+    "abstract": "Chilli (Capsicum annum L.) is most widely grown commercial and famous spice exported from India contributing about 25 per cent of the world's total production. The present work is an endeavor to develop a low-cost Unmanned Ground Vehicle (UGV) for pesticide spraying in chilli field. To arrive at the specifications of the UGV, detailed literature survey and field visit was done to collect various information related to manual spraying techniques, motion control of UGV, the proposed project which is used for small scale land hold farmers they were having a land of 1 acre, according to the field visit. Even the UGV is used maximum 2 to 3 acre it is capable of spraying in chilli crop field. Once the UGV is turned on, ESP-32 starts to initialize Wi-Fi connection with mobile hotspot and if the hotspot connection is establishing the UGV is online with the blynk application which is ready to send video stream and at some time accept user input, in blynk application there are input buttons to control UGV which are movements steering, pump on and off actions, forward, and backward motions, When user press any of the buttons the value of the button is sent to ESP32 Cam where it compares the output and performs the required actions like steering movements and pump control spraying operation. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1315",
+    "title": "Revolutionizing Retail: Empowering Personalized Shopping with Advanced Algorithms",
+    "journal": "Proceedings of 2023 IEEE Technology and Engineering Management Conference - Asia Pacific, TEMSCON-ASPAC 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCON-ASPAC59527.2023.10531538",
+    "abstract": "Artificial intelligence and machine learning are bringing mass customization to the retail sector. These tools allow stores to improve customer service, streamline operations, and increase sales by analyzing massive volumes of consumer data. Knowing and anticipating what customers will want is essential for large-scale customization. A customer's purchase history, browsing habits, and social media activity may all be analyzed by AI and ML algorithms to produce highly accurate profiles. With this information, stores may better serve their customers by recommending and offering relevant products and creating targeted marketing campaigns. With the help of AI and ML, businesses can implement dynamic pricing strategies that adapt in real time to changing market conditions, supply and demand, and client preferences. This makes sure stores can maximize profits while maintaining competitive pricing. In addition to aiding in cost reduction and efficiency gains, these technologies' predictive capabilities are useful in demand forecasting, inventory management, and supply chain optimization. Chatbots and virtual assistants driven by AI allow for around-the-clock, individualized service for customers. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1316",
+    "title": "A robust methodology for building an artificial intelligent (AI) virtual assistant for payment processing",
+    "journal": "2019 IEEE Technology and Engineering Management Conference, TEMSCON 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCON.2019.8813584",
+    "abstract": "The evolution of business interactions with customers has defined a new paradigm of human-machine interaction through AI enabled conversations. In such scenarios, the machine interacts with the human (also referred to as customers) by applying NLP, NLU and NLG techniques that are used to process, understand and generate. dynamic and rapidly changing course of conversations to keep it meaningful and within context. With the changing landscape, today's NLU and NLP components are supported by the latest deep learning algorithms, making them highly palatable of understanding customers intent, forming a cogent response, or taking an appropriate action than was possible in the recent past. But such sophisticated techniques require good quality of sample examples to learn. In this work, we discuss a step-by-step approach to enhance and enable the NLU behind the AI virtual assistant to robustly interpret customers utterances. As a system for interaction, we developed an AI virtual assistant for a payment process to help customer process the due amount in invoice, which is an integral part of several industries, like Banking, Utilities, Telcos, Retailers, etc. We tested our model by processing sample interactions of which a significant percentage of interactions (approximately 75%) went through finishing the intended task of completing the payment. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1317",
+    "title": "The Role of AI Chatbots in Mental Health Related Public Services in a (Post)Pandemic World: A Review and Future Research Agenda",
+    "journal": "2022 IEEE Technology and Engineering Management Conference: Societal Challenges: Technology, Transitions and Resilience Virtual Conference, TEMSCON EUROPE 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCONEUROPE54743.2022.9801962",
+    "abstract": "The purpose of this paper is to explore the advances in artificial intelligence (AI) chatbots as part of public services, mainly when applied to mental health in today's post-pandemic world. The adoption of AI chatbots to keep up with basic customer support business activities is based on extensive knowledge, both from the hard (software development) and the soft side (increasing the added value to the service/product). However, using chatbots as extenders of public services to support mental health in pandemic times is an emerging research topic. Hence, the paper identifies niche and under-explored research gaps in state-of-the-art literature, thus contributing to the body of academic knowledge. The paper adopts a design science approach to formulate the problem statement, articulate the objectives of target solutions, and propose a design and development framework for future mental health chatbots by employing an extensive literature review. Findings from this paper emphasize considerations of ethical issues and governance, purposeful and goal-oriented design, and AI-based technology as critical enablers for designing new mental health chatbots. The paper contributes to the knowledge by providing clear and structured future research priorities and offers a framework for designing more effective and intelligent mental health chatbots that public organizations and managers may find useful. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1318",
+    "title": "MediBot: Intelligent virtual assistant for personalized medical care and guidance",
+    "journal": "2024 IEEE Technology and Engineering Management Society, TEMSCON LATAM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCONLATAM61834.2024.10717706",
+    "abstract": "Medibot is a virtual medical assistant that uses artificial intelligence tools to understand user symptoms and provide medical recommendations. The system can respond in voice or text and allows for the storage of diagnostic images and medical exams in PDF format. The paper outlines the design process, evaluation, and highlights of Medibot that is a cloud-based service available 24/7 to users. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1319",
+    "title": "EverydAI: Redefining Everyday Decision-Making Through AI-Powered Assistance",
+    "journal": "TEMSCON LATAM 2025 - Technology and Engineering Management Society Conference",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCONLATAM65810.2025.11238565",
+    "abstract": "In an era of information overload, Artificial Intelligence (AI) plays a crucial role in facilitating everyday decision-making. This paper presents EverydAI, a virtual AI-powered consultant designed to assist users in making informed choices across various daily life scenarios. By integrating object detection, augmented reality, natural language processing, and recommendation systems, EverydAI provides personalized recommendations and insights tailored to user needs. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1320",
+    "title": "A Systematic Review of Ml in Its: a Taxonomy From Traditional Models to Federated Learning",
+    "journal": "TEMSCON LATAM 2025 - Technology and Engineering Management Society Conference",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCONLATAM65810.2025.11238690",
+    "abstract": "Intelligent Transport Systems (ITS) have advanced significantly with the incorporation of machine learning (ML), enhancing vehicular operations, traffic management, and user-centric services. In this study, we present a systematic literature review (SLR) of recent ITS proposals, examining both traditional ML-based applications and those leveraging federated learning (FL). We categorize these applications into three functional areas-road, vehicle, and user-and further distinguish them as 'system' (focusing on architectural and operational details) or 'model' (emphasizing algorithmic and computational aspects). Additionally, we analyze existing FL-based ITS frameworks, highlighting their architectural choices. This taxonomy clarifies each subdomain's requirements, while the descriptive architectural analysis serves as a basis for evaluating potential transitions from centralized ML to federated approaches. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1321",
+    "title": "Literature Review on Use of Chatbots as an Internal Work Tool in Organizations",
+    "journal": "TEMSCON LATAM 2025 - Technology and Engineering Management Society Conference",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCONLATAM65810.2025.11238965",
+    "abstract": "Chatbots are increasingly recognized as powerful tools in organizational contexts, yet academic literature has largely concentrated on their external, consumer-facing applications. This systematic literature review assesses the extent of research dedicated to internal chatbot applications aimed at enhancing employee productivity, reducing costs, and optimizing operational processes. A sample of 500 articles from the IEEE Xplore database, classified using advanced Natural Language Processing (NLP) models (GPT-3.5 Turbo, GPT-4o mini, GPT-40, and BART), revealed a significant research gap: only 17% of articles focus on internal applications, while 83% prioritize external uses such as customer service. The analysis further demonstrated the superior accuracy of the GPT-4o model in classifying chatbot application types, indicating a potential methodological direction for future research. This study highlights the under-explored potential of chatbots as internal tools within organizations and suggests avenues for future investigation into their application and effectiveness. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1322",
+    "title": "Mobile Based Application for Tea Leaf Disease Detection",
+    "journal": "3rd IEEE International Conference on Technology, Engineering, Management for Societal Impact using Marketing, Entrepreneurship and Talent, TEMSMET 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSMET56707.2023.10149957",
+    "abstract": "Tea plant leaf diseases are one of the grand challenges that face in agriculture sector worldwide. In India approximately 20% to 30% of the leaves are lost due to various diseases each year. Tea leaf disease identification is challenging for limited-resources farmers if performed through optical observation of plant leaves symptoms. Therefore, it is important to catch the spread of the disease can spread of the disease in its early stage before they reach epidemic proportion otherwise the disease can spread quickly throughout the entire plantation resulting in huge losses for the farmers. To aid the farmers in the crucial task of identifying tea leaf diseases in its early stage. it is practical to have an intelligent system for detection,identification and classification system in place as a preventive measure. This proposed model is a ML powered mobile based system to automate the plant leaf disease diagnosis process. The developed system uses CNN for feature reduction and classifying five diseases categories. The user interface is developed as a mobile application, allowing farmers to capture a photo of the infected Tea plant leaves. Captured image is then uploaded into the Database and then into the algorithm by specifying image path.It then displays the disease category and symptoms of disease along with the confidence percentage.This solutionwill be user friendly and will perform in an effective and efficient manner. It is expected that this system would create a better opportunity for farmers to keep their crops healthy and eliminate the use of wrong fertilizers that could stress the plants. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1323",
+    "title": "Intelligent System Luggage Lock Using NFC and NiMH Battery Supply",
+    "journal": "Proceedings of the 2024 IEEE International Conference on Technology, Informatics, Management, Engineering and Environment, TIME-E 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TIME-E62724.2024.10919780",
+    "abstract": "One of the major problems during trips, especially by plane, is the security of our luggage. Classic locks deteriorate quickly due to their handling process on the conveyor belt and when loading and unloading them in and out of the plane. Since people travel increasingly by plane, they want to use their luggage for as long as possible, on as many flights as possible. For this reason, new solutions are being sought for the classic solutions of luggage locks. In this work submitted, we presented the design and implementation of a new concept for luggage locks based on modern electronics and mechanics elements. Thus, for this system, we use a lock that activates the zipper closing on the luggage inside so that the mechanical impact on it will be non-existent. The lock is controlled with NFC card access, which the luggage manufacturer uniquely gives. In our system, we introduced two NFC cards. To ensure increased security of access to the locks, we developed a mobile application called 'SafeTravel', which also allows the control of the lock through Bluetooth communication in case we don't have NFC cards with us. To use the application, the user must enter the unique PIN from the luggage manufacturer. Once the PIN is entered, the application switches to query mode with the lock, which allows access to the lock only after manually entering the ID of one of the two NFC cards. To power the system, we opted for NiMH (Nickel Metal Hydride) batteries, which, although they have a lower energy storage capacity compared to lithium-based batteries (LiPo, Li-ion), are on the list of batteries accepted for both carry-on luggage and checked bags by the bodies TSA (Transportation Security Administration) and FAA (Federal Aviation Administration). We have designed the power supply of these batteries to be possible both from a standard DC 5V source, such as phone chargers or USB outputs from laptops as well as from a solar panel in case access to a standard source is not possible it is possible. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1324",
+    "title": "An Intelligent Stock Market Automation with Conversational Web Based Build Operate Transfer (BOT)",
+    "journal": "2022 International Conference on Trends in Quantum Computing and Emerging Business Technologies, TQCEBT 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TQCEBT54229.2022.10041477",
+    "abstract": "Zerodha, Upstox, Angel Broking, Groww, etc. Such companies have the most significant users of traders/investors in the equity share market. Their trust is based on their ease of use, less time-consuming process, and accurate graphs and charts of real-Time data. But what if such companies had an algorithm that could predict the future prices of any share? Not just based on historical data but also on sentimental data? This project aims to build a speech recognition chatbot like Alexa Google, which will use Recurring Neural Network-Long Short-Term Memory (RNNLSTM) and Natural Language Processing (NLP) to predict future intra-day prices. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1325",
+    "title": "Analysing How Marketing Management and Artificial Intelligence are used to Change Customer Engagement",
+    "journal": "TQCEBT 2024 - 2nd IEEE International Conference on Trends in Quantum Computing and Emerging Business Technologies 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TQCEBT59414.2024.10545064",
+    "abstract": "The integration of marketing management and AI can transform customer engagement strategies across industries. Marketing management underpins business operations, connecting customers and boosting success. AI becomes a key digitization tool as businesses adapt to new technology, processing massive amounts of data and changing customer interactions. This study examines how marketing management and AI interact to change customer engagement dynamics. Marketing management is crucial to business efficiency, customer relations, and growth. Effective marketing strategies help businesses increase revenue, market share, and reputation. Marketing initiatives also support non-profit goals, community engagement, and social causes. Understanding AI tools for customer engagement reveals voice-activated chatbots, sentiment analysis, facial recognition, NLP, and visual search. These AI-powered tools help businesses personalize interactions, interpret customer sentiment, and streamline service delivery, improving customer experiences.Businesses can deliver ultra-personalized solutions, predict consumer preferences, and optimize communication channels using AI tools to improve customer engagement. Companies can boost customer satisfaction, brand loyalty, and market share by using AI-driven insights and analytics. The study explore how AI may affect customer engagement to see its transformative potential across industries. AI helps businesses analyse data, predict consumer behaviour, and personalize interactions, revolutionizing customer experience. However, data privacy, security, and ethics require responsible deployment and strategic adaptation. The convergence of marketing management and AI offers unprecedented opportunities to transform customer engagement strategies. Businesses can improve customer satisfaction, brand loyalty, and digital growth by adopting AI-driven technologies and addressing their challenges. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1326",
+    "title": "Artificial Intelligence-Based Chatbot with Voice Assistance",
+    "journal": "TQCEBT 2024 - 2nd IEEE International Conference on Trends in Quantum Computing and Emerging Business Technologies 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TQCEBT59414.2024.10545197",
+    "abstract": "The use of smartphones, tablets and other portable devices have increased, and so has the use of voice-assisted chatbots such comparable to Alexa, Apple's Siri, and Google's Voice Assistant. As simple as these voice assistants are, they are very helpful in easing users' day-to-day tasks. Now as the use of artificial intelligence (AI) based chatbots such as ChatGPT, Bard and Microsoft Bing have started to be progressively used more and more to get assistance with increasingly complicated tasks, there is a need for a chatbot that is both artificial intelligence-based and has the option to provide voice assistance. In order to realize this, need we have developed a web application that integrates both, an AI-large language model constructed using the GPT-3.5 Generative Pre-trained Transformer. model and voice assistance. The application takes in an input in the form of audio clip and converts it into text, sends the query to the GPT-3.5 model and receives the response in text form and converts that to an audio clip. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1327",
+    "title": "Enhancing Mobile Video Streaming through AMES-Cloud: A Cloud Computing Approach to Addressing Wireless Link Challenges",
+    "journal": "TQCEBT 2024 - 2nd IEEE International Conference on Trends in Quantum Computing and Emerging Business Technologies 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TQCEBT59414.2024.10545207",
+    "abstract": "Despite extensive efforts by network operators to enhance wireless connectivity (such as 5G and LTE), the surging demand for mobile video content is rapidly surpassing the capacity of wireless links. As video file movement over communication systems continues to rise, the existing connection capacity struggles to retain pace, leading to poor service quality, including long buffering times and intermittent disruptions. This study offers AMES-Cloud, an adaptive communication systems video running and allocating platform, in response to this difficulty. AMES-Cloud archives videos effectively and is utilized in cloud computing to develop isolated agents for specific mobile users. By utilising Scalable Video Coding algorithms, these agents can adapt to changing link quality and provide uninterrupted video streaming. Furthermore, by employing background pushing features across several components, including VB, subVBs, and localVB AMES-Cloud hopes to offer mobile consumers smooth video streaming experiences. Through a prototype implementation and evaluation, AMES-Cloud demonstrates significant improvements in mobile streaming adaptability, leveraging cloud computing techniques. It's important to note that the cost of encoding workload in the cloud was not considered during the prototype implementation. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1328",
+    "title": "Two-Layer FFR with Dynamic Rth: Impact of User Composition",
+    "journal": "Proceeding of 2025 19th International Conference on Telecommunication Systems, Services, and Applications, TSSA 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TSSA68467.2025.11303810",
+    "abstract": "We investigate a two-layer Fractional Frequency Reuse (FFR) macrocell where bandwidth is split into inner/outer pools and the outer layer uses reuse-3. A dynamic threshold radius Rth follows the inner/outer user composition to balance load under equal bandwidth sharing and equal-share scheduling, with propagation modeled by 3GPP UMa and noise scaled with bandwidth. The Monte-Carlo simulations also estimate total cell capacity, spectral efficiency, and Jain's fairness. With the composition changes from 75/25 to 50/50 and further to 25/75 (inner/outer), the distribution of capacities moves to the right and the mean-capacity increases by about 25% and then 34% (cumulative 68%), which is equal to the shift of the median CDF 28-31% per step (cumulative 69%). Spectral efficiency increases by about 23.5% and then 37.5% (cumulative 67.6%), with very small error bars indicating low variability between replications. Meanwhile, Jain's Fairness Index decreases from 0.73 to 0.69 and 0.41, also confirming the efficiency-fairness trade-off for the baseline policy. These trends align with interferer-thinning in the reuse-3 outer layer and better utilization of effective spectrum as the outer pool serves more users. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1329",
+    "title": "Integrating DeepSeek API in Designing Krisna.ai as Artificial Intelligence Chat Assistant",
+    "journal": "Proceeding of 2025 19th International Conference on Telecommunication Systems, Services, and Applications, TSSA 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TSSA68467.2025.11303814",
+    "abstract": "Krisna.ai is a web-based tool embedded in Sketchbook. This study describes the design, development, and evaluation of Krisna.ai. The system contains two main modules an Automatic Dialogue Function, based on a decision-tree approach to provide context-sensitive teaching replies, and an Automatic Questionnaire Function that allows structured reflection and formative assessment. Krisna.ai uses the DeepSeek API to enable interactive discussions between students and academics. It doesn't compromise privacy since the AI is different from the one used by the faculty. Two experiments were done with 26 college students. The first evaluation studied the fluency, clarity and pedagogical worth of solution proposed by AI to open-ended academic questions. The second study evaluated engagement, understanding, and user choice between a chatbot-supported learning help and a static, manual question. Krisna.ai understands learner intention accurately, enhances user engagement, and allows learners to study in a systematic manner. Krisna.ai can help with the AI-empowered adaptive learning platform for education. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1330",
+    "title": "Assessing Empathetic Engagement in AI-Generated Clinical Dialogues: A Computational-Psychological Hybrid Approach",
+    "journal": "Proceeding of 2025 19th International Conference on Telecommunication Systems, Services, and Applications, TSSA 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TSSA68467.2025.11303827",
+    "abstract": "This study evaluates the empathetic quality of AI-generated clinical dialogues using a novel hybrid methodology combining computational text analysis and expert psychological assessment. We analyze verbatim transcripts of interactions between DeepSeek AI and role-playing patients, assessed by licensed psychologists against empathy criteria from A Computational Approach to Understanding Empathy Expressed in Text-Based Mental Health Support. Our results demonstrate significant variance in empathetic expression across dialogue segments, highlighting strengths in active listening but limitations in contextual emotional adaptation. This work bridges gaps between AI performance metrics and human-centered care standards in digital health interventions. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1331",
+    "title": "AI-Powered mental health chatbots: Examining users’ motivations, active communicative action and engagement after mass-shooting disasters",
+    "journal": "Journal of Contingencies and Crisis Management",
+    "journal_impact_factor": null,
+    "doi": "10.1111/1468-5973.12319",
+    "abstract": "Chatbots are gaining their popularity in society and have triggered heated discussions in academia as well. Currently, few studies explored the applications of AI-powered mental health chatbots in a mass-shooting disaster context. Via integrating literature from multi-disciplines such as crisis management, mental health and digital communication, this quantitative study intends to contribute to close this gap and explore the associations between perceived gratifications and protection motivations of using mental health chatbot services, active communicative action, and online and offline engagement behaviours of solving mental health problems after disasters. This study surveyed 1,114 US participants who ever used chatbot services from top healthcare companies. Implications of the results enhance theoretical discussions on how artificial intelligence has shaped individuals’ motivations, communicative action and engagement behaviour to treat mental health problems. This study also benefits professionals who want to learn more about chatbots for mental healthcare, crisis management and customer engagement. © 2020 John Wiley & Sons Ltd"
+  },
+  {
+    "article_id": "CA_1332",
+    "title": "Exploring the frontier of anthropomorphism in AI agents: Trends and way forward",
+    "journal": "Business and Society Review",
+    "journal_impact_factor": 1.695,
+    "doi": "10.1111/basr.70002",
+    "abstract": "By deploying human-like qualities to non-human entities, anthropomorphism offers users an interactive, cognitive, affective, and social experience. Emerging applications of conversational AI with a blend of anthropomorphism are changing the way businesses interact with customers. To take the field forward, this paper emphasizes the importance of anthropomorphism in AI agents and advocates for the need to systematize, integrate, and categorize existing efforts through a systematic literature review. The authors employ the SPAR-4-SLR protocol, which enables the investigation of a vast array of peer-reviewed journal articles. Our study focuses on articles published over 23 years, from 2000 to 2023, ensuring a comprehensive and up-to-date understanding of the subject matter. By meticulously analyzing 302 diverse documents, this study unveils the rapid emergence of anthropomorphism in AI. The authors additionally identify six pivotal knowledge clusters that shed light on the phenomenon: human interaction with anthropomorphic AI agents, technology acceptance toward anthropomorphic AI, anthropomorphism in customer service, anthropomorphism in AI-social companions, applications of anthropomorphism, and anthropomorphic AI for interactive marketing. The current review stimulates academicians and scholars to explore uncharted territories and develop novel theoretical frameworks encompassing anthropomorphism in marketing by posing intriguing and thought-provoking questions. © 2025 Albert P. Viragh Institute for Ethics in Business at Duquesne University."
+  },
+  {
+    "article_id": "CA_1333",
+    "title": "Bots and insights: Combining perspectives of analytics and software development in systems analysis and design projects",
+    "journal": "Decision Sciences Journal of Innovative Education",
+    "journal_impact_factor": 1.018,
+    "doi": "10.1111/dsji.70005",
+    "abstract": "Many management information systems (MIS) faculty have adopted a project-oriented approach in their systems analysis and design courses. In these courses, students use a software development methodology to create a web or mobile application project, which can be based on a predefined case or developed for an external stakeholder. Because most information systems programs emphasize cybersecurity, analytics, and artificial intelligence (AI), traditional systems analysis and design courses for web applications may seem one-dimensional in comparison. To address this limitation, we developed and implemented a project based on Merrill's Pebble-in-the-Pond instructional design. In this project, students were required to build an application with two key components: a chatbot and a dashboard, both integrated with the same database. These components cater to multiple user groups, allowing us to combine perspectives from analytics and AI within a single project. Drawing from our experience and feedback from students, we have compiled a set of recommendations for successfully implementing such a project. © 2025 Decision Sciences Institute."
+  },
+  {
+    "article_id": "CA_1334",
+    "title": "The influence of chatbot humour on consumer evaluations of services",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12849",
+    "abstract": "Technological advances have enabled firms to automate customer service by employing artificial intelligence (AI) chatbots. Despite their many potential benefits, interactions with chatbots may still feel machine-like and cold. The current study proposes the use of humour by chatbots as a gateway to humanizing them and thereby enhancing the customer experience. Across three experimental studies, the results reveal that (i) the use of humour enhances service satisfaction when it is used by a chatbot but not when it is used by a human agent, (ii) this chatbot humour effect is serially mediated by enhanced perceptions of anthropomorphism and interestingness of the interactions with the chatbot, and (iii) whilst both positively and negatively valenced chatbot humour may enhance the interestingness of the interactions, socially appropriate (i.e., affiliative) humour as opposed to inappropriate (i.e., aggressive) humour leads to enhanced service satisfaction. This study extends the understanding of the humanization processes of chatbots and provides guidelines for how firms should use chatbot humour to positively influence consumers' service satisfaction. © 2022 The Authors. International Journal of Consumer Studies published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CA_1335",
+    "title": "Antecedents of intention to use chatbots in service encounters: A meta-analytic review",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12933",
+    "abstract": "The trend of using artificial intelligence based chatbots for service encounters has seen a significant spike in recent times. Many studies have attempted to explain the adoption of the technology for various service applications; this study synthesizes the literature through a meta-analysis, for which data from 70 independent studies, with a combined sample size of 20,026 was considered, to understand the influencers of the attitude and intention to use chatbots for service encounters. In addition, this study also sought to understand the moderating role of the culture, the technological characteristics captured through the variables transactional/non-transactional, and informative/entertaining of the hypothesized relationships. Meta structural equation modelling (meta-analytic SEM) was used to analyse the data. The results indicate playfulness, attitude, usefulness, facilitating condition and social influence of the chatbots are the key factors in influencing user adoption. Further, technological characteristics and culture were found to significantly moderate certain relationships in the model. Practical and theoretical implications have also been discussed. © 2023 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CA_1336",
+    "title": "Navigating Avatar-Based Marketing From Value Aspects: A Systematic Literature Review and Forward-Looking Research Agenda",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.13096",
+    "abstract": "Virtual avatar deployment has opened a new window for many industries in service personalization and customization, offering customers “anytime–anywhere” services. It becomes increasingly essential for marketing practitioners and scholars to clearly understand how avatar attributes and traits are reshaping customer value perceptions in the digital world. Despite the exponential growth of research interest within this area in the last decade, the literature on avatar attributes and consumer-perceived values remains fragmented and isolated. Given this circumstance, this review draws on the theory–context–characteristics–methods framework and explores the extant literature to provide a collective and comprehensive insight into dominant theories, contexts, characteristics, and methodologies in the context of avatar-based marketing (ABM). A systematic literature review was applied to rigorously review 57 published articles on avatars and ABM from 2005 to 2023. Using in-depth content analysis, the current review sheds light on the opportunity to extend the theoretical foundations for the ABM literature. It also identifies gaps in understanding avatar attributes and the associated consumer values, with potential implications for consumer behavior. Finally, it sums up a comprehensive future research agenda. © 2024 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CA_1337",
+    "title": "Factors Affecting the Use of ChatGPT for Obtaining Shopping Information",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.70008",
+    "abstract": "ChatGPT transforms the shopping experience by providing responses in human-like language about products, services, and brands to customers. This study investigated the influential drivers of intention to use ChatGPT to obtain shopping information. We extended the “extended unified theory of acceptance and use of technology” UTAUT2 by incorporating the direct and moderating effects of trust and technology anxiety. To test the model on data from 412 respondents, a hybrid Partial Least Squares—Artificial Neural Network (PLS-ANN) approach was employed. This approach combines the strengths of PLS for modeling complex variable relationships and ANN for capturing nonlinear dependencies and interactions. PLS analysis identified performance expectancy, effort expectancy, facilitating conditions, hedonic motivation, and trust as significant drivers of ChatGPT usage. The associations between the intention to use ChatGPT and its predictors are negatively moderated by trust and technology anxiety. ANN analysis revealed that trust has the highest effect on the choice to use ChatGPT, followed by facilitating conditions, performance expectancy, hedonic motivation, and effort expectancy. By extending the UTAUT2 framework and applying the PLS-ANN method, this study advances the theoretical understanding of technology adoption and provides practical insights for marketers and developers of AI-driven text generators. It emphasizes the importance of building trust and alleviating technology anxiety to promote wider adoption of ChatGPT. The broader significance of this research lies in its contribution to shaping the future of retail and e-commerce strategies by encouraging a more informed and user-centric development of AI technologies in the shopping domain. © 2024 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CA_1338",
+    "title": "Parasocial Interaction in Marketing Domain: Offering Insights Through a Systematic Literature Review",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.70079",
+    "abstract": "Over the past decade, marketing has witnessed progressive growth in parasocial interaction research. An idea initially rooted in media and communication literature has gradually evolved within the marketing sphere since the early 2000s. Despite its fundamental integration into marketing, a comprehensive domain-specific systematic literature review on this topic remains absent. Considering this, we undertook a systematic literature review, analyzing 117 articles indexed in the ABDC list, covering a period of the past two and a half decades. With the main objective to explore the existing literature by examining the theoretical development, characteristics, and methodological trends using the TCCM approach, the study aims to establish a foundation for future research while elucidating relationships between various constructs across diverse contexts. The review highlights the role of parasocial interaction in influencer marketing, celebrity endorsements, branding, live streaming, consumer behavior, and chatbots, among other domains. By offering a current synopsis of the research within parasocial interaction and the future research directions, this study is anticipated to function as a useful resource to aid researchers in further exploration of parasocial interaction research. © 2025 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CA_1339",
+    "title": "Consumer Response to Anthropomorphism of Text-Based AI Chatbots: A Systematic Literature Review and Future Research Directions",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.70108",
+    "abstract": "The rapid advancement of artificial intelligence (AI) has not only integrated chatbots like ChatGPT into everyday life but also transformed customer relations in various industries. Despite their growing adoption, research on consumer responses and preferences toward AI chatbots remains limited. Anthropomorphism, the attribution of human characteristics to nonhuman entities, plays a crucial role in shaping these interactions. This systematic literature review (SLR) analyzes 84 research articles within the theories-context-characteristics-methods (TCCM) framework to provide a comprehensive overview of consumer responses to chatbot anthropomorphism. The findings reveal predominantly positive effects, with humanlike communication styles and emotional characteristics eliciting trust, empathy, and a sense of social presence. However, negative outcomes in the form of privacy concerns and AI anxiety from overly humanlike chatbots highlight the complex nature of humanized chatbots. New generative AI models amplify these risks, widening gaps in current research. Future research should address these gaps by exploring the opportunities and challenges of generative AI, emotional adaptability, personalized communication strategies, and the role of consumer technology affinity. By focusing exclusively on text-based chatbots, this review offers a unique perspective that augments existing literature on consumer responses to AI chatbots, contributing to a better overall understanding of the underlying effects of anthropomorphism within the context of human–computer interactions. © 2025 The Author(s). International Journal of Consumer Studies published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CA_1340",
+    "title": "Artificial Intelligence and Consumer Behaviour in Social Media: Systematic Literature Review and Future Research Agenda",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.70173",
+    "abstract": "The rise of artificial intelligence (AI) and, more recently, generative AI (GAI) has transformed digital marketing, particularly within social media. However, academic research on this intersection remains dispersed, requiring a structured synthesis to identify prevailing trends and gaps. Given the increasing integration of AI in digital marketing, understanding its implications for consumer behaviour is crucial for both researchers and practitioners. This study conducts a systematic literature review (SLR) following the SPAR-4-SLR protocol to analyse existing research on AI, GAI, social media, and consumer behaviour. In addition, the 5W1H framework is used to organise information and answer questions that arise. Specifically, it examines how AI is portrayed in social media and consumer behaviour literature, whether as an enabler, risk, or neutral factor, the perspective taken by the studies, and the application given to it. Findings show that AI is primarily framed as a driver of personalisation, engagement, and analytics, yet notable concerns about ethical risks like algorithmic bias and privacy persist. Research perspectives vary, spanning consumer, business, and integrative views that reflect the complex AI influence on user experience and organisational strategy. Empirical studies mainly treat AI as a core subject, focusing on applications such as chatbots, recommendation systems, and virtual influencers (VIs). A smaller number employ AI methodologically for social media data analysis through machine learning (ML) and natural language processing (NLP). Despite growth, significant gaps remain in understanding AI's long-term effects, cross-cultural nuances, and theoretical integration. Ethical issues highlight the need for responsible AI frameworks balancing innovation and fairness. This review synthesises current knowledge and outlines future research directions, aiming to guide academic inquiry and responsible implementation of AI in digital consumer contexts. © 2026 The Author(s). International Journal of Consumer Studies published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CA_1341",
+    "title": "A variable neighborhood search simheuristic for the multiperiod inventory routing problem with stochastic demands",
+    "journal": "International Transactions in Operational Research",
+    "journal_impact_factor": 2.563,
+    "doi": "10.1111/itor.12540",
+    "abstract": "The inventory routing problem (IRP) combines inventory management and delivery route-planning decisions. This work presents a simheuristic approach that integrates Monte Carlo simulation within a variable neighborhood search (VNS) framework to solve the multiperiod IRP with stochastic customer demands. In this realistic variant of the problem, our goal is to establish the optimal refill policies for each customer–period combination, that is, those individual refill policies that minimize the total expected cost over the periods. This cost is the aggregation of both expected inventory and routing costs. Our simheuristic algorithm allows to consider the inventory changes between periods generated by the realization of the random demands in each period, which have an impact on the quantities to be delivered in the next period and, therefore, on the associated routing plans. A range of computational experiments are carried out in order to illustrate the potential of our simulation–optimization approach. © 2018 The Authors. International Transactions in Operational Research © 2018 International Federation of Operational Research Societies"
+  },
+  {
+    "article_id": "CA_1342",
+    "title": "Solving the multidepot vehicle routing problem with limited depot capacity and stochastic demands",
+    "journal": "International Transactions in Operational Research",
+    "journal_impact_factor": 2.563,
+    "doi": "10.1111/itor.12560",
+    "abstract": "When capacity constraints have to be considered at each depot due to the existence of a limited number of capacitated vehicles, the multidepot vehicle routing problem (MDVRP) is a nontrivial extension of the well-known capacitated vehicle routing problem (CVRP). The MDVRP combines a customer-to-depot assignment problem with several CVRPs. In real-life scenarios, it is usual to find uncertainty in the customers' demands. There are few works on the stochastic MDVRP (SMDVRP) and, to the best of our knowledge, most of them assume the existence of an unlimited fleet of vehicles at each depot. This paper presents a simheuristic framework combining Monte Carlo simulation with a metaheuristic algorithm to deal with the SMDVRP with limited fleets (and, therefore, limited depot serving capacity). Its efficiency is tested on a set of stochastic instances, which extend the ones available in the literature for the deterministic version of the problem. © 2018 The Authors. International Transactions in Operational Research © 2018 International Federation of Operational Research Societies"
+  },
+  {
+    "article_id": "CA_1343",
+    "title": "Conversational and generative artificial intelligence and human–chatbot interaction in education and research",
+    "journal": "International Transactions in Operational Research",
+    "journal_impact_factor": 2.563,
+    "doi": "10.1111/itor.13522",
+    "abstract": "Artificial intelligence (AI) as a disruptive technology is not new. However, its recent evolution, engineered by technological transformation, big data analytics, and quantum computing, produces conversational and generative AI (CGAI/GenAI) and human-like chatbots that disrupt conventional operations and methods in different fields. This study investigates the scientific landscape of CGAI and human–chatbot interaction/collaboration and evaluates use cases, benefits, challenges, and policy implications for multidisciplinary education and allied industry operations. The publications trend showed that just 4% (n = 75) occurred during 2006–2018, while 2019–2023 experienced astronomical growth (n = 1763 or 96%). The prominent use cases of CGAI (e.g., ChatGPT) for teaching, learning, and research activities occurred in computer science (multidisciplinary and AI; 32%), medical/healthcare (17%), engineering (7%), and business fields (6%). The intellectual structure shows strong collaboration among eminent multidisciplinary sources in business, information systems, and other areas. The thematic structure highlights prominent CGAI use cases, including improved user experience in human–computer interaction, computer programs/code generation, and systems creation. Widespread CGAI usefulness for teachers, researchers, and learners includes syllabi/course content generation, testing aids, and academic writing. The concerns about abuse and misuse (plagiarism, academic integrity, privacy violations) and issues about misinformation, danger of self-diagnoses, and patient privacy in medical/healthcare applications are prominent. Formulating strategies and policies to address potential CGAI challenges in teaching/learning and practice are priorities. Developing discipline-based automatic detection of GenAI contents to check abuse is proposed. In operational/operations research areas, proper CGAI/GenAI integration with modeling and decision support systems requires further studies. © 2024 The Author(s). International Transactions in Operational Research published by John Wiley & Sons Ltd on behalf of International Federation of Operational Research Societies."
+  },
+  {
+    "article_id": "CA_1344",
+    "title": "Stakeholder engagement with AI service interactions",
+    "journal": "Journal of Product Innovation Management",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jpim.12786",
+    "abstract": "Recent advancements in artificial intelligence (AI) have ushered in a wave of AI innovations in the form of embodied conversational agents. These stakeholders offer new ways to engage customers in the co-creation of services but still face significant customer skepticism. To address this challenge, we frame interactions between customers and embodied conversational agents through the lens of stakeholder engagement and apply the concept of proxy agency from social cognitive theory. This framework allows us to identify two primary stakeholder roles for embodied conversational agents: partner and servant. We conceptualize how these roles inform optimal design for embodied conversational agents and shape a two-stage value-by-proxy process, comprising proxy efficacy and outcome expectancy. Additionally, we uncover tensions within this process due to over-reliance on AI, as well as significant outcomes that extend beyond the immediate interaction. Our study, using a custom-developed embodied conversational agent with a sample of 596 U.S.-based respondents, reveals that positioning an embodied conversational agent in a partner role, combined with a human (vs. robot) appearance and emotional (vs. functional) conversation style, has the strongest positive impact on perceived value-by-proxy, usage and advice implementation intentions, and willingness to pay. We also observe an inverted U-shaped moderation by reliance in the relationship between proxy efficacy and outcome expectancy, signaling the potential risks of over-reliance on AI. Furthermore, we provide qualitative insights into why some customers avoid engaging with embodied conversational agents. Overall, we offer a nuanced perspective on embodied conversational agents as active stakeholders within organizational systems, advancing both theoretical understanding and practical applications of this rapidly evolving technology. © 2025 The Author(s). Journal of Product Innovation Management published by Wiley Periodicals LLC on behalf of Product Development & Management Association."
+  },
+  {
+    "article_id": "CA_1345",
+    "title": "Digital Innovation in Insurance",
+    "journal": "Transformations in Banking, Finance and Regulation",
+    "journal_impact_factor": null,
+    "doi": "10.1142/9781800616257_0007",
+    "abstract": "In the past decade, the insurance business has experienced remarkable growth, as evidenced by the introduction of numerous novel products such as chatbots, digital claims, telemetric insurance and robo-advisors. The insurance industry is also experiencing a significant transformation resulting from the digital transformation. The use of digital technology opens the door for inventive architectures and the development of innovative products in the future that will benefit both insurance companies and their clients. By integrating Internet of Things devices, digital innovation revolutionizes how insurance companies collaborate with industries, ultimately benefiting all parties. This chapter reviews the history of digital innovation in insurance, also known as insurance technology (InsurTech), as well as how technology has underpinned the expansion of InsurTech in recent years. The chapter also examines previous and current studies on the use of technology in insurance transactions and how the implementation of digitalization affects the industry’s long-term viability. The research identified three key InsurTech concepts that have revolutionized the insurance sector. New entrants could disrupt the entire insurance distribution process and introduce new consumer value propositions to attract and retain clients, challenging current business models. InsurTech improves incumbent insurers’ value chain by providing innovative technologies and solutions that boost efficiency and reduce costs. © 2025 World Scientific Publishing Europe Ltd."
+  },
+  {
+    "article_id": "CA_1346",
+    "title": "Emerging Technologies, Social Marketing and Ethics",
+    "journal": "BEYOND THE DARK ARTS: Advancing Marketing and Communication Theory and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1142/9789811276064_0003",
+    "abstract": "Emerging technologies (e.g., augmented reality, virtual reality) have changed the way that people interact. Artificial intelligence and machine learning can be used for personalised targeting and predicting what people “want” or “need” before they even know it themselves. With these tools comes the possibility of manipulation, deceit or the production of harmful results through errors and misuse. User participation with these technologies can also have unintended consequences, leading to questions of shared social responsibility between social marketers, users and technology creators. In the race to do exciting and helpful things with these technologies, ethical issues can be an afterthought. This chapter argues for nuanced analyses of social responsibility and ethics, taking seriously the role of technology throughout social marketing campaign conception, design and implementation. © 2023 World Scientific Publishing Co.."
+  },
+  {
+    "article_id": "CA_1347",
+    "title": "Smart Manufacturing Plant Implementation Using Industrial IoT",
+    "journal": "Journal of Advanced Manufacturing Systems",
+    "journal_impact_factor": 0.744,
+    "doi": "10.1142/S0219686721500396",
+    "abstract": "Industry 4.0 initiatives include the concept of smart manufacturing with the help of sensors and intelligent systems. Smart manufacturing optimizes the internal process and decision making with no/minor intervention from humans. Nevertheless, the adoption of IIoT in industry setting remains a challenge and very minimal work has been in progress. This work is aimed to showcase adoption of IIoT in the Slip Control System/Anti-Lock Braking System. It optimizes the monitoring and decision making of various processes with the help of intelligent systems and IoT in the perspective of Industrial IoT 4.0. It mainly focuses on the various conditions and parameters such as line breakdown notifications, pressure levels, etc. They are monitored through the cloud platform and an alert system is developed in the cloud to warn the user regarding the pressure level. The instant alert of line breakdown notifications reduces the downtime of the plant, improves production and monitoring of the pressure system in the plant and safety check of the plant is in place at any instant. © 2021 World Scientific Publishing Company"
+  },
+  {
+    "article_id": "CA_1348",
+    "title": "Manufacturer EOQ with Considering Customer Stochastic Demand, Different Inspective Strategies and Raw Material Quality Defect",
+    "journal": "Journal of Advanced Manufacturing Systems",
+    "journal_impact_factor": 0.744,
+    "doi": "10.1142/S0219686722500184",
+    "abstract": "Single-period newsboy models and the corresponding EOQ models are, respectively, constructed under the condition that the manufacturer inspects raw materials of his supplier with total or sample inspection strategies and the manufacturer repairs or cheaply disposes the defective quality products when single supplier and manufacturer are faced with the customer stochastic demand and quality defects of raw materials. It is also found that marginal effect will be enlarged when unqualified products are disposed at a reduced price. There is a smaller impact to EOQ when manufacturer cheaply disposes the unqualified products when he repairs the products. Under demand-obeying normal distribution, EOQ will be linearly decreasing when the number of unqualified products increases. But EOQ will be linearly increasing when the order is greater than the mean demand and EOQ will also be linearly increasing with the demand standard deviation increase. Finally, the propositions and inferences are confirmed which can exert an impact on EOQ by adopting Monte Carlo simulation software. This research can provide some theoretical basis for manufacturers to reduce internal and external loss costs. © 2022 World Scientific Publishing Company."
+  },
+  {
+    "article_id": "CA_1349",
+    "title": "\"A Large Playground\": Examining the Current State and Implications of Conversational Agent Adoption in Organizations",
+    "journal": "International Journal of Innovation and Technology Management",
+    "journal_impact_factor": 0.906,
+    "doi": "10.1142/S0219877022500249",
+    "abstract": "This study explores the short- and long-term expectations about adoption of conversational agents in the organizational frontline. Drawing from in-depth interviews with managers and developers in organizations that have implemented these agents, it sheds light on how the deployment of and collaboration with technology-based autonomous agents influences service activities, and expectations of changes in organizational processes. The interviews revealed that implementations are done on a rather iterative and experimental basis, often balancing the current limits of technology while aiming at improved efficiency, augmenting the work of frontline employees, and meeting the ever-growing demands from consumers. © 2022 World Scientific Publishing Company."
+  },
+  {
+    "article_id": "CA_1350",
+    "title": "An Integrated Study of User Acceptance and Resistance on Voice Commerce",
+    "journal": "International Journal of Innovation and Technology Management",
+    "journal_impact_factor": 0.906,
+    "doi": "10.1142/S0219877022500250",
+    "abstract": "Virtual assistants are becoming significant in the area of voice commerce. Voice commerce creates an environment where orders and payments can be done through voice recognition, increasing its accessibility in comparison to other existing commercial transaction methods. Thus, the field is expected to grow into a promising industry. However, the full bloom of voice commerce depends on user acceptance, as well as technological improvement. This study develops a conceptual framework to describe factors influencing user acceptance to voice commerce, which are analyzed with the structural equation model by combining the technology acceptance model (TAM) and the model of innovation resistance (MIR). With accuracy, social presence, and interactivity of a virtual assistant, along with user attributes such as user innovativeness and experience, as variables, a survey of 151 Koreans in their 20s and 30s is conducted. Moreover, the impact of three factors, relative advantage, perceived ease of use, and perceived risk, on innovation acceptance and resistance is analyzed to find key variables that affect the resistance to and acceptance of voice commerce. These findings provide notable implications to companies currently using voice commerce platforms and guidance to an emerging commercial trading system. © 2022 World Scientific Publishing Company."
+  }
+]

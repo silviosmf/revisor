@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1801",
+    "title": "Evaluation of E-government services based on social media using structural equation modeling",
+    "journal": "Proceedings of 2019 International Conference on Information Management and Technology, ICIMTech 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech.2019.8843723",
+    "abstract": "Today many local governments have provided aspiration services or social media based complaints about the community to participate in giving aspirations and report problems that occur around the area. To improve the usefulness of this service, we conduct research with the aim of evaluating and identifying the factors that affect the service's application. The impact of this study is that the government can provide services according to the wishes of the community, because the model found can be a reference for the government to increase public trust and satisfaction for users of government services. The influence on the adoption of Aspiration Services is explained by using perceptions of trust, attitudes, and intentions of use that refer to technology acceptance models (TAM). Data processing and analysis in our research using the SEM-PLS method (Structural Equation Model-Partial Least Square). The results in this research will present that services applying technology that gain a positive effect on the awareness of usability and benefit for service users. © 2019 IEEE."
+  },
+  {
+    "article_id": "CS_1802",
+    "title": "Online Helpdesk Support System for Handling Complaints and Service",
+    "journal": "Proceedings of 2019 International Conference on Information Management and Technology, ICIMTech 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech.2019.8843726",
+    "abstract": "For a service company, helpdesk or customer service is very important part of their company. Good customer support and services will help company to sustain and maintain the customer. Nowadays, customers are getting used to use application during the development of technology, internet, and application. It is very important for service company to also take part in developing a good helpdesk system. The good service will improve the service quality which are impacted to the loyalty of customers. This paper described the main problem faced by one of the private delivery services company located in Jakarta, Indonesia. The methodology used in this paper are data collection through study literature review and interview session to obtain requirements. This paper also discussed about designed and developed online helpdesk system to support customer service system related to the customer satisfaction, complaint, and solve problems by them self. As the result, the company save a lot of time in serving customer, save amount of money in eliminating telephone charges due to customer complaint and question, and self service for customer satisfaction. © 2019 IEEE."
+  },
+  {
+    "article_id": "CS_1803",
+    "title": "User Interface Evaluation on Government Knowledge Management Portal Using Webqual 4.0",
+    "journal": "Proceedings of 2019 International Conference on Information Management and Technology, ICIMTech 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech.2019.8843780",
+    "abstract": "Currently, the society is very critical and demands valid information transparency. Information transparency is needed to maintain good governance and can also prevent corruption. However, information on the sustainability of development programs carried out by the government is much unknown to the public. In addition, the government must be burdened with public dissatisfaction due to fake news (hoax). The Ministry of Public Works has tried to build a website to disseminate its programs. However, measurement of the quality of the website is needed. This study uses questionnaires with a Likert scale to obtain user interface assessment data in accordance with the WebQual 4.0 method. This study shows that the easiness of the website to use has the highest correlation with how helpful the website is. Public works ministry websites need to more frequently update valid information and promote transparency. The society also wants online complaint platform to make it easier to solve problems. © 2019 IEEE."
+  },
+  {
+    "article_id": "CS_1804",
+    "title": "Implementation of Marketing Intelligence Systems for Operational Activities Using Business Intelligence in PT. XYZ",
+    "journal": "Proceedings of 2020 International Conference on Information Management and Technology, ICIMTech 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech50083.2020.9211288",
+    "abstract": "PT. XYZ is a vehicle automotive retail company that already has 26 branches spread across major cities and has more than 150 salesmen. The marketing positions consist of 5 levels, from salesman, supervisors, branch heads, area managers to marketing directors. One of the tasks of the marketing director is to set a five-level selling price level and determine the promotion of all products from PT. XYZ the number of customers from PT. XYZ currently is around 12, 500 consisting of wholesalers, shops, workshops, companies and factories. Competition in the automotive world is very tight. Field salesman who are already equipped with price strata and promotions sometimes have difficulty in the field where competitors can quickly change their selling prices, provide attractive discounts or promotions to existing customers. According to interviews with salesmen in the field, making decisions about prices, discounts and promotions takes an average of 2 to 3 days, so that the potential loss of orders and even loss of customers can occur at any time. and according to data obtained on average every salesman loses 3 to 5 orders every month, this is because the long chain of communication at PT. XYZ in addition to selling prices and promotions. Salesman must be responsive to the needs and complaints from customers. Therefore, we need a Marketing Intelligence System with Business Intelligence support to be able to support salesman operations in the field more efficiently and effectively. The research method used is to start with data collection by conducting interviews, design applications in accordance with the findings and results of the analysis and the final step is followed by the design of the data house and dashboard for marketing. © 2020 IEEE."
+  },
+  {
+    "article_id": "CS_1805",
+    "title": "User Experience Evaluation on Mobile Application for Indonesian Passport Using Sentiment Analysis and Cognitive Walkthrough",
+    "journal": "Proceedings of 2024 International Conference on Information Management and Technology, ICIMTech 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech63123.2024.10780800",
+    "abstract": "This research has contributed to the improvement of the government's application and introduces a novel combination of sentiment analysis methods and cognitive walkthrough. The rise in overseas travel among Indonesians, influenced by the ASEAN Economic Blueprint 2025, has highlighted the need for digital passports, especially during and after COVID-19. Despite the Immigration Division's development of the M-Paspor app, it has received poor reviews and low ratings on the Apple Store (1.3 stars) and Google Play Store (2.5 stars). This research examines user experience through sentiment analysis of reviews and cognitive walkthroughs with both experienced and inexperienced users. Findings reveal that user sentiment is mostly negative, with common complaints. The cognitive walkthrough indicates widespread frustration and difficulty, particularly with registration, login, document upload, and date selection. Recommendations for improvement have been made for the UI design of the several pages. Additionally, recommendations for UX design improvements include moving the location and date selection to the final step and adding a reminder feature during the date selection stage. This research enhances M-Paspor app design, providing insights through user feedback and thorough analysis. © 2024 IEEE."
+  },
+  {
+    "article_id": "CS_1806",
+    "title": "Enhanced Insight Into Mobile Banking: A Comprehensive Usability Analysis Through User Feedback",
+    "journal": "Proceedings of 2024 International Conference on Information Management and Technology, ICIMTech 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech63123.2024.10780846",
+    "abstract": "Banks have contributed significantly to the economic landscape of society by releasing mobile banking applications. However, some mobile banking has received low ratings from users, accompanied by several complaints related to User Interface/User Experience (UI/UX). Therefore, this study aims to conduct a comprehensive analysis of mobile banking UI and UX design through user feedback. Using a quantitative approach, this study refers to Nielsen's Usability Model and uses Partial Least Squares Structural Equation Modeling (PLS-SEM) with SmartPLS Bootstrapping for hypothesis testing and data validation. The results showed that learnability has a significant effect on the usability of the myBANK mobile banking application. © 2024 IEEE."
+  },
+  {
+    "article_id": "CS_1807",
+    "title": "Automation of Grievance Registration using Transfer Learning",
+    "journal": "Proceedings of 2023 3rd International Conference on Innovative Practices in Technology and Management, ICIPTM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIPTM57143.2023.10118181",
+    "abstract": "Grievance redressal is an indispensable service but involves a lot of issues, which can be resolved if a proper automated application is introduced which involves grievance classification and location fetching mechanism. To arrive at the solution, machine learning techniques can be used, but another major facet of this application is that it should be compatible and transportable. Hence the solution needs to be in the form of a mobile application. The machine learning model must be incorporated into the mobile application. Since mobile phones have minimal computational power to run a model, an architecture which uses minimal resources must be used. MobileNet V2 is an architecture which is specially designed to incorporate Deep learning (DL) algorithm especially Image classification. MobileNet uses minimal computational resources, and interoperability is achieved through Google's Teachable machine learning, which provides a tft lite (TensorFlow Lite) model for our trained dataset and the model can be imported in to the project's asset. Location manager of android's architecture can be used to fetch the user's current latitude and longitude, which can be used by grievance redressal organization to navigate. On achieving this solution, a lot of tedious processes in our existing grievance management system can be automated. Both the public and the government can be benefited and as a result, a lot of data will be in hand which is of prominent importance now a days. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1808",
+    "title": "Comparison of Machine Learning Text Classification for Intent Sentiment Analysis",
+    "journal": "Proceedings - 2023 IEEE 7th International Conference on Information Technology, Information Systems and Electrical Engineering, ICITISEE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITISEE58992.2023.10405200",
+    "abstract": "Tourist destination reviews on Google Maps have become a valuable point of reference for visitors seeking enjoyable spots to visit. Additionally, users can gain insight into the reasons for writing reviews. Text classification is used to determine the motivation behind these reviews. The aim of this study is to compare machine learning (ML) text classification techniques for identifying the intent behind sentiments expressed as complaints (0), suggestions (1), opinions (2), statements(3), and awards (4). The ML techniques assessed are Multinomial Naive Bayes (MNB), Support Vector Machine (SVM), and K-Nearest Neighbor (KNN). To achieve this, tourist destination review data sets, comprising 738 reviews, were collected using web scraping from the Google Maps website. Preprocessing stages, including case-folding, tokenisation, filtering and stemming, are executed prior to the data being prepped for feature extraction with TF-IDF. The employed classification models perform well with KNN achieving 1.00 accuracy on a 90:10 data split, and SVM obtaining 0.90 on the same data split. Although, the Multinomial Naive Bayes algorithm with 0.70 accuracy on a 90:10 data split is classified as fair. Comparison of methods was conducted by means of a Receiver Operating Characteristic (ROC) diagram. The testing accuracy for the SVM method was found to be 95%, MNB at 91%, and KNN at 84%. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1809",
+    "title": "An 'à la Ansoff weak signal' feedforward control for pharmaceutical distribution: A pilot study on standard operating procedure for managing customer complaints",
+    "journal": "2018 7th International Conference on Industrial Technology and Management, ICITM 2018",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITM.2018.8333933",
+    "abstract": "Feedforward controls (i.e., preventative controls), as opposed to classical feedback controls (i.e., corrective controls), are based on the early detection of risks and the implementation of solutions before damage occurs. However, despite their inherent advantages (e.g., increasing the flexibility of supply chains), feedforward controls remain underdeveloped in the pharmaceutical distribution sector, largely due to the tediousness of identifying applicable anticipatory indicators. To properly anticipate the achievement of business objectives, in our in-depth case study of a Swiss wholesale distributor of pharmaceutical products we relied on the notion of weak signals as conceptualized by Ansoff to develop a conceptual framework of feedforward. We identified a weak signal that showed more occurrences of error when less versatile employees were involved in executing tasks. The standard operating procedure for customer complaint management was recently adapted to include a feedforward control based on the weak signal. © 2018 IEEE."
+  },
+  {
+    "article_id": "CS_1810",
+    "title": "Multi-Project Scheduling with Multi-Factor Disruptions under Uncertain Environments",
+    "journal": "Proceedings of 2019 8th International Conference on Industrial Technology and Management, ICITM 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITM.2019.8710663",
+    "abstract": "In this paper, the effects of uncertain factors on the project scheduling with multi-factor disruptions problems is analyzed, considering the effects of customer satisfaction, cost and available resource. Its objective is to make reasonable disturbance recovery strategy and minimize disturbance in the project scheduling under the limit of resource constraints and project duration. The model of multi-project scheduling model with multi-disturbances is established, and the dual-population genetic algorithm is designed to solve this problem. Through the analysis, it is found that for multi-project scheduling problem with interferences, using local heavy scheduling scheme can conform to the actual needs of the project, and can more quickly making plan to restore the interference events affect scheduling system. © 2019 IEEE."
+  },
+  {
+    "article_id": "CS_1811",
+    "title": "The use of a mixed method approach to evaluate m-Government implementation",
+    "journal": "2016 International Conference on Information Technology Systems and Innovation, ICITSI 2016 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITSI.2016.7858195",
+    "abstract": "This research attempted to evaluate m-government implementation based on user perspective through qualitative as well as quantitative approach named mixed method approach. After conducting literature study, we defined System Usability Scale (SUS) as quantitative approach and dimension of D&M IS success model as basic for conducting qualitative approach. As case study, this paper presented the evaluation of m-Government named Qlue which is operated on mobile device to capture and response complaints from citizen in Jakarta. A total of respondent is 30 that is main user of application and worked as employee in government of Jakarta. The result of evaluation derived by analyzing feedback from questionnaire and interview to understand government employee opinion toward Qlue application implementation. Both of qualitative and quantitative results show that application had a low degree of satisfaction towards the usability and aspects to encourage user participation. © 2016 IEEE."
+  },
+  {
+    "article_id": "CS_1812",
+    "title": "Does quality disconfirmation in tourism e-marketplace lead to negative tourist emotions and behaviors?",
+    "journal": "2018 International Conference on Information Technology Systems and Innovation, ICITSI 2018 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITSI.2018.8695924",
+    "abstract": "It is important for tourism online marketplace to ensure potential tourists continually use their services as an alternative to find and purchase travel packages. Hence, the factors that influence customers' negative behaviors, such as switching intention, complaints, and negative WOM are critical to be understood. This research explores the antecedents of tourist customers' negative behaviors, using expectancy disconfirmation theory (EDT) as its theoretical lens, and IS success model as the initial quality precursors. The research gathered 81 sample, whom were active users of a tourism eMarketplace from the greater Jakarta region. The quantitative data was then analyzed using PLS-SEM. The results showed that quality disconfirmation served as a key antecedent of customers' negative emotions, which in turn will lead to their negative behaviors. More specifically, disconfirmation in information quality may prompt customers' regret, which then leads to negative WOM. Finally, systems quality disconfirmation triggers customers' anger, which then elicits a number of negative behaviors such as switching intention, complaints and negative WOM. © 2018 IEEE."
+  },
+  {
+    "article_id": "CS_1813",
+    "title": "Blockchain-based Smart Contract in Service-Oriented Business Processes",
+    "journal": "2022 International Conference on Information Technology Systems and Innovation, ICITSI 2022 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITSI56531.2022.9970954",
+    "abstract": "Service systems' business processes show the existence of mutual interaction between users. Running a particular business subdomain requires the role of each user. This role is in line with the concept contained in blockchain-based smart contracts. However, determining the subdomains that require smart contract coding is challenging in developing business processes that will run on the blockchain. We aim to determine the service-oriented business process (in the case of marketplace service) and the subdomain of the business process that requires smart contract coding. This article is essential because it shows how developing IT services without a smart contract differs from developing IT services with a smart contract. The main differences between developing services that need smart contracts and those that do not are that certain process can be run automatically and the record of activity in blockchain cannot be changed by anyone (tamper-proof). We outlined methods for designing marketplace business processes and defined subdomains to be encoded into smart contract code. After reviewing the three marketplace platforms, we determined eight subdomains of the marketplace business process. Two subdomains require smart contract coding from eight, namely the payment and complaint subdomains. © 2022 IEEE."
+  },
+  {
+    "article_id": "CS_1814",
+    "title": "Two-dimensional fairness on service recovery satisfaction in cloud computing",
+    "journal": "2016 IEEE International Conference on Management of Innovation and Technology, ICMIT 2016",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMIT.2016.7605000",
+    "abstract": "The study assesses the influence of two-dimensional service fairness on service recovery satisfaction, service recovery satisfaction on trust and IS continuance intention, and trust on IS continuance intention. Quantitative research was employed for this study and the respondents are Software-as-a-Service subscribers for a customer relationship management (CRM) application. Structural Equation Modeling was used to confirm the measurement model. The results are all significant. The study's insights can assist service organizations in addressing the issues of service recovery satisfaction that can lead to trust and continued usage. © 2016 IEEE."
+  },
+  {
+    "article_id": "CS_1815",
+    "title": "The Effect of Service Quality on Customer Complaints and Customer Loyalty Through Customer Satisfaction of ZALORA Indonesia E-commerce Website Users",
+    "journal": "2023 International Conference on Digital Business and Technology Management, ICONDBTM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONDBTM59210.2023.10326768",
+    "abstract": "Indonesia has one of the world's highest concentrations of internet users. Internet can be utilized for various activities, one of which is doing business. E-commerce website visits in Indonesia have increased since the third quarter of 2019 to the second quarter of 2022. ZALORA Indonesia is one of the e-commerce websites in Indonesia that has been present since 2012. The purpose of this research is to look at the impact of service quality on customer complaints and customer loyalty for ZALORA Indonesia e-commerce website customers. The method used is a quantitative method with a causal approach. This research sample collection uses purposive non-probability sampling techniques. The data collection technique used is distributing questionnaires using Google Form which is then tested for validity and reliability using SPSS version 25 software, and data processing is carried out to obtain the expected results using SmartPLS software. The help of using G-Power software to determine the number of samples that must be obtained. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1816",
+    "title": "The effect of resource type and regulatory focus on customer engagement behavior: A self-concept perspective?",
+    "journal": "2015 12th International Conference on Service Systems and Service Management, ICSSSM 2015",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2015.7170196",
+    "abstract": "Although there are many recent studies explore the antecedents of customer engagement behavior (CEB), few empirical studies have explored the mechanisms that connect these antecedents to CEB. Based on self-schema theory, this research uses experiment and investigation methods to explore the influence of the type of customer-invested resource (time vs. money) and customers' regulatory focus (promotion-focused vs. prevention-focused) on CEB and the mechanisms that underlying this process. The results of two empirical studies show that promotion-focused customers initiate more recommendation and complaint behaviors when the amount of time (vs. money) spent in the shopping experience is emphasized, whereas this effect does not exist for prevention-focused customers. A self-concept connection mediates the moderating role of regulatory focus in the relationship between types of resources and recommendation, whereas this mediating role of self-concept connection does not exist in complaint. In summary, the influence of customer-invested resources on CEB varies according to a customer's regulatory focus. © 2015 IEEE."
+  },
+  {
+    "article_id": "CS_1817",
+    "title": "Customer satisfaction and customer loyalty towards the Green Hotel: Based on cases studied in Ken-ding area in Taiwan",
+    "journal": "2016 13th International Conference on Service Systems and Service Management, ICSSSM 2016",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2016.7538498",
+    "abstract": "The purpose of this research is to discuss the customer satisfaction and customer loyalty towards the Green Hotel, and through the depth interviews with the local Green Hotel traders in Ken-ding area, knowing what the local traders can do to promote the customer satisfaction and customer loyalty to drive the customers participating in the project of environmental protection actively. From the research, it's obviously to know that the local traders think the government should do more efforts to advertise and educate customers about the concept of environmental protection in order to lead them take the initiative in caring and loving the natural environment. Although most of the customers have certain cognition of the idea environmental protection, they still lack a clear concept about it. Owning to this defect, a lot of customers are unable to fulfill the idea of protecting the environment. Basically, people choose to stay at hotels to get comfortable and convenient living surroundings that hotels can offer, and that's the different concept from what the local Green Hotel traders think about 'implementing' the idea about environmental protection. The local Green Hotel traders can only put signs in their hotels to remind the customers to know the difference between staying at hotels and Green Hotels, hoping to reduce the frequency of the customers' complaint. Besides, the research also shows that either the hotel owners or the guest-house owners in Ken-ding area always try their best to do a good job in the field of environmental protection, and on the premise that the customers' rights will be highly taken care of, local traders have done everything they can to make customers satisfied with their service. In addition, the local traders use the opportunity to educate their customers, help them realize the trend and benefit of 'Green Consumption.' So, in order to achieve the goal of good performance of environmental management, the Green Hotel needs traders, employees, and customers to participate and cooperate together. By doing so, the Green Hotels can not only have higher customer loyalty but can also get better result about marketing environmental protection through their customers' word of mouth to their friends and relatives to achieve their goal of environmental protection. © 2016 IEEE."
+  },
+  {
+    "article_id": "CS_1818",
+    "title": "An empirical study on the effect of consumer complaints handling on consumer loyalty",
+    "journal": "2016 13th International Conference on Service Systems and Service Management, ICSSSM 2016",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2016.7538537",
+    "abstract": "Timely and effectively handling of customer complaints, can not only eliminate customer dissatisfaction, but also increase customer satisfaction with and loyalty to the enterprise. Thus, exploring the influence mechanism of complaints handling is significant for both consumers and companies in e-commerce. This study constructs a research model, and puts forward some research hypotheses. The results show that customer complaints handling has a significant positive impact on customer satisfaction and cognitive loyalty. However, it has negative influence on affective and behavioral loyalty. Consumer satisfaction significantly affects cognitive loyalty and affective loyalty, but it has no significant impact on intentional and behavioral intention. At last the research find that four types of loyalty are gradually progressive and the relationship is positively significant. © 2016 IEEE."
+  },
+  {
+    "article_id": "CS_1819",
+    "title": "Impact of service recovery quality on consumers' repurchase intention: The moderating effect of customer relationship quality",
+    "journal": "14th International Conference on Services Systems and Services Management, ICSSSM 2017 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2017.7996204",
+    "abstract": "Nowadays, how to eliminate negative effect of service failure through service recovery and increase consumers' repurchase intention, has become an important problem for e-vendors. From the service recovery quality perspective, this paper focuses service recovery issue in e-business. By dividing service recovery quality into four dimensions: interactive quality, process quality, environmental quality and compensation quality, we study the impact of each dimension on consumers' repurchase intention and the moderating effect of customer relationship. Empirical research results show that: process quality and environmental quality of service recovery significantly positively affect consumers' repurchase intention in e-business. However, the effect of interactive quality and compensation quality on consumers' repurchase intention doesn't show the statistical significance. Furthermore, customer relationship quality strengthens the positive effect of interactive quality and environmental quality on consumers' repurchase intention. © 2017 IEEE."
+  },
+  {
+    "article_id": "CS_1820",
+    "title": "Improvement strategy of group-buying loyalty based on consumers' perceived justice",
+    "journal": "14th International Conference on Services Systems and Services Management, ICSSSM 2017 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2017.7996205",
+    "abstract": "The key point to improve the core competitiveness of the group-buying website is to improve the consumer loyalty to the website. This paper classifies customers by whether they are suffering from discrimination or complaining after discrimination. Firstly this paper puts forward an integrative model to examine the mechanism of service quality impacting to consumers' loyalty and discusses the differences and its impacts of perceived justice on restaurant satisfaction and website satisfaction. Secondly this paper uses another model to examine the impact of perceived justice in service recovery to satisfaction and loyalty for customers who suffer discrimination and complain after receiving the service. Using questionnaire data from 918 group-buying consumers, this paper examines the mutual relationship between restaurant service quality, perceived justice, restaurant satisfaction, and website satisfaction, together with their effects to group-buying website loyalty. The results reveal that in normal situation restaurant service quality has an direct positive effect on both restaurant satisfaction and website satisfaction; perceived justice mediates restaurant service quality to website satisfaction, but the mediation effect is not significant on restaurant service quality to restaurant satisfaction; distributive justice, procedural justice and interpersonal justice mediate the impact that the restaurant service quality to website satisfaction, but only distributive justice has a significant mediation effect on restaurant satisfaction to restaurant satisfaction; the mediation of perceived justice is different in consumers whether they received a different treatment; both restaurant satisfaction and website satisfaction have a significant positive effect on website loyalty. In complain situation, perceived justice under service recovery has a direct positive effect on both restaurant satisfaction and website satisfaction; And both restaurant satisfaction and website satisfaction have a significant positive effect on website loyalty. © 2017 IEEE."
+  },
+  {
+    "article_id": "CS_1821",
+    "title": "Research on the effect of customer relationships, service failure on customer behavior",
+    "journal": "14th International Conference on Services Systems and Services Management, ICSSSM 2017 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2017.7996254",
+    "abstract": "Service characteristic of invisibility, heterogeneity, concurrency, which increases the chance of failures, existing research thinks that good customer relationship can influence customer behavior after the service failure, ease service failure loss, but there are also study points out the customer relationship will strengthen negative reaction of service failure. Based on two-dimensional construct idea about customer's Personality-relatedness and Reciprocity features (Kaltcheva 2012), the article introduced service recovery variables, and studied customer relationships, service failure effect on the customer behavior. The study found that customer relationship has certain influence on the probability of silent exit, destructive voice of customer after service mistakes appear. The research extended the customer relationship and customer service mistakes reaction model, the results has important practical guiding significance to save service failure losses of the service industry, ensure satisfaction and loyalty of customer, and maintain enterprise brand. © 2017 IEEE."
+  },
+  {
+    "article_id": "CS_1822",
+    "title": "Exploring the influencing factors on service recovery satisfaction of group-buying websites",
+    "journal": "14th International Conference on Services Systems and Services Management, ICSSSM 2017 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2017.7996278",
+    "abstract": "Service characteristic of intangible, concurrency and heterogeneity, which make it quite normal that service error appear in the process of companies management. Despite the virtual nature of e-commerce, online retailers also have service failures. Taking group-buying websites as an example, this paper explores the factors influencing the customer satisfaction from the perspective of service quality by combing the mechanism of service recovery and customer satisfaction, and provides suggestions for group-buying websites operators. The results show that service quality, service result quality and service recovery quality all contribute to the improvement of customer satisfaction. The research results have important practical significance for the online retailers to improve customer satisfaction, to make up for service errors, and to increase the stickiness of users to websites. © 2017 IEEE."
+  },
+  {
+    "article_id": "CS_1823",
+    "title": "The Early-Warning and Control of Service Complaint Based on Time Series Forecasting Method and SPC Model-Take Ctrip as an Example",
+    "journal": "2018 15th International Conference on Service Systems and Service Management, ICSSSM 2018",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2018.8464967",
+    "abstract": "This paper applies theories and methods of time series model, emotional classification model, statistical process control (SPC) model and natural language processing to complaint management, and gives basic framework, processes and methods of collecting, using, predicting and analyzing the complaint data in complaint management. By verifying the effect of specific forecasting model which combines the emotional classification of external big data, early-warning model and text mining based on LDA model, the result of the experiment, taking Ctrip as an example, shows that it effectively improves the capability of searching and solving the complaints resulting from service failure, optimizing corporate services, and improving the timeliness and effectiveness of industry supervision. © 2018 IEEE."
+  },
+  {
+    "article_id": "CS_1824",
+    "title": "Study on the Application of Machine Learning in Government Service: Take Consumer Protection Service as an Example",
+    "journal": "2018 15th International Conference on Service Systems and Service Management, ICSSSM 2018",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSSSM.2018.8465040",
+    "abstract": "The receiving of consumers' complaints is one of the most important work in government service. The classification of complaints for different industries is a bottleneck in the service flow chart, affecting service efficiency, which also leads to low utilization of data information after complaints are accepted. This paper uses machine learning techniques to help government departments solve the difficult issues of receiving and classifying consumers' complaints. In this paper, Naïve Bayesian algorithm and SVM algorithm are introduced to replace the manual classification in the process. In addition, this paper uses text analysis technology and LDA topic model to cluster industry issues. The visualization result helps government departments visually monitor the changes in the consumer environment and hot issues in the industry can be captured promptly and accurately. © 2018 IEEE."
+  },
+  {
+    "article_id": "CS_1825",
+    "title": "An Efficient Differential Flow Management Model with Integrated Threat Mitigation for Securing 5G Wireless Networks",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323713",
+    "abstract": "Because 5G networks are fast-changing and require very low delay times, their complexity and security are increased by having traffic and threats from many different groups. To solve these issues, this paper presents an Efficient Differential Flow Management Model for smart traffic grouping and responsive threat control. The model separates different traffic by their intervals and answers to requests, stopping threats such as flooding, spoofing and replay attacks. Using linear decision-making, the model always delivers reliable service no matter how many users are present or how few communications slots are available. By identifying trustworthy traffic that flows and is shared at regular intervals, the system improves resource use and communication quality in the network. Using predictive detection of unexpected patterns, security is made stronger by limiting response times and making detection more accurate. Performance results indicate the time to get requests, the resources available and success in stopping adversaries have all improved. Because of this framework, defence systems can be adjusted to suit many 5 G users while keeping sessions secure and the service running. Offering a score of 91.7% for evaluating the validity of flows and 89.5% for judging service responses, the proposed approach performed better than existing ways. © 2025 IEEE."
+  },
+  {
+    "article_id": "CS_1826",
+    "title": "Consumer Protection and Legal Accountability in Marketing Practices: An Analytical Study under the Consumer Protection Act, 2019",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323926",
+    "abstract": "Influencers are now a significant and debatable channel of service promotion and marketing in the competitive business world today. Nonetheless, there is a growing threat level of influencers due to the growing consumption of influencer advertising, digital marketing, and outright promotion. The Consumer Protection Act, 2019, offers a broad and extensive piece of legal framework with respect to the Consumer Protection Act, 2019. This research paper gives a detailed insight into the Consumer Protection Act of 2019 where it is the main aim to differentiate marketing endorsements and marketing endorsements, define unfair trade practices as well as differentiate character and grandstanding and cronyism. The other key role taken by the Central Consumer Protection Authority (CCPA) in this research paper is comprehensively reviewed, where they are capable of investigating and imposing penalties in cases of endorsers, operatives and individuals who engage in unfair promotion. It also addresses the legal notion of the influencers in detail, as well as the liability to the damages, which come about as a result of the defects in the product or service. The paper explores architectural principles, policy theories, and classical discourse using theoretical and analytical methods to find out how the architectural principles are put into practice. The 2019 Act does not only enhance consumer rights but also enhances complaint, petition and advocacy mechanisms. Nonetheless, the research has concluded that problems like consumer awareness, sluggish legal procedures and absence of support to the definitions in the Act are harshly affected. Finally, the paper concludes that legal boundaries in marketing cannot be ensured only by the real laws; the active and responsible implementation of business practices and the participation of users play a crucial role as well. © 2025 IEEE."
+  },
+  {
+    "article_id": "CS_1827",
+    "title": "Establishing suitable process improvement methodologies for optimizing servicing operations in the banking industries",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM.2017.8290014",
+    "abstract": "The banking industry plays a vital role in the safe-keeping and delivery of various financial transactions required by the customers. Servicing problems such as queues and other various forms of customer complaints are the major threats which limit the efficiency of service operations in the banking industry. In light of this, the aim of this paper is to propose suitable process improvement methodologies capable of alleviating these complaints in the banking industries. To achieve this, heuristic searching and benchmarking of suitable process improvement tools and other strategies from the literature desk was explored. The results of the heuristic benchmarking exercise revealed that 5Ys, Fishbone Diagram, Value Stream Mapping, Line Balancing, workshops/training, flexible and reconfigurable service operation systems, modular and flexible banking system layout and queueing theory model are the strategies capable of reducing or alleviating the common customer complaints that are rampant in the banking industry. © 2017 IEEE."
+  },
+  {
+    "article_id": "CS_1828",
+    "title": "Effect of service recovery on recovery satisfaction and behavior intention: An empirical study on clothing product online shopping",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM.2017.8290289",
+    "abstract": "In the background of clothing products online shopping, data of 276 service failure experienced consumers had been collected through online survey. The aim of this study was to investigate the influence mechanism of service recovery strategies (compensation, recovery speed, apology and recovery initiation) on recovery satisfaction (RS) and behavior intentions (BI) (Word-of-Mouth (WOM) and Repurchase Intention (RI)). Hierarchical regression and bootstrapping had been used to examine the mediation effect of WOM and RS. The findings indicated that all of the four strategies had positive effects on RS; Positive WOM had the mediation effect between RS and RI; RS had the mediation effects between recovery strategies and BI. Also, theoretical and practical contributions had been discussed to give some new perspectives or advices. Limitations and suggestions for future research had been mentioned in the end. © 2017 IEEE."
+  },
+  {
+    "article_id": "CS_1829",
+    "title": "Development and validation of a failure-cause-searching and solution-finding algorithm based on complaint information from the use phase",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM45057.2020.9309789",
+    "abstract": "The increasing complexity of customer requirements, production systems, and new products influences the processes of complaint management in terms of decision-making time and resource expenditure. In literature, there are various approaches to support complaint management. An analysis of these approaches shows that the state of the art reaches its limits regarding complexity. To master this problem, the department \"Product Safety and Quality Engineering\"has developed an algorithm for failure cause searching and solution finding. This algorithm is based on a conceptual model and a prototype was programmed in Visual Basic for Applications (VBA). The algorithm is validated using cases from stamping and forming process. The algorithm itself, the results of the validation, the critical observations, and the lessons learned are reported in this paper. © 2020 IEEE."
+  },
+  {
+    "article_id": "CS_1830",
+    "title": "The Implementation of ISO 9001:2015 to Improve Quality Service: A Descriptive Study on a South African Service Organization",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM45057.2020.9309854",
+    "abstract": "The study emphasizes on the execution of ISO 9001: 2015; within a South African service origination that provides learning programs in engineering industries. This study analyses the implementation of ISO 9001:2015 within the service organization. The rationale behind the study is to aid management to understand ISO 9001:2015 and align it with the organization's mission to attain optimum performance while providing the stakeholders with pinnacle quality. A descriptive approach using both quantitative and qualitative methods were utilized to analyze the data gathered from respondents (70 customers). The data was collected within the organization based on the business experience of the respondents. The analysis showed that many complaints from customers on the quality of the service delivered were recorded highlighting that the service company needs improvement in the central administration department and improves the efficiency of the learner's registration. The complaints management graph highlights that the organization needs improvement in the communication process with learners. Nevertheless, it was concluded that some learners are also satisfied with the call center personnel and the service they receive from them. © 2020 IEEE."
+  },
+  {
+    "article_id": "CS_1831",
+    "title": "Methodology for a Model-based Traceability of Requirements from Complaints in Business Networks Using e-DeCoDe",
+    "journal": "2021 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM50564.2021.9673054",
+    "abstract": "The traceability of requirements is an enormous challenge for business networks (BN). To achieve a fast processing of customer complaints in BN, we present a methodology for a model-based traceability of requirements from com-plaints in BN using the e-DeCoDe approach. The methodology shows how the causes of errors in the product development of BN can be identified based on requirements from complaints. In addition, the methodology shows how the organization of the company is affected in the context of the product development and can contribute to finding solutions for the fulfilment of requirements. The development of such a model-based methodology holds a multitude of possibilities for finding the causes of errors and solutions, as well as the potential to automate the complaint process for the entire BN. This potential is currently not sufficiently exploited by companies because there is a lack of a consistent model-based methodology that considers the entire context of the BN with systems thinking. In order to face this problem, the developed methodology links two German Research Foundation projects for the first time through e-DeCoDe modeling. © 2021 IEEE."
+  },
+  {
+    "article_id": "CS_1832",
+    "title": "Identification and Assessment of Various Liability Cases Based on Written Customer Complaints",
+    "journal": "2023 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM58616.2023.10406681",
+    "abstract": "From a company's point of view, the manufacturing and distribution of safe products is one of the most important aspects regarding customer loyalty and market success. Avoiding liability disputes and finding potential risks are therefore highly relevant. This is, however, often challenging for customer service staff or engineers without a corresponding knowledge background. In the context of the research project AlGeWert at the University of Wuppertal, this work focuses on a concept for the identification of differentiation criteria between the various legal bases of product liability applicable in Germany. These are intended to serve as a starting point for training AI algorithms to support the evaluation of complaint texts and increase employees' confidence in action. For this purpose, the different legal bases applicable in Germany with regard to product liability are presented and differentiated from each other. A decision-making structure is then introduced that can be deployed to automatically examine customer complaint texts with regard to the various liability options. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1833",
+    "title": "A Customer-centric and Operator-centric Approach on Airport Gate Assignments",
+    "journal": "2023 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM58616.2023.10406886",
+    "abstract": "The demand for air travel is gradually returning to pre-pandemic levels. With the sudden influx in passengers, complaints are filed because of the inefficiencies that happen. One of them is the inconvenience in assigned boarding gate assignments. Having mentioned the point of view of the passengers, it is also important to consider the point-of-view of the operator as well. Recuperating from the poor economic performance during from the pandemic, the costs that would be incurred by the operator must be considered. In this study, a passenger-centric and operator-centric multi-objective integer linear programming model was constructed, minimizing total walking distance for the passengers and minimizing total turnaround costs for the operator. In order to optimize the system, goal programming was used for the multi-objective optimization model. The numerical results of the multi-objective optimization model were then compared to the results of both objectives optimized separately. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1834",
+    "title": "Pricing strategy for remote monitoring services based on competitive responsiveness",
+    "journal": "Proceedings of the 2019 International Conference on Industrial Engineering and Systems Management, IESM 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IESM45758.2019.8948078",
+    "abstract": "Remote monitoring service is an effective way for manufacturers to quickly respond to customer needs and upgrade to high-end services. There are two main factors that customers care about in the service offering, including the service response time and the compensation in case the manufacturer's response time fail to reach the committed one. This paper discusses the remote monitoring service pricing strategy by two cases in which the manufacturer either dominates the market information or not. The research results show that there is an optimal price of remote monitoring service, and it increases with the decrease of service response time and the increase of compensation. Furthermore, in case that a manufacturer spends less time on service response than its competitor, the service revenue of it can be increased by appropriately decreasing the compensation. When the compensation increases, the manufacturer will get a higher service price but less revenue. On the contrary, when the compensation reduces, the service price will decrease, but its revenue will be greatly increased. Then when the service response time is equal to that its competitor spends, the manufacturer can only achieve higher returns by reducing the compensation. And when the service response time is spent more than its competitor, the manufacturer can increase its revenue only by improving the compensation. These conclusions can help manufacturers to develop a scientific and rational pricing mechanism for remote monitoring service. © 2019 IEEE."
+  },
+  {
+    "article_id": "CS_1835",
+    "title": "Delay Measurement Method and System of Virtual Power Plant Communication Network Supporting Distributed Resource Aggregation Access",
+    "journal": "Proceedings - 2023 International Conference on Industrial IoT, Big Data and Supply Chain, IIoTBDSC 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IIoTBDSC60298.2023.00022",
+    "abstract": "Different types of distributed \"source load\" resources can participate in power grid regulation in different time scales, corresponding to the service response time of milliseconds, seconds, minutes and hours. Distributed \"source load storage\" resources such as distributed power supply, industrial load, commercial buildings, energy storage participation in new energy consumption of the grid, peak cutting and valley filling, frequency modulation, voltage regulation and interruptible load control need to respond quickly and regulate accurately, while the dispatching system and virtual power plant dispatch command communication need to pass through the production control region, the management information region, the Internet region and the border protection equipment. The delay of dispatching communication network is difficult to control on demand, the multi-security protection means of mass terminals is lacking, and the user is difficult to accurately control and coordinate output. As a result, the virtual power plant's aggregated distributed resources are difficult to efficiently and real-time participate in the accurate regulation and control of the power grid. The communication network delay measurement scheme is designed, and the distributed measurement tool of network delay is developed to realize the perceptable state of the aggregated regulation and control network. It provides effective support for distributed \"source load\" resources to participate in accurate regulation and collaborative output of the power grid, helps the effective aggregation and deployment of large-scale distributed flexible resources, and solves the problem of insufficient flexibility adjustment capacity on the load side of the power system. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1836",
+    "title": "Research on the Influence Model of Service Quality on Customer's Post-purchase Behavior Intention Based on Big Data Analysis",
+    "journal": "Proceedings - 2023 International Conference on Industrial IoT, Big Data and Supply Chain, IIoTBDSC 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IIoTBDSC60298.2023.00028",
+    "abstract": "After the emergence of e-commerce, the research on how to improve the service quality of online shopping focuses on customer loyalty, influencing factors of customer retention and online shopping, a new marketing channel. How to improve the quality of service recovery, prevent or reduce the occurrence of online shopping mistakes, improve customer satisfaction and customer behavior intention, and promote the occurrence of customer purchase behavior from the customer's point of view has become a problem that enterprise managers and scholars think about. Based on big data analysis, this paper studies the customer's post-purchase behavior intention and constructs the influence model of customer's post-purchase behavior intention. The mediating effect of customer satisfaction on the relationship between service recovery quality and customer intention loyalty has also been concerned and verified by scholars in the traditional service situation. Relatively speaking, customer satisfaction, as an emotional response, is highly volatile, while brand preference is relatively stable. However, in the past, most of the research on service recovery focused on traditional service industries. Therefore, the confusion in practice and the lack of theoretical research make the service failure and service recovery under the online shopping environment a valuable research topic. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1837",
+    "title": "Development of supplier quality performances in a Semiconductor Company for ISTMET2015",
+    "journal": "2nd International Symposium on Technology Management and Emerging Technologies, ISTMET 2015 - Proceeding",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISTMET.2015.7359052",
+    "abstract": "Supplier quality management (SQM) is considered as a down to business loom in the customers' standpoint to hunt for unremitting supplier quality improvement. Lacking of a proper storage system to monitor Supplier Corrective Action Required (SCAR) leads to limitations of visibilities and also the tracking. Besides that, criterion in justifying a supplier need to be widened from not only limiting to cost and quality but other criterion such as delivery, technology and Green Program also need to be focused. Furthermore, realization towards importance of environment is brought forward through Green Program activity in audit besides unremitting supplier quality improvement. Lacking of a proper storage system to monitor Supplier Corrective Action Required (SCAR) leads to limitations of visibilities and also the tracking. Besides that, criterion in justifying a supplier need to be widened from not only limiting to cost and quality but other criterion such as delivery, technology and Green Program also need to be focused. Furthermore, realization towards importance of environment is brought forward through Green Program activity in audit besides feeding as current market requirement. Therefore, this paper focuses in an effort of developing a system called E-complaint system to create visibilities in SCAR besides supplier rating criterions also have been enhanced to have more criterions to rate the supplier's performances. Nevertheless, improvement in supplier audits was also focused on green program which plays a role in developing the graph bar of supplier's performances. Percentage of improvement is estimated around 30% from the 1st month drop to the improvement on the next month and subsequently increases on the quality of performances and services. The study shows that supplier quality could be managed in many ways and several criteria that have been developed and introduced are contributing in supplier developments. © 2015 IEEE."
+  },
+  {
+    "article_id": "CS_1838",
+    "title": "Regulatory Trends of customer relationship from the mobile service professionals perspective",
+    "journal": "2018 IEEE International Conference on Technology Management, Operations and Decisions, ICTMOD 2018",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ITMC.2018.8691165",
+    "abstract": "Over the past few years, the mobile market has experienced strong growth, characterized by lower prices and intensive competition between operators. This growth was supported by the strong demand from users, the emergence of mobile value-added services other than voice services and the maintenance of control measures governing the sector. In this paper, we present the results of a quantitative study that we conducted with executives working in telecom operators, and we review the summary of International Telecommunication Union (ITU) expert reports on regulatory trends. We conclude that the technical, legal, economic and social powers are the mechanism of the telecom regulation sector; they positively influence the relationship between operators and customers, through the technical QoS control, audit of operators commitments, respect of services specifications, regulatory framework and competition, tariff regulation and customer complaints management. These items are the focal points of the new regulatory trends in the telecommunications field, driven by the evolution of technology and its ecosystem. © 2018 IEEE."
+  },
+  {
+    "article_id": "CS_1839",
+    "title": "Active learning SVM classification algorithm for complaints management process automatization",
+    "journal": "60th International Scientific Conference on Information Technology and Management Science of Riga Technical University, ITMS 2019 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ITMS47855.2019.8940658",
+    "abstract": "Data analytics capabilities integrated with Customer Relationship Management Systems enable automatization activities at financial institutions. This paper reports an experimental study on developing a text-mining model to automate complaints management process. Automatization will reduce the work load and waiting time for the customer to process the complaint and omit manual work. The support-vector machines (SVM), a supervised learning model with associated learning algorithms, is used to analyse input complaints data for classification. The experimental study emphasizes importance of active learning cycle. It has been shown that for Active Learning SVM just a small part of the training set (about 20%) is needed to get a stable and good enough classifier. © 2019 IEEE."
+  },
+  {
+    "article_id": "CS_1840",
+    "title": "Warning model of customer churn based on emotions: In the case of information service enterprise",
+    "journal": "2015 International Conference on Logistics, Informatics and Service Science, LISS 2015",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LISS.2015.7369683",
+    "abstract": "Emotion is an important catalyst which affects a customer in the process of buying service, it shows satisfaction of customers for goods and services, and changes the loyalty of customers to the enterprise in the future. Customer complaints often reflect the quality of service objectively and customer emotion. Therefore, the paper use customer complaints of information service enterprise for data analysis, and try to establish the warning model of customer churn based on emotions. © 2015 IEEE."
+  },
+  {
+    "article_id": "CS_1841",
+    "title": "Detection of Logistic Warning Signals via Social Media in Morocco: A Modeling Approach Using FCM and Graph Theory",
+    "journal": "International Conference on Logistics, LOGISTIQUA",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA66323.2025.11122764",
+    "abstract": "This study examines how customer interactions on social media can serve as early indicators of logistical failures in Morocco. Based on 20 interviews with professionals and modeling using Fuzzy Cognitive Maps (FCM) combined with graph theory, the study highlights the types of comments considered indicative of potential malfunctions. The findings reveal several recurring weak signals, such as the geographical concentration of complaints or the emotional escalation in language, and propose an interpretive modeling of perceived causal dynamics, paving the way for social monitoring systems adapted to the Moroccan context. © 2025 IEEE."
+  },
+  {
+    "article_id": "CS_1842",
+    "title": "Toward Standardization of Authenticated Caller ID Transmission",
+    "journal": "IEEE Communications Standards Magazine",
+    "journal_impact_factor": 1.979,
+    "doi": "10.1109/MCOMSTD.2017.1700019",
+    "abstract": "With the cost of telecommunication becoming as cheap as Internet data, the telephone network today is rife with telephone spam and scams. In recent years, the U.S. government has received record numbers of complaints on phone fraud and unwanted calls. Caller ID is at the heart of stopping telephone spam - a variety of apps and services, including law enforcement, rely on caller ID information to defend against unwanted calls. However, spammers are using spoofed caller IDs to defeat call blockers, to evade identification, and to further a variety of scams. To provide a solution to this problem, this article proposes a standardized authentication scheme for caller ID that enables the possibility of a security indicator for telecommunication. The goal of this proposal is to help prevent users from falling victim to telephone spam and scams, as well as provide a foundation for future and existing defenses to stop unwanted telephone communication based on caller ID information. © 2017 IEEE."
+  },
+  {
+    "article_id": "CS_1843",
+    "title": "A study on clustering customer suggestion on online social media about insurance services by using text mining techniques",
+    "journal": "2016 Management and Innovation Technology International Conference, MITiCON 2016",
+    "journal_impact_factor": null,
+    "doi": "10.1109/MITICON.2016.8025228",
+    "abstract": "Now a day Social media communication become to important factor for business operation. Several Customer prefers to post their comment, suggestion, complaints about company's products and services to online media such as Facebook, Twitter, Social web board because it easy way to blast to public and increases pressure to product owner for responding. This is one factor that cooperate need to be concern and manage responding to customer services that match to customer requirements by analyzes customer suggestion on social media vice versa they can detect negative feedback or complaints early which, able to prevent their reputation. This study was collected text that contains customer suggestion on insurance services from various online social media and extract some specific word via Thai text segmentation and coverts text to Vector Space Model (VSM) based on TF-IDF. We performs experiment by used 800 records of textcrawler and implement two clustering models algorithm which include K-Means and Self-Organization Map (SOM) for clustering suggestion text into three cluster groups as follow Cluster-0 is about to customer feedback on Car Insurance Policy, Car Insurance Premium or Insurance Renewal, Cluster-1 is contains customer feedback on insurance claim services, Cluster-2 is about customer enquired general information. We use 'Davies-Bouldin index' method[3] for evaluating both clustering algorithms. A result of experiment shows that K-Means has a significant performance higher than SOM. Finally, The benefit of this study able to help insurance company improve their products and services and increase customer satisfaction and retention strategies planning. © 2016 IEEE."
+  },
+  {
+    "article_id": "CS_1844",
+    "title": "ANI-SOUL -A Voice-Assisted System for Animal Identification and Classification",
+    "journal": "2023 IEEE International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE59243.2023.10369193",
+    "abstract": "According to the current breakdown of the world's land area, 10% of the planet is covered in glaciers, 19% is desert, 1% is freshwater, 11% is grassland, and just 37% is still covered in forests. Only half of the land is categorized as \"Habitable Land\". As a result, animals frequently stray into agricultural areas in search of food and shelter. According to forest officials, roughly 4000 complaints are filed each year about wild animals damaging crops. Farmers do have to deal with animal grazing and pest infestation in addition to their crop loss. To put it in a nutshell, they need a third eye on their farm to enhance safety. To overcome this issue our application - “Ani-Soul”- will help to identify the animal with a “voice automated system” and classify it into wild or domestic. If it turns out to be a wild animal, the forest department will get an \"automated alert call\" with the animal's name and the precise coordinates of the animal activity, and this animal activity automatically informs the forest department in case if the animal is classified as 'wild species'. However, if it's a domestic animal, the farmer will be informed and given a snapshot of the animal along with its precise arrival time. To ensure alertness calls are sent iteratively until the client picks up the call. If no one answers the phone, the voice alert speaker positioned in the central village is activated (to notify the inhabitants). You Only Look Once (YOLO), a well-known object detection technique, is used to assist in identification. It uses one of the best neural network designs to provide high accuracy and quick processing. Further, OpenCV, Twilio, and Python 3.0 are used to uplift the application performance. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1845",
+    "title": "Smart Journey Mining for Improved Service Quality",
+    "journal": "Proceedings - 2021 IEEE International Conference on Services Computing, SCC 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SCC53864.2021.00051",
+    "abstract": "This paper describes emergent challenges in extending and uniting research in service science and process mining. By combining formal representations of user journeys with process mining constructs, we aim to develop tools for automated capture and analysis of user interactions extending across service systems. Based on the resulting database of actual user journeys and user models, we will use logic-based techniques and machine learning to expose deviations and predict possible behaviours for pre-emptive problem solving and service recovery. © 2021 IEEE."
+  },
+  {
+    "article_id": "CS_1846",
+    "title": "Toward Identifying Customer Complaints of Cloud Service Providers Using Topic Modeling and Sentiment Analysis",
+    "journal": "Proceedings - 2023 10th International Conference on Social Networks Analysis, Management and Security, SNAMS 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SNAMS60348.2023.10375466",
+    "abstract": "Cloud computing has become a powerful tool recently, partly due to the high increase in the volume of data and demand for storage around the world. Cloud service providers present numerous advantages to their customers such as lower cost, and efficiency. This has exponentially increased demand. However, as they scale to meet the demands, they face many challenges which reduce customer satisfaction. This paper presents an analysis of customer complaints in two major cloud services, Microsoft Azure, and DigitalOcean. The study aims to identify the common issues customers face while using cloud services and provide insights to the cloud providers for improving customer satisfaction. The study uses BERTopic for Topic Modeling and VADER (Valence Aware Dictionary and sEntiment Reasoner) for Sentiment Analysis to better understand and cluster customer complaints. By examining the frequency of complaints, the study contributes to the existing literature on cloud computing and offers recommendations for enhancing the quality of cloud services. © 2023 IEEE."
+  },
+  {
+    "article_id": "CS_1847",
+    "title": "The Impact of Service Failures on Firm Profitability: Integrating Machine Learning and Statistical Modeling",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2020.3015771",
+    "abstract": "The generally accepted view among managers and researchers is of a direct linear relationship between service quality and profitability. Supported by the strategy-structure-paradigm, we argue that the relationship between service quality and organizational performance is impacted by strategy. Using historical data from the U.S. airline industry, we study the impact of various service failures on financial performance between airlines pursuing different strategies (low cost versus legacy). Using a novel methodological approach that includes neural network modeling and statistical data analysis, we find that the impact of service failures on profitability is not linear but differs between the two groups across all measures (flight delays, involuntary denied boarding, and mishandled baggage). Most interestingly, it is the pattern of the relationship that is distinctly different. These findings reveal the nuanced impact that service failure has on profitability. Although customer complaints are found to have the most significant impact, the pattern of impact is not linear and is distinctly different between the two groups. These findings challenge the conventional belief that reducing customer complaints goes hand in hand with improving financial performance. The results provide significant managerial implications and contribute to the existing body of knowledge on service quality and operations strategy. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CS_1848",
+    "title": "Demystifying the Impact of Service Recovery Strategies: Evidence From Healthcare and Telecom Sectors",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2023.3285152",
+    "abstract": "This study investigates the association of emotional (courtesy) and functional (explanation) service recovery strategies with customer responses in the healthcare and telecom sectors. The study also examines the mediation effect of the valence of customer forgiveness (resentment and exoneration) on the association of explanation and courtesy with repeat patronage and negative word-of-mouth (NWOM). In addition, we investigate the moderation effect of the level of dissatisfaction and relationship length on the hypothesized associations. To test the proposed associations, we used the critical incident technique with retrospective experience sampling, collecting data through a large-scale online survey (n = 478). Results suggest that resentment mediates the association of explanation and courtesy with repeat patronage. Finally, in the telecom industry, dissatisfaction with recent service failure positively and relationship length negatively moderate the association between repeat patronage and NWOM. Our findings enrich the service recovery literature and provide insights for service managers to design suitable strategies to reduce the repercussions of failure events. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CS_1849",
+    "title": "Management Respond to Negative Feedback: AI-Powered Insights for Effective Engagement",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2024.3432457",
+    "abstract": "The reputation of a business is significantly influenced by online reviews, with negative feedback having the potential to harm a brand's image and dissuade potential customers. To safeguard their image and convert dissatisfied users into loyal ones, businesses must formulate effective strategies for managing negative reviews. This study investigates response strategies aimed at enhancing the relationship between people and organizations among dissatisfied users upon their return. Using AI as a methodology by leveraging machine learning in our research, we managed to achieve remarkable accuracy using only response attributes to predict there is an increase in subsequent ratings of dissatisfied return customers. The study reveals that specific actions taken or planned in response to a user's complaint, a statement accepting responsibility for service failures, and a request for direct contact through phone or email can positively impact user loyalty and elevate subsequent ratings from returning dissatisfied customers. However, there is a noteworthy negative correlation between the length of the response text and the subsequent rating from returning customers. These findings not only provide theoretical insights but also have practical implications, underscoring the value of machine learning and data analytics in effective reputation management. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CS_1850",
+    "title": "Evaluating the Impact of Complaints on Firms' Idiosyncratic Risk: The Roles of Valance and Channel",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2024.3485088",
+    "abstract": "Firms increasingly rely on the third-party platforms to manage customer complaints. In this article, we explore the impact of complaints on firms' idiosyncratic risk by considering both the valence and channel characteristics of complaints. Through textual analysis, complaints are categorized into four types based on the intersection of two dimensions: the valence (mild or severe) of the complaint and the channel (firm or platform) through which the complaint is lodged. Empirical analysis is conducted to test the hypotheses. The results reveal that firms' idiosyncratic risk rises after severe complaints but decreases after mild complaints. Moreover, while mild platform-channel complaints increase risk, severe platform-channel complaints reduce risk. This study highlights the disparate impacts of the channel and valence of complaints on manufacturing and service firms. This research contributes to the literature on online complaints and the marketing-finance interface, offering valuable insights for firms seeking to mitigate their idiosyncratic risk through complaint management strategies. © 1988-2012 IEEE."
+  }
+]

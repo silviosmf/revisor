@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_2001",
+    "title": "Optimizing customer service with chatbots",
+    "journal": "Intelligent Optimization Techniques for Business Analytics",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-1598-9.ch010",
+    "abstract": "This chapter explores the intricate domain of enhancing customer service through strategically employing chatbots. It thoroughly investigates diverse optimization techniques, underscoring the vital role of refining chatbot responses and implementing efficiency metrics. The chapter dissects the challenges inherent in chatbot optimization, presenting innovative solutions that highlight the interconnected nature of these challenges. It illuminates the profound impact of well-optimized chatbots on customer service, demonstrating their capability to streamline tasks, improve accessibility, handle routine inquiries, and foster customer loyalty. Looking ahead, the chapter offers insights into upcoming trends and opportunities, such as integrating emotional intelligence and expanding multilingual functionalities. Essentially, this chapter functions as a comprehensive guide for practitioners and researchers, providing a nuanced comprehension of the pivotal role chatbots play in shaping the future landscape of customer service. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2002",
+    "title": "Modeling factors influencing consumer behavior: Intention to use chatbot among Malaysian public",
+    "journal": "Utilizing AI and Smart Technology to Improve Sustainability in Entrepreneurship",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-1842-3.ch001",
+    "abstract": "This research examines the factors that shape consumers' attitudes towards chatbots, considering the unique cultural and contextual characteristics of the Malaysian market. The study employs a quantitative approach and utilises survey data gathered from a representative sample of Malaysian consumers. This study examines the independent variables (IV) of technology awareness, perceived usefulness, perceived simplicity of use, trust in chatbots, and prior experience with chatbots. The dependent variable (DV) is the likelihood of utilising chatbots. The research aims to offer valuable insights into the factors that drive Malaysian customers to embrace chatbots. The findings from this study can be utilised by businesses and organisations in Malaysia to enhance their customer service through the development of more effective chatbot strategies. This study holds significance not only for the academic community but also for businesses in Malaysia seeking to leverage chatbot technology for practical purposes. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2003",
+    "title": "Revolutionizing customer service and experience: The impact of artificial intelligence",
+    "journal": "Leveraging AI and Emotional Intelligence in Contemporary Business Organizations",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-1902-4.ch015",
+    "abstract": "This chapter delves into the crucial role played by artificial intelligence (AI) in redefining customer service and augmenting the overall experience for customers. In the current era, which is characterised by continually shifting and ever-demanding customer expectations, enterprises are increasingly adopting artificial intelligence (AI) as a powerful tool to effectively fulfil and surpass these demands. This study goes into detail about the various applications of artificial intelligence (AI) in the field of customer service, encompassing the utilisation of chatbots, virtual assistants, and personalised recommendation systems. Overall, this study offers a detailed overview of how artificial intelligence is transforming customer experience and service, as well as recommendations, best practices, and case studies for businesses seeking to leverage AI in order to provide exceptional customer support. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2004",
+    "title": "A review: Sentiment analysis in conversational data",
+    "journal": "AI Impacts in Digital Consumer Behavior",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-1918-5.ch007",
+    "abstract": "Any consumer's sentiment associated with a product is the most important aspect in determining the future selling prospect of that product. And there 's no other way better than conversation to find that out. AI facilitates the makers of a product in finding out exactly what the consumers need and what he/she does not want. The provision of 'writing reviews' on a website or an app is unidirectional and helpful in limited ways. To understand the sentiment of the consumer, an efficient understanding of their needs and wants is required - and this we get through collecting 'conversational data'. Conversation between human beings is not simply just the exchange of words. There is a deeper meaning to it. Emotions are greatly involved. Is AI fully capable of understanding consumer sentiments and getting the exact required data from them? The AI chatbots must have the ability to find out the triggers of their consumers. And the aim of this research is the same - finding out how efficient conversational data is in analysing consumers' sentiments. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2005",
+    "title": "Implementing artificial intelligence and virtual experiences in hospitality",
+    "journal": "Innovative Technologies for Increasing Service Productivity",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2019-8.ch009",
+    "abstract": "AI and virtual experiences have revolutionized the hotel and tourism business, offering new opportunities to improve visitor experiences, speed up processes, and increase customer satisfaction. Technology is transforming hospitality to boost efficiency and innovation in this fast-paced environment. Hotel websites and mobile apps need chatbots and virtual assistants to handle bookings, inquiries, and personalized advice efficiently. Virtual tours show hotels, facilities, and neighborhood activities to assist travelers in their choices. Travel businesses highlight destinations and provide customers with virtual tours before leaving. AI algorithms use demand, seasonality, and local events to improve hotel prices and revenue management. AI concierges offer real-time help and individualized recommendations. AI and virtual experiences are revolutionizing hotel administration and tourism, improving efficiency, guest satisfaction, and hospitality. Businesses that adopt these technologies stay ahead of the hotel industry and satisfy modern customers. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2006",
+    "title": "Artificial Intelligence (AI) for tourism start-ups",
+    "journal": "Innovative Technologies for Increasing Service Productivity",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2019-8.ch010",
+    "abstract": "This chapter explores the dynamic intersection of artificial intelligence (AI) and the startup landscape within the tourism industry. It investigates how AI has the potential to revolutionize operations, innova¬tion, and services for emerging businesses in tourism. Demonstrating AI's critical role in enhancing the tourism experience-ranging from personalized recommendations and chatbot-driven customer service to pricing optimization and demand forecasting-it showcases innovative solutions from notable startups like DeepL, Fetch.ai, and Lilium. The chapter includes brief case studies illustrating AI applications in tourism and emphasizes the pivotal role of investors in supporting these startups. It concludes by outlin¬ing future research directions, addressing strategies for maximizing AI benefits in tourism, managing privacy and security concerns, and navigating the evolving landscape of AI integration in travel. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2007",
+    "title": "Revolutionizing creative tourism: Integrating AI in marketing for immersive travel experiences",
+    "journal": "Innovative Technologies for Increasing Service Productivity",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2019-8.ch011",
+    "abstract": "This chapter provides a comprehensive review of hospitality and tourist (HAT) AI literature. The analysis identified relevant themes, pros, and cons, as well as suggested future research possibilities in this disci¬pline. HAT is rapidly adopting AI technology to improve customer service, operational efficiency, travel experiences, and sustainability. There is a growing body of research on this topic, but a thorough and systematic understanding is needed to determine the most effective AI applications and recommend areas for further investigation. This chapter discusses how machine learning, natural language processing, and robotics may improve tourist and hospitality consumer experiences and efficiency. This chapter covers AI in travel, from chatbots for customer service to autonomous cars to VR/AR for immersive experiences. AI disrupts customers and companies in personalisation, decision-making, and predictive analytics. These AI technologies' ability to revolutionise the business provides a futuristic view of travel and tourism. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2008",
+    "title": "AI in finance and banking: The act of gyration",
+    "journal": "Revolutionizing Customer-Centric Banking Through ICT",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2061-7.ch001",
+    "abstract": "To predict behavior, machines organize and analyze data. It transformed BFSImerchandise delivery. Corporate banking AI automates tasks, detects fraud, boosts investment profits, has chatbots, and predicts market trends. This research examines AI's role, functions, applications, trends, benefits, and drawbacks in finance and banking. Thefinancial industry is transformed by AI in customer experiences, fraud detection, risk management, and task automation. Finance AI helps but falters in data quality, accountability, and compliance. Fintech solutions like digital wallets, blockchain, embedded finance, AI-driven chatbots, RPA, fraud prevention, and personalized services are improving financial services. AI enhances banking and financial customer service, fraud detection, risk management, and task automation, according to this study. Data quality, regulatory compliance, AI- driven chatbots, RPA, and fintech integration are covered. The chapter concludes that AI can improve banking efficiency and accessibility. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2009",
+    "title": "Artificial intelligence and service marketing innovation",
+    "journal": "AI Innovation in Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2153-9.ch007",
+    "abstract": "The integration of artificial intelligence (AI) into service marketing in India is expected to significantly impact marketing strategies and economic dynamics. The emphasis on personalization, automation, predictive analytics, and chatbots will enhance customer engagement and brand loyalty, leading to increased sales and revenue. Automation of marketing workflows will streamline operations, improve efficiency, and foster business growth. AI's predictive analytics capabilities will help businesses make informed decisions about their marketing strategies, particularly in a diverse market like India. AI-driven chatbots will enhance customer satisfaction and engagement, contributing to positive brand perception and loyalty. However, there may be concerns about job displacement, particularly in routine tasks. The growth of AI-driven service marketing can contribute to the development of a technologydriven ecosystem in India, attracting investments, fostering entrepreneurship, and stimulating innovation. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2010",
+    "title": "Impact of AI in changing customer experience",
+    "journal": "Balancing Automation and Human Interaction in Modern Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2276-5.ch011",
+    "abstract": "This study delves into the impact of artificial intelligence (AI) on customer experiences, focusing on flow, customer-brand identification, and advocacy. Drawing from flow theory and social identity theory, it suggests that AI quality's influence on flow and identification is moderated by employee responsiveness. Emerging technologies like IoT, AR, VR, virtual assistants, and AI-driven robots are reshaping the customer journey. The chapter proposes a framework for understanding their role and emphasizes the need for a fresh management approach, considering customer experience dimensions. Brands struggle with personalization, and integrating physical and digital experiences may be key for challenger brands. Success requires aligning technology, data, and culture for personalized customer experiences. This research contributes to understanding AI's role in service experiences and the customer-organization relationship in the modern era. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2011",
+    "title": "Hospitality and tourism value co-creation in the light of artificial intelligence",
+    "journal": "Future of Customer Engagement Through Marketing Intelligence",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2367-0.ch005",
+    "abstract": "The hotel and tourism industry is undergoing significant changes due to the widespread adoption of digital technologies that enable instant client communication and data gathering. The aim of the chapter was to do a review to understand the AI technologies that influence value co-creation in the hospitality and tourism industry. The author found AI influencing VCC to include natural language processing, chatbot, intelligent agents, voice-activated digital support, personal digital assistants that aid online visitors, ML, etc. The DART model was selected as the primary framework due to its status as a prominent theory and its widespread application in the study of VCC. It was noticed that AI can facilitate dialogue, access, risk, and transparency, leading to customer/guests/visitor engagement. Future research should focus on AI for marketing and promotion. It was concluded that AI technology provides compelling prospects for engaging interactions and virtual gatherings. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2012",
+    "title": "AI chatbots as a catalyst for customer loyalty investigating digital experience preferences across age groups",
+    "journal": "Future of Customer Engagement Through Marketing Intelligence",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2367-0.ch007",
+    "abstract": "This study examines the growing role of AI chatbots in customer loyalty by examining digital experience preferences across age groups. The study examines AI chatbot features like availability, simplicity of use, accuracy, responsiveness, assurance, and empathy, which are thought to affect digital experience and loyalty. The research uses hybrid methodologies to capture a variety of user interactions and viewpoints. Quantitative data is collected by administering structured surveys to a demographically diverse sample to examine chatbot attributes' effects on behavioral and attitudinal customer loyalty. The expected results may show a complex relationship between AI chatbots and customer loyalty. Younger generations value simplicity and quickness, whereas older people value accuracy and confidence. The scholarly discussion on digital customer engagement benefits from this study. This study helps organizations optimize their AI chatbot strategy to serve a wide range of clients. It emphasizes the need to understand generational preferences in the digital ecosystem. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2013",
+    "title": "AI-based career counseling chatbot for secondary-level students",
+    "journal": "Integrating Generative AI in Education to Achieve Sustainable Development Goals",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2440-0.ch011",
+    "abstract": "Making a career selection may be a complex process, and many students struggle to choose a route that fits their interests, skills, and personality. Creating a career path requires careful consideration of these factors, and career coaching done in the old-fashioned manual way is ineffective. This study suggests a paradigm change that would use an AI-driven chatbot career advising system created especially for secondary school pupils. This cutting-edge technology, which uses machine learning, carefully examines users' personalities, interests, and talents in addition to incorporating up-to-date job market data to provide customized career recommendations. Above and beyond simple directions, the chatbot actively assists users in refining their abilities, guaranteeing a smooth transition into the careers of their choice. The ethical aspect of this investigation is essential, as it addresses certain worries and issues related to AI-driven career guidance. User testimonials highlight the system's effectiveness and its critical role in promoting informed career decisions. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2014",
+    "title": "Research notes on the future of marketing and consumer insights",
+    "journal": "New Trends in Marketing and Consumer Science",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2754-8.ch017",
+    "abstract": "The objectives of this chapter are to explore some of the most critical trends that reshaping marketing and driving marketing practitioners, marketing education and academic research in marketing and consumer science to change radically the direction of how marketing must transform itself and foresee the future. The ongoing trends in marketing and consumer insights that are likely to shape the future the use of big data and analytics and AI technologies which transforming marketing strategies, enabling predictive analytics, chatbots for customer service, and personalized recommendations. These technologies are also enhancing consumer insights by processing vast amounts of data to uncover patterns and trends. These trends are likely to continue shaping the future of marketing and consumer insights, but it's essential for marketers to stay agile and adaptable in response to emerging technologies and shifting consumer behaviors. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2015",
+    "title": "Client satisfaction in the Moroccan banking sector: The role of digitalization",
+    "journal": "AI and Data Engineering Solutions for Effective Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3172-9.ch016",
+    "abstract": "This study delves into Moroccan banking's evolving landscape, focusing on client satisfaction through digital tools. Emphasizing digital's pivotal role in service quality, it aims to uncover how emerging tech shapes satisfaction. Employing quantitative methods via tailored questionnaires, it seeks to gauge customer perceptions of digital banking. Examining tech integration, AI-Chatbots, and personalized services, it explores how these enhance satisfaction. Additionally, it probes AI-driven marketing's transformative potential in deepening bank-client connections. By spotlighting digital tool efficacy in client satisfaction, this research offers nuanced insights into Morocco's tech-driven banking paradigm. Its data-driven findings can guide strategic decisions for institutions and policymakers, elevating overall service quality in the digital age. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2016",
+    "title": "Emerging technologies in metaverse tourism: Opportunities and challenges",
+    "journal": "Technological Innovation in Global Cultural Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3196-5.ch0014",
+    "abstract": "Artificial Intelligence (AI) in particular has revolutionised a number of industries, bringing concepts like the \"sharing economy, \" \"Internet of Things, \" and \"Internet of People\" to life. With chatbots and smart systems being used widely in travel agencies and airlines to improve consumer experiences, artificial intelligence (AI) has had a huge impact on the travel and tourism industry. According to projections, AI will keep advancing individualised solutions and completely changing the travel and tourism sector. This is part of a larger, continuous technological revolution that promises constant innovation and transformation. Information technology (IT) has also significantly changed how businesses operate internationally. The tourist sector is a prime example of how IT may improve communication with potential clients by using destination imagery. In the present market scenario, the tourism industry has also merged many parameters with the usage of information technology aiming to reduce the middlemen in marketing travel schemes to consumers. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2017",
+    "title": "Tomorrow's travel companion: The role of artificial intelligence in shaping the future of tourism",
+    "journal": "Marketing and Big Data Analytics in Tourism and Events",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3310-5.ch010",
+    "abstract": "This chapter investigates the impact of artificial intelligence (AI) on shaping the future of the tourism industry. Given the advancements in AI technology, its transformative potential in various facets of the tourism sector is substantial. The chapter delves into the applications of AI, including personalized travel recommendations, chatbot customer service, demand forecasting, and smart destination management. It explores both the advantages and challenges linked to implementing AI in tourism, covering ethical considerations and workforce implications. The findings emphasize AI's capability to enhance customer experiences, streamline operational processes, and foster more sustainable and resilient tourism practices. The chapter concludes with recommendations for industry stakeholders on maximizing the benefits of AI while addressing associated challenges to shape a future aligned with the potential of this technology. © 2024, IGI Global."
+  },
+  {
+    "article_id": "CA_2018",
+    "title": "AI assistants for tour and travel operation",
+    "journal": "Generating Entrepreneurial Ideas With AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3498-0.ch013",
+    "abstract": "This study examines the role and importance of Artificial Intelligence assistants in transforming tour and travel operations, with the goal of investigating their purpose. AI assistants, utilizing machine learning algorithms and natural language processing, are revolutionizing the way tour and travel companies engage with customers, optimize operations, and make informed decisions. The methodology entails harnessing AI technology to create chatbots, virtual assistants, and predictive analytics tools customized to the industry's specific requirements. Although AI assistants offer advantages, they may encounter constraints such as accuracy challenges, reliance on data integrity, and ethical concerns related to privacy and bias. Recognizing these constraints while capitalizing on the revolutionary capabilities of AI assistants is crucial for tour and travel companies to fully utilize their worth and remain competitive in the changing industry environment. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2019",
+    "title": "AI and Co-Creation for Innovation in Tourism Business Settings",
+    "journal": "Advancing Smart Tourism through Analytics",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3715-8.ch002",
+    "abstract": "The dynamic intersection of Artificial Intelligence and co- creation of experience in Tourism drives innovation and enhances customer satisfaction. The role of AI is employed to understand personal preferences of customers, delivering personalized services, improving service efficacy. The AI driven technologies of AR, VR, Chatbots can be used to enhance and facilitate co- creation process providing interactive experiences for tourists. The conceptual framework for smart tourism through integration of AI and operational strategies in tourism organizations coerces innovation to create value proposition and competitiveness. The chapter explores the theoretical foundations of co-creation and artificial intelligence by analysing the implications for tourism business and elucidating practical strategies through empirical insights and case studies across various facets of tourism value chain. The chapter also focusses on key challenges and ethical practices in tourism by providing suggestions for minimizing risk and optimizing advantages. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2020",
+    "title": "Artificial Intelligence in Tourism",
+    "journal": "Advancing Smart Tourism through Analytics",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3715-8.ch003",
+    "abstract": "Travelling is a well- liked hobby that combines leisure time with trip planning work. Tourism is defined by the World Tourism Organization as travel and lodging for at least a day that is spent outside of one's normal surroundings for pleasure, business, or other reasons. Attractions, lodging, facilities, and activities make up the tourist system. Visitor happiness, loyalty, and word- of- mouth are all greatly impacted by the quality of the services provided: yet, dishonest and intimidating tour guides have become more common. By improving client travel experiences through customisation, round- the- clock availability, a decrease in human error, and digital help, artificial intelligence (AI) tackles these problems. A branch of AI called machine learning makes use of data and algorithms to enhance performance. AI chatbots, fraud detection, airline forecasting, trip recommendation systems, and language translation are some of the tourism industry's uses of AI. The use of AI and machine learning algorithms in tourism to improve travel efficiency and enjoyment is examined in this chapter. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2021",
+    "title": "Chatbot: Customer Security and Data Privacy in the Travel, Tourism, and Hospitality Industry",
+    "journal": "Advancing Smart Tourism through Analytics",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3715-8.ch005",
+    "abstract": "The increasing integration of chatbots in the travel, tourism, and hospitality (TTH) industry has transformed customer interactions, offered personalized assistance and streamlined services. Leveraging a systematic literature review and in- depth analysis, this research paper explores the security landscape of chatbots in the TTH sector, identifying potential threats and proposing targeted countermeasures for safeguarding customer data. The study outlines potential attacks on chatbot modules, highlighting risks to user privacy and system integrity. Proposed countermeasures extend beyond existing literature, addressing specific vulnerabilities identified through in- depth analysis. The paper contributes to understanding AI-specific security threats, raises ethical concerns, and identifies potential barriers to chatbot adoption. This research comprehensively analyses security vulnerabilities in TTH chatbots, offering tailored countermeasures. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2022",
+    "title": "Chatbots in Hospitality: Decoding Tourist Behaviour Among Indian and Filipino Travelers",
+    "journal": "Decoding Tourist Behavior in the Digital Era: Insights for Effective Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3972-5.ch009",
+    "abstract": "The integration of artificial intelligence (AI) into customer service has revolutionized various industries, with the hospitality sector being a significant beneficiary. Among AI applications, chatbots have emerged as a vital tool for enhancing customer engagement and satisfaction. This chapter explores the role of chatbots in shaping tourist behavior, focusing on a comparative analysis between Indian and Filipino travelers. Utilizing quantitative analysis through SmartPLS (Partial Least Squares Structural Equation Modeling), this seeks to decode the intricate factors influencing tourist behavior and the effectiveness of chatbots in the hospitality sectors of India and the Philippines. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2023",
+    "title": "An In-Depth Analysis of How Artificial Intelligence Is Being Used in the Field of Digital Marketing: Revolutionizing Engagement-How AI Is Transforming the Digital Marketing Landscape",
+    "journal": "Advancing the Marketing Technology (MarTech) Revolution",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-4361-6.ch001",
+    "abstract": "This thorough examination delves into the ways in which Artificial Intelligence (AI) is transforming the landscape of online advertising. AI plays a role in tailoring ads to individual preferences, generating dynamic content, and utilizing chatbots to enhance customer interaction. Through the use of data and automation, AI optimizes advertising campaigns and enhances overall efficiency. However, it is important to consider the ethical implications of AI. The study emphasizes the need to closely monitor potential biases in algorithms and anticipate job displacement due to automation. To harness the full potential of AI, the study provides practical advice to marketers. This comprehensive analysis highlights AI as a powerful catalyst for change in online advertising, urging stakeholders to navigate its potential and challenges in order to build a successful future. © 2025 by IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2024",
+    "title": "Revolutionizing Finance: The Impact of AI-Driven Innovations",
+    "journal": "Navigating the Future of Finance in the Age of AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-4382-1.ch001",
+    "abstract": "Artificial intelligence (AI) technologies are bringing about significant changes in the financial sector by transforming traditional procedures, improving risk management, reinventing client experiences, and impacting regulatory compliance. AI is transforming risk management techniques in, including trading and investments. Machine learning models are utilized for identifying and preventing fraudulent actions, evaluating credit risk, and overseeing compliance with regulatory standards. Financial organizations can improve decision-making processes, reduce risks, and protect financial stability by utilizing AI for risk management. Artificial intelligence is transforming consumer experiences in the financial sector by offering tailored services and predictive analytics to predict customer needs and preferences. AIdriven chatbots and virtual assistants are revolutionizing customer interactions by offering immediate service and improving customer satisfaction and loyalty. © 2024, IGI Global."
+  },
+  {
+    "article_id": "CA_2025",
+    "title": "Enhancing the digital consumer experience: The role of artificial intelligence",
+    "journal": "Enhancing and Predicting Digital Consumer Behavior with AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-4453-8.ch010",
+    "abstract": "In the era of rapid technological advancement, the integration of artificial intelligence (AI) and digital consumerism has created new trends in business. Consumers are able to communicate with brands in new ways owing to developments in digital media. AI-powered recommendation systems, chatbots and virtual assistants are the main drivers of this change. It allows businesses to offer product recommendations, customer support, and personalized content to increase user engagement and satisfaction. This chapter provides real-world examples of AI applications across industries, highlighting success stories of companies using AI to create better value and customer satisfaction. Finally, the integration of artificial intelligence and digital customer experience has the potential to transform the future of e-commerce, marketing, and customer service, opening new horizons for both businesses and consumers. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2026",
+    "title": "AI-Powered Personalization: Revolutionizing Mobile Commerce for Enhanced Customer Experiences",
+    "journal": "Leveraging AI for Effective Digital Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5340-0.ch006",
+    "abstract": "By Customizing the shopping experience to individual users, AI-powered personalization plays a crucial role in mobile commerce, ultimately improving consumer satisfaction and increasing sales. This chapter highlights the several technologies and strategies employed in this field and gives an outline of AI-powered personalization in mobile commerce. It investigates user profiling and data collection methods, dynamic pricing and offers, personalized product recommendations AI-enhanced search and navigation. Moreover, the use of chatbots and virtual assistants. The chapter also discusses future directions and developing trends in AI-powered personalization, Additionally difficulties and ethical issues. Businesses may use AI to create engaging and tailored experiences for their customers by learning about its possibilities in mobile commerce. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2027",
+    "title": "AI Caramba! The Negative Effects of AI Agents in Customer Relationship Management",
+    "journal": "Leveraging AI for Effective Digital Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5340-0.ch011",
+    "abstract": "AI agents are increasingly used in customer relationship management strategies to improve efficiency and reduce costs. Amid rapid advances in technology, the programs are becoming more human-like and versatile. However, AI agents with inadequate emotional responses can create an empathy gap, resulting in negative outcomes. If users' experiences fail to live up to their expectations, the resultant negative disconfirmation has damaging consequences for customers, the brand and the corporation. This chapter sets out the current types of human interactions with digital systems before examining the antecedents to negative outcomes, the three key types of negative disconfirmation and the consequences for areas such as brand engagement, AI agent trust and AI-induced brand hate. It then highlights that these harms are not inevitable, highlighting the mitigating action that firms can take to ensure their AI agents do not undermine their own customer relationship management efforts. Suggestions for future research are also provided. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2028",
+    "title": "A comprehensive review of economic and managerial factors: The implications of AI chatbots in customer relationship management",
+    "journal": "Navigating Business Through Essential Sustainable Strategies",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5360-8.ch009",
+    "abstract": "AI- powered chatbots are innovative solutions for enhancing customer service and automating routine operations, ultimately improving the overall customer experience. These tools offer numerous economic benefits, including cost savings by replacing humans for repetitive tasks. Furthermore, the vast amount of data generated and analyzed through chatbot interactions offers valuable insights for companies, enabling them to make intelligent data- driven decisions in their customer relationship management (CRM) strategies. In this chapter, the authors examine how AI algorithms might improve chatbot interactions by understanding user needs, making personalized recommendations, and delivering valuable and distinctive support to customers and other stakeholders. However, there are ethical considerations that need to be addressed. This research, employing a qualitative methodology and case studies, aims to guide firms in leveraging AI chatbot technology to strengthen customer relationships and ultimately provide a sustainable source of competitive advantage. © 2025, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2029",
+    "title": "The pivotal functions of innovative technologies and sustainable practices in enhancing customer relationship management",
+    "journal": "Navigating Business Through Essential Sustainable Strategies",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5360-8.ch010",
+    "abstract": "This chapter aims to examine CRM implications for entrepreneurship. It explores the contribution of effectively implemented CRM strategies for entrepreneurs and SMEs. Its objectives include introducing fundamental CRM concepts and differentiating between CRM and E- CRM. It explains the significance of integrating artificial intelligence applications by proposing concrete strategies to integrate sustainability into CRM processes. CRM and E- CRM are crucial components of sustained growth and entrepreneurial success. SMEs are adopting a customer- centric approach. For SMEs, the needs of their customers should come first. Incorporating artificial intelligence (AI) technical solutions into their E- CRM strategy is a growing trend among marketers. SMEs possess efficient communication and analysis technologies to anticipate prospects' expectations, personalize offerings, and foster customer loyalty. Chatbots and responsive call centers are valuable resources for increasing online customer retention. © 2025, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2030",
+    "title": "Transactions to Relationship: Customers Engagement in the Digital Age",
+    "journal": "Managing Customer- Centric Strategies in the Digital Landscape",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5668-5.ch002",
+    "abstract": "In today’s fast- paced technological world, client engagement is crucial for successful corporate operations. As AI and automation improve procedures, traditional face- to- face communication channels are diminishing. Companies must prioritize consumer engagement to maintain sustainable relationships and capitalize on the internet as the primary communication channel. Chatbots are a significant technological advancement in this context. Our study identifies a gap in the literature, prompting an exploration of customer trust, perceptions of chatbots versus human support, challenges, ethical considerations, and chatbots’ potential to foster emotional connections and enhance loyalty. This investigation provides novel perspectives and valuable insights into customer engagement with chatbots. The findings offer practical implications for businesses seeking to optimize chatbot usage, establish customer trust, and leverage emotional connections to cultivate increased loyalty, bridging gaps in the literature and shedding light on critical aspects of AI- driven customer interactions. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2031",
+    "title": "Utilization of Artificial Intelligence in the Digital Marketing Industry",
+    "journal": "Managing Customer- Centric Strategies in the Digital Landscape",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5668-5.ch008",
+    "abstract": "This study explores the impact of artificial intelligence (AI) on digital marketing processes and outcomes. The research demonstrates that AI plays a vital role in tailoring ads and experiences, improving customer engagement through chatbots and dynamic content, and utilizing automation for data- driven decision- making. The integration of AI in digital marketing is revolutionizing the industry, boosting efficiency, productivity, and customer interaction. Nevertheless, it is crucial to consider ethical considerations, potential biases, and the potential for job displacement. The study provides practical guidance for marketers on how to effectively leverage AI in their digital marketing campaigns. It offers a comprehensive analysis of AI’s influence on digital marketing, highlighting both its transformative potential and the challenges it presents. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2032",
+    "title": "AI Technologies for Personalized and Sustainable Tourism",
+    "journal": "AI Technologies for Personalized and Sustainable Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5678-4",
+    "abstract": "As the travel landscape evolves rapidly, propelled by technological innovations, AI emerges as a powerful force reshaping tourism practices worldwide. This book aims to explore the dynamic intersection of artificial intelligence (AI) and the travel industry, offering a comprehensive guide to harnessing AI for enriched, tailored experiences and sustainable development. This groundbreaking book illuminates how AI is revolutionizing personalized recommendations, optimizing operational efficiencies, and promoting eco-conscious practices, fostering a harmonious balance between exploration and environmental stewardship. At its core, AI Technologies for Personalized and Sustainable Tourism seeks to provide a holistic understanding of AI’s transformative potential in the hospitality sector. By delving into the latest advancements and real-world applications of AI, readers are guided through practical insights into leveraging AI to enhance traveler experiences while advancing sustainability goals. From AI-powered recommendation systems to predictive analytics and virtual assistants, each chapter offers invaluable insights into how AI can be deployed to create personalized, sustainable tourism experiences. Tailored for a diverse audience spanning industry professionals, researchers, policymakers, and students, this book serves as a beacon of knowledge, bridging the gap between theory and practice in AI-driven tourism. Professionals in the tourism sector will discover valuable strategies for enhancing customer experiences and promoting sustainable practices. Meanwhile, researchers and academics will find comprehensive coverage of cutting-edge developments and case studies. Government officials and policymakers will benefit from practical guidance on harnessing AI to drive economic growth while ensuring environmental and social sustainability, and students will gain a deep understanding of the opportunities and challenges presented by AI in shaping the future of tourism. AI Technologies for Personalized and Sustainable Tourism stands as an indispensable resource, inspiring meaningful progress and fostering responsible innovation in the ever-evolving world of travel and tourism. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2033",
+    "title": "Enhancing e-commerce data privacy in India's rapidly evolving cybersecurity landscape through AI-driven intrusion detection systems",
+    "journal": "Strategic Innovations of AI and ML for E-Commerce Data Security",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5718-7.ch011",
+    "abstract": "The rise of sophisticated cyber threats poses significant challenges to the safety and integrity of goods and services in today's interconnected digital environment. This paper introduces \"Secure by Intelligence,\" a paradigm that utilizes Artificial Intelligence (AI) to enhance security and mitigate risks. India's rapidly growing e-commerce sector is transforming business practices, with AI playing a crucial role in its technological advancements. As e-commerce applications increase in complexity, maintaining usability becomes more challenging. This paper proposes integrating AI with Intrusion Detection Systems (IDS) to ensure data safety in ecommerce. By employing advanced machine learning techniques like deep learning and anomaly detection, AI-driven IDS can strengthen the resilience of e-commerce systems against cyber threats. The study examines the architecture and advantages of these systems while addressing implementation challenges. Ultimately, integrating AI-driven IDS will enhance consumer trust, protect sensitive data, and ensure the reliability of e-commerce ecosystems. © 2025, IGI Global."
+  },
+  {
+    "article_id": "CA_2034",
+    "title": "Leveraging AI and ML for proactive threat detection for e-commerce",
+    "journal": "Strategic Innovations of AI and ML for E-Commerce Data Security",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5718-7.ch012",
+    "abstract": "In the fast-paced realm of e-commerce, safeguarding sensitive data is crucial for customer trust and loyalty. Traditional security measures often fall short against evolving cyber threats. Thus, integrating AI and ML technologies enhances datasecurity. AI-powered systems can identify potential breaches in real-time, while ML algorithms improve fraud detection and authentication. AI-driven predictive analytics identify vulnerabilities, and AI-powered chatbots monitor for suspicious activities. Adaptive security frameworks dynamically adjust to evolving threats, ensuring resilience. This strategic collaboration with AI and ML helps e-commerce enterprises secure customer data and maintain a safe digital environment. © 2025, IGI Global."
+  },
+  {
+    "article_id": "CA_2035",
+    "title": "Perspectives on Digital Transformation in Contemporary Business",
+    "journal": "Perspectives on Digital Transformation in Contemporary Business",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5966-2",
+    "abstract": "In today's society, the proliferation of digitization, digitalization, and digital transformation have played a significant role in reshaping society and business, in both public and private sectors. The advancement of intelligent systems has enabled organizations to streamline processes, increase efficiency, and broaden their reach. The adoption of Industry 4.0 technologies has hastened this transformation, resulting in unprecedented opportunities for growth and innovation. In today's hyperconnected world, businesses from a wide range of industries have used these technologies to improve operations, personalize customer experiences, and gain a competitive advantage. However, as technology evolves, it is not without challenges. These challenges must be addressed and mitigated before they escalate, as they can have serious economic, social, and technological consequences for individuals, businesses, governments, and society as a whole. Perspectives on Digital Transformation in Contemporary Business is an essential resource for navigating the complex landscape of digital transformation in business. The book delves into the evolution, trends, and challenges of digitalization, providing invaluable insights into key thematic areas such as the digital economy, digital education, digital entrepreneurship, and digital ethics. This book covers topics such as entrepreneurship, healthcare technology, and supply chains, and is a useful resource for business owners, policymakers, educators, researchers, technology professionals, and academicians. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2036",
+    "title": "Intersections of Law and Computational Intelligence in Health Governance: Virtual Assistants in Health and Medicines",
+    "journal": "Intersections of Law and Computational Intelligence in Health Governance",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-5976-1.ch001",
+    "abstract": "Virtual assistants in health and medicine utilize AI and NLP to revolutionize patient care and healthcare services.They engage patients with personalized interactions, improve access to healthcare, and support healthcare professionals.They assess symptoms, provide personalized health education, assist with medication management, and streamline appointment scheduling.Integration with telemedicine expandsaccess to care, while wearable device integration monitors health metrics.Virtual assistants ensure secure access to medical records, adhere to regulations like HIPAA, and continuously improve through user feedback.Overall, they optimize patient engagement, improve accessibility, and enhance efficiency in healthcare delivery. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2037",
+    "title": "Modern banking solutions in industry 5.0: Evolution, impacts, and potential applications for the future",
+    "journal": "Convergence of Technology and Operations Management in Modern Businesses",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6200-6.ch013",
+    "abstract": "In the era of Industry 5.0, banking solutions have evolved significantly, driven by advanced technologies and changing consumer expectations. This abstract discusses the evolution, impacts, and potential future applications of modern banking solutions within Industry 5.0. The evolution of banking solutions has been marked by the integration of cutting-edge technologies such as artificial intelligence (AI), blockchain, and the Internet of Things (IoT). These technologies have revolutionized traditional banking practices, providing enhanced efficiency, security, and personalized customer experiences. The impacts of these advancements are profound across various dimensions. They have streamlined financial operations, enabling real-time transactions, automated customer service through chatbots, and personalized financial advice based on big data analytics. Moreover, they have improved regulatory compliance through advanced monitoring and reporting capabilities. Further, the potential applications of modern banking solutions in Industry 5.0 are large. © 2025 by IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2038",
+    "title": "AI and Machine Learning in E-Commerce Security:Emerging Trends and Practices",
+    "journal": "Strategies for E-Commerce Data Security: Cloud, Blockchain, AI, and Machine Learning",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6557-1.ch002",
+    "abstract": "With the continuous rise of e-commerceandits integration intomany aspects of daily life, advanced methods of protection have grown dearer. AI and machine learning technologies are on the rise, allowing businesses in the e-commerce field to improve their security protocols and processes for securing customer and sensitive corporate data. Over the next decade or so, AI and machine learning will change the face of e-commerce security in multiple positive ways. Also, AI-driven chatbots are one of the trends in e-commerce security. E-commerce transactions can also benefit from risk assessment and mitigation, thanks to the availability of machine learning algorithms. Through analysis of the data and history of transactions in the past, it is possible to detect risks and demand more authentication for high-risk types of transactions. This chapter covers the technologies analysis on large amount of data to identify patterns and anomalies, enabling real-time fraud detection and enhanced user authentication. Emerging trends include the use of AI-driven chatbots for se-cure customer interactions, ML algorithms for personalized security measures, and predictive analytics to anticipate and mitigate potential threats. Together, AI and ML are setting new standards for safeguarding e-commerce platforms, ensuring a safer shopping experience for consumers. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2039",
+    "title": "Customer retention in the hospitality sector: A glimpse into industry 4.0 through AI lens",
+    "journal": "Exploring the World With Blockchain Through Cryptotravel",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6562-5.ch013",
+    "abstract": "In the context of dynamic changes in the hospitality industry, the issue of customer loyalty remains one of the primary cornerstones of business continuity. In light of the emergence of the industry's 4.0 concepts, this study aims to identify new tendencies in the paradigm of customer retention and how AI technologies contribute to those changes. Industry 4.0 can be described as the fourth interrelated transformation and is characterized by the integration of digital technologies, AI, and advanced automation impacting operational models across industries including hospitality. Machine Learning, one of the branches of AI, has the capability of handling large amounts of customer data for Analysis, Modelling, and Personalization reducing time, cost, and efforts in improving customer engagement and loyalty. Further, using AI in the form of virtual products such as chatbots and virtual assistants, they continue to provide consistent and efficient services to the customers hence supporting the causes of customer retention. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2040",
+    "title": "AI in hospitality and tourism promotion: Opportunities and challenges",
+    "journal": "Impact of AI and Tech-Driven Solutions in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6755-1.ch003",
+    "abstract": "The integration of artificial intelligence (AI) in the hospitality and tourism industry presents significant opportunities and challenges. This research explores how AI technologies, such as chatbots, predictive analytics, and personalized recommendations, are transforming the way businesses promote their services and engage with customers. AI-driven tools can enhance customer experiences by providing real-time information, personalized travel recommendations, and efficient service management. They enable businesses to analyze vast amounts of data, predict trends, and tailor marketing strategies to individual preferences, thereby increasing customer satisfaction and loyalty. However, the adoption of AI also presents challenges, including concerns over data privacy, the need for substantial initial investments, and the potential displacement of human jobs. The findings underscore the importance of strategic AI adoption in achieving competitive advantage and enhancing the overall customer experience in the rapidly evolving hospitality and tourism sector. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2041",
+    "title": "Transforming hospitality and tourism with AI and innovative technologies",
+    "journal": "Impact of AI and Tech-Driven Solutions in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6755-1.ch004",
+    "abstract": "Tourism, hospitality, efficiency, and customer satisfaction benefit from AI. AI automation, deep learning, predictive analytics, and customized solutions change customer operations. Chatbots handle urgent reservations and customer inquiries, while humans handle difficult situations. These trustworthy solutions boost customer satisfaction and business efficiency. ML algorithms boost pricing and booking systems' responsiveness, efficiency, and market sensitivity. AI-customized customer data improves marketing and communications. AI integration raises ethical concerns of things like enterprise data privacy and automation. But it also cuts tourism and hotel staff turnover and hiring costs. AI uses predictive analytics to automate and distribute resources, saving time and money. This extensive study examines AI's impact on travel and hospitality. Reports inform stakeholders of current and future trends. In this chapter, the authors prepare stakeholders for AI's rapid hotel and tourism industry transformation. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2042",
+    "title": "Embracing technological disruption: Exploring the adoption of AI-driven solutions in tourism and hospitality",
+    "journal": "Impact of AI and Tech-Driven Solutions in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6755-1.ch007",
+    "abstract": "In recent years, the tourist and hospitality business has undergone substantial technological disruption due to the rapid progress and use of artificial intelligence (AI) based solutions. This research study seeks to investigate the present status of AI implementation, namely chatbots, in the tourism and hospitality industry. It will analyze the primary factors that motivate the acceptance of these revolutionary technologies, as well as the obstacles encountered, and the services offered in accepting them. The article examines the use of AI in improving the customer experience, streamlining operations, and fostering innovation in different parts of the tourist and hospitality business. This is done by doing a thorough study of relevant literature and analyzing case studies from the industry. The results of this study can provide valuable insights for decision-making, influence future research priorities, and ultimately assist the industry in effectively utilizing AI to remain competitive and adaptable to the changing demands of customers in the digital era. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2043",
+    "title": "Navigating the digital landscape with the integration of social media and artificial intelligence (AI) in tourism industry",
+    "journal": "Impact of AI and Tech-Driven Solutions in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6755-1.ch013",
+    "abstract": "The tourism sector is currently experiencing a significant paradigm shift as a result of the integration of artificial intelligence and social media. Social media platforms influence traveler decisions and preferences through user-generated content and peer evaluations. AI technology like chatbots, automated customer service, and personalized suggestions are improving travel sector efficiency and customisation. This chapter analyses current patterns to investigate social media and AI's symbiosis. It also shows how these two technologies can work together to make travel more enjoyable, personalized, and smooth. It also addresses the issues that arise while applying these remarkable advances. This chapter summarizes the effects of social media and AI on travel and tourism. It predicts future advances and offers advice on adapting to the changing digital landscape. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2044",
+    "title": "Technological advancements in the hospitality sector: The role of intelligent chatbots",
+    "journal": "Impact of AI and Tech-Driven Solutions in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6755-1.ch015",
+    "abstract": "In today's digital era, the emergence of artificial intelligence (AI) is crucial, particularly in the significance of chatbots. From the start, AI has opened numerous possibilities and obstacles across various sectors including the hospitality sector. Similarly, AI needs to be considered in the process of translating new innovations into the worldwide economy. Addressing customer inquiries is a critical aspect of the hospitality sector with many businesses embracing this technology like the use of chatbots for round-the-clock customer interaction. This chapter explores the effective incorporation of chatbots into the hospitality sector and their potential to revolutionize its future. It also suggests a framework for utilizing smart chatbots to enhance the hospitality sector's operational efficiency. The chapter wraps up by highlighting main findings, providing suggestions and implications for policy and practice, and emphasizing the need for a harmonious relationship between technological advancements such as chatbots and the hospitality sector to deliver improved customer experiences. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2045",
+    "title": "Leveraging AI for 24/7 support: A guide to implementing intelligent chatbots in the hotel industry",
+    "journal": "Impact of AI and Tech-Driven Solutions in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6755-1.ch016",
+    "abstract": "Throughout the post-pandemic period, the hospitality and tourism industry has experienced phenomenal growth in the number of customers with a growing need for excellent customer service. In the tourism and hospitality industry, customer service may be revolutionized in the hotel business by implementing chatbots. These AI chatbots increase client trust through customization, anonymity, and empathetic answers. Their advantages, including contextual awareness and natural language processing, are revolutionizing how consumers look for information and make decisions. Their perceived usefulness, humor, and ease of use are key criteria that make them preferable. AI chatbots positively affect consumer behavior by raising the caliber of interactions and willingness to pay for hotel services. For example, KLM Royal Dutch Airlines uses a chatbot named Blue-Bot to answer questions about booking, boarding, and other travel-related inquiries; the City of San Francisco uses a chatbot called Muni Bot to provide information about public transportation options; Hilton Hotels uses a chatbot to answer questions about reservations, amenities, and other hotel-related inquiries. Understanding these aspects and successfully utilizing AI technologies will enable hotels to improve client experiences, offer round-theclock assistance, and expedite service delivery in the hospitality sector. Therefore, this chapter is aimed at examining the current uses and obstacles associated with Chatbots, implementing generative artificial intelligence (AI) and other related symbols as well as suggesting a roadmap for potential research under this area. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2046",
+    "title": "Customer satisfaction in hospitality marketing from a technological perspective",
+    "journal": "Impact of AI and Tech-Driven Solutions in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6755-1.ch019",
+    "abstract": "In the rapidly evolving landscape of the hospitality industry, technology plays a critical role in enhancing customer satisfaction. This chapter explores key technological advancements, such as artificial intelligence (AI), data analytics, mobile applications, social media, and customer relationship management (CRM) systems, and their impact on enhancing customer experiences. AI-powered chatbots provide instant support, while data analytics offers insights into customer behavior for personalized marketing. Mobile applications streamline booking and communication, while social media fosters direct engagement and community building. CRM systems enhance customer relationships through targeted communication. Case studies from leading hospitality companies demonstrate the successful use of technology in marketing. Emerging trends like virtual reality (VR), augmented reality (AR), and blockchain indicate the future direction of the industry. The chapter concludes with recommendations for leveraging technology to boost customer satisfaction in hospitality marketing. © 2024 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2047",
+    "title": "Enhancing customer experiences with service robots: The role of consumer behavior, customer orientation, and emotional intelligence",
+    "journal": "Improving Service Quality and Customer Engagement With Marketing Intelligence",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6813-8.ch002",
+    "abstract": "Due to the 4th Industrial Revolution, Artificial Intelligence and other internet technologies such as RAISA (Robots, Artificial Intelligence, and Service Automation) have been adopted in various industries, including the hospitality and tourism industry. As the industry traditionally offers services through a manual labor force, more companies adopt RAISA through a commercial service in the form of chatbots, delivery robots, robot concierge, conveyor restaurants, self-service information/check-in/ check-out kiosks, and many others. This book chapter explores the dynamic interplay between consumer behavior, customer orientation, emotional intelligence, and the integration of service robots into the customer service landscape. It delves into the transformative potential of service robots in various industries and the profound impact they have on customer satisfaction. In this chapter used holistic approach to examining the intersection of technology and human empathy in the context of customer experiences, offering insights into how service robots can enhance, rather than replace, human interactions within the customer service industry. The chapter also examines how understanding consumer behavior, cultivating customer orientation, and leveraging emotional intelligence can maximize the effectiveness of service robots in enhancing customer experiences. The integration of these components is crucial in achieving a harmonious synergy between technology and human interaction, ultimately shaping the future of customer service. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2048",
+    "title": "A soft computing-based MCDM approach selection of best electric vehicles towards SDG-7",
+    "journal": "Optimized Energy Management Strategies for Electric Vehicles",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6844-2.ch010",
+    "abstract": "Battery electric vehicles are an evolution in the automobile industry as they also contribute to reducing the harmful effects of vehicles on the environment because of fossil fuels and the release of carbon dioxide. The purchasing decision of the consumer is highly dependent on the specific criteria when it comes to the adoption of Battery electric vehicles. This work helps to analyze those specific criteria that are important from a consumer point of view before purchasing a BEV. The selected criteria analyzed in this study are the range of the vehicle, its full charging time, the purchasing price of the vehicle, the battery capacity of the vehicle, and the energy consumption of the vehicle. The analysis to find out the most prominent criteria that affect the purchasing decision of the consumer is done with the help of the Fuzzy AHP approach which provides the weights of the selected criteria and the other technique used is the Technique for Order Preference by Similarity to Ideal Solution TOPSIS, which provides the rank of the selected alternative electric vehicles. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2049",
+    "title": "AI-powered customer engagement: Changing marketing strategies in the hotel industry",
+    "journal": "Integrating AI-Driven Technologies Into Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-7122-0.ch006",
+    "abstract": "The advent of artificial intelligence (AI) has revolutionized various sectors, with the hotel industry experiencing significant transformations in marketing strategies and customer engagement. This study explores the impact of AI-powered tools and technologies on the marketing strategies employed by hotels to enhance customer engagement and satisfaction. By leveraging AI, hotels can now offer personalized experiences, predictive analytics, and efficient customer service, thereby improving operational efficiency and guest satisfaction. The research delves into the various AI applications in the hotel industry, such as chatbots, virtual assistants, and recommendation engines, which facilitate real-time interactions and personalized service offerings. The integration of AI in customer relationship management (CRM) systems has enabled hotels to analyze vast amounts of data, leading to more informed marketing decisions and targeted campaigns. Furthermore, the study examines how AI-driven marketing strategies have shifted from traditional methods to more dynamic, data-driven approaches. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2050",
+    "title": "Artificial intelligence in banking: Chatbots and robo advisors",
+    "journal": "Integrating AI-Driven Technologies Into Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-7122-0.ch009",
+    "abstract": "Artificial intelligence is considered a multi-layered and multidimensional disruptive innovation. Many studies have been conducted to understand the multidimensional impacts of AI, particularly its social, legal, economic, environmental, and business impacts. The use of artificial intelligence is increasing in almost every industry today, and it is expected to change the service industry, in particular. This book chapter examines the development of artificial intelligence in financial services and discusses the customer adoption criteria for social robots. The characteristics and advantages of chat bots and robo advisors were analyzed in detail. This chapter argues that chatbots and robo-advisors are new actors in banking and discusses their role in the service ecosystem and their impact on banking strategies. The book chapter treats the long-term effects of AI in the banking industry and provides a framework for understanding customer perceptions and customer adoption criteria in financial services. © 2024, IGI Global. All rights reserved."
+  }
+]

@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0901",
+    "title": "Trust fall: data breach perceptions from loyalty and non-loyalty customers; [信任度流失: 酒店會員與非會員客戶對於資料外洩的認知]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2019.1603296",
+    "abstract": "Due to increased technological development in the service industry, protecting consumers’ personal data has become a critical concern. When companies’ information systems are attacked and customers’ profiles are compromised after data breaches, customers may feel more vulnerable about their information privacy. This study uses hotel data breaches as circumstances and aims to understand whether loyalty and non-loyalty program customers would distinguish differently the perceived severity, vulnerability, trust depletion, and crisis response strategies of an organization in response to a data breach. The results indicated that a data breach does not cause significant differences in perceived vulnerability and perceived severity between the two groups. However, loyalty program customers significantly reduce their trust toward the organization after a data breach crisis. This study provides implications to address the importance of customer data protection and crisis responses as part of customer relationship management. © 2019 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0902",
+    "title": "Pre-service recovery: impact on customer satisfaction and acceptable waiting time; [ 服务预补救对顾客服务前等待满意度和可接受等待时间的影响研究]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2019.1667979",
+    "abstract": "Defined as compensation a service provider offers during the customer’s waiting period before a service is delivered, pre-service recovery is becoming popular in the service industry. This paper examines two important issues: (1) how pre-service recovery affects customers’ pre-service waiting satisfaction and acceptable waiting time and (2) which type of pre-service recovery has the greatest impact. A scenario-based survey was administered to measure the impacts of different types of pre-service recovery on customers’ perceptions of justice, satisfaction with the wait for a service, and acceptable waiting time. The results show that pre-service recovery can significantly improve customers’ perceived justice and pre-service waiting satisfaction. Compared to low-level tangible compensation and psychological recovery, high-level tangible compensation results in higher pre-service waiting satisfaction. Interactional justice has the greatest impact on pre-service waiting satisfaction. Moreover, pre-service waiting satisfaction positively affects customers’ acceptable waiting time, implying that pre-service recovery can increase their willingness to wait. © 2019 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0903",
+    "title": "When AI-based services fail: examining the effect of the self-AI connection on willingness to share negative word-of-mouth after service failures; [当基于人工智能的服务失败时：检查自我概念-人工智能联结对服务失败后分享负面口碑的意愿的影响]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2020.1748014",
+    "abstract": "Recent proliferation of artificial intelligence (AI) in service encounters gives rise to questions on how consumers respond to these novel technologies. This study seeks to examine the influence of AI service failures on consumers’ propensity to share negative word-of-mouth. Three experiments demonstrate that consumers are less willing to share negative word-of-mouth after a service failure caused by an AI recommendation system, in contrast to a human employee, despite there being no difference in the failure, firm blame, or dissatisfaction with the failure. Further investigation suggests that this effect is driven by consumers’ perceived connection with the AI that uses their past behavior to predict their future preferences. The conclusions shed light on the overall understanding of consumer-AI interactions. The results also provide managerial implications for firms to implement AI effectively and carefully in their service offerings. © 2020 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0904",
+    "title": "Transformative service research and COVID-19",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2021.1883262",
+    "abstract": "In view of unprecedented severe impact of the COVID-19 on micro-, meso-, and macro-levels of the service sector around the world, the Service Industries Journal initiated this special issue, approaching from transformative service research perspective (TSR) to address the issues associated with this pandemic and identify remedies and business recovery strategies for this sector. The special issue includes six articles. Three are focused on conceptualising social distancing and discussing its influence on customers and service providers. Moving beyond the social distancing focus, Paper 4 addressed the impact of mask wearing on customer response. Elevated to the organisational level, Paper 5 discusses how service quality may affect customers’ health-focused behaviours. Consistent with the meso-level discussion, Paper 6 proposes business strategies for service organisations to be resilient and sustain in this pandemic. Discussion of implications and suggestions for future research concludes this editorial. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0905",
+    "title": "How potential customers perceive companies’ reply to negative reviews?; [潜在客户如何看待公司对负面评论的回复？]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2022.2030718",
+    "abstract": "Companies are increasingly using humorous replies as a service recovery method to respond and apologize to complainants. However, there is a lack of clarity regarding the effectiveness and appropriateness of humorous replies. Drawing on information processing theory, this study assesses how consumers as onlookers view former customers’ negative word-of-mouth relating to service failures (vindictive and nonvindictive reviews) and humorous and standard replies provided by service operators in the context of hostels, and effects on booking intentions. To compare consumers’ responses to various combinations of reviews and replies, this study administered survey questionnaires to 377 respondents. A series of independent-sample t test analyses and partial least squares (PLS) path analyses revealed that standard replies are effective for responding to both review types. Humorous replies have better performance when responding to nonvindictive reviews than vindictive reviews. This study contributes to the scarce research on humorous replies in the service recovery context. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0906",
+    "title": "How do consumer-to-consumer interactions affect bystanders on corporate social media (CSM)? (In)civility in advocates’ responses and complainant-bystander psychological distance; [企业的官方社交网站里消费者之间的交流如何影响旁观者的行为？品牌拥护者回复顾客投诉的 (非) 文明行为以及投诉者与旁观者之间的心理距离]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2022.2057475",
+    "abstract": "The role of other consumers (i.e. bystanders and brand advocates) in webcare has been underexplored in the setting of CSM. This study fills the void by portraying a dynamic network among the consumer who posts a complaint, the advocate who replies to the complaint, and the bystander who observes the service interaction. Specifically, this study investigated how the tone (civil vs. uncivil) of the advocate’s defensive response affects the bystander’s service evaluation and how the complainant-bystander psychological distance serves as a boundary for the bystander’s information processing. Study 1 revealed that consumer-to-consumer (C2C) interactional justice is the mechanism underlying the relationship between defensive response and satisfaction with complaint handling. Study 2 demonstrated that the bystander’s perceived distance to the failure experience moderates his/her cognitive processing of C2C service interactions such that the mediation (defensive response → C2C interactional justice → satisfaction with complaint handling) is stronger when the bystander feels psychologically closer to the service event. Both theoretical and practical implications regarding service management on CSM channels are also discussed. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0907",
+    "title": "Emotions in service research: evolutionary analysis and empirical review: 服务情绪研究：进化分析与实证综述",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2022.2101638",
+    "abstract": "This study provides a bibliometric review of emotion-focused research in the service discipline by examining the main research themes and concepts, conceptual foundations, and the most recent research fields. Six-hundred forty-seven documents on emotions were extracted and examined by performing co-citation and bibliographic coupling analyses as well as qualitative content analysis. Co-citation analysis results show that ‘emotions’ is a defined research area with six fundamental themes; namely, positive customer emotions, emotional reactions to service failure and recovery, measurement of emotions, empirical analysis of emotions, brand love, and customer delight. In addition, various theoretical foundations could be employed in various empirical contexts, among which conservation of resources and social exchange play a great role. An examination of the most recent documents via bibliographic coupling analysis clarifies six appealing research trends and releases various recommendations on the occasions for further investigation to be drawn. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0908",
+    "title": "Service failure and self-recovery in tech-based services: self-determination theory perspective; [基於技術的服務之服務失誤和自我補救：自決理論觀點]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2022.2104257",
+    "abstract": "The pervasiveness of self-service technologies (SSTs) in the service industry has led to renewed interest in SST failure and recovery. Understanding how customers respond to SST disruptions and motivating them to resolve SST failures by themselves should be at the core of service companies’ recovery strategies, as this entails significant benefits to service providers and customers. Drawing on self-determination theory, we examined how intrinsic motivation encourages customers to undertake self-recovery after SST failure. A survey was conducted among users of airport self-check-in kiosks, and the obtained data were analyzed using structural equation modeling. The findings show that a greater perceived needs for competence, autonomy, and relatedness results in higher expected value and attitude towards self-recovery, thus increasing self-recovery intention. Following expert interviews with airport personnel to consolidate the results, this study provides managerial suggestions aimed at raising customers’ intrinsic motivation, especially competence needs, to promote self-recovery. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0909",
+    "title": "Negative customer engagement behaviour in a service context; [ 服务业中的负面客户互动行为]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2022.2159945",
+    "abstract": "Negative customer engagement (NCE) has negative consequences on firms; however, research on NCE is limited. This study empirically investigates the impact of different intensities of NCE on subsequent outcomes such as the intention to switch and engage in negative word-of-mouth recommendations. Critical incident technique and a survey method were employed with 404 respondents to understand the negative valences of customer engagement behaviour in response to unfavourable service experiences within an emerging market context. A typology of NCE behaviours was subsequently developed. Neglect was conceptualised as disengaged behaviour while complaining that seeks redress from the service provider, aggression, online complaining, third-party complaining, switching to another service provider and negative word-of-mouth were conceptualised as negatively engaged behaviour. These behaviours were not found to occur in isolation, but rather occurred within a broader developmental process of NCE. Understanding how the process of NCE occurs enables management to develop proactive management strategies to counter it. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0910",
+    "title": "Curvilinear relationship between customer engagement and responses to service failures; [ 客户参与度与服务失败反应之间的曲线关系]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2022.2164273",
+    "abstract": "Drawing on the activation theory and the Exit-Voice-Loyalty-Neglect model, this study examines how the level of customer engagement affects the four different types of customer responses to a service failure in the mobile application context. In addition, we investigate the moderating role of relationship quality in those relationships. This study used data from a self-administrated online survey of 345 South Korean customers who had experienced a mobile application service failure. Partial least squares structural equation modeling was applied to our conceptual model. The results revealed a U-shape relationship between customer engagement and destructive responses (i.e. exit and neglect), as well as an inverted U-shape relationship between customer engagement and constructive responses (i.e. loyalty and voice). Furthermore, a greater relationship quality reinforces the relationship between customer engagement and responses to service failures, except for loyalty. This study addresses the inconsistent research findings of customer engagement by suggesting the curvilinear relationship between customer engagement and response to service failure. Additionally, it provides new insights for marketers or managers to develop marketing strategies to operate mobile applications efficiently. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0911",
+    "title": "How should voice assistants be heard? The mitigating effect of verbal and vocal warmth in voice assistant service failure; [ 语音助手应该如何被听到？言语和声音温暖对语音助手服务失败的缓解作用]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2023.2208522",
+    "abstract": "Voice assistants have become increasingly popular touchpoints in AI-infused service encounters in the hospitality industry. Although we have seen a growing body of research in this area, little attention has been paid to specific service failures involving exclusively voice interactions. Drawing from the Computers As Social Actors (CASA) research paradigm and the Stereotype Content Model, this research explores how warmth can mitigate the negative consequences of service failure involving voice assistants. In two experiments using both physiological (EDA) and psychological measures, we show that the perception of warmth improves consumers’ emotional reactions and increases re-patronage intention following a negative service outcome. We also found that the optimal voice to be used for a voice assistant is a dynamic speech style combined with emotionally expressive and warm verbal content. These findings contribute to the knowledge of voice-based smart service interaction and provide insight into how to mitigate the negative consequences of service failure involving voice assistants. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0912",
+    "title": "The role of customer’s engagement in service recovery; [消费者参与在服务补救中的作用]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2024.2358506",
+    "abstract": "The current research aims to identify the role of customer’s engagement in service recovery. It examines the impact of inter-customer recovery relative to service provider recovery practices when failures are attributed to different causes, including severe service failures. Mixed methods approach is conducted to answer the research questions. The results demonstrated that service provider recovery, compared to inter-customer recovery, has a stronger impact on customers’ satisfaction and behavioural intentions, regardless of the cause and severity of the failure. However, customers perceive the service provider’s recovery efforts more favourably when the failure is attributed to another customer. The current research contributes to service management literature by providing insights into the influences of customers’ engagement behaviours during service delivery. It assists service providers in the development and implementation of effective recovery strategies to avoid customers’ negative behavioural outcomes. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0913",
+    "title": "All Anglos are alike? A study of whinging Poms and bloody-minded Aussies",
+    "journal": "Journal of Marketing Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0267257X.2014.988283",
+    "abstract": "Cross-cultural service research is an important topic with a rich array of empirical evidence for differences in customer perceptions, attitudes and behaviours. However, the extant literature is almost exclusively focused on differences between cultures at each end of the diversity spectrum (most commonly East vs. West). Contemporary researchers have observed that existing studies fail to acknowledge the substantially greater levels of intra-cluster variation that exist. A cultural cluster is a group of countries that reflect values, attitudes and beliefs stemming from a common cultural ancestry. This seems surprising given the anecdotal evidence and stereotypes that are portrayed in popular culture, media and art. One area where intra-cluster variation may be evident is consumer complaint behaviour and in particular within the Anglo-cultural cluster in countries. A cultural cluster is a group of countries that reflect values, attitudes and beliefs stemming from a common cultural ancestry. The aim of this study is therefore to explore and elucidate the nature of differences in consumer complaint behaviour between cultures traditionally conceived and operationalised as identical. This study presents a qualitative study of 60 in-depth interviews with consumers in the United Kingdom and Australia and identifies differences in complaining styles, parental influence and the conceptualisation of complaining. © 2014, © 2014 Westburn Publishers Ltd."
+  },
+  {
+    "article_id": "CS_0914",
+    "title": "Gendered reading of the body in the bed",
+    "journal": "Journal of Marketing Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0267257X.2015.1061038",
+    "abstract": "This study contributes to studies on domestic material culture and gender. In studying object–person relations, prior scholars have given priority to materialising the ‘object’, paying less attention to the material aspects of the ‘person’. To redress this gap, we draw on recent feminist materialist and affective turns and conceptualise the object–person relation as inherently gendered, embodied and affective. We develop this conceptualisation by analysing the way in which the gendered body interacts with the bed – a domestic material object that is fruitful for a gender analysis. As a result, we offer an extended view of the gendered body that interacts with the material world: one that is biological and cultural, sleeping and waking, and has the capacity to affect and be affected. Our study thereby contributes to gender studies in marketing and consumer research by taking a step forward in materialising both the object and the body. © 2015 Westburn Publishers Ltd."
+  },
+  {
+    "article_id": "CS_0915",
+    "title": "Advancing sustainable consumption in the UK and China: the mediating effect of pro-environmental self-identity",
+    "journal": "Journal of Marketing Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0267257X.2015.1061039",
+    "abstract": "In this paper, we respond to the call for more holistic and culturally diverse research to advance understanding of (non)sustainable consumption behaviour. Our conceptual model incorporates materialism, environmental concern, social consumption motivation, pro-environmental self-identity and sustainable consumption behaviours. This paper contributes to knowledge by examining the mediating role of pro-environmental self-identity to more fully explain consumers’ (non)sustainable consumption behaviour. An international online panel survey was employed in the UK (n = 1037) and China (n = 1025). Findings show that pro-environmental self-identity partially or fully mediates the relationships between materialism, environmental concern, social consumption motivation and sustainable consumption behaviours. Important cultural differences also emerged, for example, the positive effect of materialism on Chinese consumer’s sustainable consumption, which is contrary to Western evidence. We suggest bolder, culturally informed and more reflexive marketing strategies are needed to significantly advance sustainable consumption, thus effectively helping to redress the crisis facing our planet. © 2015 Westburn Publishers Ltd."
+  },
+  {
+    "article_id": "CS_0916",
+    "title": "Boundary conditions of the effect of customer coproduction: the case of service failure",
+    "journal": "Journal of Marketing Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0267257X.2018.1474243",
+    "abstract": "Research on the relationship between customer coproduction and satisfaction has produced mixed results even after accounting for the role of attribution. This paper extends prior research on boundary conditions and examines the role of customer participation readiness (PR) during encounters that end with service failure. Based on congruence and zone-of-tolerance theories, the two empirical studies suggest that (a) increasing levels of coproduction combined with increasing levels of PR escalates dissatisfaction and weakens attitudinal loyalty; (b) psychological reactance and expectancy disconfirmation mediate these relationships; (c) increasing levels of coproduction combined with increasing levels of external attribution reduce dissatisfaction and mitigate the adverse effect on attitudinal loyalty; and (d) PR interacts with customer coproduction to influence how customers make attributions. Future research should consider the role of PR in service failures. Where feasible, managers should gather and utilise individual-level PR data in order to predict customer attributions and dissatisfaction. © 2018, © 2018 Westburn Publishers Ltd."
+  },
+  {
+    "article_id": "CS_0917",
+    "title": "Webcare quality: conceptualisation, scale development and validation",
+    "journal": "Journal of Marketing Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0267257X.2020.1800797",
+    "abstract": "Managing negative reviews by posting online responses called webcare is a growing trend among marketers. However, no research exists to date that measures the quality of these marketer-generated responses. This article addresses this shortcoming by conceptualising a construct called webcare quality and developing a scale that measures it. Five studies are conducted which results in a 37-item scale comprising of nine dimensions, namely, immediacy, ownership, comprehensiveness, civility, assurance, coherence, retention, personalisation and elaborateness. Academically, this research adds to the existing body of knowledge on service recovery strategies, webcare and online complaint management processes. Practically, this scale plays an important role in understanding how complaining consumers evaluate the quality of managerial responses. If favourably evaluated, transgressing firms may win back previously dissatisfied and unhappy customers. © 2020 Westburn Publishers Ltd."
+  },
+  {
+    "article_id": "CS_0918",
+    "title": "Cue the complaint: the visual cues of Facebook business pages and their influence on consumer complaint behaviour",
+    "journal": "Journal of Marketing Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0267257X.2021.1934085",
+    "abstract": "The visual cues of websites have been found to affect consumer attitudes and behaviours. Facebook business pages (FBPs) also exhibit visual cues, several of which are pertinent to consumers considering whether to make a complaint on a FBP. Drawing on social cognitive theory (SCT), we explore the role of these visual cues in consumers’ social learning and reveal their influence on consumers’ likelihood to complain and attitude towards the firm. Four experiments examine the influence of three visual cues: the presence of complaints by other consumers, firm responsiveness, and evidence of redress. Results indicate that consumers are more likely to complain when complaints of others are present on a FBP, and any form of redress has a greater positive effect than firm responsiveness. Moreover, a consumer’s perceived likelihood of a successful complaint was found to explain the impact of visual cues on their likelihood to complain and attitude towards the firm. © 2021 Westburn Publishers Ltd."
+  },
+  {
+    "article_id": "CS_0919",
+    "title": "Influence of Firm’s Recovery Endeavors upon Privacy Breach on Online Customer Behavior",
+    "journal": "Journal of Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1080/07421222.2015.1138375",
+    "abstract": "The soaring number of privacy breaches has prompted affected firms to learn how to effectively recover damaged customer relationships. In this study we develop and test a model that explains how online customer behavior is influenced by a firm’s recovery endeavors when privacy breaches occur. Drawing on a service recovery perspective, we integrate the notions of justice perceptions and psychological responses into a theoretical framework. The proposed model was tested against data collected from 1,007 online customers based on a hypothetical scenario. Results show that three types of justice perceptions, distributive, procedural, and interactional justice, jointly affect psychological responses—that is, perceived breach and feelings of violation. In addition, psychological responses were shown to be important in shaping postincident outcomes such as post-word of mouth and post-likelihood of switching. The study gives researchers and practitioners a useful conceptual tool for analyzing the effectiveness of organizational practices in recovering customer relationship after privacy breaches. Copyright © Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0920",
+    "title": "Whose and What Social Media Complaints Have Happier Resolutions? Evidence from Twitter",
+    "journal": "Journal of Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1080/07421222.2017.1334465",
+    "abstract": "Many brands try to manage customer complaints on social media, helping their customers on a real-time basis. Inspired by this popular practice, in this study, we aim to understand whose and what complaints on social media are likely to have happier resolutions. We analyzed the complaint resolution experience of customers of a major U.S. airline, by exploiting a unique data set combining both customer–brand interactions on Twitter and how customers felt at the end of these interactions. We find that complaining customers who are more influential in online social networks are more likely to be satisfied. Customers who have previously complained to the brand on social media, and customers who complain about process-related rather than outcome-related issues are less likely to feel better in the end. To the best of our knowledge, this study is the first to identify the key factors that shape customer feelings toward their brand–customer interactions on social media. Our results provide practical guidance for successfully resolving customers’ complaints through the use of social media—an area that expects exponential growth in the coming decade. Copyright © Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0921",
+    "title": "Does Active Service Intervention Drive More Complaints on Social Media? The Roles of Service Quality and Awareness",
+    "journal": "Journal of Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1080/07421222.2021.1958548",
+    "abstract": "Despite many advantages of social media as a customer service channel, there is a concern that active service intervention encourages excessive service complaints. Our paper casts doubt on this misconception by examining the dynamics between social media customer complaints and brand service interventions. We find service interventions indeed cause more complaints, yet this increase is driven by service awareness rather than chronic complaining. Due to the publicity and connectivity of social media, customers learn about the new service channel by observing customer service delivery to others—a mechanism that is unique to social media customer service and does not exist for traditional call centers. Importantly, high-quality service reduces future complaints. As a result, proactive customer service is a sound strategy on social media, as long as firms dedicate to service quality. Hence, firms should be less concerned about whether to respond and more focused on how to respond to customer complaints. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0922",
+    "title": "Socioemotional wealth and the innovativeness of family SMEs in the United Arab Emirates",
+    "journal": "Journal of Small Business and Entrepreneurship",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08276331.2021.1926779",
+    "abstract": "Why are some family SMEs more innovative than others? We use the heterogeneity within family SMEs to explore how their socioemotional wealth (SEW) affects innovativeness. The ubiquity of smaller family firms means that their innovativeness is critical for policymakers, such as those in the United Arab Emirates, seeking innovation-led development. We conduct a multi-case study analysis of SEW and innovativeness in fourteen family SMEs based in the United Arab Emirates. Participants were from a range of sectors and across the employment size-range of family SMEs. None of the most innovative family SMEs had highly family-centric socioemotional wealth. High family-centricity was however evident in all the least innovative firms who survived on reputation and incremental customer or supplier-driven improvements. The least innovative firms were amongst the smallest but not the youngest, with firm age not influential for innovativeness. The paper proposes redressing family-centric SEW preferences to raise the innovativeness of family SMEs. This will involve longer-term decision-making that gives greater consideration to the interests of external stakeholder as well as future generations of the family. © 2021 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0923",
+    "title": "Strategic and bonding effects of enhancing the student feedback process",
+    "journal": "Journal of Marketing for Higher Education",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08841241.2016.1146386",
+    "abstract": "In order to produce distinctiveness that leads to competitive advantage, higher education institutions must remain cognizant that students are co-creators. Thus, to create genuine value in educational service delivery, there is a need for a more highly developed understanding of the student-institutional intersection. The present research contributes to the marketing of higher education by developing and testing a model related to the antecedents of a broader conception of student feedback as part of student/customer orientation and co-creation. Conceived as customer feedback, student feedback to an educational institution can be positive (compliment), negative (complaint), or be an idea for an improvement to any person, or service group of the institution. Perceived ease of the feedback process and perceived usefulness, customer orientation and affective commitment are found as antecedents to intention to provide feedback. The result is a model with conceptual and managerial implications for strategically bonding students to universities. © 2016 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_0924",
+    "title": "Customer service quality, emotional brand attachment and customer citizenship behaviors: findings from an emerging higher education market",
+    "journal": "Journal of Marketing for Higher Education",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08841241.2021.1949659",
+    "abstract": "This study examined the impact of university services on customers’ (students’) Emotional Brand Attachment (EBA) and Customer Citizenship Behaviors (CCB). The main reason for examining this association was to explore the role customer service generated EBA played in motivating students to exhibit voluntary and extra-role behaviors. Using 568 completed research questionnaires, the proposed hypotheses were tested using multiple regression analysis. In addition, mediation effect of EBA on customer service quality and CCB relationship were tested. The research findings indicated that reputation and academic aspects (primarily represented by teaching quality and student–faculty bonding) were most influential in creating EBA and subsequent willingness towards extra role and voluntary behaviors. The outcome of the mediation analyses showed that non-academic aspects (such as effective complaint resolution, IT support and administrative assistance) had a full mediating effect, whereas access and reputation had partial mediating effect, on students’ citizenship behaviors. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0925",
+    "title": "How can organizational tolerance toward frontline employees’ errors help service recovery?",
+    "journal": "Journal of Personal Selling and Sales Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08853134.2021.2005612",
+    "abstract": "While work on service failures has recently begun to investigate aspects of service recovery systems from an organizational perspective, little attention has been paid to the specific practice of organizational error tolerance in the service marketing literature. One important gap is the lack of an integrated perspective of the outcomes of such a policy on service recovery. The literature also ignores the differences in internal and external perspectives of service failure and their impact on openly communicating the policy. To address this issue, we examined how and under what conditions organizational error tolerance can help improve the experience of customers who encounter service failure caused by frontline employees. We opted for a multilevel qualitative approach in the retail sector, leading to four propositions. After identifying the mechanisms through which an error tolerance policy can generate positive outcomes—within certain limits—for customers in cases of service failure, we argue that such organizational error tolerance conflicts with the demanding attitude of today’s customers, and their negative representation of individual errors. This tension makes it difficult for service providers to reveal their error tolerance policy, giving rise to what we refer to as an ‘informational blind spot’. © 2021 Pi Sigma Epsilon National Educational Foundation."
+  },
+  {
+    "article_id": "CS_0926",
+    "title": "Hotel Service Recovery and Service Quality: Influences of Corporate Image and Generational Differences in the Relationship between Customer Satisfaction and Loyalty",
+    "journal": "Journal of Global Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08911762.2016.1262932",
+    "abstract": "As the number of tourists continues to grow globally, the hospitality industry players inevitably face more challenges. High competition among the competitors and the emergence of new technologies such as online booking platforms make the competition more intense among players in the hospitality sector. The quality of services provided is undoubtedly crucial to the success of the hotel. Hence, any service failure has to be addressed appropriately in order to maintain a high level of customer satisfaction and to keep the image of the hotel intact. It is therefore vital that service recovery programs are carefully planned to meet various types of service failures which may inevitably occur. In this study, questionnaires were distributed to customers who had experienced service failures. The aim was to investigate the influence of service quality and service recovery on satisfaction and, ultimately, the effect on customer loyalty. The research also tested the mediating effect of corporate image between the relationship of customer satisfaction and customer loyalty. The findings showed that both service recovery and service quality had a significant impact on customer satisfaction. Similarly, it was found that customer satisfaction induced customer loyalty towards the hotel operator. The result also showed that corporate image mediated partially between the relationship of customer satisfaction and customer loyalty. © 2017 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0927",
+    "title": "The Behavioral Consequences of Regret, Anger, and Frustration in Service Settings",
+    "journal": "Journal of Global Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08911762.2019.1628330",
+    "abstract": "Following a service failure, three discrete negative emotions—regret, anger, and frustration—are triggered through the attribution of blame to the three different sources of self, service provider, and situation, respectively. This study aims at investigating the set of behavioral consequences deployed by customers to mitigate each of those negative emotions within the context of Vietnam—a Confucian culture. The data was collected from 404 Vietnamese consumers. The findings reveal that regret and frustration are more likely to arise. Moreover, feelings of regret and anger trigger similar behavioral responses; customers choose neither to complain directly to the service provider nor to simply ignore the failed incident. Instead, they vent their feelings through nWOM with the intention of switching to another provider. In contrast, frustrated customers might either be passive in such a situation or complain directly. They do not engage in nWOM, but do intend to switch to alternatives. © 2019, © 2019 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0928",
+    "title": "Consumer’s Re-Participation in Online Flash Sale after Service Failure: A Moderated-Mediation Study",
+    "journal": "Journal of Global Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08911762.2024.2303638",
+    "abstract": "Online flash sales (OFS) have gained significant popularity in recent times. Interestingly, despite encountering service failures such as server errors, stockouts, and website crashes due to heavy online traffic, many consumers opt to re-participate in future OFSs offered by the same provider. Our study delves into the underlying reasons for such behavior. We formulated and tested our model based on scarcity theory and consumer deal proneness literature. We employed a 2 (deal type: planned vs. incidental) × 2 (consumer motivation: utilitarian vs. hedonic) between-subjects design. We used SPSS PROCESS Macro to test the moderation and moderated mediation effects. Findings indicate that deal-prone consumers tend to overlook service failures and choose to re-participate in online flash sales. Consumer competition mediates the relationship between deal proneness (DP) and re-participation intention (RPI). The effect of deal proneness on re-participation intention is decreased in incidental OFS compared to planned OFS, with the indirect effect moderated by the deal type. Additionally, consumption motivation moderates the main effect, with hedonic motivation significantly attenuating the effect compared to utilitarian motivation. Our research makes a significant contribution to the literature by highlighting the boundary conditions—namely deal type and consumer motivation—that influence the impact of deal proneness on re-participation intention in the context of OFS. This study offers a process-oriented view, highlighting the mediating role of consumer competition in the OFS landscape. We also illuminate new avenues by examining the impact of consumer motivation on the link between deal proneness and re-participation intention. Specifically, our findings related to the moderating effect of deal type present a fresh perspective to the existing body of knowledge. This study provides valuable insights for practitioners, particularly concerning segment targeting and the strategic incorporation of competition to bolster overall OFS participation. Moreover, our research underscores the importance for online retailers to pay heightened attention to service failures during incidental OFS, as these can significantly undermine their profitability. © 2024 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0929",
+    "title": "Algorithmic Service Failures and Brand Trust: Evidence from Multinational Consumer Reviews",
+    "journal": "Journal of Global Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08911762.2025.2601069",
+    "abstract": "This study investigates how digital brand trust erodes across countries by analyzing almost 100,000 consumer reviews of eDreams on Trustpilot. We integrate classic theories on service failure, fairness perceptions, and brand equity with advanced transformer-based topic modeling (BERTopic) and sentiment analysis. Our findings reveal how key issues—such as opaque subscription practices and refund delays—drive negative word-of-mouth differently across cultural and regulatory contexts. By bridging large-scale natural language processing with global branding frameworks, this research provides novel empirical insights for managing brand trust and consumer trust in algorithm-driven service environments, especially under persistent reputational disruption. © 2025 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0930",
+    "title": "Does Brand Equity Always Work? A Study of the Moderating Effect of Justice Perceptions and Consumer Attribution Towards Chinese Consumers",
+    "journal": "Journal of International Consumer Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08961530.2019.1635551",
+    "abstract": "The moderating effects of justice perceptions and stability of attribution on the relationship between brand equity and repurchase intention was investigated by applying both justice and attribution theories. Six hundred Chinese consumers who had recently suffered poor service from their telecommunications service provider were surveyed. Their responses revealed that perceptions of distributive and interactional justice in recovering from service failures help to maintain repurchase intention. Stability of attribution, however, weakens brand equity’s ability to maintain the intention to repurchase. These findings advance our understanding of Chinese consumers’ responses in the context of recovery from a service failure. © 2019, © 2019 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0931",
+    "title": "Switching Intentions of Service Providers and Cultural Orientation",
+    "journal": "Journal of International Consumer Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08961530.2021.1964408",
+    "abstract": "This study performs a cross-cultural comparison to understand how the drivers of switching intentions differ between countries that vary in their long-term orientation (LTO). The authors hypothesize how LTO moderates the influence of the drivers of switching intentions for a mobile phone subscription service. Structural invariance tests between consumer samples of the United States (low LTO) and the Netherlands (high LTO) reveal that, consumers from high LTO nation attribute more importance to relational quality but care less about service recovery in their formation of switching intentions. The theoretical and managerial implications of how differences in time orientation affect the pathways to loyalty are discussed. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0932",
+    "title": "An Investigation of Customers’ Recovery Expectations after Service Failure: Evidence from e-Commerce Settings at Different Stages of Maturity",
+    "journal": "Journal of International Consumer Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/08961530.2021.2012313",
+    "abstract": "Although recovery strategy literature is developing rapidly, less is known about e-commerce customers’ recovery expectations in settings at different stages of e-commerce maturity. Using a grounded theoretical paradigm and drawing on the decoy effect and paradox of choice theories, we explore customers’ recovery expectations by analyzing 110 interviews with e-commerce customers and e-commerce managers in two settings at different stages of e-commerce maturity: Kosovo and the USA (Study 1). We propose a framework with three types of customers whose emotions during service failure and recovery (indicated by their recovery language), and the type of service failure experienced are cues to their recovery expectations. Utilizing exploratory factor analysis, this framework is validated through a survey of 171 randomly selected e-commerce customers (Study 2). The findings expand theoretical understanding, and provide managers with guidelines for the alignment of customers’ expectations and e-commerce recovery delivery. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_0933",
+    "title": "Roadmapping for prioritisation of smartphone feature requirements based on user experiences",
+    "journal": "Technology Analysis and Strategic Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09537325.2016.1259468",
+    "abstract": "Since the life cycle of smartphones is becoming shorter, users are demanding new and improved smartphone features for updated smartphones, but it is difficult to know which features are the most important to users. In Internet user communities, users increasingly review smartphone functions and share information about their experiences such as complaints, problems, and satisfaction, and these user experiences have been fruitful sources for manufacturers that lead to smartphone improvements. Focusing on these user experiences, this paper proposes a systematic roadmapping process including prioritisation of smartphone feature requirements. By prioritising smartphone feature requirements, new and improved versions of smartphones that reflect user needs can be planned based on a product–market roadmap. The systematic approach consists of three parts: user-driven quality function deployment (QFD), a frequent pattern (FP)-tree algorithm, and a product–market roadmap. First, we collected data extracted from text mining in Internet user communities to construct a user-driven QFD. Second, using user experiences related to smartphone features, we applied the FP-tree algorithm to algorithmically derive a priority list of smartphone feature requirements. Finally, based on the result of the FP-tree of smartphones, we proposed guidelines to construct a product–market roadmap. It is expected that a versioning strategy can be formulated through this prioritised product–market roadmap. Furthermore, covering each step from data collection to roadmapping, this study suggests a systematic process for prioritisation of smartphone feature requirements based on user experiences. © 2016 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0934",
+    "title": "Satisfaction is a function of users of logistics services in e-commerce",
+    "journal": "Technology Analysis and Strategic Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09537325.2020.1849610",
+    "abstract": "Customer satisfaction in e-commerce directly depends on diverse dimensions of logistics services. In the market, there is a constant dilemma which logistics service dimensions affect customer satisfaction in e-commerce. The aim of the paper is to determine how certain dimensions of logistics services affect customer satisfaction in e-commerce. Thus, a methodological approach has been developed, as well as an original measuring instrument with eight dimensions: availability, delivery time, shipping costs, delivery reliability, product quality and condition, consumer complaints and return policy, information quality, and e-customers’ perception and satisfaction, with 31 items in total. The model is based on Confirmatory Factor Analysis (CFA) and Partial Least Squares method (PLS) and has been applied on the market of Serbia. A web survey was conducted on a sample of 425 respondents, i.e. final consumers who have used e-commerce services significantly in recent years. The obtained results clearly indicate that the satisfaction of e-commerce consumers directly depends on the observed dimensions of logistics service. The developed procedure and measuring instrument represent a concrete scientific contribution to better understanding of the dimensions of logistics service and customer satisfaction in e-commerce. The measuring instrument can be used to increase the satisfaction of e-commerce clients. © 2020 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0935",
+    "title": "Service recovery strategies for crowdsourced transportation: an examination of their impacts on user loyalty",
+    "journal": "Technology Analysis and Strategic Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09537325.2021.1979208",
+    "abstract": "Crowdsourced transportation (CT), which can be applied to passenger transportation and deliveries, is a growing business model, especially in modern societies. The service nature of CT which utilises public participation to provide transportation services makes it prone to service failures, which can cause users’ switching behaviour. Grounded on perceived justice and perceived value theories, the objectives of this study are to identify the service recovery strategies and to examine their impact on user loyalty (i.e. switching behaviour) after a service failure. In total, 549 survey responses were collected from CT users and analysed using structural equation modelling. Results show that five service recovery strategies can be employed by CT service platforms after a service failure, namely, ‘compensation’, ‘apology’, ‘problem solving’, ‘response speed’ and ‘explanation’. These strategies influence users’ perceived justice, which in turn influence user loyalty directly and indirectly via perceived value. The findings of this study have contributed to the development of a unified framework for service recovery in the context of CT and have several strategic management implications for CT service platforms to retain users. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0936",
+    "title": "Satisfaction as a function of user justice: a social exchange theory perspective",
+    "journal": "Technology Analysis and Strategic Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09537325.2024.2369934",
+    "abstract": "This study investigates complaint behaviour as a function of post-satisfaction behaviour stemming from perceptions of justice and security. Grounded in social exchange theory, we propose an integrated framework in which security, expectation confirmation, and dimensions of justice (distributive, procedural, and interactional) influence satisfaction, affecting complaint behaviour towards the eCommerce Digital Supply Chain (DSC) process. Data were collected through a quantitative online survey involving 316 Amazon eShoppers of tech products from the European region. The confirmatory factor analysis results validated the second-order reflective justice construct, encompassing distributive, procedural, and interactional dimensions. Furthermore, the structural relationship results revealed (i) justice and security have a significant impact on eShoppers’ satisfaction; (ii) a significant relationship exists between word of mouth, satisfaction, and eShoppers’ complaint intention. This framework contributes to the existing knowledge base and offers valuable insights for stakeholders in the eCommerce DSC. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0937",
+    "title": "The impact of affective and cognitive antecedents on negative word-of-mouth intentions",
+    "journal": "International Review of Retail, Distribution and Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09593969.2016.1157512",
+    "abstract": "Negative word-of-mouth (WOM), defined as derogatory information disseminated from person to person and aimed at defaming a product, highlighting a product complaint, and/or highlighting unsatisfactory service experiences, influences consumer behavior and can harm a company’s image. The present study was conducted to ascertain the impact of affective antecedents (negative emotions) and cognitive antecedents (distrust) in the intent of negative WOM. A proposed theoretical model was employed to analyze the effect that perceived injustice had on negative WOM and how this effect was mediated by emotional and cognitive aspects. The research was a pre-experimental design – one treatment leading to one observation – with 252 students. Through an OLS regression and mediation analyses, we found an indirect link between perceived injustice and negative WOM intent, which was mediated by negative emotions and distrust. Contributing to the field of marketing studies, this paper fills an investigative gap regarding affective and cognitive antecedents as mediators of negative WOM. The results suggest that marketing managers should create mechanisms to allow consumers to express their negative emotions and rebuild their trust in order to avoid the spread of negative WOM. © 2016 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_0938",
+    "title": "Disparate satisfaction scores? Consider your customer’s country-of-origin: a case study",
+    "journal": "International Review of Retail, Distribution and Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09593969.2016.1264443",
+    "abstract": "Although post-transaction surveys (i.e. trailer calls) allow service organizations to better understand their customers, these surveys inherently assume that all customers have the same service expectations of the organization’s service quality. This research reveals that telecommunications customers from different countries of origin have different service expectations; thus, post-transaction surveys based on this assumption can be flawed. We conduct in-depth interviews with recent immigrants in Israel, as well as local customers, to evaluate their expectations of their remote (i.e. telephone) service recovery encounters. Interviews included customers from each of the three primary regions from which they originated: Israel (home), former Soviet Union, and Ethiopia. The data show that the organization’s customers have vastly different expectations of how the firm should handle a called-in service failure, which influenced their post-transaction survey scores. Organizations must realize that their customers have varying service expectations due to cultural influences, which in turn affect their post-transaction survey scores. © 2016 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0939",
+    "title": "Analysing the fulfilment of service recovery paradox in retailing",
+    "journal": "International Review of Retail, Distribution and Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09593969.2017.1309675",
+    "abstract": "The literature dealing with the Service Recovery Paradox (SRP) is vast, but some results are confusing and contradictory. In addition to this, scarce attention has been paid to service recovery in the context of retailing. This paper aims at verifying the compliance of the SRP in the context of retailing. Considering a sample of consumers that experienced a failure in the service delivered by a retailer and are very satisfied with the solution provided by the store employee, we test first the fulfilment of the SRP in the context of retailing. Secondly, we test the existence of significant differences in the customer satisfaction levels with the store before and after experiencing the problem considering several factors potentially influencing the impact of service recovery on customer satisfaction, therefore providing an encompassing analysis of the SRP and its main influencing variables, including some potential factors not previously explored. While we do not find evidence of the fulfilment of the SRP in retailing, differences in customer satisfaction before and after service recovery are highly related with consumer sociodemographic characteristics and shopping experience. Findings raise some practical implications. © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0940",
+    "title": "Customer complaint behaviour (CCB) in the retail sector: why do customers voice their complaints on Facebook?",
+    "journal": "International Review of Retail, Distribution and Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09593969.2018.1556179",
+    "abstract": "With the increasing usage of platforms such as Facebook, understanding customer complaint behaviour (CCB) in the context of the social media is imperative for any businesses. Of the two billion users on Facebook, more than half of its users have shared their product-related experiences with others on the platform. This paper aims to explore CCB in the context of social media in regards to customers’ unfavourable buying experiences in the retail sector. A qualitative research approach and 12 in-depth interviews were conducted. The findings indicate that the respondents’ initial contact with the retailer directly resulted in service recovery failures and undesirable outcomes. Such double deviation then leads to frustration and uncertainty of the situation, which furthermore led to the respondents’ need to voice their complaint by sharing their unfavourable experiences on Facebook. The main reasons for the respondents to voice their complaints on the platform is to vent frustration, to share their unfavourable experiences, a need to be seen, understood and respected, to seek revenge by damaging the retailer’s reputation as well as offering the retailer a chance to improve. A proper way to manage complaints, in which frontline employees can solve the problem before the customers feel the need to turn to the social media, is crucial. However, once the complaints are voiced on Facebook, it is imperative to respond to the complaints and acknowledge the problem rather than ignoring the situation. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0941",
+    "title": "A company-CSR fit as antecedents of organic cosmetic product purchase intention, the buffering effect of CSR belief: a moderating role of health consciousness",
+    "journal": "International Review of Retail, Distribution and Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09593969.2023.2252628",
+    "abstract": "Predictors of organic cosmetic product purchase intention have been widely investigated. However, a company-CSR fit triggered from this business area has not been examined in purchase intention. In addition, company-CSR fit-driven positive CSR perception in several business areas such as tourism, banking, and pharmacy has been found to serve a buffer in a service failure. Whether CSR belief derived from a company-CSR fit in the organic cosmetic product business still generates the buffering effect. This study examines the buffering effect of CSR belief driven by the company-CSR fit in the context of service failure on brand attitude and purchase intention for organic cosmetic products. In addition, this study proposes a moderating role of health consciousness that could influence the buffering effect of CSR belief on brand attitude after a service failure. Using data from a sample of 257 respondents on Amazon Mechanical Turk, the study uses SmartPLS 3 to perform the partial least squares structural equation modelling (PLS-SEM). The results indicate that a company-CSR fit driven-CSR belief generates a buffering effect on brand attitude, resulting in the maintenance of purchase intention after a service failure. Results further show that health consciousness moderates this buffering effect on brand attitude. Particularly, consumers with high levels of health consciousness strengthen this buffering effect, while the buffer of CSR belief does not have an effect on consumers with low levels of health consciousness. These findings bring theoretical contributions and practical implications for the organic cosmetic product business. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0942",
+    "title": "To all the employees who hurt me before: racial discrimination by retail employees against Asian Americans",
+    "journal": "International Review of Retail, Distribution and Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09593969.2024.2358769",
+    "abstract": "Racial discrimination by employees in the retail context is an under-researched area; this is especially true regarding the Asian American experience. Motivated by this lack of research, we explore 1) the forms of overt and subtle racial discrimination Asian Americans face in retail and 2) the behavioral responses of Asian American customers after experiencing discrimination.A transcendental phenomenological framework was used to examine one-on-one semi-structured interviews of 18 Asian American participants. The results show nine racial discrimination themes against Asian American customers: No Asians in here please, All you Asians …,Less than, The perpetual foreigner, Carriers of the virus, Invisible, Not a target customer, Stereotyped customers, and All the same. Moreover, four behavioral response themes were derived: No action taken against the employee or retailer, No repatronage, Negative OCRs, and Direct complaint.The findings provide important implications for researchers and retailers. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0943",
+    "title": "IS incident recovery and service value: a service-dominant logic view",
+    "journal": "European Journal of Information Systems",
+    "journal_impact_factor": 5.77,
+    "doi": "10.1080/0960085X.2020.1869915",
+    "abstract": "IS service delivery failures inside companies are value diminishing events. Information systems service providers seek to limit this value destruction but lack guidance on IS incident resolution actions that satisfy users and preserve IS service value. We apply Service-Dominant Logic (SDL) to explore what is relevant to users’ recovery service experiences while interacting with IS service providers. We use an integrated research approach including qualitative and quantitative data. We uncover actions that lead to a satisfying incident recovery and categorise them into three recovery components (responsive handling interactions, supportive communicating interactions, and effective resolving actions) that reflect IS provider resource exchanges of information, knowledge, and service skills with users in resolving incidents. We integrate these three recovery components as factors in our research model and test direct and moderating effects on value outcomes. We find that users’ recovery satisfaction results from both a “fix it fast and fully” perspective and a sense of effort and fairness conveyed. Results point to managers preserving overall IS service satisfaction and service quality by facilitating proper resource exchanges during an incident recovery. © Operational Research Society 2021."
+  },
+  {
+    "article_id": "CS_0944",
+    "title": "Technology-driven mandatory customer participation: a new recovery strategy to promote customers’ online post-recovery satisfaction",
+    "journal": "European Journal of Information Systems",
+    "journal_impact_factor": 5.77,
+    "doi": "10.1080/0960085X.2022.2139770",
+    "abstract": "E-commerce businesses have been developing new ways of engaging customers in the online service recovery process to realise value co-creation. Such practices have been facilitated by the rapid development of information and communication technology. However, scant research has been conducted on these changes. To bridge this research gap, we explain how the application of technology guides and shapes customers’ responsibilities in online service recovery by constructing the concept of technology-driven mandatory customer participation (MCP), which is a new recovery strategy from the perspective of technology affordance. Moreover, we propose a comprehensive model to explain the influence mechanism of technology-driven MCP on value co-creation. Two sequential studies were then conducted. The first was an initial qualitative study based on interviews with e-commerce practitioners in China, in which three factors of technology-driven MCP (physical, mental, and emotional) and two categories of loss (utilitarian and symbolic) were identified. The second quantitative study explored and validated the relationships between technology-driven MCP, perceived co-creation, experienced burnout, and online post-recovery satisfaction from a loss-aversion perspective. The theory-driven empirical findings provide recommendations for e-commerce businesses to enhance online service management. © The Operational Research Society 2022."
+  },
+  {
+    "article_id": "CS_0945",
+    "title": "How does contact with accountants influence perceptions of accounting?",
+    "journal": "Accounting Education",
+    "journal_impact_factor": 2.7,
+    "doi": "10.1080/09639284.2017.1381033",
+    "abstract": "This paper seeks to redress a gap in research regarding the effect of contact with accountants (stereotype targets) on the perceptions people have of accounting. Contact with accountants has often been suggested as a strategy for changing the stereotypical perceptions people have of accounting. This study examines how contact with accountants influences these perceptions. The results reveal that while the perceptions do differ between participant groups, contact with accountants creates little awareness of the diverse range of duties performed by accountants. These findings confirm the claims by social psychologists that while contact might assist in changing perceptions, the change will not necessarily have the intended effect. These findings have implications for how accountants, their professional associations and educators represent the image of accounting to their clients, the public and their students. © 2017, © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0946",
+    "title": "An analysis of negative reviews in top art museums’ Facebook sites",
+    "journal": "Museum Management and Curatorship",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09647775.2018.1550622",
+    "abstract": "Social media has had a profound effect on cultural-based institutional practice. The relationship between social media and these institutions is reflected in the services they provide, such as the way they communicate, the accessibility of collections, and customer engagement; however, social media is also used as a public channel for negative comments, criticism and complaints. This qualitative study aims to identify the key areas of negative comments made on Facebook review sites against the main art museums by members of the public, and determine how these institutions are monitoring this criticism. This is achieved by a thematic analysis of Facebook posts on review pages to identify what the negative issues are, plus an online survey of the Marketing/Communications Managers at the art museums. The main findings identify issues that can improve museum practice and avoid complaints in the future, which can have implications for other cultural-based institutions. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0947",
+    "title": "I complain for your good? Re-examining consumer advocacy",
+    "journal": "Journal of Strategic Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0965254X.2015.1011204",
+    "abstract": "Marketplace helping behavior such as opinion leadership, market maven, and purchase pals that benefit others has been extensively studied. A diverse but similar to other marketplace helping behaviors is the concept of consumer advocacy. Extant review of literature reveals that customer advocacy and consumer advocacy are conceptually different. The former is an organization level construct, and the latter is an individual consumer's ‘generalized tendency to share market information’. It is argued that a following dissatisfactory service encounter, consumer advocates would indulge in market placing helping behavior such as negative word of mouth to prevent other consumers' from having similar marketplace disappointments. Hence, prior studies link consumer advocacy to ‘altruistic tendencies’. On the basis of self-construal theory, this study investigates the motivations for consumer advocacy. Using a scenario-based experimentation implemented in survey method; we establish that consumer advocacy is motivated by an amalgamation of altruism and self-interest. We also operationalize third-party complaint construct and empirically test whether consumer advocacy is a predictor. © 2015 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_0948",
+    "title": "Impact of actual service provider failure on the satisfaction with aggregator",
+    "journal": "Journal of Strategic Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0965254X.2017.1339115",
+    "abstract": "The purpose of the paper is to investigate the impact of the failure caused by the actual service provider on consumer satisfaction with the aggregator firm, where the aggregator firm works as a bridge between the consumers and the actual service providers using technology, resources, information etc., thus reducing the information search cost, process-related costs, and quality risks for the consumers. We have applied retrospective experience sampling to collect data and used structural equation modeling to validate the conceptual model of the study. We found that people consider the actual service provider’s failure as the aggregator firm’s responsibility when the attributional factors (control and stability) are strong. Moreover, when consumers perceive that the aggregator firm is responsible, they will ask for less punishment of the actual service provider and more monetary compensation. Additionally, severity of the failure increases the consumer’s recovery expectations. However, the sense of power of the consumers leads to increasing expectations of punishment of actual service provider and decreasing expectations of monetary compensation. Lastly, the actual monetary compensation or actual punishment of the service provider leads to higher level of satisfaction for the consumers. We discussed the implications of the results in the light of relationship management and service recovery design of aggregator firms. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0949",
+    "title": "Frontline health professionals’ perceptions of their adaptive competences in service recovery",
+    "journal": "Journal of Strategic Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0965254X.2018.1511630",
+    "abstract": "There is extensive research on service recovery from the customer’s perspective, but not the service professional’s viewpoint. This is surprising, as service professionals are responsible for service recovery that is co-created with the customer in the joint sphere. Thus, this study empirically tested a framework of the antecedents of frontline health professionals’ (FHPs) perceptions of their recovery performance, including cultural and emotional competences that help them to adapt to failures and interact fairly with customers. This framework includes the organisational recovery system that sets the parameters FHPs operate within; the focus of previous research. The context is hospitals in Qatar, which has a sophisticated healthcare system. The hypotheses were generated from a literature review and 10 depth interviews with FHPs, followed by empirical testing with a sample of 343 FHPs. The results suggest that FHPs’ cultural and emotional competences and recovery self-efficacy improve their self-perceived interpersonal fairness and recovery performance. Various human resource management strategies are proposed based on these findings. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0950",
+    "title": "Examining antecedents of reconciliation following service failure and recovery",
+    "journal": "Journal of Strategic Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0965254X.2018.1518920",
+    "abstract": "This article examines antecedents of reconciliation following service failure and recovery including likability of service personnel, customer satisfaction with service recovery, interactional justice, and distributive justice. This study utilizes a 2 (low vs. high distributive justice) × 2 (low vs. high interactional justice) × 2 (low vs. high likability of customer service agent) scenario design in a retail environment in which a customer returns a pair of prematurely worn out shoes. Findings suggest that dispositional forgiveness, likability of service personnel, customer satisfaction with service recovery, interactional justice, and distributive justice are positively related to reconciliation following service failure and recovery. Results reveal the critical role of service personnel characteristic of service workers who handle the recovery process. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  }
+]

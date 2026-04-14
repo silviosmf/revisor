@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0851",
+    "title": "How can brands mitigate the consequences of negative digital customer experience? Investigating roles of brand attachment, brand community support, and adaptive coping",
+    "journal": "Journal of Brand Management",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41262-024-00363-y",
+    "abstract": "Customers, constantly in search of hedonic wellbeing, are increasingly interacting with brands on digital platforms. While doing so, negative digital experiences often reduce their hedonic wellbeing. However, the reasons and remedies for unintended consequences of negative experiences are not clear. We conducted three experiments to uncover how and when the impact of negative digital experiences on hedonic wellbeing could be mitigated. Our findings suggest that digital brand attachment is the underlying mechanism for the influence of negative digital customer experience on customers’ hedonic wellbeing. Both adaptive coping ability and online brand community support alleviate the undesirable influence of negative digital customer experience on hedonic wellbeing through digital brand attachment. However, adaptive coping and online brand community support have no effect on the direct relationship between negative digital experience and hedonic wellbeing, a counterintuitive finding. Our findings offer theoretical insights into how negative digital customer experience affects hedonic wellbeing, and by uncovering the underlying psychological mechanism; this research also demonstrates the boundary conditions for the relationship between negative digital experience and hedonic wellbeing. We offer remedies for firms to increase brand community support and design different redressal strategies for customers with distinct levels of adaptive coping. © The Author(s), under exclusive licence to Springer Nature Limited 2024."
+  },
+  {
+    "article_id": "CS_0852",
+    "title": "From service failure to brand loyalty: evidence of service recovery paradox",
+    "journal": "Journal of Brand Management",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41262-025-00380-5",
+    "abstract": "The transition from service failure to brand loyalty represents both a critical challenge and opportunity. Underpinned by the multi-theoretical foundation of equity theory, social exchange theory, expectancy disconfirmation theory, affect control theory, and commitment-trust theory, this study examines the mechanisms through which service recovery efforts by a brand can transform dissatisfied customers into engaged and loyal patrons, exemplifying a service recovery paradox. Employing structural equation modeling to analyze data from 638 survey responses, our findings illuminate the pivotal roles of distributive and procedural justice in crafting satisfactory service recovery experiences, overshadowing the negligible impact of interactional justice. Significantly, we uncover that fostering brand attachment amplifies the relationship between satisfaction derived from service recovery and subsequent brand engagement, wherein this engagement plays a vital role in the development of brand loyalty. These insights collectively chart a clear and strategic course for brand managers to convert service failures into triumphant resolutions, enhancing brand engagement and loyalty amidst potential hiccups in service delivery. The implications of this study also extend beyond academic discourse by offering practical strategies for brands seeking to navigate service recovery with finesse. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0853",
+    "title": "The impact of the magnitude of service failure and complaint handling on satisfaction and brand credibility in the banking industry",
+    "journal": "Journal of Financial Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41264-020-00070-0",
+    "abstract": "The present research aims to investigate the effects of service failure and complaint handling on customer satisfaction with complaint handling which consequently impacts overall satisfaction and brand credibility. To examine the objectives of the present research, the authors deployed a sample of 384 respondents in Persian banks within Iran. Structural equation modeling has been used to analyze the data. The findings suggest that the magnitude of service failure negatively effects customer satisfaction with complaint handling. Complaint handling positively affects customer satisfaction with complaint handling. In addition, the results suggest that customer satisfaction with complaint handling positively influences brand credibility and overall satisfaction. Finally, overall satisfaction positively impacts brand credibility. The results revealed that if the complaint handling occurs instantly at the right time, it would have been a positive influence on customer satisfaction and ultimately develop brand credibility. Therefore, banks can adopt customer relationship management systems and processes which enable quick responses to customer complaints. Bank managers could find the results of the present study useful and beneficial in developing complaint handling efforts and expanding appropriate service recovery and brand credibility strategies. © 2020, Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0854",
+    "title": "Brand credibility and customer-based brand equity: a service recovery perspective",
+    "journal": "Journal of Financial Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41264-021-00097-x",
+    "abstract": "The aim of this paper is to examine the impact of perceived justice on satisfaction with service recovery and how this satisfaction with service recovery can increase both Lebanese banks’ brand credibility and customer-based brand equity. The questionnaire was completed by a total of 403 bank customers. The findings of this paper indicate that perceived justice strongly influences satisfaction with service recovery. Similarly, satisfaction with service recovery affects both Lebanese banks’ brand credibility and customer-based brand equity. Moreover, the regression analysis demonstrates that satisfaction with service recovery partially mediates the relationship between perceived justice and brand credibility and customer-based brand equity. © 2021, The Author(s), under exclusive licence to Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0855",
+    "title": "Correction to: Brand credibility and customer‑based brand equity: a service recovery perspective (Journal of Financial Services Marketing, (2022), 27, 1, (1-16), 10.1057/s41264-021-00097-x)",
+    "journal": "Journal of Financial Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41264-021-00106-z",
+    "abstract": "The original version of this article unfortunately contained a mistake. Error in Figs. 1 and 2 captions. The corrected captions with figure are given in the followingpage: The original article has been corrected.. © 2021, Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0856",
+    "title": "Consumer, bank, and stock market reaction to CFPB’s complaint data disclosure",
+    "journal": "Journal of Financial Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41264-022-00143-2",
+    "abstract": "With the signing of the Dodd-Frank Wall Street and Consumer Protection Act in 2011, and the accompanying Consumer Financial Protection Bureau, there is now a public database filled with US bank complaints and their resolution process. While the disclosure created ripples in the news media, research on the reaction to this disclosure by consumers, banks, and the stock market was scant. This paper examines how these multiple stakeholders reacted to the public disclosure of bank complaint data. Analyses indicate that more consumers complain and dispute a case post-data disclosure even though banks respond to complaints in a more timely fashion. The stock market reactions to the complaint data disclosure are positive in the short run, driven by the brand value and the extant internal governance mechanisms present in the financial firm. © 2022, The Author(s), under exclusive licence to Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0857",
+    "title": "The relationship between business and bank: the role of perceived injustice in complaint behaviour",
+    "journal": "Journal of Financial Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41264-022-00157-w",
+    "abstract": "The purpose of this study was twofold: to examine, firstly, if dissatisfaction can sufficiently predict complaint behaviour and, secondly, whether perceived injustice will trigger complaint behaviour by small- and medium-sized enterprises (SMEs) following a dissatisfying marketplace experience with Nigerian banks. A two-stage data analysis method was employed. Confirmatory factor analysis was utilised to establish the validity of the research constructs and the model’s goodness of fit, while structural equation modelling was employed to test the proposed model’s hypotheses. The result showed that an SME’s negative experience with their bank (negative disconfirmation) produced dissatisfaction and subsequently increased the likelihood of the SME both exiting and spreading negative word-of-mouth (NWOM). Perceived injustice moderated the relationship between dissatisfaction and exit but was not significant in causing NWOM. The research data was homogeneously analysed, without including demographics such as length of banking relationship, number of employees, capital, or type of trade activity. Therefore, there is value in extending this research by considering different demographic features on the research model. The research adds value to the customer complaint behaviour (CCB) literature by establishing the structure of CCB by SMEs experiencing bank service failure. This study has shown dissatisfying service experience to be a sufficient condition for complaint behaviour, regardless of the role of perceived injustice. © 2022, The Author(s), under exclusive licence to Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0858",
+    "title": "Consumer complaining behavior in banking: the influence of brand image on brand forgiveness and negative word-of-mouth",
+    "journal": "Journal of Financial Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41264-022-00194-5",
+    "abstract": "This study has established a conceptual model regarding the impacts of brand image, which consists of two subdimensions, “corporate social responsibility (CSR) image” and “personnel image,” and brand trust on brand forgiveness and consumer complaining behavior in retail banking. Through a quantitative analysis, the findings showed that favorable CSR image and personnel image positively influence brand forgiveness, reducing negative word-of-mouth in cases of service failures. However, brand forgiveness does not stop consumers from voicing their complaints directly to the firm. Consumers with lower brand trust, brand forgiveness, and brand image are more likely to voice their complaints to third parties. © The Author(s), under exclusive licence to Springer Nature Limited 2022."
+  },
+  {
+    "article_id": "CS_0859",
+    "title": "Consumer complaint intentions: the impact of general and specific self-confidence",
+    "journal": "Journal of Marketing Analytics",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41270-022-00203-5",
+    "abstract": "Current research focuses on examining the relationship between consumers’ self-confidence and their intentions to complain. This study addresses the gap in the research literature by categorizing the concept of ‘self-confidence’ into general and specific (GSC/SSC) and assessing their impacts on consumers’ intentions to complain about a company. A conceptual model proposed for the research that was empirically verified using a sample comprising consumers in Swansea, U.K. was employed. The results of the multilevel and polynomial regression indicated that although both GSC and SSC influence consumers’ intentions to complain, GSC cannot moderate the relationship between SSC and complaining intention. Moreover, the findings showed that the impact of SSC on the intention to complain is considerably stronger than the effect of GSC. Therefore, it could be concluded that consumers’ intentions to complain is mainly driven by their specific self-confidence. This study, in addition to laying the groundwork for future research, has important managerial implications. Most notably, the findings confirmed that companies would benefit from enhancing consumers’ SSC and encouraging them to file their complaints directly to the company. © The Author(s), under exclusive licence to Springer Nature Limited 2022."
+  },
+  {
+    "article_id": "CS_0860",
+    "title": "Creating meaningful insights from customer reviews: a methodological comparison of topic modeling algorithms and their use in marketing research",
+    "journal": "Journal of Marketing Analytics",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41270-023-00256-0",
+    "abstract": "The proliferation of the internet has provided many tools and platforms for consumers to share and create content concerning their experiences with different products and services. Customer reviews are considered essential both in strategy development and consumer attraction. By analyzing customer reviews, companies can decide on product enhancement and development, service recovery and improvements, pricing, and customer recruitment and retention. Although different methodologies have been used to understand the impact of customer reviews in the last decade, a new realm of studies began to benefit from text analytics and machine learning algorithms. Within these methodologies, topic modeling algorithms emerge as the most popular analytical tool. However, despite the subsistence of different topic modeling algorithms, their exposure in marketing research has been limited. This study aims to provide information on different algorithms’ semantic potential in analyzing customer reviews. Using a comprehensive dataset extracted from the Best Buy platform, the contributions of various algorithms are compared based on data preprocessing, algorithm implementation, and their semantic ability in marketing research. Based on different stages of implementation and their respective complexity, the results indicate efficacy in using BERTopic in analyzing customer reviews. © The Author(s), under exclusive licence to Springer Nature Limited 2023."
+  },
+  {
+    "article_id": "CS_0861",
+    "title": "Analyzing customer reviews with abstractive summarization and sentiment analysis: a software review",
+    "journal": "Journal of Marketing Analytics",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41270-025-00377-8",
+    "abstract": "Customer reviews significantly influence consumer decisions and business strategies, requiring more advanced analytical tools to collect these valuable insights. This study examines a recent online application that analyzes customer reviews using abstractive summarization and sentiment analysis. The application allows users to monitor customer feedback through abstractive summaries and sentiment scores. The reviews can be directly pasted or uploaded via a text file for analysis. This article assesses the application across five different use cases, addressing challenges related to satisfaction, mixed reviews, recovery strategies, dissatisfaction, and sarcastic reviews. The research advocates ongoing exploration and refinement of artificial intelligence and machine learning applications, emphasizing the synergistic potential of abstractive summarization and sentiment analysis for effectively monitoring customer reviews and preferences. This practical tool empowers businesses and practitioners to make data-driven decisions based on customer feedback. Access to the application: https://mahaq.pythonanywhere.com/. © The Author(s), under exclusive licence to Springer Nature Limited 2025."
+  },
+  {
+    "article_id": "CS_0862",
+    "title": "Customer-centric influence of entrepreneurial marketing on business performance of hotels in Nigeria during the COVID-19 crisis",
+    "journal": "Journal of Revenue and Pricing Management",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41272-022-00383-w",
+    "abstract": "The ravaging COVID-19 pandemic has forced hotels in developed countries to adopt entrepreneurial marketing (EM) practices as a resilience strategy. However, there are few studies in Nigeria on how EM practices have been used in the hotel industry for their survival and growth. The study examines the customer-centric influence of EM on business performance of hotels in Nigeria during the COVID-19 crisis. Using a cross-sectional survey design, we collected primary data from 578 owner-managers and top managers of 66 hotels in Lagos and Yola in Nigeria using structured questionnaires. Respondents were selected based on the purposive sampling technique. The data collected were analysed using descriptive and inferential statistics with the aid of statistical package for social sciences (SPSS Version 21). Three regression estimations are reported. The estimation in model 1 indicates that calculated risk-taking dimension has a significant positive influence on general performance, while the proactiveness, innovativeness, value creation, resource leveraging, opportunity to focus and customer intensity dimensions do not. The estimation in model 2 suggests that calculated risk-taking and customer intensity dimensions have a significant positive influence on revenue per room, while the other five EM dimensions do not. The estimation in model 3 indicates that calculated risk-taking dimension has a significant positive influence on market share, while the six EM dimensions do not. The owner-mangers and top managers of hotels should fortify and upscale the weak EM dimensions as a resilience strategy for recovery from the ravages of the COVID-19 crisis. We bridge the gaps in the literature by providing interesting insights into the potential value of the adoption of EM as a post-COVID-19 recovery strategy by the hotel segment of the hospitality industry in the developing context of Nigeria. We also validate the applicability of RBT in predicting the influence of EM dimensions on performance in the developing context. © 2022, The Author(s), under exclusive licence to Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0863",
+    "title": "Profiling consumers who reported mass marketing scams: demographic characteristics and emotional sentiments associated with victimization",
+    "journal": "Security Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1057/s41284-023-00401-5",
+    "abstract": "We examine the characteristics of consumers who reported scams to the U.S. Federal Trade Commission. We assess how consumers vary demographically across six scam types, and how the overall emotional sentiment of a consumer’s complaint (positive, negative, neutral/mixed) relates to reporting victimization versus attempted fraud (no losses). For romance, tech support, and prize, sweepstakes, and lottery scams, more older than young and middle-aged adults reported victimization. Across all scam types, consumers classified as Black, Hispanic, and Asian/Asian Pacific Islander were more likely than non-Hispanic white consumers to report victimization than attempted fraud. Relative to complaints categorized as emotionally neutral or mixed, we find that emotionally positive complaints and emotionally negative complaints were significantly associated with victimization, but that these relationships differed by scam type. This study helps identify which consumer groups are affected by specific scams and the association between emotion and victimization. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_0864",
+    "title": "An Empirical Test of Image Restoration Theory and Best Practice Suggestions Within the Context of Social Mediated Crisis Communication",
+    "journal": "Corporate Reputation Review",
+    "journal_impact_factor": 2.098,
+    "doi": "10.1057/s41299-019-00064-2",
+    "abstract": "Crises are inevitable for any company, and the fate of a company’s image rests in how well they are responded to. Few studies have experimentally tested the impact that common types of company responses can have on consumers’ perceptions when a negative complaint has been made online. This research sought to expand the strategies put forth for crisis management by image restoration theory (IRT) using best practice research within the context of social mediated crisis communication. An online experiment examined the effect of a company’s response to an online complaint (i.e., professional apology, personal apology, deleting the comment, ignoring the comment, control group) on participants’ perceptions of the company (i.e., perceptions of company caring, attitude). The potential for perceptions of company caring to mediate the relationship between these expanded strategies and IRT’s ultimate aim of attitude change was also tested. An apology, whether professional or personal, improved participants’ perceptions compared to deleting or ignoring the complaint. Caring significantly mediated the relationship between response strategy and participant attitude. Compared to a control group, which had no transgression, ignoring or deleting the complaint led to negative attitudes about the company, while responding to the complaint with a personal or professional apology led to positive attitudes about the company via perceptions of company caring. Results indicate that online complaints could also be seen as opportunities to improve a company’s image, as attitudes toward the company were highest when a transgression occurred and was responded to positively, compared to not having the transgression take place at all (i.e., control condition). Potential extensions to current image repair strategies in the social media environment are discussed. © 2019, Reputation Institute and Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0865",
+    "title": "The Impact of Voluntary Recall on the Trust of Loyal and First-Time Consumers in a High Awareness Brand After a Functional Transgression",
+    "journal": "Corporate Reputation Review",
+    "journal_impact_factor": 2.098,
+    "doi": "10.1057/s41299-023-00164-0",
+    "abstract": "Brand transgressions might put at risk some of companies’ most important achievements: a high awareness brand and loyal customers’ trust. High awareness brands may suffer from the effects of a functional transgression on customers’ trust and perception regarding an organization’s capacity to keep its promises, as well as the relationship developed with loyal customers. A common outcome of a product functional transgression is government intervention asking for a product recall. The voluntary recall is an alternative to handle brand transgressions, but less common than mandatory product recalls. This paper adds to the literature by theoretically discussing and empirically analyzing how the relationship status of a first-time or loyal customer with a high awareness brand affects consumers’ trust after a functional transgression. Additionally, it examines the moderation effect of response to a functional transgression on the relation between trust’s components—competence, integrity, and benevolence. Through an experimental study 2 (company’s response: passive strategy; voluntary product recall) × 2 (relationship: loyal; first-time) × between-subjects design, the findings indicate that after a high awareness brand transgression, loyal consumers perceive greater competence, integrity, and benevolence in the brand than first-time consumers. When a transgression is followed by a passive strategy in which the transgressor company is aware of a malfunction and decides not to take any action to remediate the situation, loyal consumers have higher integrity and benevolence-based trust perception than first-time consumers. As voluntary recall takes place, loyal and first-time consumers’ perceptions of integrity and benevolence increase, and first-time consumers reach the same levels as loyal consumers, which suggests voluntary product recall is an effective trust recovery strategy for a high awareness brand. © The Author(s) 2023. corrected publication 2023."
+  },
+  {
+    "article_id": "CS_0866",
+    "title": "Do managerial communications improve customer satisfaction and eWOM? The moderating effect of response authenticity",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-023-01979-2",
+    "abstract": "As customer reviews are becoming increasingly valued in the hotel industry, hotel managers are actively responding to customer reviews, and many researchers are investigating the effects of managerial responses. Previous studies, however, have mainly focused on open communication that takes place on social platforms or online travel agency (OTA) websites. Considerations about interaction contexts and specific response styles are also lacking. These limitations raise research questions, such as whether private interactions between managers and customers would be effective, whether the effect would differ between dissatisfied and satisfied customers, and what role the authenticity of managerial responses would play in these interactions. To address these questions, we investigated the effect of private managerial interactions. The effect of a managerial apology on customers’ future satisfaction, the effect of a managerial “thank you” on customers’ future electronic word-of-mouth (eWOM), and the moderating effect of response style (i.e., personalization and length) were examined. We analyzed data from a customer satisfaction survey in which customers leave feedback after their stay and hotel managers respond to each customer personally via email. Our results reveal that a private managerial apology increases customers’ future satisfaction only when it is long or personalized. A private managerial “thank you” positively affects customers’ eWOM in the next period. This research provides empirical evidence for the effect of private managerial interactions, extending the existing discussions on the effect of managerial responses to the private digital communication context. This research contributes to the research areas of managerial response, service recovery, and digital communications. © 2023, Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0867",
+    "title": "Linking proactive personality to proactive customer-service performance: a moderated parallel mediation model",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-023-02219-3",
+    "abstract": "Drawing on the job demands-resources model and positive organizational scholarship, this study examines proactive personality as an antecedent of frontline employees’ proactive customer-service performance (PCSP). It also investigates the potential mediating role of positive psychological states on the relation between proactive personality and PCSP and the potential moderating role of the service-failure recovery climate (SFRC) on the relation between proactive personality and positive psychological states. To test our hypotheses, we used a moderated parallel mediation model and data obtained from 62 branch managers and 358 frontline branch employees of three well-known appliance households and 3C (computers, communications, and consumer electronics) chain stores in Taiwan. The results of multiple-regression and SPSS PROCESS macro analyses indicate that proactive personality was positively related to manager-rated PCSP via employees’ work engagement and perceptions that their work was meaningful. Further, the positive relationship between proactive personality and PCSP through both work engagement and meaningful work perceptions was moderated by SFRC. These findings shed light on the effect of frontline employees’ proactive personality as a personal resource driving their PCSP; the roles of positive psychological states as mediators that help explain the potential intermediary mechanisms; and a boundary condition of SFRC that may weaken the positive relationship between employees’ proactive personality and psychological states. The implications, limitations, and future research directions are included. © 2023, Springer Nature Limited."
+  },
+  {
+    "article_id": "CS_0868",
+    "title": "How brand CSR responses to the pandemic impact brand value, growth, and rank",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-024-03711-0",
+    "abstract": "The top 100 brands globally in 2020 have responded to the coronavirus pandemic by donating cash, donating in kind, providing special services to their customers, and supporting their employees. The research investigates if their actions reflected on the brand value, brand growth, or brand rank change and which of the four actions, if any, significantly impacted brand performance indicators. The research showed that donations in kind and customer service responses affected brand growth. Both brand value and rank are more long-term and cannot be changed significantly by short-term responses in one year. The authors conclude with a discussion of the insights, research limitations, theoretical and managerial implications, and directions for future research. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_0869",
+    "title": "There’s (not) an App for that: situating smartphones, Excel and the techno-political interfaces and infrastructures of digital solutions for COVID-19",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-024-03998-z",
+    "abstract": "This paper focuses on the operational-infrastructural puzzles of mHealth via COVID-19 Contact Tracing Apps (CTA). Significant literature exists on user adoption of the platformisation of public health during the pandemic, but there has been limited consideration of how those responsible for implementing CTA design, deployment, and use of public health infrastructures did so. We redress this imbalance by exploring some of the politics and practicalities of offering CTA as technical ‘solutions’ to pandemic problems. Our work adds to previous comparative analyses of mHealth by drawing on data from key actors across government, industry, and civil society involved in designing and implementing CTA into public health across 5 jurisdictions: Australia, Canada, New Zealand, Singapore, and the United Kingdom. While CTA research often frames tensions around efficacy and adoption (e.g. privacy trade-off), we find hidden infrastructural tensions within a situation of political and technical constraints in the ‘back end’ of the platformisation of public health. The paper offers new insights to pandemic politics by shifting questions from digital contact tracing and pandemic surveillance interfaces to understanding CTA as infrastructures of public health. While CTA user-software interactions produce certain research questions, querying the infrastructural complexity of digital public health projects require and produce a different set of data and knowledge. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0870",
+    "title": "Shifting landscape of customer preferences: analyzing internet Islamic banking satisfaction during COVID-19",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-024-04069-z",
+    "abstract": "With an increasing number of customers relying on Islamic internet banking services, there is an urgent need to examine their satisfaction levels. Therefore, this study aims to analyze how internet banking services quality impacts customer satisfaction in major Islamic countries during the COVID-19 pandemic. A survey was conducted from March 2022 to April 2023 to gather data from clients, covering a variety of income levels, gender, age and educational backgrounds. 6961 questionnaires were analyzed using the SERVQUAL model and probit ordered model for empirical analysis. Both the SERVQUAL model and probit ordered model analysis yielded consistent findings indicating that reliability, response, online service quality, complaint aspects negatively influence customer satisfaction. Furthermore, the study found that factors such as efficiency and empathy contribute positively to customer satisfaction in the context of internet banking services during the COVID-19 pandemic. By understanding the factors that negatively impact customer satisfaction and usage of internet banking services, Islamic bank management can prioritize investments in security, website attributes, privacy, efficiency, responsiveness, fulfillment, and reliability. This proactive approach not only fosters customer loyalty but also strengthens the competitive position of the bank in the digital banking landscape. Furthermore, insights gained from the study can guide policy adjustments and operational improvements tailored to meet the evolving needs and expectations of customers in the internet banking sector. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_0871",
+    "title": "Understanding complaints: the role of moral transgressions in e-commerce interactions",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-024-04316-3",
+    "abstract": "This discourse-pragmatic study examines why a past or on-going action become the focus of customer complaints in e-commerce service encounters. Analyzing interactions between customers and service agents on Taobao, the study reveals how customer complaints are triggered by perceived moral transgressions attributed to service agents. The findings identify two types of transgressions: distributive and interactional. The study highlights metapragmatic expressions that reveal customers’ beliefs about appropriate standards in the complaint resolution process. Customers perceive service agents as violating distributive justice by infringing on their benefactive, epistemic, and deontic rights, and as breaching interactional justice through lapses in responsibility and honesty. Overall, the study illustrates how customers’ metapragmatic perceptions of moral transgressions shape complaint interactions in e-commerce settings, providing crucial insights for both theoretical analysis and practical applications. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0872",
+    "title": "User dissatisfaction and behavioral intention toward personalized advertising recommendation services in Chinese social networking services",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-025-06130-x",
+    "abstract": "With the advancements in digital advertising, personalized advertising recommendation services are being established as an increasingly important marketing tool. In particular, social networking service (SNS) platforms in China are offering personalized advertising experiences through an extensive user base. However, such services often fail to meet the needs and expectations of Chinese users. Accordingly, this study aimed to explore user dissatisfaction and the resulting negative responses to personalized advertising recommendation services on Chinese SNS platforms. The analysis for this study was conducted using structural equation modeling based on data from 500 Chinese SNS users. The effects of service failure on negative expectation disconfirmation and dissatisfaction as well as how this dissatisfaction affects negative behaviors among users were examined. The results showed that factors related to service failure, such as functional failure, information failure, and system failure, positively affected users’ negative expectation disconfirmation, while functional failure, system failure, and negative expectation disconfirmation positively affected dissatisfaction. Moreover, dissatisfaction positively affected negative word-of-mouth and discontinuance intentions. This study identified negative responses to personalized advertising recommendation services on SNS advertising platforms, which can be used by companies to minimize negative outcomes by effectively managing user expectations. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0873",
+    "title": "Examining local level variation in Special Educational Needs and Disabilities (SEND) service provision and associated data sources in England: a scoping review",
+    "journal": "Humanities and Social Sciences Communications",
+    "journal_impact_factor": 4.592,
+    "doi": "10.1057/s41599-025-06319-0",
+    "abstract": "The Special Educational Needs and Disabilities (SEND) system in England was reformed in 2014, including the introduction of child-centred legally binding education, health and care plans (EHCPs) and expectations for improved multi-agency working coordinated by local authorities (LAs). Since then, service-user satisfaction has declined, and children’s outcomes have not improved. Critics cite local variation in SEND provision and limited accountability for implementation failures as contributing factors. This scoping review summarises peer-reviewed and grey literature as well as open-access data sources reporting LA and multi-academy trust (MAT) level variation in SEND provision to identify key reasons for local variation SEND services, and data sources that could be used to better monitor local public bodies. We identified and graded 120 articles/reports (18 peer-reviewed, 102 grey) and 8 open-access data sources. The literature investigated nine topic areas; most studies were low quality. Eight open-access data sources included information about SEND prevalence, demand and provision complaints. Our review highlights that LAs were underprepared and under-resourced to implement the reforms. The administration involved in EHCPs contribute to variation in multiple ways. Greater standardisation and guidance for professionals could reduce variation. Existing data sources could be better used to improve monitoring and accountability for local provision, which should include MATs given their potential to influence SEND provision. Low-quality studies dominated the grey literature. More rigorous methods and reporting standards could also improve decision-making and service planning. © The Author(s) 2026."
+  },
+  {
+    "article_id": "CS_0874",
+    "title": "Understanding User Experience and Satisfaction with Urban Infrastructure through Text Mining of Civil Complaint Data",
+    "journal": "Journal of Construction Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1061/(ASCE)CO.1943-7862.0002308",
+    "abstract": "With the increase in public concern about the aging of urban infrastructure and the associated risk of safety accidents, it is important to maintain the safety and serviceability of urban infrastructure in accordance with user satisfaction. Although many studies have attempted to consider user experience and satisfaction based on user surveys and civil complaint data analysis, they have had difficulty in identifying user dissatisfaction factors where users feel unsafe or uncomfortable while using the infrastructure. The main purpose of the research presented here is to understand user experience and satisfaction with urban infrastructure by text mining self-written civil complaint data. To achieve this objective, the researchers adopted the following procedures: (1) development of a civil complaint thesaurus for the text mining of civil complaint data; (2) text preprocessing of civil complaint data by using the thesaurus; and (3) keyword extraction and recognition of the relationships between the keywords to explore user-experience factors related to urban infrastructure. The research team used 2,945 bridge complaint data records and 404 tunnel complaint data records in text format from the Korean Safety e-Report database. From the collected data, the researchers developed a civil complaint thesaurus with 47 semantic relationships between words, such as Korean compound words, synonyms, and hypernym- hyponyms. As a result of keyword extraction, \"breakage,\"\"accident,\"and \"road\"for bridge complaints, and \"entrance,\"\"accident,\"and \"breakage\"for tunnel complaints were the selected words representing user experiences, and were visualized in a tag cloud. Also, critical user-experience factors such as unsafe or uncomfortable situations on bridge roads (e.g., \"breakage,\"\"construction,\"and \"pothole\"), and dissatisfaction factors at tunnel entrances (e.g., \"streetlight,\"\"view,\"and \"sign\") were explored using semantic network analysis. The outcome of this research will contribute to identifying user-experience factors from civil complaint data and improving the safety and serviceability of urban infrastructure by considering user experience and satisfaction in infrastructure maintenance practices. © 2022 This work is made available under the terms of the Creative Commons Attribution 4.0 International license,."
+  },
+  {
+    "article_id": "CS_0875",
+    "title": "Risk-based framework for improving customer satisfaction through system reliability in small-sized to medium-sized water utilities",
+    "journal": "Journal of Management in Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1061/(ASCE)ME.1943-5479.0000435",
+    "abstract": "Small-sized to medium-sized water utilities (SMWU) face severe challenges to maximize the customer satisfaction (CS) because of operational failures, limited trained staff, and financial issues. Conventional methods are based on performance benchmarking and interviews, which might not be feasible at all times for SMWU. A novel risk-based framework is developed for improving CS by improving the reliability of water supply systems operating in a utility. The framework is primarily based on comprehensive analysis of customer complaints and staff's observations on related complaints. Customer dissatisfaction is evaluated in terms of risk of not meeting CS, which starts when a customer reports a complaint; however, a complete evaluation of CS depends on the duration between the time of the report and the response until the complaints' full resolution. Different categories of complaints are identified from an exhaustive record of a medium-sized utility in Okanagan Basin (British Columbia, Canada). For risk management, root cause analysis and failure mode effect analysis are performed. To address inherent uncertainties associated with data limitations and vagueness in decision makers' perception, fuzzy set theory is employed. The results show that almost half of the cumulative risk can be reduced with inspection and maintenance interventions which are not very expensive; however, the remaining risk reduction requires large-scale infrastructure improvements. © 2016 American Society of Civil Engineers."
+  },
+  {
+    "article_id": "CS_0876",
+    "title": "Developing and Evaluating a Classification Model for Construction Defect Control: A Text Mining and Ensemble Learning Approach",
+    "journal": "Journal of Management in Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1061/JMENEA.MEENG-6296",
+    "abstract": "In the construction industry, customer satisfaction is of paramount importance, as it significantly impacts company success and reputation. In Korea’s competitive apartment market, customer satisfaction—particularly feedback on newly built apartments—is vital for construction companies, as it fosters growth and customer loyalty. To gain an understanding of the sentiments and patterns within this feedback, text mining can be utilized. This study aims to extract such insights from textual data on apartment building defect complaints, using text mining and ensemble learning to develop models with high prediction accuracy. It analyzes the accuracy of the Word2Vec and term frequency–inverse document frequency (TF-IDF) models, as well as the individual performance of different classification models, including naïve Bayes, decision trees, logistic regression, k-nearest neighbors, support vector machines (SVMs), and random forests. This analysis was conducted to validate the effectiveness of ensemble learning. Data were collected from a total of 230 apartment building projects in South Korea between 2018 and 2023, resulting in a data set of 101,387 data points, which underwent analysis to validate the model. The validation results consistently showed that TF-IDF outperforms Word2Vec, with the SVM model achieving the highest performance, attaining an average F1 score of 0.7439. Ensemble learning models demonstrated an improvement in accuracy of up to 34% over single models, reaching an average accuracy of 97.47% after the removal of human error. While this study acknowledges its limitations, which include potential biases in the data set, the impact of language evolution on model precision, and difficulties in classifying complex defects, the ensemble model demonstrated substantial improvements in defect classification accuracy and provided practical insights for defect management in construction. Moving forward, future work could explore integrating multidimensional data, utilizing speech-to-text technology, prioritizing defects by severity, and employing artificial intelligence for real-time defect prediction to further enhance defect management practices. © 2024 American Society of Civil Engineers."
+  },
+  {
+    "article_id": "CS_0877",
+    "title": "Solving the drive-through crisis with service blueprinting",
+    "journal": "Teaching Cases in Tourism, Hospitality and Events",
+    "journal_impact_factor": null,
+    "doi": "10.1079/9781800621022.0020",
+    "abstract": "As hospitality services contain high experiential qualities, the service delivery's success depends on customers' assessments of whether the gap between their expectations and perceptions of the service delivery is acceptable. When customers deem the gap is too large, service failure occurs. Identifying the cause of a service failure is not straightforward because delivery systems are complex, and customers are participants in the process. Service blueprinting encourages systems thinking to understand the interconnectedness of processes and people. Mapping out delivery systems helps to identify system fail points. Correcting service-delivery fail points requires a holistic view to understand how controllable (internal) and uncontrollable (external) variables affect the service delivery. This case examines a growing problem in quick-service restaurants' drive-through services to help learners understand the benefits of service blueprinting and systems thinking to improve hospitality services. © CAB International 2023. All rights reserved."
+  },
+  {
+    "article_id": "CS_0878",
+    "title": "Industrial districts in medieval England: Examining the significance of the ‘elementary localisation of industry’",
+    "journal": "Business History",
+    "journal_impact_factor": 1.068,
+    "doi": "10.1080/00076791.2025.2597763",
+    "abstract": "In Principles of Economics and Industry and Trade, Marshall considered how the localisation of industry in medieval England, c.1100 to 1560, could inform on subsequent agglomerations, but since then scholarship has focused mainly on Marshall’s findings on nineteenth–century manufacturing districts. This article seeks to redress the balance. It makes three contributions to the existing literature. Firstly, it extends the range of districts by focusing on the extractive industries of iron and salt; secondly, it relates evidence on medieval districts to Marshall’s earlier analysis; and thirdly it identifies the specific strengths and weaknesses of medieval districts relative to more modern ones. It identifies the main factors that boosted performance in medieval extractive districts: access to complementary resources, such as fuel, proximity to customers and royal patronage. The major weaknesses of medieval extractive industries were their ‘boom and bust’ lifecycle and the absence of a pool of hereditary knowledge. © 2025 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0879",
+    "title": "Refurbishment or quality recovery: joint quality and pricing decisions for new product development",
+    "journal": "International Journal of Production Research",
+    "journal_impact_factor": 5.736,
+    "doi": "10.1080/00207543.2018.1516904",
+    "abstract": "Refurbishment and quality recovery, as two important strategies of reverse logistics, have been widely used for consumer durables, especially consumer electronics. This trend is driven by manufacturers’ profit-seeking behaviours and the increasing environmental concerns of society. This study investigates and compares the optimal emergence of these two strategies when product quality is endogenous. Model analyses provide several notable insights. First, we find that the refurbishment strategy dominates the quality recovery strategy when the fraction of the recoverable quality-inducing components in the defective product is low enough. Moreover, when the refurbishment strategy emerges as the optimum, the quality and price of the new product as well as the total realised sales of both new and refurbished products are consistently higher than those with the quality recovery strategy. In addition, when either the refurbishment or quality recovery strategy emerges as the optimum, the overall consumer surplus is also enhanced. Finally, in the model generalisation, we show that a synthetic strategy with which some of the returned defective products are refurbished and others are remanufactured through quality recovery can certainly increase the manufacturers’ profit compared to either one of them when the fraction of the recoverable quality-inducing components in the defective product is moderate. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0880",
+    "title": "Product variety and recovery strategies for a manufacturer in a personalised and sustainable consumption era",
+    "journal": "International Journal of Production Research",
+    "journal_impact_factor": 5.736,
+    "doi": "10.1080/00207543.2021.1884305",
+    "abstract": "Personalised consumption and sustainable development are increasingly gaining people’s attention. To meet consumers’ individualised needs and achieve sustainable development, it is very important and urgent for manufacturers to make operations decisions on whether to implement a product variety and/or a product recovery programme. To explore some management implications for firms making those decisions, we develop three analytical game-theoretical models: (1) Model V where the manufacturer only adopts a product variety strategy; (2) Model R where he only adopts a product recovery strategy; (3) Model VR where both the product variety and recovery strategies are implemented. By comparing the equilibrium outcomes of these three models, we find that the manufacturer’s optimal operations strategy largely depends on the market recoverable rate, the cost spillover effect, and the manufacturer’s product variety efficiency. Through numerical examples and sensitivity analyses, we further examine the impacts of some key factors on the manufacturer’s optimal operations strategy choice. With two model extensions, we find that the manufacturer’s environmental preference and the government’s tax and subsidy policy could motivate the manufacturer to adopt Strategy R or VR instead of Strategy V. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0881",
+    "title": "Pricing strategies for logistics robot sharing platforms",
+    "journal": "International Journal of Production Research",
+    "journal_impact_factor": 5.736,
+    "doi": "10.1080/00207543.2021.2009138",
+    "abstract": "Sharing platforms play a key role in the development of the sharing economy. This paper considers a logistics robot sharing platform comprising logistics robot providers and customers that need to rent robots. We develop an analytical model to investigate pricing strategies of a sharing platform, incorporating service response speed and additional services. Afterward, we examine the impact and value of the logistics robot sharing platform. We interestingly find that a high service response speed does not necessarily bring benefits to the platform. In addition, when customers are sensitive to the additional services, despite the increased cost of providing additional services, the platform can still profit from them. Finally, we generate additional insights by exploring two extended models, namely (i) the model with endogenous additional services, and (ii) the case considering the service response speed. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0882",
+    "title": "A prediction-based supply chain recovery strategy under disruption risks",
+    "journal": "International Journal of Production Research",
+    "journal_impact_factor": 5.736,
+    "doi": "10.1080/00207543.2022.2161022",
+    "abstract": "This paper proposes a prediction-based product change recovery strategy for the SC (supply chain) under long-term disruptions. A real-world case composed of multi-period planning and dynamic customer demand is considered. First, to forecast dynamic customer demand, a data-based demand predictive method with feedback errors is designed. Second, to schedule procurement and production in advance, based on the predicted demand, the selection of the supply portfolio is transformed into a bi-objective mixed integer programming problem incorporating product change. Furthermore, goods allocation and customer order fulfillment strategy is also designed to finish the transportation of goods and delivery of customer orders. To systematically synthesise and address the problems aforementioned, a three-stage heuristic method is further developed. Finally, a case study is presented to substantiate the reliability of the proposed strategy via an actual SC model of Dongsheng Electronics Co., Ltd. Based on the results obtained after one month, the proposed disruption recovery strategy can reduce the unit product cost and improve the service level, which outperforms the original method adopted by Dongsheng. Additionally, sensitivity analysis of unit product change cost is conducted to reveal the effect of different unit product change costs on SC performance. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0883",
+    "title": "Consumer service level-oriented resilience optimisation for e-commerce supply chain considering hybrid strategies with blockchain adoption",
+    "journal": "International Journal of Production Research",
+    "journal_impact_factor": 5.736,
+    "doi": "10.1080/00207543.2024.2354843",
+    "abstract": "The booming development of customised e-commerce makes e-commerce supply chains experience a severe test of consumer service level (CSL). An efficient e-commerce supply chain resilience optimisation method addressing economic performance and service performance is proposed to improve customised services under disruption risks. The proposed method includes a hybrid strategy considering both a resistance strategy with blockchain (BCT) adoption and time-dependent recovery strategies simultaneously. A two-stage multi-period multi-product stochastic programming with BCT adoption is then proposed, which (1) implements BCT as the resistance strategy in the pre-disruption stage; (2) collaborates four recovery strategies in the post-disruption stage; (3) supports the e-tailer in making decisions and optimises his profit and order fulfillment time while taking product priorities into account. Using the actual data of Chinese e-commerce during the public health emergency in 2020, it is demonstrated that (1) the applicability of the model with BCT adoption in both supply chain resilience and CSL improvement; (2) the performance of the hybrid strategy in long-term disruption management; (3) the efficiency and robustness of the proposed solution approach for multi-objective high-dimensional stochastic programming problems. E-tailers can optimise decision-making under long-term disruptions by the proposed methodology in practices. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0884",
+    "title": "Predicting complaints in semiconductor order fulfilment with machine learning",
+    "journal": "International Journal of Production Research",
+    "journal_impact_factor": 5.736,
+    "doi": "10.1080/00207543.2024.2442548",
+    "abstract": "Many customers complain when informed that their order will not be fulfilled as originally confirmed, while other customers may be able to tolerate deviations. However, for suppliers, such complaints can be an early indicator of bad publicity, customer churn, and lost sales; and suppliers can prioritise orders to avoid these negative consequences. Ideally, they would know in advance if any order fulfilment change will trigger a customer complaint. To analyse how suppliers can predict these infrequent events in a business-to-business context, we leverage machine learning models on a large real-world dataset from a global semiconductor manufacturer. Our findings demonstrate that extreme gradient boosted trees effectively address the prediction problem. We explore the impact on model performance for different sampling approaches and cutoff values, as tuning the decision threshold is a meaningful calibration strategy before practical implementation. Our feature importance analysis provides evidence that high order fulfilment quality lowers complaint tendencies. Bridging the gap between advanced analytics and customer behaviour prediction, our research contributes to understanding the influence of subpar order fulfilment on customer satisfaction and offers insights into efficient order management despite disruptions. Our empirical study lays the groundwork for proactive supply chain operations when order fulfilment is at risk. © 2024 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0885",
+    "title": "Dynamic count time series modeling and anomaly detection for online automotive quality complaints",
+    "journal": "Journal of Quality Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1080/00224065.2025.2581892",
+    "abstract": "Feedback information concerning automotive quality often suffers from significant delays, making online consumer complaints an invaluable real-time source of information for monitoring and assessing product quality. Given that the frequency of online complaints is influenced by numerous factors, such as automobile quality, sales, Internet development, and public awareness of rights protection, it exhibits significant auto-correlation and dynamics. However, the existing modeling methods have been proven to be unreliable in practical applications, because they often assume that in-control (IC) processes remain static and employ models with fixed parameters. To this end, a dynamic modeling framework that integrates generalized linear regression with an integer-valued auto-regressive (INAR) state space model is proposed to capture the evolving nature of the process. Then, a procedure combining the Extended Kalman Smoothing (EKS) with the Expectation Maximization (EM) algorithm, referred to as EM-EKS, is used to estimate the model parameters. Furthermore, for online monitoring of any upward shifts in the number of complaints, a control chart (denoted as SDC-INAR(1)-G) with one-step-ahead forecasting value as the plotting statistic is constructed. Simulation studies show that the proposed SDC-INAR(1)-G method consistently exhibits much better performance than three benchmark approaches in different scenarios. Finally, the proposed SDC-INAR(1)-G method is applied to monitor online complaints of the Volkswagen Sagitar, focusing on two specific cases: the stationary process of “brake abnormal noise” and the non-stationary process of “transmission abnormal noise.” The results further demonstrate that the SDC-INAR(1)-G method outperforms the static approaches in both cases. The state-space framework and adaptive EM-EKS parameter estimation of the proposed SDC-INAR(1)-G method ensure robust sensitivities to different shifts, offering reliable monitoring for both stationary and non-stationary data, at the same time, remaining computationally efficient for real-world applications. © 2026 American Society for Quality."
+  },
+  {
+    "article_id": "CS_0886",
+    "title": "Redressing the sleeper effect: Evidence for the favorable persuasive impact of discounting information over time in a contemporary advertising context",
+    "journal": "Journal of Advertising",
+    "journal_impact_factor": 6.41,
+    "doi": "10.1080/00913367.2015.1085820",
+    "abstract": "The shift in the accessibility of positive and negative information about consumer products on the Internet calls for a revisiting of persuasion effects. A counterintuitive effect, called the sleeper effect, predicts that attitudes toward a persuasive message have the potential to increase in favorableness despite the presence of information discounting the message. An experimental study was conducted to support the existence of the sleeper effect, demonstrate its renewed relevance in the contemporary advertising environment, and provide a foundation for further sleeper effect studies. © 2016 American Academy of Advertising."
+  },
+  {
+    "article_id": "CS_0887",
+    "title": "Organizational Failure in the Hollow State: Lessons from the Milwaukee Voucher Experience",
+    "journal": "International Journal of Public Administration",
+    "journal_impact_factor": 2.049,
+    "doi": "10.1080/01900692.2015.1053613",
+    "abstract": "In this conceptual article we use the experience of the longstanding Milwaukee private school voucher program to categorize different failure types within the hollow state. Specifically, we argue that the overall performance of the hollow state is dependent on the performance of organizations operating within the hollow state, that organizational failures are inevitable in hollow state activities, and that such failures can be categorized as marketplace failures, service failures, institutional failures, or customer service failures. We conclude that policy makers must plan for the reality of organizational failures in the hollow state if such arrangements are to be effective. © 2016 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_0888",
+    "title": "Bank customers complaints, financial knowledge and gender",
+    "journal": "Revista Espanola de Financiacion y Contabilidad",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02102412.2023.2241273",
+    "abstract": "This work aims to analyse the relationship between financial knowledge and the propensity of consumers to complain in the event of disagreement with a financial institution. A sample of 8,286 individuals from the Survey of Financial Competencies elaborated by the Bank of Spain is analysed. The results reveal that individuals with greater financial knowledge show a greater propensity to complain, presumably due to their heightened ability to detect possible fraud or abusive practices by financial entities. Gender itself is not relevant in the propensity to complain. However, when the sample is divided by gender, financial knowledge is more relevant for women than men. Additionally, the results reveal that in the female sample, propensity to complain is affected by self-confidence, in contrast to the male sample. The results suggest that the authorities should take practical steps to include financial knowledge in the educational curriculum. © 2023 Asociación Española de Contabilidad y Administración de Empresas (AECA)."
+  },
+  {
+    "article_id": "CS_0889",
+    "title": "Perceived impacts of COVID-19 on risk perceptions, emotions, and travel intentions: evidence from Macau higher educational institutions",
+    "journal": "Tourism Recreation Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02508281.2021.1872263",
+    "abstract": "This study examines the relationship between perceived impacts of COVID-19, risk perceptions, emotions, and travel intentions within selected higher education institutions of the Macau Special Administrative Region (SAR). The paper argues that hospitality and tourism recovery strategies should focus on specific internal market segments by understanding their cognitive appraisal of the current situation, their emotional state, and possible responses to future travel. Through an online survey, data were gathered using convenience sampling of 412 respondents comprising students and workers of three Macau Higher Educational Institutions–which form a segment of Macau’s domestic tourism market. The results indicate that a high perceived risk of travelling during COVID-19 has increased negative emotions and reduced intentions to travel. Nonetheless, most students and workers of these institutions in Macau do not feel vulnerable to the virus due to the stringent health and policy measures in place. As government strict measures ‘protect’ internal customers within the city but ‘paralyse’ travel outside the city, promoting domestic travel becomes a practical way to reset tourism but would require understanding the perceptions and risk concerns of specific market segments. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0890",
+    "title": "Measuring the sustainability management performance of international tourist hotels: development and application of a balanced scorecard",
+    "journal": "Tourism Recreation Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02508281.2026.2625929",
+    "abstract": "Using Taiwan as a case study, this research develops a Sustainability Balanced Scorecard (SBSC) for international tourist hotels by integrating sustainability principles into the traditional Balanced Scorecard framework. In Taiwan, international tourist hotels are officially designated large-scale hotels serving both domestic and international guests, making them a suitable context for sustainability assessment. First, 32 evaluation indicators across five dimensions were identified through a literature review and expert interviews. The Fuzzy Delphi Method was then applied to screen and prioritize the indicators, resulting in 25 key indicators. Next, the revised KANO two-dimensional quality model further refined these into 18 important indicators, classified as Must-be, One-dimensional, Attractive, and Indifferent. The Fuzzy Analytic Hierarchy Process was subsequently used to calculate indicator weights, ranking the dimensions as customer, sustainability, internal process, finance, and learning and growth. The top five indicators were service quality, efficiency in resolving customer problems, timely handling of customer complaints, environmental human rights protection, and room occupancy rate. Finally, VIKOR was employed to evaluate the sustainability performance of three international tourist hotels, revealing performance differences and priority areas for improvement. This study extends Balanced Scorecard research in hospitality by providing a weighted, practical tool for sustainability performance evaluation and actionable managerial insights. © 2026 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0891",
+    "title": "The value of social presence in mobile communications",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2015.1062880",
+    "abstract": "Texting via mobile devices is used as a primary means for day-to-day communications among an increasing number of consumers and, as a result of this trend, more companies are engaging with consumers and addressing service complaints using social media platforms, such as Facebook. This study addresses the use of two-way mobile texting via Facebook to resolve service complaints with applications from social presence theory. Research shows that marketers’ warm emotions are important in addressing service complaints, yet prior works mainly focus on the significance of human warmth in face-to-face contexts. Therefore, this study uses an experimental design to investigate the value of social presence in mobile texting as a means for providing service recovery. In triangulating the data, we use focus groups in confirmatory analysis. The findings show that social presence cues add human warmth to text messages with respect to two-way communication perceptions, control perceptions, responsiveness perceptions, satisfaction, attitudes, and repurchase intentions. The article concludes with a discussion of the importance of social presence cues in improving customers’ experiences and overall satisfaction. © 2015 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_0892",
+    "title": "Customer e-complaining behaviours using social media",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2015.1062883",
+    "abstract": "This paper develops a conceptual framework about customer complaining behaviours (CCB), using social media. Specifically, this research expands the current understanding of CCB by examining the differential impact of unfairness, firm response, retaliation, locus attribution, stability attribution, and personal identity on public complaining and private complaining using social media, and their subsequent impact on post-complaining satisfaction (PCS) and loyalty. Public complaining refers to customer complaints directed to a service provider, while private complaining refers to service failure complaints directed towards other customers. A structural equation model shows that high levels of unfairness, firm response, locus, and personal identity have a strong influence on public complaining, while desire for retaliation is a significant factor influencing private complaining. The findings contribute to practice by providing useful and pertinent information for developing suitable web care interventions to effectively deal with public complaining and private complaining through social media platforms. © 2015 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_0893",
+    "title": "A novel framework for customer complaint management",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2016.1272592",
+    "abstract": "Complaining is one option available to customers to express their dissatisfaction with inadequate services. Their complaints contain valuable information for service providers to improve customer relationships and operational quality, which can ultimately enhance business profitability. Customer complaints are frequently handled at the individual level, however, which addresses the symptoms rather than the causes of customer dissatisfaction. This paper presents a framework integrating a decision tree approach, a common data mining tool, into Six Sigma methodology to analyze customer complaints in aggregate and improve service quality by identifying and addressing the underlying causes of failed service. A case study of a restaurant chain was used to demonstrate the effectiveness of the proposed framework. The results indicated a significant (60%) decrease in the number of customer complaints received. Subsequent long-term benefits can be expected. © 2016 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0894",
+    "title": "Offshore responsiveness: theory of Constraints innovates customer services",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2017.1303047",
+    "abstract": "This study describe a typical scenario occurring inside the stressful environment of a service call center working in shifts with high agent turnover, and offer ways to streamline operation through the usage of Theory of Constraints (TOC) methods. Offshore customer service representatives should not operate in fire-fighting mode but instead management should identify the root causes of customer dissatisfaction. A lesson learned from the study is that call centers should diminish reliance on automatic voice recognition technologies, which detracts executive attention from customer complaints about issues such as miss-communication, time zone differences, and national culture. Companies should complement the usage of TOC practices to improve key performance indicators by establishing career promotion paths for customer service representatives that would improve their well-being and elevate their status in the organizational hierarchy, consequently increasing their motivation to improve service level. © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0895",
+    "title": "Effects of customer loyalty on customer entitlement and voiced complaints",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2017.1360290",
+    "abstract": "The value of customer loyalty has been well documented by academicians and practitioners. Nevertheless, prior literature has paid little attention to the negative consequences of customer loyalty, for example, entitlement behaviors (e.g. requests for deeper discounts) and complaint behaviors (voicing dissatisfaction to the company). This research empirically examines the effects of customer loyalty on entitlement and voiced complaint behaviors in the context of Frequent Flyer programs in airline industry. Base on partial least squares-structural equation modeling, the results show that (1) customer loyalty has a positive effect on customer entitlement, which is the extent to which customers expect special treatment from the company; (2) the effect of customer loyalty on voiced complaints is fully mediated by customer entitlement; (3) perceived status of loyalty programs amplifies the entitlement behaviors of loyal customers, while tangible rewards of loyalty programs mitigate the entitlement behaviors of loyal customers. Theoretical and managerial implications are elaborated in the discussion section. © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0896",
+    "title": "The role of relationship on time and monetary compensation",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2017.1365843",
+    "abstract": "Service failures are inevitable in the service industry. In this study, the author suggests that companies that only provide monetary compensation for service failures are following a risky recovery strategy. Instead, service managers should consider the offered compensation’s fit with customer relationship type. The author proposes and empirically tests several hypotheses about service failures and how customers in communal relationship with service firms prefer time compensation (saving time), while customers in exchange relationships prefer monetary compensation (saving money). The results are evidence that properly matching relationship type (i.e. communal and exchange) with compensation type (i.e. time and monetary) can help recover customers’ overall satisfaction and restore the customer–service company relationship. The author concludes this article with a discussion of the practical implications and suggest future research directions. © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0897",
+    "title": "The impacts of complaint efforts on customer satisfaction and loyalty; [顾客投诉精力对其满意度和忠诚度的影响]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2018.1429415",
+    "abstract": "This study identifies the depth structure of customer complaint efforts and investigates the roles of each dimension in the structural relations with customer satisfaction and loyalty. Three dimensions of customer complaint efforts were identified, procedural effort, cognitive effort, and affective effort in the restaurant context. This study uses two subsamples to develop and validate the proposed three-dimension customer complaint efforts scale. Exploratory factor analysis was conducted on the first subsample of 211 participants. Confirmatory factor analysis and structural equation modeling were applied on the second subsample of 328 participants. It is found that customers’ physical/procedural and cognitive efforts exerted during the complaint resolution process compound their affective efforts, which further reduce customer satisfaction with the complaint process and erode customer behavioral and attitudinal loyalty. This study bridges the research gap gaps and provides managerial implications to help reduce customer complaint efforts and ensure positive customer behaviors. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0898",
+    "title": "The relationship between Internet addiction and negative eWOM; [网络成瘾与负面电子口碑的关系]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2018.1453501",
+    "abstract": "Customers prevalently use social media (SM) to post their experiences and to review others’ experiences. This study investigated how Internet addiction (IA) influenced customers’ word-of-mouth behaviors on SM after a service failure, focusing on both young and older customers. Two experiments were conducted. The first study was conducted with young customers and second experiment with older customers. Results suggest that the group of young customers had significantly higher levels of IA, compared to older customers. The analysis identified that IA and functional/technical service failure partially influenced four negative types of electronic word-of-mouth (eWOM) (i.e. Badmouthing, Tattling, Spite, and Feeding the Vultures). Both young and older customers tended to show more negative eWOM types for technical service failures. For the functional service failures, IA was the main predictor of negative eWOM for both young and older customers. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0899",
+    "title": "Stressors, work engagement and their effects on hotel employee outcomes; [ 压力源、工作投入及其对酒店员工表现结果的影响]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2018.1520842",
+    "abstract": "Our study aims to revisit the challenge-hindrance stressor framework among customer-contact employees. Specifically, our study links challenge and hindrance stressors to four critical employee outcomes via work engagement (WE). These outcomes are quitting intentions, service recovery performance, creative performance, and job performance. Data came from hotel employees in customer-contact positions in three waves and their direct supervisors in Nigeria. As hypothesised, WE fosters service recovery, creative, and job performances, while it mitigates quitting intentions. Inconsistent with our predictions, hindrance stressors boost WE and challenge stressors exert detrimental effects on WE. Although WE links challenge and hindrance stressors to the aforementioned outcomes, the signs of the mediating effects are not congruent with what is hypothesised in the study. These unexpected findings agree with Bakker and Sanz-Vergel’s [2013] proposition that categorisation of job demands as challenge or hindrance stressors may not always be straightforward. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_0900",
+    "title": "Modeling revenge and avoidance in the mobile service industry: moderation role of technology anxiety; [ 模式化行動服務產業報復與規避: 科技焦慮的調節角色]",
+    "journal": "Service Industries Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1080/02642069.2019.1585428",
+    "abstract": "This research investigates the impact of service failure severity on consumers’ negative emotion (anger) and coping behaviors (revenge and avoidance) in the context of mobile application service failure. It also identifies the moderating role of technology anxiety on the relationship between service failure severity and blame attribution. The sample for this study consisted of users who had experienced a mobile application service failure in Taiwan. This study distributed online surveys to potential respondents via MySurvey, an online survey distribution platform. Seven hundred and thirty-one mobile application users participated in this study. This study adopted Structural Equation Modeling to test the research hypotheses. The results showed that service failure severity positively affected blame attribution and, thus, amplified the anger of negative emotion. Revenge and avoidance occurred. Technology anxiety had a moderating effect on the relationship between service failure severity and blame attribution. © 2019 Informa UK Limited, trading as Taylor & Francis Group."
+  }
+]

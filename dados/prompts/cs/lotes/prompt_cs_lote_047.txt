@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_2301",
+    "title": "Do the benefits of small issuer sox 404(B) exemptions outweigh the costs?",
+    "journal": "Current Issues in Auditing",
+    "journal_impact_factor": 0.627,
+    "doi": "10.2308/CIIA-2020-026",
+    "abstract": "Responding to complaints that small issuers have disproportionately high costs that exceed the benefits of internal control attestation, the SEC has expanded size-based exemptions to SOX 404(b) since its initial adoption. Recent changes to the exemption criteria have rekindled the debate over the value of the SOX 404(b) requirement. This paper summarizes the model presented in Levine (2009), describes conditions for overauditing, and suggests solutions for practitioners, their clients, and regulators. © 2021, American Accounting Association. All rights reserved."
+  },
+  {
+    "article_id": "CS_2302",
+    "title": "A content analysis of the privacy policies of cloud computing services",
+    "journal": "Journal of Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.2308/isys-52188",
+    "abstract": "Cloud computing is increasingly popular across all sectors and offers users unparalleled scalability, elasticity, and flexibility. However, the rapid transition toward cloud computing has raised privacy and confidentiality concerns. Cloud service providers can access users’ data, and private information may be accidentally or deliberately disclosed or used for unauthorized purposes. Privacy policies are intended to provide users with information about privacy practices and their privacy options. This study performs content analysis of the privacy policies of 47 cloud service providers who offer services to business users. This analysis identifies what information is collected and why, to whom the information is disclosed, and what measures are in place for data security, data retention, and data complaints. Additionally, we investigate the readability, uncertainty language, and linguistic tone of cloud service privacy policies. Our results offer implications for cloud service users, providers, and policymakers, and provide directions for future research. © 2019, American Accounting Association. All rights reserved."
+  },
+  {
+    "article_id": "CS_2303",
+    "title": "Audit as Coproduction of Auditors and Clients: Implications for Professional Skepticism",
+    "journal": "Accounting Review",
+    "journal_impact_factor": null,
+    "doi": "10.2308/TAR-2023-0127",
+    "abstract": "We examine how coproduction develops between auditors and clients and its potential impact on the professional skepticism (PS) of auditors. We mobilize Knechel, Thomas, and Driskill’s (2020) theoretical framework and Social Exchange Theory to analyze interviews with 24 audit partners and 26 chief financial officers and controllers. We find that auditors and clients share a view that they cocreate audits as they each contribute and combine competencies. Coproduction redresses information asymmetries, which enables PS. Although auditor-client relationships (ACRs) facilitate coproduction through reciprocity and trust, coproduction fosters conditions where auditors must balance exercising skeptical judgments and actions and abdicating professional responsibilities that result in impaired PS. The findings are useful for audit practitioners, standard-setters, and regulators as they will help strengthen policies, standards, and regulations on managing ACRs to enhance PS. The study offers theoretical and methodological directions for future research. © 2025 American Accounting Association. All rights reserved."
+  },
+  {
+    "article_id": "CS_2304",
+    "title": "Measuring Efficiency and Effectiveness of Municipal Infrastructure Projects",
+    "journal": "PICMET 2023 - Portland International Conference on Management of Engineering and Technology: Managing Technology, Engineering and Manufacturing for a Sustainable World, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.23919/PICMET59654.2023.10216847",
+    "abstract": "Project management goals often lead the project to an ideal quality, standing budget and schedule, and achieving customer satisfaction. Project management in municipal infrastructure deals with accompanying the developer (municipal authority), planning management, approving budgets with relevant regulators, viewing, and removing bureaucratic barriers, coordinating stakeholders, and controlling the contractor until project delivery to the client.In this paper, we examine the performance of municipal projects and the degree of stakeholder involvement; the analysis focused on 50 municipal infrastructure projects completed in the last two years and carried out in Israel.We used Data Envelopment Analysis (DEA) to examine the relative efficiency of project implementation. The analysis is according to the projects' success and characteristics and criteria such as schedule overrun, stakeholder involvement, residents' complaints, risks, and uncertainty at the beginning of the project. Preliminary results indicate the contribution of stakeholders, residents and their degree of involvement in the relative efficiency of projects. Therefore, this research will contribute to the success of municipal infrastructure projects by establishing a policy of allocating resources to municipal infrastructure projects following the level of decision-makers and their impact. © 2023 PICMET (Portland International Center for Management of Engineering and Technology(."
+  },
+  {
+    "article_id": "CS_2305",
+    "title": "Complaint management system in building material factory",
+    "journal": "Management and Production Engineering Review",
+    "journal_impact_factor": null,
+    "doi": "10.24425/mper.2019.128243",
+    "abstract": "The scientific goal of this article was to confirm the thesis that efficient complaint management can be one the company’s competitive advantage elements of in the sphere of logistic customer service. The theoretical part of the article presents basic foundations related to complaint management process as an important element of post-trade sales process in customer service. The research part presents an example of the implementation of efficient assumptions of the complaint management process on the example of a construction industry manufacturing company. Guidelines for the design and implementation of an effective and efficient complaint handling process are presented. An example of process analysis is done using appropriate quality tools. © 2019 Polish Academy of Sciences. All rights reserved."
+  },
+  {
+    "article_id": "CS_2306",
+    "title": "STATISTICAL ANALYSIS AND PREDICTION OF THE PRODUCT COMPLAINTS",
+    "journal": "System Safety: Human - Technical Facility - Environment",
+    "journal_impact_factor": null,
+    "doi": "10.2478/czoto-2022-00011",
+    "abstract": "The article presents the results of the analysis of cardboard packaging complaints based on selected quality tools and statistical tools for the purpose of a rough assessment of the effectiveness of corrective and preventive actions taken by the surveyed company and for predictive purposes. The analysis was performed in terms of two research periods - 1 year and quarters, and from the point of view of total complaints and external - customer complaints. Data on the number of products complained of as well as financial losses incurred by the company on this account were analysed. The article presents the potential of both classic quality tools and statistical tools for the purposes of in-depth analysis of complaints data and for predictive purposes and subsequent risk analysis. The critical complaint was indicated - complaint code 403 - overprint. The number of complained products to be expected in the next quarter of the new year was determined. The article shows that the corrective and preventive actions taken by the company have not yet brought the expected result in the form of reducing the number of products complained by customers during the quarters surveyed. © 2012 System Safety: Human - Technical Facility - Environment. All Rights Reserved."
+  },
+  {
+    "article_id": "CS_2307",
+    "title": "PRIORITIZING PRODUCT QUALITY PROBLEMS USING QUALITY MANAGEMENT TOOLS",
+    "journal": "System Safety: Human - Technical Facility - Environment",
+    "journal_impact_factor": null,
+    "doi": "10.2478/czoto-2024-0016",
+    "abstract": "In today's competitive business environment, effectively analyzing, evaluating, and resolving product quality problems is critical to maintaining customer satisfaction, reducing financial losses, and preserving a company's reputation.This study prioritizes internal and external quality problems in paperboard packaging using selected quality management tools.Product quality problems are categorized based on their frequency of occurrence and financial losses.Three quality management tools are used: the Pareto-Lorenz diagram, the matrix data analysis diagram, and the box plot.The Pareto-Lorenz diagram identified the key quality problems that generate the highest number of events and the greatest financial losses, consistent with the 80/20 rule.The matrix data analysis diagram divided the quality problems into four groups based on their combined impact, indicating critical problems for both categories.The box plot identified outliers and extremes, revealing quality problems with significantly higher frequency and financial impact than others.All quality tools used identified the overprint complaint with code 403 as critical.The results highlight the effectiveness of the quality management tools used in prioritizing product quality problems. © 2024 Author(s)."
+  },
+  {
+    "article_id": "CS_2308",
+    "title": "PROCESS IMPROVEMENT USING SELECTED QUALITY MANAGEMENT METHODS",
+    "journal": "System Safety: Human - Technical Facility - Environment",
+    "journal_impact_factor": null,
+    "doi": "10.2478/czoto-2024-0045",
+    "abstract": "A key element of any quality management system is continuous improvement and a systematic approach to managing non-conformances. The aim of this paper is to use selected statistical methods and quality control techniques to present a way in which an organisation can achieve quality improvement. The 8D methodology was used to solve the observed problem, which was a customer complaint due to a nonconforming dimension on a Brake Bracket product using a structured eight-step Plan-Do-Check-Act (PDCA) approach to problem solving. The subject of the analysis in Knott spol. s.r.o. is the product Brake holder 300x60 S-Nocken/AGS/ABS/. Using the 8D methodology and supporting tools such as the Ishikawa diagram or 5Why, the root cause of the problem was identified and permanent corrective actions were planned and implemented as recommended in the 8D report to reduce the likelihood of the problem recurring and increase customer satisfaction. © 2024 Author(s)."
+  },
+  {
+    "article_id": "CS_2309",
+    "title": "APPLICATION OF SELECTED METHODS IN PROCESS IMPROVEMENT",
+    "journal": "System Safety: Human - Technical Facility - Environment",
+    "journal_impact_factor": null,
+    "doi": "10.2478/czoto-2024-0047",
+    "abstract": "As customer needs and expectations change, and as competitive pressures and technological advances increase, organisations are forced to continuously improve their products and processes.The use of quality management methods and tools stimulates organisations to analyse customer requirements, to define the processes that contribute to the creation of a customer-acceptable product, and to keep these processes under control.The present paper deals with improving the manufacturing process of conveyor sorting belts, specifically the problem of opening joints on CSC belts.By forming a team and their joint efforts, the root causes of the problem in the CSC belt manufacturing process were identified using the Ishikawa diagram and action plan, and several corrective measures were proposed.The root causes that were likely related to the occurrence of the joint opening problem on the CSC belts prior to its detection include: hiring new staff for the LBWC department, purchasing four new Fonmar ALFA heat presses, rebuilding the Rodder & Piller die-cutting equipment, changing the way the belt joints are cut, implementing an unwinding system on the Rodder & Piller equipment, and changing the pressing parameters.Among the deficiencies found in connection with the monitored process are: uneven shape of the cut teeth, life of the strips-dynamic tests, presence of polyurethane in the joint.Corrective measures taken include: use of modular roller belt, inspection of joints using work lights.These corrective measures have also been implemented, with verification validating these measures. © 2024 Author(s)."
+  },
+  {
+    "article_id": "CS_2310",
+    "title": "Structured problem solving: Combined approach using 8d and six sigma case study",
+    "journal": "Engineering Management in Production and Services",
+    "journal_impact_factor": 1.616,
+    "doi": "10.2478/emj-2020-0005",
+    "abstract": "The current research study aimed to explore the utility of selected problem-solving tools and techniques in root-cause analysis to demonstrate their practical application. An experimental research design adopting a positivist empirical approach with a deductive strategy was followed to assess the effectiveness of a combined (8D & Six Sigma) problem-solving approach in reducing a high defects rate of a mixer shower assembly line. A novel application of the 8D framework in combination with Six Sigma and other analytical tools was found highly effective in reducing the reject rate from 11.84% to 0.11%. Successful identification of the root cause led to the implementation of permanent corrective action ensuring a long-term stable assembly process. The research study provided a problem-solving framework that was found effective in resolving a complex problem and implementing long-term corrective action in an assembly production line. However, this framework can be used in other industries. The research study provides a solution to a high number of leak rejects in a sub-assembly where \"O-seals\" are used between mating parts. It also provides analytical tools that were found highly effective during the problem-solving process. © 2020 Mithun Sharma, Shilpi Sharma, Sanjeev Sahni, published by Sciendo 2020."
+  },
+  {
+    "article_id": "CS_2311",
+    "title": "Cultural Differences in a Restaurant's Communication with Unsatisfied Customers - The Case of Tripadvisor",
+    "journal": "Folia Oeconomica Stetinensia",
+    "journal_impact_factor": 0.662,
+    "doi": "10.2478/foli-2020-0061",
+    "abstract": "Research background: Platforms such as TripAdvisor have the potential to influence consumers' decision-making processes, so negative user-generated reviews could have a harmful impact on a company's reputation and sales. However, the proper mangers' approach to customer complaints expressed on social media can have a positive impact on the companies' performance. Purpose: The aim of the study is to indicate whether restaurant managers use TripAdvisor to communicate with dissatisfied customers and whether national culture influences this communication. Research methodology: The methods used in the research were both a quantitative and qualitative content analyses of restaurants' responses to negative reviews posted on TripAdvisor. The research covered a random sample of restaurants located in Cracow (Poland), Frankfurt (Germany) and Porto (Portugal), and listed on TripAdvisor. Results: The research showed that differences in communication, which may result from dissimilar cultural conditions, are relatively small. Novelty: The research shows whether and to what extent restaurant managers respond to negative comments posted on TripAdvisor. At the same time, research results indicate whether the responses of managers are culturally determined. © 2020 Agnieszka Zbikowska, published by Sciendo."
+  },
+  {
+    "article_id": "CS_2312",
+    "title": "New approach of costs of quality according their trend of during long period in industrial enterprises in SMEs",
+    "journal": "Management Systems in Production Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.2478/mspe-2021-0003",
+    "abstract": "Very important in SMEs is to monitor cost of quality and economic indicators for valuation of cost effectiveness. The main goal of this article is to create classification on cost quality categories in SMEs and to analyze economic quality indicators and their trend during long period. In this article authors use economical and statistical indicators for costs of quality. We use common model PAF, that include prevention costs, evaluation costs, internal failure costs, external failure costs. Total costs, individual simple cost index, cost ratio and cost structure were used. We analyzed data from 50 small enterprises with 10-40 employees with their yearly turnover max 3 mil €. The research sample of enterprises was focused on industrial areas of business such as engineering, metallurgy, automotive industry. We analyzed the quality costs in SMEs by the average value of quality cost in all surveyed enterprises. Results of this research brought labeling of cost of quality in SMEs by model the PAF for 10 categories for various enterprises, what is very important for comparing of results of QMS in SMEs. Based on the reference indicators of the total costs of quality in SMEs we can conclude their drop. Reducing the costs of quality was reflected in particular in reducing the costs of internal and external errors. In assessing the economic efficiency in SMEs plays an important role the overall cost that were increasing in reporting period. Very important result is that the cost of quality did not influenced overall cost. This fact is positive for competitiveness in SMEs because it shows a quality of production and product. Reducing of cost of quality brought improving of product quality; reduced customer's complaints brought financial savings. The economic efficiency indicator shows a value above e > 1. It means that, despite rising cost enterprises generate revenues that are significantly higher than the input factors of production. Cost effectiveness helps to improve TQM performance. © 2021 Katarína Teplická et al., published by Sciendo 2021."
+  },
+  {
+    "article_id": "CS_2313",
+    "title": "Using Data Mining to Improve Decision-Making: Case Study of A Recommendation System Development",
+    "journal": "Organizacija",
+    "journal_impact_factor": null,
+    "doi": "10.2478/orga-2023-0010",
+    "abstract": "Background and purpose: This study aims to provide a practical perspective on how data mining techniques are used in the home appliance after-sales services. Study investigates on how can a recommendation system help a customer service company that plans to use data mining to improve decision making during its digital transformation process. In addition, study provides a detailed outline on the process for developing and analyzing platforms to improve data analytics for such companies. Methodology: Case study approach is used for evaluating the usability of recommendation systems based on data mining approach in the context of home appliance after-sales services. We selected the latest platforms based on their relevance to the recommender system and their applicability to the functionality of the data mining system as trends in the system design. Results: Evaluation of the impact on decision making shows how the application of data mining techniques in organizations can increase efficiency. Evaluation of the time taken to resolve the complaint, as a key attribute of service quality that affects customer satisfaction, and the positive results achieved by the recommendation system are presented. Conclusion: This paper increases the understanding of the benefits of the data mining approach in the context of recommender systems. The benefits of data mining, an important component of advanced analytics, lead to an increase in business productivity through predictive analytics. For future research, other attributes or factors useful for the recommender systems can be considered to improve the quality of the results. © 2023 Sciendo. All rights reserved."
+  },
+  {
+    "article_id": "CS_2314",
+    "title": "Analyzing and modeling thermal complaints in a commercial building in France",
+    "journal": "Organization, Technology and Management in Construction",
+    "journal_impact_factor": null,
+    "doi": "10.2478/otmcj-2020-0017",
+    "abstract": "Buildings are interactive environments in which their operations and occupants are linked. Although buildings are operated according to the standards, occupant complaints may arise when there is a mismatch between indoor environmental conditions and actual user needs. Therefore, the accuracy of thermal comfort prediction models suggested by the standards and alternative prediction models need to be investigated. This study aims at assessing the performance of the predicted mean vote (PMV) model suggested by the ISO 7730 Standard to detect occupant thermal dissatisfaction. In addition, a multivariate logistic regression model was developed to predict thermal complaints with respect to \"too warm\"and \"too cold.\"This case study was conducted in a commercial building located in Paris, France, between January 2017 and May 2018. Indoor environmental conditions were monitored via sensors and an online tool was used to collect occupant thermal complaints. A total of 53 thermal complaints were analyzed. The results showed that all the operative temperature measurements in both the heating and cooling seasons were within the thresholds suggested by the standards. The PMV method suggested that only 4% of the occupants were dissatisfied with the indoor environment whereas the actual dissatisfaction ratio was 100% under these indoor environmental conditions. In addition, the multivariate logistic regression model showed that operative temperature and season have a significant effect on thermal complaints. Furthermore, the accuracy of the developed model was 90.6%. © 2021 Ezgi Kocaman et al., published by Sciendo 2021."
+  },
+  {
+    "article_id": "CS_2315",
+    "title": "Risk Assessment and Mitigation Strategy of Large-Scale Solar Photovoltaic Systems in Pakistan",
+    "journal": "International Journal of Industrial Engineering and Management",
+    "journal_impact_factor": 2.139,
+    "doi": "10.24867/IJIEM-2023-2-327",
+    "abstract": "Solar photovoltaic (PV) systems and their installation are essential to determine a general practice for specialized risk assessment, which reduces the danger linked and the solutions to avoid those hazards, which call mitigation strategies. This paper aims to present the risk assessment and mitigation strategies for large-scale Solar PV systems in developing countries. To achieve this, complaints-related data has been collected from well-known companies providing Solar PV to industrial and residential consumers. This paper presents insights on the repetitive complaints, potential risks identified, and their severity along with probability. Further, risk mitigation strategies to resolve these complaints timely and significantly are listed by industry experts. Overall, the study briefed each risk, its detail, and classified the complaints in three different companies. © 2023, International Journal of Industrial Engineering and Management. All Rights Reserved."
+  },
+  {
+    "article_id": "CS_2316",
+    "title": "THE EFFECT OF INFORMATIONAL AND INTERPERSONAL JUSTICE TOWARDS SATISFACTION WITH RECOVERY SERVICE THROUGH THE ROLE OF CUSTOMER EMOTION MEDIATION: A STUDY ON POST-MERGER RURAL CREDIT BANKS (BPR) IN INDONESIA",
+    "journal": "Proceedings on Engineering Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.24874/PES01.02.009",
+    "abstract": "The research objective is to explore the role of moving mediation on the influence of informational and interpersonal justice on satisfaction with service recovery, as well as broadening the impact of informational and interpersonal justice on satisfaction with service recovery at the Rural Bank (BPR) after merger. The data is collected through surveys of customers who experienced failure of bank credit services by rural banks (BPR) in the last two years which amounted to 127 respondents in Yogyakarta, Indonesia. The data analysis techniques used in this research are Structural Equation Modeling (SEM). The results of this study found that emotions (positive and negative emotions) mediate the influence of informational and interpersonal justice on satisfaction with service recovery. The results of this study confirm that informational and interpersonal justice can increase comfort with a revival of services at BPR after merger. The results of this study provide a theoretical contribution to the development of models for service failures in the Banking Service Industry, especially in the Rural Banks (BPR) after the merger in Indonesia. Also, the findings of this study are also useful for the Banking Services Industry as a strategy model to implement Financial Services Financial Authority regulations on Consumer protection.). © 2019, Faculty of Engineering, University of Kragujevac."
+  },
+  {
+    "article_id": "CS_2317",
+    "title": "DIGITAL QUALITY MANAGEMENT SYSTEMS: BENEFITS AND CHALLENGES",
+    "journal": "Proceedings on Engineering Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.24874/PES01.02.015",
+    "abstract": "Quality management is a maintenance and control process in which product and service quality are scrutinized for conformity with stated requirements. Digital quality management systems (QMS) is designed for agile, consistent and customer-centric enterprises. Digital QMS has been widely used by world-class business enterprises to attain competitive advantage in terms of performance, innovation and quality product and service delivery. Unfortunately, the extant literature is devoid of a definitive conclusion highlighting the benefits and challenges digital QMS. To fill this void, this paper reviewed the benefits and challenges digital QMS to provide a comprehensive framework. This paper concludes that digital QMS is an essential component for modern business enterprises, as it guarantees homogeneous and cost-efficient products / services at maximum returns and minimum complaints. Implications are discussed.. © 2019, Faculty of Engineering, University of Kragujevac. All rights reserved."
+  },
+  {
+    "article_id": "CS_2318",
+    "title": "IMPROVEMENT OF BUSINESS PROCESSES IN PUBLIC UTILITY COMPANIES",
+    "journal": "Proceedings on Engineering Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.24874/PES01.02.063",
+    "abstract": "This paper analyzes business processes and improvements that are performed in public utility companies (PUC) with a focus on city sanitation company in Kragujevac. The importance of continuous improvements of processes, in PUC, will be explained through corrective and preventive actions that are accurately designed to respond correctly to the needs of their customers. These actions are strictly based on calculations and measurements of both customer complaints and internal audits. Complete procedure, basic description and goals of corrective and preventive actions will be given throughout this paper, as well as management of non-conformities in companies, that can influence efficiency and cause intervening checks. The aim of this paper is to draw attention on the importance of informations and data analysis that companies get and how it can guide certain process improvements in companies. © 2019, Faculty of Engineering, University of Kragujevac. All rights reserved."
+  },
+  {
+    "article_id": "CS_2319",
+    "title": "An exploration of consumers' response to online service recovery initiatives",
+    "journal": "International Journal of Market Research",
+    "journal_impact_factor": 1.565,
+    "doi": "10.2501/IJMR-2016-048",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_2320",
+    "title": "Citizen behavior: The evaluation of complaint application that connected to smart city",
+    "journal": "Advances in Science, Technology and Engineering Systems",
+    "journal_impact_factor": null,
+    "doi": "10.25046/aj050403",
+    "abstract": "SIARAN is application which is created by Government of South Tangerang City, Indonesia. The application is e-government services social media based. It is designed for citizens to be able to report problems that occur around South Tangerang City. The research was conducted to find out the factors that affect the intention of SIARAN’s users. The research model in this research was Theory of Planned Behavior which was combined by several variables of several acceptance models. The methods which were used to collect the data were literature review and questionnaire. The findings of the research were going to be developed and proceeded by using SEM-PLS (Structural Equation Model - Partial Least Square). The results of this research indicated that Information Design, Architecture, Security, Esthetical Design, give significant positive effects towards attitude. Whereas, Perceived Usefulness and Perceived Ease of Use did not give significant effects towards Attitude. Facilitating Condition and Participation Efficacy gave significant positive effect towards perceived behavior control. Perceived Behavioral Control and Attitude gave significant positive effect towards intention. © 2020 ASTES Publishers. All rights reserved."
+  },
+  {
+    "article_id": "CS_2321",
+    "title": "Ecosystem of renewable energy enterprises for sustainable development: A systematic review",
+    "journal": "Advances in Science, Technology and Engineering Systems",
+    "journal_impact_factor": null,
+    "doi": "10.25046/aj060146",
+    "abstract": "In the Global sphere, the social, environmental, and economic pillars are the main contributors and accelerators to the sustainable development goals. As a result, the latter creates a platform for interdisciplinary researchers, society and decision-makers to collaborate in formulating ways to minimize factors contributing to environmental concerns. Energy is currently referred to as one of the scarce resources. The scarcity of electricity is mainly experienced in the rural areas of most countries in the world. The mandate of the green economy is to introduce innovative ways to redress the inequalities and lack of access, especially when it comes to Energy. Based on the sector's efforts, questions arise as to what comprises the ecosystem that can be accelerated to enhance entry to the sector. Hence, the researchers focus on Renewable Energy with specific reference to the entrepreneurial motives to meet sustainable goals. The applicable sustainable goals are goal 7 (affordable and clean Energy) and Goal 8 (decent work and economic growth). Furthermore, Energy contributes to modern access and poverty reduction to accelerate the transitioning to a Green economy. The current paper hopes to answer the following questions: Firstly, how Renewable Energy enterprise can contribute to sustainable development goals theoretically. Secondly, how can the theoretical energy enterprise ecosystem be contextualized in the South African context? A theoretical review was conducted through a literature review of which n=47 sources met the criteria that the researchers set for ecosystem variables. The overarching goal of the paper is premised on various works of literature building the ecosystem of the elements highlighted by most researchers in the field of renewable energy enterprises or business ventures. From the various models, the framework emerged singling out the critical success factors of the ecosystem of the Renewable Energy enterprise. The theoretical ecosystem consists of accelerators, social factors, sustainable development goals, as well as selected business models. The latter ecosystem was then contextualized in the South African context for a complete framework. Some of the critical drivers derived from the latter broad ecosystem are: Renewable Energy Feed-in Tarrif (REFIT), Utility Renewable Energy business model, Customer renewable energy business model, Energy Justice (distributive justice), Off-grid (Mini-grid), Saurian Lilting lamp, Renewable powered irrigation system. © 2021 ASTES Publishers. All rights reserved."
+  },
+  {
+    "article_id": "CS_2322",
+    "title": "An exploratory study of the formation and impact of electronic service failures",
+    "journal": "MIS Quarterly: Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.25300/MISQ/2016/40.1.01",
+    "abstract": "E-commerce service failures have been the bane of e-commerce, compelling customers to either abandon transactions entirely or switch to traditional brick-and-mortar establishments. Yet, there is a paucity of studies that investigates how such failures manifest on e-commerce websites and their impact on consumers. This paper, therefore, synthesizes extant literature on e-service and system success to arrive at a novel classification system that delineates e-commerce service failures into information, functional, and system categories, each with its own set of constituent dimensions. Extending expectation disconfirmation theory (EDT), we further distinguish among disconfirmed outcome, process, and cost expectancies as major consequences of e-commerce service failures. A theoretical model of e-commerce service failure classifications and their consequences was constructed together with testable propositions that relate the three failure categories to consumers' disconfirmed expectancies. Finally, we explore the validity of our theoretical model based on descriptive accounts of actual occurrences of e-commerce service failures and their corresponding consequences. Consistent with our theoretical model, information and functional failures were found to be associated with disconfirmed outcome and process expectancies respectively. System failures, on the other hand, do not affect consumers' disconfirmed expectancies, thereby contradicting our predictions. Post hoc analysis on constituent dimensions of information, functional, and system failures yielded additional insights on the preceding observations."
+  },
+  {
+    "article_id": "CS_2323",
+    "title": "USER compensation as a data breach recovery action: An investigation of the sony playstation network breach",
+    "journal": "MIS Quarterly: Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.25300/MISQ/2017/41.3.03",
+    "abstract": "Drawing on expectation confirmation research, we develop hypotheses regarding the effect of compensation on key customer outcomes following a major data breach and consequent service recovery effort. Data were collected in a longitudinal field study of Sony customers during their data breach in 2011. A total of 144 customers participated in the two-phase data collection that began when the breach was announced and concluded after reparations were made. Using polynomial modeling and response surface analysis, we demonstrate that a modified assimilation-contrast model explained perceptions of service quality and continuance intention and a generalized negativity model explained repurchase intention. The results of our work contribute to research on data breaches and service failure by demonstrating the impacts of compensation on customer outcomes. We discuss theoretical and practical implications."
+  },
+  {
+    "article_id": "CS_2324",
+    "title": "When social media delivers customer service: Differential customer treatment in the airline industry",
+    "journal": "MIS Quarterly: Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.25300/MISQ/2018/14290",
+    "abstract": "Companies increasingly are providing customer service through social media, helping customers on a real-time basis. Although some traditional call centers might prioritize customers based on their expected business values, the grounds for differential customer service on social media are unclear, since there has been little theoretical or empirical investigation of this new phenomenon. Building on the literature of social psychology and complaint management, we hypothesize two main drivers of differential treatment: the social media influence effect, which refers to the impact of the customer's relative standing on social media, and the bystander effect, which refers to the impact of the presence of other social media users. To test these effects, we analyzed more than three million tweets to seven major U.S. airlines on Twitter from September 2014 to May 2015. The evidence is clear that airlines respond to less than half of the tweets directed at them by complaining customers-in contrast with traditional call centers, which are expected to address all callers. Interestingly, we find that the airlines are more likely to respond to complaints from customers with more followers, and customers with more followers are more likely to receive faster responses, thus confirming the existence of a concealed (or at least unpublicized) social media influence effect. We also find that airlines are less likely to respond to complaints with multiple parties mentioned, confirming the existence of the bystander effect. To the best of our knowledge, this is the first paper in the literature to study the existence and drivers of differential treatment when customer service is delivered on social media, and we expect our findings will have important implications for companies, customers, and regulators. © 2018 University of Minnesota. All rights reserved."
+  },
+  {
+    "article_id": "CS_2325",
+    "title": "CUSTOMER COMPLAINT AVOIDANCE: A RANDOMIZED FIELD EXPERIMENT OF PLATFORM GOVERNANCE BASED ON VALUE CO-CREATION AND APPROPRIATION",
+    "journal": "MIS Quarterly: Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.25300/MISQ/2022/17000",
+    "abstract": "From the theoretical perspectives of value co-creation and value appropriation in platform governance, this study explores how a platform can design motivation mechanisms to induce the proactive efforts of providers to reduce customer complaints. We conducted a field experiment on a major Chinese peer-to-peer real estate platform offering long-term rental properties. Specifically, when a renter (customer) complaint about a host (provider) occurs, we sent reminder messages to other unaffected hosts in the same neighborhoods (as the affected host) and urged them to proactively prevent similar complaints. The reminder messages varied in terms of their emphasis of the roles of different stakeholders in platform-based value co-creation (provider-emphasized vs. customer-emphasized) and how they explicated different value appropriation mechanisms (competition-based vs. cooperation-based). Results show that compared to the control message, customer-emphasized messages effectively motivated providers’ proactive efforts to reduce customer complaints. Contrastingly, provider-emphasized messages led to the undesirable outcome of increasing customer complaints, possibly due to providers’ shirking behavior. We also found that a competition-based value appropriation mechanism strengthened the motivating effect, whereas a cooperation-based mechanism undermined the motivating effect. The study provides important theoretical and practical implications for platforms on the design of effective governance mechanisms. © 2023 University of Minnesota. All rights reserved."
+  },
+  {
+    "article_id": "CS_2326",
+    "title": "RUCKUS IN THE RENTALS, SEEKING NEW ARRANGEMENTS: REMEDYING THE IMPACT OF HOME-SHARING ON URBAN NOISE",
+    "journal": "MIS Quarterly: Management Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.25300/MISQ/2024/18049",
+    "abstract": "Drawing underutilized residential assets into the tourism economy, home-sharing platforms create tremendous economic value for their owners and users. They also, however, generate negative externalities. This study examines the impact of home-sharing property use on an externality that has been increasingly understood to have adverse consequences for human health and well-being—noise. Based on empirical analyses using a large sample of transactions from a popular platform, we show that property use increases noise, which adversely affects neighbors. More interestingly, we show that the increase in noise is mitigated when property use is spatially or temporally concentrated. Our analyses reveal that a high concentration of property use can enhance the effectiveness of deterrence created through enforcement action against noise complaints. We further conduct empirically informed simulation experiments and propose a nudging algorithm that helps platforms mitigate noise externalities while also fulfilling user preferences and maintaining revenue growth. Contributing to the burgeoning literature on platform externalities, our work highlights the need for further research on potential complementarities between platform and regulatory governance and provides platforms with an alternative approach to the reputationally expensive guest penalties for addressing noise externalities. © 2025 University of Minnesota. All rights reserved."
+  },
+  {
+    "article_id": "CS_2327",
+    "title": "Understanding Dissatisfied Customers’ Expectations of Spa Service Quality",
+    "journal": "Academica Turistica",
+    "journal_impact_factor": 0.581,
+    "doi": "10.26493/2335-4194.15.265-279",
+    "abstract": "Most studies examining customers’ expectations of spa service quality are conducted through quantitative approaches, which have certain limitations for deeper understanding of what customers actually expect and perceive from the delivered services, particularly the unpleasant experiences. This research, therefore, has an objective to analyze customers’ expectations and perceptions of spa service quality from online reviews in regard to spas in Bangkok by focusing on dissatisfied customers. Using an integrated method, the literature has been synthesized to form a framework with eight service dimensions to examine customers’ expectations of spa service quality. Content analysis and descriptive statistics are employed to analyse the data. According to the findings, customers make complaints when the quality of service is lower than their expectations. Spas in Bangkok seem to have problems with service delivery in all service dimensions, particularly reliability, empathy and courtesy dimensions. In addition, the study has integrated eight service dimensions into three important constructs: service process, physical elements, and service outcomes. Overall, this study has advanced and contributed to the existing literature by employing eight service dimensions to more deeply understand dissatisfied customers’ expectations of spa service quality, and also conceptualizes them into three meaningful constructs. Importantly, the people element and technology-based services can help to generate service innovation for the spa industry. © 2022 University of Primorska. All rights reserved."
+  },
+  {
+    "article_id": "CS_2328",
+    "title": "PROCESS MINING IN AUTOMOTIVE DEALERSHIPS: CASE STUDY, ANALYSIS AND BUSINESS; [MINERAÇÃO DE PROCESSOS EM CONCESSIONARIAS DA INDÚSTRIA AUTOMOTIVA: ESTUDO DE CASO, ANÁLISE E NEGÓCIO]",
+    "journal": "International Journal of Professional Business Review",
+    "journal_impact_factor": 0.71,
+    "doi": "10.26668/businessreview/2022.v7i4.963",
+    "abstract": "Objective: As an objective, it is sought to apply a process mining methodology in the after-sales information of car dealerships, of a Brazilian automaker, analyzing it as a business. Theoretical framework: The use of process mining in the automotive industry provides several managerial benefits, which are reflected in the improvement of product quality. When it comes to car dealerships and their after-sales services, customer satisfaction and/or complaints, there is a scarcity in the literature that reinforces the use of the process mining technique. Thus, to cover such a gap, there is a clear need for this research. Methodology/approach: First, data structuring techniques were developed to adjust the raw data provided by the company studied to a standard suitable for process mining. Thus, it is sought to obtain information, trends and patterns in customer data through the after-sales system of these dealerships, during a period and, present the result of these analyses. Results: As results, we highlight the creation of graphs and tables that show the evolution of each problem, reported by customers, in review mileage and which was found by the dealerships, based on keywords cited by customers at the time of complaint. Research, practical and social implications: The implications of this research culminate in the improvement of the analysis and use of data by the company studied, exalting the importance of process mining, to find hidden information in the large amount of data, generated by a multinational company in the automotive sector. Originality: In this research it was detected that for the sector of car dealerships there is a scarcity of researches focused on process mining. Therefore, this research aimed to propose this methodology. © 2022 AOS-Estratagia and Inovacao. All Rights Reserved."
+  },
+  {
+    "article_id": "CS_2329",
+    "title": "PLAN-DO-CHECK-ACT CYCLE: A METHOD TO IMPROVE CUSTOMER SATISFACTION AT A MUNICIPAL COUNCIL IN MALAYSIA; [CICLO PLAN-DO-CHECK-ACT: UM MÉTODO PARA MELHORAR A SATISFAÇÃO DO CLIENTE EM UM CONSELHO MUNICIPAL NA MALÁSIA]; [CICLO PLANEAR-HACER-VERIFICAR-ACTUAR: UN MÉTODO PARA MEJORAR LA SATISFACCIÓN DEL CLIENTE EN UN CONCEJO MUNICIPAL EN MALASIA]",
+    "journal": "International Journal of Professional Business Review",
+    "journal_impact_factor": 0.71,
+    "doi": "10.26668/businessreview/2023.v8i4.931",
+    "abstract": "Purpose: This study aimed to determine the use of PDCA methods in improving customer satisfaction at SP MUNICIPAL COUNCIL. Maintaining customer satisfaction is the main responsibility of my department as we are in charge of receiving complaints from the public and providing the best solution to the public. Since the major operation for SP MUNICIPAL COUNCIL is providing services to the public, it is crucial to solving any related issue regarding poor customer services and management by SP MUNICIPAL COUNCIL, long delays in solving issues from the public and others. Hence, using appropriate tools such as the PDCA method is one of the ways to achieve a continuous improvement process and improve the service quality for SP MUNICIPAL COUNCIL. The aim of this study is to overcome this issue and improve customer satisfaction, the quality of our services and reduce complaints from the public towards the management of SP MUNICIPAL COUNCIL by using the PDCA method. Theoretical framework: Problem identification needs to be done to find the causes of customer complaints. From the findings, the factors that potentially cause the problem are customer services, workers, administration, and management system issues. Then, the next step is a repair process where the result after improvement, implementation and evaluation will be measured. Design/methodology/approach: The method used for this study is the PDCA method in the literature review. The data of this study are compiled, analyzed and concluded, to obtain the results for the method in the literature review. The literature review compares several research papers that implement PDCA methods. Findings: The findings show that Plan-Do-Act-Check method can give a positive impact on increasing service quality for SP MUNICIPAL COUNCIL. There are several solution and recommendation have been achieved after the discussion of the result. These solutions will help in overcome the issue faced by SP MUNICIPAL COUNCIL. Research limitation/implication: This research only focuses on improving customer satisfaction at SP MUNICIPAL COUNCIL and only applies to departments that focus on customer services. Originality/value: This research contributes to existing literature and use new findings to overcome problem using PDCA method and fishbone analysis to identify the cause and effect of the problem. © 2023 AOS-Estratagia and Inovacao. All rights reserved."
+  },
+  {
+    "article_id": "CS_2330",
+    "title": "A comparative study of differences in consumers’ impulse buying behaviour, purchase satisfaction, and complaint behaviour based on types of product purchased",
+    "journal": "Sport Mont",
+    "journal_impact_factor": null,
+    "doi": "10.26773/smj.201009",
+    "abstract": "The internet enables consumers not only to buy products anywhere and at any time but also to compare prices and make informed consumption decisions. However, the increased convenience resulting from advancements in technology has simplified consumers’ decision-making process, thereby leading to impulse buying behaviour. In the present study, the differences among consumers’ impulse buying behaviour, purchase satisfaction, and complaint behaviour were compared based on the types of product purchase decisions (online v. offline). A total of 382 customers who had previously bought sportswear and voluntarily participated in the present study were divided into two groups, based on their preferred type of purchase. The respondents completed a questionnaire survey regarding their impulse buying behaviour, purchase satisfaction, and complaint behaviour. SPSS/AMOS 23.0 version was used to confirm the reliability and credibility of the collected data, and a multivariate analysis of variance was used to compare the participants’ questionnaire responses regarding their consumption behaviour, based on their preferred type of purchase. The results showed that although consumers who preferred online purchasing were increasingly likely to exhibit impulse buying behaviour, they did not complain about their purchase dissatisfaction. In comparison, although consumers who preferred offline purchasing were more satisfied with the product they bought, they indulged in private complaint behaviour regarding their purchase dissatisfaction. The study results show that consumers exhibited different behaviours, depending on their preferred type of purchase. The present study results serve as an important reference for understanding evolving consumption trends through a multi-faceted approach. © 2021 Montenegrin Sports Academy. All rights reserved."
+  },
+  {
+    "article_id": "CS_2331",
+    "title": "The Impact of Service Recovery Actions and Perceived Justice on Customer Satisfaction: Insights from Thailand's Private Hospitals",
+    "journal": "International Journal of Analysis and Applications",
+    "journal_impact_factor": 0.606,
+    "doi": "10.28924/2291-8639-22-2024-81",
+    "abstract": "The research explores service recovery strategies' impact on customer satisfaction, word-of-mouth (WOM), and revisit intention in private hospitals in Thailand, drawing upon the expectation confirmation theory and social exchange theory. Using a quantitative approach, data was collected via an online questionnaire from service users of private hospitals in Thailand, with 600 usable responses analyzed using Structural Equation Modeling (SEM) and multi-group analysis with SEM. The findings reveal that service recovery actions (SRA) and perceived justice (PJ) significantly influence customer satisfaction with service recovery, WOM, and revisit intentions. Focusing on tangible actions and perceived justice can enhance customer retention in private hospitals. Private hospitals should emphasize tangible actions and perceived justice to enhance customer satisfaction and retention. Additionally, tailoring service recovery efforts based on customers' varying experience levels within the healthcare sector is crucial. The research contributes valuable insights to the healthcare industry's understanding of service recovery strategies, offering guidance for marketing strategy planning and enhancing customer satisfaction and retention in private hospitals in Thailand. © 2024 the author(s)."
+  },
+  {
+    "article_id": "CS_2332",
+    "title": "The Perception of the Market and Operational Area of Business by Service Sector and Tourism Companies in terms of CSR implementation",
+    "journal": "Journal of Tourism and Services",
+    "journal_impact_factor": null,
+    "doi": "10.29036/JOTS.V12I23.328",
+    "abstract": "Our research examined the attitudes of owners and managers of small and medium-sized enterprises in the V4 countries, who behave responsibly - they use corporate social responsibility in their managerial practice on issues focused on the market and operational area of business. The paper is based on a questionnaire survey with data collection from September 2019 to January 2020. Statistical methods of Pearson's chi-square and z-score were used to assess the hypotheses. The results proved that there are significant differences in companies in services and tourism in the context of implementing the CSR concept. Entrepreneurs who implement social responsibility with a significant positive difference agree that a company places great emphasis on the innovation of its products and services. Researchers found that the sector has an impact on the perception of decreasing customers' requests on specific products/services. We found that corporate social responsibility and its implementation in corporate practice positively affects the relationship of V4's small and medium enterprises in the services and tourism sector to service production innovation issues, which helps increase business performance and decline customer complaints. © 2021 Center for International Scientific Research of VSO and VSPP. All Rights Reserved."
+  },
+  {
+    "article_id": "CS_2333",
+    "title": "How delightful is indian wellness tourism? A netnographic study",
+    "journal": "Advances in Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.30519/ahtr.784232",
+    "abstract": "The growing number of wellness care facilities in India has raised concern over the service quality that is being provided to the tourists. This research targets to explore the dimensions of wellness tourism service quality based on customers’ quality perception. Social media platforms such as Google reviews and hotel review blogs/websites were used to gather 400 public reviews. A Naïve Bayes machine learning Sentiment Analysis approach was used to identify critical areas to improve service delivery, customer relationship, and hospitality management in wellness resorts. Tangibility was identified as the most important dimension followed by empathy, assurance, reliability, and responsiveness. Assurance, empathy, and reliability have the most negative sentiments shared by tourists. Food quality, rooms and accommodation facilities, safety and security, attitude towards customer complaints, the behaviour of the staff, error-free services, and proper training are areas upon which Indian wellness resorts should focus. This study intends to identify additional constructs in future research and build robust models to actively rank the important factors for better customer engagement. Research findings may support managers and policymakers to identify areas of improvement to help them develop the wellness resorts in India. © 2021 Akdeniz University Publishing House. All rights reserved."
+  },
+  {
+    "article_id": "CS_2334",
+    "title": "The role of culture on service failure perceptions and service recovery expectations in restaurants",
+    "journal": "Advances in Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.30519/ahtr.907743",
+    "abstract": "In this study, the aim is to examine the service failures encountered in restaurants and the recovery efforts that consumers expect in response to service failures in the context of cultural values. A qualitative research approach was adopted, and data were collected from nine tourist guides through semi-structured interviews. Content analysis was used for data analysis. The results show that service failures are categorized as (a) failures in the kitchen, (b) failures in the presentation of services, and (c) general failures while service recoveries are categorized as (i) compensatory responses, (ii) empathetic responses, and (iii) corrective responses. As the results indicate, Turkish tourists care more about failures in the kitchen. Contrary to this, American tourists care more about failures in the presentation of services. Furthermore, Turkish tourists expect compensatory and corrective responses in kitchen-based failures, on the other hand, American tourists expect compensatory responses. © 2021 Akdeniz University Publishing House. All rights reserved."
+  },
+  {
+    "article_id": "CS_2335",
+    "title": "Rotation related problems of personnel services in outsourcing companies",
+    "journal": "Production Engineering Archives",
+    "journal_impact_factor": null,
+    "doi": "10.30657/pea.2018.20.05",
+    "abstract": "The subject of outsourcing of personnel services are functions and auxiliary tasks in the operation of a given enterprise. It is based on outsourcing specific tasks and entire personnel processes, as well as hiring employees who carry out tasks entrusted by a client. The main problem faced by enterprises is employee turnover caused by numerous absences, sick leave and holidays, and, as a consequence, employees have more and more delays and do not keep their deadlines. Consequently, they are frustrated that they have to perform more duties from other positions and listen to complaints about continuous decline in work efficiency. The problem of employee turnover is becoming a common phenomenon. Therefore, each company should analyse this problem. Starting from identifying the problem and, as a result, implementing appropriate measures to prevent excessive fluctuation of employees. It is also important to enable employees to develop and organize appropriate working conditions, which will ensure the comfort of work and attachment to the employer. © 2018 Anna Jasińska, published by Sciendo."
+  },
+  {
+    "article_id": "CS_2336",
+    "title": "Customer journey clue-based service failure prevention",
+    "journal": "Production Engineering Archives",
+    "journal_impact_factor": null,
+    "doi": "10.30657/pea.2019.25.05",
+    "abstract": "Customers and their perception towards service are considered as a determinant of service failure, and so, service failure and its prevention must be looked into from the perspective of the customers. This paper presents a customer-centric service failure prevention framework, which aims to provide a holistic way of service failure prevention by integrating service delivery assessment and failure analysis from a customer perspective, encompassing failure identification, assessment and prioritization of failures as a basis for corrective actions. Customer journey, service clues, and customer oriented-FMEA are employed to develop the proposed framework. The approach was applied to an enrolment process showing that using customer journey assists in determining customer processes, needs, wants and touch points in the service, and when used together with service clues further facilitates systematic and effective unveiling of potential failures that are important to customers. Assessment of failures and its prioritization with customer perspective leads to better prioritization that is reflective of the voice of customers. The case study shows that higher risk is imposed by actions emanating from the employees, reinforcing further that service failures not only concern functionality of the service but equally important also are the encounter of customers with service employees and the environment. © Production Engineering Archives 2019."
+  },
+  {
+    "article_id": "CS_2337",
+    "title": "The more, the better? compensation and remorse as data breach recovery actions - An experimental scenario-based investigation",
+    "journal": "Proceedings of the 15th International Conference on Business Information Systems 2020 \"Developments, Opportunities and Challenges of Digitization\", WIRTSCHAFTSINFORMATIK 2020",
+    "journal_impact_factor": null,
+    "doi": "10.30844/wi_2020_l2",
+    "abstract": "With the increasing number of companies actively collecting data, the number of data breaches has exploded. It can be observed that affected often discontinue their relationship with the company. In order to avoid this kind of response, companies should develop and deploy their own recovery strategies. In our paper, we examined the effectiveness of different recovery strategies geared towards retaining customer satisfaction immediately after a data breach. We examine a data breach of a fitness tracker that varies in severity and tests the recovery actions compensation and remorse. The results found that customer satisfaction depends on the severity of the data breach, while combining compensation and remorse together demonstrates itself as the best strategy for increasing customer satisfaction in almost all cases. However, it was also discovered that in case of a severe data breach, customer satisfaction is difficult to restore and in the end remorse has virtually no effect. © Proceedings of the 15th International Conference on Business Information Systems 2020 \"Developments, Opportunities and Challenges of Digitization\", WIRTSCHAFTSINFORMATIK 2020."
+  },
+  {
+    "article_id": "CS_2338",
+    "title": "EXAMINING E-COMPLAINTS ABOUT TOUR GUIDES: SERVICE FAILURES AND THEIR IMPLICATIONS",
+    "journal": "Geojournal of Tourism and Geosites",
+    "journal_impact_factor": 1.242,
+    "doi": "10.30892/gtg.634spl06-1621",
+    "abstract": "Tourist guides play a crucial role in shaping tourists’ perceptions of service quality, satisfaction, and destination loyalty. However, service failures in guide-tourist interactions often lead to dissatisfaction and negative word-of-mouth. Despite growing digital complaint platforms, the academic literature lacks comprehensive analyses of e-complaints about tourist guides through a theoretical lens. This study aims to examine online complaints lodged against professional tourist guides, identify major service failures, and interpret their implications for tourism service quality and management practices, within the framework of Service Failure and Recovery Theory. The study employs a qualitative netnographic approach to analyze e-complaints collected from the Turkish platform www.sikayetvar.com. A total of 893 relevant complaints were retrieved and subjected to content analysis using MAXQDA 2022 software. The data were coded and categorized into three main themes: personal attitudes and behaviors, professional incompetence, and fee-related issues. Inter-coder reliability was ensured through Cohen’s Kappa coefficient, which indicated high agreement (>0.80). Findings reveal that the most frequent complaints stem from inappropriate and rude behavior (27.9%), indifference (22.6%), program disruptions (17.1%), and lack of knowledge (15.8%). Complaints related to pricing issues such as overcharging and pressuring tourists into extra tours were also prominent. These results demonstrate that tourists' dissatisfaction is not limited to technical knowledge gaps but extends to interpersonal, ethical, and organizational shortcomings. Moreover, failures in communication and transparency appear to significantly harm customer trust and destination image. The results highlight the critical role of guide behavior in post-service evaluations and eWOM dynamics. This study contributes to the theoretical literature by applying Service Failure and Recovery Theory to the domain of tour guiding and offering a timely update on complaint trends. It also provides practical recommendations for tour operators, guide associations, and policymakers, suggesting the need for stricter professional oversight, ethical training, and competency-based performance evaluations to improve service quality in tourism. © 2025, Editura Universitatii din Oradea. All rights reserved."
+  },
+  {
+    "article_id": "CS_2339",
+    "title": "ANALYZING SERVICE FAILURES WHEN SHOPPING FOR SUPPLEMENTS ONLINE AMONG COLLEGE STUDENTS; [PROBLEMI U PRUŽANJU USLUGA U E-KUPOVINI DODATAKA ZA PREHRANU]",
+    "journal": "Management (Croatia)",
+    "journal_impact_factor": null,
+    "doi": "10.30924/mjcmi.27.1.2",
+    "abstract": "This article analyses customer dissatisfaction and service recovery methods in purchasing sports nutrition and supplements online. The data were collected using an online survey in which 155 students from eight Central and Eastern European (CEE) countries participated. The study analyzed the data using the Mann-Whitney U test and the chi-square test. There was a positive relationship between online retailers’ response to a service failure and customer loyalty. More than 41% of respondents felt more loyal to the online retailer after successfully dealing with a service failure. In addition, about 60% of respondents were willing to buy again and recommend the online retailer to other consumers. © 2022, University of Split - Faculty of Economics. All rights reserved."
+  },
+  {
+    "article_id": "CS_2340",
+    "title": "HOW EFFECTIVE COMPLAINT MANAGEMENT AFFECTS CUSTOMER RETENTION: THE CASE OF GROUP-BUYING SITE GROUPER.MK; [KAKO EFIKASNO UPRAVLJANJE PRITUŽBAMA DJELUJE NA ZADRŽAVANJE KUPACA: SLUČAJ GRUPNE KUPOVINE GROUPER.MK]",
+    "journal": "Management (Croatia)",
+    "journal_impact_factor": null,
+    "doi": "10.30924/mjcmi.27.1.9",
+    "abstract": "In a highly competitive modern business world, keeping a dissatisfied customer is essen-tial to any company, considering the high cost of acquiring new customers. It is easier than ever for dissatisfied customers to spread their experi-ences and bad word of mouth through the various media that new technology and the Internet offer. Therefore, handling customers’ complaints effec-tively can be a critical factor in a customer’s decision-whether to continue using the company’s services or products or switch to a competitor. In this context, “effective” means minimizing costs for the company while achieving the intended or expected result. A content analysis of customer complaints emailed to the group-buying website Grouper.mk was conducted. A total of 220 complaints and related decisions were reviewed, analyzed, and categorized into six reasons for customer dissatisfaction and three ways to com-pensate for the dissatisfaction. In addition, the internal customer database analysis revealed that timely resolution of customer issues with the right approach resulted in 80% of all dissatisfied customers staying with the company. The analysis also showed that more frequent customers are more likely to remain after a complaint has been resolved than less frequent customers. © 2022, University of Split - Faculty of Economics. All rights reserved."
+  },
+  {
+    "article_id": "CS_2341",
+    "title": "Effect Of Customer Orientation On Customer Retention Through The Mediating Role Of Satisfaction And Service Quality: The Case Of Private Banks In Ethiopia; [UČINAK ORIJENTACIJE NA KUPCA NA ZADRŽAVANJE KUPACA KROZ POSREDNIČKU ULOGU ZADOVOLJSTVA I KVALITETE USLUGE: SLUČAJ PRIVATNIH BANAKA U ETIOPIJI]",
+    "journal": "Management (Croatia)",
+    "journal_impact_factor": null,
+    "doi": "10.30924/mjcmi.30.2.2",
+    "abstract": "In a dynamic and uncertain environment, the banking sector must adapt to maintain a sustained competitive s advantage. In emerging economies such as Ethiopia, there is a notable gap in empirical research on the s implementation of customer orientation (CO), service quality (SQ), customer satisfaction (SAT), and customer retention (RET), particularly within the private banking sector. The impact of CO on SQ in achieving higher SAT in the banking business, particularly in emerging countries, has not been adequately addressed in the marketing literature. Thus, the main goal of this study is to investigate the influence of CO on RET directly and through the mediating role of SAT and SQ in Ethiopia's private banking sector. Data were collected through a structured survey of 350 customers from selected private banks in Addis Ababa, Ethiopia, using convenience sampling. A quantitative research design was employed, and the data were analyzed using SPSS and AMOS 26. The findings reveal that CO significantly and positively influences RET both directly and indirectly through the mediation role of SAT and SQ in the selected private bank context in Addis Ababa, Ethiopia. The study reveals enhanced service quality and customer satisfaction as critical drivers of customer retention. Furthermore, SAT and SQ significantly mediate the relationship between CO and RET. The study recommends broader future research encompassing more private banks in Ethiopia and other developing economies. In addition, future studies could include a moderator to assess the impact of factors such as the bank's age and word-of-mouth. From a management perspective, the findings suggest that the management should use innovative approaches to improve CO, such as establishing user-friendly channels for addressing complaints. The study highlights the need to understand customers' requirements of private banks in Ethiopia in order to identify specific market segments and provide excellent service. The study suggests that the management of private banks should allocate resources to improve service quality by promoting customer satisfaction. © 2025 All rights reserved."
+  },
+  {
+    "article_id": "CS_2342",
+    "title": "Brand Switching Pattern Discovery by Data Mining Techniques for the Telecommunication Industry in Australia",
+    "journal": "Australasian Journal of Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.3127/AJIS.V20I0.1420",
+    "abstract": "There is more than one mobile-phone subscription per member of the Australian population. The number of complaints against the mobile-phone-service providers is also high. Therefore, the mobile service providers are facing a huge challenge in retaining their customers. There are a number of existing models to analyse customer behaviour and switching patterns. A number of switching models may also exist within a large market. These models are often not useful due to the heterogeneous nature of the market. Therefore, in this study we use data mining techniques to let the data talk to help us discover switching patterns without requiring us to use any models and domain knowledge. We use a variety of decision tree and decision forest techniques on a real mobile-phone-usage dataset in order to demonstrate the effectiveness of data mining techniques in knowledge discovery. We report many interesting patterns, and discuss them from a brand-switching and marketing perspective, through which they are found to be very sensible and interesting © 2016 Islam, D’Alessandro, Furner, Johnson, Gray & Carter. This is an open-access article distributed under the terms of the Creative Commons Attribution-NonCommercial 3.0 Australia License, which permits non-commercial use, distribution, and reproduction in any medium, provided the original author and AJIS are credited"
+  },
+  {
+    "article_id": "CS_2343",
+    "title": "Interactive app-based services: Recovery evaluations and the mediating role of satisfaction in the relationship between customer-brand engagement and electronic word of mouth",
+    "journal": "Australasian Journal of Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.3127/AJIS.V25I0.3199",
+    "abstract": "Based on the theory of co-creation and resource-based theory, this study examines the differential impact of varying levels of customer participation in service recovery (firm, customer, and joint) on recovery satisfaction, customer-brand engagement (CBE), and electronic-word of mouth (e-WoM). Besides, using social exchange theory, this study examines the mediating role of consumers’ recovery satisfaction in the relationship between the types of service recovery and electronic word of mouth (e-WoM). The data to accomplish the research objectives was collected from 495 customers of interactive food delivery apps in India. The experimental design was used to collect the data. The multivariate analysis of variance (MANOVA) and PROCESS macro techniques were used to test the hypotheses. The findings suggest that joint recovery results in better recovery evaluations such as CBE, recovery satisfaction, and e-WoM. Also, recovery satisfaction mediated the relationship between CBE and e-WoM. These findings provide empirical evidence for the linkages among the theory of co-creation, resource-based theory, and social exchange theory. The marketers of interactive food delivery apps may use these findings to ascertain which recovery type they should emphasize to improve recovery satisfaction. Moreover, they are encouraged to take steps for improving recovery satisfaction as CBE affects e-WoM through recovery satisfaction. © 2021. authors."
+  },
+  {
+    "article_id": "CS_2344",
+    "title": "Achieving market orientation through cross-functional integration",
+    "journal": "Operations and Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.31387/oscm0380241",
+    "abstract": "The purpose of this study is to understand how cross-functional integration contributes to the market orientation of a company that strives to increase market responsiveness. A case study in the Brazilian beverages industry was conducted and empirical data was collected through fourteen in-depth interviews from various functions within the company. The findings indicate that cross-functional integration enables the company to achieve market orientation through two main processes: product launch and customer complaints. Cross-functional integration enables a company to disseminate knowledge about organizational dynamics at both departmental and individual levels, to generate interdependency, to improve the awareness about the internal needs, and to improve the internal knowledge about the customer. This study shows that practitioners need to establish cross-functional integration, as it contributes to the market orientation of a company. Internal knowledge enables practitioners to create value through products and services, while still preserving the corporate image. It also shows that cross-functional teams and meetings are necessary to achieve market orientation in a company. © 2019 Operations and Supply Chain Management. All Rights Reserved."
+  },
+  {
+    "article_id": "CS_2345",
+    "title": "Why Online Sellers Switch? The Role of Pleasure, Engagement and Co-creation of Online Sellers' Behaviour on Courier Services",
+    "journal": "Operations and Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.31387/oscm0620478",
+    "abstract": "Online sellers tend to consider switching couriers due to increasing customer complaints about courier service quality. This study examined the influencing factors of online sellers’ pleasure, engagement, and switching intention in Malaysia. The study used stimulus-organism-response (SOR) theory and contributed new stimuli (access convenience, conflict handling, and co-creation)-organism (pleasure and engagement)-response (switching intention) model. The study also introduced single and sequential mediators. Furthermore, co-creation moderated engagement and switching intention. Data were collected from 389 online sellers using an online survey. The analysis included only 257 responses. The data were analysed using partial least squares-structural equation modelling (PLS-SEM). Findings show that access convenience and conflict handling positively affected pleasure, while pleasure positively affected engagement and engagement negatively affected switching intention. Moreover, co-creation positively affected engagement. Pleasure and engagement sequentially mediated access convenience and switching intention, conflict handling and switching intention. Engagement mediated co-creation and switching intention. The adverse correlation between engagement and switching intention was intensified by low co-creation. The results will aid couriers in enhancing and innovating services for customers’ pleasure and engagement. Also, the results will aid online sellers in establishing high standards for selecting the best couriers. © 2025 Operations and Supply Chain Management Forum. All rights reserved."
+  },
+  {
+    "article_id": "CS_2346",
+    "title": "Management Perspectives on Service Recovery Strategies in the Hotel Industry, Albania",
+    "journal": "International Scientific-Business Conference LIMEN Leadership, Innovation, Management and Economics: Integrated Politics of Research",
+    "journal_impact_factor": null,
+    "doi": "10.31410/LIMEN.2024.299",
+    "abstract": "The hotel industry significantly contributes to tourism, local economies, employment, and destination development. Despite their dedication to effective management and service, hotel managers still experience service failures. Due to the simultaneity of production and consumption in hotels, achieving a completely flawless service is impossible (Del Río-Lanza et al., 2009). A service failure triggers the service recovery process. This recovery effort gives hotels a valuable opportunity to please customers affected by service disruptions. This study uses primary research by conducting interviews with hotel managers to explore their perspectives and strategies regarding service failures and recovery efforts. Thirty-two Albanian managers from hotels and hotel complexes participated in interviews. The analysis is presented descriptively, with a summarized overview of the managers’ responses to each question. This research lays the groundwork for future studies exploring consumer viewpoints. © 2024, Association of Economists and Managers of the Balkans. All rights reserved."
+  },
+  {
+    "article_id": "CS_2347",
+    "title": "Marketing Research on Consumer Satisfaction of Students Majoring in Marketing at the University “Prof. Dr. Asen Zlatarov”, Burgas, from the Lecture Process",
+    "journal": "International Scientific-Business Conference LIMEN Leadership, Innovation, Management and Economics: Integrated Politics of Research",
+    "journal_impact_factor": null,
+    "doi": "10.31410/LIMEN.2024.849",
+    "abstract": "Summary: The continuous dynamics of economic conditions, influencing the activities of the university, necessitates the need for the institution to achieve maximum consumer satisfaction to one degree or another. This process should be perceived by the management as a theory for strengthening the image of the university, as a driver for meeting consumer expectations and striving to achieve consumer loyalty by meeting and resolving complaints. Within the limits of the complexity of the issue under consideration, the main goal of this study is to build a theoretical framework for the essence and specificity of consumer satisfaction and on the pedestal thus built to carry out an empirical study of the opinion of 1st year students, majoring in Marketing, at the University \"Prof. Dr. Asen Zlatarov\", Burgas, regarding the lecture process. To achieve the main goal thus set, the following approaches should be applied: systemic and systemic-situational approach; inductive and deductive approach; transformation approach, internal and external analyses. The use of strategic methods, comparative methods, methods of analogy, including a combination of them, becomes significant. The marketing research conducted in this way leads us to the conclusion that in order to determine the level of consumer satisfaction, it is necessary to conduct periodic surveys, which would allow determining consumer expectations. © 2024, Association of Economists and Managers of the Balkans. All rights reserved."
+  },
+  {
+    "article_id": "CS_2348",
+    "title": "Consistency of socio-economic theory of organisations and organisational innovation: An example of customer complaint management strategy; [Consistencia de la teoría socioeconómica de las organizaciones e innovación organizacional: Un ejemplo de estrategia de gestión de reclamos de clientes]",
+    "journal": "International Journal of Action Research",
+    "journal_impact_factor": null,
+    "doi": "10.3224/ijar.v16i2.03",
+    "abstract": "This present study discusses appropriate selection of research paradigm and research strategy of socio-economic theory of organisations for organisational innovation in general, customer complaint management (CCM) in particular. Ontology and epistemology of socio-economic approach to management (SEAM) methodology, mixed quantitative and qualitative methods are proved to be con-sistent with the implementation of CCM in small-to-medium sized enterprises (SMEs). The research indicates how to produce and generalise theoretical and practical knowledge through abductive reasoning and early-versus-latter-stage research design for a pragmatic-oriented action research. The conceptual model highlights that CCM can positively and simultaneously impact technical innovation, economic performance and social performance. One more interesting result is that economic performance can positively affect social performance. The research process includes two five-step action plans in the early stage and empirical study in latter stage. The two five-step action plans (2015-2016 and 2017-2018) analyse customer complaints, explore the causes of customer complaints from employees’ viewpoints, put forward action plans, implement action plans and evaluate organisational performance. The empirical study applies struc-ture equation modeling, to test whether technical innovation mediates the relationship between CCM and organisational performance. © 2020, Verlag Barbara Budrich. All rights reserved."
+  },
+  {
+    "article_id": "CS_2349",
+    "title": "Dynamic enhancement for customer experience by incorporating customer experience journey map and service assembly concept",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/978-1-61499-779-5-860",
+    "abstract": "The objective of this paper is to redesign a service in exhibition and tourism industries to dynamically improve the customer experience. To achieve greater customer experience, an integrated method which incorporates Customer Experience Journey Map and Service Assembly Concept was introduced. In doing so, two mechanisms were proposed in this study based on the service assembly concept. The service assembly mechanism was applied to respond to dynamic customer requirements. The other service mechanism, so called service replacement, was used to optimize failure handling by replacing the service failures. Using this method, a smart expo service system was designed. In the smart expo system, the customer experience of exhibition journey was enhanced from four aspects, viz. customization, flexibility, information sharing, and conformability. © 2017 The authors and IOS Press."
+  },
+  {
+    "article_id": "CS_2350",
+    "title": "Towards an Objective Classification of Extruded Aluminum Surfaces-A Literature Review and Case Study",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE220125",
+    "abstract": "Large costs and lead-time losses are created by returned aluminum products - to a great extent unnecessarily. Much of the metal product complaints are due to visual surface defects. Today, the aluminum industry relies on several non-standardized classification systems for surface quality assessments which provides far too much scope for subjective and non-repeatable surface estimations. To challenge this situation, a common toolbox to describe and define surface quality in a more objective way needs to be developed. A first step towards such standardization is to speak the same language, thus this study is based on a state-of-the-art survey covering terminology and descriptions of surface defects in literature, and a round-robin assessment collecting terms used by employees at seven companies within the aluminum industry. The literature study showed that most attempts to catalog and categorized various types of defects on commercial aluminum extrusions are based on the origin of defects and how to prevent and/or reduce them, thus the vocabulary is production-oriented and most terms are not useful from the customers' nor the designers' point of view when coming to describe desired surface effect, i.e. perceived surface quality. The round-robin assessment confirmed the large variation of terminology used, and that defects were judged differently also within the same company due to experience and field of work. A common vocabulary is suggested to be based on the relationships between used expressions; from general terms at stages linked to consumers, designers and sale, tracing towards more technical terms the closer the stage where the origin of the defect can be found. This structure, in combination with e.g. manufacturing cost, is expected to guide customers towards more sustainable surface quality choices that, together with more consistent surface assessments along the production chain, is expected to strongly reduce unnecessary scrapping. © 2022 The authors and IOS Press."
+  }
+]

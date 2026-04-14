@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_2101",
+    "title": "Shaping Consumer Behaviour With AI: Exploring the Impact of Personalization, Efficiency, and Trust",
+    "journal": "Unlocking Growth and Sustainability for Small and Medium Enterprises With AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9611-7.ch017",
+    "abstract": "Artificial intelligence has emerged as a transformative force profoundly shaping consumers' intentions to adopt it for shopping. The study attempts to expand the scope of TAM by integrating the key dimensions of AI, including 'personalization', 'efficiency of AI- powered tools', and 'trust in AI'. The SEM technique was used to test the hypothesized model. The results revealed that personalization, through AI- driven recommendations, and the efficiency of chatbots significantly influence shoppers' intentions to adopt AI technology. Trust in AI also plays a critical role in shaping intentions to adopt AI- powered websites/apps for shopping. Moreover, a positive attitude towards adopting AI technology further enhances shoppers' behavioral intentions to use AI. The qualitative insights also indicated that consumers value AI- powered personalization, such as tailored recommendations and personalized offers, to enhance the shopping experience. However, data privacy has emerged as a primary concern when using AI for decision- making. Hence, the study provides valuable implications for marketers. © 2026 by IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2102",
+    "title": "Smart Dining: AI-Powered Innovations Shaping Customer Experience in the Food Industry",
+    "journal": "AI Innovations for Improving the Food Industry",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9884-5.ch008",
+    "abstract": "The integration of Artificial Intelligence (AI) in the food industry is revolutionizing customer experience by enabling personalized services, real-time interactions, and operational efficiency. This chapter explores how AI-driven technologies such as machine learning, natural language processing, computer vision, and recommender systems are enhancing the customer journey across food delivery, restaurant services, and backend operations. The chapter explores applications like chatbots, voice assistants, visual recognition, and sentiment analysis, while addressing key challenges including data privacy, algorithmic bias, and regulatory compliance. The chapter also covers the topic of ethical issues and sustainability and such topics as generative AI, emotion recognition, and federated learning. Thus, this chapter aims to give a brief on how AI can be employed in the food industry to develop smart solutions that enhance customers' experiences in the changing industry environment. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_2103",
+    "title": "Automating financial customer service with NLP-enabled bots",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch004",
+    "abstract": "Economic transactions have become so numerous that creative solutions to customer service are in demand. The use of natural language processing (NLP) bots can easily automate these interactions and provide accurate, 24-hour support. This chapter explores the potential of using NLP bots to transform financial customer service. From basic questions about account balances to more complex transaction disputes, NLP-enabled chatbots can handle them effectively. These bots use smart algorithms to analyze and respond to conversational data, enabling accurate, immediate assistance. This reduces operating costs and increases customer satisfaction. These bots can access and process live data from existing financial systems and respond with NLP-powered, context-aware personalization. However, NLP-enabled bots must be carefully designed with attention to data quality, model training, and legal considerations to be successful. By overcoming these challenges, banks can leverage NLP-based AI to deliver excellent customer service and promote corporate growth. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2104",
+    "title": "Boosting solar energy sales through innovative NLP-driven AI solutions for enhanced consumer engagement",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch005",
+    "abstract": "The solar energy sector is undergoing a significant transformation fueled by environmental awareness, technological advancements, and supportive government policies. As consumer interest in solar solutions rises, competition intensifies, necessitating innovative strategies to attract and retain customers. This paper explores the use of Natural Language Processing (NLP)-driven AI solutions to enhance solar energy sales by focusing on personalized consumer engagement and improved customer service. By analyzing extensive consumer data, companies can identify preferences and tailor marketing strategies to meet individual needs. NLP facilitates real-time analysis of customer interactions, enabling personalized outreach that is timely and relevant. Furthermore, NLP-powered chatbots provide instant support, enhancing customer satisfaction. Sentiment analysis deepens engagement insights, allowing businesses to proactively address issues and refine offerings. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2105",
+    "title": "Enhancing customer interactions in FinTech with NLP",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch010",
+    "abstract": "FinTech industry is evolving rapidly, and customer interaction is a key factor in driving its success. With growing competition, financial institutions are turning to advanced technologies like Natural Language Processing (NLP) to enhance customer experiences. This chapter explores the transformative role of NLP in FinTech, focusing on how chatbots, sentiment analysis, and personalized services can improve customer satisfaction. It also discusses how NLP can streamline compliance processes and risk management. We examine current challenges in customer interactions within FinTech, the limitations of traditional methods, and how NLP offers solutions. The chapter concludes by addressing the future potential of NLP in advancing customer interactions, particularly through AI-driven analytics and multilingual support. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2106",
+    "title": "Fintech innovations in service marketing and intersecting natural language processing",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch013",
+    "abstract": "Fintech has merged with NLP to change the service marketing landscape of the financial sector. Merging has led to unique innovations that upgrade customer experiences, make things easier with various operational aspects, and open up new channels in the servicing of personalized financial benefits. With AI and ML slowly becoming vital for financial institutions, NLP has emerged as a vital force in understanding customer needs and fulfilling them better. NLP-based fintech innovations revamp every service marketing area, ranging from customer support to customized recommendation, fraud detection, and risk assessment. With very advanced NLP algorithms, chatbots and virtual assistants can now converse in human-like ways, adding instant and 24/7 customer support and unburdening human agents of the load. These AI-powered interfaces can decode complex queries, find sentiments, and offer more suitable solutions, dramatically improving customer satisfaction and retention rates. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2107",
+    "title": "Personalized financial services through NLP and AI-driven innovations in FinTech",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch019",
+    "abstract": "Individualized financial services are becoming more prevalent in the rapidly changing FinTech environment because to attract & retain clients alike. The effect of NLP & AI-driven solutions is profound in how financial institutions interact with their customers. This chapter examines how NLP & AI are changing personalized service delivery within the FinTech industry. It looks at real-world applications that highlight customer communications through NLP-driven chatbots, virtual assistants, & recommendation engines meant for providing tailored investment strategies, financial advice on an individual basis or assistance. Together, data privacy, algorithmic bias, or regulatory compliance remain among the toughest challenges faced by the systems hence this chapter provides insights into how financial institutions can utilize them morally without contravening any laws in place. On one hand, it examines opportunities associated with AI-based personalization in FinTech while exploring its inherent risks thus giving a clear picture of future customer engagement in financial services. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2108",
+    "title": "Revolutionizing retail banking: Harnessing AI and virtual technologies for a new era of personalized financial services",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch021",
+    "abstract": "The swift progression of AI and virtual technologies is revolutionizing retail banking, facilitating highly personalized, efficient, and accessible services. Artificial intelligence, machine learning, and big data analytics enable banks to assess real-time data, providing customized services such as personalized investments and loans. Virtual assistants and chatbots improve customer service, whereas blockchain guarantees secure and transparent transactions. Nonetheless, apprehensions over data privacy, cybersecurity, and ethical AI decision-making endure. Banks must reconcile innovation with regulatory adherence, adopting digital transformation to improve client experiences and operational efficiency. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2109",
+    "title": "The influence of conversational AI on enhancing customer satisfaction in insurance claims handling",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch023",
+    "abstract": "Conversational AI is transforming the insurance industry, particularly in claims processing, by enhancing efficiency, reducing operational costs, and improving customer satisfaction. This technology, through natural language processing and machine learning, enables insurers to streamline claims handling, offer real-time support, and provide personalized experiences to customers. By automating routine tasks, AI reduces human error and accelerates claim resolutions, benefiting both customers and insurers. However, challenges remain in terms of data security, privacy, and ensuring AI's empathetic responses. This paper explores the impact of Conversational AI on customer satisfaction in claims processing, examining its benefits, limitations, and future potential. As the technology evolves, integrating AI with complementary innovations like blockchain and IoT will further enhance the insurance landscape. The future of insurance will rely heavily on balanced, transparent AI systems that improve service delivery while maintaining human oversight. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2110",
+    "title": "Developing Intelligent Systems to Combat Cyberbullying: AI–Driven Prevention Techniques",
+    "journal": "Combating Cyberbullying with Generative AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/9798337305431.ch007",
+    "abstract": "Cyberbullying significantly impacts mental health in today's digital age, calling for innovative prevention and mitigation strategies. This chapter delves into the role of artificial intelligence (AI) in addressing cyberbullying, starting with an analysis of its definitions, forms, and psychological effects to underscore the need for effective interventions. It highlights how AI technologies, including Natural Language Processing (NLP) techniques like sentiment analysis, keyword detection, and contextual interpretation, as well as machine learning models, are advancing traditional detection methods. Real-world case studies demonstrate successful AI applications in real-time monitoring and user behavior analysis, offering valuable insights. Ethical issues, such as data privacy, algorithmic bias, and transparency, are critically examined to ensure responsible AI use. The chapter also discusses the limitations of current AI solutions and future advancements, emphasizing the need for stakeholder collaboration and providing actionable strategies to foster safer online environments. © 2025 by IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2111",
+    "title": "The Future of AI in Cyberbullying Prevention: Trends and Technologies",
+    "journal": "Combating Cyberbullying with Generative AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/9798337305431.ch009",
+    "abstract": "Cyberbullying remains a significant issue in today's digital age, affecting individuals across various online platforms. Leveraging artificial intelligence (AI) offers promising solutions, as social networking tools now enable enhanced detection, prediction, and intervention. Advances in Natural Language Processing (NLP) facilitate the identification of hate speech and abusive content, while machine learning algorithms uncover complex patterns typical of online bullying. Additionally, image and video recognition systems, paired with content filters, help detect harmful visual content. AI also enables efficient threat detection and content moderation through predictive analytics, identifying at-risk individuals or groups and offering preemptive support. Expert systems integrated with AI-powered chatbots provide victims with guidance on reporting and prevention. However, challenges like user privacy and algorithmic bias must be addressed to ensure safety and fairness. © 2025 by IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_2112",
+    "title": "Proposal of a structural model to analyze the impact of brand trust on consumer adoption and behavior with chatbots",
+    "journal": "Trends, Challenges, and Practices in Contemporary Strategic Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/9798369311554.ch012",
+    "abstract": "In the context of management and marketing strategies, one of the applications where chatbots offer important advantages is in customer service tasks. This chapter postulates a structural model to examine the factors that influence consumer adoption and behavior with chatbots, incorporating brand trust as the central element of the model. Using a sample of 374 participants, the author evaluates the model using structural equation modeling and partial least squares analysis (PLS-SEM). Hypothesis testing shows that the comprehensiveness (B=0.271; p-value <.05) and up-to-dateness (B=0.319 / p-value <.05) of the information provided by the chatbot affects the company's brand trust, which in turn affects the satisfaction (B=0.307 / p-value <.01) and usage intention (B=0.299 / p-value <.01) of these technologies. The author concludes that proper brand management is critical not only for the adoption and use of chatbots, but also for their success as a customer service tool. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2113",
+    "title": "Conversational techniques using artificial intelligence for customer support",
+    "journal": "Bio-Inspired Intelligence for Smart Decision-Making",
+    "journal_impact_factor": null,
+    "doi": "10.4018/9798369352762.ch007",
+    "abstract": "Preprocessing involves tokenization, stemming, and other text normalization techniques to ensure high-quality input for the model. The model incorporates attention mechanisms and recurrent layers to capture the context and semantics of user queries, enabling accurate and context-aware responses. This enables the chatbot to efficiently route queries to the appropriate support team or address them directly. Chatbots are software applications that can interact with humans using natural language. They can be used for various purposes, such as customer service, information retrieval, entertainment, etc. In this chapter, the authors develop a chatbot for customer support using PyTorch, a popular deep learning framework. They use natural language processing (NLP) techniques, such as tokenization, stemming, lemmatization. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2114",
+    "title": "How business intelligence can help you to better understand your customers",
+    "journal": "International Journal of Business Intelligence Research",
+    "journal_impact_factor": 1.5,
+    "doi": "10.4018/IJBIR.2020010104",
+    "abstract": "Companies can incur heavy losses when customers do not return; therefore, they need to have a better understanding of their customers’ behaviors in order to improve service and products. And nowadays, there are multiple resources of customers’ data especially with web services, such as websites, chatbots, emails, social media, PoS, ERP, CRM, SCM, therefore, it becomes difficult to collect all this huge data altogether and analyze it manually This paper highlights the role of business intelligence in improving the relationship with the customers, and explores the techniques used to analyze customers’ data in order to predict their demands and reach their satisfaction. Copyright © 2020, IGI Global."
+  },
+  {
+    "article_id": "CA_2115",
+    "title": "Examining the Spectrum of Artificial Intelligence Failures: A Focus on Users’ Point of View",
+    "journal": "International Journal of Customer Relationship Marketing and Management",
+    "journal_impact_factor": 1.4,
+    "doi": "10.4018/IJCRMM.370401",
+    "abstract": "Artificial Intelligence AI is increasingly becoming a foundation of competitive planning for contemporary organizations. However, even though the implementation of AI in organizations is a critical intervention that can unlock new forms of value, many of these implementations do not meet the expected outcomes. They may result in substantial financial, operational, and reputational negative consequences. This systematic literature review starts with a sample of 3104 articles from well-reputed journals published between 2010-2024. It aims to examine several questions that surround the occurrence of AI failure in organizations: the reasons behind those failures, the categories of the failures, and the disciplinary areas of the failures. Moreover, customers', employees', and management's points of view are considered in the review to extrapolate the potential consequences of the failure of AI systems. The result demonstrates that the AI breakdown often results from a mixture of technology, organization, and people problems and that different industries exhibit diverce types of failures. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2116",
+    "title": "How Generative AI Shapes Sustainable Wine Consumption and The Role of Anthropomorphism and Trust in the Lebanese Market",
+    "journal": "International Journal of Customer Relationship Marketing and Management",
+    "journal_impact_factor": 1.4,
+    "doi": "10.4018/IJCRMM.396868",
+    "abstract": "This research investigates how the communication source (i.e., Generative AI versus a human marketer) affects consumers’ sustainable wine choices in the Lebanese context. Across two studies, the authors examine both cognitive and emotional mechanisms driving sustainable decision-making. Study 1 (N = 312) employed an online experiment manipulating the source of a sustainability message (AI vs. human) and message framing (emotional vs. factual). Results revealed that AI communicators significantly enhanced perceived message credibility and sustainability intentions when framed factually (M_AI = 5.72 vs. M_Human = 4.89, p .01). Study 2 (N = 198) utilized a simulated AI–consumer chatbot interaction in a wine purchase scenario. Findings showed that AI communication heightened perceived efficiency but reduced warmth, which indirectly decreased emotional engagement with sustainability narratives (β = −.24, p .05). © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2117",
+    "title": "Hybrid fuzzy neural search retrieval system",
+    "journal": "International Journal of Enterprise Information Systems",
+    "journal_impact_factor": 5.25,
+    "doi": "10.4018/IJEIS.2016070105",
+    "abstract": "Search engines are crucial for information gathering systems (IGS). New challenges face search engines concerning automatic learning from user requests. In this paper, a new hybrid intelligent system is proposed to enhance the search process. Based on a Multilayer Fuzzy Inference System (MFIS), the first step is to implement a scalable system to relay logical rules in order to produce three classifications for search behavior, user profiles, and query characteristics from analysis of navigation log files. These three outputs from the MFIS are used as inputs for the second step, an Adaptive Neuro-Fuzzy Inference System (ANFIS). The training process of the ANFIS replaced the rules by adjusting the weights in order to find the most relevant result for the search query. This proposed system, called MFIS-ANFIS, is implemented as an experimental system. The system performance is evaluated using quantitative and comparative analysis. MFIS-ANFIS aimed to be the core of intelligent and reliable search process."
+  },
+  {
+    "article_id": "CA_2118",
+    "title": "The impact of chatbots in driving digital transformation",
+    "journal": "International Journal of E-Services and Mobile Applications",
+    "journal_impact_factor": 0.654,
+    "doi": "10.4018/IJESMA.2021100106",
+    "abstract": "Digital transformation is the process of consuming digital technologies that drives business improvements and customer experience. Artificial intelligence plays a crucial role in businesses' digital transformation agendas. Technologies and algorithms are an important perspective in the implementation of chatbots. AI chatbots use natural language processing technology and offer solutions for modernizing traditional business processes. The key advantage of the implementation of chatbots in different domains is the impact by improving customers' experience and reducing costs. Chatbots are pieces of software that simulate human conversation through voice commands and/or text chats, intending to offer companies an approach on how to use this software to revolutionize their businesses. The aim of this paper is the analysis of the evaluation criteria; the study of insights into how chatbots can be implemented in the domains of banking, e-commerce, tourism, and call centres; and the discussion of some benefits and challenges of chatbots in driving the digital transformation of businesses. Copyright © 2021, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited."
+  },
+  {
+    "article_id": "CA_2119",
+    "title": "Optimization Design of an Industrial Carbon Emission Intelligent Monitoring System for Carbon Neutrality",
+    "journal": "International Journal of Information System Modeling and Design",
+    "journal_impact_factor": 0.921,
+    "doi": "10.4018/IJISMD.398369",
+    "abstract": "This study aimed to optimize industrial carbon emission monitoring systems for enhanced accuracy and real-time responsiveness. It proposed an intelligent system that innovatively sinks multi-source carbon accumulation logic into the database layer (replacing traditional application-layer processing), integrated with dynamic factor version control and long short-term memory prediction models. These innovations yielded significant performance gains. Under thousands of concurrent users, key interface response time dropped from 7,465 ms to 40 ms (99.5% reduction), while carbon calculation error rates remained below 0.1%—far exceeding the International Standards Organization 14064 standard’s 1% threshold. The proposed solution not only provides industry with efficient carbon management tools but also enables a paradigm shift from post-event statistics to real-time intelligent decision making, advancing global carbon neutrality goals. © 2026 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2120",
+    "title": "Public Sense of Gain From Using AI-Driven Governmental Chatbots for Public Services",
+    "journal": "International Journal of Information Systems in the Service Sector",
+    "journal_impact_factor": 0.727,
+    "doi": "10.4018/IJISSS.387416",
+    "abstract": "This study investigates the relationship between public experience and sense of gain after using AI-driven governmental chatbots for public services, with a focus on two user groups: policy-oriented users and practical knowledge users. Governmental chatbots, as a significant tool in digital public service delivery, provide convenient interactive services that have the potential to enhance the public's sense of gain, particularly within the public administration and public policy domains. The innovation of this study lies in analyzing how public experience influences the sense of gain through internal mechanisms, and comparing these effects across the two user groups. Using mediation analysis and regression models, the results indicate that while both policy-oriented and practical knowledge users benefit from enhanced public experience, the sense of gain for practical knowledge users increases more significantly, especially when considering internal political efficacy. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2121",
+    "title": "Culturally Adaptive AI Digital Humans for Cross-Border Service Delivery",
+    "journal": "International Journal of Information Systems in the Service Sector",
+    "journal_impact_factor": 0.727,
+    "doi": "10.4018/IJISSS.400783",
+    "abstract": "AI digital humans are increasingly used as intelligent self-service interfaces in global service sectors such as customer support, tourism, and digital government. However, their effectiveness is often limited by poor cultural adaptability, leading to miscommunication and reduced user trust. This study proposes a cross-cultural intelligent adaptation model that integrates context awareness, cultural filtering, and user feedback to enhance service interactions across cultural boundaries. Empirical results from multicultural user tests show significant improvements in communication accuracy and customer satisfaction. The findings offer practical guidance for service organizations deploying culturally sensitive AI agents to improve cross-border customer experience. © 2026 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2122",
+    "title": "Unfolding the Potential of Generative Artificial Intelligence: Design Principles for Chatbots in Academic Teaching and Research",
+    "journal": "International Journal of Knowledge Management",
+    "journal_impact_factor": 1.403,
+    "doi": "10.4018/IJKM.368223",
+    "abstract": "Scholars are increasingly using generative artificial intelligence (AI) chatbots, like ChatGPT, in research, though concerns remain about ethics, data privacy, bias, and intellectual property. This study adopts a design science research approach to explore how generative AI chatbots can support academic teaching and research, bridging theory and practice. A literature review and expert interviews identified key requirements and design principles that support virtues such as uniqueness, generalizability, and reproducibility. We also introduce a prototype, “AcademiaBot,” to demonstrate these principles in action. Our findings suggest that AI chatbots can significantly aid scholarly work if users are informed and ethical concerns are addressed. Responsible usage can help AI augment human research efforts without compromising integrity. This study provides valuable design knowledge, ensuring AI-based chatbots remain a beneficial tool for scholars. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2123",
+    "title": "Mapping the Research Landscape of AI Chatbot Adoption in Tourism and Hospitality: A Bibliometric Perspective",
+    "journal": "International Journal of Knowledge and Systems Science",
+    "journal_impact_factor": 1.55,
+    "doi": "10.4018/IJKSS.402722",
+    "abstract": "The rapid emergence of artificial intelligence (AI) chatbots has resulted in revolutionary transformations to the tourism and hospitality industry, fundamentally reshaping how services are delivered and experienced. In this study, the authors present a systematic review of 253 peer-reviewed publications indexed in Scopus and Web of Science from 2013 to 2025, offering a comprehensive overview of the academic landscape in this field. Employing descriptive statistics and bibliometric techniques, including co-citation analysis, bibliographic coupling, and keyword co-occurrence mapping via VOSviewer 1.6.20, the authors mapped the intellectual structure of existing literature and identified research gaps. Their research revealed four main thematic clusters: user interaction, technical foundations, adaptability of conversational AI across languages and cultures, and the strategic role of chatbots in tourism ecosystems. The authors outline future research directions and provide practical insights to advance AI chatbot development and implementation in tourism and hospitality. © 2026 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2124",
+    "title": "Identification of telecom volatile customers using a particle swarm optimized K-means clustering on their personality traits analysis",
+    "journal": "International Journal of Service Science, Management, Engineering, and Technology",
+    "journal_impact_factor": 2.879,
+    "doi": "10.4018/IJSSMET.2020040101",
+    "abstract": "This research uses the telecom customers personality traits (extraversion, agreeableness, and neuroticism) to identify the volatile customers that always use the negative word of mouth (NWOM) in communications with others. Hence, a combination of text analysis and a personality analysis tool has been used to determine the customers personality factors from their chatting textual data, A particle swarm optimized k-means was used in the clustering process. The results provide an overview on how a chatbot conversation text represent the customer behavior. Optimizing the k-means cluster using partial swarm achieves a higher accuracy than using the traditional clustering technique. © 2020, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited."
+  },
+  {
+    "article_id": "CA_2125",
+    "title": "Tracking how a change in a telecom service affects its customers using sentiment analysis and personality insight",
+    "journal": "International Journal of Service Science, Management, Engineering, and Technology",
+    "journal_impact_factor": 2.879,
+    "doi": "10.4018/IJSSMET.2020070103",
+    "abstract": "Tracking the effect of change a telecom service on customer feeling is an important process for telecom companies. As a result of tangible growth and large competition among telecom companies, customer retention and satisfaction are the most important challenges faced by telecom companies nowadays. Customer retention can be achieved by identifying the feeling of the telecom customers after changing service and take care of the customers by modifying the services that aren't accepted by its customers. Hence, this article was done by using a combination of four stages of: text pre-processing, personality analysis, sentiment analysis, and a chatbot system. This article shows the effect of using the personality traits, agreeableness and emotional range, with sentiment analysis to help reaching a full description of customer feel. Combining the sentiment analysis Naïve Bayes technique in the natural language processing and personality insights pre-learning stage and adding feedback using the obtained results achieves higher accuracy than using the traditional sentiment analysis techniques. Copyright © 2020, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited."
+  },
+  {
+    "article_id": "CA_2126",
+    "title": "A prospect on an intelligent recommender system",
+    "journal": "International Journal of Service Science, Management, Engineering, and Technology",
+    "journal_impact_factor": 2.879,
+    "doi": "10.4018/IJSSMET.2021030102",
+    "abstract": "User satisfaction is the principle component in the prosperity of a recommender system to provide an exact recommendation within a rational amount of time. The recommendation system is an intelligent system that analyzes the large quantity of online data to predict the patterns. In this paper, various recommendation techniques are described as a literature survey and their classifications are explained based upon the attributes and characteristics required for the recommendation process. The categorization of the recommendation system hinge on the analysis of the research papers and identifies the areas of the future for the development of an intelligent system. Copyright © 2021, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited."
+  },
+  {
+    "article_id": "CA_2127",
+    "title": "AI-Based Chatbots in Customer Service: A Task-Technology Fit (TTF) Model",
+    "journal": "International Journal of Service Science, Management, Engineering, and Technology",
+    "journal_impact_factor": 2.879,
+    "doi": "10.4018/IJSSMET.385128",
+    "abstract": "This article aims to answer the question of how artificial intelligence (AI)-based chatbots in customer service can be perceived more efficiently and effectively in terms of interaction with customers using ChatGPT. Based on a literature review and analysis of 115 relevant publications, a research model was developed to answer this question. The research study is based on the task-technology fit (TTF). The evaluation of the research model was based on an online survey with 202 study participants. Our results show that the TTF of ChatGPT has a significant influence on the efficiency and effectiveness of AI-based chatbots in customer service. In terms of efficiency, key factors include an intuitive and user-friendly interface, or accurate understanding of customer queries without the need for repetition. Regarding effectiveness, the study finds that unambiguous and clear responses, support for complex customer issues, and ensuring the security of customer data are all essential. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2128",
+    "title": "The Role of DIKWP Assets in Shaping Economic Systems and Implications for an Intelligent Consultant System in Real Estate Investment",
+    "journal": "Journal of Cases on Information Technology",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JCIT.348968",
+    "abstract": "Traditional economic theory revolves around information asymmetry, where some possess more knowledge than others. However, the digital age is upending this paradigm. This research proposes a groundbreaking shift: a transition from an Asymmetric Information Economy to a Symmetric Knowledge and Wisdom Economy, fueled by the ubiquitous availability of data and digital communication. The shifting is worked through DIKWP-12 Chains framework (Data-Information-Knowledge-Wisdom-Purpose), which serves as a key pillar supporting this paradigm shift. It integrates Data, Information, Knowledge, Wisdom, and Purpose into a unified semantic processing approach. This novel approach empowers us to navigate this transformative era. Furthermore, this study goes beyond theory by leveraging the DIKWP chains to construct an Intelligent Consultant System for Real Estate Investment. This system analyzes customer behavior data and captures the wisdom behind their purchasing decisions, offering a unique and data-driven approach to real estate investment consulting. © 2024 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2129",
+    "title": "Tailoring AI Chatbots to User Motivation: Performance-Approach Versus Performance-Avoidance Effects on Continuance Intention",
+    "journal": "Journal of Electronic Commerce in Organizations",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JECO.396820",
+    "abstract": "As AI-powered chatbots become increasingly integrated into organizations, understanding the motivational factors that influence their continued use is essential for maximizing return on investment. While previous research has emphasized functional attributes, less attention has been paid to individual motivational orientations. This study integrates goal orientation theory into chatbot continuance research to explain how motivational dispositions shape evaluative pathways toward sustained use. Performance-approach orientation enhances perceptions of novelty value and hedonic attitude and maintains a direct positive link to continuance intention. In contrast, performance-avoidance orientation does not directly affect continuance; instead, it indirectly influences sustained use by strengthening utilitarian cognitive attitudes and performance expectancy. These distinct pathways demonstrate the pivotal role of goal orientation as an antecedent, driving either affective or utilitarian mechanisms in sustained chatbot use. © 2026 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2130",
+    "title": "The Impact of Artificial Intelligence on Branding: A Bibliometric Analysis (1982-2019)",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.20210701.oa10",
+    "abstract": "Understanding the growth paths of artificial intelligence (AI) and its impact on branding is extremely pertinent of technology-driven marketing. This explorative research covers a complete bibliometric analysis of the impact of AI on branding. The sample for this research included all 117 articles from the period of 1982-2019 in the Scopus database. A bibliometric study was conducted using cooccurrence, citation analysis and co-citation analysis. The empirical analysis investigates the value propositions of AI on branding. The study revealed the nine clusters of co-occurrence: Social Media Analytics and Brand Equity; Neural Networks and Brand Choice; Chat Bots-Brand Intimacy; Twitter, Facebook, Instagram-Luxury Brands; Interactive Agent-Brand Love and User Choice; Algorithm Recommendations and E-Brand Experience; User-Generated Content-Brand Sustainability; Brand Intelligence Analytics; and Digital Innovations and Brand Excellence. The findings also identify four clusters of citation analysis Social Media Analysis and Brand Photos, Network Analysis and E-Commerce, Hybrid Simulating Modelling, and Real-Time Knowledge-Based Systems and four clusters of co-citation analysis: B2B Technology Brands, AI Fostered E-Brands, Information Cascades and Online Brand Ratings, and Voice Assistants-Brand Eureka Moments. Overall, the study presents the patterns of convergence and divergence of themes, narrowing to the specific topic, and multidisciplinary engagement in research, thus offering the recent insights in the field of AI on branding. © 2021 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2131",
+    "title": "Conversational Agents in Organisations: Strategic Applications and Implementation Considerations",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.20211101.oa53",
+    "abstract": "Conversational agents (CAs) promise to create significant organisational value by transforming how organisations operate and serve customers. Yet, the malleability of this technology poses challenges to both researchers and practitioners because of the wide range of strategic applications they can enable. Drawing on the lens of routine capability, this study investigates strategic applications of CAs and their associated implementation enablers and challenges. Via an exploratory case study of eight organisations that have successfully implemented CAs, this paper contributes to the literature on the value and implementation of conversational agents in particular and cognitive technologies in general by developing a typology of CA strategic applications and their implementation considerations. For practitioners, the findings highlight the interplay between technology, user, and project management factors that need to be addressed to ensure the successful delivery of the value of CAs. © 2021 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2132",
+    "title": "Functionality, Emotion, and Acceptance of Artificial Intelligence Virtual Assistants: The Moderating Effect of Social Norms",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.290418",
+    "abstract": "This paper aims to expand the acceptance of the AI virtual assistant model from the perspective of user cognition. Based on the 240 samples, the authors used multi-layer regression analysis to investigate the influencing factors and differential effects of user acceptance of AI virtual assistant. The results show that functional cognition and emotional cognition of users are important influencing factors for an artificial intelligence virtual assistant. This provides a new perspective for user acceptance processes of the AI virtual assistant. They also examined the moderating effect of social norms between user cognition and AI virtual assistant. At last, a new AI acceptance model of AI virtual assistant was established. © 2022 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2133",
+    "title": "Factors Affecting Customer Readiness to Trust Chatbots in an Online Shopping Context",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.347503",
+    "abstract": "This study expands the limited research on chatbots by integrating factors from the unified technology acceptance and use of technology (UTAUT) model and the technology readiness index (TRI) framework to explain individuals’ trust in chatbots within an online shopping context. According to our findings, customer readiness characteristics (innovativeness and optimism) positively affect customers' expectations of chatbots (effort expectations as well as performance expectations), whereas discomfort negatively impacts effort expectations but does not significantly affect performance expectations. In addition, our results indicate that customers’ expectancy characteristics of chatbots will positively impact their trust in this technology. These outcomes highlight the importance of an individual’s personality and his expectations of the chatbots which will lead to his trust in this technology within the online shopping context. The results provide insights into building trust in chatbots, thus increasing customer willingness to use them. © 2024 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2134",
+    "title": "Why Should Users Take the Risk of Sustainable Use of Generative Artificial Intelligence Chatbots: An Exploration of ChatGPT's Use",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.365600",
+    "abstract": "Despite the risks associated with generative AI (GenAI) chatbots, people increasingly use these technologies, which may seem contradictory. This study identified and explored factors and risks related to trust, perceived values, satisfaction, and sustainable use of GenAI chatbots. Relying on IS theories to build a stimulus-organism-response model, the authors tested a model using PLS-SEM with data from 393 ChatGPT users. The results show that user competence and autonomy dramatically increase a user's trust in ChatGPT, and trust improves hedonic value (HV), utilitarian value (UV), value-in-use, perceived task-technology fit (TTF), information accuracy, knowledge acquisition, perceived informativeness, and user satisfaction. In addition to trust, user satisfaction depends on HV, UV, and TTF. The sustainability use of ChatGPT depends on HV and satisfaction. However, perceived privacy concerns, perceived privacy risks, and privacy awareness do not affect consumer trust. There is a complete mediation between trust and sustainability, as well as HV and sustainability. © 2024 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2135",
+    "title": "The Rise of the Phygital Citizens: Generative AI Experiences and Customer Citizenship Behaviour",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.373320",
+    "abstract": "This research aims to develop and test a conceptual model to examine customer citizenship behaviour towards generative AI-enabled chatbots. This study also examines the crucial role of customer-generative AI experiences in enhancing trust. This study also examines the moderating role of customer fatigue. The study utilized a self-administered questionnaire distributed on Prolific Academic to gather data from 282 eligible participants worldwide. The findings reveal that data capture experience and anthropomorphic experience are positively associated with trust. Moreover, the findings show that trust is significantly associated with customer citizenship behaviour. Also, customer fatigue was found to be a significant moderator. This study enriches the generative AI and phygital consumer literature. Further, this study contributes to the customer experience literature as this study investigates how user citizenship intentions towards generative AI-enabled chatbots are influenced by their customer experiences. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2136",
+    "title": "The Application of AI Customer Service: An Empirical Study on Satisfaction and Trust",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.387390",
+    "abstract": "The widespread adoption of AI-powered customer service systems has transformed how users engage with digital platforms. However, understanding how users form satisfaction and trust toward these systems remains a major challenge, especially when emotional responses and platform-level design factors interact in complex ways. To address this, the authors propose a Multi-Level Structural Equation Modeling (ML-SEM) framework that captures both individual-level perceptions (e.g., flow, trust, empathic accuracy) and organization-level design variables (e.g., interface quality, anthropomorphic and empathic features). The model simultaneously estimates direct and mediated effects, including cross-level pathways linking chatbot design to satisfaction. Using two large-scale, multi-domain datasets (Bitext and Twitter), they evaluate ML-SEM against six recent baseline models. Results show that ML-SEM outperforms all baselines, achieving the lowest RMSE (0.243) and highest adjusted R2 (0.691) in satisfaction prediction, with statistically significant improvements (p < 0.01). © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2137",
+    "title": "Consumer Service Agent and Patient Adoption Intention: Recommendations From Chatbot or Human",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.391506",
+    "abstract": "Chatbots have been used in consumer-facing applications, and their effectiveness in e-commerce has been widely analyzed. However, their role in online healthcare communities has not been fully explored. Unlike recommending products on e-commerce platforms, customer service agents (CSAs) in online healthcare communities aim to recommend suitable doctors, which is closely related to patient health. This study aimed to understand the differences in patients’ intention to adopt recommendations provided by different types of CSA. The results showed that patients with high-severity diseases were more likely to accept recommendations from humans. When CSAs used concrete language, patients were more likely to adopt chatbot recommendations with the mediating effect of confirmation. Regardless of the language style used by CSAs, patients with high-severity diseases were more likely to adopt recommendations from humans, with the mediating effect of perceived trust. These findings can provide managers with insights into how and why CSAs’ characteristics enhance patient adoption intentions. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2138",
+    "title": "Determinants Affecting Consumer Trust in Communication With AI Chatbots: The Moderating Effect of Privacy Concerns",
+    "journal": "Journal of Organizational and End User Computing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JOEUC.328089",
+    "abstract": "This paper summarized the factors that influence consumers’ trust in AI chatbots and divided it into chatbot-related factors (expertise, anthropomorphism, responsiveness, and ease of use), companyrelated factors (perceived risk, brand trust, human support), and consumer-related factors (privacy concerns). This research attempts to explore the mechanism of human-AI chatbots trust formation and answer the question of how to promote consumers’ trust in AI chatbots. The results found that the chatbot-related factors (expertise, responsiveness, and anthropomorphism) positively affect consumers’ trust in chatbots. The company-related factor (brand trust) positively affects consumers’ trust in chatbots, and perceived risk negatively affect consumers’ trust in chatbots. Privacy concerns have a moderating effect on company-related factors. This study helps deepen the understanding of human-AI chatbots communication trust, constructs a basic model of human-AI chatbots trust, and provides insights for e-commerce enterprises to improve chatbots and enhance consumer trust. © 2023 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2139",
+    "title": "Design and Implementation of an Intelligent Financial Management System Based on Enterprise Legal System: Predicting the Promotional Activities on Retail Revenue",
+    "journal": "Journal of Organizational and End User Computing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JOEUC.350224",
+    "abstract": "Based on the legal system of enterprises, in the realm of intelligent financial management, accurately predicting the impact of retail promotional activities on revenue is crucial. However, traditional methods often struggle to address the complexity of promotional effects and the variability of consumer behavior, resulting in less accurate predictions. To tackle this issue, we propose a novel model, TCGNet, based on deep learning techniques. This model integrates TCN and GNN, optimized by the GWO, to provide more precise predictions of the impact of promotional activities on revenue. Experimental results demonstrate significant advantages of the TCGNet model across various metrics, offering more reliable support for retail financial management. This research aims to furnish businesses with more precise and timely financial planning and budget management support, with the potential to aid in the formulation of more effective marketing strategies and financial decisions. © 2024 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2140",
+    "title": "User-Centric Intelligent Recommendations for E-Commerce Crowdfunding Success",
+    "journal": "Journal of Organizational and End User Computing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JOEUC.390797",
+    "abstract": "This study explores how intelligent recommendation systems and platform governance mechanisms jointly influence crowdfunding success in the context of China’s rapidly growing digital economy. Using 300 structured survey responses and behavioral data from 5,000 real-world crowdfunding projects, the study investigates the critical roles of recommendation transparency, perceived platform control, and user learning capability in shaping investor trust and engagement. Adopting a mixed-method empirical framework, the findings reveal that enhancing algorithmic transparency and platform governance significantly fosters trust, which in turn improves crowdfunding outcomes. These insights offer actionable implications for policymakers and platform designers seeking to strengthen financial inclusion and support SME financing in emerging digital markets. The study contributes to the evolving discourse on digital platform governance by providing practical strategies for improving trust-building mechanisms in FinTech ecosystems. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CA_2141",
+    "title": "Human Characteristics in Chatbots Cause an Impact on Customer Experience in The Banking Sector",
+    "journal": "Journal of Technology Management and Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.4067/s0718-27242025000200052",
+    "abstract": "This study investigates how the human characteristics of chatbots, such as warmth and competence, impact customer experience in the banking sector of Lima, Peru. Given the increasing adoption of artificial intelligence in the financial sector, this analysis is warranted by the need to understand its influence on user satisfaction and loyalty. Through a non-experimental quantitative methodology and virtual surveys, we evaluated whether the personalization and social presence of chatbots enhance user perception, particularly among younger generations. The findings reveal that, while users value these characteristics, neutral responses persist, indicating a lack of emotional connection in certain cases. This underscores the importance of optimizing chatbot implementation to maintain competitiveness in the digital age. This study highlights the relevance of tailoring AI solutions to customer expectations to foster a more positive and personalized experience. During the course of this study, we found no similar research conducted within the Peruvian market designed to measure the impact of relevant variables on consumer experience in the banking sector when interacting with a chatbot. © 2025, Universidad Alberto Hurtado. All rights reserved."
+  },
+  {
+    "article_id": "CA_2142",
+    "title": "Useful chatbot experience provides technological satisfaction: An emerging market perspective",
+    "journal": "South African Journal of Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4102/sajim.v23i1.1299",
+    "abstract": "BACKGROUND: Chatbots have revolutionised marketing and specifically customer services by delivering 24/7 customer care. This technology saves resources and time, whilst enhancing customer experience that has become a critical differentiating factor in an increasing competitive and hyperconnected landscape. OBJECTIVES: This research examined how perceived ease of use (PEOU), perceived playfulness (PP) and perceived usefulness (PU) of chatbots influence customer experience and how these experiences influence users' satisfaction in an emerging market context METHOD: A self-administered questionnaire was distributed to 333 South African millennials and subjected to exploratory factor analysis and multiple regression analysis to test the proposed hypotheses. RESULTS: The results indicate that all the hypotheses suggested have been positive and significant. Whilst experience significantly predicted satisfaction, it is worth noting that PU was the strongest predictor of experience. CONCLUSION: Marketers should devote time, money and recourses in developing and incorporating self-service technologies, such as chatbots, that are useful for their marketing strategies that will enhance customer experience."
+  },
+  {
+    "article_id": "CA_2143",
+    "title": "Chatbot evaluation for effectiveness in customer query resolution",
+    "journal": "South African Journal of Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4102/sajim.v27i1.1963",
+    "abstract": "Background: The adoption of artificial intelligence technologies, specifically chatbots, has grown tremendously in various industries and is expected to transform how businesses communicate with and resolve customer queries. Yet, fewer empirical studies have been conducted on how chatbots can be assessed for their effectiveness in resolving customer queries. Objectives: This study aims to uncover and identify research gaps through bibliometric analysis. Bibliometric analysis allows for the exploration of conversational chatbot evaluation in resolving customer queries. Method: A comprehensive analysis of 27 literature articles published between 2015 and 2024 was conducted using data retrieved from the Web of Science database. The study encompasses various analytical approaches, such as performance analysis and science mapping techniques, and includes keyword co-occurrence analysis and citation network visualisation, to elucidate the distribution of publications, influential authors and institutions, and critical research disciplines. Results: Findings reveal a growing body of research on chatbot evaluation predominantly in well-developed countries, spanning diverse disciplines such as Business and Economics, Computer Science, and Engineering. Examining citation networks suggests interconnectedness in the literature, with specific articles emerging as central nodes of influence. Conclusion: The study’s implications for future research include the importance of interdisciplinary collaboration, a deeper examination of aspects of chatbot design, user experience, and interaction dynamics, and prioritising context-sensitive approaches to effective chatbot deployment and evaluation in emerging countries. Contribution: Overall, this bibliometric analysis offers valuable insights into the current state of research on chatbots and provides a foundation for future endeavours in this rapidly evolving research domain. © 2025. The Authors."
+  },
+  {
+    "article_id": "CA_2144",
+    "title": "Integrating Intellectual Consciousness AI based on Ensemble Machine Learning for Price Negotiation in E-commerce using Text and Voice-Based Chatbot",
+    "journal": "EAI Endorsed Transactions on Internet of Things",
+    "journal_impact_factor": 3.934,
+    "doi": "10.4108/eetiot.5370",
+    "abstract": "Online shopping has experienced an enormous boost in recent years. With this evolution, the majority of internet shopping's capabilities have been developed, but some functions, such as negotiating with store owners, are still not available. This paper suggests employing a chatbot with a voice assistant to negotiate product prices. Customers can communicate with the chatbot to get assistance in finding a reasonable price for a product. In online purchasing, there is a possibility that the consumers or the product seller's budget may be compromised. In order to assist in purchasing, algorithm has been created in machine learning that uses the forecasting of historical data to avoid compromising situations. However, improper dataset or when irrelevant aspects or attributes of the data are used, price prediction might become less accurate. Ecommerce companies do not merely depend on price prediction tools due to the significant financial losses brought on even by a single inaccurate price prediction. Additionally, few models fail to perform well when the data saturates or when an attribute becomes inaccessible after the period for which the model's prediction was reliant. By controlling these alterations, the accuracy and dependability are preserved in the model proposed in this study. © 2024 Y. Challagundla et al., licensed to EAI."
+  },
+  {
+    "article_id": "CA_2145",
+    "title": "A Multifaceted Approach at Discerning Redditors Feelings Towards ChatGPT",
+    "journal": "EAI Endorsed Transactions on Internet of Things",
+    "journal_impact_factor": 3.934,
+    "doi": "10.4108/eetiot.6447",
+    "abstract": "Generative AI platforms like ChatGPT have leapfrogged in terms of technological advancements. Traditional methods of scrutiny are not enough for assessing their technological efficacy. Understanding public sentiment and feelings towards ChatGPT is crucial for pre-empting the technology’s longevity and impact while also providing a silhouette of human psychology. Social media platforms have seen tremendous growth in recent years, resulting in a surge of user-generated content. Among these platforms, Reddit stands out as a forum for users to engage in discussions on various topics, including Generative Artificial Intelligence (GAI) and chatbots. Traditional pedagogy for social media sentiment analysis and opinion mining are time consuming and resource heavy, while lacking representation. This paper provides a novice multifrontal approach that utilises and integrates various techniques for better results. The data collection and preparation are done through the Reddit API in tandem with multi-stage weighted and stratified sampling. NLP (Natural Language processing) techniques encompassing LDA (Latent Dirichlet Allocation), Topic modelling, STM (Structured Topic Modelling), sentiment analysis and emotional analysis using RoBERTa are deployed for opinion mining. To verify, substantiate and scrutinise all variables in the dataset, multiple hypothesises are tested using ANOVA, T-tests, Kruskal–Wallis test, Chi-Square Test and Mann–Whitney U test. The study provides a novel contribution to the growing literature on social media sentiment analysis and has significant new implications for discerning user experience and engagement with AI chatbots like ChatGPT. © 2024 Padarha et al., licensed to EAI."
+  },
+  {
+    "article_id": "CA_2146",
+    "title": "The impact of big data and artificial intelligence",
+    "journal": "Loyalty Management: From Loyalty Programs to Omnichannel Customer Experiences",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9780429022661-4",
+    "abstract": "The big data revolution has profoundly changed marketing, from decision-making to the innovation of products, services and business models. Its latest development - artificial intelligence - has already shown that it can transform our understanding of markets and consumers and how marketing can manage the customer experience. Major areas of artificial intelligence, from image and voice recognition to recommendations, enable greater personalization, new human-computer interactions via touchpoints such as chatbots and smart assistants, and the design of an intelligent servicecape that can positively impact customers’ experience and loyalty. © 2020 Cristina Ziliani and Marco Ieva."
+  },
+  {
+    "article_id": "CA_2147",
+    "title": "Engagement at first sight: Persuasive potential of interactive health campaigns and target audience factors",
+    "journal": "Digital Advertising Evolution",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003168485-16",
+    "abstract": "Chapter 13, by Jeeyun Oh and Soya Nah, explores the datafication of consumers and audiences through programmatic advertising, highlighting its impact on various sectors and key advertising issues such as effectiveness and measurement. The authors discuss the shift from traditional broadcast models to interactive formats within digital advertising, particularly in health promotion. They examine the use of tools like chatbots, virtual reality (VR) and augmented reality (AR) to enhance public health campaigns, proposing these technologies foster psychological connectivity beneficial to health promotion. The chapter classifies modes of interactivity, including VR, AR, mobile apps and games, showcasing their application in health advertising. Increased engagement and stronger emotional reactions are noted in health ads incorporating these features, linking persuasiveness to the level of interaction. Oh and Nah provide recommendations for advertisers, suggesting interactive features can help health campaigners better engage target audiences. This chapter significantly contributes to understanding digital advertising’s evolving landscape and potential benefits. © 2025 selection and editorial matter, Iain MacRury and Danae Manika; individual chapters, the contributors. All rights reserved."
+  },
+  {
+    "article_id": "CA_2148",
+    "title": "A Systematic Literature Review of the Impact of Artifcial Intelligence on Customer Experience",
+    "journal": "Machine Learning for Business Analytics: Real-Time Data Analysis for Decision-Making",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003206316-10",
+    "abstract": "Artificial intelligence (AI) is one of today’s most significant technological advances; machine-learned technologies benefit both businesses and customers. The journey that a customer takes from pre-purchase to post-purchase is referred to as customer experience. People have developed a desire for positive relationships as technology has gradually taken over our lives. Particularly now, almost any product imaginable can be ordered online. AI is returning to our DNA of one-on-one customer relationships. It can improve customer interaction; however, marketers must understand how well these advances in technology affect customer experience in this ever-changing environment. Moreover, the presence of an omnichannel e-commerce environment necessitates a consistent customer experience across all platforms and devices. Customer personalization can be improved by recommender systems, and customer engagement can be improved by conversational agents, both individually and collectively. This analysis chapter presents a framework for businesses and other researchers to understand how recommendation systems can assist businesses in improving customer experience throughout the customer journey. © 2023 selection and editorial matter, Hemachandran K., Sayantan Khanra, Raul V. Rodriguez & Juan R. Jaramillo."
+  },
+  {
+    "article_id": "CA_2149",
+    "title": "The Impact of Artifcial Intelligence on Customer Experience and the Purchasing Process",
+    "journal": "Machine Learning for Business Analytics: Real-Time Data Analysis for Decision-Making",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003206316-11",
+    "abstract": "This chapter conceptualizes customer experience and the consumer buying journey through the influence of artificial intelligence (AI) on varied sectors. It briefly reviews the importance of customer experience, the consumer buying journey, and the purchase process phases. Also, the concepts and definitions of elements related to customer experience are identified and explained. The dimensions of customer experience and their sub-dimensions are discussed in this review. Coming to AI, its prominence and applications in various fields like retail sectors, public sector, and B2B e-commerce are also explained. Apart from that, the challenges of AI are also notified to gain a deeper insight on the impacts of AI on human life. Finally, the analysis on both customer experience and consumer buying is explained by two models separately. In that one model explains the influence of AI application chatbots on consumer buying journey is well explained in this chapter. © 2023 selection and editorial matter, Hemachandran K., Sayantan Khanra, Raul V. Rodriguez & Juan R. Jaramillo."
+  },
+  {
+    "article_id": "CA_2150",
+    "title": "Chatbots: Their Uses and Impact in the Hospitality Sector",
+    "journal": "Machine Learning for Business Analytics: Real-Time Data Analysis for Decision-Making",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003206316-4",
+    "abstract": "This study deals with the AI influence and impact on the hospitality industry, mainly focusing on hotel chains. The customer satisfaction parameters are measured by the integration of technology and automated systems in the service delivery experience. The main focus is on the use of chatbots in the hospitality industry and how useful it is in customer satisfaction. The obstacle for this artificial intelligence integration is the lack of awareness among both the service providers and customers. The acceptance of virtual assistants rather than having human meetings in different segments of the customer’s is more. Younger people are more likely and excited to use virtual assistants like Siri and Alexa, but most of the customers have more hesitant toward having the technological integration or intervention in their service encounter they are more comfortable with personnel assistance due to the lack of awareness toward technology. © 2023 selection and editorial matter, Hemachandran K., Sayantan Khanra, Raul V. Rodriguez & Juan R. Jaramillo."
+  }
+]

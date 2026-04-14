@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0351",
+    "title": "Customer participation in service recovery: a meta-analysis",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-018-9470-9",
+    "abstract": "Research on customer participation in service recovery is surging, yet empirical examinations provide mixed results. A meta-analysis of 30 independent samples reported in 21 studies (N = 7872) shows that the effect sizes for the relationships between customer participation in service recovery and customer outcomes are rather weak. We also find that customer participation in service recovery has an indirect effect on satisfaction with service recovery via distributive justice and procedural justice, but not via interactional justice. Conversely, customer participation in service recovery has an indirect effect on overall satisfaction via distributive justice and interactional justice, but not via procedural justice. Finally, the effectiveness of customer participation in service recovery is stronger when customers participate in the outcome of the recovery and for customers with an Eastern cultural background, but weaker when additional compensation is offered and in online settings. © 2018, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0352",
+    "title": "The effects of relationship length on customer profitability after a service recovery",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-019-09505-8",
+    "abstract": "Relationship length and its implications for service recovery have rarely been quantified in terms of cross-buying and customer profitability. Based on a sample of 935 customers in the retail banking sector, the current research provides two core contributions. First, the results reveal that change in cross-buying is a crucial mediator to capture how service recovery contributes to a change in customer profitability. Second, this research contributes to the ongoing debate regarding the role of relationship variables on customers’ reactions to service recovery by investigating the moderating role of relationship length. From the use of archival data, the results show that when customers are dissatisfied with a recovery, a favorable protective effect arises, prompting an increased change in cross-buying. However, as the relationship gets longer, the positive effect of a successful service recovery on change in cross-buying keeps decreasing. The theoretical and managerial implications of these findings are discussed. © 2019, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0353",
+    "title": "Customers’ emotions in service failure and recovery: a meta-analysis",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-020-09517-9",
+    "abstract": "Customers’ emotions have emerged as a dominant dimension in the complaint-handling domain. This research provides a quantitative synthesis of the role of emotions triggered by service failure and recovery situations. First, we develop a unifying conceptual framework that considers emotional reactions triggered by both service failure and recovery and explains why customers are likely to get “emotional twice.” Second, we show that studies conceptualize emotions using different underlying theoretical assumptions (discrete versus dimensional models). Our results show that this distinction significantly affects the strength of the relationship between emotions and their correlates. Third, our meta-analysis highlights what recovery actions managers should consider when they need to address customers’ negative emotions or want to enhance positive emotions. Monetary compensations are the only tool that can attenuate the strength of negative emotions. Clear communication of the waiting time and procedures required to complete the recovery process can strengthen positive emotions. © 2020, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0354",
+    "title": "Timing of apology after service failure: the moderating role of future interaction expectation on customer satisfaction",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-020-09522-y",
+    "abstract": "When there is a service failure, it is often believed that employees should immediately apologize to customers before hearing their complaints. However, we argue that in certain situations, an employee can recover from a service failure more effectively if the employee apologizes after hearing customer complaints. A simple change in the sequential order of apologizing and listening to complaints can significantly impact customer satisfaction. We propose that customer satisfaction increases if an employee’s apology timing is matched with customers’ expectation to interact with the employee in the future. Across two studies, we consistently report that a responsive apology (i.e., listen-and-then-apologize) outperforms a preemptive apology (i.e., apologize-and-then-listen) when customers’ interaction expectation is high. In contrast, the effectiveness of the responsive apology is weaker and even reversed when their interaction expectation is low. We also examine a boundary condition and a potential process likely responsible for this apology time sequence effect. © 2020, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0355",
+    "title": "Money for Nothing: The Impact of Compensation on Customers’ Bad-Mouthing in Service Recovery Encounters",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-021-09611-6",
+    "abstract": "As one of the retailer’s most potent recovery tactics to offset disgruntled customers, firms invest heavily in compensation to increase customer satisfaction and improve loyalty. However, the effectiveness of this tactic remains unclear. This study examines whether firm-offered compensation affects customers’ emotional responses and bad-mouthing behavior (i.e., telling others about a particular problem). Importantly, the study investigates whether the level of collaboration during the recovery encounter moderates the link between compensation and customers’ emotional responses, and whether collaborative efforts influence the effectiveness of compensation. The findings indicate that collaboration during the recovery encounter is necessary if compensation is to mitigate negative emotional responses, with downstream effects on bad-mouthing behavior. In confirming the importance of collaboration during recovery encounters, the findings have critical managerial and financial implications. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CS_0356",
+    "title": "Public Private Partnerships Dynamics in Nigeria Power Sector: Service Failure Outcomes and Consumer Dissonance Behaviour",
+    "journal": "Public Organization Review",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11115-021-00579-5",
+    "abstract": "The article investigates service delivery in the Power Sector in Nigeria. This study focuses on the dynamics of public–private partnership (PPP) arrangements in Nigeria electric power sector and its outcomes with reference to power users' dissonance behaviour. This study examines the relationship between customer expectations, service encounter, availability of substitutes and customer dissonance. From the research findings, we developed and proposed a novel analytical and practical model of service justice (SJ) as complementary alternative to traditional service atonement scholarship and practice; the latter being a product of the former as a process. The study argues that service atonement should be a product of a customer protection process integral to public, private, or joined-up frameworks’ managerial jurisdictions than as isolated customer retention mechanism as current scholarship indicate. © 2022, The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0357",
+    "title": "Economics at the FTC: Fertilizer, Consumer Complaints, and Private Label Cereal",
+    "journal": "Review of Industrial Organization",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11151-020-09792-w",
+    "abstract": "Staff in the FTC’s Bureau of Economics perform economic analyses to support the Commission’s missions to protect consumers and maintain competition. Staff contributions include both original economic research and theoretical and empirical analysis in specific matters where the Commission has to decide whether to take enforcement actions. This article describes: retrospective research of a consummated merger in the fertilizer industry; a novel analysis of the government’s consumer complaint data to understand how frauds affect different demographic groups; and casework that supported a decision to challenge a merger of private label ready-to-eat cereal manufacturers. © 2020, This is a U.S. Government work and not under copyright protection in the US; foreign copyright protection may apply."
+  },
+  {
+    "article_id": "CS_0358",
+    "title": "Insider trading around auto recalls: Does investor attention matter?",
+    "journal": "Review of Quantitative Finance and Accounting",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11156-019-00866-9",
+    "abstract": "Using a comprehensive sample of customer complaints filed with the National Highway Traffic Safety Administration, we examine the differences in the timing of insiders’ and investors’ use of outside generated public information. We first find that levels of customer complaints predict future auto recalls and their financial consequences, suggesting that these publicly available customer complaints contain value-relevant information. We then find that customer complaints are not contemporaneously associated with stock returns but predict large negative abnormal stock returns during the period following the recall announcement. Thus, we find that the market generally fails to impound the information contained in customer complaints in a timely manner. We then examine whether mutual funds, as sophisticated investors, appear to use the complaint data and find that, consistent with the overall market, in the aggregate they do not appear to use the complaint data to inform their trades until after recall announcements. However, mutual funds that focus more of their trades in the auto industry appear to pay more attention to the complaint data and trade consistent with the data before recall announcements. We then find that the top five executives of the car manufacturers in our sample are significant sellers of personal shares prior to the announcement of auto recalls, particularly when customer complaints are high. Our findings suggest that insiders’ informational advantage is at least in part due to general investor limited attention to publicly available information. © 2019, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0359",
+    "title": "Trading concentration and industry-specific information: an analysis of auto complaints",
+    "journal": "Review of Quantitative Finance and Accounting",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11156-022-01063-x",
+    "abstract": "We investigate whether sophisticated investors’ trading concentration in the auto industry is associated with their use of auto complaint data. We find that the extent to which mutual funds concentrate their trading in the auto industry is positively associated with their incorporation of the complaint information into their trading decisions both before and after auto recall announcements. We provide evidence that trading concentration by mutual funds is more consistent with the information advantage explanation rather than behavioral explanations for concentration such as overconfidence or familiarity. However, we find that pension funds, regardless of their level of trading concentration, do not use the customer complaint information to inform their trading decisions. Our findings suggest that pension funds concentrate trading for reasons other than short-term information advantage, suggesting that the underlying reason for trading concentration can differ by the type of institutional investor. © 2022, The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0360",
+    "title": "Brand hate: a systematic literature review and future perspectives",
+    "journal": "Management Review Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11301-023-00402-z",
+    "abstract": "The duplex theory posits that consumer animosity towards brands emerges when expectations remain unmet, culminating in dissatisfaction. Despite increasing interest in brand hate within the realms of consumerism, academic discourse on this multifaceted emotion remains limited. Consequently, this paper endeavours to execute a systematic review, synthesising extant literature on brand hate. An initial screening encompassed 182 articles, following an exhaustive evaluation of six databases spanning 2009–2022. Of these, only 60 peer-reviewed articles satisfied the stringent criteria for in-depth analysis. This analysis offers a comprehensive overview of brand hate's conceptualisation and its developmental trajectory, focusing on publication years, journals, countries, antecedents, and consequences. Furthermore, this review delineates prospective research trajectories, potentially enriching the corpus of brand hate literature. For effective consumer recovery strategies, organisations and brands must grasp the underlying catalysts of such antipathy. To our knowledge, this study represents a thorough literature-based investigation in the domain of brand hate, charting new directions for future inquiry. © The Author(s), under exclusive licence to Springer Nature Switzerland AG 2024."
+  },
+  {
+    "article_id": "CS_0361",
+    "title": "Does the nature of the relationship really matter? An analysis of the roles of loyalty and involvement in service recovery processes",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-013-0228-4",
+    "abstract": "Service failures can have serious effects on the development of customer–firm relationships, and service recovery processes are implemented to provide a solution to the problem. Prior research has suggested that service recovery efforts lead to different responses from customers. This study offers new insights by investigating the moderating roles of customer loyalty and involvement in the service recovery process. The study focuses on the mobile phone industry and the results reveal that the relationship between perceived effort and customer satisfaction is moderated by these two central relationship characteristics. © 2014, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0362",
+    "title": "How online service recovery approaches bolster recovery performance? A multi-level perspective",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-014-0264-8",
+    "abstract": "Employees are often sandwiched between understandable customer grievances and unchangeable organizational policies: only when employees feel fairly treated will they treat customers fairly. Most previous studies focused on external service recovery systems for customers, but neglected internal service recovery systems for frontline employees. By extending Homburg and Fürst’s research, this study adopts a multi-level perspective to explore the influences of the mechanistic approach (process guidelines, behaviour guidelines, and compensation guidelines) and the organic approach of service recovery (empowerment and recovery culture) on frontline employees’ responses (recovery efficacy, accountability, and performance) towards implementing a service recovery within an online auction context. © 2015, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0363",
+    "title": "The influence of the source and valence of word-of-mouth information on post-failure and post-recovery evaluations",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-015-0272-3",
+    "abstract": "The purpose of this paper was to better understand the impact that word-of-mouth recommendations (WOM) source (i.e., personal vs. impersonal sources) and WOM valence (average vs. excellent) have on satisfaction and trust following a failure and recovery event. Our results showed that customers who received WOM recommendations from personal rather than impersonal sources (WOM source) were less dissatisfied with the organization when severe versus mild failures occurred. Likewise, failure severity had less negative impact on customer satisfaction evaluations when the valence of WOM information was excellent versus average. These results were more pronounced for severe failures. In addition, WOM source and WOM valence both moderated the relationship between recovery quality and trust with the organization. Specifically, excellent recovery quality had a much greater influence on trust when WOM information was obtained from personal versus impersonal sources (WOM source). Finally, when customers received WOM information that rated the service organization as excellent (WOM valence), customers also considered recovery quality to have a greater impact on their perceptions of trustworthiness than if these recommendations were average. © 2015, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0364",
+    "title": "Customer forgiveness of unsatisfactory service: manifestations and antecedents",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-015-0282-1",
+    "abstract": "Previous research of service failures has focused on negative reactions such as retaliation, complaining, and switching behavior. This study is of customer forgiveness that reflects goodwill. Study 1, exploring manifestations of forgiveness in the service context, consisted of interviews with 52 customers. The results suggest that forgiveness is reflected in positive reframing, perspective taking, and tolerance. In Study 2, designed to explore the antecedents of forgiveness, respondents (N = 286, 55.4 % women) were presented with scenarios manipulating strength of relationship and blame, and measuring forgiveness. The results show that the effect of blame on the expected outcomes of forgiveness and loyalty intentions is stronger under strong customer-service provider relationships. Additionally, relationship strength has a stronger effect on forgiveness among women, even under high levels of blame. The results thus offer profiles for forgiving and unforgiving customers. © 2015, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0365",
+    "title": "Can complaint-handling efforts promote customer engagement?",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-015-0295-9",
+    "abstract": "This study aims to fill an important research gap in customer management, namely, the extent to which customer engagement arises as a consequence of an effective complaint-handling strategy. In tackling this question, we offer new insights into service research that may help researchers and managers better understand customer non-transactional behaviors to complaint-handling actions. To test the conceptual framework, we employ self-reported information from a sample of customers who have experienced a service failure in the financial services industry. Findings show that complaint handling will increase not only customer satisfaction with the complaint-handling process but also customer engagement. Satisfaction also plays a mediating effect. Therefore, in the event of a service failure, a proper management of the problem will lead to more engaged customers. © 2015, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0366",
+    "title": "Co-creation and service recovery process communication: effects on satisfaction, repurchase intentions, and word of mouth",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-016-0311-8",
+    "abstract": "After service failure situations, firms often carry out transactional activities to achieve customer recovery (CR), using corrective actions to restore the exchange (e.g., economic and social compensations). Furthermore, during the service recovery process, firms can encourage activities of co-creation (CC) to prevent similar future failures. This paper discusses the importance of CC and service recovery process communication (RPC), in which customers are informed of the adoption of solutions to address the cause of the failure, so as to avoid the same problem happening again. Experimental studies investigate the impact, individually and together, of CR, CC, and RPC on satisfaction, repurchase intentions, and word of mouth. The results indicate that CC and RPC improve customer’s satisfaction, repurchase intentions, and word of mouth. Firms that want to maximize the return on their efforts to prevent service failures, should encourage CC, develop solutions to prevent future failure recurrence, and implement strategies of RPC. Firms must decide how to promote CC and which media to use for RPC. © 2016, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0367",
+    "title": "The role of other customers during self-service technology failure",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-016-0325-2",
+    "abstract": "Service recovery through inter-customer helping is especially meaningful in the self-service technology (SST) failure context because SSTs are associated with a high risk of failure due to the lack of face-to-face contacts with employees. In understanding the phenomenon of inter-customer helping, two fundamental questions are investigated in the current research: (1) does social influence play a role in customers’ helping decisions? and (2) what are the motives for helping? Through two experimental studies, we provide evidence that two different forms of social influence play a role in helping others during SST failures, and customers have self-centered (vs. other-centered) motives. Results from Study 1 showed that individuals in the private environment indicated more willingness to help than individuals in the public environment did due to heightened perceived responsibility. Study 2 revealed that tie strength influenced willingness to help via a dual pathway: perceived responsibility and social approach motives. Finally, we discuss and highlight the positive influence that self-centered motives can exert in the SST failure scene. © 2016, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0368",
+    "title": "The effect of organizational responses to service failures on customer satisfaction perception",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-016-0328-z",
+    "abstract": "This paper explores how organizational responses to service failures affect perceived justice and recovery satisfaction using responses from 410 customers who experienced service failures in Hong Kong. The results indicated that the acknowledgement of and prompt action to fix service failures were positively linked to perceived justice, which in turn affects recovery satisfaction. Moreover, customer relation orientation moderated the relationship between acknowledgement of service failure and justice perceptions of service recovery, while customer task orientation moderated the relationship between prompt action for service recovery and justice perceptions of that recovery. © 2016, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0369",
+    "title": "Perceived justice and post-recovery satisfaction in banking service failures: Do commitment types matter?",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-016-0333-2",
+    "abstract": "Based on the notion that the types of customer commitment to a service provider may have diverse reasons and effects on the customer’s perceptions, attitudes, and behaviors, this study aims to investigate the different buffering effects of calculative and affective commitments on the perceived justice and post-recovery satisfaction (PRS) relationship. Multiple and hierarchical regression analyses were conducted based on survey data collected from 284 households who experienced service failure in the banking sector. Results revealed that while affective commitment moderates the effects of procedural and interactional justice, calculative commitment increases the impact of distributive and procedural justice on PRS. © 2016, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0370",
+    "title": "How to explain service failure? Impacts of justifications",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-017-0349-2",
+    "abstract": "This study examines how justifications that are offered by service providers affect the impacts of inferred motives and negative emotions on perceived fairness after service failure. Some researchers have indicated that justifications enhance perceived fairness, whereas others argue that they decrease the post-recovery satisfaction. After analyzing 270 responses, this study found that justifications mitigate the negative effects of inferences regarding service providers’ motives on perceived fairness, while they amplify the effects of negative emotions. Furthermore, when the affective relationship strength between service providers and consumers is greater, justifications effectively minimize the negative consequences of inferred motives and negative emotions. © 2017, Springer-Verlag GmbH Germany."
+  },
+  {
+    "article_id": "CS_0371",
+    "title": "How to boost frontline employee service recovery performance: the role of cultural intelligence",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-019-00396-3",
+    "abstract": "Satisfying complaining customers is challenging, especially when dealing with the increasing number of customers with culturally diverse backgrounds. The purpose of this study is to show whether and how frontline employee cultural intelligence (CQ) is related to their service recovery performance. The results of among 155 flight attendants of a Southeast Asian airline indicate that frontline employee CQ is positively associated with their service recovery performance. Work engagement mediates this relationship. This study reveals that organizations likely benefit from investing in frontline employees’ CQ to optimize their work engagement and service recovery performance. © 2019, Springer-Verlag GmbH Germany, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0372",
+    "title": "Dysfunctional customer behavior: conceptualization and empirical validation",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-019-00398-1",
+    "abstract": "Dysfunctional customer behavior is endemic and prevalent across multiple service sectors. However, despite significant interest from practitioners and scholars, understanding of the concept of dysfunctional customer behavior and its measurement has been limited to date. Moreover, studies have not systematically explored the exact dimensionality of dysfunctional customer behavior, leaving its precise composition unclear. Across five studies, this investigation identifies a three-dimensional dysfunctional customer behavior construct comprising verbal abuse, disproportionate demand, and illegitimate complaint. The authors develop and validate a multi-dimensional scale to measure dysfunctional customer behavior. © 2019, Springer-Verlag GmbH Germany, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0373",
+    "title": "Overcompensation as a service recovery strategy: the financial aspect of customers’ extra effort",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-020-00413-w",
+    "abstract": "Compensation is one of the most important elements of service. Companies often pursue a strategy of overcompensation; however, there are contradictory results in the literature whether overcompensation has a positive or negative effect on postcomplaint customer behaviour. In this paper, based on three studies, we prove that examining the amount of additional effort required of the customer in order to achieve service recovery can help us better explain outcomes of the service recovery. Our results clearly show that the degree of additional customer effort has significant influence both on satisfaction and on perceived fairness and it moderates the effect of the amount of compensation. © 2020, The Author(s)."
+  },
+  {
+    "article_id": "CS_0374",
+    "title": "Do customers exhibit gratitude after service recovery? Understanding the moderating role of relationship type",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-021-00468-3",
+    "abstract": "The study investigates how customers in exchange and communal relationships differ in evaluating the recovery efforts of service providers after a service failure. This research addresses the literature gap by examining specific antecedents, leading to the discrete emotion—gratitude and word of mouth. A 2 (relationship norm types: exchange vs communal) × 2 (perceived effort: low vs high) × 2 (outcome desirability: low vs high) between-subjects factorial design experiment was developed for data collection. The results suggest that perceived effort and outcome desirability significantly influence gratitude. However, exchange and communal customers’ perceived effort differs in low and high desirability situations. © 2021, The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0375",
+    "title": "Correction to: Do customers exhibit gratitude after service recovery? Understanding the moderating role of relationship type (Service Business, (2021), 15, 4, (757-779), 10.1007/s11628-021-00468-3)",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-021-00469-2",
+    "abstract": "Due to some communication oversight during article acceptance, first author Ramakrishna Salagrama was not correctly mentioned as Corresponding author. This error has been corrected with original article updated. © Springer-Verlag GmbH Germany, part of Springer Nature 2021."
+  },
+  {
+    "article_id": "CS_0376",
+    "title": "Customer comfort during service robot interactions",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-022-00499-4",
+    "abstract": "Customer comfort during service interactions is essential for creating enjoyable customer experiences. However, although service robots are already being used in a number of service industries, it is currently not clear how customer comfort can be ensured during these novel types of service interactions. Based on a 2 × 2 online between-subjects design including 161 respondents using pictorial and text-based scenario descriptions, we empirically demonstrate that human-like (vs machine-like) service robots make customers feel more comfortable because they facilitate rapport building. Social presence does not underlie this relationship. Importantly, we find that these positive effects diminish in the presence of service failures. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CS_0377",
+    "title": "Underscoring trainer's lack of effort or talent in service failure of personal fitness training: customers' negative word-of-mouth response",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-023-00544-w",
+    "abstract": "Underpinned by attribution theory and relationship norm theory, this study investigated whether, why, and when provider attribution of service failure influences negative word-of-mouth. Our first experiment verified that trainers' attribution of their service failure to lack of effort (vs. lack of talent) causes greater negative word-of-mouth intention and that this effect is mediated by perceived responsibility. Our second experiment confirmed that to customers with more communal (vs. exchange) norms, the effect of perceived responsibility on negative word-of-mouth intention becomes weaker (vs. stronger). These findings advance service failure and performance attribution literature and provide insights into how to address service failure. © 2023, The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0378",
+    "title": "The effect of social proximity, attribution, and guilt on accepting dysfunctional customer behavior",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-024-00556-0",
+    "abstract": "This study examines how construal levels affect the acceptability of dysfunctional customer behavior following service failure in restaurants. Across three experimental studies with online panel respondents (n = 555), we found that consumers feeling psychologically close to service providers are less likely to deem deviant actions acceptable. This stems from the trust they place in socially close service providers and their perceptions of failure controllability. Additionally, anticipated guilt plays a pivotal role in reducing the acceptability of dysfunctional behavior, particularly when seen as opportunistic. Our findings have implications for both academics and managers in understanding and addressing customer behavior post-service failures. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_0379",
+    "title": "The role of customer forgiveness and perceived justice in restoring relationships with customers",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-024-00563-1",
+    "abstract": "This research explored whether customer forgiveness mediated the relationships between service failure severity (SFS) and customers’ coping behaviors and examined the moderating role of perceived justice in the proposed model. The results indicated that customer forgiveness played a crucial role in restoring relationships and reducing customers’ avoidance. Higher perceptions of justice for service providers’ recovery efforts weakened the negative effect of SFS on customer forgiveness. Additionally, the results showed that perceived high distributive justice attenuated the negative effect of SFS on customer forgiveness when perceived interactional justice was low. Such an attenuating effect decreased when perceived interactional justice increased. © The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature 2024."
+  },
+  {
+    "article_id": "CS_0380",
+    "title": "Coping strategies for serial service failures in peer-to-peer sharing services: the power of empathic communication",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-024-00568-w",
+    "abstract": "Peer-to-peer (P2P) sharing services experience failures, caused by customers or peer service providers (PSPs). When failures recur, PSPs’ response to the first failure shapes subsequent customer reactions. This study examines scenarios where the initial failure is caused by the customer, and the subsequent failure is attributed to the PSP. How the PSP’s empathetic responses to the initial failure influences customer reactions during the subsequent failures was examined. Results show that PSP’s empathic communication during the first failure reduces customers’ negative emotions and may or may not foster a more lenient attitude toward the second failure, depending on the response type. Specifically, empathy positively impacts satisfaction and intent for positive review score but not for sharing negative reviews. © The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature 2024."
+  },
+  {
+    "article_id": "CS_0381",
+    "title": "How much is enough? An investigation of monetary compensation for service failures",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-025-00597-z",
+    "abstract": "The amount of compensation for service failures significantly influences consumer satisfaction, but both under- and overcompensation can be ineffective. Customer expectations for monetary compensation vary by service context. This study explores three contextual factors—service recovery characteristics, service type, and failure type—through scenario-based experiments. The findings reveal that outcome failures require higher compensation than process failures, and expectations increase with failure severity. Additionally, positive emotional displays by employees enhance the recovery experience but cannot replace fair compensation. These insights offer guidance for tailoring service recovery strategies to specific service contexts. © The Author(s) 2026."
+  },
+  {
+    "article_id": "CS_0382",
+    "title": "Exploring the relationships among online-to-offline (O2O) customers’ perceived justice, post-recovery satisfaction, and repurchase intention",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-025-00600-7",
+    "abstract": "Effectively managing service failures in online-to-offline (O2O) services, such as delayed deliveries or unsatisfactory service, plays a crucial role in shaping customer perceptions and building platform’s ability to retain customers. This study investigates the impact of perceived justice in service recovery within O2O environments and examines how these perceptions affect customer satisfaction and repurchase intentions. Our findings highlight that recovery types and on or offline locus of recovery play differential influence on three dimensions of perceived justice. Also, post-recovery satisfaction is a significant mediator between perceived justice and repurchase intention. © The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature 2025."
+  },
+  {
+    "article_id": "CS_0383",
+    "title": "Service enhancement or cost reduction? Motive attribution explains how empathy affects continued usage after robot service failures",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-026-00603-y",
+    "abstract": "Grounded in attribution theory, this study examines how robotic empathy influences customers’ motive attributions and continued usage intention. We conducted a scenario-based experiment (N = 347) and a field survey of hotel guests (N = 216). Across studies, high-empathy responses enhance service enhancement attributions and reduce cost reduction attributions, thereby strengthening continued usage intention. Neuroticism further moderated these attribution processes, such that high-neuroticism consumers were more likely to infer cost reduction motives under low empathy, whereas this tendency weakened when empathy was high. This study answers prior calls for research and provides important practical implications. © The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature 2026."
+  },
+  {
+    "article_id": "CS_0384",
+    "title": "The dark side of customer co-creation: exploring the consequences of failed co-created services",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-014-0387-4",
+    "abstract": "Whereas current literature emphasizes the positive consequences of co-creation, this article sheds light on potential risks of co-created services. Specifically, we examine the implications of customer co-creation in service failure episodes. The results of four experimental studies show that in a failure case, services high on co-creation generate a greater negative disconfirmation with the expected service outcome than services low on co-creation. Moreover, we examine the effectiveness of different service recovery strategies to restore customer satisfaction after failed co-created services. According to our results, companies should follow a matching strategy by mirroring the level of customer participation in service recovery based on the level of co-creation during service delivery. In particular, flawed co-creation promotes internal failure attribution which in turn enhances perceived guilt. Our results suggest that in such case customer satisfaction is best restored by offering co-created service recovery. © 2014, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0385",
+    "title": "The role of moral emotions and individual differences in consumer responses to corporate green and non-green actions",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-014-0394-5",
+    "abstract": "We investigate the mediating role of moral emotions and their contingency on individual characteristics in consumer responses to corporate green and non-green actions. Two between subjects experiments were conducted to test our hypotheses on samples of adult consumers. The results show that, for corporate non-green actions, various individual difference characteristics (social justice values, empathy, moral identity, self-concept) moderate the elicitation of negative moral emotions (contempt, anger, disgust), which, in turn, lead to consumer negative responses (negative word of mouth, complaint behaviors, boycotting). Moreover, for corporate green actions, empathy moderates elicitation of positive emotions on gratitude, which, in turn, influences consumer positive responses (positive word of mouth, resistance to negative information, identification with the company, investment). This study adds to extant research by examining understudied “hot” moral emotional processes underlying consumer reactions toward corporate environmental responsibility and irresponsibility. Implications for marketing communication and segmentation decisions are considered. © 2014, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0386",
+    "title": "Don’t try harder: using customer inoculation to build resistance against service failures",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-014-0398-1",
+    "abstract": "Capitalizing on a large-scale field experimental dataset involving 1,254 airline customers, this study introduces customer inoculation as a new, proactive strategy for mitigating the negative consequences that service failures have on customer satisfaction. Results confirm that customer inoculation eases the decrease in satisfaction when customers experience a service failure. Additional analyses indicate that customer inoculation does not harm customer satisfaction if no service failure occurs. This finding sets inoculation apart from expectation management and underscores the potential inoculation has for marketing practice. Furthermore, contrary to traditional recovery strategies for addressing service failures, customer inoculation operates in advance of a service failure and thereby circumvents potential drawbacks of traditional strategies. In sum, customer inoculation represents a novel strategy for addressing service failures with respect to existing marketing literature and expands the scope of action for companies when they cannot avoid offering occasionally flawed services. © 2014, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0387",
+    "title": "One firm’s loss is another’s gain: capitalizing on other firms’ service failures",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-014-0413-6",
+    "abstract": "Whereas past research has focused on negative outcomes that can transfer from one firm to another, this paper examines conditions under which a service failure by one firm creates an opportunity to enhance customer evaluations of a different firm in a contiguous service experience. Thus, a new external service recovery phenomenon is demonstrated in which consumers have more favorable perceptions of a firm when there was a previous failure with a different firm compared with no previous service failure. Study 1 tests hypotheses related to consumers’ perceptions of a hotel’s external service recovery after an airline’s service failure. Study 2 examines an external recovery effort in the hotel industry that follows a service failure from an unrelated hotel, an affiliated hotel, and the same hotel. Study 3 utilizes a laboratory experiment to assess the effects of external recovery in a restaurant setting. Results from all three studies suggest external recovery leads to appreciable gains for the recovering firm but only when it is not affiliated with the failing firm. Implications for service managers suggest several simple and relatively low cost tactics can be implemented to capitalize on other firms’ failures. In particular, this research highlights strategies that encourage frontline employees to listen to customers and, if a prior failure is detected, make simple gestures of goodwill. © 2014, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0388",
+    "title": "Frontline employees’ nonverbal cues in service encounters: a double-edged sword",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-016-0479-4",
+    "abstract": "In this research, we look at the similarity between frontline service employees’ nonverbal or expressive behavior and customers’ receptivity of nonverbally expressed emotions (i.e., expressive similarity). Supported by evidence from four studies, we demonstrate that expressive similarity between customers and frontline service employees yields positive outcomes for both the employee and the organization under successful service delivery, but it can paradoxically backfire on the organization in service failures. In successful service encounters, higher expressive similarity between customers and employees enhances consumer satisfaction and promotes more direct compliments and positive word of mouth. In contrast, higher expressive similarity increases customer dissatisfaction and intent to engage in negative word of mouth, but it reduces customers’ inclination to lodge direct complaints following a service failure (Study 1). Studies 2 and 3, both field experiments, provide external validation of the key findings on customer satisfaction and voice intentions (Study 2) as well as actual voice behavior (Study 3). Building on these findings, Study 4 reveals that while customer-perceived rapport and trait impressions of the service employee mediate the observed effects of expressive similarity on satisfaction, only rapport significantly explains the effects of expressive similarity on voice intentions. Theoretical and managerial implications, along with suggestions for future research, conclude the paper. © 2016, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0389",
+    "title": "Do managers know what their customers think and why?",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-016-0487-4",
+    "abstract": "The ability of a firm’s managers to understand how its customers view the firm’s offerings and the drivers of those customer perceptions is fundamental in determining the success of marketing efforts. We investigate the extent to which managers’ perceptions of the levels and drivers of their customers’ satisfaction and loyalty align with that of their actual customers (along with customers’ expectations, quality, value, and complaints). From 70,000 American Customer Satisfaction Index (ACSI) customer surveys and 1068 firm (manager) responses from the ACSI-measured companies, our analyses suggest that managers generally fail to understand their firms’ customers in two important ways. First, managers systematically overestimate the levels of customer satisfaction and attitudinal loyalty, as well as the levels of key antecedent constructs such as expectations and perceived value. Second, managers’ understanding of the drivers of their customers’ satisfaction and loyalty are disconnected from those of their actual customers. Among the most significant “disconnects,” managers underestimate the importance of customer perceptions of quality in driving their satisfaction and of satisfaction in driving customers’ loyalty and complaint behavior. Our results indicate that firms must do more to ensure that managers understand how their customers perceive the firm’s products and services and why. © 2016, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0390",
+    "title": "The role of climate: implications for service employee engagement and customer service performance",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-017-0526-9",
+    "abstract": "This research attempts to challenge the resource–engagement and engagement–performance linkage of the job demands–resources model by testing these links under the moderating role of two climates: performance-focused and service failure recovery. Two studies test a model on the boundary conditions of the linkages across four service industries. The results suggest that whether a resource (i.e., self-efficacy and job autonomy) positively or negatively affects engagement depends on whether (1) a climate is appraised as a challenge or hindrance demand and (2) a climate is deemed a complementary or compensatory resource. Using multi-respondent data from customer service employees and their supervisors in the health care industry, Study 1 conceptualizes climate as organizational climate and finds that performance-focused climate strengthens (weakens) the positive effect of self-efficacy (job autonomy) on engagement while service failure recovery climate weakens the positive impact of self-efficacy on engagement. Study 2 generalizes the findings from Study 1 and provides broad support by testing the model using psychological climate in the financial services, tourism and hospitality, and retailing industries. This study closes with a configuration approach to climate research by discussing when multiple climates can co-exist under different types of resources. © 2017, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0391",
+    "title": "Service crisis recovery and firm performance: insights from information breach announcements",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-017-0543-8",
+    "abstract": "The extant literature has studied the effects of a firm’s service recovery efforts on the reactions of customers and employees following an individual service failure. However, the impact of recovery efforts on a firm’s performance after a public and large service failure—such as a large-scale information breach—has received scant attention. To address this gap, this current research develops a framework and finds support for the impact of service crisis recoveries on a firm’s performance, as measured by firm-idiosyncratic risk. Using a unique dataset of service crisis recoveries, the authors find that firms offering compensation (i.e., tangible redresses) or process improvement (i.e., improvements in organizational processes) show more stable performance (less idiosyncratic risk), from two quarters to two calendar years after the announcement of their recovery plan. In line with the documented dual effect of apologies, firms that offer apology-based recoveries display more volatile performance (higher idiosyncratic risk). Of note, this volatility increases with the number of affected individuals, and it remains unaffected even when the apology is expressed with high intensity. © 2017, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0392",
+    "title": "Unveiling the recovery time zone of tolerance: when time matters in service recovery",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-017-0544-7",
+    "abstract": "This article examines the link between recovery time and customer compensation expectations for service failures that cannot be immediately redressed. First, we show that the relationship between recovery time and compensation expectations is nonlinear. Initially, in a recovery time zone of tolerance, compensation expectations do not increase. Beyond this zone, the relationship follows an inverted U-shape, such that compensation expectations first increase but decrease in the long run. Second, our results show that long recovery times are accompanied by additional negative effects, including lower satisfaction with the recovery and negative word of mouth, so postponing service recovery represents a poor option. Third, relationship strength functions as a moderator. First-time customers expect higher compensation earlier; relational customers display a recovery time zone of tolerance but claim considerably higher compensations afterwards. Fourth, communication initiatives like the separate provision of status updates or an explanation may limit increases in compensation expectations over time. Still, their joint usage creates a “too-much-of-a-good-thing” effect, suggesting that if the usage of communication initiatives is taken too far it may lead to negative outcomes such as increasing compensation expectations. © 2017, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0393",
+    "title": "How can firms stop customer revenge? The effects of direct and indirect revenge on post-complaint responses",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-018-0597-2",
+    "abstract": "Do customers feel better or worse after enacting revenge? Using a multimethod approach, we show that customers’ post-complaint desire for revenge depends on whether they initially use direct or indirect revenge behaviors (RBs). Specifically, the current research makes three contributions. First, we find that the more customers use direct RBs, the more pronounced is the decrease in their post desire for revenge over time, whereas a strong engagement in indirect RBs is associated with higher post desire for revenge over time. A series of experiments also indicate that direct RBs lead to less post desire for revenge and more positive affect, compared to the indirect RBs condition. Second, we document the process underlying each effect. The beneficial effect of direct RBs is explained by justice restoration, while the deleterious effect of indirect RBs is mainly explained by public exposure. Third, on the basis of our findings, we test different managerial tactics to reduce avengers’ post desire for revenge. For direct avengers, recoveries with full or overcompensation substantially reduce their negative responses because these customers are primarily driven by justice restoration. For indirect avengers, our prescription involves taking initiatives to change their focus from public exposure to justice restoration by using proactive social media tools. This switch makes these latter customers more amenable to most recoveries, even poor ones. © 2018, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0394",
+    "title": "Chronic illness medication compliance: a liminal and contextual consumer journey",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-018-0618-1",
+    "abstract": "The consumer journey has drawn interest from marketers as an avenue to strengthen sales through managing touchpoints. However, a firm-centric view has produced limited models of the journey, particularly on consumers’ usage experiences over extended periods in everyday settings. We attempt to redress this limitation by studying the situated experiences of disadvantaged consumers endeavoring to comply with medication therapies for chronic hypertension. Our broad aim is to understand more fully the influences on and nature of the journey. We find that compliance is a liminal state of provisional actions shaped contextually by life spheres of meso-structural conditions, micro-individual factors, and interpretive sense-making practices. We contribute a novel, integrated, and nuanced journey framework beyond the detached, steadily progressive model predominant in the literature. Our paper ends with practice, theory, and policy implications for marketing and healthcare, including touchpoint strategies. © 2018, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0395",
+    "title": "Leveraging service recovery strategies to reduce customer churn in an emerging market",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-019-00634-0",
+    "abstract": "Building on the properties of emerging markets, we investigate how a firm should align its service recovery strategies with different types of service failure to reduce customer churn in an emerging market. Using resource exchange theory and a multi-method approach, we show that the conventional wisdom related to service recovery needs to be reevaluated in emerging markets. Our results show that process failures lead to a higher likelihood of customer churn compared to outcome failures in emerging markets. Investigating service recovery mechanisms, we find that compensation is more effective in recovering from process failures than in recovering from outcome failures in emerging markets. Similarly, employee behavior has a stronger impact on mitigating the ill effects of process failures than those of outcome failures. The study contributes to the literature on service recovery and resource exchange theory and provides managerial insights for the effective management of customer churn due to service failures in emerging markets. © 2019, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0396",
+    "title": "When pushing back is good: the effectiveness of brand responses to social media complaints",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-019-00661-x",
+    "abstract": "Conventional wisdom suggests that brands should respond in an accommodative way to consumer complaints. However, this research shows that observers of the communication between complainants and brands on social media may prefer a defensive response under specific conditions. Thus, this study helps managers to find optimal responses to social media complaints, thereby minimizing negative consequences. We introduce a previously unexamined key moderator that takes account of the observer perspective: the benefits sought in the context of a complainant–brand interaction (e.g., brand presences in social media). Hence, we differentiate hedonic from utilitarian contexts and we note the distinct observer benefits and corresponding preferences. A field study and a series of experiments show that a defensive response can be superior in hedonic contexts but inferior in utilitarian ones. We also show how response strategy indirectly affects observers’ behavioral consequences and identify complaint reasoning and brand communication style as relevant boundary conditions. © 2019, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0397",
+    "title": "Projecting lower competence to boost apology effectiveness: Underlying mechanism and boundary conditions",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-022-00903-5",
+    "abstract": "Apologies represent a common strategy to respond to crises or product/service failures. In five experiments, involving different failures, we show that projecting lower competence in a specific, non-core domain of activity provides a significant boost to apology effectiveness. A projection of lower competence, operationalized as a lack of skills or expertise required to effectively execute a specific task, increases the perceived costliness of the apology because the organization accepts a symbolic cost. Perceived costliness, in turn, increases the perceived sincerity of the apology and leads to more favorable responses. This strategy, however, is effective only under certain circumstances and can backfire if misapplied. First, organizations might project lower competence only when stakeholders have no other reason to question their competence. Second, projecting lower competence is effective only when the failure is not relevant to the core business. Finally, the strategy is not effective for consumers with low communal relationship orientation. © 2022, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0398",
+    "title": "Weathering the crash: Do customer-company relationships pay off during economic crises?",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-023-00947-1",
+    "abstract": "Do stronger relationships with customers (customer-company relationships [CCR]) help firms better weather economic crises? To answer this question, we examine firm performance during the stock market crashes associated with the two most severe economic crises of the last 15 years—the protracted Great Recession crisis (2008–2009) and the shorter but extreme COVID-19 pandemic crisis (2020). Juxtaposing the predominant expected utility theory perspective with observed deviations in investor behavior during crises, we find that both pre-crash firm-level customer satisfaction and customer loyalty are positively associated with abnormal stock returns and lower idiosyncratic risk during a market crash, while pre-crash firm-level customer complaint rate negatively affects abnormal stock returns and increases idiosyncratic risk. On average, we find that one standard deviation higher CCR is associated with between $0.9 billion and $2.4 billion in market capitalization on an annualized basis. Importantly, we find that these effects are weaker for firms with higher market share during the COVID-19 crash, but not during the Great Recession crash. These results are found to be robust to a variety of alternate model specifications, time periods, sub-samples, accounting for firm strategies during the crises, and endogeneity corrections. When compared to relevant non-crash periods, we also find that such effects are equally strong during the Great Recession crash and even stronger during the COVID-19 pandemic crash. Contributing to both the marketing-finance interface literature and the nascent literature on marketing during economic crises, implications from these findings are provided for researchers, marketing theory, and managers. © Academy of Marketing Science 2023."
+  },
+  {
+    "article_id": "CS_0399",
+    "title": "Brand warmth elicits feedback, not complaints",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-024-01009-w",
+    "abstract": "Consumers perceive brands on their intended goals that can benefit or harm consumers. These warmth perceptions become consequential when a consumer experiences a product-harm incident. Conventional wisdom suggests that brand warmth may inhibit consumers from reporting such incidents to the brand and/or regulators. However, the authors’ analyses of field data show that brand warmth increases the number of reports of harm incidents. Yet consumers’ underlying motive is to provide feedback rather than complain. Indeed, using machine learning and regressions, and laboratory experiments, the authors demonstrate that brand warmth boosts the proportion of feedback (vs. complaint) reports. Next, they theorize and show that brand warmth induces consumer benevolence, which drives the consumer toward feedback (vs. complaint). Lastly, the authors demonstrate that if managers of a warm brand acknowledge the consumer’s feedback motive in their recovery messages, such acknowledgement enhances consumer satisfaction. The research extends the discipline’s knowledge on how a brand’s warmth perceptions impact consumers’ responses in the aftermath of a product-harm incident and what intervention managers can use in such a context. © Academy of Marketing Science 2024."
+  },
+  {
+    "article_id": "CS_0400",
+    "title": "Soothing the unsatisfied or pleasing the satisfied? The effects of managerial responses to positive versus negative reviews on customer ratings and financial performance",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-024-01010-3",
+    "abstract": "Managerial responses (MRs) have gained increasing attention as an important intervention strategy for addressing online customer reviews. This study seeks to answer the question of how a firm should prioritize responding to customers’ positive reviews (MR-P) and negative reviews (MR-N). We examine the differential effect of the MR-P ratio and the MR-N ratio on subsequent customer review ratings and a firm’s financial performance. Our findings show that while the MR-P ratio leads to an increase in subsequent customer review ratings and revenue, the MR-N ratio results in a decrease in customer review ratings and revenue in the short run, but contributes to improvements in these metrics in the long run. Furthermore, we find that the influence of MR-P and MR-N on subsequent review ratings diminishes among firms whose MRs contain highly similar content and firms whose competitors actively create MRs. This research not only advances our understanding of the managerial response literature but also provides valuable guidance for firms seeking to maximize the effectiveness of their MR campaigns. © Academy of Marketing Science 2024."
+  }
+]

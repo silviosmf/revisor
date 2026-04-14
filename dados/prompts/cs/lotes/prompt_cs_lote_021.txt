@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1001",
+    "title": "Advertising self-regulation (ASR) in Spain. An analysis of complaints and resolutions",
+    "journal": "Journal of Marketing Communications",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13527266.2017.1337041",
+    "abstract": "The present work analyses the total of complaints received by the advertising self-regulation (ASR) system in Spain from 2010 to 2015. Based on their processing, a matrix of variables has been developed to study the existence or absence of significant relationships between the type and nature of resolutions and the type of offending advertisers. The variables analysed are: source of complaint, type of offending advertiser, infraction of the law, breach of the code of conduct, complaint resolution, nature of the resolution, source of appeal and appeal resolution. Results show that multinationals are the companies that most often infringe the law and codes of conduct, and also that in many cases the complaints against them are dismissed. The system mainly rejects complaints that are binding, that is, those against members of ASR. This work identifies severe flaws in the self-regulation process and questions its independence to conclude that Spanish ASR tends to protect advertisers rather than defend the rights of consumers. The implications of this work point towards an urgent need to implement structural changes to Spanish ASR, starting with the funding system and the selection of the Advertising Jury, as well as mechanisms that ensure the fulfilment of resolutions. © 2017, © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1002",
+    "title": "Leveraging virtual brand community engagement and consumer brand identification as a bounce-back brand recovery strategy: Role of brand endorsers",
+    "journal": "Journal of Marketing Communications",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13527266.2023.2191630",
+    "abstract": "Brand community engagement in the virtual environment during a brand crisis has gained attention from firms and marketing scholars due to innovative technologies. However, there is a limited empirical insight into its antecedents and consequences. This study, grounded in signaling and social identity theories, introduces the relationship between endorser credibility, virtual brand community engagement, and consumer brand identification as a pro-active brand recovery strategy. It also examines the impact of virtual brand engagement and consumer brand identification on brand love and forgiveness. The data were collected from online automobile brand community members. The results show that celebrity endorsers' trustworthiness, attractiveness, and expertise can be used as communication signals to expedite the process of consumer brand identification and virtual brand community engagement. Consumers who strongly identify with the brand and engage in its virtual community are more likely to develop an emotional bond with the brand and forgive it following a crisis. Interestingly, the study finds that the relationships between endorser credibility attractiveness and virtual consumer brand identification, endorser credibility trustworthiness and consumer brand identification, and consumer brand identification and virtual brand community are nonlinear. © 2023 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1003",
+    "title": "Customer Satisfaction with Telephone-Based Self-Service Technology: Investigating the Role of ‘Gender’ of the Voice Assistant",
+    "journal": "Journal of Marketing Communications",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13527266.2023.2205417",
+    "abstract": "Digitalization across industries is increasingly changing the way customers interact with service providers. One of the most significant influences of digitalization on service outcomes is driven by technology-enabled services i.e. self-service technologies (SSTs). Despite continuous advancement of service delivery from traditional methods to modern SSTs, the technology-oriented interfaces differ in their level of complexity which may affect customer satisfaction. Two independent experiments were undertaken to observe customer satisfaction with telephone-based SSTs. Study 1 featured a 2 (Level of SST Complexity: High/Low) X 2 (Gender of Voice Assistant: Male/Female) between subjects design, while a follow-up study featured a 2 (Service Delivery Outcome: Success/Failure) X 2 (Gender of Voice Assistant: Male/Female) between-subjects factorial design. Results confirm the proposition that a higher level of SST complexity is more likely to lead to decreased customer satisfaction and intention to continue using the SST and this effect is more when the telephone-based SST uses a female voice assistant rather than a male voice assistant. Findings of the follow-up study suggest that customer dissatisfaction following a telephone-based SST failure is more likely with a male voice assistant rather than a female voice assistant. Results are critical for customer-centric firms that depend on effective implementation of SSTs. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1004",
+    "title": "Addressing backlash? Corporate DEI communication and user complaints on social media",
+    "journal": "Journal of Marketing Communications",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13527266.2025.2471954",
+    "abstract": "Companies are using social media to showcase their diversity, equity, and inclusion (DEI) initiatives. However, as DEI is a sensitive and controversial issue, negative reactions in the form of online complaints are common. The purpose of this research was to show how U.S. and German companies communicate about DEI on social media (Facebook and Twitter/X) and how they respond to complaints from their followers. The research is based on theoretical approaches from DEI as well as online complaining and webcare. Data were collected in 2022 employing content analysis. Key findings include that U.S. companies communicated more about DEI than German companies, and that about half of DEI posts received negative reactions, but by no means all of these complaints were about DEI. It shows that both U.S. and German companies very rarely responded to the complaints about DEI and that the response rate was significantly higher when the complaints concerned the company’s products or services. This research suggests that companies need to be prepared to handle complaints in response to their DEI posts on their social media pages and to have sound responses in place, not just for complaints related to their products or services. © 2025 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1005",
+    "title": "When customers know it’s AI: Experimental comparison of human and LLM-Based Communication in service recovery",
+    "journal": "Journal of Marketing Communications",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13527266.2025.2540376",
+    "abstract": "As generative AI (GAI) becomes increasingly integrated into customer service platforms, its ability to simulate human language raises new relational expectations, particularly in emotionally sensitive interactions. This study investigates how emotional intensity and identity disclosure shape user perceptions of GAI-authored service recovery messages. In a controlled experiment within the online food delivery context, participants evaluated identical service responses across two emotional conditions (routine vs. emotionally charged) and two identity conditions (AI vs. human, disclosed vs. undisclosed). Results reveal that while GAI is perceived as competent in low-emotion scenarios, its human-like language triggers negative reactions under high-emotion conditions, especially after its identity is disclosed. Users interpret simulated empathy as inauthentic, leading to what we term identity-contingent trust violations. Furthermore, participants with higher GAI familiarity were more critical, demonstrating a pattern of critical familiarity, where technical literacy heightens relational expectations. This study advances theories of human–AI interaction by integrating emotional context and identity perception into models of trust calibration. Practically, it highlights the need for role-appropriate GAI deployment and emotionally aware interaction design, where AI systems are matched to context-sensitive tasks and clearly framed as assistants, not surrogates, in situations requiring genuine emotional care. © 2025 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1006",
+    "title": "Exhausted, mistreated, or indifferent? Explaining deviance from emotional display rules at work",
+    "journal": "European Journal of Work and Organizational Psychology",
+    "journal_impact_factor": 3.607,
+    "doi": "10.1080/1359432X.2016.1229307",
+    "abstract": "This article explores different theoretical explanations for deviance from display rules (DDR), which occurs when employees consciously display emotions to customers that are unsanctioned by the organization. DDR is an important outcome in service organizations because it triggers strong negative reactions from customers, such as negative reputation and business losses. To better explain why DDR occurs, the author compared predictors drawn from organizational justice theory, conservation of resources theory and goal-setting theory in a comprehensive model to explore complementary and competing effects. The model was tested using hierarchical linear modelling with data from 1146 transactions performed by 51 service employees who participated in an experience sampling study over several weeks. Results demonstrated that emotional valence mediated the transaction-level relationship between customer interpersonal injustice and DDR. Similarly, negative emotions mediated the transaction-level relationship between mental exhaustion and DDR. However, person-level differences in goal commitment to organizational display rules had a buffering effect on the relationship between negative emotions and DDR. Overall, the results demonstrate that unfair treatment from customers and mental exhaustion can promote the expression of unsanctioned emotions to customers via negative emotional experiences, but employees who are committed to emotional labour goals are more resistant to engaging in DDR. © 2016 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1007",
+    "title": "A new understanding of Chinese luxury consumers’ spending surge: role of pandemic-related negative emotions",
+    "journal": "Asia Pacific Business Review",
+    "journal_impact_factor": 2.228,
+    "doi": "10.1080/13602381.2024.2421799",
+    "abstract": "This study examines the motivations and antecedents of consumers’ revenge-spending behaviour in the post-pandemic and the moderating effects of negative emotions on the relationship between these antecedents and revenge-spending behaviour. Data collection was conducted in China regarding the luxury fashion industry. 481 respondents were analysed using structural equation modelling. The results indicate that positive mood reinforcement, arousal need, and material resource need positively influence revenge spending. Moreover, boredom, depression, fear, and anxiety exhibited varying moderating effects on revenge-spending behaviour, depending on preceding factors. This study provides recovery strategies for businesses based on psychological antecedents and well-being outcomes of revenge spending. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1008",
+    "title": "Exploring users’ continuance intentions for mobile wallets: an extended expectation–confirmation model with gamification and grievance redressal in Vietnam",
+    "journal": "Asia Pacific Business Review",
+    "journal_impact_factor": 2.228,
+    "doi": "10.1080/13602381.2025.2516843",
+    "abstract": "Despite their widespread adoption as digital payment tools, mobile wallets often face challenges in maintaining user engagement, particularly in contexts where initial adoption is driven by unavoidable circumstances rather than user preference. This study examines the factors influencing continued use of mobile wallets in Vietnam, a market that has witnessed rapid adoption but relatively low transaction frequency. Drawing upon the mobile expectation–confirmation model (MECM), this research integrates two underexplored constructs, gamification and grievance redressal mechanisms (GRMs), to better capture the complexities of post-adoption behavior. Data were collected through a quantitative survey of 996 Vietnamese users with prior experience using gamified mobile wallets. Structural equation modeling results indicate that perceived usefulness, satisfaction, mobile complementarity, gamification, and grievance redressal significantly predict continuance intention. Notably, while confirmation influences satisfaction and complementarity, it does not significantly affect perceived usefulness, suggesting a shift in user cognition in increasingly informed digital environments. These findings extend theoretical understanding of mobile wallet continuance by validating the MECM and highlighting the roles of gamified engagement and complaint resolution mechanisms. Practically, the results offer actionable insights for service providers seeking to enhance user retention through improved functionality, engaging gamification strategies, and robust grievance handling systems. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1009",
+    "title": "Stakeholder safety communication: patient and family reports on safety risks in hospitals",
+    "journal": "Journal of Risk Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13669877.2022.2061036",
+    "abstract": "Safety communication relates to the sharing of safety information within organizations in order to mitigate hazards and improve risk management. Although risk researchers have predominantly investigated employee safety communication behaviors (e.g. voice), a growing body of work (e.g. in healthcare, transport) indicates that public stakeholders also communicate safety information to organizations. To investigate the nature of stakeholder safety communication behaviors, and their possible contribution to organizational risk management, accounts from patients and families–recorded in a government public inquiry–about trying to report safety risks in an unsafe hospital were examined. Within the inquiry, 410 narrative accounts of patients and families engaging in safety communication behaviors (voicing concerns, writing complaints, and whistleblowing) were identified and analyzed. Typically, the aim of safety communication was to ensure hospital staff addressed safety risks that were apparent and impactful to patients and families (e.g. medication errors, clinical neglect), yet unnoticed or uncorrected by clinicians and administrators. However, the success of patient and family safety communication in ameliorating risk was variable, and problems in hospital safety culture (e.g. high workloads, downplaying safety problems) meant that information provided by patients and families was frequently not acted upon. Due to their distinct role as independent service-users, public stakeholders can potentially support organizational risk management through communicating on safety risks missed or not addressed by employees and managers. However, for this to happen, there must be capacity and openness within organizations for responding to safety communication from stakeholders. © 2022 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1010",
+    "title": "Correction to: The impact of anticipation of new technologies on operational and environmental performance_ a strategy-structure-capabilities-performance perspective (International Journal of Logistics Research and Applications, (2025), 28, 8, (886-909), 10.1080/13675567.2023.2260312)",
+    "journal": "International Journal of Logistics Research and Applications",
+    "journal_impact_factor": 4.101,
+    "doi": "10.1080/13675567.2025.2602278",
+    "abstract": "Article title: The impact of anticipation of new technologies on operational and environmental performance: a strategy-structure-capabilities-performance perspective Authors: Zheng, H., Dai, J., Li, B., and Shou, y. Journal:International Journal of Logistics Research and ApplicationsDOI:10.1080/13675567.2025.2492217 When this article was first published online, Tables 2 and 3 contained errors. The corrected versions of Tables 2 and 3 are provided below. Several textual corrections were also required, and these have now been addressed. Abstract “Data from a high- performance manufacturing database was used to identify 195 firms across 15 countries.” Correction: Data from a high-performance manufacturing database was used to identify 195 manufacturing firms worldwide. Page 888 “Teece, Peteraf, and Leih (2016) even claim that the development of agility has been included as a critical component of organisational goals in this dynamic era.” Correction: Teece, Peteraf, and Leih (2016) argued that agility was a critical organisational goal in that dynamic era. Page 888 “Udenio, Hoberg, and Fransoo (2018) assert that the firm anticipates and acknowledges that digital technologies contribute to agility development. Nevertheless, Park, El Sawy, and Fiss (2017) demonstrate that acknowledging and adapting to evolving technologies may not be sufficient for a firm to develop agility.” Correction: Udenio, Hoberg, and Fransoo (2018) asserted that the firm anticipated that digital technologies would contribute to the development of organisational agility and acknowledged their contribution. Nevertheless, Park, El Sawy, and Fiss (2017) demonstrated that acknowledging and adapting to evolving technologies might not have been sufficient for a firm to develop organisational agility. Page 889 Instead of developing strategic typologies, Venkatraman (1989) focuses on the intensity of strategic characteristics. Correction: Instead of developing strategic typologies, Venkatraman (1989) focused on the intensity of strategic characteristics. Page 889 Besides, Arana-Solares, Ortega-Jiménez, and Alfalla- Luque (2019) empirically investigate whether ANT or technology management enhances operational performance and whether contextual variables, such as environmental complexity and plant size, influence operational performance in the electronics and machinery industrial sectors. Correction: Besides, Arana-Solares, Ortega-Jiménez, and Alfalla-Luque (2019) empirically investigated whether ANT or technology management enhanced operational performance and whether contextual variables, such as environmental complexity and plant size, influenced operational performance in the electronics and machinery industrial sectors. Page 889 In addition, similarly, Machuca, Jiménez, and Garrido-Vega (2011) investigate how plants in the auto supplier industry implement ANT and technology operations practices jointly to improve operational performance when contextual variables such as plant size and degree of product customisation are present. Correction: In addition, Machuca, Jiménez, and Garrido-Vega (2011) investigated how plants in the auto supplier industry implemented ANT and technology operations practices jointly to improve operational performance when contextual variables such as plant size and degree of product customisation were present. Page 890 Bartlett and Ghoshal (1993) claim that managers work as horizontal integrators to distribute knowledge-based resources throughout the entire organisation. Correction: Bartlett and Ghoshal (1993) claimed that managers worked as horizontal integrators to distribute knowledge-based resources throughout the entire organisation. Page 890 Nonaka (1994) asserts that managerial staff who deal with horizontal relationships are the key actors in knowledge generation, as well as the operational side’s primary influences. Correction: Nonaka (1994) asserted that managerial staff who dealt with horizontal relationships were the key actors in knowledge generation, as well as the operational side’s primary influencers. Page 890 Helfat and Peteraf (2003) categorise capabilities as either dynamic capability (DA) or operational capability (OA). Correction: Helfat and Peteraf (2003) categorised capabilities as either dynamic capabilities (DC) or operational capabilities (OC). Page 891-892 Ravichandran (2018) asserts that companies that adopt emerging technologies are able to detect market trends and customer needs and act swiftly. Correction: Ravichandran (2018) asserted that companies that adopted emerging technologies were able to detect market trends and customer needs and to act swiftly. Page 892 Udenio, Hoberg, and Fransoo (2018) assert that firms that are keen to anticipate new technology will recognise demand shifts in the market more quickly; specifically, they reveal that these firms equipped with trailblazing processes in place detect market dynamics more accurately. Correction: Udenio, Hoberg, and Fransoo (2018) asserted that firms that were keen to anticipate new technologies recognised demand shifts in the market more quickly; specifically, they revealed that firms equipped with trailblazing processes detected market dynamics more accurately. Page 892 Udenio, Hoberg, and Fransoo (2018) assert that firms that are keen to anticipate new technology will recognise demand shifts in the market more quickly; specifically, they reveal that these firms equipped with trailblazing processes in place detect market dynamics more accurately. Correction: Udenio, Hoberg, and Fransoo (2018) asserted that firms that were keen to anticipate new technology would recognise demand shifts in the market more quickly; specifically, they revealed that these firms, equipped with trailblazing processes in place, detected market dynamics more accurately. Page 892 Setia et al. (2013), for example, assert that firms with appropriate digital platforms offer numerous customer participation opportunities in the phase of design and testing of products and services to better respond to market demands. Correction: Setia et al. (2013), for example, asserted that firms with appropriate digital platforms offered numerous opportunities for customer participation during the design and testing phases of products and services, enabling them to respond better to market demands. Page 893 Besides, Fredrickson (1985) highlights a significant distinction in the strategic decision-making adopted by experienced managers as opposed to less experienced managers. Correction: Besides, Fredrickson (1985) highlighted a significant distinction in the strategic decision-making adopted by experienced managers as opposed to less experienced managers. Page 893 In addition, Huber (1991, 102) states that ‘more learning has occurred when more and more varied interpretations have been developed, because such development changes the range of the organisation’s potential behaviours’. Correction: In addition, Huber (1991, 102) stated that“more learning has occurred when more and more varied interpretations have been developed, because such development changes the range of the organisation’s potential behaviours”. Page 893 Second, Crocitto and Youssef (2003) assert that agility enhances a company’s capability to provide high-quality commodities and services. Correction: Second, Crocitto and Youssef (2003) asserted that agility enhanced a company’s capability to provide high-quality commodities and services. Page 893 Prange (2021) asserts that agile processes permit greater flexibility to change, and agility enables the organisation to adapt to varying demand volumes (Nar- asimhan, Swink, and Kim 2006). Correction: Prange (2021) asserted that agile processes permitted greater flexibility to change, and that agility enabled the organisation to adapt to varying demand volumes (Narasimhan, Swink, and Kim 2006). Page 893 Ngai et al. (2012) highlight the critical role of conserving energy in the realm of production, while Yusuf et al. (2014) argue that effective management of oil and gas production and distribution will contribute to the resolution of global energy concerns and the management of renewable resources. Correction: Ngai et al. (2012) highlighted the critical role of conserving energy in production, while Yusuf et al. (2014) argued that effective management of oil and gas production and distribution would contribute to the resolution of global energy concerns and the management of renewable resources. Page 893 López-Gamero et al. (2022) emphasise the impor- tance of agility in energy saving. Moreover, to contribute to environmental sustainability, da Rocha, Consoli, and Johann (2014) emphasise the need of reducing the consumption of raw materials. Correction: López-Gamero et al. (2022) emphasised the importance of agility in energy saving. Moreover, to contribute to environmental sustainability, da Rocha, Consoli, and Johann (2014) emphasised the need to reduce the consumption of raw materials. Page 894 Accordingly, Helo (2004) asserts that agile manufacturing would optimise its stock for greater con- trol over the components and raw materials, which will, in a way, serve the materials consumption more effectively. Correction: Accordingly, Helo (2004) asserted that agile manufacturing would optimise its stock for greater control over the components and raw materials, which would, in a way, serve materials consumption more effectively. Page 894 With each subsequent round, the project expanded to encompass additional countries and research groups expressing interest in participation. The HPM project is a world-renowned survey that spans three distinct sectors: electronics, machines, and transportation components. Additionally, this pro- ject incorporates a diverse group of countries. Specifically, in this study, we randomly select samples from the master list from 15 nations (Brazil, Germany, Spain, Israel, Sweden, Italy, Japan, China, South Korea, Finland, Taiwan, the United Kingdom, Vietnam, and the United States of America). Correction: With each subsequent round, the project expanded to encompass additional locations and research groups that expressed interest in participation. The HPM project is a world-renowned survey that spans three distinct sectors: electronics, machinery, and transportation components. This study drew on data from global manufacturing firms, from which we drew a random sample of firms. Page 896 Additionally, we manipulated the country factors. Brazil, Vietnam, Israel, Tai- wan, and China comprise the base group that represents the underdeveloped countries, while Finland, Germany, Italy, Japan, Korea, Spain, Sweden, the United Kingdom, the United States of America, and Switzerland, which represent the developed countries, comprise the dummy control variable. Correction: Additionally, we included another control variable: economic type. Specifically, Finland, Germany, Italy, Japan, Korea, Spain, Sweden, the United Kingdom, the United States, and Switzerland were categorized as developed economics, while others are categorized as the base group, identifying as the emerging and developing economics. Error fixed- discriminating validityPage 896 “To determine the discriminating validity of each construct, we compare construct correlations with their squared AVE, with the squared AVE of constructs being greater than their correlation (Fornell and Larcker1981)” Note: The discriminant validity criterion is the square root of AVE rather than AVE squared (Fornell & Larcker, 1981). Correction: To assess discriminant validity, we compared each construct’s correlations with other constructs to the square root of its average variance extracted. In every case, the square root of the average variance extracted exceeded the inter-construct correlations, providing evidence of discriminant validity across all constructs (Fornell and Larcker, 1981). Original Table: Table 2 (Figure presented.) Correction: error fixed table: (Table presented.) Control variable naming issue Page 898 Table 3 (Figure presented.) Correction: “Developed country” should be replaced by “Developed economy”. Page 895 “This study includes industry type, size, and country type as three control variables based on the existing literature (Ma et al. 2019; Zhang, Linderman, and Schroeder 2012).” Correction: This study includes industry type, size, and economic type as three control variables based on the existing literature. Page 894 “Data collection in each participating country was carried out by a designated research team, which initially compiled a randomised list of manufacturing plants within the targeted industries (Galeazzo, Furlan, and Vinelli 2021).” Correction: Data collection in each place was carried out by a designated research team, which initially compiled a randomised list of manufacturing plants within the targeted industries (Galeazzo, Furlan, and Vinelli 2021). Page 894 “The initial questionnaire was devised in English and subsequently translated into the respective languages of each participating country.” Correction: The initial questionnaire was devised in English and subsequently translated into the respective local languages of the global manufacturing firms. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1011",
+    "title": "Influence of perceived service fairness on relationship quality and switching intention: an empirical study of restaurant experiences",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2013.801407",
+    "abstract": "Restaurants and dining out are an important part of the tourism industry and are a major business in their own right. The purpose of this study was to examine the relationship between perceived service fairness, relationship quality, and switching intention in fine dining restaurants. Data were collected through a convenience sampling method from 164 customers from only fine dining restaurants in the northern region of West Malaysia (Kedah, Perak, Penang, and Perlis States). Unlike all previous studies which have focused exclusively on the role of justice in service failure and recovery, this study considers all-inclusive service delivery contexts. The results of this study showed that all the dimensions of perceived service fairness have a significant relationship with switching intention. In addition, perceived service fairness has a positive relationship with trust in all dimensions except for outcome fairness. Moreover, the results found that among the perceived service fairness dimensions, only procedural fairness and interactional fairness had a positive relationship with commitment and price fairness; outcome fairness was not related to commitment. Finally, the results confirmed the negative and significant relationship between relationship quality (trust and commitment) on switching intention. Managerial implications of these findings are briefly discussed. © 2013 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1012",
+    "title": "Towards a research agenda for post-disaster and post-crisis recovery strategies for tourist destinations: a narrative review",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2014.932758",
+    "abstract": "This paper presents the results of a review of the literature concerning post-disaster and post-crisis recovery for tourist destinations. A total of 64 articles on this topic published in peer-reviewed tourism journals between January 2000 and June 2012 were included in the review. These articles were written on a number of different disaster contexts, including weather-related events (floods and hurricanes), natural disasters (earthquakes and tsunami) and other events (such as pandemics and terrorist attacks). The key themes that emerged included a lack of communication between stakeholders, media sensationalism, the importance of selecting the most effective marketing messages, lack of disaster-management plans, damage to destination image and reputation, and the changes in tourist behaviour following crises and disasters. The review identifies ways to improve the speed and effectiveness of response to disaster, the importance of relationship marketing with loyal customers and the need to quickly repair destination image. Suggestions for future research arising from this review include the urgent need to encourage tourism operators to engage with crisis preparedness and disaster-management strategies and the importance of gaining a better understanding of the consumer response to disastrous events. © 2014 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1013",
+    "title": "Perceiving Airbnb as sharing economy: the issue of trust in using Airbnb",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2018.1440539",
+    "abstract": "Airbnb is a growing business and has received much research attention. However, no research has specifically examined complaints against Airbnb. Understanding complaints serves not as a way to help improve services but provides an insight into guests’ perception of the Airbnb. I examined 664 reviews on sitejabber.com to study the common complaints and whether they are related to the perception that Airbnb is sharing economy. Using a grounded theory approach, I performed a content analysis of complaints. Besides customer service and technology challenges, one major complaint against Airbnb is their faded trust through their experiences. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1014",
+    "title": "A cross-country comparison of accommodation manager perspectives on online review manipulation",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2018.1455171",
+    "abstract": "Accommodation businesses are increasingly dependent on a limited number of reservation platforms. A significant feature of these platforms is guest evaluations, which are transformed into ratings and rankings. As the positioning of the business in comparison to competitors determines customer demand, accommodation managers have considerable interest in maintaining or improving their online reputation. One response may be to engage in manipulation strategies. This paper presents the results of a survey including 270 hotel managers in five countries, Germany, Israel, Norway, Sweden and Switzerland. Managers confirm growing competition as a result of ratings and rankings, and they report that guests are increasingly aware of the importance of reviews. To avert negative online feedback impacts, managers intervene strategically. The paper discusses new market pressures, emergent consumer judgement culture and consumer citizenship, opportunities for legal redress and the emerging importance of reputation management strategies. © 2018, © 2018 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1015",
+    "title": "To smile or not to smile–an eye-tracking study on service recovery",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2018.1502260",
+    "abstract": "The effect of service with a smile on consumers is undoubtedly positive. Yet, in service failure and recovery, this remains unclear. This study examines the importance of morphological characteristics of a smile and different types of smile in service failure and recovery using eye-tracking technology. Results indicated that the degree of mouth activation and the gender of the service worker were crucial factors in service recovery. In addition, eye-tracking data revealed that the longest fixations occurred on smiles with teeth showing and eyes that produced crows’ feet wrinkles. Taken together, this suggests that eye tracking may identify optimal display of smile in service recovery. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1016",
+    "title": "Monitoring the impacts of tourism-based social media, risk perception and fear on tourist’s attitude and revisiting behaviour in the wake of COVID-19 pandemic",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2021.1884666",
+    "abstract": "This research aims to explore the impact of perceived risk, fear and social media on tourist’s attitude, engagement, and revisit intention in COVID-19 pandemic situation. The results of PLS-SEM indicate that fear of COVID-19 and perceived risk has a significant negative impact on attitude towards travelling. Similarly, findings show that perceived risk has a significant negative effect, and social media has a significant positive effect on customer brand engagement during COVID-19 outbreak. Results also reveal that customer engagement and attitude have positive effects on both brand co-creation and revisit intention. The insights acquired from this research offers a mechanism behind fear/perceived risk and social media-based brand engagement, attitude, co-creation and revisit intention in pandemic situation and implications for tourism-reliant destinations to build recovery-strategies/tactics in coping with the impact of pandemics to re-store tourism. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1017",
+    "title": "Understanding the role of firm-generated content by hotel segment: the case of Twitter",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2021.2003759",
+    "abstract": "Although user-generated content (UGC) and firm-generated content (FGC) on social media are vital for firm performance, yet researchers interested in such content have largely examined only UGC’s effects on consumer behaviour. The objective of this research is to expand the understanding of firm-generated content (FGC) in the hotel segment. Specifically, this study tackles two research objectives: to explore key hidden topics embedded in firm-generated content in the hotel segment and (2) to compare topic probability in the hotel segment. We collected data from the Twitter profiles of ten active hotel companies. All tweets available in these ten hotels’ Twitter accounts were crawled, resulting in 175,358 tweets written between 2012 and 2016. We used Python scripts and Twitter API credentials for the data collection followed by sentiment analysis and topic modelling for the investigation. We found three latent topics related to firm-generated content in the hotel segment, including information giving (one-way communication), interactive communication, and service recovery. Moreover, we found strategic messaging in the firm-generated content used by the hotel segment to attract and manage its consumers. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1018",
+    "title": "Tourist satisfaction with online car-hailing: evidence from Hangzhou City, China",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2022.2117684",
+    "abstract": "This study develops a theoretical framework based on the American Customer Satisfaction Index (ACSI) model to examine the formation and determinants of tourists’ satisfaction with online car-hailing. Self-administered questionnaires were used to survey 486 tourists in Hangzhou, China. The results show that the perceived quality and value of online car-hailing have a significant positive impact on tourist satisfaction. Perceived value partially mediated the relationship between perceived quality and tourist satisfaction. Further, perceived quality and perceived value played a chain mediating effect on the relationship between tourist expectation and tourist satisfaction. In addition, this study verified that satisfaction negatively impacts complaints and positively impacts loyalty, and complaints negatively impact loyalty. Management implications and recommendations for future research are also discussed. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1019",
+    "title": "The dynamics of perceived justice and its outcomes in the online tourism sector: inter-relationships and temporal and carryover effects",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2023.2280145",
+    "abstract": "The consequences of perceived justice are dynamic. The way in which perceived justice is evolutionarily dynamic in customers’ emotional states and loyalty intentions remains unclear, particularly in studies distinguishing between initial and final recovery phases. Using two time-lag intervals targeting the same respondents, our findings show that perceived justice–recovery satisfaction increases over time; however, the other two direct linkages, perceived justice–customer forgiveness and perceived justice–loyalty intentions, remain unchanged. Interestingly, the recovery satisfaction–loyalty intention linkage is stable, whereas the customer forgiveness–loyalty intention linkage decreases incrementally. Additionally, only the carryover effect of perceived justice is significant, but the other three carryover effects do not exist. Our results suggest that from the initial to the final recovery stage, managers must redesign their overall recovery strategy based on customer responses and behaviors. © 2023 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1020",
+    "title": "Game analysis of service quality evolution of online tourism supply chain under PPI participation",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2024.2305254",
+    "abstract": "While platform protection insurance (PPI) is extensively employed as an insurance policy in many sharing platforms, research on its influence on the tourism supply chain is lacking. At this point, the quality of online tourism services has taken the brunt of consumer complaints, and new solutions are desperately needed. So, would PPI's involvement increase the quality of online tourism services? In this paper, by constructing an online tourism supply chain consisting of a Tourism Supplier (TS), an Online Tourism agency (OTA), and consumers, we study the conditions of PPI introduction and its impact on online tourism service quality and analyze the behavioral decisions of online tourism supply chain subjects. The study found that in the tourism market with a small amount of demand change, OTA is more willing to introduce PPI, and TS is more inclined to improve service quality, which then lowers the service cost of TS and the level of disclosure of information, the stronger the willingness of OTA to introduce PPI, and the introduction of PPI in the lower PPI penetration rate of the tourism market has a more promotive effect on the TS with lower service cost. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1021",
+    "title": "Mental readiness and travel choices in crisis recovery",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2024.2309153",
+    "abstract": "Although crisis communication and recovery strategies have been studied extensively, the coping mechanisms of consumers during the recovery phase of a product-harm crisis have been insufficiently examined. This paper aims to investigate the role of consumers’ health beliefs and mental readiness during travel in a health-related crisis, which constitutes a subset of product-harm crises. To achieve this, the Beliefs-Mental Readiness-Intention (BMRI) model was developed, and three analyses were conducted to validate this conceptual framework. The SEM established the general psychological mechanism of individuals’ intention to consume travel-related products during the crisis, introducing two newly developed measures: perceived benefits of protection and perceived stigma of consuming products. The second analysis identified a weak moderation effect of diagnosis status in the model. Finally, the theoretical and managerial implications of the research findings were comprehensively discussed. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1022",
+    "title": "Does being there still matter after a service failure? The impact of robots’ physical presence on customer satisfaction",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2024.2376995",
+    "abstract": "The increasing integration of robots in the hotel and tourism industries has led to the deployment of robots with varying physical characteristics in a range of frontline and backstage tasks. Despite this trend, the influence of physical presence, a fundamental element of a robot's physical attributes, on the customer service experience following a service failure has not been thoroughly investigated. This study intends to address this research void by conducting three experiments to exhibit the positive impact of physical presence on the customer service experience after service failures. In addition, the study identifies a mediating path (parasocial relationship) and two boundary conditions (service outcome and service type) that determine the effect of physical presence. These findings contribute to the knowledge of robotic services and provide insights for selecting robots with suitable physical features in service design. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1023",
+    "title": "Perception of customer satisfaction and complaints based on BERTopic and interpretable machine learning: evidence from hotels in Xi’an",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2024.2389308",
+    "abstract": "This study aims to investigate the topics of customer satisfaction and complaints and explore their role in review sentiment prediction by using deep learning and interpretable machine learning methods. Specifically, this study first uses a BERT-based method for topic clustering and embedding, a factor analysis for topic feature extraction and dimensionality reduction and an oversampling method for the imbalance problem. Further, five types of machine learning methods are utilised to forecast review sentiment. To improve the interpretability of the machine learning model, we employ an interpretable framework to explore the role of topic features in review sentiment prediction. The results indicate that customers’ satisfaction mainly focuses on perfect conference facilities and delicious Chinese cuisine, while customers mainly complain about the quality of service, the attitude of staff and the accessibility of the hotel. In addition, ‘air quality and traffic’ is the most important factor influencing the sentiment in reviews. These findings suggest that hotel managers should focus more on the accommodation experience of customers rather than the value-added experience. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1024",
+    "title": "The evolution of customer defection intentions in the online travel agency industry",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2025.2473057",
+    "abstract": "The drivers of customer defection intentions following service failures are dynamic. However, scant research has focused on how these intentions evolve in response to early and later-stage recovery efforts. Using a three time-lag interval survey design, our findings demonstrate that defection intentions are a function of brand distrust in the early recovery stage. However, these intentions change in later stages as the effects of perceived recovery and brand avoidance strengthen. Specifically, within the early stage, brand distrust is a central cue for customer defection, but in later stages, perceived recovery and brand avoidance strongly facilitate customer defection intentions. Over time, a notable theoretical implication is that brand distrust and avoidance can effectively bridge the attitude-based mediators of perceived recovery on defection intentions. Therefore, these findings can be used to predict both the brand and the customer relationship of the mechanism of a dominant defection logic in a recovery category. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1025",
+    "title": "The role of inferred motive in shaping tourists’ reactions to intentional failures",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2025.2483815",
+    "abstract": "Intentional failures, which refer to purposeful transgressions by the organisation or its employees against customers, are common across different industries including tourism, yet there is a lack of research on tourists’ perceptions and reactions to such failures. Using an experimental approach, we find that compared with unintentional failures, tourists are more sensitive to intentional failures as they lead to significantly higher electronic negative word of mouth (eNWOM) and revenge behaviours. We further show that intentional failures are less harmful when the inferred motive is positive (vs. negative). Drawing on psychological contract theory, we demonstrate the key role of perceived betrayal as the mechanism to explain these effects. The insights, though not legitimising intentional failures, offer managerial guidance particularly when tourism and hospitality firms must bow to external pressures. Specifically, managers in the tourism industry can reduce the negative consequences of intentional failures by highlighting the potential benefits for tourists, thus creating the impression of a positive motive. © 2025 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1026",
+    "title": "Public compensation and private apology: examining how service recovery influences consumer forgiveness in group service failures",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2025.2535561",
+    "abstract": "This study addresses the gap in research on consumer forgiveness after group service failures in tourism and hospitality. Drawing on research in social comparison and resource exchange theory, it explores how recovery type and mode impact forgiveness by introducing a new concept of service recovery publicity. Through three scenario-based experimental studies, we find a significant interaction effect between service recovery type and recovery publicity on consumer forgiveness. Specifically, utilitarian recovery is more effective publicly, whereas symbolic recovery works better privately. Mediation analyses reveal that perceived fairness and sincerity are key mechanisms in public and private conditions, respectively. Additionally, the interaction effect weakens in outcome failure condition. These findings offer both theoretical insights and practical guidance for aligning recovery types with communication modes. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1027",
+    "title": "Managing service failures of hotel robots by combining the Kano model with the service blueprint",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2025.2550645",
+    "abstract": "This study aims to analyse the failure attributes related to the hotel robots with different functionalities, classify them using the Kano model and create a service blueprint for managing hotel robot failures. The attributes of robot failures are derived from previous research and the Critical Incident Technique method. Subsequently, these attributes are categorised using the Kano model, with data obtained from a questionnaire completed by 477 individuals who have interacted with hotel robots. This study finds that there are 32 failure attributes and most occurred with reception robots, self-check-in out robots, room robots and delivery robots. These failure attributes can be classified into attractive quality, one-dimensional quality and must-be quality by the Kano model. Some Kano quality categories of failure attributes show significant differences based on the travel purpose. Additionally, this study develops a service blueprint for managing failures of hotel robots with Kano quality types and customer dis/satisfaction coefficients. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1028",
+    "title": "Emotional labor resources and hotel employee well-being: A conservation of resources theory perspective",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2025.2557520",
+    "abstract": "Using Conservation of Resources theory, this study investigates the intricate relationships between hotel employees’ emotional labour, well-being (mindfulness, job satisfaction, quality-of-life), and turnover intentions. A survey of 393 Korean hotel staff revealed that coping methods, proactive customer service, and service recovery work positively influence mindfulness and job satisfaction. Emotional regulation had negative effects. Comparative analyses uncovered key differences between low and high turnover risk groups. The findings emphasise the importance of cultivating a supportive work environment and the central role of job satisfaction in enhancing overall employee well-being. The study offers valuable insights for hotel managers to promote staff welfare and retention. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1029",
+    "title": "Developing control charts in monitoring service quality based on the number of customer complaints",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2013.874198",
+    "abstract": "Service industry has become the primary driving force behind global economic growth. This means that ensuring service quality is an important issue. Unfortunately, the process of providing services includes a number of variables that are difficult to control. As a result, determining the means to ensure the quality of service is a popular theme of research. In the past, researchers have always used the proportion of customers with complaints to propose a service performance index for the evaluation of service quality; however, the index alone cannot guarantee timely monitoring. For this reason, based on the number of customer complaints, this study proposes a theory-based service quality control chart to assist company management in the timely monitoring of customer satisfaction to ensure that service quality is being maintained. According to the characteristics of the service industries, we divided them into those with large sample sizes and those with small sample sizes. For each type, we developed an appropriate service quality monitoring model and explained the operating procedures of the control charts to provide managers with a means to comprehensively monitor service quality. © 2014, © 2014 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1030",
+    "title": "Tourism service quality improvement – ‘the early bird catches the worm’",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2014.886371",
+    "abstract": "The purpose of this study is to build an integrated important-performance and gap analysis-quality function deployment (IPGA-QFD) model with outperforming service quality improvement capabilities in (1) identifying key service failures and (2) seeking the most effective recovery solutions that can handle numerous existing key failures to meet customer demands at the highest level regarding travel agencies' internal management, network service, and local tour leaders. For data collection, survey questionnaires were sent to customers in Northern Taiwan using modified versions of the SERVQUAL, E-S-QUAL, and E-RecS-QUAL measurement scales. 305 valid responses of 400 distributed questionnaires were obtained (76.25%). The findings effectively point out key service failures and the most efficient improvement solutions. Travel agencies should take these findings into account when attempting to enhance overall performance and customer loyalty. This study is the first to integrate and modify the IPGA and QFD concepts to provide academicians and practitioners with an innovative method and useful guidelines for promoting service quality and sustainable competitiveness. © 2014 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1031",
+    "title": "E-service quality perceptions: an empirical analysis of the Chinese e-retailing industry",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2014.933555",
+    "abstract": "China will become the largest online retail market in the world in the near future. Chinese consumers may have their own patterns of online consumption and behaviour that are different from those of consumers in the West. However, most research on consumer behaviour and e-service quality relies on theoretical frameworks developed in Western societies. The aim of this paper is to propose and empirically verify a conceptual framework for how customers judge e-service quality in the context of the Chinese e-retailing industry. Meanwhile, the key dimensions of e-service quality are searched with a survey to understand the e-service quality perceptions of Chinese consumers to enhance their e-satisfaction and e-loyalty. The empirical results suggest that e-retailers should pay more attention to process quality and service recovery in the context of Chinese culture and Chinese personality with high uncertainty avoidance taking consideration of service guarantee as one aspect. © 2014 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1032",
+    "title": "A case study on FMEA-based quality improvement of packaging designs in the TFT-LCD industry",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2015.1004308",
+    "abstract": "Nowadays enterprises are encountering diversified customer requirements, and using market information well is critical to product development. It is extremely important to conduct risk planning, prevent potential failures, and reduce uncertain factors by transforming customer requirements into exact development targets. This study is based on the method of quality function deployment (QFD) and failure modes and effects analysis (FMEA). The package design for semi-finished products of thin film transistor-liquid crystal display (TFT-LCD) modules in the photoelectricity industry was selected as a case study. First, customers conducted a questionnaire survey which helped determine the items they demanded. Second, QFD has been combined with FMEA to serve as the standard of evaluating the importance of customer requirements. Through mutual assessments and investigations by QFD and design failure mode and effects analysis (DFMEA), the key factors of a product design can be determined. The results of design of experiments verified that this method indeed effectively reduced defective products and customer complaints. The average number of customer complaints per year has been reduced from 9.5 to just only one after the introduction of the proposed method, which has been verified to assist in rapidly developing new products during the early design stage. This approach also reduces possible losses and enhances competitiveness. © 2015 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1033",
+    "title": "The influence of customer participation on service failure perceptions",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2015.1090290",
+    "abstract": "This study explores the role of three types of customer participation (mental, emotional and physical) on service failure perceptions of customers. Based on 472 scenario-based online surveys, it is established that customer participation in the service (co-production) causes customers to produce softer/milder responses after experiencing a service failure, though there are variations according to the type of participation. In general, customer participation in the service reduces customers' tendency to make complaints to hotel management, writing negative comments on Internet blogs and the intention to leave the hotel. © 2015 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1034",
+    "title": "A quality requirement analysis method using content analysis of SNS",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2016.1187990",
+    "abstract": "As the number of social networking services (SNS) users rapidly increases due to the development of mobile technologies, SNS have become major communication channels for products and services. SNS users are posting their opinions of products and services quickly. Thus, SNS can be used to quickly and accurately identify specific requirements for products and services from a consumer perspective. This paper presents a requirement analysis method using content analysis and a content analysis information system. Using the proposed requirement analysis method, this study compares essential functions of and consumer emotions towards two target smart phones by analysing frequently used keywords in SNS. The results show that smart phone users have different interests in the functions of the two products and different reactions to special features even though the manufacturers emphasise all these features. In addition, this study compares the results of the requirement analysis method with that of the Kano survey to examine the consistency between them. Smart phone manufacturers can obtain information about user demands and complaints regarding smart phone functions using the proposed method. Based on these findings, the gap between manufacturer and user opinions can be reduced to better reflect user requirements in smart phone development. © 2016 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1035",
+    "title": "Challenges and design of a data-oriented complaint and failure management",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2016.1188000",
+    "abstract": "Companies have to address several crucial issues to remain competitive in a fast developing, digitalised and connected world. Due to connected machinery and new sources of complaint and failure data the amount of acquired information is constantly increasing. Furthermore customer requirements experienced a strong tendency to individualised products which led to an increased data complexity. To process this kind of information and prepare it for sustainable improvements in production and product developments a data-driven design of an intelligent complaint and failure management (CFM) is inevitable. This paper builds up on existing approaches for CFM and outlines the global challenges which have to be addressed in terms of a continues improvement process. Therefore a data-driven reference process is introduced. Furthermore an integration of this process requires different enablers (e.g. IT infrastructure, failure coding, key performance indicator sets, etc.). To emphasise how the outlined challenges can be addressed in practice several concrete examples are sketched out. The central findings of this paper are a data-driven reference process for CFM just as the determination of the necessary tools and infrastructure. It exceeds the state-of-the-art process designs in terms of data orientation, the outlined enablers as the necessary supporting background. © 2016 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1036",
+    "title": "Development of a quantification model for the cost of loss of image with customer complaints",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2017.1289815",
+    "abstract": "Despite the difficulty in measuring hidden quality costs, we must be aware not only of their existence, but also of their importance. Not surprisingly, they have been the causative factor in the closure of many companies because they are doubly dangerous. One the one hand, they represent very significant quantities of money and, on the other, they remain hidden, like the submerged portion of an iceberg [Campanella, J. (1999). Principles of Quality Costs: Principles, Implementation and Use. Milwaukee, WI: ASQ Quality Press]. Possibly one of the most harmful hidden quality costs, and most difficult to quantify, is the cost of loss of image (CLI) a company suffers because of faults detected by its customers. This paper develops an original tool that, with the use of fuzzy logic as an alternative to probabilistic theory, is capable of facilitating the quantification of the CLI in any company from the observation of its customer complaints. Once the theoretical model is presented, we proceed with its experimentation, making use of a case study as research methodology. © 2017, © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1037",
+    "title": "Does service recovery affect satisfaction and loyalty? An empirical study of medical device suppliers",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2017.1369351",
+    "abstract": "Successful supply chain management can provide hospitals with new competitive advantages. Customer loyalty or repeat purchasing is critical to the survival and success of medical device suppliers. Previous studies have confirmed that trust and commitment are considered necessary components for maintaining a long-term service relationship. Thus, the purpose of this study was to assess the relative effects of distributive justice (DJ), procedural justice (PJ), and interactional justice (IJ) on satisfaction with service recovery and to examine the relationships between recovery satisfaction and three relationship outcome variables: trust, commitment, and loyalty. In addition, in the research model, service recovery justice was proposed as a formative second-order construct driven by DJ, PJ, and IJ. This study conducted a survey of medical centres, regional hospitals, and district hospitals in Taiwan and used structural equation modelling to show that recovery satisfaction was a significant positive predictor of trust and commitment and that commitment was a significant positive predictor of loyalty. The study also showed that the three dimensions of justice were crucial components of service recovery justice, which in turn had a strong positive effect on recovery satisfaction for medical device suppliers. The paper concludes with an examination of the theoretical and practical implications of our study. © 2017, © 2017 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1038",
+    "title": "The influence of colour of lighting on customers’ waiting time perceptions",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2018.1465814",
+    "abstract": "Customers’ waiting time is one of the most important determinants of service quality perceptions and their overall satisfaction with a particular service. This study aims to investigate the influence of colour of lighting on customers’ waiting time period perceptions. Based on a study with 68 participants, it was determined that the perception of the length of the waiting time before the delivery of food in a restaurant showed significant differences according to the colour of the lighting in the service environment. When the colour of lighting in the restaurant was green, the customers perceived the waiting period relatively shorter. © 2018, © 2018 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1039",
+    "title": "Important drivers for customer satisfaction–from product focus to image and service quality",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2019.1594756",
+    "abstract": "In today's volatile market economies, economic and social benefits of the competition must be evaluated from various financial and non-financial aspects. Among these aspects, Customer satisfaction measurements are recognised as the non-financial performance indicator that is the most widespread. A high level of customer satisfaction is argued to lead to stronger company image, protection of current market share, increased customer loyalty, decreased customer complaints and strengthened financial performance. Thus, understanding the drivers behind how customer satisfaction evolves over time is therefore crucial. This paper presents a longitudinal quantitative study based on customer perception data from the Swedish market research consultancy Svenskt Kvalitetsindex AB. A PLS-SEM analysis is performed to unravel how important latent variables drive customer satisfaction over time. Study findings indicate that it has been a paradigm shift during the last decade–product quality is substituted by service quality as one of the most crucial drivers for customer satisfaction throughout industries and societal sectors. The study findings suggest a need for new principles, practices and tools to enhance internal customer centricity and strengthen satisfaction and loyalty. © 2019 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1040",
+    "title": "Benefits from the standardisation of the complaint management system",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2019.1633295",
+    "abstract": "This research provides new developments in the conceptualisation of the complaint management system by examining the benefits of the standardisation of the complaint management process. In line with a mechanistic approach of organisational behaviour, we posit that standardisation of complaint handling can help to overcome defensive behaviour by employees and managers, who can view receiving complaints as a decidedly negative experience. Specifically, we investigate the influence of three types of guidelines–procedural, behavioural, and outcome–on achieving fairer solutions for customers and, consequently, greater satisfaction with the system. The model proposed in the present research is tested considering the managers’ perspective and using data from a representative sample of manufacturing companies covering multiple industries. Our findings provide novel and interesting insights into the factors to which managers in manufacturing firms should pay closer attention when designing an effective complaint management system. All three types of guidelines help to explain the perception of justice in the solution of complaints and, thus, customer satisfaction, but important differences exist for the different types of guidelines and their corresponding dimensions. © 2019 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1041",
+    "title": "Research on the influence of compensation methods and customer sentiment on service recovery effect",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2020.1856650",
+    "abstract": "With the development of Internet technology, online retailing has become a part of people's life, but there is still a lack of research on the service recovery of online retail. This study adopts the scenario experiment method to conduct an empirical study. The service recovery scenario is designed as 2 × 2, the subjects are required to choose a most similar scene and fill in the questionnaire according to their own service recovery experience of online shopping service. This study discusses the influence mechanism of compensation methods and customer sentiment on service recovery effect in online retail service recovery situation. The results show as follows: compared with utilitarian compensation, spiritual compensation has a greater positive impact on customer positive emotions, and spiritual compensation is more effective in reducing negative emotions; positive and negative emotions of customers have positive and negative effects on customer satisfaction after service recovery, and customer satisfaction after service recovery is the preparation and prelude to the formation of customer loyalty. The research results can provide a reference for online retailers to formulate feasible and effective service recovery strategies, improve the effect of service recovery, and promote the healthy development of online retail business model. © 2020 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1042",
+    "title": "A century of research on complaints: longitudinal bibliometric analysis of WoS (1900–2019)",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2022.2030213",
+    "abstract": "Although the topic ‘complaint’ has been the subject of numerous studies, the present article stands out for examining the conceptual, social, and intellectual evolution of this field of research through a longitudinal global analysis from 1900 to 2019. Additionally, a comparative analysis of four different periods of time was developed. To this end, 2,084 scientific articles published in the Web of Science (WoS) were retrieved. The SciMAT tool was used to analyse them through scientific maps of co-words, citations, and the h-index. Performance analysis and scientific assignment were combined. Our results, based on bibliometric indicators, led us to conclude that research on complaints can be separated into nine main research blocks that have evolved differently over time: Satisfaction, Behaviour, Customers, Countries, Communication, Data analysis, Business, Law, and Theories. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1043",
+    "title": "Research on the impact of consumer forgiveness on consumer continuous trust",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2022.2092468",
+    "abstract": "Online shopping has become an important part of people’s life, but the current academic circles still lack attention to online shopping service recovery. Based on the online shopping service recovery scenario, this study takes the scenario experiment as the research method, discusses the influence mechanism of consumer continuous trust from the perspective of compensation and consumer forgiveness, and tests the moderating effect of online store reputation. Through empirical research, this paper obtains the following research findings: Both utilitarian compensation and spiritual compensation have a positive impact on consumer forgiveness, but spiritual compensation has a greater positive impact on consumer forgiveness; consumer forgiveness has a positive impact on consumer continuous trust, and consumer forgiveness plays a mediating effect between utilitarian compensation, spiritual compensation and consumer continuous trust; online store reputation plays a positive moderating effect in the impact of consumer forgiveness on consumer continuous trust. The research results of this paper are conducive to deepen the research on the relationship between compensation methods and consumer forgiveness, better explain the role of consumer forgiveness, consumer continuous trust and online store reputation in the impact mechanism of online shopping service recovery, and promote the healthy development of online shopping business model. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1044",
+    "title": "Beyond cash: a user-centric approach to mobile payment growth, service failure tolerance and continuance intention",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2024.2407932",
+    "abstract": "Mobile payment systems in developing economies face challenges in adoption and engagement, owing to infrastructural constraints, cultural affinity towards cash, and limited financial literacy. This study delves into the role of user-perceived co-production equity, which is a sense of fairness and influence in service development, in shaping user behaviour in mobile payment systems. We conducted the study on 436 mobile payment users through online and offline surveys, applying PROCESS and fuzzy set qualitative comparative analyses. The findings of this study underscore the importance of a fair co-production process, which positively influences service recommendations, resilience to disruptions, and sustained usage over time. User relationship satisfaction partially mediates these relationships, whereas service credibility strengthens them. Fuzzy set qualitative comparative analysis confirms that co-production equity is a necessary condition for user advocacy and continuance intention. We propose a strategic framework for service providers and policymakers, advocating for a shift towards genuine user co-production characterised by transparency, robust feedback mechanisms, and community engagement initiatives. This user-centric approach not only fosters trust and drives adoption but also significantly mitigates churn rates, navigates cultural barriers, and fosters sustained user engagement, thereby advancing financial inclusion in developing countries. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1045",
+    "title": "Breaking up with your bank: the role of competitors’ effective advertising in customer switching intention",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2024.2431117",
+    "abstract": "The discrepancy between customer expectations and experiences can result in significant adverse consequences. This study, exploratory in nature, utilised the structural equation modelling technique to reveal how competitors’ effective advertising influences customers’ expectations of in-using banks, triggering their switching intentions in line with the expectation-confirmation theory, with a dataset of 471 responses from retail bank customers in China via an online semi-structured survey with a convenient and non-probability method. This study revealed that competitors’ effective advertising not only directly influences customers’ bank switching intentions but also indirectly impacts customers’ switching intentions by influencing customers’ expectations of price and service quality. The study also found that the price was positively correlated with customers’ perceptions of service failure and customers’ switching intentions, while service failure is associated with customers’ switching intentions. This study is the first attempt in the literature to examine customers’ decisions to switch banks that focus mainly on competitors’ effective advertising and provide in-depth insights. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1046",
+    "title": "Online reviews analysis in product defects and customer requirements via two-stage model",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2025.2478206",
+    "abstract": "Online reviews offer a valuable source of information for identifying product defects and understanding customer requirements. However, previous research often focused solely on explicit quality issues within a single platform, while overlooking the distinct characteristics of various platforms. In practice, each platform features unique communication styles, and content types, leading to diverse but valuable insights for manufacturers. This study proposes a novel online review-driven modelling framework that utilizes multi-platform with data integration and fully leverages rich user-generated content (UGC) to capture the customer insights. The methodology consists of two stages: first, the analysis of after-sales product complaints to identify specific product defects and construct a Failure Modes and Effects Analysis (FMEA) database through heterogeneous information fusion; and second, the development of a strength-frequency Kano model to classify customer requirements extracted from online forums, with the goal of optimizing customer satisfaction. Case studies on new energy vehicles validate the effectiveness of the proposed method and offer valuable business insights for stakeholders. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1047",
+    "title": "Unveiling the multidimensional factors behind service failures in OMS: a comprehensive analysis of user complaints",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2025.2578683",
+    "abstract": "The advent of Internet-based healthcare has transformed online medical services (OMS) into a standard option for individuals seeking medical advice. While these services significantly enhance patient experience through convenience and efficiency, instances of service failures can result in patient dissatisfaction, ultimately eroding trust and loyalty towards online healthcare. This study examined the critical causes of service failures occurring on two leading online medical platforms in China: Good Doctor and WeDoctor. Using grounded theory, it analyzed 903 user complaints, identified 75 service failure events, and subsequently extracted 12 influencing factors, which were categorized into three dimensions: doctor-related, platform-related, and user-related. Furthermore, through the application of the DEMATEL-ISM method, five key influencing factors were identified from the twelve: relevant mechanisms, consultation workflow, supervision safeguards, perceived trust, and psychological expectations. These findings not only reveal the multidimensional causes of service failures but also provide targeted recovery strategies. Their implementation can mitigate service failures, enhance user experience, and strengthen platform loyalty, thereby promoting the sustainable development of the online healthcare industry. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1048",
+    "title": "When customers avoid, do they return? Insights from service recovery in food delivery platforms",
+    "journal": "Total Quality Management and Business Excellence",
+    "journal_impact_factor": null,
+    "doi": "10.1080/14783363.2026.2619875",
+    "abstract": "This study investigates how customers’ service avoidance tendency evolves after service failures in food delivery platforms and how it influences key behavioural outcomes. Using a longitudinal design with three survey waves, we examined the dynamic effects of avoidance on customer commitment, switching intention, and repurchase intention. Results from latent growth modelling show that avoidance follows a declining trajectory after recovery efforts, and its reduction significantly strengthens commitment and repurchase intentions while weakening switching intentions. However, commitment did not directly translate into higher repurchase or reduced switching in later recovery phases, suggesting that decreasing avoidance plays a more decisive role than relationship strength. These findings advance service recovery research by emphasising the dynamic nature of avoidance and extending approach–avoidance conflict theory to digital platform contexts. Managerially, they highlight the importance of proactive recovery strategies that directly reduce avoidance tendencies to improve long-term retention. © 2026 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1049",
+    "title": "Making It Right the Third Time? Pursuing Satisfaction and Loyalty in a Double Service Recovery",
+    "journal": "Scandinavian Journal of Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15022250.2015.1067643",
+    "abstract": "The study focuses on the complex double service recovery in the context of package tourism. The purpose is to analyze how the first and the second service recoveries affect recovery satisfaction and how satisfaction, in turn, influences customer loyalty. The data consist of an online survey (n = 220) and path analysis is used to test the hypotheses. According to the results, all justice dimensions (distributive, interactional, and procedural) of the second service recovery had a positive effect on recovery satisfaction. Also, the first recovery had a positive, yet weak, effect on recovery satisfaction. As hypothesized, recovery satisfaction positively affected customer loyalty, that is, positive word-of-mouth behavior and repurchase intention. Even though the distributive justice had a strongest effect on satisfaction, the tour operators should focus especially on interactional justice, which besides satisfaction, had a direct effect also on word-of-mouth behavior and repurchase intention. The study contributes to the academic literature by providing a holistic view on the double service recovery and offers valuable information to tour operators striving for efficient recovery processes. © 2015 Taylor & Francis."
+  },
+  {
+    "article_id": "CS_1050",
+    "title": "Interactive value formation: drivers and outcomes from Airbnb guests’ perspectives",
+    "journal": "Scandinavian Journal of Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15022250.2020.1828163",
+    "abstract": "This study explores interactive value formation, particularly the underlying drivers of three value outcomes in the Airbnb context: co-creation, co-destruction and co-recovery. The study focuses on reviews posted online by Airbnb guests in English. These posts contained customers’ positive and negative experiences with Airbnb on Trustpilot. The data analysis uncovered two main themes that reflected the drivers of value co-creation, co-destruction and co-recovery (company’s customer service and hosts’ actions). First, after a service failure, many guests experienced value co-destruction because they felt that Airbnb’s customer service agents could not solve their problems in a timely and proper manner, while the use of successful recovery efforts by the service agents served as an antidote to value co-destruction, thereby contributing to value co-recovery. Second, host’s friendly behaviour, including prompt communication between the host and the guest, led to value co-creation. On the contrary, inadequate communication and unethical actions by the host generated value co-destruction among the guests and resulted in a decline in their well-being. The findings suggest that particular value dimensions can individually act as a source of either value co-creation or co-recovery, while their inadequate integration in the interactive value formation processes leads to value co-destruction. © 2020 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  }
+]

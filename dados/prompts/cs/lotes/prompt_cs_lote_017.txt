@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0801",
+    "title": "Identification of time-evolving product opportunities via social media mining",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2020.120045",
+    "abstract": "This study suggests a social media mining approach for identifying time-evolving product opportunities for product improvement, customer complaint management, and competitive intelligence via event detection and tracking (EDT) and sentiment analysis. This approach applies an aging theory-based EDT algorithm to online product reviews to detect the creation of customer-stated events as groups of similar reviews and track their growth and extinction. Next, the approach uses sentiment analysis and an opportunity algorithm to evaluate time-evolving events and provides quantified clues regarding product-development directions based on events with high opportunity. To show the workings of the proposed approach, a case study involving smart speakers is presented. We expect that the approach will contribute to identifying time-evolving product opportunities from large-scale social-media data in addition to enabling the real-time monitoring of customer needs in rapidly evolving product environments. © 2020 Elsevier Inc."
+  },
+  {
+    "article_id": "CS_0802",
+    "title": "A composite indicator index as a proxy for measuring the quality of water supply as perceived by users for urban water services",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2021.121300",
+    "abstract": "The objective of this study is to develop a composite indicator (CI) to measure the quality of water supply based on the variables that are considered to affect users’ perceptions of water supply quality. The proposed CI includes six relevant aspects that determine users’ perceptions of water supply quality (network quality, water quality, water price, complaints, inconvenience caused by upgrading the network, and continuity of service) in a simple, economical, and objective way, using multi-criteria decision analysis (MCDA) with weights based on data envelopment analysis (DEA). The CI was applied to 32 municipalities in the metropolitan area of Valencia (Spain). The results show the high quality of the water supply service in this area. The use of this CI to measure the quality of the water supply service may prove useful for public institutions and managers of urban water supply, giving them an instrument to improve the management, efficiency, and quality of the water services they provide. © 2021"
+  },
+  {
+    "article_id": "CS_0803",
+    "title": "Service exchange activities in the sharing economy: Professional versus amateur peer providers",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2023.122816",
+    "abstract": "Motivated by the need to enhance customer relationship management in the sharing economy, this paper identifies and explains heterogeneity in the service activities of different peer providers. Drawing on social exchange theory and using data gathered from 3027 properties on a Chinese online home-sharing platform, we compare different peer providers' use of economic and social exchange activities and explore the differential impacts of these exchange activities on customers' response behaviors. The results demonstrate that professional hosts place more emphasis on economic exchange activities (i.e., pricing and service response), while amateur hosts focus on social exchange activities (i.e., social interaction and customer-perceived social belonging) more strongly. Both economic exchange and social exchange activities have significant effects on customers' purchasing behaviors, but only social exchange activities have significant effects on customers' cleaning behaviors. Furthermore, collaborative rule depth has significant moderating effects on relationships between these exchange activities and customers' response behaviors. This paper contributes theoretically to discussions of peer-provider heterogeneity, service exchange activities, and governance in the sharing economy. We discuss the implications of our findings for sharing economy platforms and peer providers—for example, specifying when rule customization might be used most effectively. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CS_0804",
+    "title": "Heterogenous evaluations of autonomous vehicle services: An extended theoretical framework and empirical evidence",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2023.122952",
+    "abstract": "Amidst rising interest in autonomous vehicle services, extant literature reveals a paucity of research examining: 1) both cognitive and emotional evaluations; 2) characteristics of the service context (e.g. risk) and artificial intelligence (e.g. autonomy); and 3) heterogenous outcomes. Moreover, there are mixed findings on autonomous vehicle adoption/resistance. To address these gaps, we develop the Customer Responses to Unmanned Intelligent-transport Services based on Emotions and Cognitions (CRUISE-C) framework by extending the earlier CRUISE framework and building on the Elaboration Likelihood Model. The framework further delineates four segments, which differ in cognitive and emotional evaluations of fully autonomous vehicle services. We test CRUISE-C using three experimental studies. Study 1 shows that the resistant segments consider fully autonomous (vs. regular) vehicle services to be more vulnerable, and less reliable and convenient. Study 2 shows that a service failure involving fully autonomous (vs. regular) vehicles does not increase negative emotions in any segment, but attenuates perceived severity in Segment 1 (“Avoiders”) and slightly amplifies perceived severity in Segment 4 (“Aficionados”). In Study 3, a machine learning model reveals segment membership as the strongest predictor of individuals' readiness to adopt autonomous vehicles, followed by reliance on taxis, female vs. male, and cognitive and emotional evaluations. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CS_0805",
+    "title": "Examining consumer adoption of social commerce: An extended META-UTAUT model",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2024.123956",
+    "abstract": "Social commerce has evolved into a mainstream channel for marketers and businesses for selling products online. However, consumers in many developing economies have yet to fully adopt social commerce technology. This research, therefore, aims to develop and empirically validate a conceptual model for understanding the factors influencing consumer adoption of social commerce in Bangladesh using an adapted and extended version of the Meta-UTAUT model. Analysis was undertaken to determine the appropriateness of external constructs such as trust, social support, anxiety, grievance redressal, innovativeness, and continuous participation intention. This research collected data from 402 social commerce users from Bangladesh to test and validate the proposed research model. The results suggest that performance expectancy, effort expectancy, innovativeness and trust have a direct influence on consumer attitude, whilst social influence, grievance redressal, facilitating conditions, social support, anxiety, and attitude, significantly influence usage behavior. The results also found that usage behavior is a strong predictor of continuous participation intention. This research contributes to existing knowledge by conceptualizing and validating a technology adoption model, which emphasizes the role of anxiety and grievance redressal in consumer acceptance of social commerce. © 2024"
+  },
+  {
+    "article_id": "CS_0806",
+    "title": "When things fall apart: Exploring brand hate in influencer endorsements",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2025.124321",
+    "abstract": "Driven by the growing popularity of live streaming, brands increasingly favor influencers for their extensive reach. However, realizing broader brand value requires a comprehensive understanding of not only the positive but also the negative implications of influencer endorsements. To address this gap, this study introduces and validates the impact of influencer-brand incongruence, symbolic incongruity, negative past experiences, ideological incompatibility, and negative publicity on attitudes towards both influencers and brands. An asymmetric model is employed to uncover the antecedents of consumer brand hate. A multi-method approach is adopted: Study 1 applies the Delphi method to identify key antecedents, while Study 2 analyzes data from 326 Chinese live streaming consumers using partial least squares structural equation modeling (PLS-SEM) and artificial neural networks (ANN). Findings indicate that negative past experiences and negative publicity significantly harm attitudes towards influencers and brands, respectively. These negative attitudes contribute to brand hate, which subsequently leads to brand avoidance, complaints, and negative word of mouth. This study advances the theoretical framework of influencer endorsement and offers practical insights for influencer marketing managers and brand managers to address negative consumer behaviors and to develop brand strategies that effectively manage risks associated with influencer partnerships. © 2025 Elsevier Inc."
+  },
+  {
+    "article_id": "CS_0807",
+    "title": "Houston, we have a problem!: The use of ChatGPT in responding to customer complaints",
+    "journal": "Technology in Society",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techsoc.2023.102333",
+    "abstract": "This study aims to explore the use of ChatGPT-4 in generating management responses to customer reviews or complaints posted on Tripadvisor. Customer reviews and management responses are viewed as information sources for holidaymakers when they are making their decisions. A negative customer review about a hotel accommodation experience from TripAdvisor together with the response made by hotel management to this review, and the ChatGPT-4 generated management response to the same customer review were evaluated by 40 industry experts based on six dimensions of a service recovery model and three dimensions of justice that are frequently used by researchers. The findings suggest several practical implications mainly that the ChatGPT-4 generated management response satisfies the requirements of an efficient and effective management response. The quality of ChatGPT-4 generated management responses tends to be extremely high and they may be generated within seconds and with little effort. In addition to the several above practical implications, as ChatGPT-4 can measure the severity of service failures based on customer complaints the study has important implications for service failures and recovery literature. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0808",
+    "title": "The use of ChatGPT in service recovery: Compensating customers",
+    "journal": "Technology in Society",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techsoc.2025.103058",
+    "abstract": "Determining the appropriate compensation for customers is a crucial decision, as it may result in the wasting of resources and further exacerbating customer frustration. Making the right compensation decision requires a great deal of knowledge and expertise about the customers and their service encounters, as well as taking both the customers' and the service business's interests into account. This study investigates the usability of ChatGPT, as a generative AI tool, in identifying the severity of service failures for customers and producing an effective and efficient compensation suggestion accordingly. The two surveys in the study, carried out in two stages with 298 hotel customers and 54 managers from 5-star hotels, established that no single compensation strategy developed by ChatGPT can satisfy most of the customers, and a combination of compensation strategies needs to be used. The study has important theoretical and practical implications both regarding the field of generative AI, in terms of developing business solutions, and for the service recovery and compensation literature. © 2025"
+  },
+  {
+    "article_id": "CS_0809",
+    "title": "The more human-like the better? Effect of anthropomorphic level on customer intention to participate in AI service recovery",
+    "journal": "Technology in Society",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techsoc.2025.103065",
+    "abstract": "The increasing application of artificial intelligence (AI) technology in the service industry has required more studies on service failures caused by intelligent customer service and its repair. In this study, the influence of anthropomorphism on customers’ intention to participate in service recovery cooperation is examined by effectively controlling the appearance, expression, and language style of intelligent customer service anthropomorphism. Through three experiments, the role of the intelligent customer service anthropomorphic level on customers intention to participate in service recovery cooperation is revealed, as well as two mediating pathways (shifting emotion and aversion) and the boundary (time pressure) of the anthropomorphic level. These findings contribute toward the understanding of AI-assisted services, and they provide insights into the application of anthropomorphic design in the service industry. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0810",
+    "title": "New school speech regulation as a regulatory strategy against hate speech on social media: The case of Germany's NetzDG",
+    "journal": "Telecommunications Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.telpol.2022.102411",
+    "abstract": "Germany's 2017 NetzDG law is an example of ‘new school speech regulation’ (Balkin, 2014), which restricts speech by coercing intermediaries into censoring users, rather than coercing speakers directly. It is the first such measure which specifically targets hate speech on social media, by requiring large platforms to operate complaints procedures which ensure illegal content is rapidly removed. Numerous other countries have since adopted similar regulations, indicating that states increasingly turn to new school speech regulation as a regulatory strategy to tackle hate speech on social media. This paper aims to evaluate the effectiveness of new school speech regulation in as a regulatory strategy to address online hate speech, taking NetzDG as a case study. A review of relevant empirical literature shows that many features of social media platforms actively promote or encourage hate speech. Key factors include algorithmic recommendations, which frequently promote hateful ideologies; social affordances which let users encourage or disseminate hate speech by others; anonymous, impersonal environments; and the absence of media ‘gatekeepers’. In mandating faster content deletion, NetzDG only addresses the last of these, ignoring other relevant factors. Moreover, reliance on individual user complaints to trigger platforms' obligations means hate speech will often escape deletion. Interviews with relevant civil society organisations confirm these flaws of the NetzDG model. From their perspectives, NetzDG has had little impact on the prevalence or visibility of online hate speech, and its reporting mechanisms fail to help affected communities. NetzDG represents an incremental, narrow approach to a complex sociotechnical problem which requires more fundamental regulatory reform. In this regard, it shows the limitations of censorship-based new school speech regulation. Rules which assert state authority by prescribing censorship of narrowly-defined content categories are ill-suited to large-scale, networked, algorithmically-curated social media, where other governance mechanisms influence user behaviour more than content deletion. The paper advocates a more systemic and preventive regulatory approach. Platforms should be required to take public interest considerations into account in all design and governance processes, aiming to shape platform environments to actively discourage users from posting or viewing hate speech, rather than simply deleting it afterwards. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0811",
+    "title": "Contextual integrity of loyalty programs, compromised? Interrogating consumer health data practices and networked actors in the U.S. retail sector",
+    "journal": "Telecommunications Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.telpol.2024.102780",
+    "abstract": "This study explores privacy issues complicated by the commodification of consumer health data in the United States by looking into loyalty programs (LPs). Three LPs – those of Nike, Walgreens, and DICK'S Sporting Goods – are examined because their incorporation of health technology represents retail data practices unregulated by the U.S. Health Information Portability and Accountability Act (HIPAA). Applying the framework of contextual integrity (Nissenbaum, 2004, 2009), the research conducted discourse analysis on corporate communications to identify whether and how privacy conflicts arise in a data economy composed of multiple business entities that use LP member data. The major contributions of this study are a clarification of shortfalls in multi-organizational governance of health-related consumer data outside the HIPAA regulation in the United States, and a recognition that businesses may optimize this data without adequately informing consumers about the risks and providing meaningful redress mechanisms. The paper concludes by urging policy-makers to target networked business relationships and externalities that result from collective behavior of firms trading in consumer health data. © 2024 The Authors"
+  },
+  {
+    "article_id": "CS_0812",
+    "title": "“I'M NOT A TARGET MARKET”: Power asymmetries in market segmentation",
+    "journal": "Tourism Management Perspectives",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tmp.2016.09.001",
+    "abstract": "This study examines the underlying assumptions, values and norms of market segmentation and their effects. While segmentation aims to support the firm's overall value proposition, it may also constrain aims to be more customer-centric. In the analysis, the focus is on subtle and often invisible forms of micro-power that are practised through everyday business actions. Although the study is conceptual, it is practice-oriented, providing managers with a checklist of questions that can be used for assessing the firm's power relations. Transparency, value co-creation, individualised segmentation, and empathy are suggested for redressing unfavourable power differentials, and for building long-term customer relationships. © 2016 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0813",
+    "title": "A multiple indicators multiple causes (mimic) model of the behavioral consequences of hotel guests",
+    "journal": "Tourism Management Perspectives",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tmp.2019.02.014",
+    "abstract": "This study aims to examine the effects of a set of covariates, including culture, sociodemographic, and travel behavioral patterns, on behavioral consequences of hotel guests. We developed a Multiple Indicators Multiple Causes (MIMIC) model to test the effects of these covariates on hotel guests' perceived service quality, customer satisfaction, customer loyalty, and complaint intentions. Using a sample of 2267 hotel guests in Hong Kong during the period 2010–2015, we verified the four-factor structure of the behavioral consequences of hotel guests in the presence of seven covariates. The results showed that culture, gender, age, education, income, and travel experience predicted the behavioral consequences of hotel guests. After controlling for the effects of each of the four constructs in the model, we detected the direct effects of six covariates, except gender, on the indicators of the four constructs. © 2019 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0814",
+    "title": "Sources of distrust: Airbnb guests' perspectives",
+    "journal": "Tourism Management Perspectives",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tmp.2019.05.009",
+    "abstract": "The present study explores sources of distrust in the Airbnb context. The study focuses on Airbnb customers' negative reviews posted in English on Trustpilot's website. The search for posts was employed with the keyword ‘trust’ to find online narratives from customers who had negative experiences of trust with Airbnb. Of the 2733 online reviews screened, the study concentrated on 216 negative reviews. The data analysis followed the grounded theory approach, which resulted in two themes that reflect the sources of distrust: Airbnb's poor customer service and the hosts' unpleasant behaviour. The managerial implications are that Airbnb should invest additional resources into minimising customers' negative experiences by focusing on trust-based relationships and maintaining quality in its core service elements. When customers report their complaints, their concerns should be addressed with prompt apologies, positive actions, and a willingness to compensate these customers to neutralise their distrust in the company. © 2019 The Authors"
+  },
+  {
+    "article_id": "CS_0815",
+    "title": "Exploring the value co-destruction model for on-line deviant behaviors of hotel customers",
+    "journal": "Tourism Management Perspectives",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tmp.2019.100622",
+    "abstract": "This study aims to build a value co-destruction model by exploring the online deviant behavior of hotel customers. Desire for revenge and desire for recovery are considered mediators. Hotel guests in notable Taiwan locations were surveyed via the Internet (no. = 601 valid responses). This study finds that negative emotion indirectly impacts negative electronic word of mouth (eWOM) with desire for revenge as a mediator. Furthermore, desire for recovery has the potential to mitigate the impact of negative emotion on negative eWOM. However, the desire for recovery is less intense than the desire for revenge. Based on these findings, this study concludes that emotion, by itself, does not result in action. Respondents only commit negative eWOM because they want to hurt the firm that wronged them. Respondents are also willing to entertain the idea of service recovery. However, desire for revenge is a stronger mediating factor. © 2019 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0816",
+    "title": "Responding to negative online reviews: The effects of hotel responses on customer inferences of trust and concern",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2015.09.011",
+    "abstract": "Our research examines the perceptions and evaluations of prospective customers toward an online negative review and any accompanying hotel response. The study explores two main issues: whether the presence (versus absence) of an organizational response to negative customer reviews affects the inferences potential consumers draw about the target business, and which aspects of responses affect their impressions. We test the effects of four variables associated with a response: source of response, voice of responder, speed of response, and action frame on two outcomes variables (i.e., customer concern and trust inferences). The provision of an online response (versus no response) enhanced inferences that potential consumers draw regarding the business's trustworthiness and the extent to which it cares about its customers. Using a human voice and a timely response yielded favorable customer inferences. Inferences did not vary with response source or action frame. Implications are drawn for effective management of negative online reviews. © 2015 Elsevier Ltd."
+  },
+  {
+    "article_id": "CS_0817",
+    "title": "Contemplating museums’ service failure: Extracting the service quality dimensions of museums from negative on-line reviews",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2018.06.020",
+    "abstract": "Museums are important attractions in contemporary cultural tourism, which has brought them economic benefit as well as managerial challenges. Museums' mandate of custodianship and curatorial and educational focus on tangible artifacts and facilities has been diverted to and augmented by the intangible memories, emotions, and experiences of visitors and tourists. Identifying museum service failures from social media is complementary to, rather than a contradiction of, museum visitor satisfaction assessment. This study, through adoption of interdisciplinary literature, has extracted twelve service qualities— assurance, reliability, responsiveness, tangibles, empathy, communication, consumables, convenience, servicescape, purposiveness, contemplation, and first-hand experience—as grounds for contemplating conception and operation of museum tourism as well as consumer-based museum servicescapes. © 2018"
+  },
+  {
+    "article_id": "CS_0818",
+    "title": "What do hotel customers complain about? Text analysis using structural topic model",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2019.01.002",
+    "abstract": "The ability to understand the causes of customers' complaints is critical for hotels to improve their service quality, customer satisfaction, and revenue. This study adopts a novel structural topic model text analysis method to analyze 27,864 hotel reviews in New York City, and show that it leads to improved inference on consumer dissatisfaction. Our results reveal 10 topics, whose appearances in the negative reviews are substantially higher than those in the positive reviews. In addition, we investigate how customer complaints vary across different hotel grades. Results indicate that customer complaints for high-end hotels are mainly related to service issues, whereas customers of low-end hotels are frequently annoyed by facility-related problems. This research contributes to the hospitality literature by enhancing our understanding of the aspects of hotel customers’ dissatisfaction through rigorous statistical analysis, their correlations, and importance for different hotel grades. © 2019"
+  },
+  {
+    "article_id": "CS_0819",
+    "title": "Online public response to a service failure incident: Implications for crisis communications",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2019.01.011",
+    "abstract": "The study examines the online public response to a high visibility incident of service failure from the crisis communication and image restoration perspectives. A specific incident in a hotel of a popular chain in Beijing, China, which was widely publicized on Chinese social network Weibo, is used as an example. Applying data mining and GIS to the collected data, the study analyzes temporal, spatial, topical, and gender dynamics of public discussions to investigate the usefulness of such data for hospitality providers in crisis. The study finds evidence that the effect of the incident on the general public is moderated by spatial and personal proximity of Weibo users. The discussion topics reflect the nature of the crisis and are affected by communications from the service provider and third parties. Implications for providers of tourism and hospitality services in a crisis of high visibility are discussed. © 2019 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0820",
+    "title": "Complaining practices on social media in tourism: A value co-creation and co-destruction perspective",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2019.01.017",
+    "abstract": "Social media has transformed the way tourism-related information is generated and distributed. While previous studies have focused largely on the benefits of social media for tourism management, there is an emerging recognition of the downside of social media through the enablement of enhanced facilities for consumer complaints. Informed by service-centric research and social practice theory, we theorize that tourist complaining on social media is an interactive process of value formation. We then present an empirical investigation of social media complaints in respect of a large Australian-based airline. The findings reveal three unique practices of tourist complaining and their potential for both value co-creation and co-destruction. Our study offers novel insights into the divergent and interactive nature of the tourist complaining that unfolds on social media, and the importance of adequate organizational responses in order to foster value co-creation – or avoid co-destruction. © 2019"
+  },
+  {
+    "article_id": "CS_0821",
+    "title": "Examining the trade-off between compensation and promptness in eWOM-triggered service recovery: A restorative justice perspective",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2019.05.008",
+    "abstract": "Our research examines the effectiveness of monetary compensation and the promptness of response during electronic word-of-mouth (eWOM)-triggered service recovery. Drawing upon restorative justice theories, we explore three main questions: whether the hotel's response to negative online reviews are always beneficial; whether offering compensation or responding promptly is more efficient under different levels of service failure severity; and how the hotel's response influences consumers' future engagement through eWOM media. Experimental results reveal that making minimum online service recovery effort is only effective in fixing consumer attitudes for less severe service failures. Compensation is the optimal solution for less severe failures, while prompt response is optimal for more severe service failures. The hotel's responsiveness to negative reviews and the service recovery outcome positively influence consumers' future eWOM behaviours through the same online medium. Implications for hotels seeking cost-effective management of negative reviews and for online media owners are offered. © 2019 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0822",
+    "title": "Perceptions of cruise travel during the COVID-19 pandemic: Market recovery strategies for cruise businesses in North America",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2020.104275",
+    "abstract": "The study aims to identify consumer perceptions of the cruise industry amid the COVID-19 pandemic and seeks to provide market recovery strategies for cruise businesses. The relationship between perceptions among cruise experience and COVID-19 financial status groups were explored. The results of analyses of data from 759 respondents indicated that travel constraints negatively influence behavioral intention through negativity bias. Further, perceived crisis management positively affects behavioral intention through attitude-trust. New consumers’ behavioral intention is significantly affected by the negativity bias, and the perceived crisis management manipulates the trust of financial-affected consumers. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0823",
+    "title": "Does love become hate or forgiveness after a double deviation? The case of hotel loyalty program members",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2020.104279",
+    "abstract": "This study aims to (1) examine whether a hotel's loyalty program is effective in weakening the desire for retaliation and perceived betrayal of high-tiered members after a double deviation and (2) determine which recovery tactic is more effective in attenuating their desire for retaliation and perceived betrayal. Scenario-based studies were conducted to achieve the objectives. The findings of this study suggest that high-tiered members are more likely than nonmembers to suppress their desire for retaliation and perceived betrayal during the transition from a single deviation to a double deviation, advocating the “love-is-forgiving” effect. This study also found that financial compensation and apology moderate perceived betrayal among high-tiered members. By contrast, only financial compensation attenuates perceived betrayal among nonmembers. This study contributes to the literature on loyalty programs and customer coping responses with novel findings on how members and nonmembers respond differently to service failure, failed service recovery, and recovery tactics. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0824",
+    "title": "Impact of the COVID-19 pandemic on travelers’ preference for crowded versus non-crowded options",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2021.104398",
+    "abstract": "Crowding is a critical determinant of consumers' satisfaction with and preferences for different shopping and travel situations. When considering a selection of travel and hospitality options, travelers are influenced by perceived crowding. This research examined how the current health crisis (i.e., the COVID-19 pandemic) affects travelers’ preferences for crowded and non-crowded options. Specifically, we predicted that travelers would have a diminished preference for crowded (vs. non-crowded) travel and hospitality options when the ongoing pandemic is salient. We demonstrated that the primary effect of the salience of the threat was persistent across different travel categories and contexts. We also found that travelers with high levels of sensation seeking and a high need for uniqueness show the opposite pattern, suggesting a possible recovery strategy from the pandemic. Five experimental studies provide several theoretical and managerial implications for travel and hospitality business marketers. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0825",
+    "title": "Too generous to be fair? Experiments on the interplay of what, when, and how in data breach recovery of the hotel industry",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2021.104420",
+    "abstract": "Although data breaches have become increasingly common, few studies have examined data breach recovery. Thus, this study aims to examine when (i.e., reactive versus passive) and how (i.e., public versus private) to conduct data breach recovery in the hotel industry, using different types of compensations. Based upon the fairness heuristic theory and the prospect theory, two experiments were conducted with university students as the samples. The results show that consumers' perceived justice with economic and social compensation is not significantly higher than that with either economic compensation or social compensation, under the public mode or the private mode. Furthermore, under the reactive mode participants’ perceived justice with economic and social compensation is lower than that with just economic compensation. Our study expands the literature on service recovery to data breach recovery in the hotel industry. It also provides important practical guidelines for travel industry managers. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0826",
+    "title": "How do customers navigate perceived inappropriateness of collective emotion in group service recovery? An application of cognitive dissonance theory",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2022.104615",
+    "abstract": "Although group-level service failures usually cause more adverse consequences than individual-level ones, existing literature on group service failures is scarce. Besides, almost all service failure and recovery studies suggest that customers hold consistent emotional reactions during a group service failure, which causes a lack of exploring inconsistent emotional responses. This research focuses on this under-explored area and investigates how and why perceived inappropriateness of collective emotion (PICE) influences customer participation in service recovery. The present work proposed a moderated mediation model and conducted three scenario-based experiments to validate the influence of PICE on customer participation in service recovery and the mediating path of cognitive reappraisal. The present research also unveils the moderating effects of protective face orientation and relationship norms on the relationship between PICE and cognitive reappraisal. These findings enriched theories on group service failure and recovery and offered tourism companies suggestions on utilizing PICE to facilitate favorable recovery outcomes. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0827",
+    "title": "Relationship quality matters: How restaurant businesses can optimize complaint management",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2022.104709",
+    "abstract": "This research investigates the effectiveness of complaint management according to company–client relationship quality (RQ). Interactional recovery efforts are critical for efficient complaint management in the hospitality management (restaurant) context; this study addresses the potential compensatory interaction effects of interactional recovery efforts (personal apology vs. impersonal apology via email) and two types of compensatory recovery efforts (voucher vs. refund), as well as their intensity (full vs. partial). A robust cut-off effect emerges, such that a minimum level of interactional effort influences the effectiveness of compensation efforts. Furthermore, RQ influences complaint management effectiveness: For loyal, high-RQ customers, interactional recovery effort (personal apologies) is more important, regardless of compensation intensity (full vs. partial) or type (voucher vs. refund). High- (low) RQ customers are more (less) likely to accept vouchers than refunds; vouchers symbolize their willingness to continue relationships. Thus, interactional effort allows firms to decrease the intensity of customer compensation required. © 2022"
+  },
+  {
+    "article_id": "CS_0828",
+    "title": "The effect of algorithmic management and workers’ coping behavior: An exploratory qualitative research of Chinese food-delivery platform",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2022.104716",
+    "abstract": "While algorithmic management provides new options for organizing service work, it is underexplored in tourism and hospitality research. From food-delivery platforms in China, this qualitative study sources interviews and online reviews to explore the impact of algorithmic management on workers' service behavior and how they cope in response. Our study uncovers an algorithm-human hybrid approach for managing workers, where algorithms and humans function distinctly but complement each other. Algorithmic management influences deliverers’ work either positively, by improving service efficiency, reliability and customer-orientated behavior; or negatively by causing impersonal service behavior, frequent service recovery and extra-role workload. Deliverers employ both problem-focused (i.e., compliance, flexible response and resistance) and emotion-focused (i.e., relief) coping strategies in algorithmic management. In addition to individual resistance, we firstly revealed that deliverers collude with other parties to resist the algorithms. We proposed a conceptual framework that contributes to understanding the dynamic, mutual relationship between algorithms and workers. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0829",
+    "title": "Managerial response strategies to eWOM: A framework and research agenda for webcare",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2023.104739",
+    "abstract": "Managers increasingly address client feedback online, a practice known as webcare. Based on a systematic literature review on webcare, we provide a framework that aims to identify potential generalizations, discuss possible explanations for inconsistencies that require further investigation, and identify the under-researched areas concerning the managerial responses to eWOM (electronic Word-of-Mouth). This framework covers several practical and theoretical questions. Our systematic review suggests that organizations should respond to eWOM, especially when it is negative, and should do so in a personalized, detailed, and timely manner. Accommodative webcare should go beyond a mere apology and should focus on solving the issue. We integrate these results from prior research with insights from justice theory, attribution theory, message personalization, and service recovery to develop an extensive conceptual framework describing the factors to consider when engaging in webcare and the potential outcomes. This framework guides our suggestions for future research that should disentangle the many contradictory effects (e.g., when to use defensive webcare) and cover under-researched topics (e.g., webcare strategies for positive WOM specifically or the underlying mechanisms explaining the effects of different webcare strategies), and the mechanisms through which webcare strategies lead to better business performance. © 2023"
+  },
+  {
+    "article_id": "CS_0830",
+    "title": "“Give me an upgrade or I will give you a bad review!” Investigating customer threats in the hospitality industry",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2024.104927",
+    "abstract": "This work is a first attempt to explain the phenomenon of customer threats and identify the individual and situational factors that drive this phenomenon in tourism and hospitality. Towards this goal, one qualitative and two quantitative studies are employed. Study 1 conceptualizes customer threats by uncovering two of the most common forms of verbal threats (i.e., threat to switch and threat to negative word of mouth) and their distinctive features as well as customers’ motivations behind them, and some situational conditions that favor the enactment of customer threats. Using a survey-based approach, study 2 sheds light on three incident-specific drivers (i.e., psychological reactance, rumination, and justice perceptions) of the two main forms of customer threats. Finally, using an experimental approach, study 3 assesses the effectiveness of two service recovery strategies (self-service recovery vs. human-based recovery) at mitigating customer threats following service failure incidents. © 2024 The Authors"
+  },
+  {
+    "article_id": "CS_0831",
+    "title": "Can performance pressure hinder service recovery performance? The mediating role of shame and individual contingencies of work meaningfulness and proactivity",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2024.104972",
+    "abstract": "Hospitality employees have long been experiencing high pressure at work, due to the strict performance requirements from organizations and excessive socioemotional demands from customers. Although “performing well under pressure” is often considered a prerequisite for competent employees, findings from organizational psychologists regarding employees' responses to perceived performance pressure are divergent. To further elucidate this relationship, drawing upon the social self-preservation theory, this research proposes that performance pressure can elicit frontline employees' emotional experience of shame, which in turn, hampers their service recovery performance. Furthermore, we propose two individual contingencies of work meaningfulness and proactivity that alter employees' reactions to performance pressure. In particular, the experience of shame is more salient when employees perceive lower levels of meaningfulness or possess lower levels of proactivity. A mixed-method approach, involving both scenario-based experiment and multi-wave survey, is adopted. The results support our hypotheses. The findings provide a more holistic understanding of hospitality employees’ responses to performance pressure by uncovering the rarely investigated emotional pathway following performance pressure and identifying two salient individual boundary conditions. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0832",
+    "title": "ChatGPT and online service recovery: How potential customers react to managerial responses of negative reviews",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2024.105057",
+    "abstract": "This study investigates the efficacy of generative artificial intelligence in online service recovery; specifically, the use of ChatGPT (vs. human employees) in preparing managerial response(s) (MR or MRs) to online hotel reviews is considered. ChatGPT could be used to generate human-like MRs for online service recovery but this could backfire due to algorithm aversion when an individual discounts algorithm decisions relative to human-made decisions. Data collected via interviews, a modified Turing test and an online experiment provide empirical support for this. Findings reveal that potential customers could not clearly differentiate between the two types of MR and could not clearly identify the ‘better’ of the two. Yet, when informed of the MR source, ChatGPT MRs led to lower affective, cognitive and conative outcomes. Findings also unveiled perceived authenticity and uncanniness as significant parallel mediating pathways in this algorithm aversion. Theoretical and managerial implications are discussed. © 2024"
+  },
+  {
+    "article_id": "CS_0833",
+    "title": "What is a cool restaurant? Understanding, measuring, and leveraging coolness for restaurants",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2024.105116",
+    "abstract": "Restaurants operate in competitive markets, forcing them to differentiate themselves. The use of coolness represents a novel tactic to do so. Although the literature has started to investigate coolness in people, brands, and cities, the complex nature of restaurants and their inherent human factor calls for further research on what makes restaurants cool. We conceptualize restaurant coolness and identify its constituent features empirically. We find that cool restaurants are original, authentic, welcoming, purposeful, and communal. We develop a parsimonious and reliable measure of restaurant coolness and show that restaurant coolness significantly influences relevant downstream variables related to consumers' attitudes and intentions (i.e., self-restaurant connection, trust, and emotional attachment). Furthermore, we experimentally demonstrate that restaurant coolness can enhance restaurants’ service failure recovery, including attribution, failure management perception, recovery satisfaction, and forgiveness. Our findings reveal differentiating features of restaurant coolness compared to other contexts and that coolness has crucial implications for restaurants. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0834",
+    "title": "Tourism service recovery: How minority employees influence majority consumer experiences",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2025.105158",
+    "abstract": "While ethnic minorities represent a larger portion of individuals employed in hospitality and tourism industry, limited research examines how the ethnicity of the service provider affects customers' evaluations of service failure recovery efforts. To address this gap, this study investigates the effect of the service provider ethnicity (i.e., majority vs. minority) on majority consumers' post-recovery satisfaction. Across eight experimental studies in various tourism and hospitality contexts (e.g., hotel, restaurant, taxi hailing, and massage), we consistently find that an ethnical minority (vs. majority) service provider has a more positive effect on the majority consumer's post-recovery satisfaction. Furthermore, this study elucidates empathy as the psychological mechanism underlying this effect. In particular, this effect remains pronounced in utilitarian consumption contexts, yet its significance diminishes in highly hedonic consumption contexts. This research provides valuable insights for tailoring recovery strategies to enhance consumer experience. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0835",
+    "title": "From failure to forgiveness: Robots’ proactive role in the tourism industry",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2025.105246",
+    "abstract": "In the era of artificial intelligence (AI), robots are extensively employed in modern service industries to optimize customer experience, yet service failures remain inevitable. Drawing on social exchange theory, this paper developed a model to examine the impact of robot service recovery methods on tourist forgiveness and systematically validated its hypotheses across four studies. The results showed that proactive recovery by robots elicited higher levels of forgiveness than reactive recovery, mediated sequentially by perceived effort and perceived sincerity. Sense of power moderates the relationship between service recovery methods and forgiveness. The paper contributes to the literature on robot service recovery by identifying proactive recovery as an effective strategy and offers practical recommendations for robot manufacturers to improve human–robot interaction design and for tourism managers to optimize service recovery strategies. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0836",
+    "title": "Empathy order effects on shaping GenAI online complaint management in tourism",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2025.105304",
+    "abstract": "Recent studies have illuminated the potential of generative artificial intelligence (GenAI) to influence customer behavior in tourism and hospitality. However, effective strategies for using GenAI to manage online customer complaints remain underexplored. This research examines how GenAI's empathy order (affective/cognitive vs. cognitive/affective) affects customer satisfaction and attitudes. Study 1 found that integrating both empathy types leads to higher satisfaction and more positive attitudes than using either type alone. Study 2 demonstrated that in support-seeking scenarios, both empathy orders elicited comparable satisfaction and attitudes, whereas in solution-seeking scenarios, the cognitive/affective empathy order was rated higher than the affective/cognitive order. Study 3 indicated that perceived competence and perceived warmth mediate these effects. This study deepens understanding of GenAI in online complaint management and offers actionable insights for leveraging empathy in online customer interactions. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0837",
+    "title": "Breaking the chain of contagion: Governing customer-to-customer misbehavior in tourism services",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2025.105354",
+    "abstract": "Customer-to-customer (C2C) misbehavior is prevalent in tourism services, undermining tourists’ experiences and posing a significant management challenge due to its contagious nature. While frontline employee (FLE) intervention is critical for service recovery, the efficacy of different strategies remains underexplored. This study examines two types of normative appeals: descriptive appeals (emphasizing behavioral prevalence) and injunctive appeals (emphasizing rule enforcement). Across four experiments, the findings show that injunctive appeals such as enforcing rules or issuing warnings significantly increase bystanders compliance. Furthermore, individual differences in perceptions of organizational motives moderate these effects, as consumers with high levels of cynicism respond more positively to injunctive appeals. These findings refine the “customer-first” doctrine by demonstrating that rule-based interventions more effectively restore order and achieve genuine customer-centricity than undue accommodation. Over, this study advances theoretical understanding of bystander cognition and behavior in service encounters and provides actionable guidance for FLEs dealing with C2C misbehavior. © 2025 Elsevier Ltd."
+  },
+  {
+    "article_id": "CS_0838",
+    "title": "Temporal effect in consumer coping with service failures",
+    "journal": "Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tourman.2025.105371",
+    "abstract": "Existing research has largely overlooked how consumers' coping strategies vary dynamically depending on when service failures occur during the service process. Drawing on socioemotional selectivity theory, this study proposes that problem-focused coping strategy is prioritized when a failure occurs early in the process, but consumers tend to shift toward emotion-focused coping when the failure occurs at later stages. This temporal effect is mediated by consumers’ future time perspective and is moderated by their temporal perspective (linear vs. cyclical) and failure type (process vs. outcome). Evidence from one quasi-experiment and five laboratory experiments supports the proposed framework. This research advances understanding of temporal variation in coping responses to service failures and provides actionable insights for service managers seeking to tailor recovery strategies over time. © 2025 Elsevier Ltd."
+  },
+  {
+    "article_id": "CS_0839",
+    "title": "Evaluating passenger satisfaction index based on PLS-SEM model: Evidence from Chinese public transport service",
+    "journal": "Transportation Research Part A: Policy and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tra.2018.12.013",
+    "abstract": "The evaluation method consisting of partial least square (PLS) and structural equation model (SEM) is proposed to measure public transport passenger satisfaction as it systematically analyzes public transport service satisfaction. Taking into account the characteristics of Chinese public transport services, we modify the American customer satisfaction theory and construct the conceptual model of passenger satisfaction index (PSI). The measurement model of PSI is established based on PLS-SEM. Based on the passenger satisfaction data covering 58 Chinese public transport operators of 13 cities, an empirical analysis was carried out. Conclusions are summarized as follows: ① The convenience, safety, reliability, comfort and operational service, which are belonged to passenger perceived quality, have a significant direct positive effect on the passenger satisfaction. ② The correlations between passenger expectations, passenger perceived value, passenger loyalty and passenger satisfaction are all significant direct positive. ③ The correlations between passenger satisfaction, passenger loyalty and passenger complaint are all direct negative. ④ Passenger satisfaction index score of 13 cities is as low as 68.88. According to the results, some feasible suggestions are proposed from perspectives of both the enterprise operation and industry regulation to improve the healthy and orderly development of public transport industries. © 2018 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0840",
+    "title": "Understanding bike-sharing users’ willingness to participate in repairing damaged bicycles: Evidence from China",
+    "journal": "Transportation Research Part A: Policy and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tra.2020.09.017",
+    "abstract": "In the past three years, many studies have been conducted on dockless bike sharing (DBS) around the world. However, these studies have focused minimally on the problem of damaged bicycles, which is critical to a DBS system's operating efficiency, user satisfaction and platform sustainability. The objectives of this study are to develop an integrated theoretical framework based on the normative activation model and examining the impact mechanism of users’ willingness to participate in repairing damaged bicycles. To achieve these objectives, a questionnaire survey was undertaken with a total of 633 DBS users from 27 provinces and municipalities in Mainland China. Empirical results confirm that the theoretical framework can provide a strong rationale for the investigation into DBS users’ willingness to participate in repairing damaged bicycles. Furthermore, internal psychological factors (i.e., personal norms, awareness of consequences, and perceived consumer effectiveness) and external intervention factors (i.e., platform incentives and service response efficiency) had positive effects on users’ participation willingness. Nevertheless, information publicity did not play a significantly direct role but indirectly affected the participation willingness through personal norms. Service response efficiency tended to moderate the impacts of personal norms and awareness of consequences on participation willingness. Eventually, some practical approaches to motivating users to participate in repairing damaged bicycles are proposed. This study extends the theory of normative activation model to better understand the behaviors of DBS users who participate in repairing damaged bicycles, and contributes significant theoretical and practical insights to the sustainability of DBS systems. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0841",
+    "title": "Resilience evaluation and improvement of post-disaster multimodal transportation networks",
+    "journal": "Transportation Research Part A: Policy and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.tra.2024.104243",
+    "abstract": "As a type of critical infrastructure, multimodal transportation networks are susceptible to disturbances from natural disasters and intentional attacks. Resilience reflects the performance of a multimodal transportation network after suffering from a disaster, and the failure of this network influences the public life and induces economic losses. This research aims to evaluate and improve the resilience of post-disaster multimodal intercity transportation networks to mitigate negative influences of disturbances. A comprehensive resilience performance metric, accounting for influences on unserved demand and adaptation of served demand was proposed to evaluate the resilience of multimodal transportation networks. The multimodal traffic assignment model was developed to derive the components of this comprehensive performance metric, integrating user equilibrium and modal split, while considering the capacity upper bound of some links. A route-based link recovery sequence was also proposed to improve network resilience, taking into account interdependencies and utilization of damaged links. The operational measure of capacity enlargement of functioning links was adopted to supplement the recovery sequence. The proposed resilience evaluation and improvement method was applied to a multimodal transportation network, namely, the constituent road, rail, and air networks in the Beijing–Tianjin–Hebei–Shandong region. Results show that the proposed route-based strategy outperforms volume-based, betweenness-based, and random strategies in enhancing resilience. Capacity enlargement of functioning links can further improve resilience by accommodating more affected demand, particularly effectively in scenarios characterized by inefficient repair sequences, higher fixed demand and a larger punishment multiplier. These findings highlight the interdependencies of links in establishing the recovery sequence, capacity enlargement in challenging scenarios, and enhanced availability and convenience of transportation modes to promote multimodal network resilience after a disruption. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0842",
+    "title": "Citizen and users’ responses to public service failure: Experimentation about blame, exit, and voice",
+    "journal": "Experiments in Public Management Research: Challenges and Contributions",
+    "journal_impact_factor": null,
+    "doi": "10.1017/9781316676912.018",
+    "abstract": "Introduction Citizens and users’ responses to failures of public services has long been of interest to public management researchers, especially because of negativity bias, with responses to failure looming larger than citizens and users’ reactions to well-performing services. Negativity bias is a general feature of political and organisational life and is reflected in responses to many dimensions of performance, including the economy and service performance (Boyne et al. 2009; Dowding and John 2012; Hirschman 1970; James 2011b; Lau 1982; Lyons, Lowery, and DeHoog 1992; Olsen 2015; Soroka 2006; Weaver 1986). This chapter sets out how experimental evidence is increasingly making a contribution to assessing the empirical implications of theories about responses to public service failure. Experiments have been particularly valuable for analysing the micro-foundations of aggregate-level results of prior observational studies into responses to failure by estimating the causal effects operating at the individual level. The first section discusses research on blame in response to public service failure. There is a sizeable literature examining blame in more general politics, defined as the attribution of a ‘bad’ or ‘wrong’ outcome or action to a particular person, group, or organisational entity by an audience (Arceneaux and Stein 2006; Hood 2003, 2011; Malhotra and Kuo 2008; McGraw 1990, 1991). In the context of public services, experiments have begun to assess citizens’ attribution of blame for service failure as part of the democratic control of these services (James 2011a; James et al. 2016; Marvel and Girth 2016). The second section sets out the contribution that experiments are making to research on the use of services and political action in response to failure. Research in the tradition of Albert Hirschman (1970, 1980) distinguishes alternative ways of reacting to deterioration of performance and dissatisfaction with organisations. He identified exit through leaving the organisation or a customer switching a product, and voice for members or customers to express the need for change from within. Competitive mechanisms relying on exit, such as the introduction of competition within public service markets, were suggested as undermining voice whilst being unable to stop decline, with loyalty retarding exit and encouraging voice. These and closely related ideas have been extensively studied non-experimentally for public services (Dowding and John 2012; Lyons et al. 1992). © Cambridge University Press 2017."
+  },
+  {
+    "article_id": "CS_0843",
+    "title": "Killing Complaints with Courtesy: The Role of Relationship Building in the Success of the Early U.S. Central Power Stations (1890-1938)",
+    "journal": "Enterprise and Society",
+    "journal_impact_factor": null,
+    "doi": "10.1017/eso.2024.11",
+    "abstract": "Histories of electrification revolve around networks of power developed by system builders. These histories, though immensely important, explain the progress of electrification from the perspective of institutions or individuals, rather than through everyday relationships. While the industry pushed the idea that electricity was an obvious must-have for urbanites, vast resources in the 1920s and 1930s went toward cultivating courteous relationships among meter readers, electricians, repairmen, billing clerks, and customers. These relationships were pivotal to electrification, especially with complaints about high bills, malfunctioning meters, and inadequate wiring, which led to customer curtailment and threatened the prosperity of central power stations. This article expands the notion of who counts as critical actors in the success of electric grids and counters contemporary claims: namely, that grids fail because of bad consumer behavior. By emphasizing the role of everyday relationship-building in the evolution of electric utilities, this study contributes to a history of electricity that examines invisible and mundane networks to expose the relations beneath the grid. © The Author(s), 2024. Published by Cambridge University Press on behalf of Business History Conference."
+  },
+  {
+    "article_id": "CS_0844",
+    "title": "Organizational antecedents to designing a comprehensive complaint management system",
+    "journal": "Journal of Management and Organization",
+    "journal_impact_factor": null,
+    "doi": "10.1017/jmo.2018.73",
+    "abstract": "The literature highlights two main approaches to designing an effective complaint management system: The mechanistic and the organic the mechanistic approach emphasizes the establishment of guidelines for the correct processing, attention and resolution of complaints received. In contrast, the organic approach relies on creating a supportive internal environment for correct customer attention, made possible through training and empowering employees responsible for complaint management and by promoting extra-role behaviour among them the present research aims to study the antecedents of adopting these two approaches. From a strategic perspective, we analyse the influence of organizational culture variables (the extent to which the firm is customer and innovation oriented) and the nature of the objectives pursued by complaint handling (defensive vs. improvement objectives) the proposed model is tested on a sample of 140 manufacturing firms. Findings indicate these antecedents shape the complaint management system in a diverse and significant manner. Copyright © Cambridge University Press and Australian and New Zealand Academy of Management 2018."
+  },
+  {
+    "article_id": "CS_0845",
+    "title": "How Social Media Empowers Stakeholders: A Stakeholder Multiplicity Perspective",
+    "journal": "Management and Organization Review",
+    "journal_impact_factor": null,
+    "doi": "10.1017/mor.2024.64",
+    "abstract": "The literature shows that social media enhances individual stakeholders' ability to directly influence firm behaviors, paying less attention to how it enables different stakeholder groups to influence firms collectively. Drawing on the stakeholder multiplicity perspective in stakeholder theory, this study theorizes and empirically demonstrates that social media can empower lower-salience stakeholders to drive the actions of higher-salience stakeholders to influence firm behaviors. By analyzing 506 consumer crises involving foreign and local companies in China from 2000 to 2020, we find that firms take more substantial responsibility when confronted with consumers' social-media-based collective actions than when confronted with conventional channels of consumer complaints. This heightened responsibility stems mainly from collective actions' tendency to spur law-enforcing agencies into addressing alleged firm misdeeds, demonstrating a stakeholder multiplicity effect of social media empowerment. We also identify the institutional contingency of this effect, showing that local governments' bureaucratic capacity positively moderates collective actions' effect on law-enforcing actions, whereas their intervention in firms' operational decisions negatively moderates law-enforcing actions' effect on firms' responsibility assumption. This study extends the understanding of social media's relationship with stakeholder influence and consolidates the stakeholder multiplicity perspective in stakeholder theory. © The Author(s), 2025. Published by Cambridge University Press on behalf of International Association for Chinese Management Research."
+  },
+  {
+    "article_id": "CS_0846",
+    "title": "The ownership complaint gap: Mutual versus stock intermediaries",
+    "journal": "Journal of Financial and Quantitative Analysis",
+    "journal_impact_factor": null,
+    "doi": "10.1017/S0022109019000474",
+    "abstract": "We document a substantial customer complaint gap between stock and mutual financial firms. To assess whether this 21% per year complaint gap stems from complaint-prone customers in stock insurers, we examine state-adjudicated complaint success. To further delineate between customer selection or treatment explanations, we exploit within insurer complaints around random claims (natural disasters) and attention shocks (media scrutiny). Further tests reveal the complaint gap widens with greater competition, near insolvency thresholds, and with more price regulation. Overall, the results are inconsistent with the hypothesis that mutual financial firms exhibit low customer satisfaction, suggesting customers find this a beneficial organizational structure. Copyright © 2019 Michael G. Foster School of Business, University of Washington."
+  },
+  {
+    "article_id": "CS_0847",
+    "title": "Public Disclosure and Consumer Financial Protection",
+    "journal": "Journal of Financial and Quantitative Analysis",
+    "journal_impact_factor": null,
+    "doi": "10.1017/S0022109023000613",
+    "abstract": "The U.S. Consumer Financial Protection Bureau has released a database of consumer complaints about banks' financial products to the public since 2013. We find a greater reduction in mortgage applications to banks that receive more mortgage complaints in local markets after the disclosures. The effect is stronger in areas with more sophisticated consumers and higher credit competition, and for banks receiving more severe complaints. The number of monthly mortgage complaints per bank exhibits faster mean reversion after the publication of the database. These findings suggest that the public disclosure of mortgage complaints enhances product market discipline and consumer financial protection. © The Author(s), 2023. Published by Cambridge University Press on behalf of the Michael G. Foster School of Business, University of Washington."
+  },
+  {
+    "article_id": "CS_0848",
+    "title": "Bank Competition and Entrepreneurial Gaps: Evidence from Bank Deregulation",
+    "journal": "Journal of Financial and Quantitative Analysis",
+    "journal_impact_factor": null,
+    "doi": "10.1017/S0022109025102172",
+    "abstract": "I analyze the effects of bank competition on gender and racial gaps in entrepreneurship. By leveraging interstate bank deregulation from 1994 to 2021, I find that stronger bank competition increases the quantity and quality of banking services offered to minority borrowers. Developing a novel measure of discrimination using narrative information in the complaints filed with the Consumer Financial Protection Bureau, I demonstrate that bank competition reduces discrimination, alleviating the financial constraints of female and minority entrepreneurs. Stronger bank competition also reduces gender and racial gaps in firm performance and business equity accumulation, promoting wealth equality and fostering equitable economic growth. © The Author(s), 2025. Published by Cambridge University Press on behalf of the Michael G. Foster School of Business, University of Washington."
+  },
+  {
+    "article_id": "CS_0849",
+    "title": "CajaVecina: The bancarization of chile through corner shops",
+    "journal": "The Book of Payments: Historical and Contemporary Views on the Cashless Society",
+    "journal_impact_factor": null,
+    "doi": "10.1057/978-1-137-60231-2_14",
+    "abstract": "The following chapter describes and analyses a Chilean financial inclusion mechanism called CajaVecina. This mechanism was deployed by the Chilean state-owned BancoEstado and falls within the phenomenon known as the Cashless Economy. CajaVecina is a banking correspondent (BC) service that builds upon a dedicated point of sale terminal typically found at small, independent corner shops. Together with the debit card linked to a ‘universal’ sight account, the terminal enables people access to several banking and payment services. The chapter introduces the CajaVecina service and the relative success of its deployment and acceptance across Chile. Our focus it to explore the socioeconomic relationships around CajaVecina, namely how the user, the storekeeper (intermediary) and the bank connect. The sociology of money, of payments and the studies of neo-institutionalism are the basis for the analysis of fieldwork collected from a website designed to collect complaints from the users of the system. (Unless otherwise stated, empirical data in this article draws on public complaints logged and freely accessible at www.reclamos.cl (accessed January 15, 2016).) The conclusion shows that CajaVecina offers a form of financial inclusion considerably different to the services of BancoEstado at its regular retail branches. © The Author(s) 2016."
+  },
+  {
+    "article_id": "CS_0850",
+    "title": "Webcare as an Integrative Tool for Customer Care, Reputation Management, and Online Marketing: A Literature Review",
+    "journal": "Integrated Communications in the Postmodern Era",
+    "journal_impact_factor": null,
+    "doi": "10.1057/9781137388551_4",
+    "abstract": "When consumers are dissatisfied with a consumption experience, they usually respond in one of the following ways (Hirschman, 1970): (1) stop using an organization’s products/services and take their business to a competitor, (2) file a complaint with the organization that is responsible for the dissatisfying consumption experience, or (3) talk about their dissatisfying consumption experience with fellow consumers (negative word of mouth). Janelle McCoy, a former loyal customer of Chevrolet, decided to combine all responses with the help of social media. In a series of comments on Facebook and Twitter, in which Chevrolet was either tagged or addressed (@chevrolet), Janelle shared her dissatisfaction with one of Chevrolet’s car dealers. In doing so, she not only engaged in negative word of mouth (NWOM) but also complaint behaviour. As can be seen from the excerpt of the Twitter dialogue depicted by Figure 4.1, Janelle’s comments addressed a double audience consisting of not only other consumers but also the organization responsible for the dissatisfying consumption experience. Consumers such as Janelle increasingly voice their complaints as electronic NWOM, with the aim to draw the attention of organizations and, as such, enforce service excellence. Thus, after receiving no satisfactory response from Chevrolet, Janelle decided to take her business to a competitor and to share this decision with other consumers on Facebook and Twitter as well. © Palgrave Macmillan, a division of Macmillan Publishers Limited 2015."
+  }
+]

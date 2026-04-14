@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1951",
+    "title": "Constructively Engaging Exploitive Waste Management in India: The Case of Paryavaran Mitra and its Justice Motivated Effort at Empowering Rag-Picking Women",
+    "journal": "Journal of Macromarketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/02761467211061344",
+    "abstract": "Constructive Engagement (CE) aims at developing sustainable and equitable marketing systems that ensure collective well-being. This paper reflects on an initiative that constructively engages with impoverished market actors, i.e., rag-picking women in India. It is endeavored by operationalizing Integrative Justice Model (IJM) principles while trying to tackle the issue of solid waste management. Our findings suggest that CE across the spectrum in the value chain is required to alleviate the conditions of disadvantaged market actors and improve their well-being. Our qualitative inquiry in rag-picking women’s lives and an initiative of social enterprise contribute to the ongoing conversation in macromarketing literature- (1) by empirically evidencing how the CE operationalizes the IJM and help redress the issues of social traps and internalities; (2) by uniquely connecting the macro issues of waste management with the issues of honesty, fairness, dignity and deserved justice in the neglected market transactions; (3) that IJM principles guide the constructive engagement process. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_1952",
+    "title": "Theorizing the Costs of Self-Service Technologies and Co-Creation by Design",
+    "journal": "Journal of Macromarketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/02761467231202017",
+    "abstract": "In this commentary we explore how, in a market system that increasingly demands the participation of consumers as co-creators through self-service technologies, these technologies pose significant challenges to various consumers. We call this increase in demand the ‘everyday-ification’ of co-creation and consider its effect on consumers who are either unwilling or unable to co-create value. We look at how marketers are motivated to persistently replace human labor with technologies, not to primarily benefit consumers, but to discipline consumer labor and to maximize profits and shareholder value. Through this lens we examine five key issues with self-service technologies. First, we discuss how costs and benefits associated with self-service technologies are unequally allocated, before addressing how consumers’ choices are managed, consumers’ rising sense of powerlessness and increased vulnerabilities, consumers’ service failure responsibilization, and the cybernetic bureaucracy of life through self-service technologies. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_1953",
+    "title": "Promoting customer loyalty in the mobile service industry in South Africa: The roles of satisfaction and delight",
+    "journal": "Journal of General Management",
+    "journal_impact_factor": null,
+    "doi": "10.1177/03063070251335386",
+    "abstract": "Despite the widely acknowledged relationships between customer satisfaction, delight, and loyalty, there is a gap in the current literature of how they manifest in an emerging market context. This study seeks to redress this by examining customer delight arousal and delight pleasure as post-consumption experiences predicted by customer satisfaction and seeks to validate empirically the nexus between these factors and customer loyalty to mobile service providers in an emerging African economy. Using data obtained from self-administered surveys with 500 customers of South African mobile service providers, this study employs the partial least squares structural equation modelling technique to validate the measurement model and examine the theorised relationships between the constructs. The findings suggest that satisfaction has multiple associations with customer delight arousal, delight pleasure, and loyalty. The results pinpoint that customer arousal is positively related to customer delight pleasure. In fact, the results emphasise that delight arousal and delight pleasure are heightened levels of satisfaction and that satisfaction and customer delight are associated with customer loyalty. Furthermore, the findings show that customers’ delight pleasure and delight arousal are complementary mediators in the satisfaction-customer association. This study addresses a gap in current literature by presenting and validating an alternative model that investigates the interplay of customer satisfaction, delight arousal, and delight pleasure in predicting customer loyalty in a technology service context in an emerging African country. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_1954",
+    "title": "Ethics in financial planning: Analysis of ombudsman decisions using codes of ethics and fiduciary duty standards",
+    "journal": "Australian Journal of Management",
+    "journal_impact_factor": 2.688,
+    "doi": "10.1177/03128962211022568",
+    "abstract": "Scandals show that ethics is an important topic in financial planning. Our research analyses 212 financial ombudsman decisions (2013–2018) to understand the nature of financial planning misconduct in complaint decisions. We develop a coding structure to ascertain what professional conduct involves and then use content analysis and cluster analysis to identify the aspects of professional conduct occurring in these misconduct decisions. Diligence, acting in the client’s best interest and having no reasonable basis for advice are interconnected elements in over half of these decisions. Secondary elements are misleading statements, conflicts of interest and disclosure. Analysis of decisions involving fiduciary duty showed that financial planners failed to ascertain a client’s circumstances and did not form advice based on their client’s information. As financial planning professionalises, future research, financial planning education, policy and practice should address these issues. JEL Classification: D14, G20, G50. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_1955",
+    "title": "Unpacking the Service Triangle: Arranging Power Relations Between Frontline Occupations",
+    "journal": "Work and Occupations",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0730888417736095",
+    "abstract": "Service work scholarship has insufficiently acknowledged the diversity of interactive frontline occupational categories within organizations. Nor has it paid enough attention to how frontline workers act collectively to deal with the structural contradictions in the service labor process to actually produce a service. This article studies both these questions using Anselm Strauss’ conceptual framework, articulation work. Based on in-depth qualitative research in a major French bank, this article highlights the power relations between two distinct groups of frontline employees responsible for managing customer complaints. It shows how these groups arrange temporary solutions to the structural tensions underpinning their activities. In doing so, this article makes two contributions to service work theory. First, it provides a more detailed picture of the service triangle which is enlarged by these arrangements between different groups of frontline workers. Second, it shows how lateral relations between frontline workers can contribute to the making of a “fragile service social order.”. © 2017, © The Author(s) 2017."
+  },
+  {
+    "article_id": "CS_1956",
+    "title": "Sound and Fury: Digital Vigilantism as a Form of Consumer Voice",
+    "journal": "Journal of Public Policy and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0743915620902403",
+    "abstract": "The authors examine consumer activism as a form of power used by individuals when they experience a perceived failure with organizational service performance. Consumer citizens demonstrate the power of their voices through digital vigilantism consisting of injurious and constructive digital content sharing. The authors use agency theory and power concepts to study an instance in which a public service provider breached consumer performance expectations. They study digital responses to the 2017 Charlottesville Unite the Right rally because an independent review found the public service providers culpable. Tweets (n = 73,649) were analyzed utilizing qualitative thematic coding, cluster analysis, and sentiment analysis. Consumer conversations (tweets) during and after the rally yielded five types of digital vigilantism characterized by the following consumer voice clusters: “Shame on them!”, “Hear ye, hear ye…”, “Can you believe this?”, “Let’s get ‘em!”, and “Do the right thing.” The authors also present a new facet of digital vigilantism represented by the pessimistic and optimistic power of consumer voice. Several proactive and reactive responses are presented for policy and practice when responding to digital vigilantism. © American Marketing Association 2020."
+  },
+  {
+    "article_id": "CS_1957",
+    "title": "Don’t Shoot the Cook: Perceptions of Food Servers and Restaurants as a Function of Blaming Coworkers and Customers for Service Failures",
+    "journal": "Management Communication Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1177/08933189241297971",
+    "abstract": "Despite evidence indicating that some front-line employees account for their service failures by undermining coworkers or blaming customers, previous service-recovery research in the restaurant industry has virtually ignored the effects of such actions. This lack of attention is unfortunate considering possible threats to employees’ images and incomes, and to the success of restaurants. This study addressed this issue. Participants (N = 604) viewed videos of hypothetical restaurant encounters in which food servers offered various accounts for service failures (i.e., delivering incorrect orders) to customers. While imagining they were the customers, participants rated servers (e.g., likeability, credibility, predicted tip) and the restaurant (e.g., likelihood of returning and recommending to others). Accounts that blamed mistakes on others (i.e., customers or coworkers) or minimized mistakes were predicted to be significantly less effective than more traditionally studied account types (e.g., apologies) in repairing the image of servers and the restaurant. Despite notable exceptions, these predictions were supported. Additionally, given a double-bind effect reported in past studies, we predicted, but did not find, that females would be less successful than males when blaming others. Theoretical and practical implications for service industry managers and workers are discussed. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_1958",
+    "title": "Deep Learning-based Sentiment Analysis: Establishing Customer Dimension as the Lifeblood of Business Management",
+    "journal": "Global Business Review",
+    "journal_impact_factor": 1.935,
+    "doi": "10.1177/0972150919845160",
+    "abstract": "‘First mover advantage does not go to the first company that launches, it goes to the first company that scales’ (Reid Hoffman, co-founder of LinkedIn, ScaleIt, 2016). M. Andreesen defines scale-up as a company that has identified its product/market fit and has reached notable proofs of market traction (e.g., profitability, revenues, active users, registered users, market demand). It has been previously established that five interdependent core dimensions can be used to evaluate scale-up: customer, product, team, business model and financials. Most of the business failures result from falling apart of one or more of these dimensions with others. We in our article discuss the ‘customer dimension’ as the essence of scaling up. For running a profitable business, it is crucial to evaluate customers’ reviews, like their perception and expectation from the product and services in terms of service quality, deliverables, staff and management practices and pricing. This will increase customer satisfaction which will further boost the demand and popularity of the brand and business. The customers today are very vocal in sharing their experiences through social media blogs, channels, review sites and so on. These experiences need to be decrypted by the management to understand the customer’s point of view, their apprehensions and expectations. Sentiment analysis is one of the best ways to tap customer feedback. The usual way of analysis involves the bag of words model using ngrams. A more refined version is an ontology-based analysis. Research has also been done using the radial basis function kernel for support vector machines (SVMs) (for recognizing polarity of sentiments). Naïve Bayes algorithms have also been used in some sentiment studies along with linear kernel SVM classifiers. But we realized during the literature review that it is not enough to just classify the text into positive and negative or a few more categories. It is even more important to know which topics are being discussed by the customers, their intention behind the message and further the need to classify them as complaints, suggestions, appreciation or query and so on. Thus, we in our article discuss the solution to all these types of analyses using ‘deep sentiment analysis’. We discuss the case of a few current social topics and introduce ‘recurrent neural networks’ (RNNs) and ‘convolutional neural networks’ (CNNs) for sentiment and intent analysis. These advanced analytical techniques will help in the ‘pivoting’ of businesses by taking desired actions such as improving product quality, improving quality of services and increasing quality checks in areas with maximum negative reviews. This eventually will help start-up ventures in improving customer experience and gradually help in the scaling of ventures. © 2019 International Management Institute, New Delhi."
+  },
+  {
+    "article_id": "CS_1959",
+    "title": "Organizational Response to Goods Failure Complaints: The Role of Culture on Perceptions of Interactional Justice and Customer Satisfaction",
+    "journal": "Global Business Review",
+    "journal_impact_factor": 1.935,
+    "doi": "10.1177/0972150919861783",
+    "abstract": "It is well recognized that in a service failure context, cultural value orientations interact with firm responses to service failures to influence perceptions of fairness (justice) and satisfaction. We examine whether this effect is applicable in the case of goods failure complaint context. Using an experimental design with data from Hong Kong and Canada, we investigate how customer evaluations of firm responses are influenced by interplay of consumers’ value orientation and nature of firm responses to the goods failure complaint [whether complaint resolution is initiated by the firm (vs. initiated by the customer), customer is informed about the progress of complaint resolution (vs. not informed about the progress)]. Our findings reveal that the cultural values of collectivism and uncertainty avoidance do interact with the nature of firm’s response to influence perception of interactional justice. Finally, interactional justice positively impacts overall complaint resolution satisfaction. © 2021 International Management Institute, New Delhi."
+  },
+  {
+    "article_id": "CS_1960",
+    "title": "Consumers’ Legal Claims: Motives, Expectations and the Complaint Journey of Indian Consumers",
+    "journal": "Global Business Review",
+    "journal_impact_factor": 1.935,
+    "doi": "10.1177/09721509231196631",
+    "abstract": "While consumer complaining behaviour (CCB) has seen phenomenal scholarly interest, its effortful facets, such as complaints to regulators or the legal system, remain under investigated. Viewing complaints as deeper patterns of systemic malaise, this study has explored consumers’ legal claims from the perspective of individual complainers. Relying on informants’ lived experiences explicated through semi-structured interviews and a blend of inductive and deductive inferencing, a complaint journey framework based on the dispute tree paradigm was charted. The study’s findings map relevant complaint antecedent and exacerbator themes to the formative stages of naming, claiming, blaming and disputing and visualize consumer problems as they reach the law after germinating through these stages. The work contributes to theory and practice by broadening the understanding of CCB motives, emphasizing the role of emotions, identifying consumers’ recovery expectations and revealing legal action as a blend of agentic choice and structural necessity. In delineating the individual vigilant consumers’ role in shaping the consumer protection framework into motion and their experience of legality, we also raise the need for policy refinements. © 2023 International Management Institute, New Delhi."
+  },
+  {
+    "article_id": "CS_1961",
+    "title": "Identifying Value Co-creating Customer Segments and Their Loyalty Patterns in the Automotive Market: A Cluster Analysis Approach",
+    "journal": "Global Business Review",
+    "journal_impact_factor": 1.935,
+    "doi": "10.1177/09721509251411099",
+    "abstract": "Value co-creation behaviour is a powerful tool adopted by firms to mitigate loyalty risk. However, there is considerable heterogeneity amongst customers in terms of their brand engagement and loyalty. The current study examines segmentation possibilities amongst automobile owners based on participation in the value co-creation process. An online survey resulted in a sample of 352 customers based on their value co-creation behaviour. Furthermore, segmentation analyses helped identify three discrete segments. Chi-square analysis and one-way analysis of variance (ANOVA) were conducted to profile the segments and assess their brand engagement and firm perceptions. Lastly, an outcome-based loyalty analysis for the segments was done using one-way ANOVA. The pioneering use of value co-creation behaviour as the segmentation tool identified three clusters, namely Engaged Co-creators, Cautious Co-creators and Other-Oriented Co-creators. The Engaged Co-creators exhibited higher brand engagement, perceived their brand to be innovative and were tolerant of service failures. The Engaged Co-creators were the brand’s strongest advocates and loyalists compared to the other two groups. The study adopts a novel approach of segmenting customers based on value co-creation behaviour. Considering the diversity in brand engagement and firm perceptions of the segments and differential loyalty demonstrated by the three clusters offer significant actionable and segment-specific insights for firms. © 2026 IMI"
+  },
+  {
+    "article_id": "CS_1962",
+    "title": "Exploring the Role of Complaint Handling among Complaining Consumers",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0972262916668739",
+    "abstract": "Differentiating organization through service quality and engaging customer for long-term profit motive is a strategic adaptation for the complex competitive retail platform in India. Such approach incorporates the value of trust to ensure desired customer retention. The procedure further intensifies when an organizational approach emphasize effective complaint handling system within its service protocol. Based on this established relationship, this study explores the viability of the framework in the presence of customer complain intention categories with Indian context. Data for this descriptive study are collected using a structured questionnaire from 450 respondents. Out of the three types of complainants (consumer complaint intention), voice complaint intention appeared as the strongest determinant of consumer trust and retention as compared to private and third party complaint intention. On providing complaint handling, the strength of the relationship improved to the greatest extent for private complaint intention while there was no effect of complaint handling for voice complaint intention. Results of the study highlight as to what extent complaint handling matters for different types of complainants (voice, private and third party). Such practices can help the retailers distinguish and accordingly handle various types of complainants. Effective complaint handling practices can make the complainants more trustworthy and loyal than before. © 2016, © 2016 Management Development Institute."
+  },
+  {
+    "article_id": "CS_1963",
+    "title": "The Effect of Perception of Complaint Management System on Purchase Intention: The Mediating Role of Cognitive Dissonance",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0972262918803473",
+    "abstract": "Traditionally, purchase intention has been a very popular dependent variable among the marketers and researchers. A very important antecedent of purchase intention is cognitive dissonance (CD). CD, in turn, is affected by a number of factors. One such factor is the risk of the consumer of not getting a proper redress solution in case he faces any problem with the product after its use. This risk is termed ‘the perceived recourse and redress risk (PRRR)’. It is used as a measure to analyse the efficiency of complaint management systems (CMSs). The study aims to analyse how consumers perceive the CMS of companies and its effect on the perception of CD with its subsequent effect on purchase intention. The study was carried out in the pre-purchase context on a sample of 600 respondents across five cities. The structural equation modeling (SEM) was used to analyse the data. The results indicated that among the eight dimensions of PRRR, only four dimensions affected the CD of customers, namely: no response, rudeness, extended delay and no action from customer care. The study leaves an implication for marketers to work on these dimensions and make the CMS more effective in order to increase the purchase intention of consumers. © 2018 Management Development Institute."
+  },
+  {
+    "article_id": "CS_1964",
+    "title": "Customer Service Failure at Airways (India) Limited (A)",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0972262918803492",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_1965",
+    "title": "Case Analysis I: Customer Service Failure at Airways (India) Ltd",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0972262918804324",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_1966",
+    "title": "Case Analysis II: Customer Service Failure at Airways (India) Ltd",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0972262918804332",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_1967",
+    "title": "Case Analysis III: Customer Service Failure at Airways (India) Ltd",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0972262918806703",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_1968",
+    "title": "Determinants of Consumer Perceptions of the Ethics of Online Retailers: An Investigation Using Confirmatory Factor Analysis",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/09722629211040880",
+    "abstract": "Though the online retailing ethics literature has been growing steadily, no research has attempted to examine the myriad aspects and concerns about the online retailers’ unethical practices and behaviours. The study aims to extend the research and re-validate the consumer perception of ethics of online retailers (CPEOR) scale in the Indian context. The methodology involves an exploratory factor analysis on a sample of 261 online shopper responses on a 7-point Likert scale. The obtained scale was then validated on a new sample of 416 users using confirmatory factor analysis. The research identifies and validates 10 factors that influence CPEOR, that is, privacy, security, non-deception, fulfilment, customer service, service recovery, fairness concerns, environmental concerns, corporate social responsibility and ethical policies. The study offers valuable insights to the managers and researchers. The study offers best practices in the different dimensions of CPEOR along with future research directions. The study provides unified and comprehensive insights on CPEOR by examining all possible dimensions of CPEOR. © 2021 MDI."
+  },
+  {
+    "article_id": "CS_1969",
+    "title": "Customer Incivility and Service Recovery Performance: Job Crafting as a Buffer",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/0972262921991963",
+    "abstract": "This study explores the impact of customer incivility (CI) on service recovery performance (SRP) of Indian frontline banking employees with emotional exhaustion (EE) as a mediator. Whether job crafting behaviour of the employees would assuage the effect of uncivil customer interactions and, thereby, help in maintaining superior recovery performance is further investigated. Data from 428 dyads of employees were gathered to test the hypothesized relationships using structural equation modelling in AMOS 23. The results indicated that CI negatively influences SRP, and EE significantly mediates this relationship. Increasing social and structural resources significantly alleviate the negative effect of (a) CI on EE, (b) CI on SRP and (c) EE on SRP. On the other hand, increasing challenge job demands and decreasing hindrance job demands do not moderate the relationship between (a) CI and EE and (b) CI and SRP. However, decreasing hindrance job demands significantly moderate the negative effect of EE on SRP while, surprisingly, increasing challenge job demands strengthens the relationship between EE and SRP. © 2021 MDI."
+  },
+  {
+    "article_id": "CS_1970",
+    "title": "Determinants and Consequences of Customer Satisfaction in Indian Retail Banks: Moderation of Bank Reputation",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/09722629221108492",
+    "abstract": "The entry of private sector banks in the Indian market has compelled all the banks to determine the drivers of customer satisfaction (CS). This research aims to assess the drivers of CS and its implications in the Indian retail banking (IRB) sector. The top six Indian private sector banks were chosen according to market capitalization. A standardized questionnaire was used to gather responses from IRB customers and then evaluated using structural equation modelling (SEM). Five factors of CS are identified in the study, viz. effective complaint handling (ECH), service convenience (SC), perceived fairness (PF), perceived market performance (PMP) and relationship commitment (RC). The results unveil that SC and RC have a strong positive influence on CS, which further augments customer word of mouth (WoM) and repurchase intention (RI). In addition, bank reputation (BR) moderates the model’s relationship between CS and its consequences. Considering only private sector banks may limit the generalization of findings to a certain extent. The study presents vital enablers that escalate CS and might help bank professionals to identify thrust areas. There is a shortage of research on ‘BR’ and ‘RC’ in India’s context of the banking sector. Therefore, the research adds to the current literature by including the components mentioned above and other essential determinants and consequences. Furthermore, the study accentuates the complexities of relationships among the determinants and consequences of CS through a meticulous conceptual model of an IRB sector. © 2022 Management Development Institute."
+  },
+  {
+    "article_id": "CS_1971",
+    "title": "Unlocking Digital Payments: Understanding E-wallet Adoption Among Malaysia’s Older Adults",
+    "journal": "Vision",
+    "journal_impact_factor": null,
+    "doi": "10.1177/09722629251379657",
+    "abstract": "This study aims to extend the understanding of user intentions towards the increasingly popular e-wallet technology among older adults in Malaysia. The research model is assessed using partial least squares–structural equation modelling and importance-performance map analysis (IPMA), drawing upon data collected from 127 older adult respondents in Malaysia. Results affirm that users’ perceived satisfaction, hedonic motivation and self-efficacy are the most influential predictors of use intention among this demographic. Perceived satisfaction is influenced not only by well-established constructs, for instance, perceived ease of use, usefulness and perceived risk, but also by grievance redressal and independent living capabilities. IPMA results align with the core drivers of self-efficacy, perceived satisfaction and hedonic motivation. These findings, derived from a survey of older adults, offer practical insights for manufacturers of innovative e-wallet solutions. Marketers can use these findings to craft targeted strategies promoting e-wallet adoption within this demographic. © 2025 MDI"
+  },
+  {
+    "article_id": "CS_1972",
+    "title": "Hawks Engineering Works: At the Crossroads of Growth",
+    "journal": "Asian Journal of Management Cases",
+    "journal_impact_factor": 0.242,
+    "doi": "10.1177/0972820119858547",
+    "abstract": "This case revolves around Hawks Engineering Works (HEW), an automotive parts supplier based in Lahore, Pakistan. Registered as a private partnership between the founding partners, Shahid and Akram, in 1987. HEW specializes in the supply of door hinges and door lock strikers for different automobiles. HEW has monopolized the production of these specialized parts and counts the ‘big three’ OEMs, i.e., Honda, Toyota and Suzuki, amongst its customers. While HEW has been an exemplary company over the years, winning many ‘best vendor’ awards for quality and delivery, recently, the company has been plagued with complaints from their biggest customers. These complaints center on miscommunication from HEW’s side on different matters, as well as late deliveries and falling quality standards. HEW’s management must thus evaluate what has gone wrong while the company has grown from a small entrepreneurial concern to a mid-sized organization. For this purpose, students must first understand the founders’ entrepreneurial journey. This will lead them to analyze HEW’s growth trajectory over the years, to identify its current positioning on this growth spectrum, and seek out and attempt to correct any misalignments in the company’s key management factors, which will help determine its future growth prospects. © 2019 Lahore University of Management Sciences."
+  },
+  {
+    "article_id": "CS_1973",
+    "title": "Aldous Glare Trade & Exports: The Dilemma of Establishing an Assessment Centre",
+    "journal": "Asian Journal of Management Cases",
+    "journal_impact_factor": 0.242,
+    "doi": "10.1177/09728201231200948",
+    "abstract": "Aldous Glare Trade & Exports (AGTE) operates as a B2B technology reseller, offering computers, laptops, accessories, mobile phones and smart TVs. Founded in 1995 in Kochi, India, AGTE started with three members and with a capital of USD 4,000. Over time, it gained recognition, establishing sister concerns: ITnet and Alps Distributors for B2C goods and high-end computer sales. With a four-layered structure—CEO, functional heads, and senior and junior executives—AGTE employed 60 people. The HR manager handled human resources (HR) for AGTE, ITnet and Alps Distributors. It expanded with sales offices in Bengaluru, Thiruvananthapuram, and Kochi. By 2016, AGTE achieved USD 27 million turnover. In 2018, AGTE adopted an automated customer relationship management (CRM) system, though employee familiarity was incomplete. Customer complaints surged in April–December 2018, citing delivery and helpline issues. Directors set a USD 100 million turnover by 2025, allocating USD 300,000 for an assessment centre managed by the Chief Operating Officer Mohan Joseph. It aimed to curb the attrition of senior staff members and enhance CRM proficiency and sales certifications. AGTE aimed to transition from ad hoc training to structured recruitment training, overseen by Mohan Joseph and HR Manager Charles D’Souza. Challenges included seamless integration, past issue resolution and attrition management of senior staff members, balancing established practices with innovative strategies aligned with AGTE’s mission. © 2023 Lahore University of Management Sciences."
+  },
+  {
+    "article_id": "CS_1974",
+    "title": "The moral economy of the algorithmic crowd: Possessive collectivisim and techno-economic rentiership",
+    "journal": "Competition and Change",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1024529421990496",
+    "abstract": "Algorithmic scoring systems provide novel ways to sort larger populations of borrowers, consumers, employees and benefits recipients. Such algorithmic regimes of classification enable the more efficient capture of value (in the form of rents) outside of traditional sites of production. This paper considers how distributional claims making has evolved in response to the use of algorithms and digital platforms to more profitably discriminate between market participants and extract information rents. More specifically, the paper interrogates an emerging form of collective distributional politics, which I call the moral economy of the serial crowd. This serial crowd is one in which individual acts of algorithmic and digital selfcare (e.g. credit building and monitoring, social media profile curation, self-tracking, etc.) are imagined to ‘scale up,’ and together constitute a collective act of ‘self-protection’ from predatory economic actors, and morally (re)order markets. To understand why this style of social claims making has assumed salience in the current conjuncture, the paper analyses (i) movements to redress inequality and discrimination while appearing to be distributionally neutral, and (ii) the refiguration of the crowd from a problem to be managed by elites to a ‘wise’ exploitable market problem solver. The paper then discusses contemporary examples where serial crowds are associated with various moral economic orders from Go Fund Me campaigns to debt resistance, and credit building. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_1975",
+    "title": "Open Voice or Private Message? The Hidden Tug-of-War on Social Media Customer Service",
+    "journal": "Production and Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10591478231224933",
+    "abstract": "Firms use social media as a great marketing tool and a convenient platform to deliver customer service. However, due to its public and social nature, social media tends to amplify a brand's successes as well as failures. Reluctant to subject their customer service to public scrutiny, firms are increasingly turning to private messaging on their social media channels for customer service conversations, which amounts to a reincarnation of traditional customer service in the social media era. Nonetheless, whether customers are willing to relinquish their newfound power is unclear. In this paper, we analyze a natural experiment where the inconvenience of the private channel with the treated firm is suddenly eliminated, and we find evidence that customers prefer to complain through the public channel. A randomized survey experiment further confirms this insight. Overall, firms’ and customers’ diverging preferences toward public or private channel reveal a hidden tug-of-war between the traditional mode of customer service featuring firm control and the recently emerged mode of customer service featuring shared control. These findings have important implications for firms’ customer service operations. © The Author(s) 2024"
+  },
+  {
+    "article_id": "CS_1976",
+    "title": "Mitigating Churn After Online Financial Fraud: The Value of Blame Attribution",
+    "journal": "Production and Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10591478251331125",
+    "abstract": "The financial industry is plagued with account-based fraudulent transactions in which perpetrators surreptitiously siphon away money from customer accounts. To address this recurrent problem, service operations teams at financial institutions (e.g., the fraud detection and mitigation teams) spend millions yearly identifying perpetrators, attributing blame, and averting customer churn. However, in the vast majority of cases, the service operations teams cannot trace fraudulent transactions back to the perpetrators, and hence, it remains unclear whether they should continue to expend significant resources into investigating account-based fraud and attributing blame. Employing a wide range of econometric and machine learning techniques on a rich dataset from a US bank and an experiment, we attempt to offer the first empirical assessment of the association between blame attribution, or lack of it, in response to customer-identified account-based fraud and customer churn. The results indicate that relative to the customers that did not experience fraud, those that did and received a resolution lacking blame attribution have 40.69%Lift (95% confidence interval (CI) = [24.41%Lift, 56.97%Lift]) in churn rate. However, customers that experienced fraud and received a resolution involving blame attribution have −62.45%Lift (95% CI = [−31.22%Lift, −93.68%Lift]) in churn rate, making them less likely to churn than those that did not experience fraud. The latter result offers one of the first field evidence of the well-known service recovery paradox. Additionally, we observe significant heterogeneity in the findings based on customer tenure and the number of customer-firm interactions and document the long-term effects of attributing and not attributing blame. These insights can assist service operations teams in their postservice failure efforts to mend customer-firm relationships. Overall, the results underscore the importance of blame attribution during service recovery for service operations teams and inform a topical debate on a banking reform proposed by the US Department of Treasury. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_1977",
+    "title": "Unveiling the Human Touch: Enhancing Customer Satisfaction Through Personal Profiles of Social Media Customer Service Agents",
+    "journal": "Production and Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10591478251388172",
+    "abstract": "Firms are rapidly adopting social media platforms to optimize their customer service operations. Given the central role of social media as a primary point of contact with customers and the critical importance of maintaining high levels of customer satisfaction, it is imperative to craft positive experiences during service interactions. To enhance customer interaction with a personal touch, U.S. telecom giant T-Mobile replaced standardized profiles with personal profiles for its social media customer service agents on Twitter. Leveraging this exogenous change, we investigate how these personal profiles affect customer behaviors within service operations. We adopt a difference-in-differences empirical strategy in this research. The results show that implementing personal profiles for customer service agents increases positive sentiment in customer tweets, reduces the likelihood of complaints, and improves overall satisfaction. Further analyses suggest that the effects vary across customer groups, with greater impact among verified Twitter users and female customers. While personalized agent profiles can enhance satisfaction, they also heighten expectations for timely responses, making delays more detrimental than with standardized profiles. To explore the underlying mechanism, we conduct an online randomized experiment. In addition to reinforcing the causal inference from our secondary data analysis, causal mediation analysis of the experimental data shows that personal agent profiles influence satisfaction and the likelihood of customers expressing gratitude through the perceived warmth and perceived competence of the agents. Interestingly, while the effect on gratitude is mediated by humanization, we do not find a similar mediation effect on satisfaction. This suggests distinct pathways through which humanization shapes different aspects of the customer experience. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_1978",
+    "title": "Raise the Expectation Bar and Lower the Tolerance? Effects of Being Listed in a Restaurant Guide on Customers’ Online Rating Behavior",
+    "journal": "Production and Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10591478261429211",
+    "abstract": "Creating curated guides or lists (e.g., Top 100 Places to Eat) is a common operational strategy employed by platforms as part of their reputation systems to assist customers in decision-making. Prior research has largely highlighted the effects of such guides on customer word-of-mouth (WOM) volume and valence. Moving beyond these aggregate WOM metrics, we extend this stream to examine how being listed in a guide (BLG) influences customers’ likelihood of providing ratings and rating composition across valence types (compliments, complaints, and neutral ratings), drawing on the zone of tolerance framework. Using large-scale empirical data, we find that BLG increases customers’ likelihood of rating but reduces overall valence, with a higher proportion of complaints and neutral ratings and a lower proportion of compliments. The effect is particularly pronounced among merchants with additional high-quality signals (e.g., higher prices, greater popularity, and superior prior ratings). Evidence from both observational data and a randomized experiment further reveals the underlying mechanisms, showing that BLG increases customer involvement and raises desired expectations more dramatically than adequate ones. These triangulated findings contribute to the literature by providing in-depth insights into how and why BLG affects customer rating behaviors and thus, merchants’ WOM. Our findings underscore the importance of strategic operations management for platforms when designing and managing their reputation systems, with significant implications for technology management. © The Author(s) 2026"
+  },
+  {
+    "article_id": "CS_1979",
+    "title": "Consequences of Multigenerational Services Adoption Behavior: Global Client Engagement",
+    "journal": "Journal of International Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1069031X231151659",
+    "abstract": "This study uses adoption and usage data on the client and firm–client interactions across four technology generations of new-age products/services from 13 developed and emerging markets over an eight-year period to describe how multigenerational service (MGS) adoption behavior influences direct (purchases) and indirect (references and feedback) global client engagement and whether this relationship is moderated by product/service failures and cultural factors. The authors propose metrics to measure the number of generations adopted (MGD), the number of products and features within a generation (MGFs), and the adoption time between generations (MGT). They find that client usage revenue (CUR) is enhanced by greater MGD and higher MGFs combined with lower MGT. However, CUR varies by differences in the needs of clients' own customers, failures, and culture. Greater direct engagement affects reference and feedback behavior, moderated by cultural differences in individualism, power distance, and masculinity. For a typical client in the United States and Canada, a one-unit improvement in MGD and MGFs and a one-year improvement in MGT enhance CUR by $8,150, $5,200, and $2,310 per client, respectively, versus a corresponding enhancement of $4,820, $3,640, and $1,620, respectively, per client in Colombia and Mexico. These findings provide several implications for executives who manage multigenerational innovations across countries regarding client engagement, launching MGS, market entry, and failure recovery. © American Marketing Association 2023."
+  },
+  {
+    "article_id": "CS_1980",
+    "title": "How Much Compensation Should a Firm Offer for a Flawed Service? An Examination of the Nonlinear Effects of Compensation on Satisfaction",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670514543149",
+    "abstract": "This research examines the nonlinear effects of compensation on customer satisfaction in order to determine the optimal compensation after a flawed service. As our core contribution, we argue that the nature of this nonlinear effect depends on the way customers handle a flawed service. Building on the Service-Dominant (S-D) logic, this research introduces two specific failure handling tactics—when customers reject versus accept a flawed value proposition—that affect the shape of the nonlinear function of compensation on satisfaction. Our key hypotheses are tested with two experiments that manipulate 11 compensation levels (0–200%) and the two failure handling tactics (rejection vs. acceptance). Consistent with our logic, both studies reveal an S-shaped curve progression for service rejection and a concave shape for service acceptance. For service rejection, the highest incremental effect of compensation on satisfaction lies in between 60% and 120%. For service acceptance, the highest return in satisfaction is obtained with the first dollars invested in partial compensation. As a major managerial takeaway, firms can use these findings to determine the compensation level that provides the best satisfaction return. © The Author(s) 2014."
+  },
+  {
+    "article_id": "CS_1981",
+    "title": "The Effect of Job-Related Demands and Resources on Service Employees’ Willingness to Report Complaints: Germany Versus China",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670514555510",
+    "abstract": "Service employees’ willingness to report complaints (WRC) is an important determinant of firms’ long-term growth. Despite its importance, we know little about the factors that drive or hinder employees’ WRC. Drawing on the job demands-resources (JDR) model, we propose job resources (supervisor support and employee empowerment) and job demands (perceived customer unfriendliness and workload) as antecedents of WRC. We also examine the mediational role of organizational commitment and customer orientation, and the moderating role of country, in the effect of JDR variables on WRC. Using data from German and Chinese service employees, we show that supervisor support and workload positively affect WRC, whereas employee empowerment and customer unfriendliness negatively affect it. Thus, contradictory to the prevailing assumption that job resources help employees achieve work goals and that job demands inhibit their achievement, we show job resources (supervisor support) and demands (workload) can enhance WRC, whereas other job resources (employee empowerment) and demands (customer unfriendliness) have inhibiting effects. Organizational commitment and customer orientation mediate the impact of all JDR variables on WRC except empowerment. Furthermore, supervisor support has a more positive, while empowerment and customer unfriendliness have a more negative effect for German than for Chinese service employees. Service managers may influence WRC by managing job resources, job demands, and employee-company and employee-customer interfaces. Besides, employees from individualistic countries (Germany) are more sensitive to the JDR environment than those from collectivistic countries (China). Thus, managing job resources and demands may reap more benefits in the form of enhanced WRC in individualistic than in collectivistic countries. © The Author(s) 2014"
+  },
+  {
+    "article_id": "CS_1982",
+    "title": "Unpacking Customer Rage Elicitation: A Dynamic Model",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670514556275",
+    "abstract": "Unlike prior research that has confined customer rage to a single point in time, this article explores the unfolding of rage over three time periods, at the initial service failure (Episode 1) and two ineffective service recovery attempts (Episodes 2 and 3). In each episode, we examine the association between loss, or a threat of loss, of personal resources (e.g., self-esteem, sense of justice, sense of control, and economic resources such as time and money) and negative emotions. We empirically demonstrate for the first time that although rage may sometimes take place at the initial service failure (Episode 1), rage does not tend to be an immediate reaction. Rather, it is when service failures remain unresolved that residual negative emotions are carried forward into the next episode, so that rage is dominant in Episodes 2 and 3. This carryover of negative emotion spirals with more resources being threatened, propelling the customer into rage. The authors offer a methodological contribution demonstrating the dynamic nature of appraisals and emotions in a sequence of related episodes in the elicitation of rage. Finally, differences between U.S. and Thai responses are discussed with important theoretical and managerial implications. © The Author(s) 2014"
+  },
+  {
+    "article_id": "CS_1983",
+    "title": "The Nature and Implications of Consumers’ Experiential Framings of Failure in High-Risk Service Contexts",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670514559187",
+    "abstract": "Many services, particularly those related to health care, can be considered high-risk in that despite service providers’ best efforts, consumers may not attain the outcomes they hope to achieve. Recent research highlights how cultural models regarding service providers influence the ways consumers experience and respond to failure. What bears investigating is how these cultural models and consumers’ related framings of failure shape consumer experience in high-risk contexts. Analyzing data from informants engaged with various types of infertility services, we develop a typology of four consumer experiential framings of failure that explore their experiences across three dimensions. These are as follows: the implicit cultural model that shapes relationships with service providers, the implicit cultural model regarding goal pursuit, and consumers’ tacit understandings regarding their appropriate courses of action in response to failure. We link each distinct type of experiential framing to consumers’ distinct set of expectations related to service recovery. And we offer insights for service providers on how to manage their relationships with consumers and (in the tradition of transformative services research) how to enhance consumer well-being. © 2014, © The Author(s) 2014."
+  },
+  {
+    "article_id": "CS_1984",
+    "title": "Antiservice as Guiding Maxim: Tough Lessons From a Maximum Security Prison",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670515593914",
+    "abstract": "The service literature is replete with theoretical and practical paradigms to improve service quality and advance goals of service providers as well as their customers. Often taken for granted is the assumption that organizations and their actors are interested in the well-being of those they serve as a way to bolster corporate images and engender long-term customer loyalty. While service failures are expected to happen, most successful firms seek to recover from these occurrences to maintain good relationships with their customers. However, is it possible for an organization to operate in a culture of antiservice? To address this question, we conducted an 18-month ethnographic investigation with men incarcerated in a maximum security prison using the participatory action research methodology. Findings discuss various facets and consequences of service failure that quickly become normal functioning in this institution. Descriptive themes and their interpretations follow and reveal that such treatment occurs because the men are viewed as less than fully human noncustomers who require strict control of need fulfillment. They react in a variety of ways that impact their ability to cope with this paucity of services. Recommendations for public service providers are presented along with implications for the larger service field. © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_1985",
+    "title": "The Role of Perceived Control in Customer Value Cocreation and Service Recovery Evaluation",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670515597213",
+    "abstract": "Treating customers as passive recipients of service recovery does not account for their naturally elevated desire for control following a service failure. Focusing on value cocreation by customers in service recovery, this study conceptualizes three types of customer perceived control in service recovery: process control, decision control, and information control. Using both a field study and a controlled experiment to test the conceptual model, this study reveals various ways service firms can engage customers in service recovery to enhance their service experience. The results show that customers are motivated to exert influence on and regain control over service recovery because they care not only about the economic gains rendered by control but also about their social self-esteem in their relationship with a service firm. An investigation of the interaction effects among the three types of control reveals either complementary or substitution effects between different pairings of the three types of control on customers’ justice evaluations of service recovery and repurchase intentions. The findings provide managers with new guidance on developing and implementing successful service recovery programs. © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_1986",
+    "title": "Service Recovery via Social Media: The Social Influence Effects of Virtual Presence",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670515606064",
+    "abstract": "Social media channels are increasingly used by consumers to post complaints to companies. In contrast to traditional channels, the complaint and a firm’s recovery efforts are visible to passive observers who are virtually present. Additionally, these unaffected users may become involved by supporting a complainant with negative comments or by supporting the firm with positive comments, leading to interactive virtual presence (VP). We reveal that such VP affects how a complainant reacts to successful and unsuccessful service recovery. Based on social influence theory (SIT), we investigate the influence of a mere VP as well as interactive VP of positive and negative valence on the complainant’s satisfaction and purchase intentions and analyze the role of expertise of those who are virtually present. The results indicate that SIT is applicable to virtual environments but that restrictions apply. Specifically, mere VP enhances the effects of recovery success, but—in contrast to SIT—not the negative results of unsuccessful recovery, and interactive VP leads to attitude polarization. Moreover, high-expertise individuals who engage in positive (negative) interactions after unsuccessful (successful) recovery are deleterious. When experts disconfirm successful recovery, they have higher credibility and reduce confidence in the firm. However, in contrast to SIT, experts trying to mitigate unsuccessful recovery are perceived as less credible, which also reduces confidence. Overall, if service recovery via social media is successful, firms will benefit from VP. However, caution is advised when using expert users who may interfere with service recovery processes. © 2015, © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_1987",
+    "title": "Trust Recovery Following a Double Deviation",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670515625455",
+    "abstract": "Although double deviation (i.e., unsatisfactory service recovery) is an acknowledged phenomenon in the field of marketing, little attention has been devoted to determining what actions firms can take to restore consumer trust in the wake of such an event. Across four experimental studies of different populations and service sectors, we show that double deviation intensifies the trust violation generated by the initial service failure and that recovery from double deviations requires fundamentally different strategies than recovery from single deviations. Our results suggest that financial compensation is not an especially effective strategy for double deviations compared to the effectiveness of apologies and promises that the problem will not occur in the future. However, it is important for firms to match the type of double deviation to the recovery strategy, with apologies being more effective for integrity violations and promises being more effective for competence violations. © 2016, © The Author(s) 2016."
+  },
+  {
+    "article_id": "CS_1988",
+    "title": "Recovering Coproduced Service Failures: Antecedents, Consequences, and Moderators of Locus of Recovery",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670516630624",
+    "abstract": "This article focuses on the locus of recovery (LOR) when failures occur in coproduced services. LOR refers to who contributes to the recovery. Based on the LOR effort, recovery can be classified into three types: firm recovery, joint recovery, and customer recovery. The authors develop a conceptual framework to examine the antecedents, consequences, and moderators of LOR and test the framework using three experiments. They find that the positive effect of customers’ self-efficacy on their expectancy to participate in recovery is stronger when they blame themselves for the failure than when they blame the service provider. Joint recovery is most effective in generating favorable service outcomes of satisfaction with recovery and intention for future coproduction. Furthermore, recovery urgency strengthens the effect of LOR; however, when a customer’s preferred recovery strategy is offered, such matching offsets the impact of recovery urgency. Our findings suggest several managerial implications for devising recovery strategies for service failures. Although having customers do the recovery may appear to be cost-effective, when customers are under time pressure, pushing them toward customer recovery against their preferences is likely to backfire. If a firm’s only available option is customer recovery, they should consider increasing customers’ sense of autonomy under resource constraints by aligning available recovery options with customer preferences. In contrast, joint recovery can be a win-win strategy—the customer is satisfied and the firm uses only moderate resources. It is also a more robust strategy that works particularly well under resource constraints and regardless of preference matching. © 2016, © The Author(s) 2016."
+  },
+  {
+    "article_id": "CS_1989",
+    "title": "The Positive Effects of Customers’ Power on Their Behavioral Responses After Service Failure",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670516645188",
+    "abstract": "Challenging the conventional perception that “power corrupts,” the authors assert that activation of customer power before a service encounter can lead to less negative behavioral manifestations toward a service provider after a service failure. Three experimental studies help substantiate this contention. Study 1 shows a sequential mediation process of how increased power leads to a more positive secondary appraisal and lessens the perceived severity of a failure. This process ultimately leads to (1) lower intentions for revenge and (2) lower demanded compensation. Study 2 solidifies these findings using stimuli for power inducement easily replicable by service managers. Study 3 establishes the boundary conditions and finds that the positive effects of power in postservice failure only holds for a single service failure context but not a double deviation context. This research offers an integrated explanation of how power leads to more positive behavioral actions through a sequential mediation effect involving cognitive appraisals. In doing so, this research sheds light on the nuances of power in affecting customer behavior. The practical method of activating perceived power may motivate service managers to apply it to buffer the potential negative effects of service failure. However, caution is advised, as such effects may diminish in the context of a series of failed resolution attempts. © 2016, © The Author(s) 2016."
+  },
+  {
+    "article_id": "CS_1990",
+    "title": "Geysers or Bubbling Hot Springs? A Cross-Cultural Examination of Customer Rage From Eastern and Western Perspectives",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670516649057",
+    "abstract": "There is compelling evidence that incidents of customer rage are on the rise and not just in Western, individualistic societies. Changing social and economic conditions in collectivist societies (e.g., emerging consumerism and rising wealth in China) have spawned the emergence of customer rage in Eastern countries. To this end, we examine how customer rage–associated emotions, expressions, and outcomes differ across Eastern and Western cultures. Results drawn from 982 frontline service customers from two Eastern (China and Thailand) and two Western (Australia and United States) countries show that although consumers from Western cultures are more likely to exhibit rage emotions, consumers from Eastern cultures are more likely to report a desire for revenge and express their emotions in both overt and more subtle ways. That is, customers from Eastern cultures, while slow to display anger, once initiated, their rage expressions toward frontline service workers tend to be physical and vengeful. This result contradicts generally held beliefs that Eastern consumers are reticent to express negative emotions. With these findings in mind, and to minimize damaging customer rage incidents, firms regularly engaged in cross-cultural service encounters need to provide intercultural awareness and communications training that equip frontline employees to understand customs, manners, etiquette, and expectations of Eastern and Western cultures in general and even specific cultural segments. © 2016, © The Author(s) 2016."
+  },
+  {
+    "article_id": "CS_1991",
+    "title": "Perceptions of Group Versus Individual Service Failures and Their Effects on Customer Outcomes: The Role of Attributions and Customer Entitlement",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670516675416",
+    "abstract": "A service failure and its negative effects can involve multiple customers at the same time, which suggests the need to understand the psychological mechanisms that underlie differential perceptions of group service failures (GSFs) versus individual service failures (ISFs) as well as their related outcomes. With an attributional framework, this article reports on two experiments that varied in their blame-attribution ambiguity. The results reveal that customers experience greater anger and show higher negative word-of-mouth and complaint intentions after a GSF versus an ISF. These differential effects are mediated by blame attributions, such that GSFs cause customers to blame the service provider more than ISFs. Customer entitlement also moderates the effect of the failure context (GSF vs. ISF) on blame attribution, contingent on perceptions of whether the service provider or customer violated an existing rule. Thus, we find that customers respond differently to service failures depending on the context. Managerial implications include separating customers from each other when GSFs are likely to take place, using techniques to redirect customer’s blame attributions to sources other than the service provider after a GSF and using customer scripts to minimize the occurrence of customer-induced service failures. © 2016, © The Author(s) 2016."
+  },
+  {
+    "article_id": "CS_1992",
+    "title": "Compensation Revisited: A Social Resource Theory Perspective on Offering a Monetary Resource After a Service Failure",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670517716333",
+    "abstract": "This research examines how to recompense customers, from a social resource theory perspective, which portrays financial compensation as the act of offering the resource “money” to customers during a service recovery attempt. This resource can differ in its particularism (is the money offered in a more or less personal way?) and concreteness (is the money offered in a more or less tangible way?), which are shown in two experiments to affect recovery outcomes. Specifically, personal compensation accompanied by a handwritten note from the service person (vs. impersonal: a typewritten note from the firm) fosters recovery satisfaction, mediated by justice perceptions, and reciprocal customer behavior (tipping, cross-buying), mediated by an obligation to reciprocate. Tangible compensation in the form of a banknote or banknote-like coupon (vs. intangible: a credit entry) also fosters reciprocal customer behavior via the obligation to reciprocate. In both studies, relationship strength amplifies the indirect effect of compensation’s particularism on recovery satisfaction. As a theoretical contribution, we show that the way the monetary resource is presented matters for service recovery. As a major managerial takeaway, this research presents personal (vs. impersonal) compensation as an impactful property of compensation: It increases recovery outcomes without additional monetary costs. Further, managers learn that handing over the money in a personal and tangible way can be a way to increase monetary returns to the firm in the form of tipping and cross-buying. © 2017, © The Author(s) 2017."
+  },
+  {
+    "article_id": "CS_1993",
+    "title": "Service Employee Responses to Angry Customer Complaints: The Roles of Customer Status and Service Climate",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670517728339",
+    "abstract": "Service employees’ emotional and behavioral responses to angry customer complaints were examined to help firms improve their service recovery performance. Role-played complaints were conducted in a field experiment set in fast-food restaurants. Actors played customers who complained in an angry fashion to service employees. Employees’ immediate emotional (i.e., expressed anger) and delayed behavioral responses (i.e., restitution offered) were observed. A follow-up scenario-based experimental study was used to retest the hypotheses and add controls to rule out potential rival explanations. In both studies, level of customer status (low vs. high; true experimental design) and strength of a restaurant’s service climate (weak vs. strong; quasi-experimental design) were manipulated. The findings confirm that employees in a weak service climate expressed more anger and were less likely to offer restitution to low- compared to high-status customers. In contrast, in a strong service climate, employee responses were less dependent on customer status and converged at a low level of anger and high probability of restitution offered. Furthermore, the consistent immediate affective and delayed behavioral responses suggest that a strong service climate is internalized by frontline employees. This study contributes to service theory by establishing a customer status main effect on both affective and conative employee responses and by confirming service climate as a boundary condition for the customer status main effect. A key implication for managers is that establishing a strong service climate is important for achieving effective service recovery in increasingly diverse societies. © 2017, © The Author(s) 2017."
+  },
+  {
+    "article_id": "CS_1994",
+    "title": "Businesses Beware: Consumer Immoral Retaliation in Response to Perceived Moral Violations by Companies",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670517738366",
+    "abstract": "Consumers feeling wronged in the marketplace can respond in a variety of ways both morally appropriate and morally inappropriate. We focus on specific circumstances under which company wrongdoing increases the likelihood for consumers to respond with immoral retaliatory behavior. Importantly, we demonstrate that such immoral retaliation is not directed solely toward the guilty party but may also spill over to guiltless marketplace entities. This research highlights the underlying processes for immoral retaliation against a guilty versus a guiltless company, demonstrating the varying roles of anger and justification as well as assessing the overall effectiveness of such vengeance in offsetting further retaliation. Our findings inform important aspects of effective service recovery by shedding light on the destructive potential of consumer perceptions of immorality of any one company’s actions and by providing recommendations for managing the associated risk factors. © 2017, © The Author(s) 2017."
+  },
+  {
+    "article_id": "CS_1995",
+    "title": "A Customer Scorned: Effects of Employee Reprimands in Frontline Service Encounters",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670517746777",
+    "abstract": "This research examines the implications of manager reprimands of frontline employees following a service failure incident. Drawing upon social exchange theory and looking at both customer and employee reactions, three studies find that customers are more satisfied with failed service encounters when they are aware the employee was reprimanded. This effect is on par with other types of service recoveries, mediated by deontic justice perceptions and moderated by the customer’s just-world beliefs, such that high believers are more satisfied than low believers when they are told about an employee’s reprimand. Direct observation of the reprimand acts as a key boundary condition whereby customers become dissatisfied when they are present during the reprimand. Furthermore, we find that customer perceptions of frontline reprimands are tied to reprimand privacy, whereas employee perceptions are tied to reprimand civility. This research is the first to simultaneously examine the effects of workplace reprimands on customer and frontline employee satisfaction. For managers, our findings illuminate the usefulness of communicating employee reprimands to customers, thus representing a low-cost alternative to other types of recovery efforts. © 2018, © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_1996",
+    "title": "Too Good to Be True? Boundary Conditions to the Use of Downward Social Comparisons in Service Recovery",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670518793534",
+    "abstract": "Evidence shows that downward social comparisons (DSCs), messages delivered by frontline employees describing how service experiences turned out even worse for others, can reduce customers’ anger following a service failure. This study contributes to the literature on DSCs and service recovery by highlighting pitfalls associated with the use of these messages in service recovery and showing the conditions necessary for their effectiveness. Building on persuasion knowledge theory, we show that customers draw manipulative inferences about DSCs because of the perceived bias associated with the source of the message and the implicit derogation of a competitor that DSCs entail. To reduce inferences of manipulative intentions, frontline employees should both accompany DSC messages with intense apologies and use self-derogation to reduce the perception that they are criticizing another firm. Past claims on the generalized effectiveness of DSCs need to be revised. Managers should craft social comparison messages carefully to avoid negative reactions from customers. Our research indicates that once adapted to address these concerns, DSCs can be an effective recovery strategy among individuals with a strong need for social comparison information. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_1997",
+    "title": "The Effect of Compensation Size on Recovery Satisfaction After Group Service Failures: The Role of Group Versus Individual Service Recovery",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670518802059",
+    "abstract": "Two experimental studies reveal that customers’ reactions to different levels of recovery compensation differ between a recovery that occurs at the group level (such that every customer knows that every other affected customer receives the same compensation) and one that occurs at the individual level (such that the individual does not know whether and how much compensation other affected customers receive). In both cases, recovery compensation exhibits diminishing returns on compensation size in terms of recovery satisfaction. However, at the group level, the rate at which the returns on compensation diminish is greater and satisfaction reaches a plateau at lower compensation levels than at the individual level. The salient social comparison made during a group service recovery (GSR), as evidenced by the mediating role of distributive justice, explains these effects. Finally, we note that at midrange compensation levels, GSR and individual service recovery did not lead to different levels of recovery satisfaction, suggesting a zone of tolerance or indifference at these levels. Further, our findings yield important managerial implications for the efficient allocation of service recovery resources after a group service failure. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_1998",
+    "title": "Reclaiming the Future: Understanding Customer Forgiveness of Service Transgressions",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670518802060",
+    "abstract": "Service transgressions, and how customers respond to them, are of ongoing interest to researchers and practitioners. However, whether and how customers forgive such transgressions remains unexplored. Grounding our investigation in interdisciplinary research on forgiveness, and leveraging self-determination theory as an enabling theoretical foundation, we analyze 34 in-depth interviews with customers who experienced transgressions in the health-care, financial, and retailing sectors. We conceptualize customer forgiveness as a motivational process involving customers’ relinquishing of vengeful thoughts and feelings about transgressors. Four distinct pathways of forgiveness emerge as follows: forgiveness as transgressor’s atonement, as disillusionment, as self-healing, and as grace. Customers anchor their forgiveness pathways in motivations that are either self-focused (autonomous) or transgressor-focused (controlled). Each pathway reflects differences in customers’ internal reconciliations of the transgression. Further, we demonstrate the role of transgression circumstances, service recovery, and broader marketplace realities in customer forgiveness. We identify the key underlying moral premise of each pathway. Finally, we show how each forgiveness pathway impacts restoration of customer-service provider relationships. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_1999",
+    "title": "The Service Recovery Journey: Conceptualization, Integration, and Directions for Future Research",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670518819852",
+    "abstract": "Service failures represent temporary or permanent interruptions of the customer’s regular service experience. Although the literature identifies an extensive set of organizational alternatives for recovering from service failures, researchers have approached these responses as discrete organizational actions that are loosely connected to the dynamic nature of the recovery experience. In this article, we address this shortcoming by introducing the idea of the service recovery journey (SRJ). We first conceptualize the SRJ as the outcome of a service failure that is composed of three phases: prerecovery, recovery, and postrecovery. We then synthesize the organizational responses to service failures reported in 230 journal articles and integrate them with the novel SRJ perspective. Thereafter, we provide an extensive set of questions for future research that will expand our knowledge about the prerecovery, recovery, and postrecovery phases and address the interaction between the customer’s regular journey and the SRJ. Finally, we outline six considerations for recovery research seeking to affect business practice and discuss the managerial implications of adopting an SRJ perspective. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_2000",
+    "title": "When and Why a Squeakier Wheel Gets More Grease: The Influence of Cultural Values and Anger Intensity on Customer Compensation",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670519838623",
+    "abstract": "When customers express anger, do they gain greater returns, as suggested by the proverb “the squeaky wheel gets the grease”? If so, does the intensity of the squeak matter? In four studies, we explore employee compensation responses to customers who express relatively high- versus low-intensity anger in service-failure settings. The studies demonstrate that the cultural value of power distance (PD) moderates the relationship between emotional intensity and customer compensation: High-PD service employees offer less compensation to customers expressing higher intensity anger, and low-PD service employees offer more to customers expressing higher intensity anger. For high-PD service employees, this relationship between emotional intensity and compensation is mediated by the perceived appropriateness of the anger expression; for low-PD employees, it is mediated by perceived threat. However, when perceptions of threat are mitigated, low-PD service employees offer higher compensation to lower intensity anger, and this effect is mediated by perceptions of appropriateness. This research is the first to examine the effect of anger intensity in service-failure settings. For managers, the findings illuminate the importance of adopting a cultural lens when designing emotion management training programs and when setting practices for compensating angry customers. © The Author(s) 2019."
+  }
+]

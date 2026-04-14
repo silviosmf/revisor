@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0151",
+    "title": "The Restaurant Personality Scale",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10963-3_75",
+    "abstract": "Brand personality and attributing human characteristics to brands when evaluating them has been examined within the marketing and consumer behaviour literature in recent years. Notable has been the brand personality scale developed by Aaker (1997) which outlines 42 traits on five dimensions. This scale has demonstrated how consumers can use human metaphors or characteristics when making evaluations of brands and that a certain level of projection is required for consumers to feel they can make adequate assessments of the brands they encounter. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0152",
+    "title": "Complaint Intention of Dissatisfied Customers: The Moderating Role of Affective Commitment and Complaint Barriers",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10963-3_96",
+    "abstract": "Over the past decade, many studies have provided various findings on how to manage service failures and related recovery attempts. These studies have provided insight into consumer perceptions of the service recovery. However, all recovery efforts are contingent upon one key assumption: a customer voicing the complaint. The fact that up to 95% of customers never register their complaint following a failure makes this problem even more serious. Given the critical need for encouraging customer complaints, it is surprising that only few studies investigate factors that may prompt consumers to complain or remain silent. This paper highlights Hirschman’s theory of exit, voice, and loyalty as the basic framework of consumer behavior after service failures. In line with this reasoning, our research assesses consumer dissatisfaction response style and investigates perceived justice of firms’ recovery attempts. More precisely, we test the following three hypotheses in a 2 (low vs. high affective commitment) X 2 (low vs. high complaint barrier) X 2 (restaurant- and a fashion retail setting) consumer experiment with 280 subjects. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0153",
+    "title": "A Multi-Level Approach to Retail Management Education",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11761-4_53",
+    "abstract": "Retailers today are competing not only firm to firm, but also supply chain to supply chain. Thus, a new approach to teaching retailing from an inter-firm relationships perspective, allowing for the coverage of both consumer and supply chain issues, is needed to address fundamental changes in 21st century retailing. In order for firms to remain competitive, it is suggested that firms develop long-term relationships with various stakeholders such as suppliers, employees and competitors. Using this logic as a guide, we compare the retailing performance outcomes of service quality to logistics service quality and retailing programs of service recovery to reverse logistics. Overall, this manuscript builds a conceptual model of business to consumer level and business (supply chain) level interactions impacting satisfaction and performance; connects additional supply and demand conceptual issues to the consumer and supply chain management perspectives in retailing; and draws a potential outline for instructors interested in an updated approach to retail education. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0154",
+    "title": "Who is to Blame? The Effects of Store Image and Product Branding on the Assignment of Responsibility for Failures Involving Multiple Firms",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11761-4_6",
+    "abstract": "The current work examines who consumers hold responsible when multi-loci failures occur-failure situations in which multiple firms contribute to the failure. Much of the literature that examines consumer responses to product and service failures has traditionally focused exclusively on situations that are caused by a single firm or employee (Bitner 1990; Folkes 1984; Folkes, Koletsky, and Graham 1987; Oliver and DeSarbo 1988). There are many failure situations in which multiple firms jointly contribute to or potentially contribute to the failure. Indeed, the growing trend in outsourcing production, distribution, and various sales activities has made error-free delivery of products and services quite challenging for organizations (Bennedsen and Schultz 2005; Hamm 2004). In two studies, we establish that both retailers and producers are blamed for failures occurring in the food industry. In a scenario-based survey, we manipulate store image and product branding to examine whether these constructs buffer retailer and producer responsibility, respectively. Store image has little impact in a multi-loci failure. Interestingly, counter to the standard understanding of brand equity, product branding draws blame to the producing firm. Perceptions of responsibility had direct effects on “exit” and “voice” after controlling for satisfaction. Implications for future failures research, retail policy, and brand equity are also discussed. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0155",
+    "title": "The Role of Choice and Gender in the Service Recovery Process: A Comparison Between Hedonic and Utilitarian Recovery Options",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11761-4_78",
+    "abstract": "The present study examined the benefits of letting customers choose among utilitarian and hedonic service recovery options following a service failure. We were particularly interested in the moderating role of gender in anticipated satisfaction and emotional responses to service recovery. Findings from our study indicate that women were more satisfied with their chosen alternatives and seemed to value the act of choosing more than their male counterparts. Women were also more inclined than men to choose hedonic options. As expected, choice had minimal impact when the service failure was severe. Overall, our findings suggest that service operators and retailers might benefit from gender-specific options to service recovery. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0156",
+    "title": "Formulating Loyalty Attributes in B2B Failure/Recovery Episodes: The Impact of Quality, Service Recovery, Relationship Satisfaction and Trust",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11779-9_14",
+    "abstract": "Drawing on relationship and services marketing literature, the authors empirically test a model of business loyalty in a sample of 471 industrial clients of coffee machines experiencing a failure/recovery incident, integrating the concepts of service quality, product quality, service recovery satisfaction, industrial relationship satisfaction, and trust. The study builds on recent advances in services marketing theory assessing the relationships underlying the identified constructs in the b2b environment. The results demonstrated a clear pattern of service and product related quality dimensions, and a number of other important findings including the empirical verification of the mediating role of overall relationship satisfaction in the formation of loyalty attributes. We note that industrial relationship satisfaction is mainly explained by product and service quality, as demonstrated by the variance explained (R2 = 50%). The results clearly showed the existence of a positive bond between perceived quality of product / services and industrial relationship satisfaction supporting thus H1. A detailed examination of the results reveals the existence of direct and indirect bonds concerning the service quality dimensions. Indeed, the perceived quality of the delivery and sales services exert a positive and direct influence on industrial relationship satisfaction. The technical service aid and installation service behave differently, and product quality fully mediates their impact on industrial relationship satisfaction. The impact of trust is verified as well. The present empirical inquiry begins with an examination of the literature pertaining to each of the concepts involved and the presentation of our conceptual framework. The methodology employed in this research is then explained and the study results presented and discussed. Finally, conclusions and managerial implications of the study are provided and a set of future research directions examined along with study limitations. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0157",
+    "title": "Investigating Individual Differences in Customer Complaint Behavior: Towards a Comprehensive Conceptual Framework",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11779-9_36",
+    "abstract": "There is little research exploring the complex psychological processes underlying individual differences in customer reactions to similar dissatisfaction situations i.e., whether to complain or not, whom to complain to and the methods used for complaining. In this research, we address these gaps by first developing a comprehensive conceptual framework incorporating two important situational variables in the CCB context – customer dissatisfaction and involvement along with two relevant consumer traits – impulsivity and self-monitoring. Based on this framework, several hypotheses are developed about the relationships among these variables. Next, we describe a survey-based study used to test these hypotheses, with a large sample of student subjects (N=489), in two different contexts – one involving dissatisfaction with a product and another with a service. Finally, the results are discussed along with some limitations and directions for future research. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0158",
+    "title": "Marketing Soundness in Women Owned Small Enterprises in India: A First Level Analysis",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11779-9_73",
+    "abstract": "The aim of this study is to assess the marketing soundness of women- owned small enterprises in India. For the purpose of the study 184 data collected from women entrepreneurs with the help of a questionnaire to measure five dimensions of marketing soundness. These five are a)entrepreneurs response to complaints, b) to brand switching c)quality of products d)to competition and e) knowledge about consumers. The study observed that many women entrepreneurs in the study appeared to have marketing soundness. However, when it comes to taking steps to improve their performance, they are not able to do so. Age of the enterprise and the educational background of the entrepreneurs do have a relation in responding to various dimensions of the marketing soundness. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0159",
+    "title": "Offshore Outsourcing of Customer Services and Consumer Behavior: Towards A Comprehensive Conceptual Framework",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11779-9_83",
+    "abstract": "Offshore outsourcing is a fast-growing aspect of the world economy today with companies striving to reduce cost and improve productivity by shifting parts of their operations to overseas service providers in order to remain competitive (McCartney 2003; Ross 2003). Existing research on offshore outsourcing is primarily focused into the labor and ethical issues of outsourcing or on the effects of strategic outsourcing decisions on organizations (Clott 2004; Razzaque and Sheng 1998). There is little research on the influence of outsourcing on consumers, their perceptions, attitudes and behaviors. However, organizations are already becoming more cautious about moving towards outsourcing because of concerns about dilution of their image, lower customer satisfaction, reduced brand loyalty and an increase in customer complaints due to real or perceived concerns about cultural differences, lower service standards and loss of privacy (Cornell 2004; Data-Monitor 2004; Economist 2001; Kennedy 2002; Reilly 1997; Roy 2003). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0160",
+    "title": "Complaint Communication Media and Their Impact on Customer Justice Expectation: An Exploratory Study",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11779-9_92",
+    "abstract": "Marketing researchers and managers have recognized the importance of soliciting and resolving customer complaint and developed a good knowledge base about customer complaint. Though their studies suggest that effective communication plays an important role in service recovery, researches focused on communication, especially communication media have been relatively narrow. As a result, a few questions remain unanswered. For example, do customers prefer certain complaint media to others? What factors would influence customer media choices? How different media choices lead to different resolution expectations? In recent years, firms are investing significant resources to expand complaint media, and answering those questions will help firms incorporate media factors to a more effective handling strategy. This study seeks to bridge the gap between communication researches focused on media selection and service complaint researches focused on customer recovery expectations by exploring the determinants and outcomes of media choices. We attempt to find out 1) whether customers prefer rich media to lean media for service complaint; 2) whether past experience influence future selection of specific media; 3) whether the type of media affects customer expectations. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0161",
+    "title": "Service Failure: Causal Attribution, Emotional Responses and Behavioral Outcomes",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11797-3_106",
+    "abstract": "When a service failure occurs, customers experience any of a variety of negative emotions. The particular emotional reaction depends on the customer’s perception of why the service failure occurred in the first place. Behavioral outcomes associated with service recovery therefore depend directly on the negative emotion and indirectly on the customer’s perception of the cause. To the extent that marketing managers can frame the cause of the service failure in their post-failure communications, recovery satisfaction may be increased leading, in turn, to more positive customer response outcomes. Managerial implications are identified. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0162",
+    "title": "A Multilevel-Investigation of the Moderating Role of Personality Traits to Perform Service Recovery in Cambodia, Taiwan, and Sigapore",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11797-3_107",
+    "abstract": "The service interaction between service providers and receivers has long debate in service marketing literature. By performing and recovering service strategies to retain customer satisfaction and loyalty, service employees play key important role in implementing better service to meet customer need. Service recovery is putting a smile on a customer’s face after you have made a mistake. By linking research gap between marketing and organizational behavior aspects, this study attempts to provide core concepts to understand the customer’s perception and service employee’s performance in cross-sectional service industries. The key objective of this paper is to examine the moderating role of personality traits of individual service employees to enhance service performance in cross-service unit studies in Cambodia, Taiwan, and Singapore. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0163",
+    "title": "Influence of Modes of Acculturation on the Consumer Behavior of West African Immigrants in Canada",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11797-3_115",
+    "abstract": "Most previous studies of the consumption behavior of immigrants have examined their perceptions and behavior only in the context of the host country, while overlooking their perceptions and behavior in their home countries. The present study has addressed this gap in the literature by investigating the perceptions and behavior of West African immigrants to Canada in both contexts. The objectives of this study are: (i) to gain a better understanding of the modes of acculturation of West African immigrants in Canada; (ii) to relate these modes of acculturation to consumers’ perceived likelihood of successful complaint and complaining behavior; and (iii) to compare consumers’ complaint attitudes and behavior in their home countries (i.e., original countries) and the host country (Canada). An empirical study is conducted among a sample of 218 immigrants living in Canada and originating from several West African countries. The results show that the vast majority of respondents fall into one of two acculturation groups: (i) an ‘integrated’ group; and (ii) a ‘separated’ group. The findings also show that, irrespective of whether they were ‘integrated’ or ‘separated’, West African immigrants perceived that a complaint was more likely to be successful in Canada than in their home countries. Moreover, irrespective of whether they were ‘integrated’ or ‘separated’, West African immigrants to Canada tended to complain more (to a third party or via ‘voicing’) in Canada than in their home countries. Given that the host country presents a more favorable environment for complaint behavior (in terms of consumer protection, after-sales service, return policies, and so on) than their home countries, it would seem that West African immigrants were inclined to change their behavior if they believe that their complaints will be taken seriously. In contrast to these findings regarding ‘third party’ or ‘voicing’ complaints, no significant differences were found between behavior in the host country and behavior in the home countries with respect to ‘negative word of mouth’ and ‘exit’. The likely explanation for this is that these are the easiest and least costly ways of expressing dissatisfaction (whether people are in their home countries or in the host country). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0164",
+    "title": "Evaluating Credence Service Quality: The Effects of Experience Service Failure and Trust",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11797-3_2",
+    "abstract": "To examine the relationship between customers’ service quality evaluations within two different type of service, a conceptual model is proposed and argues that an experience service failure should have a powerful negative impact on service evaluation and trust, then influences credence service evaluation. On the impact of service failure, service guarantee and true relationship with customers should act as “buffering effect” to insulate the customer-employee relationship from the negative consequences of service failure. In the model, trust serves as the mediator between experience service evaluation and credence service evaluation. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0165",
+    "title": "An Application of Clusterwise Binary Logistic Regression to Complaint Data",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11806-2_1",
+    "abstract": "Clusterwise binary logistic regression (CBLR) represents a potentially valuable technique in the quest to better understand different responses by heterogeneous market segments. This paper applies CBLR to a complaining behavior data set (n = 505) to better classify types of complainers and non-complainers and to predict service failure responses in each group. The results indicate that CBLR is a viable tool for analyzing group heterogeneity with respect to differential variable effects. Distributive justice, procedural justice, prior experience, product importance, brand equity, and opinion leadership exhibit different impacts when groups are separated. This indicates a need to separate consumers into identifiable groups to determine what factors drive complaining for different groups. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0166",
+    "title": "The Effect of Self-Scanning on Consumers’ Expectations and Satisfaction: An Exploratory Study In A Retail Service Setting",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11806-2_129",
+    "abstract": "This exploratory non-experimental study examined if a self-service scanning terminal (SST) presents a difference in customer expectations and satisfaction when compared to a regular human interaction in a real retail service setting. The dimensions of transaction ease and time spent on the process of buying and paying for purchases were used to operationalize the expectation and satisfaction level of customers. The self-serve technologies used for this study were self-serve scanning terminals located at a Big-Kmart store in the Metropolitan area of San Juan, Puerto Rico. The results suggest that there is no significant difference in customer expectations with respect to transaction ease, but that there is a significant difference in level of expectations with respect to transaction time when comparing a self-scanning terminal to a human interaction (regular cashier) in a retail service encounter. The self-service scanning terminal is expected to be shorter than the human interaction (regular cashier) in terms of transaction time. In addition, the results suggest that there is no significant difference in customer satisfaction in a technologically based service encounter (self-scanning terminal) when compared to an interpersonal service encounter (human interaction). Nevertheless, the results point to the direction that the level of satisfaction is somewhat higher with the technological interface, and to the usage of technology as an alternative dyadic relationship that could delight customers as well as humans to human interactions. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0167",
+    "title": "When Corporate Actions and Consumer Values Collide: Does Consumer Religious Commitment Influence Store Loyalty and Consumer Complaint Intentions?",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11806-2_19",
+    "abstract": "Anecdotal evidence suggests that companies in the United States receive criticism from consumers for ignoring or violating their religious beliefs. In an exploratory study surveying 425 respondents in three different states, this paper empirically examines the relationship between consumers’ religious commitment, consumers’ store loyalty, and store complaint intentions. Results suggest that when firms enact policies or procedures that are contrary to existing customers’ religious beliefs, consumers’ religious commitment influences store loyalty negatively. In addition, analysis reveals that increased customer religious commitment may lead to an increase in store complaint intentions. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0168",
+    "title": "Did You Complain or Not? [0,1]",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11806-2_89",
+    "abstract": "Consumer complaining behavior is a phenomenon of great interest and practical importance in services. It is being slowly advanced through the application of different samples, data collection procedures, and analytical techniques. Structural equation modeling and ordinary least squares regression are at the forefront of current complaint research, but are limited in some ways by their reliance on scenario-based data and prospective complaint intention self-reports. The use of these methods is generating a solid base for continued research into actual failure occurrences and complaining behavior, but the theories need support from real events and retrospective response behaviors in addition to contrived events. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0169",
+    "title": "The Effectiveness of Service Recovery on Repurchase Intention: Moderating Effect of Customer Loyalty and Negative Emotion",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11806-2_90",
+    "abstract": "Considerable evidence exists to suggest that successful service recovery can have a positive impact on customer satisfaction and behavioral intentions such as repurchase intentions and positive word of mouth. Sometimes, successful service recovery can overcome initial dissatisfaction and enhance the relationship, producing a service recovery paradox. However, other studies offer contrary evidence suggesting that even excellent recovery might not be enough to restore consumer attitudes and behavioral intentions to an initial level. Why do some studies say that service recovery is effective while others do not? To examine the contrary results from previous studies, this research starts with the fact that all customers are not the same in terms of their level of loyalty and negative emotions evoked by service failures. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0170",
+    "title": "When Does the Value of Compensation Matter in Service Recovery?",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11815-4_12",
+    "abstract": "Service recovery (SR) plays an important role in (re-)establishing customer satisfaction after service failures, represents an opportunity for service providers to develop strong relationships with customers, and refers to corrective actions of service providers such as offering (in)tangible compensation in order to generate positive customer responses (Zemke and Bell 1990). Tangible compensation consists of offering economic benefits to customers (Del Río-Lanza et al. 2009). Intangible compensation consists of simple and inexpensive social actions that aim to recover service failures (Miller et al. 2000). The purpose of the study presented here is to examine the appropriateness of the four most common types of tangible compensation (gift, discount, credit for future consumption, refund) in combination with four types of intangible compensation (apology, showing empathy, explanation, manager intervention) in an economically developing country (Madagascar) compared to a developed one (Switzerland). Studying consumer reactions to different SR attempts in these countries is interesting because, in both countries, the service sector generates over 50 % of the gross domestic product. The target variable analyzed is customer satisfaction with the service recovery (SSR). We further differentiate for failure severity and responsibility for the failure, and also include several control variables (cultural differences, service involvement, and attitude toward complaining) because these variables can affect customer satisfaction and loyalty (De Matos et al. 2009; Webster and Sundaram 1998). The findings presented here enable managers to develop country-specific SR strategies that are appropriate to address service failures in an efficient and cost-effective manner. © 2016, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0171",
+    "title": "Expressions of (Dis)Respect: Understanding Respect in a Consumer Context",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11815-4_210",
+    "abstract": "What (dis)satisfies consumers is a central question in marketing research (Luo and Homburg 2007). Existing work has largely focused on the role of judgments of product or service performance (e.g., Falk et al. 2010), complaint handling (e.g., Zheng et al. 2013), and equity perceptions (e.g., Oliver and Swan 1989) as antecedents of satisfaction. The current work suggests that satisfaction is also likely to be strongly influenced by the inferences that consumers draw about the extent to which the firm showed them respect. We expect that such inferences can be drawn from a wide variety of firm actions. As such, respect may account for some of the impact of a variety of known antecedents of satisfaction, but it might also be capable of explaining additional variance in the satisfaction response. Respect plays a central role in the quality and outcomes of interpersonal interactions (Lind 1989). It has been characterized as a fundamental entitlement (Miller 2001). Actions and words that convey a lack of respect can be enormously upsetting (Sennett 2003). Conversely, respectful relationships are more rewarding and likely to endure (Murphy 2007; Sleebos et al. 2006). Despite the demonstrated importance of respect in interpersonal settings, it has received little attention in the context of marketing exchanges (Berry 1996; Costley et al. 2005). The purpose of the current work was to provide an initial investigation into the role respect might play in consumers’ satisfaction response. Four-hundred and fifty participants (students at two universities) recounted either a satisfying or dissatisfying purchase experience and completed a variety of relevant measures. As expected, dissatisfying experiences were associated with poor product, service, and post-purchase service performance. They were also more likely to result in lower attitudes toward the store, more negative affect, more negative word-of-mouth, and reduced repurchase behavior. More relevant to the current ideas, dissatisfying incidents were characterized by perceptions of a lack of respect and reduced self-esteem. Within each type of reported experience (i.e., both satisfying and dissatisfying), inferences of (dis)respect predicted satisfaction, beyond the variance explained by the three performance variables (product, service, and post-purchase service). Additional analyses suggested that the relationship between respect and satisfaction was mediated by self-esteem and affect. Also consistent with our broad ideas, inferred (dis)respect had a stronger influence on self-esteem and (dis)satisfaction when it came from a seller with which consumers had previously perceived to have a strong relationship. © 2016, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0172",
+    "title": "‘Yo Krispy Kreme, I Don’t ‘Like’ Your Donuts’: An Empirical Investigation into Complaint Management in the Context of Social Media",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11815-4_62",
+    "abstract": "Social media is now an integral part of consumer’s lives and has unsurprisingly attracted the attention of marketers who are now trying to decipher the most effective ways to create value through these channels (Pagani and Hofacker 2011). At present marketers engage with consumers in three ways: (1) targeted advertising; (2) encouraging C2C sharing of brand related content; and (3) direct interactions through ‘fan pages’. The present research focuses on Social Customer Relationship Management (SCRM) focusing on consumers’ complaints on brand fan pages. This is of key concern to firms as any complaints will be publicly visible and are likely to affect the attitudes of other consumers who read them and even more if these are shared as through WOM (see Swan and Oliver 1989). Large companies, such as Nestle have experienced disasters that resulted from unsuccessful handling of customers’ complaints on social media (Lonescu-Somers and Enders 2012). When faced within a publicly visible complaint social media, marketers must make a choice of how to respond. Through in-between groups experiment (n = 200) it is the aim of this paper to test which is the best response to a complaint (leave visible, delete, reply, or encourage further consumer discussion). The following will provide a review of relevant literature. © 2016, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0173",
+    "title": "Attributions of Credit? A Reexamination of the Role of Customer Attributions Across Both Successful and Unsuccessful Service Encounters",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11845-1_107",
+    "abstract": "Recent advances in the realm of service failure and recovery have shed new insight into the role of customer attributions in failed service encounters. While this new research focus is noteworthy and has expanded our knowledge of the relationships among many service constructs, few of these studies have expanded their analyses to investigate the effects of key constructs across both successful and unsuccessful service encounters. This trend is surprising given the fact that most service experiences end successfully and even when failures occur, recovery strategies can only be employed in 5 to 30% of these instances. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0174",
+    "title": "Service Quality, Product Quality and Service Recovery as Antecedents of Client Satisfaction in a Business-to-Business Context: An Empirical Study",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11845-1_30",
+    "abstract": "The advent of Relationship Marketing and the increasing competition characterizing the markets of the last 30 years placed the conceptualization and measurement of the quality and satisfaction variables in the center of modern marketing theory and practice as principal indicators of marketing performance (Babin and Griffin 1998; Walker 1995; Jones and Suh 2000). During the last years, we were pilot of an increasing process of globalization in the world. Thus, we see that the traditional definitions of markets and competition according to a regional or local prospect were exceeded. In addition, in reaction, to some extent, with this context much more competitive, the companies choose the development of products and services of the services of a higher quality, in response to the increasing requests of the increasingly demanding customers (Parasuraman, 1998). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0175",
+    "title": "Forgiveness in Business Relationships: The Role of Emotion",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11845-1_31",
+    "abstract": "In philosophy, psychology and theology the concept of forgiveness has received significant attention and investigation from various theoretical and conceptual perspectives. Within the marketing literature, there is an abundance of research, focusing on consumer behaviour associated with service failure, various forms of complaint behaviour (Colgate, 2001; Smith et al, 1999; Blodgett et al, 1995; Tax et al, 1998) and service recovery (Smith and Bolton, 2002; McCollough et al, 2000; Singh and Widing II, 1991). However, forgiveness has not yet been investigated, as an essential component of business relationship. To address this gap the authors conceptualize forgiveness as a process that might take place in the conflict between a service provider and a customer. A theoretical model of forgiveness incorporating the theory of emotions is proposed. The approach offered shows that managers may learn how to manage their relationships with customers by understanding how their emotions are aroused in conflict situations. Understanding forgiveness in this context may also provide insights into how to eliminate sources of customer dissatisfaction. Forgiveness emphasises the emotional element of the customer provider relationship. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0176",
+    "title": "A Conceptual Framework for Measuring E-Service Quality",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11848-2_52",
+    "abstract": "The idea of service quality is increasingly important to managers of companies with a web presence. Measuring e-service quality is becoming an important topic to understanding what customers’ value in an online service transaction. The goal of this paper is to conceptualize e-service quality by exploring the process, outcome, and recovery dimensions of service quality. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0177",
+    "title": "Service Failures Away from Home: Benefits in Intercultural Service Encounters",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11848-2_94",
+    "abstract": "Consumer travel and multinational service corporations have increased the opportunity for service failures where consumers from one culture experience service problems in another cultural setting. This study tested the Stauss and Mang model (1999), which proposed the possibility that intercultural service failures exhibit lower seriousness ratings due to the customer’s attributing errors to cultural distance. Such a possible outcome has important implications for service providers whose customers are from different cultures, such as tourist or visiting businesspeople. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0178",
+    "title": "Attributions of Waiting Time: Conceptualization and Research Agenda",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11882-6_53",
+    "abstract": "This study uses the attribution theory to develop a conceptual framework to explore consumers' reactions to waiting in lines as a result of service delay. Consumers' attributions are an important link in understanding the relationship between service failure and service evaluation. This paper uses two dimensions (locus of control and stability) to generate four attribution variables: attributions to ability, effort, task difficulty, and luck. These four attributions are used to develop a conceptual model that explains and predicts consumers' reaction to service delay. From the conceptual framework several propositions were generated regarding the relationships among service delay, waiting in lines, and consumers' satisfaction. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0179",
+    "title": "Technology-Based Self-Service: Issues For Retail Management And Research",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11882-6_7",
+    "abstract": "This conceptual paper reviews the place of technology in services marketing and technology-based self-services (TBSS) in a general classification schema for services. This is followed by a discussion of benefits and challenges of TBSS for retailers. Finally, a research agenda, which incorporates company, customer, employee and technology point of views is presented. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0180",
+    "title": "Comments on the Participative Service Consumer",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11885-7_132",
+    "abstract": "The choice of title for this session is interesting and actually provides a beginning for my comments. Since it is assumed that the service consumer must play a role in the construction of the service product, there must be some type of relationship constructed beUveen the service provider and service consumer. While only one of the papers appears to be specifically based upon a relationship marketing foundation, two of the others implicitly are examining relationships. I would like to suggest that all three could be considered to be examining specific pieces of the more general model of relationships developed by Morgan and Hunt (1987). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0181",
+    "title": "The Semantic Structure of Time-Oriented Retail Service Guarantees: The Moderating Role of Cultural Norms on Perceived Performance Risk–Abstract",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-11885-7_17",
+    "abstract": "Past research of warranties and guarantees has examined the importance of structure and phrasing (Shimp and Bearden, 1982). Previous research by Straughan and Albers-Miller (2000) examined the semantic dimensions of time-oriented service guarantees. Their work looked at the effects time and redress specificity played in reducing consumers’ perceived risk. The present study seeks to examine their findings in a cross-cultural context. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0182",
+    "title": "E-commerce and the return of unwanted goods: A case for cooperation among providers of postal and non-postal parcel services",
+    "journal": "Postal and Delivery Innovation in the Digital Economy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-12874-0_2",
+    "abstract": "With the rapid development of e-commerce, new forms of distance sales have developed. Although consumers still prefer to order goods from domestic suppliers, the market for consumer goods has grown global. As a consequence, the European Commission in its Green Paper on Parcels (European Commission 2012, p. 4) expresses its intention to improve the conditions for the cross-border transportation of goods in order to facilitate e-commerce. In Chap. B of the Roadmap issued subsequently to its Green Paper (European Commission 2013), the Commission defined as its objective to help boost e-commerce in the EU by providing e-traders and consumers with parcel delivery services that meet their needs in terms of quality, accessibility and affordability. The Roadmap defined two areas of concern: from the consumers’ perspective, the lack of transparency and information about available redress mechanisms; and from the e-traders’ perspective, a lack of transparency on delivery services and choice of availability of delivery solutions. In addition, the Roadmap focuses on the lack of interoperability between delivery companies when faced with diverging operational solutions. © Springer International Publishing Switzerland 2015."
+  },
+  {
+    "article_id": "CS_0183",
+    "title": "Customer Satisfaction, Assessment, Intentions and Outcome Behaviors of Dyadic Service Encounters: A Conceyfual Model",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13084-2_10",
+    "abstract": "Customer satisfaction is rated among the top goals of most organizations today. Yet, whilst it is acknowledged that customer satisfaction is important, and more and more firms are understanding the importance of building and maintaining good customer-service provider relationships in order to achieve a high level of customer satisfaction, many firms do not understand how customers arrive at outcomes, oor the interrelationships between the variables which influence these outcomes. This paper presents an integrated conceptual model, showing the interrelationships between these importance variables in a dyadic service encounter setting. In building this mode~ the paper draws from a range of concepts and models, principally from consumer behavior, services marketing and social psychology. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0184",
+    "title": "Emotional and Behavioral Consequences of Self–Blame Following Service Failure",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13144-3_14",
+    "abstract": "Past research suggests that consumers make attributional judgments following service failures and that these attributions of responsibility elicit a variety of emotions. Yet, in service contexts, little is known about attribution related emotions other than anger, or how attribution related emotions influence behavioral responses to dissatisfaction with service outcomes. In this study, we employed a mental simulation to investigate the effect of attributional judgments on emotional and behavioral responses to a core service failure. © 2015, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0185",
+    "title": "Guidelines for Developing Retail Recovery Strategies",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13144-3_32",
+    "abstract": "The objective of this study was to develop a typology of retail recovery strategies that were amenable to systematic investigation. In pursuit of this objective, this research utilized the critical incident technique to investigate samples of retailers of durable goods (RDG), hotel, and restaurant customers to: (1) identify and classify recovery strategies utilized within each retail sector in response to various customer service failures; (2) assess levels of customer perceived effectiveness associated with each respective recovery strategy; and (3) assess customer retention rates associated with the various recovery strategies. © 2015, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0186",
+    "title": "The Effects of Service Failure on Buyer-Seller Relationship Deterioration",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13144-3_33",
+    "abstract": "Studies of relationship marketing have emphasized the processes by which relationships between buyers and sellers are initiated and developed. However, amidst evidence of a life-cycle in buyer-seller relationships (Dwyer, Schurr and Oh 1987; Palmer and Bejou 1994), relatively little attention has been paid to the processes by which relationships are dissolved. This paper reports on research into the effects of service failure on relationship dissolution. © 2015, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0187",
+    "title": "Determinants of the Environmental Image of an Industrial Service: An Empirical Analysis of Consumer Perceptions",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13159-7_90",
+    "abstract": "Despite a rise in environmental consciousness amongst the British public during the past decade, very little academic research has been conducted on consumers’ perceptions of environmental problems. This holds particularly for research relating to perceptions of environmental issues in industrial sectors and service industries. This paper aims to redress this gap through focussing on concerns about environmental nuisances arising from an industrial service, notably freight transport. Following a review of the literature, multivariate analysis is used to test a number of hypotheses relating to demographic and situational variables and to examine certain environment-related factors likely to impinge upon individuals’ perceptions of nuisances. The paper concludes that many of the characteristics found to be associated with general concern about the environment are only of limited use when related to a specific industrial service. © 2015, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0188",
+    "title": "Restaurant Service Failure and Recovery Analysis",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13162-7_50",
+    "abstract": "Analyzing service failures and service recovery strategies is an extremely useful management tool. By systematically categorizing consumer complaints, a hierarchy of criteria evolve that reflect the consumer’s perspective of effective performance. Despite the importance of analyzing service failures and recovery strategies, little empirical research exists which examines the subject. © 2015, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0189",
+    "title": "Attribute Importance in Determining Industrial Buyer Satisfaction",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13248-8_20",
+    "abstract": "This article reports survey research findings that measure the importance that industrial buyers attach to eight attributes relating to post-purchase satisfaction and that compare organizational buyers’ and industrial distributors’ assessment of attribute importance for three products--ball bearings, electrical components, and welding supplies. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0190",
+    "title": "Lawyer’s Perceptions of Client Dissatisfaction",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13254-9_101",
+    "abstract": "Many professionals have developed an interest in issues relating to the marketing of their services. In spite of the increased use of marketing techniques, there is some question as to whether a true sensitivity to client needs has been developed. One test of such a proposition is to consider how firms of professionals respond to client dissatisfaction. This paper describes a study conducted among managing partners from 147 law firms. The results suggest that while some lawyers are sensitive to client dissatisfaction, relatively few firms have implemented any policies regarding complaint management. © 2015, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0191",
+    "title": "A Theoretical Model for Understanding Satisfaction/Dissatisfaction Outcomes of Complaint Responses",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13254-9_12",
+    "abstract": "Studies exploring satisfaction/dissatisfaction as outcomes of complaint responses have been generally scant in the literature. However, TARP research (1986; 1979) suggests that an investigation into the conditions under which complaints can be converted into satisfaction appears critical for marketing effectiveness. To help guide such an investigation, this paper proposes a theoretical model of processes that underlie the complaint response---&gt; satisfaction/dissatisfaction link. © 2015, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0192",
+    "title": "Customer responses to service failure and recovery experiences",
+    "journal": "Boundary Spanning Elements and the Marketing Function in Organizations: Concepts and Empirical Studies",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-13440-6_8",
+    "abstract": "Service firms strive to deliver high quality services to customers, yet often fail to meet customer expectations, resulting in service failures. To rectify the failure, service recovery is attempted. Effective recovery is fundamental to restoring customer confidence in the organisation and repatronage intentions. Service failure events and subsequent recovery shape customer experience with the service. Service failure and recovery can thus be seen as representing two stages of the same service experience. Customer responses at each of the two stages involve complex psychological processes. A comprehensive understanding of these psychological processes is crucial for management to be able to design effective service recovery strategies. This chapter takes an overarching view of customer responses to service failure and recovery, and critically reviews research evidence in this domain. The review draws upon research from consumer and social psychology, in an effort to explain how service failure and recovery experiences shape customer perceptions, attitudes, and behaviour. The chapter also accounts for additional factors such as customer-firm relationship and brand equity, and their influence on customer responses to service failure and recovery experiences. To conclude, a number of avenues for further research are identified. © Springer International Publishing Switzerland 2015."
+  },
+  {
+    "article_id": "CS_0193",
+    "title": "Consumer Alienation and Satisfaction/Dissatisfaction: A Research Paradigm",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-16934-7_76",
+    "abstract": "Marketing literature is replete with the problems of the “disadvantaged” consumer, marketing abuses, and governmental legislation designed to reduce consumer complaints. The data used to establish policies to minimize consumer abuses are based, for the most part, on complaints of dissatisfied consumers. © 2016, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0194",
+    "title": "Consumer Satisfaction/Dissatisfaction: Implications for Consumer Protection Agencies",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-16934-7_79",
+    "abstract": "Consumer protection agency personnel may benefit from an understanding of the consumer satisfaction/dissatisfaction literature. Research in the consumer complaining behavior area is especially applicable to the agency’s roles of mediator and educator. An overview of the literature and observations drawn from agency experience are bases for the authors’ conclusions. © 2016, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0195",
+    "title": "CAN COHPLAINT KNOWLEDGE AllD EXPERIENCE AFFECT PERCEIVED CONSUMER SATISFACTION?",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-16937-8_105",
+    "abstract": "Although there has been much research devoted to the study of the basic rights of the consumer, especially in the areas of complaining behavior, post-purchase satisfaction, advertising purity, etc., little or no effort has been put forth in studying the consequences and tools related to the consumer's right to be heard. This study examines the fundamental complaint tool: The complaint letter (from the standpoint of a corporate response to that letter) and hov1 subjects perceive satisfaction with these corporate responses. Also, differences in perceived satisfaction will be explored via sensitizing subjects to the “right to be heard” (i.e., knowledge) and also vith respect to consumer complaining experience. Implications of this exploratory study for marketing will be discussed. © Academy of Marketing Science 2015."
+  },
+  {
+    "article_id": "CS_0196",
+    "title": "An Expected Value Model of the Consumer Decision to Seek Legal Redress",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-16937-8_27",
+    "abstract": "There are virtually no studies on consumer use of the court. This study alleviates this void by developing emotional and rational models of the consumer decision to seek legal redress. The models were tested with the results of a mail survey of 223 consumer whose complaints were not resolved by state mediation. A probit analysis indicated that both models seem to be accurate predictors of whether consumer would take legal action. © Academy of Marketing Science 2015."
+  },
+  {
+    "article_id": "CS_0197",
+    "title": "Retailer Controllable Sources of Customer Dissatisfaction: The Importance of After-Sales Service1",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-16973-6_63",
+    "abstract": "Most consumer satisfaction/dissatisfaction research is focussed either on identifying product classes and personal/usage characteristics associated with dissatisfaction, or is focussed on modelling the psychological processes underlying the phenomenon. Most retailers, on the other hand, focus only on handling customer complaints. This paper focusses on retailer controllable sources of customer dissatisfaction. Findings of a large scale study of recent automobile buyers are reported, which show that after‐sales service is an important correlate of customer dissatisfaction. Specific aspects of after‐sales service are highlighted for retailer attention and possible retail responses are discussed. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0198",
+    "title": "Some Correlates of Consumer Dissatisfaction with Retail Complaint Handling Performance",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-16976-7_66",
+    "abstract": "The viability of modern-day retail organizations is largely contingent upon the ability of management to monitor and respond constructively to consumerism. Although retailers have made considerable progress in this direction, consumer dissatisfaction rema.ins with certain facets of retail performance, including the capability of retailers to satisfactorily resolve customer complaints. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0199",
+    "title": "Consumer Rights: The Perception of Business Managers in Hong Kong",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-17052-7_30",
+    "abstract": "This paper presented an exploratory study which used a sample of business managers to understand their attitude towards consumer rights. It is expected that the findings would be useful for international marketing managers when making relevant marketing decsion in Hong Kong. This study indicated that most business managers had confidence in products in the market place and valued highly the system of free-enterprises in Hong Kong. Most respondents thought that consumers in Hong Kong had not many opportunities to be heard and to redress and businessmen were not aware of the polluted environment by advertisements and products. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0200",
+    "title": "The Structure of Customer Complaint Behavior in the Airline Industry",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-17055-8_111",
+    "abstract": "Using recent data published by the U.S. Department of Transportation, the structure of customer complaint behavior in the airline industry in the United States is examined. The interrelationships among twelve categories of customer complaints are studied in detail. Factor analysis results indicate the presence of multidimensional aspects of complaining behavior. Three distinct aspects of complaining behavior in the airline industry are detected, corresponding to operational, marketing, and special situation problems. © 2015, Academy of Marketing Science."
+  }
+]

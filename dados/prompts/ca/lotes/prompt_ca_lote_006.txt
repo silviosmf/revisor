@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_0251",
+    "title": "From Stigma to Acceptance: Ethical Implications of Anthropomorphic Design in Healthcare Chatbots",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-025-06052-3",
+    "abstract": "Demand for healthcare chatbots has surged in recent years, with companies and governments actively investing in this technology. Drawing on care ethics and technology anthropomorphism literature, this research examines how businesses can design chatbots to provide more supportive healthcare services. Specifically, we explore how anthropomorphic features affect user perceptions and their willingness to adopt chatbots, particularly in the context of stigmatized health conditions. Across six experiments, including a Facebook advertising study, we find that, when consumers perceive the target health condition as highly stigmatized, they are more likely to adopt a robot-like chatbot than a human-like one. This preference arises from the belief that human-like chatbots are more likely to make social judgments, which is undesirable for consumers facing stigma. Supporting this social judgment threat mechanism, we find that this effect diminishes when the human-like chatbot lacks facial features. Our findings advance technology anthropomorphism research by showing how design choices affect chatbot adoption in sensitive contexts. By integrating care ethics, we emphasize the need for empathetic, non-judgmental design in digital health technologies. This research also contributes to stigma research, showing how thoughtful chatbot design can reduce stigma-driven disengagement. Practically, we provide actionable guidance for designers and policymakers, urging them to tailor chatbot features to the needs of stigmatized users to ensure inclusivity. Our research highlights the ethical responsibility of marketers to design technologies that reduce, rather than reinforce, stigma, thus contributing to a broader discourse on business ethics in technology. © The Author(s), under exclusive licence to Springer Nature B.V. 2025."
+  },
+  {
+    "article_id": "CA_0252",
+    "title": "Quality of Decision-Making Processes in Teams: An Analysis of the Effects of Supportive Organizational Culture, Perceived Decision Relevance and a Potential Use of AI",
+    "journal": "Group Decision and Negotiation",
+    "journal_impact_factor": 1.86,
+    "doi": "10.1007/s10726-026-09966-z",
+    "abstract": "This study investigates the quality of decision-making processes in corporate teams – a construct that is often overlooked or insufficiently operationalized in existing research. Based on the comprehensive framework by Spetzler et al. (2016), this research systematically assesses process quality, examines its influence on perceived decision-making success and identifies key factors that shape the decision-making processes quality in the context of team decision-making. A quantitative survey was conducted among 461 employees in Germany who regularly participate in team decision-making. Structural equation modeling was used to analyze the impact of a supportive organizational culture and the perceived relevance of the team decision on decision process quality, and subsequently the impact of this quality on the perceived success. Results show that both factors significantly enhance process quality, which in turn strongly predicts the perceived success. Additionally, the study explores how artificial intelligence (AI) as decision support influences process quality. A group comparison between employees with and without experience in AI-supported team decision-making and regression analyses reveal that actual use of AI is associated with higher trust in intelligent systems and a more favorable assessment of process quality. Trust in AI significantly predicts process quality across both groups. These findings contribute to the understanding of the determinants of decision-making quality and the emerging role of AI in organizational decision contexts. From a practical perspective, organizations can improve decision-making processes by providing sufficient resources and communicating the relevance of decisions. AI should be explored by users beforehand and fears addressed at an early stage to enhance trust and thus process quality. © The Author(s) 2026."
+  },
+  {
+    "article_id": "CA_0253",
+    "title": "Improving Emergency Response: An In-Depth Analysis of an ITS-G5 Messaging Strategy for Bus Blockage Emergencies at Level Crossings",
+    "journal": "Journal of Network and Systems Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10922-024-09811-1",
+    "abstract": "The Intelligent Transportation System protocol stack has revolutionized traffic efficiency and road safety applications in vehicular environments. This is due to the incorporation of the 802.11p standard in the 5.9 GHz band. This study introduces a novel architecture for vehicular communications. It employs Internet Protocol version 4 multicast over the 5.9 GHz band allocated for Intelligent Transportation Systems. The frequency band was designated by the European Telecommunications Standards Institute. Our proposed architecture addresses challenges in a specific urban use case. The use case involves a Level Crossing in Bordeaux. It focuses on the broadcast of Cooperative Awareness Message (CAM) and Decentralized Environmental Notification Message (DENM) to enhance road-user safety. To prevent accidents, we present an algorithm for CAM and DENM dissemination that ensures timely alerts for sudden vehicle blockage emergencies. Moreover, we introduce a comprehensive and optimized train braking strategy to further minimize accident risks. This strategy aims to provide efficient and timely train deceleration, allowing sufficient time for road users to clear the Level Crossing and mitigating the potential risk for collisions. We analyze End-to-End delay and Packet Reception Ratio to gauge our system’s performance. We also compare our edge-server-based architecture with cloud-based alternatives, showcasing improved latency and Packet Loss Rate in our approach. The obtained results illustrate the effectiveness of our edge-server-based architecture in the context of Intelligent Transportation Systems, particularly utilizing the 5.9 GHz band technology. The findings of this study provide a foundation for future deployments and improvements in urban environments, fostering safer and more reliable transportation systems. © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2024."
+  },
+  {
+    "article_id": "CA_0254",
+    "title": "Not a good judge of talent: the influence of subjective socioeconomic status on AI aversion",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-024-09725-7",
+    "abstract": "The current research constructs a framework to understand how subjective socioeconomic status (SES) affects consumers’ AI aversion in the evaluation context. Three experiments show that subjective SES has a negative impact on consumers’ willingness to accept AI evaluation. Consumers with higher subjective SES are more likely to resist AI evaluation because they perceive that AI agents are not as capable as human agents of identifying their talents. This effect is moderated by the agent type–the impact of subjective SES on resistance to the AI agent is attenuated when the AI agent is non-evaluative. This research is of great significance in enriching research on improving AI services efficiency across various social classes. © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2024."
+  },
+  {
+    "article_id": "CA_0255",
+    "title": "Chatbot anthropomorphism might not be the design for all: examining responses to anthropomorphized chatbots by autistic individuals",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-024-09754-2",
+    "abstract": "This research delves into the realm of chatbot anthropomorphism and its potential negative implications, with a specific focus on the preferences of individuals with autism. While existing literature often highlights the positive effects of anthropomorphism and attributes them to the sense of social presence it elicits, this article challenges that notion. The authors argue that these favorable effects seem to be confined to individuals who anticipate and prefer conventional interpersonal interactions embedded with rich social norms and skills. Through two experimental studies, this article reveals a counterintuitive finding: individuals with autism exhibit a preference for low-anthropomorphic chatbot agents over high-anthropomorphic ones. The primary contribution of this research lies in unveiling an adverse consequence within contemporary chatbot interface design. It signals a need for a shift toward a more inclusive approach to chatbot interface design—one that considers the cognitive and social requisites of marginalized users. © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2024."
+  },
+  {
+    "article_id": "CA_0256",
+    "title": "Hmm, the effect of AI conversational fillers on consumer purchase intentions",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-024-09760-4",
+    "abstract": "AI conversational agents are increasingly prevalent in marketing practices. A recent effort to make AI conversational agents humanlike is the use of conversational fillers, such as uh, um, and hmm. While computer science research has shown that conversational fillers used by AI agents generally improve users’ interactional experiences, their effects in marketing remain unexplored. This research examines AI conversational fillers in a sales and promotion context and shows that they trigger consumers’ suspicion of ulterior motives, thereby decreasing their purchase intentions, an effect moderated by organization type (for-profit vs. nonprofit). We conducted one field experiment and four online experiments with different modalities, products, and languages to provide empirical support for the hypotheses. In so doing, this research contributes to the research on chatbot natural language and AI persuasion by showing that the persuasion knowledge model can come into work in consumers’ interaction with AI agents. © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2024."
+  },
+  {
+    "article_id": "CA_0257",
+    "title": "AI in Performance Management: AI as a Tool for Instant Assessments and Feedback in the Flow of Employee Transactions",
+    "journal": "Public Organization Review",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11115-025-00934-w",
+    "abstract": "The objective of the research was to monitor the impact of an AI-based chatbot program on the effectiveness of sales managers in selling insurance policies. Over a period of three months, managers interacted with the chatbot through Microsoft Teams, which was powered by AI through the Microsoft Azure cloud platform to process requests using Chat GPT. The results showed a positive trend in the number of processed applications in the experimental group (481.03 over three months, compared to 292.28 in the control group) and the average time to process an application (applications were processed 4.25 min faster on average). © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2026."
+  },
+  {
+    "article_id": "CA_0258",
+    "title": "The new era of Artificial Intelligence in consumption: theoretical framing, review and research agenda",
+    "journal": "Management Review Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11301-025-00531-7",
+    "abstract": "Artificial Intelligence possesses the capacity to reshape brand-consumer dynamics by leveraging its capability to analyze extensive datasets, discern patterns, and customize experiences for individual consumers. This capacity is enabled by a spectrum of features embedded within AI systems, which undergo challenging, continuous, and rapid evolution to accommodate shifts in consumer preferences and behaviors. This paper aims to study the influence of artificial intelligence on consumer behavior. To address this objective, a bibliometric analysis was performed on a dataset comprising 561 publications sourced from two prominent databases, namely the Web of Science and Scopus. Findings reveal that AI influence extends across diverse sectors, as consumers display a preference for AI-driven solutions, attracted by their perceived objectivity and personalized interactions. Additionally, AI-powered tools like chatbots and virtual assistants enhance the quality of customer service and promote heightened engagement. Future research pathways, with themes classified into niche, motor, and basic categories, were outlined. This study pioneers its approach by harnessing resources of two comprehensive databases, enabling a meticulous tracking of publication evolution to discern temporal trends in the literature. In addition, a conceptual model was proposed that advocates the influence of AI on consumer behavior in three dimensions: influence across industries, addressing consumer needs in the age of AI, and optimizing consumer experience through AI-powered solutions. The paper underscores the transformative potential of AI in molding consumer behavior and emphasizes the necessity for businesses to adapt to this evolving landscape. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CA_0259",
+    "title": "Live support by chatbots with artificial intelligence: A future research agenda",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-022-00513-9",
+    "abstract": "This research uses a Preferred Reporting Items for Systematic Review and Meta-Analysis (PRISMA) protocol to investigate the utility of artificially intelligent (AI) conversational chatbots in service business settings. The findings shed light on key theoretical underpinnings focussed on human–computer interactions and clarify the benefits and costs of using responsive chatbot technologies. This contribution implies that, for the time being, works are still in progress for interactive, anthropomorphic chatbots to mimic human customer services agents’ verbal, vocal and visual cues, when they respond to online queries. In conclusion it puts forward plausible research avenues in this promising area of study. © 2022, The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature."
+  },
+  {
+    "article_id": "CA_0260",
+    "title": "Perceived value of AI-based recommendations service: the case of voice assistants",
+    "journal": "Service Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11628-023-00527-x",
+    "abstract": "The application of artificial intelligence in services is continuously spreading. In particular, one of the most important recent trends is the development of virtual assistants, more particularly; voice assistants, which provide consumers with various services (e.g. information, music) and with product and service recommendations based on their preferences. There is a need to understand how valuable these recommendations are for consumers. This study contributes to the emerging body of research into consumers’ use of the recommendations that voice assistants make in three key ways: (1) by analysing the roles of the benefits (i.e. convenience, compatibility, personalisation) they derive and costs they expend (i.e. cognitive effort, intrusiveness) in the value creation process related to voice assistants’ recommendations; (2) by evaluating the effect of social presence (the key voice assistant feature) on perceived value of voice assistants’ recommendations, through the benefits and costs associated with voice assistants and (3) by determining how the perceived value of voice assistants’ recommendations affects consumer engagement. An online survey was used to collect data. Partial least squares structural equation modelling (PLS-SEM) was employed to analyse the conceptual model. The core findings of the study are as follows. First, social presence enhances the benefits (especially personalisation) and reduces the costs (except for cognitive effort) associated with voice assistants. Second, personalisation was shown to be the strongest determinant of the perceived value of voice assistants’ recommendations, but their intrusiveness is a potential inhibitor in the way of increasing their value. Third, a positive relationship was observed between the perceived value of voice assistants’ recommendations and consumer engagement with the assistants. © 2023, The Author(s)."
+  },
+  {
+    "article_id": "CA_0261",
+    "title": "Online relationship marketing",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-018-0621-6",
+    "abstract": "Online interactions have emerged as a dominant exchange mode for companies and customers. Cultivating online relationships—defined as relational exchanges that are mediated by Internet-based channels—presents firms with challenges and opportunities. In lockstep with exponential advancements in computing technology, a rich and ever-evolving toolbox is available to relationship marketers to manage customer relationships online, in settings including e-commerce, social media, online communities, mobile, big data, artificial intelligence, and augmented reality. To advance academic knowledge and guide managerial decision making, this study offers a comprehensive analysis of online relationship marketing in terms of its conceptual foundations, evolution in business practice, and empirical insights from academic research. The authors propose an evolving theory of online relationship marketing, characterizing online relationships as uniquely seamless, networked, omnichannel, personalized, and anthropomorphized. Based on these five essential features, six tenets and 11 corresponding propositions parsimoniously predict the performance effects of the manifold online relationship marketing strategies. © 2018, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CA_0262",
+    "title": "Effects of dominance transitions on advice adherence in professional service conversations",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-019-00664-8",
+    "abstract": "For many professional services, advice adherence is a necessary condition for achieving service success for both customers and service providers. Despite their pivotal roles in value co-creation, typical conversational interactions often lead to low adherence. We propose that enabling a “dominance transition,” from provider dominance in the pre-advice stage to customer dominance in the post-advice stage, enhances advice adherence because it increases customers’ perceived common ground. Furthermore, providers’ consultation focus, customers’ prior knowledge, and customers’ perceived adherence effort moderate this process. Using mixed methods, including both empirical modeling and controlled and field experiments, we validate the proposed model in various contexts (healthcare, financial services, and fitness and wellness counseling). The findings establish several theoretical contributions and offer managerial implications for improving advice adherence by managing dominance transitions in conversational interactions more effectively through training service providers or even programming AI chatbots. © 2019, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CA_0263",
+    "title": "Learning from the Dark Web: leveraging conversational agents in the era of hyper-privacy to enhance marketing",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-019-00704-3",
+    "abstract": "The Web is a constantly evolving, complex system, with important implications for both marketers and consumers. In this paper, we contend that over the next five to ten years society will see a shift in the nature of the Web, as consumers, firms and regulators become increasingly concerned about privacy. In particular, we predict that, as a result of this privacy-focus, various information sharing and protection practices currently found on the Dark Web will be increasingly adapted in the overall Web, and in the process, firms will lose much of their ability to fuel a modern marketing machinery that relies on abundant, rich, and timely consumer data. In this type of controlled information-sharing environment, we foresee the emersion of two distinct types of consumers: (1) those generally willing to share their information with marketers (Buffs), and (2) those who generally deny access to their personal information (Ghosts). We argue that one way marketers can navigate this new environment is by effectively designing and deploying conversational agents (CAs), often referred to as “chatbots.” In particular, we propose that CAs may be used to understand and engage both types of consumers, while providing personalization, and serving both as a form of differentiation and as an important strategic asset for the firm—one capable of eliciting self-disclosure of otherwise private consumer information. © 2019, The Author(s)."
+  },
+  {
+    "article_id": "CA_0264",
+    "title": "Conversational robo advisors as surrogates of trust: onboarding experience, firm perception, and consumer financial decision making",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-020-00753-z",
+    "abstract": "The current research demonstrates how conversational robo advisors as opposed to static, non-conversational robo advisors alter perceptions of trust, the evaluation of a financial services firm, and consumer financial decision making. We develop and empirically test a novel conceptualization of conversational robo advisors building on prior work in human-to-human communication and interpersonal psychology, showing that conversational robo advisors cause greater levels of affective trust compared to non-conversational robo advisors and evoke a more benevolent evaluation of a financial services firm. We demonstrate that this increase in affective trust not only affects firm perception (in terms of benevolence attributions or a more positively-valenced onboarding experience), but has important implications for investor behavior, such as greater recommendation acceptance and an increase in asset allocation toward conversational robo advisors. These findings have important implications for research on trust formation between humans and machines, the effective design of conversational robo advisors, and public policy in the digital economy. © 2020, The Author(s)."
+  },
+  {
+    "article_id": "CA_0265",
+    "title": "Understanding anthropomorphism in service provision: a meta-analysis of physical robots, chatbots, and other AI",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-020-00762-y",
+    "abstract": "An increasing number of firms introduce service robots, such as physical robots and virtual chatbots, to provide services to customers. While some firms use robots that resemble human beings by looking and acting humanlike to increase customers’ use intention of this technology, others employ machinelike robots to avoid uncanny valley effects, assuming that very humanlike robots may induce feelings of eeriness. There is no consensus in the service literature regarding whether customers’ anthropomorphism of robots facilitates or constrains their use intention. The present meta-analysis synthesizes data from 11,053 individuals interacting with service robots reported in 108 independent samples. The study synthesizes previous research to clarify this issue and enhance understanding of the construct. We develop a comprehensive model to investigate relationships between anthropomorphism and its antecedents and consequences. Customer traits and predispositions (e.g., computer anxiety), sociodemographics (e.g., gender), and robot design features (e.g., physical, nonphysical) are identified as triggers of anthropomorphism. Robot characteristics (e.g., intelligence) and functional characteristics (e.g., usefulness) are identified as important mediators, although relational characteristics (e.g., rapport) receive less support as mediators. The findings clarify contextual circumstances in which anthropomorphism impacts customer intention to use a robot. The moderator analysis indicates that the impact depends on robot type (i.e., robot gender) and service type (i.e., possession-processing service, mental stimulus-processing service). Based on these findings, we develop a comprehensive agenda for future research on service robots in marketing. © 2021, The Author(s)."
+  },
+  {
+    "article_id": "CA_0266",
+    "title": "The effect of implementing chatbot customer service on stock returns: an event study analysis",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-022-00841-2",
+    "abstract": "Advancements in conversational Artificial Intelligence (AI) have led to rapid growth in firms’ use of AI chatbots in customer service roles. While the shareholder wealth effects of AI chatbots have yet to be investigated, recent findings suggest that AI investment may contribute negatively to firm value. This cautionary evidence, and the growing prevalence of AI chatbots, underscore that a clear understanding of their impact on firm value is urgently needed. An event study of 153 AI chatbot announcements demonstrates that implementation of AI customer service chatbots generates a.22% abnormal stock return, indicating investors respond favorably to this practice. Importantly, B2B (vs. B2C) firms have substantially more to gain from implementing AI chatbot customer service. However, we find chatbot anthropomorphism interacts with customer type, as investors respond less (more) favorably to anthropomorphized chatbots used in B2B (B2C) customer service roles. Two additional studies provide support for this pattern of findings. © 2022, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CA_0267",
+    "title": "How speaking versus writing to conversational agents shapes consumers’ choice and choice satisfaction",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-023-00987-7",
+    "abstract": "The use of conversational agents (e.g., chatbots) to simplify or aid consumers’ purchase decisions is on the rise. In designing those conversational agents, a key question for companies is whether and when it is advisable to enable voice-based rather than text-based interactions. Addressing this question, this study finds that matching consumers’ communication modality with product type (speaking about hedonic products; writing about utilitarian products) shapes consumers’ choice and increases choice satisfaction. Specifically, speaking fosters a feeling-based verbalizing focus, while writing triggers a reason-based focus. When this focus matches consumers’ mindset in evaluating the product type, preference fluency increases, thereby enhancing choice satisfaction. Accordingly, the authors provide insights into managing interactions with conversational agents more effectively to aid decision-making processes and increase choice satisfaction. Finally, they show that communication modality can serve as a strategic tool for low-equity brands to better compete with high-equity brands. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CA_0268",
+    "title": "The robo bias in conversational reviews: How the solicitation medium anthropomorphism affects product rating valence and review helpfulness",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-024-01027-8",
+    "abstract": "Companies are increasingly introducing conversational reviews—reviews solicited via chatbots—to gain customer feedback. However, little is known about how chatbot-mediated solicitation influences rating valence and review helpfulness compared to conventional online forms. Therefore, we conceptualized these review solicitation media on the continuum of anthropomorphism and investigated how various levels of anthropomorphism affect rating valence and review helpfulness, showing that more anthropomorphic media lead to more positive and less helpful reviews. We found that moderate levels of anthropomorphism lead to increased interaction enjoyment, and high levels increase social presence, thus inflating the rating valence and decreasing review helpfulness. Further, the effect of anthropomorphism remains robust across review solicitors’ salience (sellers vs. platforms) and expressed emotionality in conversations. Our study is among the first to investigate chatbots as a new form of technology to solicit online reviews, providing insights to inform various stakeholders of the advantages, drawbacks, and potential ethical concerns of anthropomorphic technology in customer feedback solicitation. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CA_0269",
+    "title": "Building adaptive context-aware service-based smart systems",
+    "journal": "Service Oriented Computing and Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11761-020-00310-0",
+    "abstract": "Existing smart systems tend to be domain specific and developed end-to-end in an ad hoc manner and thus tend to be time and resource consuming, error prone and hard to interoperate and integrate. The objective of this paper is to provide a method through which the method users can follow a general process model and a uniform set of concepts to define the main elements involved in their targeted smart solution while also thinking about how their system could or should improve, adapt and eventually integrate with other systems. We propose an approach to design smart systems based on the principles of service-oriented computing, context-awareness and adaptability to tackle the previously mentioned issues. The proposed approach, called AS3 (adaptive service-based smart systems), consists of two main contributions. To deal with the interoperability, integration and adaptability issues, we first propose a smart system loop to showcase the capabilities of smart systems, the main concepts in play and their interactions. Then, we propose a method to design smart systems that is supported by a product metamodel and a process model. The application of AS3 on a road security-focused intelligent transport system design and simulation shows its relevance and efficiency in designing adaptive smart systems. © 2021, The Author(s), under exclusive licence to Springer-Verlag London Ltd. part of Springer Nature."
+  },
+  {
+    "article_id": "CA_0270",
+    "title": "Why a Virtual Assistant for Moral Enhancement When We Could have a Socrates?",
+    "journal": "Science and engineering ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11948-021-00318-5",
+    "abstract": "Can Artificial Intelligence (AI) be more effective than human instruction for the moral enhancement of people? The author argues that it only would be if the use of this technology were aimed at increasing the individual's capacity to reflectively decide for themselves, rather than at directly influencing behaviour. To support this, it is shown how a disregard for personal autonomy, in particular, invalidates the main proposals for applying new technologies, both biomedical and AI-based, to moral enhancement. As an alternative to these proposals, this article proposes a virtual assistant that, through dialogue, neutrality and virtual reality technologies, can teach users to make better moral decisions on their own. The author concludes that, as long as certain precautions are taken in its design, such an assistant could do this better than a human instructor adopting the same educational methodology."
+  },
+  {
+    "article_id": "CA_0271",
+    "title": "The Ethics of ‘Deathbots’",
+    "journal": "Science and Engineering Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11948-022-00417-x",
+    "abstract": "Recent developments in AI programming allow for new applications: individualized chatbots which mimic the speaking and writing behaviour of one specific living or dead person. ‘Deathbots’, chatbots of the dead, have already been implemented and are currently under development by the first start-up companies. Thus, it is an urgent issue to consider the ethical implications of deathbots. While previous ethical theories of deathbots have always been based on considerations of the dignity of the deceased, I propose to shift the focus on the dignity and autonomy of the bereaved users of deathbots. Drawing on theories of internet-scaffolded affectivity and on theories of grief, I argue that deathbots may have a negative impact on the grief process of bereaved users and therefore have the potential to limit the emotional and psychological wellbeing of their users. Deathbot users are likely to become dependent on their bots which may make them susceptible to surreptitious advertising by deathbot providing companies and may limit their autonomy. At the same time, deathbots may prove to be helpful for people who suffer from prolonged, severe grief processes. I caution against the unrestricted usage of deathbots and suggest that they should be classified as medical devices. This classification would not the least mean that their non-harm, as well as their helpfulness for people suffering from prolonged grief needs to be proven and that their potential for autonomy infringements is reduced. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CA_0272",
+    "title": "Addressing Autonomy Risks in Generative Chatbots with the Socratic Method",
+    "journal": "Science and Engineering Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11948-025-00567-8",
+    "abstract": "Autonomy is a fundamental ethical principle in artificial intelligence (AI) ethics. Current discussions regarding autonomy-related risks in human–AI interaction, as well as potential mitigation strategies, have mainly focused on recommendation systems and algorithmic decision-making systems. However, systematic analyses of the autonomy issues posed by newly emerging generative AI or chatbots (such as ChatGPT) remain scarce. This paper aims to bridge this gap and proposes a Socratic method-based chatbot, herein designated SocrAI, as a potential countermeasure informed by recent technological advancements. We identify two primary forms of autonomy risk associated with generative chatbots—false mental states and cognitive deskilling—and, through an examination of their underlying causes, argue that the Socratic method offers a plausible means of mitigation. The paper further assesses the feasibility of employing the Socratic method within generative chatbots to preserve and support users’ autonomy and outlines the prospective implementation of SocrAI together with directions for future work. SocrAI represents a novel attempt to strengthen human agency, one that encourages users to become self-initiating inquirers who, with the assistance of AI, actively engage their abilities in the pursuit of answers. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CA_0273",
+    "title": "Privacy concerns in E-commerce: A taxonomy and a future research agenda",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-019-00375-6",
+    "abstract": "Safeguarding consumer privacy is a key challenge for the growth of e-commerce. The dramatic technological changes advanced by online platforms, big data, artificial intelligence, virtual reality, virtual assistants, and blockchain technology are transforming the way we shop online. This paradigm shift in e-commerce has only intensified the perplexities of privacy issues. Corresponding to the growing concerns of privacy in practice, research in this area has surged during the last two decades. The aim of this paper is to review the current state of consumer privacy research in business to consumer e-commerce and thereby understand what has been studied, what is omitted, and what potential research areas have emerged in the course of transformational technological changes. We conducted a systematic review of behavioral studies published on analyzing privacy concerns at the individual level during the last 20 years. We methodically analyzed the selected literature using the thematic analysis technique. The results revealed eight main themes. We present a taxonomy of consumer privacy concerns and a research agenda that could lead to a more cohesive and comprehensive understanding of privacy dynamics in e-commerce. © 2019, Institute of Applied Informatics at University of Leipzig."
+  },
+  {
+    "article_id": "CA_0274",
+    "title": "AI-based chatbots in customer service and their effects on user compliance",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-020-00414-7",
+    "abstract": "Communicating with customers through live chat interfaces has become an increasingly popular means to provide real-time customer service in many e-commerce settings. Today, human chat service agents are frequently replaced by conversational software agents or chatbots, which are systems designed to communicate with human users by means of natural language often based on artificial intelligence (AI). Though cost- and time-saving opportunities triggered a widespread implementation of AI-based chatbots, they still frequently fail to meet customer expectations, potentially resulting in users being less inclined to comply with requests made by the chatbot. Drawing on social response and commitment-consistency theory, we empirically examine through a randomized online experiment how verbal anthropomorphic design cues and the foot-in-the-door technique affect user request compliance. Our results demonstrate that both anthropomorphism as well as the need to stay consistent significantly increase the likelihood that users comply with a chatbot’s request for service feedback. Moreover, the results show that social presence mediates the effect of anthropomorphic design cues on user compliance. © 2020, The Author(s)."
+  },
+  {
+    "article_id": "CA_0275",
+    "title": "What makes you continuously use chatbot services? Evidence from chinese online travel agencies",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-020-00454-z",
+    "abstract": "Thanks to artificial intelligence, chatbots have been applied to many consumer-facing applications, especially to online travel agencies (OTAs). This study aims to identify five quality dimensions of chatbot services and investigate their effect on user confirmation, which in turn leads to use continuance. In addition, the moderating role of technology anxiety in the relationships between chatbot quality dimensions and post-use confirmation is examined. Survey data were gathered from 295 users of Chinese OTAs. Partial Least Square (PLS) was used to analyze measurement and structural models. Understandability, reliability, assurance, and interactivity are positively associated with post-use confirmation and technology anxiety moderates the relationships between four chatbot quality dimensions and confirmation. Confirmation is positively associated with satisfaction, which in turn influences use continuance intention. This study examines how chatbot services in OTAs are considered by users (human-like agents vs. technology-enabled services) by investigating the moderating role of technology anxiety. © 2020, Institute of Applied Informatics at University of Leipzig."
+  },
+  {
+    "article_id": "CA_0276",
+    "title": "Immunizing with information – Inoculation messages against conversational agents’ response failures",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-021-00509-9",
+    "abstract": "Conversational agents (CAs) are often unable to provide meaningful responses to user requests, thereby triggering user resistance and impairing the successful diffusion of CAs. Literature mostly focuses on improving CA responses but fails to address user resistance in the event of further response failures. Drawing on inoculation theory and the elaboration likelihood model, we examine how inoculation messages, as communication that seeks to prepare users for a possible response failure, can be used as an alleviation mechanism. We conducted a randomized experiment with 558 users, investigating how the performance level (high or low) and the linguistic form of the performance information (qualitative or quantitative) affected users’ decision to discontinue CA usage after a response failure. We found that inoculation messages indicating a low performance level alleviate the negative effects of CA response failures on discontinuance. However, quantitative performance level information exhibits this moderating effect on users’ central processing, while qualitative performance level information affected users’ peripheral processing. Extending studies that primarily discuss ex-post strategies, our results provide meaningful insights for practitioners. © 2021, The Author(s)."
+  },
+  {
+    "article_id": "CA_0277",
+    "title": "Robots, artificial intelligence, and service automation (RAISA) in hospitality: sentiment analysis of YouTube streaming data",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-021-00514-y",
+    "abstract": "Humans in hospitality areas are being replaced by robot concierges, delivery robots, chatbots, and information assistants through a variety of devices, for example, mobile apps and self-service check-in/check-out machines. Powered by artificial intelligence (AI) algorithms, big data, mobile Internet and internet-of-things technologies, inventions supporting a sustainable shift to social robotics have recently been growing exponentially. Despite this unidirectional movement, there has been a lack of effort to monitor customer responses regarding specific situations in a timely manner. In this study, we examine YouTube, an online streaming video website, to uncover what factors affect attitudes towards RAISA (Robot, AI, and Service Automation) applications in the hospitality industry. The findings show that the sentiment of the content of video narration and physical interaction influence potential customer attitudes toward RAISA services in hospitality. This study provides insights about how online buzz can offer an initial reference for potential customers to deal with the uncertainty of innovative services and provide practitioners with information about proper design guidelines for promoting RAISA applications to their businesses by grasping the trend of broad opinion in real time. © 2022, Institute of Applied Informatics at University of Leipzig."
+  },
+  {
+    "article_id": "CA_0278",
+    "title": "The effect of transparency and trust on intelligent system acceptance: Evidence from a user-based study",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-022-00593-5",
+    "abstract": "Contemporary decision support systems are increasingly relying on artificial intelligence technology such as machine learning algorithms to form intelligent systems. These systems have human-like decision capacity for selected applications based on a decision rationale which cannot be looked-up conveniently and constitutes a black box. As a consequence, acceptance by end-users remains somewhat hesitant. While lacking transparency has been said to hinder trust and enforce aversion towards these systems, studies that connect user trust to transparency and subsequently acceptance are scarce. In response, our research is concerned with the development of a theoretical model that explains end-user acceptance of intelligent systems. We utilize the unified theory of acceptance and use in information technology as well as explanation theory and related theories on initial trust and user trust in information systems. The proposed model is tested in an industrial maintenance workplace scenario using maintenance experts as participants to represent the user group. Results show that acceptance is performance-driven at first sight. However, transparency plays an important indirect role in regulating trust and the perception of performance. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CA_0279",
+    "title": "Is trust in artificial intelligence systems related to user personality? Review of empirical evidence and future research directions",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-022-00594-4",
+    "abstract": "Artificial intelligence (AI) refers to technologies which support the execution of tasks normally requiring human intelligence (e.g., visual perception, speech recognition, or decision-making). Examples for AI systems are chatbots, robots, or autonomous vehicles, all of which have become an important phenomenon in the economy and society. Determining which AI system to trust and which not to trust is critical, because such systems carry out tasks autonomously and influence human-decision making. This growing importance of trust in AI systems has paralleled another trend: the increasing understanding that user personality is related to trust, thereby affecting the acceptance and adoption of AI systems. We developed a framework of user personality and trust in AI systems which distinguishes universal personality traits (e.g., Big Five), specific personality traits (e.g., propensity to trust), general behavioral tendencies (e.g., trust in a specific AI system), and specific behaviors (e.g., adherence to the recommendation of an AI system in a decision-making context). Based on this framework, we reviewed the scientific literature. We analyzed N = 58 empirical studies published in various scientific disciplines and developed a “big picture” view, revealing significant relationships between personality traits and trust in AI systems. However, our review also shows several unexplored research areas. In particular, it was found that prescriptive knowledge about how to design trustworthy AI systems as a function of user personality lags far behind descriptive knowledge about the use and trust effects of AI systems. Based on these findings, we discuss possible directions for future research, including adaptive systems as focus of future design science research. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CA_0280",
+    "title": "A nascent design theory for explainable intelligent systems",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-022-00606-3",
+    "abstract": "Due to computational advances in the past decades, so-called intelligent systems can learn from increasingly complex data, analyze situations, and support users in their decision-making to address them. However, in practice, the complexity of these intelligent systems renders the user hardly able to comprehend the inherent decision logic of the underlying machine learning model. As a result, the adoption of this technology, especially for high-stake scenarios, is hampered. In this context, explainable artificial intelligence offers numerous starting points for making the inherent logic explainable to people. While research manifests the necessity for incorporating explainable artificial intelligence into intelligent systems, there is still a lack of knowledge about how to socio-technically design these systems to address acceptance barriers among different user groups. In response, we have derived and evaluated a nascent design theory for explainable intelligent systems based on a structured literature review, two qualitative expert studies, a real-world use case application, and quantitative research. Our design theory includes design requirements, design principles, and design features covering the topics of global explainability, local explainability, personalized interface design, as well as psychological/emotional factors. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CA_0281",
+    "title": "Chatbot commerce—How contextual factors affect Chatbot effectiveness",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-023-00629-4",
+    "abstract": "The emergence of Chatbots has attracted many firms to sell their merchandise via chats and bots. Although Chatbots have received tremendous interest, little is understood about how different usage contexts affect Chatbots’ effectiveness in mobile commerce. Due to differences in their nature, not all shopping contexts are suitable for Chatbots. To address this research gap, this study examines how contextual factors (i.e., intrinsic task complexity that embraces shopping task attributes and group shopping environment, and extrinsic task complexity that entails information intensity) affect user perceptions and adoption intentions of Chatbots as recommendation agents in mobile commerce. Applying the lenses of cognitive load theory (CLT) and common ground theory (CGT), we perform an experiment and apply quantitative analytical approaches. The results show that Chatbots are more suitable in the context of one-attribute, information-light, and group-buying tasks, whereas traditional Apps are suitable for multi-attribute, information-intensive, and single-buying scenarios. These findings make important theoretical contributions to the IT adoption literature as well as to CLT and CGT theory by contextualizing the evolving state of Chatbot commerce and providing guidelines for designing better Chatbot user experiences, thereby enhancing user perceptions and adoption intentions. © 2023, The Author(s), under exclusive licence to Institute of Applied Informatics at University of Leipzig."
+  },
+  {
+    "article_id": "CA_0282",
+    "title": "AI-based chatbots in conversational commerce and their effects on product and price perceptions",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-023-00633-8",
+    "abstract": "The rise of AI-based chatbots has gradually changed the way consumers shop. Natural language processing (NLP) technology and artificial intelligence (AI) are likely to accelerate this trend further. However, consumers still prefer to engage with humans and resist chatbots, which are often perceived as impersonal and lacking the human touch. While the predominant tendency is to make chatbots appear more humanlike, little is known about how anthropomorphic verbal design cues in chatbots influence perceived product personalization and willingness to pay a higher product price in conversational commerce contexts. In the current work, we set out to test this through one pre-test (N = 135) and two online experiments (N = 180 and 237). We find that anthropomorphism significantly and positively affects perceived product personalization, and that this effect is moderated by situational loneliness. Moreover, the results show that the interaction between anthropomorphism and situational loneliness has an impact on the willingness to pay a higher product price. The research findings can be used for future applications of AI-driven chatbots where there is a need to provide personalized and data-driven product recommendations. © 2023, The Author(s), under exclusive licence to Institute of Applied Informatics at University of Leipzig."
+  },
+  {
+    "article_id": "CA_0283",
+    "title": "Optimizing AI strategies in e-commerce customer service: An agent-based simulation",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-025-00821-8",
+    "abstract": "The growing integration of chatbots in e-commerce customer service presents opportunities and challenges for online retailers in shaping effective artificial intelligence (AI) strategies. This study evaluates human-only, AI-only, and human–AI collaboration strategies using an agent-based simulation model across varying levels of task complexity, service volume, and product margin. Results show that the AI-only strategy excels in low-volume, simple tasks due to its cost-effectiveness, while the human–AI collaboration strategy proves superior in managing high-volume or complex inquiries by scaling human involvement to meet demand. For high-margin products, this collaborative approach delivers the best service, whereas the AI-only strategy is optimal for low-margin items. Enhancing chatbots’ anthropomorphic qualities could further improve service performance, but only if technological advancements are sufficient. The findings provide actionable insights for optimizing AI deployment and fostering adaptive customer service. © The Author(s), under exclusive licence to Institute of Applied Informatics at University of Leipzig 2025."
+  },
+  {
+    "article_id": "CA_0284",
+    "title": "Not all chatbots connect equally: The moderating role of chatbot type",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-026-00873-4",
+    "abstract": "Consumers often find it frustrating to connect with chatbots in electronic markets. Since chatbots are not all alike, it is crucial to understand how to foster connectedness and elicit customer feedback on chatbot improvements. This study grounds a proposed conceptual model of connectedness and customer feedback on chatbot improvement on the unified theory of acceptance and use of technology and social response theory. It employs a scenario-based experimental design, utilizing data from consumers (n = 394 and n = 357 in the text-based and avatar-based chatbot conditions, respectively). Data analysis using structural equation modeling reveals novel findings. Consumer tech-savviness, social influence, chatbot empathy, and chatbot anthropomorphism build connectedness, thereby motivating customer feedback on chatbot improvements. Chatbot type moderates two effects. First, chatbot anthropomorphism has a stronger effect on connectedness for the text-based (vs. avatar-based) chatbot. Second, connectedness has a stronger effect on feedback for the avatar-based (vs. text-based) chatbot. Implications emerge for designing chatbots to foster connectedness and generate customer feedback on chatbot improvements to enhance customer experiences. © The Author(s), under exclusive licence to Institute of Applied Informatics at University of Leipzig 2026."
+  },
+  {
+    "article_id": "CA_0285",
+    "title": "Artificial intelligence in digital service ecosystems—Towards a taxonomy and archetypes",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-026-00879-y",
+    "abstract": "Traditional dyadic customer-provider interactions are being shifted to polyadic interactions involving diverse participants in digital service ecosystems. Especially, artificial intelligence (AI) is increasingly integrated into these ecosystems, so that they comprise non-human participants (e.g., AI-based chatbots)—fundamentally altering the nature of value (co-)creation. While existing literature examines human-to-human interactions, knowledge of service interactions between human actors and AI-based systems is still underexplored. To address this research gap, we develop a taxonomy, comprising six iterations, that explores the peculiarities of AI as either a resource or a (non-human) agent in digital service ecosystems. We evaluate our taxonomy using a multiple case study and derive the four archetypes of AI in digital service ecosystems: (1) discriminative experience enhancer, (2) protective ecosystem orchestrator, (3) ecosystem innovation companion, and (4) personalized service composer. Our results extend the knowledge on service science by showing how AI-based systems—discriminative or generative, and focusing on the interaction in the ecosystem or the individual service encounter—assume the role of resources and non-human agents. Researchers and practitioners can utilize our results to augment their ecosystems with AI. © The Author(s) 2026."
+  },
+  {
+    "article_id": "CA_0286",
+    "title": "Feature selection method on twitter dataset with part-of-speech (PoS) pattern applied to traffic analysis",
+    "journal": "International Journal of System Assurance Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s13198-022-01677-3",
+    "abstract": "In day-to-day life transportation plays a major role in cities. Present day traffic management is a complex task for transportation agencies through traditional approaches, hence Intelligent Transportation systems is applied to give traffic management solutions like parking, E-toll charge and traffic control by analyzing data from related sources. Data is collected from various sources for analyzing transportation need’s, yet transportation issues remain one of the major tribulations in cities. Unstructureddata gives enormous information load for big data analytics, but the unstructured content processing is a challenge in industry. Passive data like social media data is a major data sources for Intelligent Systems, social media applications such as Twitter, Facebook where user can share live comments based on their interaction with the world is a rich source for passive data. Social media data helps in analyzing traffic issues like traffic jam, accident locations, road condition etc. Major issue with social media data is processing and analysis of data is very complex because of volume and data format. Big data architecture helps in extracting, processing, loading in database and analyzing this unstructured data. To identify thesentimentalanalysis is majorly classified based onpositive, negative and neutral tweets. As the polarity of neutral tweets is zero it cannot be used for Opinion mining. So, this paper is focused on Neutral tweets classification based on feature selection. Part of Speech (PoS) tagging is used for labeling the words of the text in the tweets to find nouns example location, date and time are compared with the other attribute values for improving the classification of neutral tweets. Research work shown in this paper has taken social media speech data (Tweets) from twitter as input and preprocessing techniques are applied on the data collected, Methods such as feature selection are then used to extract the features related to tweets for classifying neutral tweets for better understanding on road condition, identification of traffic patterns and finally traffic behavior is analyzed by using Ensemble machine learning algorithm. In the proposed model to measure the sentimental analysis a new approach is provided based on feature selection. The findings disclose with SentiWordNetopinion lexicon approach gives 56% accuracy of positive or negative opinion using twitter dataset, the results of feature selection-based opinion mining proposed model increased substantially with 88% accuracy. © 2022, The Author(s) under exclusive licence to The Society for Reliability Engineering, Quality and Operations Management (SREQOM), India and The Division of Operation and Maintenance, Lulea University of Technology, Sweden."
+  },
+  {
+    "article_id": "CA_0287",
+    "title": "Application of speech recognition for collaborative filtering recommendation in intelligent financial sharing",
+    "journal": "International Journal of System Assurance Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s13198-023-02024-w",
+    "abstract": "People gradually from the it era into the DT era, DT has become the most popular research topic. The traditional personal recommendation method plays an important role in promoting informatization, but there are some problems such as insufficient data and cold start. This paper optimizes a single recommendation algorithm for the purpose of designing a personal recommendation system. At the same time, speech recognition control technology is introduced as a common command management mode of smart home, and the home control system based on speech recognition has become a research topic in the field of artificial intelligence system; This paper also introduces the Financial Sharing Service Center, a new type of organization that can extract and record the financial sharing activities of Group subsidiaries. It has the characteristics of decentralization, and can provide professional financial services for internal and external users of the market. The main purpose of foreign economic and Financial Sharing centers is to reduce enterprise costs, adapt to business growth, and strengthen the existing economic and Financial Sharing centers. There is still a lot of room for improvement in the distribution center, mainly to solve the company’s business expansion, separation of accounting and management functions, reduce labor costs and centralized control. In the construction of economic distribution center, information system construction is particularly important. This paper is based on collaborative recommendation algorithm, combined with speech recognition technology, further development of intelligent financial system, completed the intelligent voice sharing financial system. © 2023, The Author(s) under exclusive licence to The Society for Reliability Engineering, Quality and Operations Management (SREQOM), India and The Division of Operation and Maintenance, Lulea University of Technology, Sweden."
+  },
+  {
+    "article_id": "CA_0288",
+    "title": "Study of AI-enabled chatbots driving customer experience and intention to recommend",
+    "journal": "International Journal of System Assurance Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s13198-024-02532-3",
+    "abstract": "This study examines the impact of conversational AI banking chatbots on enhancing Online Customer Experience (OCE) and influencing customers’ intention to recommend (ITR) banking services. A sample of 459 digital banking users, predominantly professionals from the banking sector, was collected via convenience sampling. Using structural equation modelling, the study found that Perceived Anthropomorphism (PAN), personalisation (PER), and perceived control (PCO) positively influenced OCE, while Perceived Risk (PRI) had a negative effect. The strongest predictor of ITR was OCE, with a significant path coefficient of 0.796. AI chatbots employed Natural Language Processing (NLP) and machine learning models, optimised for banking interactions. Despite their effectiveness, the preference for human interaction in complex scenarios suggests chatbots complement rather than replace human service. This research highlights the potential of AI-enabled chatbots to enhance customer experience, though their development must continue to focus on complex task management and personalised interactions. © The Author(s) under exclusive licence to The Society for Reliability Engineering, Quality and Operations Management (SREQOM), India and The Division of Operation and Maintenance, Lulea University of Technology, Sweden 2024."
+  },
+  {
+    "article_id": "CA_0289",
+    "title": "Exploring public perception, awareness, and satisfaction with AI applications in Karnataka, India: the role of individual characteristics and media influence",
+    "journal": "International Journal of System Assurance Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s13198-024-02594-3",
+    "abstract": "The study delves into the exciting realm of human-AI collaboration. In an era characterized by rapid advancements in artificial intelligence, this research explores the symbiotic relationship between AI technology and the human intellect. This study aims to explore the correlation between individuals’ perception and awareness of the integration of artificial intelligence (AI) into their daily lives among the people in Karnataka, a state of India. The investigation involves an examination of how individual characteristics may influence a person’s perception and awareness of AI in the context of news media. Additionally, the study explores whether an individual’s perception and awareness of AI in their daily life impact their understanding of AI’s operationalization. The investigation seeks to establish correlations between the factors mentioned and aims to contribute valuable insights into the intricate relationship between people’s daily encounters with AI and their perceptions, awareness, usage and satisfaction realities of AI. Findings indicated that age significantly affects comfort with AI, assistance provided by AI-powered chatbots perceptions of AI in news reporting, participation in AI-related conversations, interaction with AI on social media and ethical concerns regarding AI applications. The study underscores the nuanced landscape of AI attitudes and interactions, revealing that while there is substantial awareness and engagement with AI technologies, significant variations exist across different demographic groups and usage contexts. The results provide valuable insights for designing AI systems that align with user expectations and addressing ethical concerns across age groups. © The Author(s) under exclusive licence to The Society for Reliability Engineering, Quality and Operations Management (SREQOM), India and The Division of Operation and Maintenance, Lulea University of Technology, Sweden 2024."
+  },
+  {
+    "article_id": "CA_0290",
+    "title": "The role of attitude toward chatbots and privacy concern on the relationship between attitude toward mobile advertising and behavioral intent to use chatbots",
+    "journal": "Italian Journal of Marketing",
+    "journal_impact_factor": 1.932,
+    "doi": "10.1007/s43039-021-00020-1",
+    "abstract": "Chatbots are technological tools equipped with artificial intelligence that allow companies to interact with their consumers. Through their computers or mobile devices, consumers can use this technology to search for information, make purchases or request after-sales services. This study aims to identify the role of attitude toward chatbots and privacy concern in the relationship between attitude toward mobile advertising and behavioral intent to use chatbots. After reviewing the literature, the study proposes a moderated mediation model. Through a survey, the study shows that attitude toward mobile advertising does not have a direct effect on the behavioral intent to use chatbot, but is rather mediated by one’s attitude toward chatbots. In fact, the interactivity is unidirectional in the case of mobile advertising (from the company to the consumer), but bidirectional in the case of chatbots (in which consumers have an active role in communication). In line with these assumptions, the data analysis shows that internet privacy concerns only negatively moderate the relationship between attitude toward chatbots and behavioral intent to use this technology. These results can be useful for companies and researchers in terms of developing and testing new digital marketing strategies. The paper concludes with a discussion of the results’ theoretical and managerial implications. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CA_0291",
+    "title": "The role of the chatbot on customer purchase intention: towards digital relational sales",
+    "journal": "Italian Journal of Marketing",
+    "journal_impact_factor": 1.932,
+    "doi": "10.1007/s43039-021-00029-6",
+    "abstract": "The purpose of this paper is to explore the extent to which conversation with a chatbot on an official website can change the value perception of products and influence the customer purchase intention. The study also investigates the role of chatbots on brand familiarity and the influence of previous experience of interaction with chatbots on customer buying intention. Two laboratory experiments were conducted to evaluate the impact of chatbot use on customer purchase intention. Chatbots on websites shift the value perception of hedonic and utilitarian goods towards respectively utilitarian and hedonic values. Chatbots contribute to the brand awareness reducing the effect of familiarity on the customer purchase intention. Retailers should include effective chatbots while operating and designing shopping websites to stimulate the shopping intention of consumers. Companies should design and carefully manage chatbots by monitoring user involvement and quality of customer experience in order to feed a calibrated continuous improvement process on company objectives. The paper represents a first step approach in addressing e-service agents toward the online customer shopping experience. Digital assistants may change the online shopping context increasing the hedonic value experience but at the same time reducing the time for decision making by reinforcing the utilitarian value perception of the utilitarian and hedonic products. © Società Italiana Marketing 2021."
+  },
+  {
+    "article_id": "CA_0292",
+    "title": "The effect of non-facial emojis-text congruency on user satisfaction in chatbot interactions",
+    "journal": "Italian Journal of Marketing",
+    "journal_impact_factor": 1.932,
+    "doi": "10.1007/s43039-025-00126-w",
+    "abstract": "Improving human–chatbot communication requires understanding how different design elements can make interactions clearer and more effective. This research examines emoji–text congruency as one mechanism that enhances user satisfaction in chatbot interactions. Across two experiments conducted in the travel (Study 1) and healthcare (Study 2) domains, we show that when emojis are semantically aligned with the accompanying text, users perceive the chatbot as more competent, which in turn increases satisfaction. To isolate this effect from anthropomorphic influences, the studies focus on non-facial emojis, which convey meaning without mimicking human expressions, thus avoiding potential discomfort associated with excessive human-likeness. However, the positive effect of congruency weakens when the chatbot adopts an overly informal language style. These findings highlight the importance of integrating visual and verbal cues coherently to improve user experience and inform the design of effective, professional virtual assistants. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CA_0293",
+    "title": "Examining the impact of communication modality on perceived social presence in e-commerce virtual assistants",
+    "journal": "Italian Journal of Marketing",
+    "journal_impact_factor": 1.932,
+    "doi": "10.1007/s43039-026-00132-6",
+    "abstract": "Human-computer interactions have been profoundly changed by the increasing use of Virtual Assistants (VAs) into a variety of digital ecosystems which improved user capability to perform several tasks such as receive product recommendations and complete online transactions. Although text-based chatbots have long been used in different contexts, little is known about the potential of video-based VAs, in particular in e-commerce settings. This study aims to examine how VA textual versus video communication modalities impacts user’s VA perceived social presence, and how this perception influences trust, engagement, intention to use and overall satisfaction with the assistant. The proposed conceptual model was tested using a structural equation modelling approach. The results showed that video-based VAs are perceived as more socially present than textual-based one. This perception triggers a ripple effect that strengthens user trust and engagement, ultimately generating higher levels of satisfaction and a greater propensity to use the VA. This study adds to the expanding corpus of research on human-VA interactions. E-commerce services could benefit from these results by improving their customer satisfaction through more human-like interactions using video-based VAs. © The Author(s) 2026."
+  },
+  {
+    "article_id": "CA_0294",
+    "title": "Success and failure in improvement of knowledge delivery to customers using chatbot-result of a case study in a Polish SME",
+    "journal": "Successes and Failures of Knowledge Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-0-12-805187-0.00012-7",
+    "abstract": "In this chapter, chatbot was described as a valuable tool, which enables enterprises interactive communication with customers and knowledge management. Despite the significant increase of the interest in this tool, its usage faces many limitations caused by the quality of the knowledge bases. The case study related to improvements of knowledge delivery to an SME’s customers using chatbot is presented. According to research, the processes of developing and improving the chatbot’s knowledge base are expensive and time consuming. Improvements of the knowledge delivery to customers with the use of a chatbot are possible, but are still limited by a lack of good methods and tools. Future research should be conducted to improve them. © 2016 Elsevier Inc. All rights reserved."
+  },
+  {
+    "article_id": "CA_0295",
+    "title": "The CARESSES trial and results",
+    "journal": "Transcultural Artificial Intelligence and Robotics in Health and Social Care",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-0-323-90407-0.00011-8",
+    "abstract": "This chapter describes the final stages of the H2020 CARESSES research project which aimed to develop and evaluate a culturally competent artificial intelligent system embedded into social robots to support the well-being of older adults residing in long-term care settings in England and Japan. The chapter describes the aims of the trial phase of this project and the trial design including the methods used for screening, recruitment, data collection, and ethical considerations. It then presents the key quantitative results of the trial pertaining to perceived cultural competence, mental and physical health-related impact, user satisfaction, and attitudes. An assessment of the trial feasibility is also described as well as the trial’s key methodological limitations. © 2022 Elsevier Inc. All rights reserved."
+  },
+  {
+    "article_id": "CA_0296",
+    "title": "Transformation of digital banking back-office operations using AI",
+    "journal": "Handbook of Blockchain, Digital Finance, and Inclusion, Volume 3: Web3, AI, Privacy and Greentech",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-0-443-34717-7.00013-1",
+    "abstract": "Over the years, banks have been strategically using digital technologies to help transform various aspects of their business. More recently, this strategy has evolved into one of Artificial Intelligence (AI)-driven digital augmentation of the bank's processes, products, and channels. In fact, AI is playing a pivotal role in driving digital transformation across the entire spectrum of banking operations, encompassing the front, middle, and back office. In the front office, AI-powered chatbots are enhancing customer interactions, providing personalized recommendations, and streamlining routine inquiries. In the middle office, AI is helping to optimize risk management and compliance, portfolio management, and performing risk analytics related to the portfolios. In the back office, there has been experimentation on using AI, for example, streamlining Know-Your-Customer (KYC) procedures, automating data entry and reconciliation, and automating other tedious tasks. However, AI solutions in the back office still lag the front and middle offices. In the back office, banks have been more focused on process automation rather than automating and enhancing the decision-making within the process. In this chapter, a case-study-centered methodology is employed to delineate the diverse realms where AI can be used to enhance the back-office operations of a bank, spanning across retail, corporate, and investment banking. It then describes the underlying data pipeline that will be needed for aiding AI-enabled decision-making, along with the management implications and a maturity model for guiding the AI adoption in bank back-office operations. © 2025 Elsevier Inc. All rights reserved."
+  },
+  {
+    "article_id": "CA_0297",
+    "title": "Machine learning-based automation of accounting services: An exploratory case study",
+    "journal": "International Journal of Accounting Information Systems",
+    "journal_impact_factor": 9.0,
+    "doi": "10.1016/j.accinf.2023.100618",
+    "abstract": "Machine Learning (ML) applied to Robotic Process Automation (RPA) and chatbot interfaces can generate significant value for many business processes. However, these technologies generate the intended return only with a carefully planned deployment. Current literature only contains a small number of case studies about how the adoption of ML-based automation services impacts employees’ behavior. In particular, no case studies look into the automation of manual tasks related to accounting management. This article reports a study conducted to understand users’ perceptions of an ML-enabled service to automate repetitive management tasks. The service was developed in a partnership between Unisinos University and Dell Inc. The study was conducted with a group of ten highly skilled employees from Dell with expertise in accounting processes and with IT background that frequently would use the automation service. The group participated in a presentation about the service and its interface and voluntarily answered a Technology Acceptance Model (TAM) questionnaire to evaluate the usability and ease of use. Results show that 10 out of 10 users agree that the service was easy to use. Also, 8 of them agree that its output is useful to reduce the manual labor required for statutory reconciliation. Furthermore, employees with an accounting management background were given access to the service, and three voluntarily answered an open-ended survey. In summary, employees agree that an automation service can reduce the time required to conduct management tasks but questioned the long-term usefulness and the ability to incorporate the process's particularities. These results provided insights leading to ten lessons related to user experience, training and awareness, and service development. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0298",
+    "title": "Can knowledge based systems be designed to counteract deskilling effects?",
+    "journal": "International Journal of Accounting Information Systems",
+    "journal_impact_factor": 9.0,
+    "doi": "10.1016/j.accinf.2023.100638",
+    "abstract": "Recent calls in the information systems research community argue that we know intelligent systems deskill users, and future research should focus on how to design systems that do not deskill, rather than continue to examine whether the phenomenon occurs. This should be a wakeup call for public accounting firms focused on implementing restrictive audit support systems, which leads to de-skilling of novice accounting professionals. Our research focuses on redesigning knowledge-based systems to facilitate expertise development and counteract the de-skilling effects that result from use of such systems. Specifically, we manipulate the design of the system interface by providing information cues in a screen format consistent with expert knowledge representations and manipulate automatic provision versus voluntary use of explanations for users during task completion. Results show that after using the knowledge-based system to complete a series of reenacted client engagements over a three-day period, both the interface design manipulation and automatic provision of explanations had a positive effect on novice accounting professionals’ development of expert-like knowledge structures. The results of the study have important implications for the development of knowledge-based systems intended to support accounting professionals’ (and other knowledge workers’) expertise development processes. © 2023"
+  },
+  {
+    "article_id": "CA_0299",
+    "title": "Nudged by a robot: Responses to agency and feedback",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2019.102752",
+    "abstract": "The availability of always-on digital agents in hotel rooms, providing agency and surveillance cues, presents opportunities for behavioral interventions. This study tested the effectiveness of agency and social feedback on pro-environmental behavior intention of hotel consumers. A survey with scenario-based experimental design was distributed to US and UK travelers (N = 621). Results suggest that no one type of agent was more effective than the other in influencing pro-environmental behavior intention. Social feedback was found effective when given by a virtual assistant. Perception of another agent being ‘present’ in the room, even when invisible, is sufficient to induce normative behavior. This enriches literature on surveillance cues and behavior change and contributes to finding new ways of leveraging emerging technologies to foster sustainability. © 2019"
+  },
+  {
+    "article_id": "CA_0300",
+    "title": "In bot we trust: A new methodology of chatbot performance measures",
+    "journal": "Business Horizons",
+    "journal_impact_factor": 8.809,
+    "doi": "10.1016/j.bushor.2019.08.005",
+    "abstract": "Chatbots are used frequently in business to facilitate various processes, particularly those related to customer service and personalization. In this article, we propose novel methods of tracking human-chatbot interactions and measuring chatbot performance that take into consideration ethical concerns, particularly trust. Our proposed methodology links neuroscientific methods, text mining, and machine learning. We argue that trust is the focal point of successful human-chatbot interaction and assess how trust as a relevant category is being redefined with the advent of deep learning supported chatbots. We propose a novel method of analyzing the content of messages produced in human-chatbot interactions, using the Condor Tribefinder system we developed for text mining that is based on a machine learning classification engine. Our results will help build better social bots for interaction in business or commercial environments. © 2019 Kelley School of Business, Indiana University"
+  }
+]

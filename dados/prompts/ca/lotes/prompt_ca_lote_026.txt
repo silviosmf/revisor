@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1251",
+    "title": "A Health-Awareness Nutrition Recommender System",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170432",
+    "abstract": "Personalized nutrition has been identified as a relevant way for tackling nowadays several non-communicable diseases like type 2 diabetes, hypertension, and cancer. Keeping in mind personalization, the current contribution is focused on proposing a daily menu recommender system using nutritional knowledge for guaranteeing the suggestion of nutritionally appropriated foods, as well as managing the users' previous preferences in order to suggest foods preferred in the past. The proposal also incorporates a decision analysis approach based on multiple criteria to screen inappropriate foods. Finally, the contribution includes a case study to evaluate the performance of the proposal. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1252",
+    "title": "Application of In-Memory Database in Concurrent Topology Analysis of GIS Systems for Large-Scale Distribution Power Grids",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170443",
+    "abstract": "Geographic Information System (GIS) is the basic data management and visualization platform for transmission and distribution power network planning, operation scheduling and repair decision support systems. GIS systems based on SQL database can't meet the real-time requirements of massive data processing and large-scale concurrent topology analysis of distribution networks. An object-oriented in-memory database is introduced, which uses partitioning and paging storage technology for efficient caching and retrieval of large-scale grid topology models. Parallel processing techniques based on data partitions and task scheduling queues are developed, which enables the parallel executions of multi-user requests of topology tracing(reading) and switch open-close operations(writing). Further, for the conflicting write requests across partitions, a parent-child task queue is introduced. In the stress test of the on-line system of a provincial company with more than 10 million power grid equipment, response time less than 0.2 seconds is observed, under the load of more than 400 topology analysis requests per second per server. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1253",
+    "title": "Reliability Learning for Interval Type-2 TSK Fuzzy Logic System with its Application to Medical Diagnosis",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170445",
+    "abstract": "To apply intelligent model in serious practical applications like medical diagnosis, the reliability and interpretability of the model are very important to users. Among the existing intelligent models, type-2 fuzzy systems are distinctive in interpretability and modeling uncertainty. However, like most existing models, the reliability determination of fuzzy system for recognition task training is an unsolved problem. In this study, a method of constructing minimax probability interval type-2 TSK fuzzy logic system classifier (MP-IT2TSK-FLSC) based on reliability learning is proposed. The classifier can provide the lower limit of the correct classification of the model and is an important index to quantify the reliability of the model. Experimental results on medical datasets have demonstrated the advantages of this method, exhibiting remarkable interpretability and reliability of the proposed fuzzy classifier. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1254",
+    "title": "Multi-Objective Particle Swarm optimization Algorithm Based on Angle Preference and Three-Archive Sets",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170447",
+    "abstract": "Multi-objective optimization problems (MOP) have not been completely solved due to their complexity. The evolutionary algorithm simulates the motor foraging mode of the biological group, which has certain advantages for solving the MOP, and can obtain the ϵ-pareto optimal solution. Particle swarm optimization (PSO) is well suitable for some evolutionary algorithms because of its fast convergence. Considering convergence, diversity and user preference information of multiple targets, we propose multi-objective particle swarm optimization algorithm with angle preference and three-archive sets (APTPSO). The validity of AP-TPSO is described by calculating the GD and SP values of the standard test functions. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1255",
+    "title": "Intelligent Design of VR Systems for Immersive Human-Computer Interaction",
+    "journal": "Proceedings - 2024 4th International Signal Processing, Communications and Engineering Management Conference, ISPCEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISPCEM64498.2024.00149",
+    "abstract": "This study aims to enhance the interaction experience and immersion of virtual reality (VR) systems. By designing and implementing an intelligent algorithm-based VR interaction system, innovative technologies such as user intent recognition, gesture and eye-tracking, multi-sensory coordination optimization, and adaptive experience adjustment are integrated. A prototype system was developed, and rigorous experimental design and multidimensional evaluation methods were used to verify significant improvements in interaction accuracy, response speed, and user immersion. The experimental results not only confirmed the effectiveness of the proposed approach but also provided new insights into the future development of VR technology. Although there are some limitations, this study has made significant contributions to the development of VR technology towards a more intelligent, natural, and immersive direction, laying a technical foundation for the widespread application of VR. ©2024 IEEE."
+  },
+  {
+    "article_id": "CA_1256",
+    "title": "Research on Intelligent Car Interface Interaction Optimization Algorithm Based on User Experience Human Factors Engineering",
+    "journal": "Proceedings - 2024 4th International Signal Processing, Communications and Engineering Management Conference, ISPCEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISPCEM64498.2024.00153",
+    "abstract": "This study proposes an intelligent car interface interaction optimization algorithm based on user experience human factors engineering. The algorithm combines the basic principles of human factors engineering, designs the interface interaction of intelligent cars, and adopts deep reinforcement learning (DRL) technology to adapt to diverse user needs and complex driving scenarios. By collecting and analyzing the interactive behaviors of users in different situations, the algorithm can adaptively adjust the interface layout, information presentation and interaction mode to improve the overall user experience. Through simulation verification, the experimental results show that the optimization algorithm can effectively improve the user's operating experience in a variety of driving scenarios, significantly reducing the user's cognitive load, and improving the interaction efficiency. Simulation data analysis shows that the interface response time after optimization is reduced by an average of 23.5%, and user satisfaction is increased by 15.8%. The results of this study provide new ideas for the design and optimization of intelligent car interface interaction, and lay the foundation for the optimization of human-computer interaction in future intelligent driving systems. ©2024 IEEE."
+  },
+  {
+    "article_id": "CA_1257",
+    "title": "Managing product stock keeping based on purchase association effect",
+    "journal": "2nd International Symposium on Technology Management and Emerging Technologies, ISTMET 2015 - Proceeding",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISTMET.2015.7359026",
+    "abstract": "Customer purchase behavior naturally affects the quantity or the choice of products they purchase. As such, purchase dependencies can be assumed to be closely related to the association the items or products they purchased together at one particular time. This study focuses on the association of product being purchased within one transaction based on the transaction made by the customers in retail shops and a supermarket. The objective is to adopt the inventory model with purchase dependencies in a real world and finally to compare the effect of purchase dependencies in the product availability level. Primary data were obtained from 130 customer sales transactions in the retail shop and the supermarket over a 7-day period. In order to demonstrate the effect of purchase dependencies on the total inventory cost, we adapted a new inventory model that utilizes purchase dependence. Finally, the test for significance of the difference is applied to show the effect of incorporating purchase dependencies in the inventory model. The simulation results demonstrated that the extended inventory models which have considered purchase dependencies showed reduction in lost sales and lost profit as well as total inventory cost. In conclusion, by incorporating purchase dependence element into inventory management process, we can minimize total inventory cost as well as lost profit. © 2015 IEEE."
+  },
+  {
+    "article_id": "CA_1258",
+    "title": "Virtual cost engineering studio (V-CES): A framework for Cost Engineering services",
+    "journal": "2005 IEEE International Technology Management Conference, ICE 2005",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ITMC.2005.7461310",
+    "abstract": "Cost has become a business driver. V-CES is a European Project aiming to develop and deploy a set of services to the Cost Engineering Community: Training, a Cost Engineering Virtual Community, a Cost Estimating Tool, and a Cost Engineering Database. The access to such services will be done via Internet and a Web browser. This implies the possibility for the cost professionals of exercising a just-in time training, estimating and consulting related to their work. The use of these services implies interactions of the kind client-server and peer-to-peer, and their implementation demands the use of different software technologies, being the main ones: Virtual Learning Environment (VLE), database, multi-agent toolkit, and reasoning engine. This paper presents the technological definition of the framework to be used for the over all development and implementation. © 2005 IEEE."
+  },
+  {
+    "article_id": "CA_1259",
+    "title": "Initial Development and Performance Evaluation of a Bengali Voice-Operated Virtual Assistant for Personal Computer Control",
+    "journal": "2023 IEEE 64th International Scientific Conference on Information Technology and Management Science of Riga Technical University, ITMS 2023 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ITMS59786.2023.10317730",
+    "abstract": "This paper presents the preliminary development and performance evaluation of a personal computer assistant designed for voice-operated interaction in Bengali. A bespoke phonetic grammar has been devised to map Bengali phonemes onto English representations, and an algorithm has been developed to mitigate the confusion of the machine in recognizing the same type of phonetics in the language, which helps to enhance the precision in comprehending Bengali commands. The system integrates the Microsoft speech synthesizer to articulate speech in Bengali, which facilitates the expansive human-computer interaction capabilities of the system, particularly for visually impaired individuals who face challenges in text-based computer interactions. The applications of this system extend among Bengali speakers and hold potential utility within rural regions of Bangladesh. The system also aims to replace the traditional mouse and keyboard for users with their own voice commands in their native language. Upon successful implementation of the system, it achieved 92.5% accuracy in the noise-free environment and 76.4% accuracy in the noisy environment with the help of 10 Bangladeshi individuals, including both males and females. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1260",
+    "title": "Unsupervised Training of Automatic Dialogue Systems for Customer Support",
+    "journal": "Proceedings of the 2019 IEEE International Conference Quality Management, Transport and Information Security, Information Technologies IT and QM and IS 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ITQMIS.2019.8928445",
+    "abstract": "Automated dialog systems for customer support have recently become a popular area of research in the field of natural language processing. The traditional (supervised) approach for training the dialog model for customer support includes: (1) building a tree of topics (states), (2) finding query examples for each state, (3) training the classifier. This is an expensive, labor-intensive process. In contrast, we trained our dialog model in an unsupervised way, avoiding the need for labeled corpora. Our dialog model is retrieval-based, and its architecture incorporates a siamese network similar to the Dual Encoder. Similar to other retrieval-based dialog models, our model attempts to find the best response out of provided ones for the current dialog history. The research we performed provided the opportunity to develop a customer service solution - software that acts as an intelligent assistant, suggesting a list of relevant prompts to the operator in real time. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1261",
+    "title": "Model of intelligent system for quality evaluation of services on design stage (transport and logistic business as an example)",
+    "journal": "Proceedings of the 2020 IEEE International Conference \"Quality Management, Transport and Information Security, Information Technologies\", IT and QM and IS 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ITQMIS51053.2020.9322882",
+    "abstract": "The authors propose a model for assessing the quality of the designed services at the early stages of their life cycle. The model integrates the qualitative and quantitative indicators of the future service and includes the forecasted needs of consumers, based on which one can assess their potential demand and competitiveness by the criterion of price / quality ratio. The proposed model has two distinctive features. Firstly, forecasting customer requirements for the quality of services is based on the results of machine learning on data of existing and potential customers, as well as based on the accumulated knowledge base of consumer experience and expert opinions. Secondly, the model involves multi-criteria optimization, while some of the optimized parameters are discrete or qualitative (verbal, non-digital, non-measureable). In conclusion, the authors demonstrated the advantages of the developed model by the examples of the transport and logistics business in the field of passenger and freight transportation in Russia. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1262",
+    "title": "On the evaluation of StartupGPT: A Retrieval-Augmented AI Chatbot for Delivering Research-Driven Guidance to Startups",
+    "journal": "Proceedings - 2025 IEEE/ACM International Workshop on Software-Intensive Business, IWSiB 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IWSiB66663.2025.00009",
+    "abstract": "[Introduction] The study addresses the challenge of transferring research knowledge to the industry, with a particular focus on small businesses and startups, which often lack access to empirical insights. Large Language Models (LLMs), particularly those using Retrieval-Augmented Generation (RAG), offer potential for embedding knowledge from startup research into an interactive chatbot to support startup mentorship. However, empirical work exploring this application is limited. [Objective] The primary objective of this research is to design and evaluate a version of \"StartupGPT,\"an AI-driven chatbot that uses LLMs and RAG to provide advice for software startups by leveraging a knowledge base rooted in software startup research. [Methodology] The study follows the Design Science Research Methodology (DSRM) and spans three iterative cycles, with this paper focusing on Cycle 3. The prototype was tested with 11 startup founders, who provided both qualitative and quantitative feedback on the chatbot's usefulness and satisfaction. [Results] The findings from user tests indicate that StartupGPT was generally perceived as relevant, reliable, and helpful. However, limitations were noted in its responses, which users found overly theoretical, lacking in concrete examples, and insufficiently personalized for specific startup contexts. [Conclusion] Future LLM-based interaction designed for startups should focus on improving interactivity, incorporating more context-aware and specific advice, and leveraging advanced AI techniques, such as fine-tuning, to better align the chatbot's responses with the unique needs of individual startups. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1263",
+    "title": "Chatbots in Academia: A Retrieval-Augmented Generation Approach for Improved Efficient Information Access",
+    "journal": "KST 2024 - 16th International Conference on Knowledge and Smart Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1109/KST61284.2024.10499652",
+    "abstract": "In today's digital age, higher education utilizes chatbots as virtual assistants to assist users, especially prospective students to access information easily. A chatbot is an application in natural language conversations to simulate intelligent interactions. Intelligent chatbots are needed to understand user needs and answer questions relevantly. We propose a chatbot with Retrieval Augmented Generation approach involving a retriever with cosine similarity search using OpenAI Ada embeddings to obtain relevant documents. The LLM OpenAI GPT-3.5- Turbo then generates the final answer. The chatbot mechanism begins with the retrieval module systematically identifying documents stored in the vector database that contain relevant information related to the user's query. The selected documents and query are provided to the LLM as part of the prompt to generate responses based on the knowledge provided in the relevant documents. The retrieval method is evaluated based on two criteria: the search method and the embedding model. The comparison method uses similarity search with Maximum Marginal Relevance (MMR) Search and the proposed embedding method against other models such as Google Embedding-001 and MPNet-Multilingual. The retrieval process is assessed using an evaluation dataset that incorporates Recall and Precision metrics, while answer generation is measured with BLEU and ROUGE Score. The observed disparity result between similarity search and MMR is not notably significant. Nonetheless, our chatbot holds an advantage in referencing past conversations due to its ability to store conversation history. Furthermore, potential enhancements are identified by augmenting the knowledge provided to the LLM in forthcoming iterations. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1264",
+    "title": "From Conversations to Conversions: The Role of AI-Enhanced Chatbots in Shaping Satisfaction and Fostering Loyalty in E-Commerce",
+    "journal": "2025 17th International Conference on Knowledge and Smart Technology, KST 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/KST65016.2025.11003290",
+    "abstract": "In recent decades, loyalty has played a significant role. Customer loyalty is the degree to which a customer remains loyal in attitude and behaviour even when there are alternatives from other suppliers. Online shopping activities continue to increase in Indonesia, reflecting that e-commerce has become part of the lifestyle of modern society and is accompanied by the use of chatbots in e-commerce has also experienced a significant increase. This study aims to analyze the effect of service quality and conversational quality chatbots on the loyalty of Generation Z customers in e-commerce. This research method is quantitative, with a sample size of 202 respondents. In this study, the data was processed using PLS-SEM on the SmartPLS application version 4.00, and then the validity, reliability, and hypothesis tests were carried out. The results of this study indicate that service quality and conversational quality influence satisfaction. However, it does not always continue to influence loyalty; as shown in this study, satisfaction did not influence loyalty. This study provides practical implications for business management, especially marketing, related to the effect of service quality and conversational quality chatbots on customer loyalty. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1265",
+    "title": "Recognition of User's Activeness and Consistency during Conversation and Its Application to More Natural Speech Generation",
+    "journal": "2025 17th International Conference on Knowledge and Smart Technology, KST 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/KST65016.2025.11003293",
+    "abstract": "This study aims to develop an algorithm that contributes to participation evaluation by analyzing the activeness and consistency of user responses in an interactive conversation chatbot system. DST analysisbased AI prompt engineering was proposed to evaluate the activeness of responses through the user's response speed and length of response, and to determine whether it is consistent with past utterances. By integrating these factors, the system increases the reliability of the response and strengthens the interaction with the user by creating personalized chatbot utterances. This approach has applicability in psychological counseling and is expected to improve user participation in various industries, including education and healthcare. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1266",
+    "title": "Variable Speed Limit (VSL) system applications in motorways",
+    "journal": "2020 13th International Colloquium of Logistics and Supply Chain Management, LOGISTIQUA 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA49782.2020.9353935",
+    "abstract": "Transport system is the relationship between locations, infrastructures and flows in road, see, air and rails. Nowadays, many social, economic and environmental problems are caused by the increase of transport system's users in different models of transport. Motorways were developed to provide high speed non-stop routes for vehicular traffic, reserved for the high-speed circulation of motorized vehicles (cars, motorcycles, heavy goods vehicles). Growing traffic on motorways has created a need for a system which can manage traffic efficiently without expanding the infrastructure. Traffic jams and volatile weather conditions in motorways cause waste of time and fuel as well as increase accident risk and pollution. Intelligent Transportation Systems (ITS) are used to minimize these problems. One of the ITS applications is the Variable Speed Limit (VSL) systems in which speed of traffic stream is decreased in small values in order to reduce the propagation of shockwaves during congestions, improve road safety by reducing collision risks and increase motorways efficiency. In this paper we aim to present VSL system benefits and applications. A brief review about approaches, methods and simulators used for traffic modeling is made, we found that the microscopic approaches are more used especially in this era of hyper-connectivity between objects. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1267",
+    "title": "Carpooling phenomena in Tunisia: General characteristics and gender users behavior analysis",
+    "journal": "2022 IEEE 14th International Conference of Logistics and Supply Chain Management, LOGISTIQUA 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA55056.2022.9938057",
+    "abstract": "Gender is often cited as an important determinant of travel behavior. The changing role of women in society in recent decades raises the question of whether differences in mobility play a key role. Human mobility is undergoing an evolution towards a greener mode based on vehicle sharing and travel between two or more people in urban and suburban areas. Our research examines the gender differences in carpooling and the main determinants of this daily practice in Tunisia. In its current form, this paper addresses the phenomenon of carpooling among Tunisians. We study user behavior by referring to their travel patterns and transportation habits to identify the individuals exhibiting this behavior. The data collection method for our study is a web-based survey. A total of 1082 responses were compiled using this method, highlighting the characteristics of men's and women's travel on Tunisian territory. Our main results demonstrate the importance of age, marital status, and socio-occupational category in determining female ridesharing profiles. Almost four in five female carpoolers are under the age of 30, compared to less than 50 percent of men, and only one in four men are married, compared to 30 percent of women. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1268",
+    "title": "Studying the Socioeconomic Impacts of Urban Congestion : An empirical validation on revealed preferences survey data for the city of Sahline",
+    "journal": "2024 IEEE 15th International Colloquium of Logistics and Supply Chain Management, LOGISTIQUA 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA61063.2024.10571443",
+    "abstract": "Road congestion is one of the main obstacles to economic development, leading to serious social and economic consequences. The aim of this study is to better understand the social and economic impacts of road congestion on the city of Sahline. This study used a revealed preference survey approach to collect data from home-to-work users in Sahline City. Firstly, we analyzed the traffic performance across the service level for the four main axes of Sahline, and we found that the AHB line presents the most congested route then the AFH route. This ranking is due to the nature of the vital activities which result from it. Secondly, we calculated the different congestion costs through the survey data, and we noted that these costs vary according to socioeconomic categories. Indeed, the overall study revealed that there were several factors which influence this problem such as the attractiveness of the city center, which cause uncontrolled parking and which lead to poor traffic flow. This therefore affects the social life of regular road users with a drop in income and productivity, air and noise pollution, an increase in frustration, anger, wasted time and more particularly in stress levels. In this context, we showed that stress and socio-economic categories have a correspondence relationship by analyzing it with the CFA and the chi-square test. Finally, we suggested regulatory policies to minimize congestion and internalize its external costs in order to encourage transportation sustainability. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1269",
+    "title": "Quality Prediction in Injection Molding Using Machine Learning Methods",
+    "journal": "2024 IEEE 15th International Colloquium of Logistics and Supply Chain Management, LOGISTIQUA 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA61063.2024.10571516",
+    "abstract": "In order to achieve high efficiency in the plastic injection molding (PIM) process and ensure exceptional service quality for customers, it is imperative to identify the variables that influence the final product's quality and continuously monitor the intricate and dynamic changes these variables undergo during the PIM process. Furthermore, attaining the desired quality level necessitates the development and implementation of intelligent systems harnessing Artificial Intelligence (AI) and Machine Learning (ML). These systems have the capability to detect and even anticipate defects, shifting the paradigm from reactive actions to preventive measures. Consequently, we can intervene proactively before producing defective components, thereby reducing waste generation.In line with these considerations, this article presents a study on the feasibility of utilizing artificial neural networks (ANN), specifically the multilayer perceptron (MLP), as well as k-nearest neighbors (KNN) and support vector machines (SVM), to formulate quality prediction models. The accuracy of these models is compared, using data collected from industrial operations conducted within the Tangier free zone in Morocco. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1270",
+    "title": "The Contribution of Smart Supply Chain Practices to Strengthening Inter-Organizational Commitment and Improving Inter-Organizational Knowledge: The Case of Large Companies in Morocco",
+    "journal": "International Conference on Logistics, LOGISTIQUA",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA66323.2025.11122699",
+    "abstract": "The issue of the contribution of Smart Supply Chain (SSC) practices to strengthening inter-organizational commitment and the improvement of inter-organizational knowledge falls within the context of the evolution of global supply chains, where competitiveness and responsiveness are key success factors. In this context, practices such as intelligent Customer Relationship Management (CRM), intelligent Supplier Relationship Management (SRM), and intelligent collaboration programs have become essential for companies seeking to optimize their operations, strengthen relationships with their partners, and enhance knowledge sharing within the supply chain. To explore this issue, a theoretical and qualitative framework was developed, followed by a causal and explanatory quantitative study aimed at testing the research hypotheses. The results reveal that the relationship between Smart Supply Chain practices is not merely additive but creates a dynamic where each practice supports and reinforces the others. This enhances companies' ability to develop inter-organizational relational commitment and improve inter-organizational knowledge. When optimally integrated, with strategic alignment and an appropriate technological infrastructure, these practices contribute to improving the performance of Moroccan companies. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1271",
+    "title": "Enhancing E-Commerce Loyalty with AI Chatbots: Unlocking the Power of Reliability, Trust, and Satisfaction",
+    "journal": "International Conference on Logistics, LOGISTIQUA",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA66323.2025.11122759",
+    "abstract": "In a global economic context characterized by recession and inflationary pressures, this study examines the impact of artificial intelligence (AI)-based chatbot reliability on customer loyalty in the e-commerce sector. Emphasizing the strategic role of intelligent service practices, it explores how the perceived reliability of AI chatbots can enhance customer experience and contribute to maintaining firms' competitiveness during periods of economic uncertainty. The study further investigates the mediating effects of trust and satisfaction in this relationship. Based on data collected from 210 online shoppers and analyzed through structural equation modeling (SEM), the findings reveal that chatbot reliability significantly strengthens both customer trust and satisfaction. Although trust positively influences satisfaction, it does not directly lead to loyalty. Mediation analysis using bootstrapping techniques confirms that satisfaction fully mediates the relationship between chatbot reliability and loyalty. These results offer valuable managerial implications for firms investing in intelligent digital solutions, while also contributing to the theoretical understanding of AI-enhanced customer service models. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1272",
+    "title": "The perception of virtual assistant transparency: Effects on customer citizenship behavior",
+    "journal": "International Conference on Logistics, LOGISTIQUA",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA66323.2025.11122814",
+    "abstract": "With the increasing use of virtual assistants (VAs) in the telecom sector, digital transparency has become a critical factor influencing customer trust, commitment, and positive emotions. This study examines the influence of perceptions of digital transparency from virtual assistants on customer citizenship behavior in the telecommunications sector, encompassing voluntary and beneficial actions such as positive word-of-mouth, providing feedback, and assisting other customers. We conducted a quantitative study by sharing a questionnaire with 411 online telecom customers. We run our hypotheses through partial least squares structural equation modeling (PLS-SEM) to map the links in the conceptual model. Findings show that when virtual assistants are more transparent about what they do, customers trust them more, feel happier, commit more strongly, and, as a result, become more loyal and recommend the service to others. These findings can empower telecom companies to enhance their customer relationships and promote customer citizenship behavior by increasing the transparency of virtual assistants. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1273",
+    "title": "Programmable Electronic Sewing Automaton Towards KPI's Improvement in the Automotive Covers Seating Industry: A Novel Approach to Enhancing Supply Chain Efficiency Amid Inflation and Recession",
+    "journal": "International Conference on Logistics, LOGISTIQUA",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA66323.2025.11122820",
+    "abstract": "As globalization accelerates and economic instability intensifies, particularly with rising inflation and the risk of recession, the automotive industry faces growing pressure to optimize costs and ensure production resilience. This paper presents a case study from a multinational supplier of automotive seat covers, focusing on a production site located in Morocco. The study investigates the impact of industrial automation on key performance indicators (KPIs), especially productivity and quality, through the implementation of a Programmable Electronic Sewing Automaton on a pull-flow production line. This strategic automation initiative, concerning a project representing 70% of the plant's turnover, led to significant improvements in efficiency, operational safety, and ergonomics for high-precision tasks. A comparative analysis before and after Automaton integration validated by t-test or student test demonstrates how intelligent systems can help manufacturers adapt to economic pressures, maintain competitiveness, and meet customer expectations even in times of inflation and economic downturn. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1274",
+    "title": "The Integration of Artificial Intelligence and Big Data Analytics in Supply Chain Management: Opportunities, Challenges, and Strategic Implications for Sustainable Competitiveness",
+    "journal": "International Conference on Logistics, LOGISTIQUA",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LOGISTIQUA66323.2025.11122846",
+    "abstract": "This study discusses the integration concerning the integration of BDA and AI into supply chain operations for enhanced efficiency and decision-making. Both technologies have immense potential, but their complexity and risks of overdependence are issues that continue to exist. The objective of this study is to discuss how companies can best leverage these technologies to rationalize their supply chains and become more competitive in the long term. his study is based on interviews conducted with 17 major companies established in Morocco. That have real-life experience of adopting AI and BDA into supply chain operations. Based on the discussion of the possibilities and challenges posed by these technologies, this study highlights how they are reshaping supply chain operations. It elucidates more how they are reshaping supply chain operations by exploring the possibilities and challenges they offer. The present research also depicts the need for taking a measured and methodical approach to their implementation, on the issue of implementation and risk of over-dependence on information. The outcomes are practical recommendations for firms desirous of implementing AI and Big Data Analytics in supply chain management. Finally, the research highlights the ways in which Big Data Analytics and AI will enable greater efficiency, lower costs, and better customer satisfaction. It highlights the importance of balancing the use of these technologies in a way to foster long-Term competitiveness. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1275",
+    "title": "Vehicles-to-Everything Standardization, Services, and Enhancements for Intelligent Transportation Systems",
+    "journal": "IEEE Communications Standards Magazine",
+    "journal_impact_factor": 1.979,
+    "doi": "10.1109/MCOMSTD.2025.3588272",
+    "abstract": "Intelligent transportation systems (ITS) are quickly evolving from merely connecting vehicles on the road to enabling fully autonomous driving capabilities. The third generation partnership project (3GPP) has introduced cellular vehicles to everything (C-V2X) sidelink technology within long-term evolution (LTE), with further enhancements in 5G new radio (NR). These advancements deliver key features such as high reliability, low latency, and high data rates, essential for vehicular networks that enhance road user safety, improve traffic efficiency, and offer in-vehicle infotainment services. This article provides a comprehensive overview of the 3GPP standardization efforts related to the technological advancements and timeline of 3GPP releases. We further explore the fundamental aspects of NR V2X, emphasizing improvements in sidelink communication. Subsequently, we examine advancements in NR V2X, focusing on the physical and MAC layer characteristics. Finally, we analyze the state-of-the-art enhancements introduced in 3GPP releases and outline future directions for subsequent releases. © 2017 IEEE."
+  },
+  {
+    "article_id": "CA_1276",
+    "title": "Semantic Communications in 6G: Coexistence, Multiple Access, and Satellite Networks",
+    "journal": "IEEE Communications Standards Magazine",
+    "journal_impact_factor": 1.979,
+    "doi": "10.1109/MCOMSTD.2025.3592327",
+    "abstract": "The exponential growth of wireless users and bandwidth constraints necessitates innovative communication paradigms for next-generation networks. Semantic Communication (SemCom) emerges as a promising solution by transmitting extracted meaning rather than raw bits, enhancing spectral efficiency and enabling intelligent resource allocation. This paper explores the integration of SemCom with conventional Bit-based Communication (BitCom) in heterogeneous networks, highlighting key challenges and opportunities. We analyze multiple access techniques, including Non-Orthogonal Multiple Access (NOMA), to support coexisting SemCom and BitCom users. Furthermore, we examine multi-modal SemCom frameworks for handling diverse data types and discuss their applications in satellite networks, where semantic techniques mitigate bandwidth limitations and harsh channel conditions. Finally, we identify future directions for deploying semantic-aware systems in 6G and beyond. © 2017 IEEE."
+  },
+  {
+    "article_id": "CA_1277",
+    "title": "Machine Learning-Driven Analysis of THz MIMO Antenna Performance in RIS-Assisted 6G Urban Environments",
+    "journal": "IEEE Communications Standards Magazine",
+    "journal_impact_factor": 1.979,
+    "doi": "10.1109/MCOMSTD.2025.3594279",
+    "abstract": "This paper presents a machine learning-enhanced performance analysis of a Terahertz (THz) MIMO antenna system integrated with Reconfigurable Intelligent Surfaces (RIS) for next-generation 6G wireless networks. A dynamic simulation framework is developed, incorporating user mobility, real-time RIS phase shift modeling, spatial configurations, and realistic path loss parameters within a (Formula presented) urban environment. The system is evaluated over the 0.1-1.0 THz frequency band, focusing on key performance indicators including Envelope Correlation Coefficient (Formula presented) and Total Active Reflection Coefficient (Formula presented). Supervised regression models including CatBoost, Random Forest, XGBoost, ANN, and various linear techniques are trained to predict these metrics from frequency-domain features. CatBoost achieved the highest performance with an R2 score of 0.998, a mean absolute error (MAE) of 0.186, and low inference latency. The findings demonstrate the capability of ensemble-based machine learning to model complex propagation phenomena and optimize antenna performance in dense, RIS-assisted 6G scenarios. This work serves as a foundation for integrating predictive intelligence into adaptive antenna design and realtime network optimization. © 2017 IEEE."
+  },
+  {
+    "article_id": "CA_1278",
+    "title": "Advanced Architectures Integrated With Agentic AI for Next-Generation Wireless Networks",
+    "journal": "IEEE Communications Standards Magazine",
+    "journal_impact_factor": 1.979,
+    "doi": "10.1109/MCOMSTD.2025.3632205",
+    "abstract": "This paper investigates a range of cutting-edge technologies and architectural innovations aimed at simplifying network operations, reducing operational expenditure (OpEx), and enabling the deployment of new service models. The focus is on: 1) proposing novel, more efficient 6G architectures, with both Control and User planes enabling the seamless expansion of services, while addressing long-term 6G network evolution; 2) exploring advanced techniques for constrained artificial intelligence (AI) operations, particularly the design of AI agents for real-time learning, optimizing energy consumption, and the allocation of computational resources; 3) identifying technologies and architectures that support the orchestration of back-end services using serverless computing models across multiple domains, particularly for vertical industries; and 4) introducing optically-based, ultra-high-speed, low-latency network architectures, with fast optical switching and real-time control, replacing conventional electronic switching to reduce power consumption by an order of magnitude. © 2017 IEEE."
+  },
+  {
+    "article_id": "CA_1279",
+    "title": "On the Influence of Bots and Content Moderation on User Opinions in Social Networks",
+    "journal": "Proceedings of 2024 17th International Conference on Management of Large-Scale System Development, MLSD 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/MLSD61779.2024.10739580",
+    "abstract": "This paper examines a simulation model of information cascade formation (a sequence of comments) on a social network post. It assumes that a user has two parameters characterizing their opinion and action. User opinions are influenced by previously written comments (including those by bots) that the user sees. Additionally, some comments may be removed during moderation. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1280",
+    "title": "Evaluation of Deep Learning Models in ITS Software-Defined Intrusion Detection Systems",
+    "journal": "Proceedings of the IEEE/IFIP Network Operations and Management Symposium 2022: Network and Service Management in the Era of Cloudification, Softwarization and Artificial Intelligence, NOMS 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/NOMS54207.2022.9789829",
+    "abstract": "Intelligent Transportation Systems (ITS), mainly Autonomous Vehicles (AV's), are susceptible to security and safety problems that risk the users' lives. Sophisticated threats can damage the security of AV's communications and computational capabilities, slowing down their integration into our daily lives. Cyber-attacks are getting more complex, posing greater hurdles in identifying intrusions effectively. Failing to prevent the intrusions could tarnish the security services' reliability, including data confidentiality, authenticity, and reliability. IDS is an overall prediction paradigm for detecting malicious network traffic in the ITS. This article studies the role of machine or deep learning in Software Defined-Intrusion Detection System (SD-IDS) in ITS; discusses the mathematical analysis of existing deep learning models and evaluates their performances on the basis of the various metrics (i.e., accuracy, precision, recall, f-measure) to observe which model gives the best results for the existing state of art. The results show that improved Recurrent Neural Networks (RNN) is best suited for the detection of SD-IDS attacks in the data plane and control plane. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1281",
+    "title": "A Proposed Chatbot Psykh Your Personal Therapist and Stress Buster Using RASA Open-Source Framework",
+    "journal": "2022 OPJU International Technology Conference on Emerging Technologies for Sustainable Development, OTCON 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/OTCON56053.2023.10114025",
+    "abstract": "Today we are living in the 21st century, where science and technology have taken over completely. On one hand, technology is blooming but on the other hand, we humans are so consumed in the everyday hustle and bustle of our lives that each one of us is dealing with mental stress, anxiety, and depression. Talking on a deeper note regarding technological advancements, today we experience chatbots taking over client handling and customer service completely, assisting humans in tasks big or small. The greatest asset we have as individuals would be health only. And improving the health sector more and more via technology would be the biggest boon for humankind. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1282",
+    "title": "Coordinated Planning of Active Distribution Network Considering Virtual Power Plant Based on Master-Slave Game",
+    "journal": "Proceedings - 2023 Panda Forum on Power and Energy, PandaFPE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/PandaFPE57779.2023.10140874",
+    "abstract": "A great deal of distributed generations (DGs) connected to the grid bring challenges to the secure and stable operation of the distribution network (DN). The virtual power plant (VPP) is deployed to manage the flexible resources. Considering the benefits of both electricity users and electricity suppliers, a bi-level coordinated planning model of the active distribution network and the VPP is proposed on the master- slave game theory. The expansion planning of the distribution utility is carried out to minimize the annual comprehensive cost at the upper level. The profit of VPP is maximized at the lower level to optimize the siting and sizing of DGs and energy storage system (ESS). Finally, Genetic membrane algorithm combined with Monte Carlo Simulation (GMA-MCS) is used to solve the proposed model. The results show that the distribution network planning combined with the flexible resources allocation scheme of VPP has better social benefits. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1283",
+    "title": "An intelligent fuzzy-based storage assignment system for packaged food warehousing",
+    "journal": "Portland International Conference on Management of Engineering and Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1109/PICMET.2015.7273209",
+    "abstract": "In the packaged food industry, fast cargo receiving, reliable storage and accurate order picking in warehouses within short period of time are critical for achieving customer satisfaction. Food easily deteriorates when unloaded packaged food is exposed in an open area, waiting for inbound and packing operations, according to customer orders. In addition, the risk of damaging the packaging of food is higher when the food is frequently transported by forklift trucks during order picking. This highlights the need to provide decision support in warehouse zoning and storage assignment for preventing the above risks occurring. This paper proposes a tri-modular intelligent fuzzy-based storage assignment system, integrating fuzzy logic and association rules mining techniques, to reduce the order-picking and cargo exposure time, as well as the transport frequency and distance. The fuzzy zoning module is used to allocate different types of packaged food to various warehouse zones based on their particular characteristics. The location assignment module reveals hidden relationships in the sales of products, in turns suggesting which products should be placed together in the same zone. A case study is carried out to examine the intelligent system. © 2014 Portland International Conference on Management of Engineering and Technology."
+  },
+  {
+    "article_id": "CA_1284",
+    "title": "Extracting and analyzing context information in user-support conversations on twitter",
+    "journal": "Proceedings of the IEEE International Conference on Requirements Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RE.2019.00024",
+    "abstract": "While many apps include built-in options to report bugs or request features, users still provide an increasing amount of feedback via social media, like Twitter. Compared to traditional issue trackers, the reporting process in social media is unstructured and the feedback often lacks basic context information, such as the app version or the device concerned when experiencing the issue. To make this feedback actionable to developers, support teams engage in recurring, effortful conversations with app users to clarify missing context items. This paper introduces a simple approach that accurately extracts basic context information from unstructured, informal user feedback on mobile apps, including the platform, device, app version, and system version. Evaluated against a truthset of 3014 tweets from official Twitter support accounts of the 3 popular apps Netflix, Snapchat, and Spotify, our approach achieved precisions from 81% to 99% and recalls from 86% to 98% for the different context item types. Combined with a chatbot that automatically requests missing context items from reporting users, our approach aims at auto-populating issue trackers with structured bug reports. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1285",
+    "title": "LadderBot: A requirements self-elicitation system",
+    "journal": "Proceedings of the IEEE International Conference on Requirements Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RE.2019.00045",
+    "abstract": "[Context] Digital transformation impacts an ever-increasing amount of everyone's business and private life. It is imperative to incorporate user requirements in the development process to design successful information systems (IS). Hence, requirements elicitation (RE) is increasingly performed by users that are novices at contributing requirements to IS development projects. [Objective] We need to develop RE systems that are capable of assisting a wide audience of users in communicating their needs and requirements. Prominent methods, such as elicitation interviews, are challenging to apply in such a context, as time and location constraints limit potential audiences. [Research Method] We present the prototypical self-elicitation system 'LadderBot'. A conversational agent (CA) enables end-users to articulate needs and requirements on the grounds of the laddering method. The CA mimics a human (expert) interviewer's capability to rephrase questions and provide assistance in the process. An experimental study is proposed to evaluate LadderBot against an established questionnaire-based laddering approach. [Contribution] This work-in-progress introduces the chatbot LadderBot as a tool to guide novice users during requirements self-elicitation using the laddering technique. Furthermore, we present the design of an experimental study and outline the next steps and a vision for the future. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1286",
+    "title": "Designing a conversational requirements elicitation system for end-users",
+    "journal": "Proceedings of the IEEE International Conference on Requirements Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RE.2019.00061",
+    "abstract": "[Context] Digital transformation impacts an ever-increasing degree of everyone's business and private life. It is imperative to incorporate a wide audience of user requirements in the development process to design successful information systems (IS). Hence, requirements elicitation (RE) is increasingly performed by end-users that are novices at contributing requirements to IS development projects. [Objective] We need to develop RE systems that are capable of assisting a wide audience of end-users in communicating their needs and requirements. Prominent methods, such as elicitation interviews, are challenging to apply in such a context, as time and location constraints limit potential audiences. [Research Method] The presented dissertation project utilizes design science research to develop a requirements self-elicitation system, LadderBot. A conversational agent (CA) enables end-users to articulate needs and requirements on the grounds of the laddering method. The CA mimics a human interviewer's capability to rephrase questions and provide assistance in the process and allows users to converse in their natural language. Furthermore, the tool will assist requirements analysts with the subsequent aggregation and analysis of collected data. [Contribution] The dissertation project makes a practical contribution in the form of a ready-to-use system for wide audience end-user RE and subsequent analysis utilizing laddering as cognitive elicitation technique. A theoretical contribution is provided by developing a design theory for the application of conversational agents for RE, including the laboratory and field evaluation of design principles. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1287",
+    "title": "A Chatbot for the Elicitation of Contextual Information from User Feedback",
+    "journal": "Proceedings of the IEEE International Conference on Requirements Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RE54965.2022.00040",
+    "abstract": "Over the last years, user feedback has become a valuable source for requirements elicitation. Software vendors increasingly rely on user feedback to collect product issues and feature requests, discover requirements and monitor the overall sentiment of the users about a product. While the analysis of user feedback for requirements elicitation has revealed that feedback can contain helpful information for the product team, collecting valuable, informative, and actionable feedback is still challenging: User feedback is often vague, emotional, or missing important information, such as contextual information, to actually support a product team. Information describing the context of the reported feedback, such as the device model and software version, plays an essential role in increasing its value [1], [2]. Without a given context, reported issues can be complex to understand, reproduce, and address. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1288",
+    "title": "Cases for Explainable Software Systems: Characteristics and Examples",
+    "journal": "Proceedings of the IEEE International Conference on Requirements Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1109/REW53955.2021.00033",
+    "abstract": "The need for systems to explain behavior to users has become more evident with the rise of complex technology like machine learning or self-adaptation. In general, the need for an explanation arises when the behavior of a system does not match the user's expectations. However, there may be several reasons for a mismatch including errors, goal conflicts, or multi-agent interference. Given the various situations, we need precise and agreed descriptions of explanation needs as well as benchmarks to align research on explainable systems. In this paper, we present a taxonomy that structures needs for an explanation according to different reasons. We focus on explanations to improve the user interaction with the system. For each leaf node in the taxonomy, we provide a scenario that describes a concrete situation in which a software system should provide an explanation. These scenarios, called explanation cases, illustrate the different demands for explanations. Our taxonomy can guide the requirements elicitation for explanation capabilities of interactive intelligent systems and our explanation cases build the basis for a common benchmark. We are convinced that both, the taxonomy and the explanation cases, help the community to align future research on explainable systems. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1289",
+    "title": "Challenges in Achieving Explainability for Cooperative Transportation Systems",
+    "journal": "Proceedings of the IEEE International Conference on Requirements Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1109/REW56159.2022.00028",
+    "abstract": "The anticipated presence of highly automated vehicles and intelligent infrastructure systems in urban traffic will yield new types of demand-driven mobility and value-added services. To provide these services, future transportation systems will consist of large-scale, cooperative ensembles of highly automated and connected systems that operate in mixed traffic and have to interact with human drivers and vulnerable road users while coordinately ensuring traffic efficiency and safety.We posit that the ability to explain processes and decisions is essential for such systems. Adequately addressing the needs of the involved actors will require that explainability and trust-worthiness are handled as core properties in the development of highly automated systems. To support explainability-driven design approaches, we identify a set of explainability challenges in the context of a large-scale ongoing endeavor on cooperative transportation and present approaches to target these challenges. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1290",
+    "title": "Milk Grade Detection and Analysis of Quality Factors for Dairy Farm Management",
+    "journal": "2023 IEEE International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE59243.2023.10368611",
+    "abstract": "Milk is a very important drink that is required by individuals of all the ages. Milk is the source of various vitamins and minerals for our body as well as a good source of protein. However, it is equally important to make good quality of milk to be available to the consumer. Milk produced in dairies often carry various disease causing germs due to improper care of the cattle. So, milk quality check is performed. However it is not possible for a human being to go through the large volume of numerical data. So we have to design an intelligent system that is capable of scanning through large volumes of the milk data and extract the parameters. It must also be able to predict with very high accuracy the presence of any kind of anomalies or substances that can harm the quality of the milk that is sold and at the same time help in the E-commerce aspect by farming management with milk testing labs. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1291",
+    "title": "A Novel AI-based chatbot Application for Personalized Medical Diagnosis and review using Large Language Models",
+    "journal": "2023 IEEE International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE59243.2023.10368616",
+    "abstract": "This research showcases a groundbreaking application in the medical industry by leveraging the cutting-edge OpenAI service's GPT-3.5 model, powered by large language models (LLMs). Through the implementation of a Java-based Android app, it introduces a medical chatbot that redefines the way individuals interact with healthcare systems. By capitalizing on the advanced capabilities of LLMs, the app enables users to effortlessly input their symptoms and receive accurate insights, personalized diagnoses, and actionable medical advice. The utilization of natural language processing and AI algorithms ensures a seamless and intuitive user experience. The significance of this innovation lies in the revolutionary impact of LLMs on the entire medical industry. The integration of LLMs empowers the app to comprehend complex medical queries, interpret contextual information, and deliver reliable and up-to-date medical knowledge to users. This transformative technology facilitates improved access to healthcare information, enhances decision-making processes, and ultimately contributes to the optimization of healthcare services. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1292",
+    "title": "Intelligent system for online Hand Gesture Prediction",
+    "journal": "2023 IEEE International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE59243.2023.10368876",
+    "abstract": "Humans may engage with computers in a natural way by using hand gestures to carry out a variety of tasks. However, elements like the hand's complexity, Gesture structures, differences in hand size, posture, and ambient illumination can all have an impact on how well hand gesture recognition systems perform. Due to recent advancements in deep learning, picture recognition algorithms now perform significantly better. Real-time picture segmentation is essential for many uses of autonomous vehicles. Due to recent advancements in deep learning, picture recognition algorithms now perform significantly better. The Deep Convolutional Neural Network has shown improved performance in visual representation and classification, especially when compared to traditional machine learning methods. In this study, a Convolutional Neural Network (CNN) for hand gesture detection is proposed. In order to quantitatively increase the size of the dataset and provide the resilience required for a deep learning approach, data augmentation is initially utilized, which randomly moves photos both horizontally and vertically to an extent of 20% of the original dimensions. A gesture can be used to convey both an activity or an emotion. Also included are sign language and body language. The static and the dynamic are the two different categories of gestures. The former use nonverbal cues like a raised hand or body language to communicate. The latter can communicate certain ideas through body language and hand gestures. In order to determine the user's intent, the gesture or movement of the body or body components is recognized. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1293",
+    "title": "Education Revolution using Virtual Reality",
+    "journal": "2023 IEEE International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE59243.2023.10369970",
+    "abstract": "The development of a Web 3.0 education platform that leverages Virtual Reality (VR) videos, cryptocurrency payments, and Artificial Intelligence (AI) chatbots enhances the learning experience. The paper aims at providing interactive learning for users using a decentralized platform. This Web application runs on the latest concepts like Blockchain and Machine Learning. The AI-supported chatbot uses the latest OpenAI concept to answer users' queries. The platform allows users to buy courses using cryptocurrencies through the Metamask wallet and also enables material authors to earn profits built on the count of views their material collects. The AI chatbot, powered by OpenAI Application Programming Interface, provides free support to users by answering their queries related to studies. Upon payment, users receive a token code via email that they can use to access the video content through a mobile app with a VR box. The platform aims to democratize education by making it accessible and affordable for learners worldwide. The use of blockchain technology and virtual reality in education is still in its early stages, and this platform has the potential to revolutionize the education sector and make learning more accessible, engaging, and personalized. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1294",
+    "title": "Prediction of Accounts Receivables for Customers Using Enhanced Machine Learning Models",
+    "journal": "2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE64874.2025.11042411",
+    "abstract": "For any business to operate in today's competitive business environment efficient credit risk management is imperative to prevent financial instability and loss of revenue because of late payments. This paper describes an end-to-end intelligent system for customer risk profiling and classification on accounts receivable data through machine learning techniques. I will first start by preprocessing raw invoice data for extraction of key customer behavioral metrics, that is, number of invoices, days late, dispute counts, etc., as well as average invoice value. The customers payment patterns are used to group customers into Low, Medium and High-risk levels using K-Means clustering algorithm. Then under these risk levels, we use them as labels to train classification models such as Random Forest, Support Vector Machine (SVM), and Decision Tree classifiers. An interactive Flask based web application with SQLite integration, featuring user authentication, risk dashboards, as well as customer specific predictions, is also a part of the system. By simply inputting a customer ID, users gain the ability to understand payment trends and receive insights about the risk for any given customer. matplotlib and seaborn are used for data visualization and joblib is used to save trained models and deploy it to use in generating predictions. Businesses can gain a powerful proactive tool for credit risk assessment and make better decisions and have better control over their financials with this integrated framework. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1295",
+    "title": "Building a Digital Psychologist: An AI-Based Approach to Mental Health Support Using NLP and Therapeutic Models",
+    "journal": "2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE64874.2025.11042414",
+    "abstract": "As mental health problems become more common, there is a need for easily accessible, effective, and customized support systems. This study presents the development and deployment of an AI-powered chatbot that raises awareness of mental health issues and can act as a digital psychologist. To evaluate users' mental health and offer personalized treatment recommendations, the chatbot engages with them using sophisticated natural language processing and machine learning techniques. The architecture of the chatbot is carefully designed to integrate multiple essential components: a user-friendly interface, robust data privacy measures, and a comprehensive database of therapeutic content curated by mental health professionals. The chatbot's ability to process natural language allows it to precisely understand and evaluate user inputs, providing tailored recommendations and feedback. This chatbot leverages natural language processing (NLP) techniques to understand and respond to user queries, employing sentiment analysis and intent recognition to tailor its responses. Machine learning models and algorithms, such as supervised and unsupervised learning, are utilized to classify user inputs and generate appropriate responses. Additionally, the chatbot incorporates a recommendation system to suggest coping strategies and resources, enhancing its utility as a mental health tool. Ethical considerations, such as data privacy, bias mitigation, and crisis management protocols, are also addressed to ensure the chatbot's reliability and safety. Preliminary evaluations indicate that the chatbot effectively engages users and provides relevant mental health support, demonstrating its potential as a valuable resource in mental health care © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1296",
+    "title": "CyberSentinel: Machine Learning-Driven Attack Severity Prediction & Threat Intelligence Using UNSW_NB15 Dataset",
+    "journal": "2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE64874.2025.11042779",
+    "abstract": "The increasing complexity and frequency of cyberattacks highlight the urgent need for intelligent, adaptive systems capable of efficient threat detection, classification, and risk prioritization. This research introduces CyberSentinel, a machine learning-powered threat analysis and attack severity prediction platform, designed to assist security analysts in making faster and more informed decisions during cyber incidents. The system leverages the benchmark UNSW-NB15 dataset, which contains over 99,000 samples of labeled network traffic representing both normal and malicious behaviors. CyberSentinel categorizes attacks into three severity levels: Low, Medium, and High, helping prioritize incident response efforts based on risk. Multiple Machine Learning classifiers, including Random Forest, XGBoost and Decision Tree, were trained and thoroughly evaluated. The Random Forest (RF) model demonstrated superior predictive accuracy and balanced precision-recall scores across all classes compared to Decision Tree and XGBoost. To mitigate the class imbalance commonly found in real-world traffic, Synthetic Minority Over-Sampling Technique (SMOTE) was applied during training, and Min-Max Scaling was used to normalize feature ranges and improve convergence. CyberSentinel is deployed as an interactive Streamlit web application, allowing users to upload network log files in CSV format for automated attack severity prediction. The system analyzes the entire uploaded dataset at once, generating detailed prediction outputs for each log entry. The platform also features rich visual analytics, including severity-level pie charts, top attacking and targeted IP addresses, attack incident logs with timestamps, and feature importance visualizations. These insights support security teams in understanding evolving attack patterns and strengthening their defensive strategies. Future enhancements include real-time firewall log monitoring and chatbot-based advisory integration. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1297",
+    "title": "Intelligent Attendance System with Fake Face Prevention Using Ageitgey and Real-Time Database Integration",
+    "journal": "2nd International Conference on Research Methodologies in Knowledge Management, Artificial Intelligence and Telecommunication Engineering, RMKMATE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/RMKMATE64874.2025.11042865",
+    "abstract": "The Next-Gen Attendance System employs advanced facial recognition technology to provide a secure, efficient, and reliable way to track attendance. By eliminating proxy attendance, it ensures data integrity and offers real-time updates for both parents and teachers. The system prioritizes user privacy with robust encryption, adhering to strict data protection standards. It integrates smoothly with existing institutional systems, allowing for scalability and future enhancements. This solution boosts operational efficiency by automating attendance processes, enhancing accuracy, and reducing the administrative workload. Designed with flexibility and security in mind, the system represents a significant leap forward in attendance management technology. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1298",
+    "title": "Research Findings on the Process of Locating Suitable Areas for Implementing Shared Spaces",
+    "journal": "2023 Smart Cities Symposium Prague, SCSP 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SCSP58044.2023.10146119",
+    "abstract": "Shared space is an urban design concept that eliminates traditional traffic management facilities and is intended to provide equitable usage for all road users. However, there is a lack of established methodology for calculating its capacity and setting parameters. This paper presents evidence for the need to develop a methodology to calculate shared space capacity and define appropriate parameters. The study describes the characteristics of shared space from a traffic perspective, including its benefits and drawbacks, and distinguishes it from other types of calmed zones. The proposed methodology outlines the steps required to determine the capacity of shared space, drawing parallels to the calculation of uncontrolled intersections. Finally, the paper addresses the selection of optimal shared space locations based on an evaluation of relative accident rates. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1299",
+    "title": "Cyber Fusion: Exploring the Synergy of Social Media and Artificial Intelligence in the Digital Age",
+    "journal": "Proceedings - 2023 10th International Conference on Social Networks Analysis, Management and Security, SNAMS 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SNAMS60348.2023.10375413",
+    "abstract": "This research paper delves into the profound and transformative synergy between social media and artificial intelligence (AI) in the digital age, exploring its multifaceted implications. It investigates how AI algorithms are harnessed to mine and decipher the vast reservoirs of data continuously generated by social media users, impacting various dimensions of our digital lives. From personalized content recommendations to content moderation, sentiment analysis, and chatbots, we uncover the far-reaching effects of this collaboration. However, as this partnership's power grows, concerns related to data privacy, ethics, and responsible AI usage rise. The study's objective is to investigate how AI is integrated into social media platforms, its applications, and its influence on businesses, government policies, and society. The overarching issue is to understand and navigate this dynamic synergy, ensuring responsible and ethical utilization while optimizing the benefits and mitigating challenges. The paper also reviews existing literature, presents real-world examples, and offers recommendations to address the evolving landscape of AI in social media. Striking a balance between innovation and user protection is essential, emphasizing ethical frameworks and empowering users to control their online experiences. This exploration highlights the intricate relationship between AI and social media, reflecting the broader challenges of our data-driven world. Ensuring ethical AI practices, effective regulation, and innovation will be critical to maintaining a positive impact on our digital society. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1300",
+    "title": "Smart parking management in a smart city: Costs and benefits",
+    "journal": "Proceedings - 2017 IEEE International Conference on Service Operations and Logistics, and Informatics, SOLI 2017",
+    "journal_impact_factor": null,
+    "doi": "10.1109/SOLI.2017.8120964",
+    "abstract": "Today cities are responsible for more than 75% of waste production, 80% of emissions, and 75% of energy utilization. With regard to Europe, road transportation produces about 20% of the total CO2 emissions, out of which 40% is generated by urban mobility. It is estimated that vehicles cruising for free parking spaces cause 30% of the daily traffic congestion in an urban downtown area. In this article we attempt to show, through a simulation and an assessment model, how ITS may impact on urban parking management considering both people and freight transportation, and quantified the economic and social benefits which can be obtained. Although some benefits have been already examined by previous authors (e.g. in terms of reduction of time spent in searching a free parking spot), there is still a general lack of quantitative models able to assess the impacts of ITS technologies for urban parking. In this regard, one distinctive contribution of this article is that it combines people and freight transportation modes in a single model. First, we developed a model in order to simulate the urban parking system before and after the adoption of the Smart Parking solution. The output of the simulation model consists in the percentage reduction of the time spent by drivers of cars and vans in searching a free parking spot. Then, this percentage has been used to assess the economic and social benefits of a Smart Parking application in the City of Milan (Italy), in which the 'pay and display' parking spots are provided with sensors able to communicate if the space is free or not. The analysis considers two perspectives: on the one hand the parking operator company, which can increase its revenue due to the reduction of people that do not pay for parking. On the other hand, the city-users (i.e. citizens, tourists, off-site students, etc.), who can reduce the time spent for searching a free parking spot, thus reducing fuel consumption and CO2 emissions. The results obtained showed that these technologies would help each driver to save an average of 77.2 hours every year, 86.5 euros in fuel costs, and the entire city of Milan could reduce CO2 emissions by 44,470 tons per year (out of a total of 4,144,000 tons annually produced by road traffic in the area of Milan). In addition, these technologies help the parking operator company in improving the total revenue of around 9 million euros per year. If considering the required costs to implement the Smart Parking solution, the Discounted Payback Period for the parking operator is lower than 2 years. © 2017 IEEE."
+  }
+]

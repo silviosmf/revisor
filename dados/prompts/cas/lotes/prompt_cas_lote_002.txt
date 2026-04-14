@@ -1,0 +1,390 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CAS intersection:
+AI-mediated Service Recovery.
+
+This intersection includes studies that analyze:
+- AI agents in service recovery contexts
+- Consumer interpretation of AI decisions
+- Organizational implications (governance, alignment, agency)
+- Trust, perceived justice, and engagement in AI-mediated service recovery
+- Delegation of decisions to AI agents
+- B2B relationships and interorganizational effects
+- Interaction between AI capabilities, governance, and consumer perception
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CAS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CAS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical AI or algorithm-focused studies
+- Articles that do not integrate at least two domains
+- Studies without service recovery context
+- Studies without consumer interpretation or perception
+- Articles without organizational or governance implications
+- B2C-only studies without relevance to B2B/interorganizational relationships
+- Peripheral treatment of the core constructs
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CAS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CAS_0051",
+    "title": "Conversational AI in hospitality and tourism: a bibliometric–systematic review",
+    "journal": "Cogent Business and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/23311975.2026.2613599",
+    "abstract": "This study examines how conversational artificial intelligence (chatbots, virtual assistants, and large language model–based agents) shapes the customer journeys of travellers, guests, and visitors in hospitality and tourism, including hotel, online travel agency, and airline services. We consolidate dispersed findings into an integrated account that links conversational design levers, psychological mechanisms, outcomes, and contextual boundaries. Using a protocolised bibliometric–systematic review of Scopus (search window 2010–2025; final n = 71 journal articles), we apply transparent eligibility criteria, quality appraisal, structured coding, and bibliometric mapping across booking, concierge/guest service, recommendation/personalisation, and service recovery touchpoints. Evidence indicates that response speed, message concision, empathic style, anthropomorphism, disclosure/explanation practices, visual/emoji enrichment, privacy-by-design features, and hybrid human handoff influence trust, perceived competence, reduced expectancy violation, perceived control, inspiration, and rapport. These mechanisms are associated with adoption and continuance, purchase and recommendation, satisfaction and loyalty, recovery effectiveness, and willingness to disclose data, with effects moderated by task complexity, failure severity, user traits, setting, and culture/digital literacy. From a practical perspective, this synthesis also provides guidance for hospitality and tourism practitioners on aligning large language model (LLM) capabilities with customer-journey touchpoints, calibrating response time and message concision to task and social context, implementing privacy-preserving personalisation, and maintaining human involvement in high-stakes or emotionally sensitive interactions. © 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CAS_0052",
+    "title": "Service recovery through anthropomorphic chatbots: a consumer face concern perspective",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-06-2025-1270",
+    "abstract": "Purpose – This study investigated how face concern—the extent to which individuals care about maintaining a positive social image—moderates consumers’ anger toward anthropomorphic chatbots used in service recovery following service failures, given that the level of recovery conducted by chatbots is still far from perfect. It further explored how this interaction affects customer satisfaction with chatbots. Design/methodology/approach – An online experiment was conducted with Chinese and Japanese consumers. Participants were asked to imagine a service failure scenario and were then shown a conversation script with either a highly or a less anthropomorphic chatbot. This study examined the type of chatbot that was most effective in achieving customer satisfaction through service recovery. The proposed model included anger as a mediating variable and face concern as a moderating variable. Findings – The study found that the effect of anthropomorphism varied significantly depending on consumers’ levels of face concern. Specifically, consumers with high face concern reported higher anger and lower satisfaction after interacting with a highly anthropomorphic chatbot, suggesting a negative overall effect in such contexts. Originality/value – While face concern has traditionally been examined in human–human interactions, this study extends the concept to human–machine interactions by investigating chatbot anthropomorphism. Focusing on service recovery scenarios offers novel insights into how preferences for chatbot design may vary depending on user characteristics such as face concern. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CAS_0053",
+    "title": "When chatbots cause trouble: how agent type and conversation style shape consumer responses to service failures",
+    "journal": "European Journal of Marketing",
+    "journal_impact_factor": 3.806,
+    "doi": "10.1108/EJM-08-2023-0663",
+    "abstract": "Purpose – The purpose of this study is to investigate consumer response to service failure involving different types of service agents – specifically human agents, anthropomorphic chatbots and non-anthropomorphic chatbots – within the service sector. This study further identifies conversation style and service criticality as key moderating variables that shape consumer responses to chatbot-related service failure. Design/methodology/approach – The hypothesised relationships were tested across three between-subjects experiments. Study 1 (n = 296) and Study 2 (n = 169) were conducted in restaurant resevrvation contexts, while Study 3 (n = 176) was in a healthcare setting, specifically concerning the scheduling of medical appointments. Findings – Customers showed stronger brand avoidance when they encountered a service failure by a virtual agent than by a human agent. This effect was particularly pronounced for failure involving non-anthropomorphic chatbots, as compared to anthropomorphic ones. Furthermore, brand avoidance was exacerbated for high-critical services. Notably, customers interacting with anthropomorphic chatbots that use a socially oriented conversational style demonstrated lower levels of brand avoidance compared to those interacting with task-oriented anthropomorphic chatbots. Research limitations/implications – Managers should prioritise the adoption of anthropomorphic chatbots over non-anthropomorphic ones to mitigate brand avoidance, as customers are more likely to avoid brands when less human-like chatbots are responsible for the failure. In addition, firms should carefully design chatbot interactions in service failure contexts, high in criticality, where reliance on automated agents may heighten consumer discomfort and lead to brand avoidance. Practical implications – Organisations should favour anthropomorphic chatbot designs over non-anthropomorphic alternatives to mitigate brand avoidance, as customers are more likely to avoid brands when less human-like chatbots are responsible for the failure. In addition, in high-criticality service scenarios, firms should carefully design chatbot interactions in service failure contexts, as reliance on automated agents in such contexts may heighten consumer discomfort and erode brand trust. Social implications – The findings suggest that service failures by chatbots can induce significant psychological distress in consumers. This underscores the need for caution when considering the complete replacement of human service agents with chatbots. Originality/value – This research provides new insights by revealing that service criticality and conversation style serve as key boundary conditions in the relationship between chatbot failure and brand avoidance – a domain that has received limited scholarly attention. Drawing on stress-coping theory, this research also suggests that psychological distress is a novel mediating mechanism, highlighting its pivotal role in shaping consumers’ brand avoidance following chatbot service failures. This fresh perspective deepens our understanding of chatbot-related service failures in multiple contexts and offers nuanced insights into the mitigation of brand avoidance. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CAS_0054",
+    "title": "Chatbots in complaint handling: the moderating role of humor",
+    "journal": "International Journal of Contemporary Hospitality Management",
+    "journal_impact_factor": 9.461,
+    "doi": "10.1108/IJCHM-05-2024-0762",
+    "abstract": "Purpose: Artificial intelligence (AI) powered chatbot technology is increasingly used to handle customer complaints in the service recovery process. Built on the justice theory, this paper aims to explore the optimal way to utilize chatbots in handling customer complaints for service failure recovery and the moderating role of humor. Design/methodology/approach: Two scenario-based between-subjects experimental design studies were conducted to examine the two aspects of justice in service failure recovery: Study 1 focuses on procedural justice manifested as perceived control and Study 2 on interactional justice assessed as social presence. Furthermore, the moderating role of humor is investigated. Findings: The results indicate that both perceived control and social presence can improve chatbots’ effectiveness in handling service failures to regain customer satisfaction and the consequent revisit intention. However, humor shows opposite effects in the two studies: chatbots using humorous language in complaint handling may attenuate the positive effect of perceived control but enhance the positive effect of social presence. Practical implications: The findings provide practical guidelines to the service industry regarding the optimal service design and technology deployment in customer service, particularly for an effective service failure recovery process. Originality/value: This research contributes to the service failure recovery literature by investigating how the new service technology of AI-powered chatbots can effectively handle customer complaints for service failure recovery. Furthermore, the research reveals the nuanced effects of humor in different complaint-handling situations. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0055",
+    "title": "AI chatbot service recovery quality and customer experience: a moderated mediation model of continuance usage intention",
+    "journal": "Journal of Consumer Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JCM-02-2025-7638",
+    "abstract": "Purpose – This study aims to investigate the direct and indirect relationship between AI chatbot service recovery quality (SRQ) and its continuance usage intention through the stimulus-organism-response (SOR) model. The moderating role of perceived animacy, through the mediation of customer experience, is also examined based on the Uncanny Valley Theory. Design/methodology/approach – Two survey-based studies were conducted to test the mediation and moderated mediation frameworks, respectively. Study 1 recruited 159 American participants from the online panel Prolific, while Study 2 recruited 269 students from a large private university in Malaysia. Data were analyzed using SmartPLS 4.0 and the conditional indirect effects were examined using PROCESS Macro. Findings – Study 1 revealed a significant partial mediation effect of customer experience between AI chatbot SRQ and continuance usage intention. Study 2 found a significant moderated mediation effect of perceived animacy; as perceived animacy increases, the positive impact of SRQ on customer experience decreases, ultimately lowering continuance usage intention. Interestingly, the conditional indirect effect of perceived animacy was found to become insignificant at a higher level (+1 SD). Originality/value – Our multi-study approach enhances the nomological validity of the SOR Model and offers cross-sample validation of E-RecS-QUAL dimensions in a technology-mediated service context. The inclusion of perceived animacy adds psychological depth, offering insights for service providers seeking to improve AI chatbots’ service quality and customer experience. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CAS_0056",
+    "title": "Who did what and when? The effect of chatbots’ service recovery on customer satisfaction and revisit intention",
+    "journal": "Journal of Hospitality and Tourism Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JHTT-06-2021-0164",
+    "abstract": "Purpose: This study aims to explore the recovery performances of chatbots (vs human employees) and help firms use chatbots to carry out effective service recovery. Design/methodology/approach: Two experiments were conducted to test the proposed hypotheses. Findings: The results show that compared with human employees’ recovery, chatbots’ recovery leads to lower customer satisfaction and revisit intention. This effect is more significant for symbolic recovery instead of economic recovery. Perceived distributive and interactional justice mediate the interaction effect of recovery provider and recovery strategy on recovery performance. Using immediate recovery rather than delayed recovery can attenuate chatbots’ poor performances in symbolic recovery. Originality/value: This study enriches the chatbot research and the service recovery literature by deploying chatbots into the service recovery setting. Using an integrated theoretical model including recovery strategy and recovery timing, this study provides substantive insight into how firms can enhance chatbots’ recovery performances. © 2023, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0057",
+    "title": "Chatbot symbolic recovery and customer forgiveness: a moderated mediation model",
+    "journal": "Journal of Hospitality and Tourism Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JHTT-11-2023-0374",
+    "abstract": "Purpose: Artificial intelligence-based chatbots are frequently used to handle customer complaints in the hospitality and tourism sectors; however, little is known about their recovery strategies. Further, the widespread usage of chatbots is anticipated to affect customers' favorable responses. Therefore, this study aims to examine how chatbots’ symbolic recovery influences customer forgiveness through customer empathy and explore the moderating effect of time pressure on it. Moreover, it investigates the effect of customer forgiveness on customer reconciliation and customer continuous trust. Design/methodology/approach: Structural equation modeling was used to analyze data collected from 994 customers who have experienced chatbot recovery in tourism and hospitality during the past four months. Findings: The results show that chatbots’ symbolic recovery stimulates customer forgiveness, which subsequently positively affects customer reconciliation and customer continuous trust. Moreover, customer empathy partially mediates the effect of chatbots’ symbolic recovery on customer forgiveness, and time pressure plays a moderating role in the relationship between chatbots’ symbolic recovery and customer forgiveness. Practical implications: The results offer highly persuasive insights that may be used to promote chatbots’ symbolic recovery in tourism organizations. The effectiveness of chatbots’ symbolic recovery in achieving customer forgiveness will motivate tourism organizations to use chatbots efficiently in service recovery. Originality/value: This study extends the theoretical scope of chatbot research by investigating the symbolic recovery capabilities of chatbots. Moreover, it expands the application of SOR theory in the context of chatbot service recovery and reveals the underlying mechanism behind the impact of chatbots’ symbolic recovery on customer forgiveness, thus building and testing an integrative model of chatbot service recovery. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0058",
+    "title": "Service recovery by AI or human agents: Do failure and strategy context matter?",
+    "journal": "Journal of Service Management",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JOSM-04-2024-0190",
+    "abstract": "Purpose: Companies must understand consumer responses to AI-provided services to ensure their effectiveness. This is especially important for critical moments of truth, such as service recovery situations. In this article, we examine consumer preferences for AI versus human service recovery depending on the recovery situation: (1) locus of failure (customer vs company failure); (2) type of symbolic recovery (explanation vs apology); and (3) type of utilitarian recovery (monetary vs functional redress). Design/methodology/approach: Three experimental studies were conducted using video-based scenarios that simulated customer chat conversations in financial services and healthcare contexts. Findings: Results show that customers favor AI over human agents in cases of customer failures, while they prefer human agents in cases of company failures. Moreover, customers favor AI agents when given an explanation of the failure or monetary redress, whereas they prefer human agents when receiving an apology for the failure or functional redress. Differences in perceived trustworthiness of AI versus human agents, including their perceived competence, benevolence, and integrity, in these contexts are the underlying psychological process that explains our findings. Originality/value: This article reveals novel insights into the effectiveness of AI versus human service recovery as a function of service failure and strategy context. Our findings demonstrate the need to align the type of service recovery agent with the specific type of service failure and recovery strategy to maximize customer satisfaction and, in turn, loyalty. © 2025, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0059",
+    "title": "Untouchable them: the effect of chatbot gender on angry customers",
+    "journal": "Journal of Research in Interactive Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JRIM-02-2023-0061",
+    "abstract": "Purpose: This study explores how chatbot gender and symbolic service recovery may improve the satisfaction of angry customers in the context of service failures. It provides a strategy for companies to deploy chatbots effectively in customer anger. Design/methodology/approach: This research relies upon a systematic literature review to propose three hypotheses, and we recruit 826 participants to examine the effect of chatbot gender on angry customers through one lab study and one field study. Findings: This research shows that female chatbots are more likely to increase the satisfaction of angry customers than male chatbots in service failure scenarios. In addition, symbolic recovery (apology vs. appreciation) moderates the effect of chatbot gender on angry customers. Specifically, male (vs. female) chatbots are more effective in increasing the satisfaction of angry customers when using the apology method, whereas female (vs. male) chatbots are more effective when using the appreciation method. Originality/value: The rapid advancements in artificial intelligence technology have significantly enhanced the effectiveness of chatbots as virtual agents in the field of interactive marketing. Previous research has concluded that chatbots can reduce negative customer feedback following a service failure. However, these studies have primarily focused on the level of chatbot anthropomorphism and the design of conversational texts, rather than the gender of chatbots. Therefore, this study aims to bridge that gap by examining the effect of chatbot gender on customer feedback, specifically focusing on angry customers following service failures. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0060",
+    "title": "When time is crucial: effects of compensation type and anthropomorphic chatbots on chatbot service recovery satisfaction",
+    "journal": "Journal of Research in Interactive Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JRIM-05-2024-0238",
+    "abstract": "Purpose: This study aims to examine how anthropomorphized chatbots influence consumer anger and satisfaction with chatbot service recovery in the context of service recovery compensation. Design/methodology/approach: We used a 2 (chatbot type: anthropomorphic vs control) × 2 (compensation type: immediate vs delayed) between-subjects design across two studies. Study 1, which employed scenario-based methods, involved a total of 210 participants. Study 2 utilized real chatbot systems and included 248 participants. Findings: Customers exhibit heightened anger and experience lower chatbot service recovery satisfaction with the chatbot when anthropomorphized chatbot allocates delayed compensation following a service failure, as opposed to instances offering immediate compensation. It is crucial to highlight that such distinctive effects are notably absent during interactions with control chatbots, irrespective of the nature of compensation – be it immediate or delayed. Research limitations/implications: While this research focused on anger as a key mediating emotion within controlled, hypothetical scenarios, future studies could extend these findings by incorporating more dynamic interactions, a broader range of emotional responses, and cultural or individual differences such as personality and customer-chatbot resemblance. Originality/value: This study provides novel insights into the behavioral implications of chatbot anthropomorphism in consumer interaction landscapes, emphasizing the nuanced emotional ramifications stemming from varying compensation timelines post-service failures. © 2025, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0061",
+    "title": "Chatbots, service failure recovery, and online customer experience through lenses of frustration – aggression theory and signaling theory",
+    "journal": "Journal of Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JSM-10-2024-0525",
+    "abstract": "Purpose: The aim of the paper is to address the persistent uncertainty surrounding the effectiveness of chatbot-led service failure recovery (SFR) in delivering a satisfactory online customer experience. Prior studies have not explored how chatbot-led SFR processes influence customers’ actual experiences. This gap in the literature may exist because current understanding of chatbot–customer interactions obscure how individuals’ adoption of chatbot-led SFR shape their experiences. Design/methodology/approach: Drawing on frustration–aggression theory and signaling theory, and building on a social constructivist philosophical paradigm, this paper interprets participants’ narratives on chatbot-led interactions and online experiences. Empirical data was generated through 52 in-depth interviews conducted with participants from the USA, France, Italy, and the UK. Findings: Through thematic analysis of interview data, the study presents two key contributions. First, this paper elucidates the dynamics unfolding between customers and chatbots in a service recovery journey, encompassing customers’ priorities and expectations. Second, this paper delineates three customer typologies based on their interactions with chatbots during chatbot-led SFR, including their emotional responses. These interactions could either positively or negatively signal future patronage of chatbots. The identified three customer types can assist managers to reshape their strategies to effectively turn negative customer experiences into opportunities for enriching online customer experiences. This could involve providing multiple touchpoints, including human-led and chatbot-led interactions in the SFR process. Originality/value: This study proposes that chatbots are not just technological tools that support customers during service failures and facilitate connection with the brand, but also function as signals that trigger emotional and cognitive responses, thereby influencing the customer experience. © 2025, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0062",
+    "title": "Anthropomorphism in service chatbots and their effects on purchase Intentions: an experimental design",
+    "journal": "Journal of Services Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1108/JSM-12-2024-0634",
+    "abstract": "Purpose – Humanization of chatbots helps build consumer–artificial intelligence relationships and enhances behavioral intentions through different purchase stages. This study aims to explore the impact of anthropomorphism cues (personification cues and conversational cues) and their interaction with chatbot’s task type (handling complaints vs. product recommendations) on shaping consumers’ gratifications (utilitarian gratifications, hedonic gratifications, social gratifications and technological gratifications) and ultimately leading to purchase intentions. Design/methodology/approach – The current study conducted an online scenario-based experiment with a 2 (personification cues: avatar-like vs. human-like) ×2 (conversational cues: low interactivity vs. high interactivity) ×2 (task type: handling complaints vs. product recommendation) between-subject design. The study used an online self-administered survey to measure its constructs, collecting data from Generation Z and millennial US consumers. Findings – Results showed significant main effects of anthropomorphism cues on all consumer gratifications. Also, significant two-way interactions were found between both anthropomorphism cues and task type in shaping consumer gratifications. Yet, insignificant interaction was found between personification cues and task type on utilitarian gratifications as well as conversational cues and task type on social gratifications. Originality/value – This study provides a novel contribution to service marketing literature by exploring how chatbot interactions differ across multiple service contexts – in both prepurchase and post-purchase stages. It highlights how anthropomorphic cues and chatbot task type interact to shape consumer gratifications, which act as a mediator on purchase intentions. This offers a holistic view of the AI–human relationships in service encounters and provides actionable insights for businesses seeking to improve chatbot service experiences. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CAS_0063",
+    "title": "Empathic accuracy in artificial intelligence service recovery",
+    "journal": "Tourism Review",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TR-06-2023-0394",
+    "abstract": "Purpose: Artificial intelligence (AI) agents have been increasingly applied in the tourism and hospitality industry. However, AI service failure is inevitable. Thus, AI service recovery merits empirical investigation. This study aims to explore how AI empathic accuracy affects customers’ satisfaction in the context of AI service recovery. Design/methodology/approach: A moderated mediation model was presented to describe the effect of empathic accuracy on customer satisfaction via four scenario-based experiments. Findings: The results reveal the positive impact of AI empathic accuracy on customer satisfaction and the mediating effects of perceived agency and perceived experience. Moreover, anthropomorphism moderates the empathic accuracy effect. Originality/value: This paper expanded AI service studies by exploring the significance of empathic accuracy in customer recovery satisfaction. The results provide a novel theoretical viewpoint on retaining customers following AI service failure. © 2023, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CAS_0064",
+    "title": "User Continuance Intention of Chatbot in Telemedicine Applications: An Integration of IS Success Model and Perceived Justice",
+    "journal": "2025 16th International Conference on E-Education, E-Business, E-Management and E-Learning, IC4e 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IC4e65071.2025.11075337",
+    "abstract": "Telemedicine service providers utilize chatbots to help people understand their health or to handle user complaints. While chatbots can provide many benefits such as high availability and quick response, the success of this technology depends on its continued usage. This study discusses the factors that influence users to continue using chatbot services in telemedicine applications by integrating the IS success model and the perceived justice concept. Factors that will be analyzed include information quality, service quality, system quality, distributive justice, procedural justice, interactional justice, perceived usefulness, satisfaction, trust, and continuance intention. We collect data using a questionnaire involving 223 respondents who have used telemedicine applications in Indonesia. To analyze data, we used Structural Equation Modeling-Partial Least Square. Based on the results, service quality and interactional justice in chatbots have the greatest impacts on continuance intention because both affect perceived usefulness and satisfaction, while the distributive justice factor did not affect continuance intention. The results of this study are expected to provide recommendations to improve the quality of chatbots in telemedicine applications in Indonesia. © 2025 IEEE."
+  },
+  {
+    "article_id": "CAS_0065",
+    "title": "AI Enabled NLP based Text to Text Medical Chatbot",
+    "journal": "Proceedings of 2023 3rd International Conference on Innovative Practices in Technology and Management, ICIPTM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIPTM57143.2023.10117966",
+    "abstract": "Usually, people are not conscious of the several treatments or manifestations of a particular illness. They usually have to go to the hospital for minor health problems, which needs an extra amount of time. Also, answering phone calls for complaints is quite hectic. However, this matter can be fixed by utilizing a medical Chatbot called MedBot, which can give proper advice on leading a healthy lifestyle. The basic idea is to construct a healthcare chatbot (MedBot) based on Artificial Intelligence and Natural Language Processing, which can identify the illness and provide necessary information about it prior to consulting or visiting a doctor, thereby making the MedBot more reachable and reducing healthcare costs. Some of these chatbots act as virtual medical assistants, teaching patients regarding their sickness and motivating them to have better health. A text-to-text medical Chatbot involves users in an online conversation about their medical issues and offers a range of personalized diagnoses depending on the symptoms that have been presented. The MedBot interacts with potential patients who come to the application.[6] © 2023 IEEE."
+  },
+  {
+    "article_id": "CAS_0066",
+    "title": "Utilizing Artificial Intelligence-Powered Chatbots for Enhanced Customer Support in Online Retail",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568790",
+    "abstract": "In many e-commerce contexts, live chat interfaces have become popular as a way to communicate with consumers and provide real-time customer support. Conversational software agents, commonly known as Chatbots, are systems created to converse with users in natural language and are often based on artificial intelligence (AI). These systems have replaced human chat service agents in many cases. Although AI -based Chatbots have been widely used due to their time and cost savings, they have not yet met consumer expectations, which may make users less likely to comply with chatbot requests. We empirically study, through a randomized online experiment, the impact of verbal humanoid design cues and a direct approach on compliance with user requirements, based on Social Reactions and Attachment Commitment Theory. Our results show that consumers are more likely to cooperate with chatbot service response requests when there is humanity and consistency. Furthermore, the results demonstrate that social presence plays a mediating role between humanoid design cues and user compliance. © 2024 IEEE."
+  },
+  {
+    "article_id": "CAS_0067",
+    "title": "Cheerbot: A Customer Service AI Chatbot for Foam-Pom Pangasinan",
+    "journal": "Proceedings - 2021 1st International Conference in Information and Computing Research, iCORE 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/iCORE54267.2021.00023",
+    "abstract": "Businesses are using digital channels to accommodate customer inquiries. However, customers still complain about long response times or worse, the lack of it. Customers of Foam-Pom Pangasinan usually encounter problems in inquiry and customer service response. This study aims to identify and analyze the design elements, features, architectural model, and usability of the AI chatbot application for the business. The different features for the User and Admin were created that involved the Product List, Schedule Appointment, AI Chatbot, and Feedback. The chatbot architectural model implemented was a retrieval-based model to successfully answer the user's inquiries regarding Foam-Pom. This allows the application to retrieve the most appropriate response to a conversational input from a whole pool of candidate responses. The chatbot was trained to rank the best response from the set of predefined responses through the use of Dialogflow as an engine. The researchers utilized USE Questionnaires for the preliminary testing of 130 respondents from which it received an above-average score and garnered positive perception from the customers. Further studies can: a) create a dynamic application with more design features, b) add more regional dialects, c) add voice generated response and speech-to-text transcription, d) create the system using other architectural models, and e) test the system on a larger number of respondents. © 2021 IEEE."
+  },
+  {
+    "article_id": "CAS_0068",
+    "title": "Evaluating service quality in insurance customer complaint handling throught text categorization",
+    "journal": "2015 International Conference on Logistics, Informatics and Service Science, LISS 2015",
+    "journal_impact_factor": null,
+    "doi": "10.1109/LISS.2015.7369671",
+    "abstract": "The paper presents the findings of an industry-based study in the utility of text categorization. The purpose of the study is to explore new approach to evaluate service quality of customer complaint handling. The industrial research setting is a large China insurance company. The text categorization methodologies are used in this research including nature language processing and machine learning. In addition, a multiple filtration algorithm using synonyms (near-synonym) dictionary, term frequency and Chi-square statistic is adopted in feature selection. The experimental result shows that text categorization can be used to evaluate the service quality by text data from customer complaint handling. The method can solve automatic evaluation problems in customer complaint handling management. © 2015 IEEE."
+  },
+  {
+    "article_id": "CAS_0069",
+    "title": "Blame the Bot: Anthropomorphism and Anger in Customer–Chatbot Interactions",
+    "journal": "Journal of Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00222429211045687",
+    "abstract": "Chatbots have become common in digital customer service contexts across many industries. While many companies choose to humanize their customer service chatbots (e.g., giving them names and avatars), little is known about how anthropomorphism influences customer responses to chatbots in service settings. Across five studies, including an analysis of a large real-world data set from an international telecommunications company and four experiments, the authors find that when customers enter a chatbot-led service interaction in an angry emotional state, chatbot anthropomorphism has a negative effect on customer satisfaction, overall firm evaluation, and subsequent purchase intentions. However, this is not the case for customers in nonangry emotional states. The authors uncover the underlying mechanism driving this negative effect (expectancy violations caused by inflated pre-encounter expectations of chatbot efficacy) and offer practical implications for managers. These findings suggest that it is important to both carefully design chatbots and consider the emotional context in which they are used, particularly in customer service interactions that involve resolving problems or handling complaints. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CAS_0070",
+    "title": "Aligning (In)Congruent Chatbot–Employee Empathic Responses with Service-Recovery Contexts for Customer Retention",
+    "journal": "Journal of Travel Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/00472875231201505",
+    "abstract": "The use of artificial intelligence (AI) technologies in service recovery is transforming the frontline interfaces across the tourism industry, as AI chatbots are now being designed to show empathy. Using a multi-method approach combining survey, experimental, and field data obtained from hotel guests, this study explores the effects of chatbot–employee collaborative empathic responses on customer retention under various service-recovery contexts. It finds that congruence (vs. incongruence) and higher (vs. lower) levels of congruence in chatbot–employee empathic responses more effectively retain customers. Further, the effects of incongruence and congruence on customer retention diminish when the chatbot’s identity is disclosed but are strengthened when employees’ acceptance of a chatbot increases. Only the negative effects of empathic response incongruence correspondingly increase when chatbot efficiency and flexibility (ambidexterity) increase. These findings suggest that tourism practitioners can rely on chatbot–employee collaboration to accomplish service-recovery tasks but should pay attention to chatbot-side and employee-side uncertainties in a service triad, especially chatbot ambidexterity. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CAS_0071",
+    "title": "Rage Against the Machine: Experimental Insights into Customers’ Negative Emotional Responses, Attributions of Responsibility, and Coping Strategies in Artificial Intelligence–Based Service Failures",
+    "journal": "Journal of Interactive Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10949968221134492",
+    "abstract": "In their interactions with chatbots, consumers often encounter technology failures that evoke negative emotions, such as anger and frustration. To clarify the effects of such encounters, this article addresses how service failures involving artificial intelligence–based chatbots affect customers’ emotions, attributions of responsibility, and coping strategies. In addition to comparing the outcomes of a service failure involving a human agent versus a chatbot (Study 1), the research framework integrates the potential influences of anthropomorphic visual cues and intentionality (Studies 2 and 3). Through three experimental designs, the study reveals that when interacting with chatbots, customers blame the company more for the negative outcome, experiencing mainly frustration, compared with when they interact with a human agent. As the chatbot is perceived as not having intentions and control over them, it is not considered responsible. Thus, the company bears more responsibility for the poor service performance. However, the authors suggest that anthropomorphic visual cues might help mitigate the negative attributions to the company. The attribution of humanlike characteristics also helps promote both problem-focused coping, which helps consumers actively handle the service failure, and emotion-focused coping, which helps restore the emotional balance disrupted by the negative event. © American Marketing Association 2022."
+  },
+  {
+    "article_id": "CAS_0072",
+    "title": "Gender Stereotyping in Robot Service Failures",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10963480241296065",
+    "abstract": "AI agents, such as service robots, could encompass gender cues. However, little is known regarding whether and how customers apply gender stereotyping to service failures in gendered service tasks performed by robots. Drawing on gender stereotype theory, we investigate the joint effects of robot gender (feminine vs. masculine) and task type (female-dominated vs. male-dominated) on customer dissatisfaction following service failures. Study 1 reveals that feminine service robots are perceived as more communal but as equally agentic as their masculine counterparts. Study 2 demonstrates that feminine (vs. masculine) service robots generate lower customer dissatisfaction when failing a female-dominated task. However, this discrepancy diminishes when failures occur in a male-dominated task. Perceived communion and tolerance serially mediate such robot gender effects. Our findings suggest that using feminine robots across all service categories may be a cost-effective strategy for hospitality organizations, eliminating the need to vary robot gender by task type. © The Author(s) 2024"
+  },
+  {
+    "article_id": "CAS_0073",
+    "title": "Engaging Customers with AI in Online Chats: Evidence from a Randomized Field Experiment",
+    "journal": "Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1287/mnsc.2022.03920",
+    "abstract": "We examine how artificial intelligence (AI) affected the productivity of customer service agents and customer sentiment in online interactions. Collaborating with a meal delivery company, we conducted a randomized field experiment that exploited exogenous variation in giving agents access to AI-generated suggestions. We found that AI improved both the efficiency and effectiveness of the interactions: AI-assisted agents responded faster, engaged customers more deeply, and achieved greater improvements in customer sentiment. The benefits were most pronounced for less-experienced agents. However, AI’s impact varied by conversation type: It improved efficiency and customer sentiment in subscription cancellation requests but was the least effective in repeat complaint scenarios because of systemic issues beyond the AI’s capability. A text analysis of agent messages suggests that improved customer sentiment was explained by AI-assisted agents exhibiting higher levels of key response characteristics: empathy, information, and solution. Furthermore, we exploit a unique data feature: Customers first chatted with an automated chatbot without any human intervention before they were transferred to human agents (who may or may not have had AI assistance). We found that if customers who had experienced chatbot comprehension failures were then connected to AI-assisted human agents, the involvement of AI negatively affected customer sentiment. This is because unusually rapid responses in the latter scenario led customers to believe they were still communicating with a chatbot only, suggesting a spillover from their initial negative chatbot experiences. Companies should understand the conversation contexts, such as customer intent and chatbot interactions, when integrating AI into their customer support strategies. © 2025 INFORMS"
+  },
+  {
+    "article_id": "CAS_0074",
+    "title": "Fostering conversationalartificial intelligence (CAI) for sustainable development in services: a case study of Haptik",
+    "journal": "World Review of Entrepreneurship, Management and Sustainable Development",
+    "journal_impact_factor": null,
+    "doi": "10.1504/WREMSD.2024.139371",
+    "abstract": "Conversational Artificial Intelligence (CAI) is a combination of Conversational Commerce, Chatbot, Voicebot and Virtual Assistant. CAI has enabled interstellar opportunities for large companies, collaborating with startups towards sustainable development. This has to simplify the services and optimised customer bookings, utility payments, queries, complaints and resolutions. CAI aided with a framework based on Technopreneurship Innovation (TIN) has been adopted at different stages of the start-up life cycle, hence, ensuring sustainable development with growth. A qualitative case study method of examination and enquiry, with an interpretive ontology, was tested for AI-based firms established between 2013 and 2020 across India in the services sector. Through purposive sampling, the Haptik application (app) for the case study was selected for investigation deploying inductive reasoning. The results stated that CAI is a futuristic living and is here to stay for industries like banks, travel, tourism, hospitality, insurance, healthcare, education, agriculture, e-commerce, retail, etc. Copyright © 2024 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CAS_0075",
+    "title": "Is a Chatbot More Effective? Investigating the Effect of Service Recovery Agents and Consumer Loss on Consumer Forgiveness",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer21010035",
+    "abstract": "As chatbots are increasingly deployed to address service failures, understanding their role in facilitating consumer forgiveness has become essential. Several studies have compared consumers’ reactions to service recovery efforts conducted by a human versus a chatbot. Through three scenario-based experiments (total N = 1875) with Chinese participants, our study examines the interaction between service recovery agents (chatbot vs. human), types of consumer loss (utilitarian vs. symbolic), and service failure severity (low vs. high) in influencing consumer forgiveness. The results reveal that in cases of symbolic loss, consumers perceive humans—rather than chatbots—as more capable of providing emotional support during service recovery, thus promoting forgiveness more effectively. However, this discrepancy diminishes in the case of utilitarian loss. Our findings further suggest that the combined effect of service recovery agents and consumer loss on forgiveness is moderated by service failure severity. In the case of low-severity failures, recovery services provided by humans (vs. chatbots) are more effective in fostering forgiveness for consumers experiencing symbolic losses. However, for high-severity failures, regardless of the type of loss, consumers exhibit a higher level of forgiveness toward recovery services provided by humans. This research offers the following practical implications for managers dealing with service failures: strategic escalation to human agents is recommended for symbolic losses or high-severity failures, but chatbots represent a cost-efficient solution for utilitarian losses in low-severity scenarios. © 2026 by the authors."
+  },
+  {
+    "article_id": "CAS_0076",
+    "title": "SERVICE FAILURE BY HUMAN, SERVICE RECOVERY BY AI CHATBOT: THE IMPACT OF JUSTICE, AI EFFICACY ON RECOVERY EFFORT",
+    "journal": "Virtual Economics",
+    "journal_impact_factor": null,
+    "doi": "10.34021/ve.2024.07.04(3)",
+    "abstract": "Artificial intelligence has led to significant innovation in the marketing field, with intelligent chatbots increasingly involved in both customer service provision and service failure recovery processes. While recent research on AI services and intelligent chatbots has been increasing, there has been little research on the collaborative efforts between AI chatbots and human agents for service failure recovery and users' perceptions of the process. Accordingly, the aim of this study is to assess the impact of AI chatbot intervention in recovering from service failures made by human agents on key service recovery outcomes. To achieve this, we model the influence of perceived justice in AI chatbot service recovery processes on outcomes such as customer forgiveness and post-recovery customer satisfaction mediated through efficacy towards AI chatbots. Additionally, drawing on anthropomorphism theory, we seek to verify the moderation effect of humanness, representing the degree to which AI chatbots resemble humans. To test the hypotheses, a total of 187 respondents who had experienced service failure by human agents and service recovery through AI chatbots were surveyed. The collected data were then validated for reliability and validity, and the hypotheses were tested using PLS analysis. Empirical analysis results confirm the significance of all hypotheses and moderation effects. The findings of this study hold academic significance as an exploration of the proactive role of AI chatbots in service recovery processes, providing both theoretical insights and practical implications for companies intending to implement chatbots in service settings in the future. © Author 2024."
+  },
+  {
+    "article_id": "CAS_0077",
+    "title": "Design & implementation of intelligent system for identification of fuel fraudulents and near by fuel stations",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.35940/ijrte.B2161.078219",
+    "abstract": "The increasing frauds in fuel filling process have become a big deal to the society. The pumps in petrol bunks are controlled with the end goal that it shows the fuel filled into vehicle as entered, yet the amount of fuel filled is not exactly shown by the display. The petrol bunk proprietors are making enormous benefits by tricking the clients. This is redressed through estimation of approaching fuel through flow rate sensor and showing it on the LCD display and the measured output is sent as a message by means of global system for mobile communication (GSM) technology to the enlisted user for undeniable record can be made. This would help the proprietors of transportation companies to keep up a record of their vehicles that are run by their paid drivers. if the petrol in the tank is less than threshold value then LED glows continuously until the petrol is filled and it display the distance of the nearby petrol bunks by using the global positioning system (GPS) and is displayed on LCD. Keywords: Fuel Level Monitoring, Flow sensor, GPS, LCD Display, Threshold value. © BEIESP."
+  },
+  {
+    "article_id": "CAS_0078",
+    "title": "Synthetic empathy and the influence trap: Ethical implications of emotion AI in customer support environments",
+    "journal": "Harnessing Emotion AI for Customer Support and Employee Wellbeing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-3658-9.ch004",
+    "abstract": "The simulation of compassion in customer- support chatbots is called synthetic empathy; this increases efficiency and satisfaction but has the potential to control behaviour and trust through subtle influence. This chapter demonstrates how emotionally responsive agents influence the users using social- influence theory (Kelman compliance- identification- internalisation) and the ELIZA effect. There are two examples of the risk: Vera- Priya, in which a user has empathetic upselling and the necessity to leave an honest complaint, and Ayaan- AIva, in which a comforting mental- health chatbot works so well that it is deeply trusted and then falls apart during the crisis. We elucidate the psychological processes, tabulate ethical risks like emotional manipulation, misattribution and illusory consent, and use the SAFEE framework (Safety, Accountability, Fairness, Explainability and Ethics) to recommend design and governance considerations. The chapter provides an interdisciplinary blueprint of Emotion- AI systems that safeguard autonomy, minimise harm and develop trustworthy interactions. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0079",
+    "title": "Examining Customer Experience in Using a Chatbot",
+    "journal": "International Journal of Asian Business and Information Management",
+    "journal_impact_factor": 0.986,
+    "doi": "10.4018/IJABIM.322438",
+    "abstract": "While the use of artificial intelligence and chatbots is increasing, studies of customer experiences in using chatbots remain rare. This article explores the experience of customers before, during, and after their interaction with a chatbot to determine what aspects draw their attention when interacting with the chatbot. It identifies potential problems customers face when using a chatbot from different points of view, specifically those of a chatbot developer, a chatbot buyer, and a customer. This study focuses on VX, a chatbot from a leading telecommunications company in Indonesia, and uses interviews of fourteen customers, identified personas, and individual customer journeys to analyze interactions. The personas revealed five types of needs: two basic ones for information and transactions, and three others for security, entertainment, and complaints. © 2023 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0080",
+    "title": "AI-BASED ANALYTICS IN ENHANCING CUSTOMER RELATIONSHIP MANAGEMENT IN TEXTILE INDUSTRY; [АНАЛИТИКА НА ОСНОВЕ ИСКУССТВЕННОГО ИНТЕЛЛЕКТА ДЛЯ ПОВЫШЕНИЯ ЭФФЕКТИВНОСТИ УПРАВЛЕНИЯ ВЗАИМООТНОШЕНИЯМИ С КЛИЕНТАМИ В ТЕКСТИЛЬНОЙ ОТРАСЛИ]",
+    "journal": "Izvestiya Vysshikh Uchebnykh Zavedenii, Seriya Teknologiya Tekstil'noi Promyshlennosti",
+    "journal_impact_factor": null,
+    "doi": "10.47367/0021-3497_2025_4_225",
+    "abstract": "The article explores the utilization of AI-enabled analytics tools in the realm of customer relationship management (CRM) in the textile sector to reinforce customer loyalty, enhance precise segmentation, and maximize the output of campaigns. In the wake of digital transformation paradigms and the subsequent retail evolution, textile brands are deploying intelligent systems to sift through multimodal, multi-channel substantive customer data and pick actionable insights. Machine learning is one of the paradigms implemented by artificial intelligence that allows systems to learn from data and improve their performance over time. Using standard and advanced metrics, predictive models were tested, ranging from Gradient Boosting and Deep Neural Networks to ensemble architectures, to see how accurately they could forecast customer churn and classify behavioral segments. The findings suggest significant improvements across several CRM dimensions such as prediction accuracy, personalization, marketing conversion rates and oper-ational costs. The use of AI tools has also led to increased customer satisfaction as service response time is reduced, and inventory forecasting becomes more accurate. These results demonstrate AI's ability to continue to turn CRM from a reactive function to a proactive, data-driven strategic tool. © 2025, Ivanovo State Polytechnic University. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0081",
+    "title": "How Can Service Convenience Reestablish Passenger Satisfaction After a Flight Delay? A Data Mining Approach",
+    "journal": "Scientific Annals of Economics and Business",
+    "journal_impact_factor": null,
+    "doi": "10.47743/saeb-2026-0006",
+    "abstract": "The rapid development in aviation has transformed the way air travellers travel. Service failures, such as flight delays, significantly impact consumer satisfaction and its various dimensions. Consequently, flight delay has been identified as one of the critical factors in service failure. To improve satisfaction, airlines need to understand how consumer satisfaction can be enhanced in service failure incidents such as flight delays. As air travel recovers, understanding how service failures impact satisfaction and how they can be mitigated is crucial. Therefore, this study measures consumer airline satisfaction based on 129,880 observations of airline passengers (Study 1). It conducts data mining to predict that service convenience influences service failure perception (flight delay) and enhances consumer satisfaction (Study 2). The results indicate interesting trends. It is found that service convenience is the primary driver of delayed service failure recovery from the perspective of airline passengers. Airlines should invest in enhancing convenience and digital services, including virtual assistants, implementing automatic recovery mechanisms for flight delays, and considering the proximity of boarding gates to minimise walking distance. © This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  {
+    "article_id": "CAS_0082",
+    "title": "Sentiment Analysis-Based Chatbot System to Enhance Customer Satisfaction in Technical Support Complaints Service for Telecommunications Companies",
+    "journal": "ICSBT International Conference on Smart Business Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0012807200003764",
+    "abstract": "In the competitive world of telecommunications, a good customer technical support complaint service can make a difference. However, this business process still presents deficiencies in its quality. In the capital of Peru, there were 102, 665 internet complaints and 38, 621 cable television complaints. 9.27% and 9.97% of these, respectively, weren't resolved. In this sense, this research proposes the implementation of a chatbot, which incorporates GPT 3.5 as a sentiment analysis component, to reduce user dissatisfaction in this service process. To validate the proposal, experiments were conducted with 50 internet and cable television service owners to evaluate satisfaction and accuracy in recognizing their emotions. The results indicated that 86% of the respondents were satisfied with the chatbot service, and the satisfaction index reached 77.9, surpassing the minimum threshold of 75 points for providing quality customer service established by the industry. The methodology behind these results is detailed in the following research. Copyright © 2024 by SCITEPRESS - Science and Technology Publications, Lda."
+  },
+  {
+    "article_id": "CAS_0083",
+    "title": "Who Makes You More Disappointed? The Effect of Avatar Presentation, Company Market Status, and Agent Identity on Customers’ Perceived Service Quality and Satisfaction of Online Chatting Services",
+    "journal": "Asia Marketing Journal",
+    "journal_impact_factor": 0.825,
+    "doi": "10.53728/2765-6500.1577",
+    "abstract": "Recent advances in interactive communication have allowed companies to introduce new digital technologies to differentiate their online customer chatting services, allowing companies to leverage both human and AI agents in their chatting services. In addition, the presentation of chatting agents is also varied including human pictures, human image, and so on. However, little is known about how these changes in online chatting service affect customer responses. To answer this call, the current research examines the effects of avatar presentation, company market status, and agent identity on customers’ perception of service quality and satisfaction in the context of minor service failure that customers encounter through online chatting services. The results of two studies show that customers perceive better service quality and demonstrate lower satisfaction if served by an artificial intelligence [AI] agent (vs. a human-agent), represented by a human picture (vs. a human image). However, this pattern was found only for a company with high marketstatus, not for a company with low market-status. These results will help marketing practitioners strategically design their chatting service environments according to the nature of services they offer. © 2021, Korean Marketing Association. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0084",
+    "title": "Chatbot or Human？The Impact of Chatbot Service Strategies on Recovery Satisfaction: Short Paper",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Nowadays, more and more enterprises use chatbots in customer service, but a customer survey shows that most users prefer to choose human service employee rather than chatbots. What scenario can chatbots play a better role than human customer service, bringing better customer service satisfaction has become an issue of concern for enterprises. From the perspective of service recovery, this study explores what circumstances does customer service provide chatbots better service than human service employee? To this end, we proposed a matching effect model between the service recovery entity and customer requirement type, and on this basis, the moderating effect brought by different remedy schemes and communication styles of customer service is discussed. We plan to design mixed design vignette experiments to test our research model. The findings of this study are intended to give new insights for researchers and practitioners. © 2023, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0085",
+    "title": "Exploring Appropriate Communication Styles for Personalized Chatbots in Service Recovery",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Chatbots are widely adopted to serve consumers in e-commerce, replacing human service providers for dealing with consumers’ complaints after a service failure. In this research, we try to find out personalized ways to improve the design of chatbots from the aspect of communication styles, which has an important impact on consumers’ perception of satisfaction in service recovery. Taking consumers’ characteristics into consideration, we aim to explore how a chatbot’s communication style and consumers’ relationship orientation interact to impact service satisfaction in service recovery. The findings of this study will provide useful insights into the personalized design of customer service chatbots in service recovery contexts. © 2022, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0086",
+    "title": "Humor Touch: Should Conversational Agents Express Humor When They Fail?",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Conversational agents (CAs) are playing an increasing role in customer service, but they are not immune to mistakes. Designing effective CA service recovery strategies is vital. Various strategies, such as empathy and apology, have been examined in prior research. However, for CA humor, another potential service recovery strategy, there is limited understanding of its role in service recovery. Therefore, this study draws on mind perception theory to investigate how humorous responses can be an effective recovery method for CAs service failure. We propose a theoretical model where CA humor influences customers’ perception of CAs in terms of experience and agency, which in turn impact service satisfaction. In addition, this study investigates the moderating effect of failure severity. We design two lab experiments to test the model. This study enriches research on CA-expressed humor for customer service recovery and provides practical findings for mitigating the adverse effects of CA's service failure. © 2023, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0087",
+    "title": "Proceedings of the 21st International Conference on Smart Business Technologies, ICSBT 2024",
+    "journal": "ICSBT International Conference on Smart Business Technologies",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 16 papers. The topics discussed include: computing: looking back and moving forward; hidden champions revised: towards a new conceptual framework; enhancing returns management in fashion e-commerce: industry insights on AI-based prediction and recommendation systems; comparative analysis of machine learning techniques for DDoS intrusion detection in IoT environments; artificial neural network model for predicting excavator downtime; framework for modeling the propagation of disturbances in smart construction sites; sentiment analysis-based chatbot system to enhance customer satisfaction in technical support complaints service for telecommunications companies; Business-RAG: information extraction for business insights; and speech recognition for inventory management in small businesses."
+  },
+  {
+    "article_id": "CAS_0088",
+    "title": "Unraveling the Curvilinear Impact of AI Agent Anthropomorphism on Service Failure Tolerance",
+    "journal": "Proceedings of the International Conference on Electronic Business (ICEB)",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Anthropomorphic AI agents are increasingly prevalent, yet their impact on customer responses to service failures remains contentious. Drawing on cognitive appraisal theory, this study explores the curvilinear effects of AI agent anthropomorphism on customer service failure tolerance. Through two video-based experiments and one text-based experiment involving a total of 526 subjects, we aim to investigate whether an inverted U-shaped relationship exists between anthropomorphism and failure tolerance and if likability serves as a mediating factor in this relationship. We further explore the potential moderating role of failure severity, hypothesizing that high severity may attenuate the effect of anthropomorphism on likability while low severity could strengthen the indirect relationship between anthropomorphism and failure tolerance via likability. These insights are expected to enrich cognitive appraisal theory and the uncanny valley effect by uncovering potential internal emotional mechanisms, offering valuable implications for designing and implementing AI agents. © 2024 International Consortium for Electronic Business. All rights reserved."
+  },
+  {
+    "article_id": "CAS_0089",
+    "title": "When AI Apologizes: The Impact of Recovery Approach and Tone on User Response",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The rapid development of AI has transformed customer service, yet AI-powered chatbots remain prone to service failures. While prior research has examined recovery approaches and tone of voices separately, their combined effects on user perceptions and emotional responses are underexplored. This study adopts the Stimulus-Organism-Response (S-O-R) framework to investigate how tone of voices (formal vs. informal) and recovery approaches (informational vs. emotional) interact to influence user perceptions of AI reliability, trust, and rapport, and how these perceptions in turn shape negative emotional responses. A 2×2 between-subjects experimental design manipulates tone and recovery strategy in chatbot-generated recovery messages. By observing user reactions to controlled AI failure scenarios, the study aims to clarify how communication congruence or mismatch affects cognitive and emotional responses. The findings will provide actionable insights for optimizing chatbot communication, contributing to a comprehensive understanding of AI-mediated service recovery and advancing theoretical and practical knowledge in this emerging area. © 2025, Association for Information Systems. All rights reserved."
+  }
+]

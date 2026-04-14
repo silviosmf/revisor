@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_0201",
+    "title": "Towards an AI-Agent-Based Framework for Agile Business Process Management",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-94590-8_18",
+    "abstract": "The traditional approaches in dynamic and collaborative environments that use Business Process Management (BPM) methodologies usually lack the ability to adapt to real-time changes in case of heavy human involvement in repetitive processes. The agility of social BPM is, however, still limited because of a lack of context-sensitive tool support. This paper proposes a mapping framework that leverages conversational AI agents on a social media platform to enhance BPM agility. AI-driven conversational agents are mapped to the respective phases of the BPM lifecycle to provide real-time guidance, recommendations, and context-sensitive feedback. The agents’ collaborative features enable inclusive co-construction, interactive task execution, and continuous monitoring of the processes. That allows dynamic adaptation of the processes in case of changes so that tasks remain aligned with the users’ needs and contextual demands. This framework is developed through an exploratory approach that integrates literature review, deductive design, and use case-based evaluation. This framework could bridge gaps in the current BPM practices by integrating BPM, AI, and social media, thereby offering a new model for agile and collaborative business process management. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CA_0202",
+    "title": "Towards an LLM-Based Conversational Framework for Business Process Modeling: Research Approach and Preliminary Results",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-94590-8_34",
+    "abstract": "Business process modeling is a crucial task for organizations to document, analyze, and optimize their business processes. However, creating process models requires modeling expertise, aggravating this knowledge-intensive task for non-experts. Recent advancements in Natural Language Processing and artificial intelligence offer new possibilities for automating the generation of process models from natural language descriptions. This doctoral research aims to address these emerging possibilities by developing BPMNGen, an LLM-based conversational framework that enables users to generate and iteratively evolve BPMN 2.0 process models using natural language input. By leveraging NLP techniques, BPMNGen translates the process descriptions entered by the user into BPMN 2.0 process models and then allows for real-time modifications through interactive prompts. The research follows the Design Science Research Methodology to develop and evaluate the conversational framework in a structured manner. A key focus of future work will be the evaluation of the generated BPMN 2.0 process models to ensure their quality, correctness, and usefulness. Additionally, different techniques (including prompt engineering) will be explored to improve the accuracy and quality of the model generation process. The main goal of this research is to make process modeling with BPMN 2.0 more accessible and convenient for a broader audience, including domain experts, process participants, and business analysts. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CA_0203",
+    "title": "New Approaches to Human-Technology Interaction in the Context of Dementias",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-94901-2_3",
+    "abstract": "Human-Technology Interaction is a multidisciplinary field that refers to the communication between the human user and different kind of computer systems. The current paper presents some deep-technology approaches that are contributing to technology-computer interaction in the context of dementia, and that have been tested in Galicia or the north of Portugal. Specifically, different user tests are described within the AFAGA or SCMRA facilities, testing virtual reality, convocational agents and personalized multimedia systems. Immersive virtual reality appeared to be a feasible, safe and enjoyable technology for per- sons with dementia. Intelligent conversational agents appear to be able to detect cognitive decline in older people through machine learning algorithms, using both spoken and written exchange. Personalized multimedia systems can be used in promoting personalized care in old adults with dementia through the digitization of stories, integrating personal preferences and significant aspects of the personal history in an electronic support. Through usability studies, we have observed that participation and co-design improve the development of assistive technologies for people with dementia. The studies presented highlight the need for longer interventions, larger samples and more sensitive measures. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CA_0204",
+    "title": "XAI-Driven Analysis of Emerging Hegemonic Trends in Great Power Development Strategies Incorporating Fuzzy Logic",
+    "journal": "Explainable Artificial Intelligence for Trustworthy Decisions in Smart Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-97007-8_8",
+    "abstract": "This certification aims to provide a framework for visualising the developmental status of countries, use fuzzy logic as the basis with intermediate systems such as deep learning neural networks for a more detailed examination of the results. This system is created by collecting and analysing data from the USA, China, Russia, Japan, and Germany, continuously monitoring their advancement through various developmental phases. This study strategy involves using data sources via collection, revealing indices, and constructing a model that executes statistical calculations. This system employs data prediction techniques, including mathematical inference, linear regression, and deep learning neural networks, to assess and predict developmental patterns. Moreover, there is an opportunity to incorporate additional countries into subsequent analyses. Additionally, the research may be extended beyond the participating countries and customised to meet the user’s requirements. For the purposes of this research, the participants were selected according to their greater potential for advancement in numerous key areas. The choice of fuzzy logic was driven by its efficiency in making decisions marked by uncertainty and its importance in selection and planning strategies, being utilised in this system to manage the uncertainty and ambiguity of data in assessing the development level of the analysed countries. Subsequently, deep learning neural networks were employed for detailed data analysis and for making predictions regarding development trends, thereby providing a clear and comprehensive understanding of the complex processes involved. This system encapsulates various data processing capabilities within the Explainable Artificial Intelligence (XAI) terminology, using various data processing enhancement methods. The process of structuring information in the main system focuses on the use of conditional if–then rules, opting for formulations based on descriptive language instead of precise numerical values. This technique reflects the way people think, often using rules that are not precisely determined. The set of rules embedded in the core mechanism, which includes four types of input data and one category of output data, is designed not only to facilitate analytical evaluation according to system standards, whilst also upholding the principles of XAI. This allows the system not only to produce results, but also to provide a clear and transparent understanding of the processes and reasoning behind its decisions. The data of the values located by year were extracted for each country from the specialised documentation and were utilised in the statistics of the candidate countries, this constituting the input information in the analytical process. The study develops a perspective on progress in establishing supremacy for the countries examined and suggests several approaches to categorisation. Areas of trade growth, defence financing, science and technology innovation, and foreign investment are all covered. This study will examine the data obtained from system inputs and develop methods for predicting future values based on existing value ranges. The model under discussion is not exempt from constraints and dangers, which requires a rigorous and balanced analysis, since fluctuations in the estimates made can be affected by different parameters that can lead to varied results. The study is intended to be not only an analytical exercise, but also a robust contribution to understanding the complexity of state development in an ever-changing global landscape. © 2026 The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0205",
+    "title": "Artificial Intelligence and its Implications for Media Sustainability in Romania",
+    "journal": "CSR, Sustainability, Ethics and Governance",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-00086-6_5",
+    "abstract": "Artificial intelligence tools’ widespread emergence has revolutionized how media content is produced, sold, and consumed. From chatbots that can write a news story in seconds if they have the necessary data to tools that generate images or photos based on the text provided, they have all changed procedures and how newsrooms work. With these phenomena has come a very dangerous one: the risk of fake news. Several websites and apps generate fake news on demand, especially when it comes to topics of interest. In this context, the media play an overwhelmingly important role. There is a need for credible media outlets to provide quality, verified content. However, artificial intelligence is increasingly weakening media institutions. To maintain their profits, some companies in the industry are starting to replace journalists with artificial intelligence tools. For example, a famous Romanian trust already has an AI-generated news anchor for a sports website. So, from avatars to tools for automating other tasks in newsrooms, they are all putting journalists’ jobs at risk and, thus, the economic and social sustainability of the whole industry. This article analyses how artificial intelligence affects media organizations in Romania through qualitative methods. In this context, the authorities should take measures to protect the press in particular, but also the population in general, because the reduction of specialized media trained in this field may endanger democracy itself due to fake news. The article could be helpful for journalists, researchers, and national decision-makers. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2026."
+  },
+  {
+    "article_id": "CA_0206",
+    "title": "AI and Learning in the 311 Nonemergency Programs in the United States: Exploring Dynamics and Impacts",
+    "journal": "Public Administration, Governance and Globalization",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-00514-4_23",
+    "abstract": "The 311 nonemergency system serves as a bridge between government and the public and makes it possible to identify and deliver public services collaboratively. Learning in the 311 programs occurs across multiple stakeholders through dynamic citizen-driven, data-driven, and technology-driven activities. This chapter examines the integration of AI tools—such as chatbots, virtual assistants, machine learning, robotic process automation, natural language processing, and advanced analytics—within local governments’ 311 programs. The analyses suggest that AI-powered 311 programs contribute to learning at all levels by streamlining users’ access to government information, improving knowledge sharing between residents and government, fostering staff efficiency and skill development, and driving government data-driven decision-making. Additionally, AI integration has the potential to advance a more responsive, connected, and collaborative community. However, challenges related to bias, privacy concerns, transparency issues, and implementation cost require further attention to ensure AI technologies are effective, equitable, and beneficial for residents, government agencies, and the broader community. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CA_0207",
+    "title": "Technological Syncretism in Small-Scale Fisheries",
+    "journal": "The Fishing and Oil Industries in Coexistence: The Socio-ecological System of the Southwestern Gulf of Mexico",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-02621-7_11",
+    "abstract": "Technological innovations for fishing emerge from actors with different knowledge systems and have a significant impact on local knowledge and practices. Understanding how fishers’ traditional knowledge is intertwined with the contributions of foreign technological innovations is fundamental to understanding technological appropriation in small-scale fisheries. This process, known as “technological syncretism,” reveals not only how but also the advantages and challenges that emerge from the confluence of diverse knowledge systems. To gain a deeper understanding of syncretism, this chapter examines Pepe Bots, a chatbot developed within the “Fishing and Oil” project. We present an outline of the current use of technological tools in small-scale fisheries in the southwestern Gulf of Mexico, focusing especially on the states of Tabasco and Campeche. In addition, we analyze the interaction between the local knowledge of fishers and the information provided by Pepe Bots. We reflect on the stakes implied in co-production to develop technological solutions that focus on the experiences, skills, and needs of technology users, as well as the opportunities and challenges of an ethical and reflective practice that respects and values diverse knowledge and practices. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG 2026."
+  },
+  {
+    "article_id": "CA_0208",
+    "title": "Chatbot Optimization Strategies to Enhance the Competitiveness of Tourism Entrepreneurs in Indonesia",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-04218-7_6",
+    "abstract": "This study examines the impact of Chatbot Optimization Strategies (COS) and Technology-Enabled Value Co-Creation Capability (TVCC) on Competitiveness in Indonesia’s tourism sector. The findings reveal that optimized chatbot strategies enhance customer satisfaction, service efficiency, and business performance, while TVCC fosters customer engagement and resource integration, strengthening market competitiveness. This research extends the Technology Acceptance Model (TAM), Resource-Based View (RBV), and Service-Dominant Logic (SDL) by demonstrating how technology-driven interactions contribute to sustainable competitive advantages. The study provides practical insights for tourism entrepreneurs and policymakers, emphasizing chatbot optimization and value co-creation as strategic tools for achieving business resilience in Indonesia’s archipelagic tourism landscape. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CA_0209",
+    "title": "Altman’s Golem* : ChatGPT",
+    "journal": "The Need to Rename Tech",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-05155-4_12",
+    "abstract": "The rapid proliferation of generative artificial intelligence (AI) technologies, particularly large language models (LLMs) such as OpenAI’s ChatGPT, has captivated global attention. These AI systems enable users to generate text-based responses to complex prompts, offering capabilities such as creative writing, translation, and interactive conversation. The pace of their development, however, has sparked a competitive ‘arms race’ among tech giants, raising concerns about their power, potential misuse, and sociocultural impacts. This chapter draws parallels between the mythical Jewish figure of the golem and contemporary chatbots, framing the golem as a historical precursor to generative AI technologies. While golems were designed to serve and protect, their autonomy often caused unintended harm to the very populations they were designed to assist. We trace this lineage from folkloric tales such as the Rabbi of Prague to modern AI pioneers such as cybernetic theorist, Norbert Wiener, and OpenAI’s founder and CEO, Sam Altman. We highlight ChatGPT’s limitations, such as its failure to generate accurate, culturally specific humour or address intersectional identities, thereby risking the perpetuation of stereotypes and cultural erasure. We argue for renaming ChatGPT as Altman’s Golem, emphasising the ethical responsibility of its creators to mitigate its potential risks. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG 2026."
+  },
+  {
+    "article_id": "CA_0210",
+    "title": "When Chatbots Meet Process Mining: Conversation Mining in the Era of Digital Trace Data",
+    "journal": "Progress in IS",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-05497-5_11",
+    "abstract": "This chapter presents a specific application of digital trace data research in the context of conversational agents (CAs). CAs are becoming more common in industry and everyday life, creating a need for reliable evaluation methods. Building on the literature on CAs and process mining, we follow a design science research (DSR) approach. We develop a travel recommendation chatbot using an open-source framework, conduct a survey with 45 participants, and collect log data from their interactions with the chatbot. We use process mining techniques to analyze this data and conclude that conversation mining can improve the chatbot’s performance. This research demonstrates that conversation mining can supplement existing evaluation strategies, providing a more comprehensive understanding of the user experience. We suggest that this approach could be used to evaluate other chatbots and could help improve the design and implementation of future systems. Thereby, this work is a showcase example and a critical reflection of how to use digital trace data for conversation mining. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2026."
+  },
+  {
+    "article_id": "CA_0211",
+    "title": "The AI Revolution in SMEs: Intelligent Personalization and Segmentation in Digital Marketing",
+    "journal": "Studies on Entrepreneurship, Structural Change and Industrial Dynamics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-05730-3_9",
+    "abstract": "The artificial intelligence (AI) and machine learning revolution is transforming the way small and medium-sized enterprises (SMEs) approach customer segmentation and personalization in digital marketing. This study investigates how SMEs are adapting their segmentation and personalization strategies by integrating AI and machine learning tools into their digital marketing activities. The methodology combines qualitative interviews with industry experts and analysis of successful SME cases that have implemented AI solutions, with the aim of understanding current practices and best adoption strategies. The results reveal significant benefits of AI adoption in digital marketing, including greater accuracy in audience segmentation, scalable content personalization, and improved campaign efficiency. Barriers such as resource scarcity, lack of specialized knowledge, and data management challenges are also identified, which can hinder implementation in SMEs. The study provides recommendations to overcome these obstacles, emphasizing the need for training, gradual investments, and strategic partnerships to facilitate the effective integration of these technologies. It concludes that the incorporation of AI and machine learning can increase the competitiveness and efficiency of SMEs in the digital marketing environment by optimizing data-driven decision-making and improving the customer experience. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CA_0212",
+    "title": "An AI-Powered Chatbot Using a Transformer-Based Language Model for Graduate Educational Schemes Recommendation",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-06725-8_16",
+    "abstract": "Availability of higher education is still the priority concern for Indian socio-economically underprivileged and rural students at 25%, according to the National University of Educational Planning and Administration (NUEPA) 2021–2022 annual report. The major hurdles are financial constraints and unavailability of information regarding government-funded education programs. An AI-based learning advice chatbot leveraging the Large Language Model Meta AI (LLaMA) has been proposed to address the issue. The model is founded on the LLaMA 3.1 transformer model specifically optimized for low-resource environments. The model was fine-tuned on a 1,200 proprietary educational dataset of scholarship and government program-oriented queries with a test accuracy of 94.39% with an 80%−20% train-test split. The 60–40% was employed as another split to verify its performance with the test accuracy at 92.97%. The chatbot provides user-specific recommendations for 24/7 availability, ease, and strong data security. Providing timely and accurate information will help reduce the financial and informational barrier, thereby increasing the equitable opportunity for people from low-income backgrounds and the community to access higher education. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CA_0213",
+    "title": "The Digital Practice: Proven Marketing Tactics for Today’s Physician",
+    "journal": "The Digital Practice: Proven Marketing Tactics for Today’s Physician",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-07745-5",
+    "abstract": "This book shows healthcare leaders how to translate digital touchpoints into measurable growth for their medical practice—without tripping HIPAA tripwires or burning precious budget. Physicians, clinics, and hospital systems can no longer rely on word-of-mouth or billboard ads. More than half of U.S. adults now research a doctor online before booking, and 54 percent of primary-care visits already touch telehealth. This book is a practical, data-rich road map that guides readers from “How do I get found?” to “How do I prove ROI to the CFO?”Twenty-two tightly sequenced chapters begin with foundational concepts—digital consumer behavior and the legal basics of online promotion—and progress to advanced tactics such as AI-driven predictive analytics and virtual-reality patient education. The narrative arc moves the reader along the exact path a practice must follow to launch, optimize, and future-proof its digital presence. Early chapters explain why physicians must meet patients where they already search online, while later chapters quantify how smart data analysis supercharges campaign ROI. Every tactic is paired with the relevant U.S. privacy rule or advertising statute. Boxes supply SMART-goal worksheets, consent-form boilerplates, influencer-vetting checklists, and a downloadable ROI calculator. Detailed walkthroughs of Google Analytics, Sprout Social, Tableau, and comparable platforms help busy teams pick the right dashboard fast. Each section closes with real results and a dedicated “Emerging Technologies” chapter demystifies AI chatbots, augmented reality, and 5G-enabled telehealth, showing readers where to invest next. The book closes with scenario analyses and a checklist for staying agile in an algorithm-driven future. This is an ideal guide for all physicians running a medical practice. © 2025 The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0214",
+    "title": "Mental Health Resource Retrieval Using Semantic Similarity and Knowledge Graphs",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-08603-7_6",
+    "abstract": "As unmet mental health needs continue to rise, challenges in accessing and navigating resources and services remain a significant barrier to finding effective care. To address this challenge, MIRA, an AI-driven mental health virtual assistant, was developed [1], along with the MIRA library—a curated database of vetted mental health resources. This paper details the methods for designing an intelligent resource retrieval system that processes queries from a chatbot to identify relevant resources from our library. The proposed method combines term frequency and sentence embeddings to create vector representations of queries to perform similarity search for resource ranking. In addition, we incorporate query relaxation to leverage ontology-based hierarchical relationships. This ensures broader, yet contextually relevant search results. The proposed retrieval method outperforms traditional keyword-based and BERT-based methods in precision, as shown through our evaluation. The design and implementation of the ranking algorithm are detailed, including the construction of a knowledge graph and the integration of TF-IDF (Term Frequency-Inverse Document Frequency) based scoring. MIRA leverages the proposed retrieval method to rank resources effectively, recognizing user needs and connecting them to the most relevant support. By doing so, MIRA aims to bridge the gaps in traditional mental health care and improve accessibility. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2026."
+  },
+  {
+    "article_id": "CA_0215",
+    "title": "Enhancing Agile Workflows with AI-Driven, Sustainability-Aware Requirements Engineering: A Design Science Approach",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-032-14518-5_17",
+    "abstract": "Generative AI presents growing opportunities across various fields, including Requirements Engineering (RE). RE, which is the backbone of software projects, drives the entire product development toward respective business goals. However, sustainability is not considered a primary need during the requirement elicitation, and as a result, software engineers are usually unable to envision the sustainability impacts of the products they build. To explore this gap, we introduce Reqwire, an AI-driven, sustainability-aware multi-agent system that (i) generates user stories from software requirement documents, (ii) enriches them with sustainability attributes, and (iii) integrates with common agile project management tools, like Jira. The system consists of specialized agents, namely as root, distributor, user story generator, and Jira. We followed a Design Science Research (DSR) approach under seven iterative cycles, incorporating feedback from an industry partner and academia to design and evaluate the Reqwire workflow. Our results indicate that Reqwire reduces manual effort by generating structured user stories, estimating story points, and assigning sustainability tags across five sustainability dimensions: environmental, economic, social, individual, and technical. The multi-agent-based framework enables integration with third-party tools, supporting consistent, systematic project tracking. Reqwire shows promise for enhancing agile workflows and promoting sustainable software practices from initial test rounds with the client. © The Author(s) 2026."
+  },
+  {
+    "article_id": "CA_0216",
+    "title": "Towards a conceptual framework for classifying visualisations of data from urban mobility services",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-14980-6_18",
+    "abstract": "Urban mobility services generate massive amounts of raw data that are usually not explored in depth by the entities that own them. Visualisation techniques could improve knowledge extraction and decision-making, as well as support the reengineering of those services. Some studies in Information Visualisation provide a domain-independent classification for visualisations based on their own characteristics and the data they support, although independent of their context of use. We propose a classification for visualisations of urban mobility data according to their context of use and their characteristics. Our first results are encouraging and are supported by a user-centred design process carried with urban mobility experts, in which we developed and evaluated a set of visualisation prototypes. The conclusions form a first effort towards a conceptual framework proposal for classifying visualisations of this domain, and are expected to guide researchers and practitioners searching for adequate ways to visually represent their data. © Springer International Publishing Switzerland 2015."
+  },
+  {
+    "article_id": "CA_0217",
+    "title": "Towards context-aware supervision for logistics asset management: Concept design and system implementation",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-53076-5_1",
+    "abstract": "Innovations of information and communication technology (ICT) open plenty opportunities to promote internal operation efficiency and external service level in logistics. As current logistics developments tend to be more complex in operation and large in scale, recent practices start to pay more attentions on improving asset (e.g. equipment and infrastructure) management performance with new ICT development. One of the primary concern is to improve system robustness and reliability. It not only requires the supervision system be capable of diagnosing the condition of the system, but also proficient to find the intrinsic relationship between different conditions and resources thus lead to an integrated decision making process. Moreover, recent ICT innovations, such as WSN and IOT, could record and deliver system descriptors (physical measurements, virtual resources, operational configurations) in real time. Such large-stream and heterogeneous data requires an integrated framework to process and management. To address such challenges, in this paper, a novel concept of context-aware supervision is proposed. An intelligent system with integration of semantic web and agent technology is developed, which aims at providing condition-monitoring and maintenance decisions to relevant user. A generic ontology-agent based framework will be illustrated. The developed system will be applied for the supervision of a large-scale material handling system-belt conveying system as a proof-of-concept. © Springer International Publishing AG 2017."
+  },
+  {
+    "article_id": "CA_0218",
+    "title": "The 4th industrial revolution: Responding to the impact of artificial intelligence on business",
+    "journal": "The 4th Industrial Revolution: Responding to the Impact of Artificial Intelligence on Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-62479-2",
+    "abstract": "This book helps decision makers grasp the importance, and applicability to business, of the new technologies and extended connectivity of systems that underlie what is becoming known as the Fourth Industrial Revolution: technologies and systems such as artificial intelligence, machine learning, 3D printing, the internet of things, virtual and augmented reality, big data and mobile networks. The WEF, OECD and UN all agree that humanity is on the cusp of the Fourth Industrial Revolution. As intelligent systems become integrated into every aspect of our lives this revolution will induce cultural and societal change of a magnitude hitherto unforeseen. These technologies challenge the values, customer experience and business propositions that have been the mainstay of almost every business and organization in existence. By redefining and encapsulating new value structures with emerging intelligent technologies, new innovative models are being created, and brought to market. Understanding the potential and impact of these changes will be a fundamental leadership requirement over the coming years. Skilton and Hovsepian provide decision makers with practical, independent and authoritative guidance to help them prepare for the changes we are all likely to witness due to the rapid convergence of technological advances. In short, bite-sized, nuggets, with frameworks supported by a deep set of practical and up-to-the-minute case studies, they shine light on the new business models and enterprise architectures emerging as businesses seek to build strategies to thrive within this brave new world. © The Editor(s) (if applicable) and The Author(s) 2018."
+  },
+  {
+    "article_id": "CA_0219",
+    "title": "Human versus machine: Contingency factors of anthropomorphism as a trust-inducing design strategy for conversational agents",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-67431-5_15",
+    "abstract": "Conversational agents are increasingly popular in various domains of application. Due to their ability to interact with users in human language, anthropomorphizing these agents to positively influence users’ trust perceptions seems justified. Indeed, conceptual and empirical arguments support the trust-inducing effect of anthropomorphic design. However, an opposing research stream that has widely been overlooked provides evidence that human-likeness reduces agents’ trustworthiness. Based on a thorough analysis of psychological mechanisms related to the contradicting theoretical positions, we propose that the agent substitution type acts as a situational moderator variable on the positive relationship between anthropomorphic design and agents’ trustworthiness. We argue that different agent types are related to distinct user expectations that influence the cognitive evaluation of anthropomorphic design. We further discuss how these differences translate into neurophysiological responses and propose an experimental set-up using a combination of behavioral, self-reported and eye-tracking data to empirically validate our proposed model. © 2018, Springer International Publishing AG."
+  },
+  {
+    "article_id": "CA_0220",
+    "title": "Smart Automation as Enabler of Digitalization? A Review of RPA/AI Potential and Barriers to Its Realization",
+    "journal": "Management for Professionals",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-77724-5_31",
+    "abstract": "Smart automation is a term that summarizes the entire field of trends such as robotic process automation (RPA), virtual assistants, chat bots, natural language processing (NLP), artificial intelligence (AI), and machine learning (ML). Detecon currently perceives in intense interest and many intense discussions about these topics with our customers. This article covers important and hot topics for smart automation. It starts with the potential of the robotic process automation market and includes some useful organizational considerations for “RPA in an Enterprise”. Change Management is typically underestimated and in practice, it is exposed as one of the key success factors. Today Software Robots are enablers for almost all kind of business processes and you will find an overview of possible diversified rule based technologies. If companies want to succeed with AI/ML, a vital requirement is to invest in data analytics. AI/ML skills are essential in order to work out special use cases based on supervised learning or natural language processing. This is the best way to start your journey for smart process automation and to identify the best potential for your business. © 2019, Springer International Publishing AG, part of Springer Nature."
+  },
+  {
+    "article_id": "CA_0221",
+    "title": "AI in Marketing, Sales and Service: How Marketers without a Data Science Degree can use AI, Big Data and Bots",
+    "journal": "AI in Marketing, Sales and Service: How Marketers without a Data Science Degree can use AI, Big Data and Bots",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-89957-2",
+    "abstract": "AI and Algorithmics have already optimized and automated production and logistics processes. Now it is time to unleash AI on the administrative, planning and even creative procedures in marketing, sales and management. This book provides an easy-to-understand guide to assessing the value and potential of AI and Algorithmics. It systematically draws together the technologies and methods of AI with clear business scenarios on an entrepreneurial level. With interviews and case studies from those cutting edge businesses and executives who are already leading the way, this book shows you: how customer and market potential can be automatically identified and profiled; how media planning can be intelligently automated and optimized with AI and Big Data; how (chat)bots and digital assistants can make communication between companies and consumers more efficient and smarter; how you can optimize Customer Journeys based on Algorithmics and AI; and how to conduct market research in more efficient and smarter way. A decade from now, all businesses will be AI businesses – Gentsch shows you how to make sure yours makes that transition better than your competitors. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG 2019."
+  },
+  {
+    "article_id": "CA_0222",
+    "title": "Context-aware intelligent systems for fog computing environments for cyber-threat intelligence",
+    "journal": "Fog Computing: Concepts, Frameworks and Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-94890-4_10",
+    "abstract": "The capture and deployment of intelligence to build strong defense is more holistic and a more focused approach to security for private and government organizations, due to diversified activities of threat actors and malicious users. It is essential for the private sector and government organizations to use technologies such as Cloud, Fog and Edge Computing that provide storing, processing, and transferring vast amounts of public and private data that can be used to generate classified and unclassified threat intelligence. Fog Computing is a platform that uses computation, storage, and application services similar to the Cloud Computing paradigm but fundamentally different due to its decentralized architecture. It is an emerging technology that gives the Cloud a companion to handle the exabytes of data generated daily from the devices in the Internet of things (IoT) environment. In this scenario, the context-aware intelligent systems of Fog Computing that analyze the IoT data become crucial weapons to detect, mitigate, and prevent any possible cyber-threats, much earlier. The IoT environments generate vast amount of data that requires different context-aware intelligent systems to analyze this volumetric and complex data for security proposes to provide cyber-threat intelligence (CTI). The CTI is a collection of intelligence combining open-source intelligence (OSINT), social media intelligence (SOCMINT), measurement and signature intelligence (MASINT), human intelligence (HUMINT), and technical intelligence (TECHINT) from deep and dark Web. All these intelligence systems have functions that are based on specific context-aware intelligence mechanisms. In this chapter, sensitive data collection and analysis methods and techniques are elaborated through several context-aware intelligence systems to expose the use of Fog Computing for analysis of edge networks data for cyber-threat intelligence. © Springer International Publishing AG, part of Springer Nature 2018."
+  },
+  {
+    "article_id": "CA_0223",
+    "title": "Digital Technologies for Ordering and Delivering Fashion: How Baur Integrates the Customer’s Point of View",
+    "journal": "Management for Professionals",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-95273-4_4",
+    "abstract": "(a)Situation faced: Digital technologies such as augmented/virtual reality, chatbots, image processing, messaging services, or speech recognition have the potential to fundamentally change ordering and delivery in online-fashion shops: Disrupting customer interaction formats like attended shopping, curated shopping, scanned shopping, or virtual fitting may increase customer experience, satisfaction, and sales. However, when smaller amounts of money are available, the question arises as to in which of them to invest. Baur, a major German online fashion retailer, is faced with this question and wants to integrate the customer’s point of view in the site engineering process explicitly.(b)Action taken: Secondary research as well as workshops with experts and customers were applied to generate lists of aspects to be improved and potential improvements by digital technologies in the company’s ordering and delivery process. A representative sample of 15,865 customers was confronted with these aspects and potential improvements and asked to evaluate them. 9722 customers returned completed questionnaires. Many of them additionally included detailed comments. The survey data were analyzed and the improvements were prioritized for implementation. The survey methodology yielded recommendations for action to such an extent that it is now integrated in the company’s site engineering process.(c)Results achieved: Overall, the survey showed that the customers are satisfied with the company’s current ordering and delivery process. However, with regard to selection, packaging, and delivery several changes are necessary. Many customers rated potential improvements like virtual fitting and curated shopping as attractive whereas most of them were indifferent with regard to scanned shopping, personalized areas, attended shopping, or C2C inspiration. The survey research resulted in valuable input for the company what actions should be taken in terms of digital technologies to implement. In addition, the company received valuable information on how to improve the ongoing site engineering process.(d)Lessons learned: Improvements aimed at integrating digital technologies—in particular virtual fitting by relying on virtual reality as well as curated shopping by making use of chatbots and messaging services—were rated by many customers as attractive and should also be implemented by other online fashion retailers. Other digital technology-based improvements are of lower priority. From a methodological point of view, customer surveys—if developed carefully and integrated in the company’s site engineering process—provide valuable support when selecting digital technologies for implementing improvements. © 2019, Springer International Publishing AG, part of Springer Nature."
+  },
+  {
+    "article_id": "CA_0224",
+    "title": "Innovations Through Networks: Turning Strategic Suppliers into Innovation Partners",
+    "journal": "Management for Professionals",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-96187-3_6",
+    "abstract": "There are two reasons why digitalization will lead to greater dependency on external partners than ever before: First, the gradual reduction of vertical IT integration leads to a shift whereby activities are externally outsourced. The keywords in this context are IT outsourcing and cloud computing. Second, the digitalization of many companies requires skills and competences that are not yet available. Although these can be developed in-house, it takes time, which is rarely available. For this reason, partnerships and networks will become more important. For example, trends such as smart grid or smart home technologies will have a lasting impact on the energy sector. Intelligent systems can search for relevant patterns based on mass data concerning the usage behavior of energy consumers to optimize energy consumption, as well as energy generation and supply. However, only a few energy companies have the necessary IT know-how to implement these disruptive innovations completely on their own. In such a case, strategic partnerships with technology companies can be an option to address the lack of competence. In the following, we describe and discuss the trend towards innovation partnerships. We first review the traditional sourcing strategies and their limitations. © 2019, Springer International Publishing AG, part of Springer Nature."
+  },
+  {
+    "article_id": "CA_0225",
+    "title": "Intelligent Retail: The Future of Stationary Retail",
+    "journal": "Intelligent Retail: The Future of Stationary Retail",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-658-38316-9",
+    "abstract": "This book shows stationary retail a way to reinvent itself after Corona, in order to be able to survive against the strong competition of online retail. The focus is on the central issues that will shape the retail of the future. For example, brick-and-mortar retail in particular must now work with intelligent systems based on data and adopt or even surpass methods that the large online marketplaces have been using successfully for a very long time. In this regard, artificial intelligence also plays a major role in retail. This is not just about automation and robots taking over tasks, but also about instruments and machines being able to learn and draw conclusions themselves in all retail functions. This is becoming increasingly difficult because our shopping and search behavior is constantly changing. Therefore, a customer should receive intelligent recommendations in the store, which are also based on his already known interests and behavior patterns. Gerrit Heinemann shows how intelligent action can save stationary retail in city centres and shopping centres. The content - From stationary Retail to intelligent Retail - Threats to the stationary retail trade - Basic requirements and manifestations of intelligent Retail - Examples of intelligent retail of the future - Risks for intelligent Retail. © The Editor(s) (if applicable) and The Author(s), under exclusive licence to Springer Fachmedien Wiesbaden GmbH, part of Springer Nature 2023."
+  },
+  {
+    "article_id": "CA_0226",
+    "title": "Digital Transformation in Sales: How to Turn a Buzzword into Real Sales Practice – A 21-Step Guide",
+    "journal": "Digital Transformation in Sales: How to Turn a Buzzword into Real Sales Practice – A 21-Step Guide",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-658-38887-4",
+    "abstract": "This book is a practical guide to the digital transformation of sales organizations. In 21 steps, it provides an overview of the state of the art of technologies and digital sales tools and creates an understanding of what the digitization of sales is really about. The primary driver of digitization is the modern customer, and it is important to always keep him in mind throughout the entire sales strategy. The sole use of technologies and the pure digitization of processes are not enough to make an organization fit for the challenges of the modern business world. All tools and processes from positioning to customer management are explained in detail in this book and illustrated with concrete examples. What do chatbots do, what are virtual and augmented reality suitable for, and what is the benefit of rapid prototyping? Which sales activities can be supported by digitalization? The author provides answers to these and many other questions and shows how sales managers can make themselves fit for the future. With concrete tips and numerous implementation aids. © The Editor(s) (if applicable) and The Author(s), under exclusive licence to Springer Fachmedien Wiesbaden GmbH, part of Springer Nature 2023."
+  },
+  {
+    "article_id": "CA_0227",
+    "title": "The Smiling Chatbot: Investigating Emotional Contagion in Human-to-Chatbot Service Interactions",
+    "journal": "The Smiling Chatbot: Investigating Emotional Contagion in Human-to-Chatbot Service Interactions",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-658-40028-6",
+    "abstract": "Significant advances in the field of artificial intelligence have given a strong tailwind to the spread of technologies based on it. AI technologies are increasingly influencing private contexts but also the service sector where more and more service encounters are handled by chatbots. In part, however, the spread of chatbots and the associated focus on their functional advantages seem to contradict extant research findings that service interactions are also driven by emotional components. A central role is played here by so-called emotional contagion (i.e., the unconscious transfer of emotions from employees to customers). Against the background that this contagion with positive emotions can lead to a better evaluation of the service transaction in the further course, it is the goal of this book to investigate the effects of positive displayed emotions of a chatbot. For this purpose, six consecutive studies were conducted. The results show that the expression of positive emotions by a chatbot enriches the service interactions by transmitting positive emotions that, in the further course, do also lead to a better evaluation of the service experienced. Moreover, it is shown that these emotional reactions are dependent on the customer's personality and the chatbot's appearance, expressed through an avatar. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Fachmedien Wiesbaden GmbH, part of Springer Nature 2022."
+  },
+  {
+    "article_id": "CA_0228",
+    "title": "Applications of soft computing for the web",
+    "journal": "Applications of Soft Computing for the Web",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-10-7098-3",
+    "abstract": "This book discusses the applications of different soft computing techniques for the web-based systems and services. The respective chapters highlight recent developments in the field of soft computing applications, from web-based information retrieval to online marketing and online healthcare. In each chapter author endeavor to explain the basic ideas behind the proposed applications in an accessible format for readers who may not possess a background in these fields. This carefully edited book covers a wide range of new applications of soft computing techniques in Web recommender systems, Online documents classification, Online documents summarization, Online document clustering, Online market intelligence, Web usage profiling, Web data extraction, Social network extraction, Question answering systems, Online health care, Web knowledge management, Multimedia information retrieval, Navigation guides, User profiles extraction, Web-based distributed information systems, Web security applications, Internet of Things Applications and so on. The book is aimed for researchers and practitioner who are engaged in developing and applying intelligent systems principles for solving real-life problems. Further, it has been structured so that each chapter can be read independently of the others. © Springer Nature Singapore Pte Ltd. 2017. All rights reserved."
+  },
+  {
+    "article_id": "CA_0229",
+    "title": "A Simulated Annealing Heuristic for the Heterogeneous Fleet Pollution Routing Problem",
+    "journal": "Environmental Sustainability in Asian Logistics and Supply Chains",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-13-0451-4_10",
+    "abstract": "Public consciousness on environmental sustainability and industry impact on environment has been increasing for the last few decades. As a result, more and more companies are taking pollution factor into account when planning their logistic activities. Pollution Routing Problem (PRP) is an extension of the classical Vehicle Routing Problem with Time Windows by determining a set of optimal routes and vehicle speed on each route segment for a fleet of vehicles serving a set of customers within specific time windows. In practice, many vehicle routing problems are addressed by a fleet of heterogeneous vehicles with different capacities and travel costs. Emission levels vary by vehicle type due to differences in curb weight and capacity. Therefore, Heterogeneous Fleet Pollution Routing Problem (HFPRP) has been proposed as an extension of Pollution Routing Problem (PRP). Its goal is to minimize the total costs of fuel, greenhouse gas (GHG) emissions, and vehicle variable cost put together in a more comprehensive objective function. This research developed a mathematical model and proposed a Simulated Annealing (SA) heuristic for HFPRP. The performance of the proposed SA heuristic was first verified using benchmark data of the Pollution Routing Problem. The result shows that SA performs better for 7 instances than previous method. SA was then used to solve HFPRP and the results were compared to those obtained by CPLEX. We found that the consideration of a heterogeneous fleet reduces total costs for all instances. © Springer Nature Singapore Pte Ltd. 2019."
+  },
+  {
+    "article_id": "CA_0230",
+    "title": "Multiple-Trip Vehicle Routing with Physical Workload",
+    "journal": "Environmental Sustainability in Asian Logistics and Supply Chains",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-13-0451-4_15",
+    "abstract": "This paper addresses the vehicle routing problem in which delivery vehicles can perform several trips within one workday. Initially, a mathematical model of the multiple-trip vehicle routing problem (MTVRP) is formulated. Its objective is to minimize a total cost that consists of the costs of vehicles, workforce, and transportation. The MTVRP assumes that vehicles and workers are heterogeneous, customer locations and demands are known, all vehicles must complete their trips within one workday, delivery workers are pre-assigned to vehicles, and all loads are unloaded from vehicles manually. For safety, a total physical workload endured by any worker must not exceed his/her working physical capacity. A numerical example is presented. The MTVRP solutions are determined using the ILOG CPLEX. The result shows that by allowing the vehicles to make several trips, the total cost can be reduced, and both vehicles and workers are better utilized. However, workers are required to work harder due to their longer working times. © Springer Nature Singapore Pte Ltd. 2019."
+  },
+  {
+    "article_id": "CA_0231",
+    "title": "Big data and its supporting elements: Implications for tourism and hospitality marketing",
+    "journal": "Big Data and Innovation in Tourism, Travel, and Hospitality: Managerial Approaches, Techniques, and Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-13-6339-9_13",
+    "abstract": "Big data plays a catalytic role in the determination of consumers' preferences while achieving meaningful results together by obtaining the right data. Artificial intelligence systems, particularly those powered by machine technology, can achieve significant results through the rapid elimination of large data sets. This leads to determining structural changes both in consumer behaviour models and marketing strategies.With preliminary information about consumers, intelligent system mechanisms, i.e. artificial intelligence and Internet of Things (IoT), have increased the speed of information processing and the analysis of larger volumes of information and have also targeted reaching the right consumer segments, affecting their decision-making preferences before the event.As a result, these types of automations may enable tourism and hospitality businesses to benefit from marketing activities with the help of different algorithmic solutions. Thus, this chapter aims to debate how big data, artificial intelligence and IoT are likely to reshape the traditional structure of tourism and hospitality marketing in the future and introduces new approaches as the key elements in maintaining competitiveness in a new era. © Springer Nature Singapore Pte Ltd. 2019. All Rights Reserved."
+  },
+  {
+    "article_id": "CA_0232",
+    "title": "Technology Application in the Asian Tourism Industry: Destination Promotion",
+    "journal": "Handbook of Technology Application in Tourism in Asia",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-16-2210-6_20",
+    "abstract": "Destination promotion efforts are activities aimed at stimulating the behavior of tourists to purchase tourist products. The processes that affect the purchasing decision of the tourist are significantly influenced by personalized experiences with the effect of technological developments. The development of the Internet allows tourists to share their comments about the product they experience easily and in a short time. Tourists have become subjects that both remarket the destinations and consume a tourist product with their comments through social networks. With the creation of content that enables active participation and interaction between the visitor and the destination in the digitalized world, the added value is created for the tourism product, and the potential visitors are provided with the opportunity to access more reliable and accurate information about the previously experienced product. The transformation and change that occur with technology in the consumer market structure cause to apply different strategies in marketing destinations, creating a positive image about the destination by destination marketing organizations. Thanks to the continuously developed algorithms of destination management organizations and all other units responsible for marketing, the websites that customers like the most on the Internet, mobile phone applications that include reviews about their travels, their emotions expressed on social media, and other voluntary information given by the customer can be reached easily. In this versatile digital environment, marketing activities are carried out through channels such as search enginebased marketing, e-mail marketing, mobile marketing, digital content marketing, omni-channel digital marketing, influencer marketing, and chatbots. In addition, new approaches such as offering digital experiences to meet customers’ requests in marketing, augmented and virtual reality, blockchain, and Internet of things have emerged. In the Asian tourism market, where cultural elements are used extensively in destination marketing, many destination tourism organizations make use of digital marketing tools. For example, Singapore Tourism Board uses virtual reality videos in destination promotion. In this section, the use of technology in the Asian tourism market will be explained in detail. © Springer Nature Singapore Pte Ltd. 2022."
+  },
+  {
+    "article_id": "CA_0233",
+    "title": "Efficiency and Advancement of Artificial Intelligence in Service Sector with Special Reference to Banking Industry",
+    "journal": "Fourth Industrial Revolution and Business Dynamics: Issues and Implications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-16-3250-1_2",
+    "abstract": "Artificial Intelligence (AI) is indeed a technique that is increasingly evolving throughout the worldwide and banking industry has become one of its earliest users. From manufacturing to service industries, AI have been a part of the company, in this modern era, where everything is handled by means of computers or human computer interface (HCI’s). AI is not a new innovation, but it has grown exponentially in recent years, catering a lot for sustainable growth. US and China are important countries that contribute to different applications using AI. As per Forrester report the customised customer platform offers quantitative benefits in the form of reduced costs, highly efficient human resources and enhanced customer engagement outcomes. AI is growing, however there are barriers to support and maintain since it can deal with possible biases or accountability of senior executives and government legislations. Big data is a channel to AI’s service and Virtual reality cannot operate without data. In the Present research the development and success of AI have been analysed focussing on the banking industry. The study also finds different ways to minimise costs and provide reliable data based on Site intelligence. AI’s a machine blessing, but also a threat. This report discusses the vulnerabilities and diverse prospects for growth in this particular service sector. © The Author(s), under exclusive license to Springer Science+Business Media Pte Ltd. 2021."
+  },
+  {
+    "article_id": "CA_0234",
+    "title": "The Role of ICT Applied to Tourism and Marketing in Asia",
+    "journal": "Technology Application in Tourism in Asia: Innovations, Theories and Practices",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-16-5461-9_5",
+    "abstract": "The tourism activity is dependent on technology, which has contributed to revolutionize the area both in terms of how to operate and in terms of generating new concepts. Information and Communication Technology have played a leading role in creating new ideas, discovering trends, defining more disruptive strategies and, consequently, developing new practices. With the emergence of new technologies, the following stand out: the progress in the use of voice to search on Google, the increasing use of chatbot to interact with tourists, the growth in the use of video marketing to promote and publicize tourism products and services, and the combination of artificial intelligence with machine learning to help the customer when planning and deciding what they want to buy and / or experience in a travel. The combination of the technologies mentioned above with those associated with the concept of industry 4.0 will help to change the face of tourism and marketing, since it will increase connectivity between men and machines, through interaction and communication expressed on social networks using a smartphone, while potentiate the need to purchase goods and services, while support decision making about how, when and where to purchase, taking into account the importance of immediate achievements, which is one of the characteristics of future consumers who are digital natives. This chapter identifies the main potential of emerging technologies, taking into account the means of communication provided by the internet, and the connection-involvement between user-technology-experience for tourism and marketing combined as a tool to change the face of tourism in Asia. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2022."
+  },
+  {
+    "article_id": "CA_0235",
+    "title": "Digital Trends in Asian Hotel Industry",
+    "journal": "Technology Application in Tourism in Asia: Innovations, Theories and Practices",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-16-5461-9_9",
+    "abstract": "In 2020, almost all sectors including hospitality were affected in some way by new waves of digital innovation. In order to satisfy the changing demands of customers in the digital age, hotels must go through digital transformation to remain ahead of both traditional rivals and market disruptors in a rapidly changing competitive climate. This requires hotels to have the best approach to technology, creativity, data-focused and customer-centric service, backed by appropriate working culture. Several digital trends (Artificial intelligence, Mobile technologies, Chatbots, Robots, Digital kiosks, Blockchain, Internet of Things, and Virtual reality, and Augmented reality) in hotel industry are discussed together with real-life applications in line with their respective operations. The practical implications and future research suggestions are also presented. This will be helpful to develop smart hotels to ensure post-pandemic survivability and sustainability. This chapter will also assist the hotels’ top management in making decisions and policies regarding the usage of digital tools in hotel operation. This chapter also includes real examples from Asian hotels. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2022."
+  },
+  {
+    "article_id": "CA_0236",
+    "title": "An Integrated Model and Application for Smart Building Systems with Artificial Intelligence",
+    "journal": "Accounting, Finance, Sustainability, Governance and Fraud",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-16-8997-0_2",
+    "abstract": "The intelligent evacuation subsystem has great importance for all intelligent buildings. In addition to natural disasters such as tornados, floods, human hazard situations such as terrorist attacks, electrical leaks, and fires reveal the necessity of emergency evacuation systems. The model proposed in this study suggests a model in which users, depending on their location, can see the exit routes from the smart screens which are placed in the smart building. This model uses instantaneous data obtained by evaluating the distance of the relevant location to the exits, the width of the exit doors, and the crowdedness in front of the exit doors. This data then proposes a method that shows the best result from smart screens by using the Analytical Hierarchical Process technique, which is a multi-criteria decision-making method. This study demonstrates the establishment and design of an integrated smart building management system that combines smart survey systems and Augmented Reality-based smart building promotion systems that use different types of technological tools and collect different types of data. Intelligent evacuation systems, smart guest guidance systems, smart voice, music, announcement and video usage systems, computer vision-based smart face recognition, and personnel tracking systems are some of the technologies used. For what purposes, particularly in terms of management, how these tools can be used, what hardware and software tools are utilized to create this system, and the procedures to be carried out in the application process are the subjects of the study. The importance of emergency evacuation systems, especially in feature buildings such as hospitals and educational institutions, is increasingly being managed by intelligent systems that will work at any time, not just on paper and at the initiative of some people, but also independent of individuals. This study demonstrates with an example how an integrated model can be designed and implemented. The technological system that is able to think like people and make the right decisions will spread from houses to buildings, from buildings to campuses, from campuses to regions, from regions to provinces, and from provinces to countries. With the right approach, the societies that use human intelligence and experience with the philosophy of Industry 4.0 at every point of life will increase their welfare as they will increase productivity. If artificial intelligence is used as suggested in this study, it will continue to affect lives positively and open new horizons. © 2022, The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd."
+  },
+  {
+    "article_id": "CA_0237",
+    "title": "Digital Transformation of Enterprises and Post-Pandemic Sustainable Developmental Goals",
+    "journal": "Sustainable Development and Innovation of Digital Enterprises for Living with COVID-19",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-19-2173-5_4",
+    "abstract": "Digitalization and sustainability are central issues in today's world. Innovation in this area represents catalysts for the development of the circular economy. Digital technologies have the potential to streamline the operation of existing circular business models and thus significantly facilitate the emergence of new ones. The area that has been the subject of research includes tasks such as: product or resource awareness. Along with resources and products, another task is to harmonize the demand side and the supply side. The use of secondary materials or resources must be improved, also increase the longevity of products, and simplify the sharing of product portfolios and, of course, services. All this is taken to some extent as assistance in the process of closing the material cycle or cycles. Among the essential digital technologies that belong to the area of circular economy are Big Data, AI, which is considered one of the most important and best-used systems, for example, the use of so-called chatbots, detailed analysis of the customer and his feedback and is also characterized by to offer of personalization services, Blockchain, Cloud computing, especially in the fields of banks, these are cases of using a network of servers at a greater distance at lower, so optimal costs, 3D printing, but also online platforms. Digitalization can contribute in principle to the functioning of the circular economy and the improvement of resource use with the lowest possible impact on nature and the environment. This paper aims to conceptually define the enterprise digital transformation and sustainable goals after the end of the pandemic. It is also necessary to focus on the consumer perception of the research issue. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2022."
+  },
+  {
+    "article_id": "CA_0238",
+    "title": "Mobile Technology Application in Aviation: Chatbot for Airline Customer Experience",
+    "journal": "Technology Application in Aviation, Tourism and Hospitality: Recent Developments and Emerging Issues",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-19-6619-4_5",
+    "abstract": "Effective communication between customers and businesses is crucial. Enhancing the communication between customer and company are non-ending efforts that require continuous improvement and approach. In the emergence of new technologies, the transmission of information through technology as a platform adds to more challenging initiatives performed. More enterprises adopt artificial intelli-gence (AI) to increase operational efficiency, eliminate costly errors, and increase customer satisfaction. Time spent by passengers interacting with airlines is mini-mized through the use of a practical application that supports their needs, integrated with the natural language processing, conversational agents, or Chatbot’s serving as virtual assistants. Artificial intelligence shall assist airline customers in acquiring more accurate related information such as flight booking, schedules, and updates. This chapter offers a multi-focus discussion on initiatives for applying Chatbot systems in the aviation sector, a debate on artificial intelligence technology used in improving communication, enhancing natural language interactions, and the usability response from selected airlines passengers’ feedback on the improved systems. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2023."
+  },
+  {
+    "article_id": "CA_0239",
+    "title": "Assessing the Impact of Artificial Intelligence in e-Commerce Portal: A Comparative Study of Amazon and Flipkart",
+    "journal": "Industry 4.0 and the Digital Transformation of International Business",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-19-7880-7_10",
+    "abstract": "This era is a technologically advanced civilization. The day when everything had to be done manually is long gone. Today, technology plays a significant part in our everyday lives. Artificial Intelligence is one of the technologies (AI). It becomes a part of daily life and alters how individuals do their business. In certain cases, we even fail to recognize that we are employing AI. It may be observed in the form of wearable technology, self-driving automobiles, smartphone applications, and home automation gadgets. Everything that is a part of it is transformed. The most cutting-edge technology in use today is Artificial Intelligence. The global business landscape has also been revolutionized by the e-commerce sector. Additionally, India is one of the e-commerce marketplaces with one of the fastest rates of growth, and in the years to come, it might become a major draw for AI-based technologies. AI is also used in e-commerce, as is evident. In the world of e-commerce, AI is essential. AI will bring about a significant technical shift for the e-commerce sector. In the last ten years, the use of AI in the e-commerce sector has dramatically risen. AI is being used by the e-commerce sector to process a vast database of progressing consumers, interact with thinking chatbots, and assist with searching, categorizing, and selecting the right product. AI is more effective and accurate, and it allows for the large-scale collection, processing, and inference of data. Competitors in the e-commerce space are utilizing AI to develop customer-centric strategies, retarget potential consumers, develop more efficient sales processes, voice-powered search, increase customer recommendations, address bogus reviews, etc. With particular reference to Amazon.com and Flipkart.com, this research study will precisely explain what Artificial Intelligence (AI) is, how it is employed in the e-commerce sector, and how it will be useful in examining how these two competitors are employing AI. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2023."
+  },
+  {
+    "article_id": "CA_0240",
+    "title": "User Acceptance of Large Language Model-Powered Conversation Agents for Mental Health Support",
+    "journal": "Springer Series in Design and Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-95-0211-0_29",
+    "abstract": "The emergence of Large Language Models (LLMs) like GPT-4 revolutionizes mental health care, enhancing counseling and therapy. This study investigates the factors influencing user acceptance of Large Language Model (LLM)-powered conversational agents in mental health support, utilizing frameworks that integrating Technology Acceptance Model (TAM) and the Unified Theory of Acceptance and Use of Technology (UTAUT). It examines how perceived benefits, perceived risks, trust, and perceived anthropomorphism shape acceptance, with attention to gender differences and familiarity with LLMs. A questionnaire-based study of 202 participants assessed these factors, and multiple linear regression analysis and structural model identified performance expectations and social influence as significant predictors of acceptance, supporting TAM’s core concepts. The study concludes that perceived benefits are crucial for acceptance, with trust also playing a key role. Enhancing performance expectations can mitigate technological concerns. These insights are vital for designing effective LLM-powered mental health support systems, aiming to improve user satisfaction and overall mental health outcomes. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2025."
+  },
+  {
+    "article_id": "CA_0241",
+    "title": "Application of Artificial Intelligence Technology to the Sustainable Development of E-Commerce: A Systematic Literature Review",
+    "journal": "Resurgence and Sustainable Development of Asian Markets in the New Normal: Issues and Challenges",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-96-1785-2_9",
+    "abstract": "Purpose: This research aimed to ascertain how artificial intelligence (AI) is revolutionizing electronic markets, the associated benefits, and ethical issues. Design/Methodology/Approach: The methodology used in this study was a systematic review design, including the review of numerous scholarly articles on AI in e-commerce. In five academic bibliometric databases such as Scopus, Research Gate, Sage, Harvard Business Review, and Google Scholar, the articles that would serve the purposes of this study were sought. Keywords such as e-commerce, AI, sustainability, and ethics were used to search the related databases. Findings: The results demonstrated that AI in e-commerce has so many benefits, such as automation, customization, and efficiency. Artificial intelligence algorithms, through intelligent assistance and recommendation engines, also recommend how to optimize resources. Moreover, AI encourages logistics improvement relative to customer satisfaction. In addition, it is equally important for AI to help achieve sustainability by increasing the efficiency of resource consumption and promoting the circular economy. However, concerns about the misuse of AI due to biased algorithms, violations of data privacy, or loss of jobs call for the responsible use of AI tools and constraints on their manipulation during the development processes. Limitations: The study focused on modern literature primarily and missed key findings in some previous research works. In addition, the choice of databases and search keywords restricted the scope of assessment. Implications: Further research opportunities include a comprehensive literature assessment, user experience, real-world experiences, and case studies on the application of these knowledge areas, as well as a closer inspection of ethical frameworks across each domain mentioned in this paper, along with further technical coverage on the creation and use of artificial intelligence. Originality/Value: Specifically, this research will provide a broader understanding of how AI affects businesses and consumers in e-commerce. The research identifies both the positive and negative aspects of AI, thus helping in the responsible creation and deployment of AI technologies, furthering a thriving e-commerce market from an ethical perspective. © 2025 The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd."
+  },
+  {
+    "article_id": "CA_0242",
+    "title": "Utilising Agent-Based Modelling and Simulation System-Driven Price Optimisation to Enhance Enterprise Performance",
+    "journal": "The Palgrave Handbook of Breakthrough Technologies in Contemporary Organisations",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-96-2516-1_24",
+    "abstract": "The general observation is that lowering the price of one firm in a duopoly arrangement causes price-sensitive customers to migrate to the other firm, which may result in increased profits for the firm that lowers the price. To validate this claim, we conducted simulation research with two electric car manufacturers and agent-based modelling. At first, the baseline was established. We performed 1000 simulations and agent-based modelling, assuming that business 1 would cut its price by a maximum of 20%. This would result in a maximum of 40% of manufacturer 2's price-sensitive consumers switching to business 1. The results of 1000 simulations and agent-based modelling revealed that price reductions by manufacturer 1 increased its clients, probably due to the switchover from manufacturer 2, and that revenues from two of the sales routes increased dramatically. This study has ramifications for businesses seeking to lure price-sensitive clients away from a competitor. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2025."
+  },
+  {
+    "article_id": "CA_0243",
+    "title": "Protection of E-commerce Consumers’ Rights and Interests",
+    "journal": "Handbook of E-commerce in China",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-96-7629-3_18",
+    "abstract": "This chapter first introduces the concepts and characteristics of e-commerce operators and e-commerce platform operators, and then focuses on the obligations that e-commerce operators and e-commerce platform operators need to follow. For e-commerce operators, they are required to comply with obligations such as providing truthful information, delivering as agreed, quality assurance, after-sales service, and issuing certificates; e-commerce platform operators have obligations such as prudent management, transaction security management, self-operated malicious labeling, and multiparty display of search results. © 2025 Springer Nature Singapore Pte Ltd."
+  },
+  {
+    "article_id": "CA_0244",
+    "title": "AI-Driven Chatbots in Halal Marketing Communication—Challenges and Opportunities",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-97-5400-7_22",
+    "abstract": "The aim of this research is to explore the integration of AI-driven chatbots in the realm of halal marketing communications. This type of marketing communication is designed to resonate with Muslim consumers by integrating Islamic values, symbols, and messages into branding and promotional efforts. This study analysis encompasses an exploration of the challenges that could arise and capitalize on opportunities to engage and captivate the audience. Similarly, this paper sheds light on the areas of research that require further exploration and outlines the potential for future investigation regarding the utilization of AI-driven chatbots in the context of halal marketing. This study contributes to the expansion of current knowledge and could serve as a cornerstone for shaping future research agendas. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2024."
+  },
+  {
+    "article_id": "CA_0245",
+    "title": "Measuring the Impact of Chatbot Attributes in Enhancing Consumer Satisfaction and Brand Loyalty Among Centennials: PLS-SEM Analysis",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-97-7030-4_12",
+    "abstract": "Purpose—This study investigates the potential impact of consumers’ views about chatbots’ dynamic, behavioral, and cognitive features on their satisfaction and brand loyalty. Design/methodology/approach—Data were collected using a survey comprising questionnaires from a sample of Indian centennial customers. Purposive sampling was the technique utilized. After that, the data was analyzed using the partial least squares algorithm with the help of smartPLS for structured modelling. Findings—The results demonstrated that chatbots’ affective, behavioral, and cognitive characteristics significantly impacted consumer satisfaction and enhanced brand loyalty. Practical implications—Chatbots can improve brand loyalty by taking into account the affective, behavioral, and cognitive traits of their e-agents. Originality/value—This work aims to contribute and enhance the expanding corpus of research on chatbots’ effects on increasing brand love. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2025."
+  },
+  {
+    "article_id": "CA_0246",
+    "title": "Understanding the Impact of Low Personalization on Customers’ Prior Negative Experience with Virtual Conversational Agents: A Conceptual Framework",
+    "journal": "Business Innovation for the Post-pandemic Era in Vietnam",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-99-1545-3_7",
+    "abstract": "Virtual conversational agents (VCAs) powered by artificial intelligence (AI) have attracted great interest from many research scholars. Its diverse applica-tions are widely acknowledged, and the ability to deliver personalized responses has become a key for increased service quality provided by this AI-powered tool. Building on the perspective of learning from experience theory, this research explores the prior negative experience and presents a conceptual framework to understand its effects on customers’ avoidance behavior with VCAs. Low personalization is expected as the main driver of perceived low informativeness, low credibility, low enjoyment, violation of shared language and information overload, leading to avoid-ance behavior and switching intention of customers. In addition, time pressure is believed to moderate the links between perceived low informativeness, violation of shared language and information overload as negative prior experiences and switching intention. The findings offer a novel way to understand customer behavior with VCAs under avoidance rather than approach perspective. Important theoretical and managerial implications are provided. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2023."
+  },
+  {
+    "article_id": "CA_0247",
+    "title": "The Use of Chatbot as an Artificial Intelligence Tool to Improve Intelligent Digital Marketing",
+    "journal": "Contributions to Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-99-6101-6_18",
+    "abstract": "Digital eras convert the way of work and make it easy for all industries including marketing. The emergence of artificial intelligence technology and machine learning technology leads marketing beyond digital marketing to intelligent digital marketing. In intelligent digital marketing, the company will be able to classify the customers based on their preferences, which ends up having different segmentations for customers. A chatbot is a tool that was discussed in this research to provide customer service to the customers. Chatbots depending on artificial intelligence, machine learning, and natural language processors can provide 24/7 services to customers. Other than chatbot benefits to help customers, it will help the company to understand customer needs and to target the required segment of customers for the specific service or product. Chatbot also has some limitations and user resistance which the researcher believes will shrink over time. Digital marketing is a huge industry that impacts both the customer and the company. Focusing on digital marketing with the use of artificial intelligence will create a new way of competitiveness and will create a data market. This paper focused on highlighting both digital marketing and chatbot as artificially intelligent tools to support the customer in digital marketing. The paper covers many facts and theories about this topic. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd 2023."
+  },
+  {
+    "article_id": "CA_0248",
+    "title": "Factors Affecting the Use of ChatGPT in Mass Communication",
+    "journal": "Contributions to Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-99-6101-6_49",
+    "abstract": "The research discusses the sudden and significant development in the applications of artificial intelligence (GPT chat) in the field of mass communication, prompting us to study this application with the considerations raised by this application. As it is within a few years, media professionals may turn to these applications to accomplish their work, and they may also have negative effects on reducing the human media workforce and relying on it to accomplish various works. The results indicated that this application has been used to power chatbots, allowing them to provide more personalized responses and improve the user experience. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd 2023."
+  },
+  {
+    "article_id": "CA_0249",
+    "title": "Generative AI For Executives: A Strategic Roadmap for Your Organization",
+    "journal": "Generative AI for Executives: A Strategic Roadmap for Your Organization",
+    "journal_impact_factor": null,
+    "doi": "10.1007/979-8-8688-0950-7",
+    "abstract": "In the fast-evolving digital landscape, understanding the potential of generative AI is a strategic advantage. This book can serve as an easy to read introduction to the topic of the transformative power of AI in content creation, customer engagement, and operational efficiency. By deciphering complex AI concepts into practical insights, we empower decision-makers to envision innovative strategies, foster cross-industry collaborations, and navigate ethical considerations. The book will help executives and business decision makers to harness the immense potential of generative AI responsibly, ensuring data integrity and compliance while fostering a competitive edge.The book is focused on (1) Explaining in jargon-free language what Generative AI, and AI in general, (2) What problems they solve, and (3) What technologies make them possible. © 2024 by Ahmed Bouzid, Paolo Narciso, Weiye Ma."
+  },
+  {
+    "article_id": "CA_0250",
+    "title": "Artificial Intelligence and Declined Guilt: Retailing Morality Comparison Between Human and AI",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-022-05056-7",
+    "abstract": "Several technological developments, such as self-service technologies and artificial intelligence (AI), are disrupting the retailing industry by changing consumption and purchase habits and the overall retail experience. Although AI represents extraordinary opportunities for businesses, companies must avoid the dangers and risks associated with the adoption of such systems. Integrating perspectives from emerging research on AI, morality of machines, and norm activation, we examine how individuals morally behave toward AI agents and self-service machines. Across three studies, we demonstrate that consumers’ moral concerns and behaviors differ when interacting with technologies versus humans. We show that moral intention (intention to report an error) is less likely to emerge for AI checkout and self-checkout machines compared with human checkout. In addition, moral intention decreases as people consider the machine less humanlike. We further document that the decline in morality is caused by less guilt displayed toward new technologies. The non-human nature of the interaction evokes a decreased feeling of guilt and ultimately reduces moral behavior. These findings offer insights into how technological developments influence consumer behaviors and provide guidance for businesses and retailers in understanding moral intentions related to the different types of interactions in a shopping environment. © 2022, The Author(s)."
+  }
+]

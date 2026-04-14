@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1701",
+    "title": "The nature and determinants of user-generated content for dissatisfied customers: evidence from second-hand luxury fashion brands",
+    "journal": "Qualitative Market Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/QMR-01-2024-0016",
+    "abstract": "Purpose: This study examined the links between user-generated content (UGC), dissatisfied customers and second-hand luxury fashion brands. A central premise of luxury fashion brands is the perceived status and privilege of those who own such items. Despite their marketing logic emphasising exclusivity and rarity, they have broadened their reach by integrating new digital marketing practices that increase access to luxury brand-related information and create opportunities for consumers to purchase products through second-hand sellers. Design/methodology/approach: Building on an inductive qualitative study of 59 millennials from three European countries (France, Italy and the UK) and by examining the mediating role of UGC and dissatisfied customers, this paper develops a conceptual framework of three clusters of second-hand luxury fashion goods customers: spiritual consumers, entrepreneurial recoverer consumers and carpe diem consumers. Findings: The proposed SEC framework (spiritual consumers, entrepreneurial recoverer consumers, and carpe diem consumers) illustrates how the emerging themes interconnect with the identified consumers, revealing significant consumer actions and attitudes found in the second-hand luxury goods sector that influence the usage of UGC and its integration into service failure and recovery efforts Originality/value: This study suggested that the perceptions of consumers seeking second-hand luxury fashion products differ from those who purchase new or never previously owned luxury fashion products. Overall, this research sets the stage for scholars to forge a path forward to enhance the understanding of this phenomenon and its implications for luxury fashion companies. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1702",
+    "title": "An RQDA-based constructivist methodology for qualitative research",
+    "journal": "Qualitative Market Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/QMR-02-2016-0014",
+    "abstract": "Purpose: Qualitative research suffers from “contestation” and a lack of “boilerplate” problems to assessing and presenting qualitative data, which have hampered its development and the broader acceptance of qualitative research. This paper aims to address this gap by marrying the constructivist methodology and RQDA, a relatively new open-source computer-assisted qualitative data analysis (CAQDAS)-based R extension and demonstrate how the software can increase the rigor, transparency and validity of qualitative research. Design/methodology/approach: This paper highlights the constructivist approach as an important paradigm in qualitative research and demonstrates how it can be operationalized and enhanced using RQDA. It provides a technical and methodological review of RQDA, along with its main strengths and weaknesses, in relation with two popular CAQDAS tools, ATLAS.ti and NVivo. Using samples of customer-generated e-complaints and e-praises in the electronics/computer sector, this paper demonstrates the development of a process model of customer e-complaint rhetoric. Findings: This study offers step-by-step instructions for installing and using RQDA for data coding, aggregation, plotting and theory building. It emphasizes the importance of techniques for sharing coding outputs among researchers and journal gatekeepers to better disseminate and share research findings. It also describes the authors’ use of RQDA in classrooms of undergraduates and graduate students. Research limitations/implications: This paper addresses the “contestation” and “boilerplate” gaps, offering practical, step-by-step instructions to operationalize and enhance the constructivist approach using the RQDA-based approach. This opens new opportunities for existing R users to “cross over” to analyzing textual data as well as for computer-savvy scholars, analysts and research students in academia and industry who wish to transition to CAQDAS-based qualitative research because RQDA is free and can leverage the strengths of the R computing platform. Originality/value: This study offers the first published review and demonstration of the RQDA-based constructivist methodology that provide the processes needed to enhance the rigor, transparency and validity of qualitative research. It demonstrates the systematic development of a data structure and a process model of customer e-complaint rhetoric using RQDA. © 2017, © Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1703",
+    "title": "Dynamics of user-generated content and service failure recovery: evidence from millennials",
+    "journal": "Qualitative Market Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/QMR-08-2022-0124",
+    "abstract": "Purpose: There is considerable interest in the value of user-generated content (UGC) and its antecedents. Despite its growing importance, existing studies have largely ignored the effects of UGC on customers’ responses to recovery efforts in the fashion industry. The aim of this paper is to examine the extent to which UGC influences customers’ responses to providers’ service failure and recovery efforts, particularly how millennials’ interactions impact recovery efforts. Design/methodology/approach: The study uses a phenomenological hermeneutics and adopts theoretical sampling to collect empirical data from three European countries (France, Italy and the UK). The authors interviewed 60 millennials who had online service failure experiences in online fashion. This methodological framework was designed to illustrate the close relationships between subject and object as well as identify that data analysis and collection are undertaken in relation to consistent iterative interpretations in an evolving process of study. Drawing on multi-theoretical lenses, using actor–network and social influence theories, this study advances understanding through the development of a new conceptual model relating to individual characteristics. Findings: Using actor–network theory and social influence theory, this study developed a conceptual model of four customer groups’ responses to service failure based on the severity of service failure and the level of customers’ online response following service failure. Originality/value: The authors suggest some pragmatic implications of their conceptual model and explain how awareness of different customer groups can lead to effective decision-making for marketers. This study provides a set of practical insights that brand managers can use to recover service failures. © 2023, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1704",
+    "title": "Service failure and recovery strategies in the Balkans: an exploratory study",
+    "journal": "Qualitative Market Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/QMR-11-2017-0153",
+    "abstract": "Purpose: Despite scholarly effort to understand customers’ recovery evaluation, little progress is evident in deciphering how customers develop online failure/recovery perception. This paper aims to address this issue. Design/methodology/approach: Social constructivism was the epistemic choice for this study. This approach is holistic and offers a comprehensive understanding of each side of the phenomena. This provided social scientific descriptions of people and their cultural bases and built on, and articulated what was implicit in interpretations of their views. Findings: Online banking customer groups were identified as: exigent customers, solutionist customers and impulsive customers. Customers’ position in each group determined failure perception, recovery expectation and evaluation, and post-recovery behaviour. Comparisons were observed and discussed in relation to Albania and Kosovo. It was suggested that banks should expand their presence in social media platforms and offer a means to manage online customer communication and spread of online WOM. Research limitations/implications: For exigent customers, the failure/recovery responsibility is embedded within the provider. This explains their high sensitivity and criteria to define a failure. Practical implications: Online banking customers’ request of a satisfactory recovery experience included: customer notifications, customer behaviour, customer determination, and the mediator of request. 10;Providers should examine customer failure/recovery experiences in cooperation with other banks which should lead to a higher order understanding of customer withdrawal and disengagement activities. Social implications: Post-recovery behaviour is linked to the decline of online banking usage, switching to new providers, and the spread of negative online and off-line word-of-mouth. Originality/value: This is the first empirical study on online service failure and recovery strategy to provide information on customers’ unique preferences and expectations in the recovery process. Online customers are organised into a threefold customer typology, and explanation for the providers’ role in the online customer failure-recovery perception construct is presented. © 2019, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1705",
+    "title": "Investigating internal market orientation: is context relevant?",
+    "journal": "Qualitative Market Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/QMR-12-2017-0159",
+    "abstract": "Purpose: Through undertaking qualitative research within different industrial contexts, the study aims to address the following: How do practitioners in non-service organisations interpret internal market orientation (IMO); How is IMO practiced within an eastern cultural context; and What are the outcomes of its implementation? Design/methodology/approach: The study examines three organisations from three different industries and draws on nine in-depth interviews with people across various levels within each organisation. Findings: The study reveals that: a) senior management commitment should be included in the design of IMO at the strategic level; b) effective responsiveness to internal information collected is crucial to its success; c) creative ways to meet internal customers’ needs and expectations are contextualised; and d) cultural nuances need to be considered when applying IMO. Research limitations/implications: Choosing a multiple-case study approach provides in-depth explanations; however, such an approach may lead to less generalisability. Practical implications: The study advocates that a) some degree of resources are needed to ensure that IMO can be fully implemented and employee welfare enhanced; b) creativity is required for each organisational context responding to employees’ needs, expectations, complaints or ideas; and c) removing unnecessary barriers can help to foster better interdepartmental relationships and, thus, improve work procedures and employee satisfaction. Originality/value: This study contributes to the literature by developing a framework to signal the importance of IMO as a facilitator for better firm communication and performance. Contextualised IMO practices from the cases may shed further light on specific best practice. © 2020, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1706",
+    "title": "An integrated service recovery process for service failures: insights from systematic review",
+    "journal": "Qualitative Market Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/QMR-12-2021-0147",
+    "abstract": "Purpose: This research conceptualizes service recovery process (SRPs) within pre-recovery, recovery and post-recovery. This study aims to provide a summary of factors and strategies with respect to SRPs. Also, this research highlights different responses by organizations to SRPs. These responses are synthesized in this research in the context of SRPs. Design/methodology/approach: This study provides a systemic literature review that considers only studies that have been published within the past 11 years to highlight the different response options used today. This study only selected papers that are included in a rigorous review process such that they explicitly contribute towards practice, theory and policy. Findings: The pre-recovery is about the awareness of the problem whereby communication between the customer and organization is initiated to resolve the issue, and it provides a critical foundation for the recovery expectations. The recovery phase concluded with either a satisfactory resolution of the problem or when the customer gives up on his/her query due to another failure of the organization. Post-recovery encompasses the period in which the recovery efforts have concluded, and the customers have now started to evaluate their experience of preceding phases. A major contribution of this study is that it provides a summary of factors and strategies with respect to SRPs. Research limitations/implications: The managers of service-providing organization can use this synthesis to evaluate the response of their organization to different instances of service failures along SRPs. They can then modify their responses. Managers can also use this synthesis as part of an employee training programme to ensure wide coverage of potential responses of the organization following a failure of service. Originality/value: This research then highlights different questions that can be explored in future studies regarding the various phases involved in SRPs. Finally, this research outlines the recommendations for businesses looking to benefit from adopting SRPs by also considering the related managerial implications. This study will provide a conceptual framework as to the future direction of the overall study through highlighting gaps of understanding related to SRPs. © 2022, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1707",
+    "title": "Export bill financing in Islamic banking: a critical appraisal of Sharìah adaptations",
+    "journal": "Qualitative Research in Financial Markets",
+    "journal_impact_factor": null,
+    "doi": "10.1108/QRFM-06-2024-0167",
+    "abstract": "Purpose – This study aims to critically investigate various Sharìah adaptations for export bill financing in Islamic banking. This study examines corresponding Sharìah issues and provides recommended Sharìah contracts for export bills financing by Islamic banks. Design/methodology/approach – This study uses the qualitative approach. The focus group discussions method is used to collect the primary data. A content analysis method is applied to delve into the related scholarly works, journal articles and books available in Arabic and English. Besides, with a thematic analysis technique, this study developed a few themes to analyse the qualitative data. Findings – This study finds that export bill financing through discounting is impermissible for Islamic banking because the discounted amount will be interest (riba). This study posits that a musharakah partnership is the most preferred mode for financing through export bills in Islamic banking, provided the partnership starts from the beginning of the export works and not just at the post-shipment stage. Musharakah is suitable for factoring, invoice financing and bill purchase, as the bank can precisely identify the amount in the bill, profit margin, duration, parties involved and potential risk mitigation techniques. Qard is also applied in export bill financing, provided the service charge received by the bank should be up to the actual cost incurred in collecting the bills. The service charge in qard cannot vary depending on the amount and duration of bill maturity; otherwise, it will be riba. Wakalah is another suitable contract for export bill financing. The bank can charge a wakalah fee, which is flexible and can vary based on the bill amount and its maturity. Nonetheless, if the client needs to buy goods instead of cash, then the bill can be exchanged for the goods, and using a murabahah (mark-up) contract, the bank can facilitate the client’s purchase of the goods. Practical implications – Across the globe, Islamic banks provide a significant amount of financing for export and import business, while, as a brand image, ensuring Sharìah compliance is crucial for Islamic banking. This study contributes to ensuring Sharìah compliance in export bill financing operations, which eventually supports maintaining the credibility and reputation of Islamic banking. Ensuring Sharìah complaint income also accelerates Islamic banks’ profitability. In the event of Sharìah non-compliance, whatever revenue is earned shall be disposed of in charity. Originality/value – The scarcity of a critical study on Sharìah adaptations of export bill financing in Islamic banking is evident. A few theoretical studies have been found, mainly in Arabic. This study is an unprecedented effort in English to empirically investigate various Sharìah adaptations for export bill financing in Islamic banking and to provide recommended Sharìah contracts. This study will guide all respective stakeholders of Islamic banking to ensure Sharìah compliance in conducting export bill financing operations. As this study is conducted with a small sample size, future studies may be undertaken with diverse contexts to enhance a comprehensive understanding of the issue and investigate further aspects of providing export bill financing through Sharìah-compliant modes. © 2024 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CS_1708",
+    "title": "Impact of the female body shape on clothing size and fit: comfort versus safety",
+    "journal": "Research Journal of Textile and Apparel",
+    "journal_impact_factor": null,
+    "doi": "10.1108/RJTA-06-2024-0095",
+    "abstract": "Purpose – This paper aims to identify the role female body shape plays in clothing size and fit, as well as its impact on comfort and safety. Design/methodology/approach – Existing issues and complaints from female clothing consumers reported within the literature were explored. Documented experiences provided justification to demystify the notion made by manufactures who market clothing for the hourglass body. Findings – Clothing manufacturers continue to underestimate the impact of the female body in clothing design and construction. Manufacturers market the unrealistic notion of the hourglass body which often leads to wrong sizing and ill-fit. This might be responsible for the continued dissatisfaction experienced by female clothing consumers with more severe consequences in functional clothing compared to everyday clothing. For functional clothing (e.g. firefighter protective clothing), the implication could be life threating. Originality/value – This review provides another perspective on the implication of the female body clothing design and production depending on the end-use: everyday versus functional clothing. In this study, the impact of the female body on clothing design and construction are discussed. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CS_1709",
+    "title": "Designing scalable digital business models",
+    "journal": "Advances in Strategic Management",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S0742-332220150000033006",
+    "abstract": "Digital business models are often designed for rapid growth, and some relatively young companies have indeed achieved global scale. However, despite the visibility and importance of this phenomenon, analysis of scale and scalability remains underdeveloped in management literature. When it is addressed, analysis of this phenomenon is often over-influenced by arguments about economies of scale in production and distribution. To redress this omission, this paper draws on economic, organization, and technology management literature to provide a detailed examination of the sources of scaling in digital businesses. We propose three mechanisms by which digital business models attempt to gain scale: engaging both non-paying users and paying customers; organizing customer engagement to allow self-customization; and orchestrating networked value chains, such as platforms or multi-sided business models. Scaling conditions are discussed, and propositions developed and illustrated with examples of big data entrepreneurial firms. Copyright © 2015 by Emerald Group Publishing Limited."
+  },
+  {
+    "article_id": "CS_1710",
+    "title": "Service quality, service recovery, and financial performance: An analysis of the US airline industry",
+    "journal": "Advances in Management Accounting",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1474-7871(2010)0000018005",
+    "abstract": "This study on the airline industry covers the period from 1990 to 2006 and finds that “complaints” is a leading indicator of future financial performance as measured by return on sales (ROS) one-quarter ahead. Results also indicate that this effect persists into longer-term future performance (i.e., the average of one-quarter and two-quarter-ahead) as measured by return on assets (ROA) and ROS. Findings also indicate that service recovery effort in reducing mishandled baggage, is associated with higher future financial performance as measured by one-quarter-ahead ROA. Similarly, service recovery efforts, in reducing mishandled baggage and complaints, are found to be associated with both short-term and longer-term future financial performance as measured by ROA or ROS. Nevertheless, this relationship diminishes when flights have a higher “load factor” (or higher enplanements). Literature on service operations states that although service failure (such as flight cancellations, delays, misconnections, mishandled baggage, or over boarding) can negatively affect customer repurchase intentions, employees' ability to diagnose and respond to problems at the critical moment can overcome negative effects of a service failure. This suggests that management should consider having trained frontline employees and flight attendants provide comfort, assurance, empathy, support, and assistance to customers following service failures. This should help to enhance repurchase behavior and brand loyalty thereby improving future financial performance. © 2010"
+  },
+  {
+    "article_id": "CS_1711",
+    "title": "Linear versus step-function decision making: The moderating role of relationship norms on consumer responses to brand transgressions",
+    "journal": "Review of Marketing Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1548-643520150000012008",
+    "abstract": "Purpose - This research uses the distinction between communal relationships (based on mutual care and concern) and exchange relationships (based on the principle of quid pro quo) to propose a framework that predicts differences in the shape of consumer response function to increasing levels of brand transgressions. Methodology/approach - The paper proposes a conceptual model based on insights from prior research on brand relationships. Findings - The premise being proposed in this paper is that exchangeoriented consumers, being focused on the balance of inputs and outcomes, base their evaluations on an objective assessment of the final outcome, such that their response function will be relatively proportional to increasing levels of brand transgression. On the other hand, communally oriented consumers are concerned with whether or not the relationship partner cares for them, such that up to a point brand transgressions are overlooked while beyond a threshold there is a sudden negative shift in brand evaluations. These consumers thus exhibit a step-function response to brand transgressions. Research limitations - This paper proposes a conceptual framework and leaves it to future researchers to test it empirically. Practical implications - Managers now have a toolkit to better manage instances of product and service failure. Social implications - Findings from this model can be applied to better manage interpersonal relationships too. Originality/value of the paper - This paper proposes a model that shows how and why consumers might differ in their response to brand transgressions. Further, this is a dynamic model in that it traces the response function of the consumers at increasing levels of transgressions. Copyright © 2015 by Emerald Group Publishing Limited."
+  },
+  {
+    "article_id": "CS_1712",
+    "title": "Consumer complaints and complaint management in the tourism sector",
+    "journal": "Contemporary Studies in Economic and Financial Analysis",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1569-37592022000108A034",
+    "abstract": "Introduction – In today’s intense competitive environment, businesses that want to have a sustainable competitive advantage must put the customer at the centre of all their activities and create customer loyalty by offering products and services that will provide customer satisfaction. One of the key elements of ensuring customer satisfaction is the effective handling of customer complaints, which is defined as the customers expressing their dissatisfaction with unmet expectations and unsatisfied needs verbally or in writing. The concept of a complaint as a response of customers’ dissatisfaction with the products and services they experience is an invaluable feedback mechanism for businesses to resolve issues relating to their products and services. Aim – The aim of this chapter is to emphasise the importance of the concept of complaint as an important part of customer relations management and an effective marketing tool for the tourism sector. As a service sub-sector, the simultaneous production and consumption of services in the tourism sector ensures customer satisfaction more than concrete products, due to their inseparable nature. For this reason, handling, evaluating and finalising customer complaints has an important function and value in providing the necessary information for tourism enterprises to become aware of their deficiencies and mistakes. Complaint management has started to play an even more critical role for the tourism industry in preventing customer losses due to dissatisfaction, especially considering the shrinkage in demand in the sector due to the COVID19 pandemic. Method – Firstly the concept of complaint and the importance of complaints for businesses were explained, customer complaint behaviour and the factors affecting this behaviour were examined in detail, the concept of online complaint was mentioned and the subject was evaluated in terms of tourism businesses. Results – While the effective management and resolution of complaints should be seen as a goal by every tourism business, it is vital that they understand customer complaint behaviours, the factors affecting this behaviour and how complaints should be managed in a way that will result in favour of the business. Conclusion – A complaint management process that enables customers to easily report their complaints to businesses and produces solutions as soon as possible will positively affect customer satisfaction. In this context, in order to reduce the negative effects on tourism enterprises, especially through the pandemic, business need to have clear and easy-to-access procedures, provide a quick response, show reliability and consistency in providing a solution, keeping the complainant informed of progress, have employees who can communicate with empathy and courtesy, have enough employees to deal with the situation, and adopt proactive approaches to prevent complaints rather than reducing the volume of complaints. Originality/Value – This research contributes to the literature in terms of complaining behaviour, examining the factors affecting this behaviour and emphasising the importance of the concept of complaints in the tourism sector. In addition, the research is important in terms of examining the contributions of an effective complaint management system in reducing the negative effects of the COVID-19 pandemic on the tourism sector, which is one of the sectors mostly affected on a global scale. © 2022 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1713",
+    "title": "The need for rejuvenation of Norfolk Island's shopping sector",
+    "journal": "Advances in Hospitality and Leisure",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1745-3542(2010)0000006009",
+    "abstract": "Shopping is an activity that is central to the tourism experience. It is also an important source of employment and often generates significant revenue for the public sector. For the retail to function effectively, retailers need to understand the needs of their customers and update their range of goods as demand changes. If the retail sector fails to recognise changing demand patterns, consumer gaps will emerge as has been the case on Norfolk Island. In this case, the consumer gap has emerged because the destination has failed to recognise that the generational membership of its seniors market has shifted from the Builders generation to the Baby boomer generation. The problem has been made in worse on Norfolk Island because the government derives a significant proportion of its tax revenue from a 10% tax on the sales of goods. This chapter examines the extent of the consumer gap in the retail sector and finds that it can only be redressed by a rejuvenation of the Island's shopping sector. © 2010"
+  },
+  {
+    "article_id": "CS_1714",
+    "title": "It is not about compensation: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014002",
+    "abstract": "A vegan purchased some vegetarian dishes at a restaurant to take home. When the family started eating the food, the daughter discovered clams in the soup. She called the restaurant but was treated rudely. When she went back to the restaurant, she received no apology from the staff at the restaurant. Because she complained, she was suspected of trying to cheat by adding clams in order to get a discount. Eventually, she was offered a discount by the manager, but she refused it. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1715",
+    "title": "Hot chocolate scalds a child: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014003",
+    "abstract": "Customer's lawsuits for alleged harm done from experiences with products and services are frequently attacked as frivolous by some elected government officials and company executives. \"Tort reform\" legislature is an attempt to weaken consumers' abilities to successfully receive redress in the legal system for alleged harms experienced from products and services. Critics of \"tort reform\" refer to new legal restrictions against lawsuits as \"tort deform.\" The movie documentary, Hot Coffee, presents three detailed case studies relating to tort reform (deform). Take 2:28 minutes to watch the trailer of the movie at https://www.youtube.com/watch?v=bBKRjxeQnT4. Doing so is a useful preparation for interpreting the following case reported in this chapter. A mother drove her daughter to Wonder's Best Burger for an apple pie and a hot chocolate. After the mother got the food, she returned to her car and gave it to her daughter. The kid was excited, so she immediately opened the hot chocolate. Unfortunately, a tragedy occurred as the hot chocolate scalded her. The mother, holding her daughter, rushed into Wonder's Best Burger and argued with an employee about her kid being scalded. Huan Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1716",
+    "title": "The challenge is to be customer-oriented! Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014004",
+    "abstract": "Angela is a UK tourist doing masters in tourism management (MTM). She has selected a small-medium-size hotel in Kefalonia, Greece, for her summer holidays. It is a 4-star hotel. The interior design of the hotel is very impressive and the services are promoted as of high quality, especially for targeted VIP guests. However, the circumstances today are very difficult to manage a small hotel with view rooms for customer groups seeking premium services. The economic and social crises have affected the Greek economy and are negative impact factors for small and middle-size enterprises (SME). Our guest Angela was not satisfied with the first lodging that she had selected until a new event happened. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1717",
+    "title": "Why can't I just up and go? Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014005",
+    "abstract": "A customer of Xtrip (name disguised) booked an airline ticket online but was told that the ticket was invalid while boarding from a foreign airport. The solution provided by the customer service representative did not work, and the customer was nearly arrested by the local police as a suspected fraud. On his return, the customer demanded a written apology from Xtrip to restore his reputation. What should the company do? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1718",
+    "title": "The missing electronic passenger ticket: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014006",
+    "abstract": "Wang Hui booked an electronic ticket on Eyesjuant (name disguised) from Guangzhou to Beijing for a flight departing at 2 pm. However, when he arrived at the airport, he could not check in and was informed that there was no booking information for him on the file. He called the customer service representative of Eyesjuant. The representative told him that his booking had been sent to the airlines again and he would be able to check in at this point. When he returned to the counter, there was still no booking information. With only one hour before the plane was scheduled to take off he again made the phone call asking Eyesjuant for help to solve this problem. What should the Eyesjuant's service representative do? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1719",
+    "title": "The show must go on! Resolving customer complaints in events management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014008",
+    "abstract": "Thousands of young people traveled to London to attend their favorite \"High Ten\" world famous pop girl band performing in the O2 Arena. Ten minutes before show time the organizers informed the fans that the concert was canceled due to Alyssa's, one of the four-piece band singers, sudden illness. The disappointed fans were instructed to leave the venue and wait for a news release on the following day. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1720",
+    "title": "Mistake of roaming network service: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014009",
+    "abstract": "There was a mistake relating to a roaming network service package that my sister bought from one of the telephone networks in Thailand. She paid 2,000 Baht (the Baht is the currency of Thailand) for this package. She and her friends were going on a self-\"guided\" and organized tour to Japan and wanted to use the internet as an integral part of travelling. She or her friends did not speak Japanese. Unfortunately, the internet did not work using that roaming package. Not having roaming facility greatly affected the travelling quality of my sister's vacation trip to Japan. It also completely messed up her itinerary. My sister used hotel Wi-Fi to contact me and asked that I call the telephone service and solve the problem. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1721",
+    "title": "If it ain't broke: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014012",
+    "abstract": "A direct service representative persuades a family to switch service providers for their mobile phones to reduce costs and simplify the payment process. One family member later finds out that her phone is not compatible with the StayConnected (name disguised) network, rendering it almost useless until the problem is resolved. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1722",
+    "title": "A clean, mean, broken machine: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014014",
+    "abstract": "Jamie hires a carpet cleaner from the supermarket, but the vacuum doesn't work, so he returns it. However, he and his flatmates are now unable to clean their carpet, which means they fail their final flat inspection and subsequently lose a part of their bond. He receives a refund for the product rental, but is still out of pocket with regard to the flat bond, and is also a bit disillusioned by the poor service he received in-store. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1723",
+    "title": "The once and future FastFood king. Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014016",
+    "abstract": "Art Rey, a middle-aged general manager (GM) of a FastFood King franchise in a little town far, far away is something of a local legend. His store is renowned in the neighbourhood for its cleanliness, attention to detail and for providing friendly service - often by Art himself, who works tirelessly to ensure a 'first class' customer experience. Art has been awarded dozens of recognitions by FastFood King Corporation over three decades of employment, having started with the company as a fry cook when he was quite young. Art progressed through the ranks at the store level, holding many positions before reaching his present post of GM. He is now looking forward to imparting his years of hard-earned knowledge to younger employees and eventually to retirement. In this case study, Art is evaluating the on-the-job performance of a new manager. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1724",
+    "title": "To police or to please: Boxed lunch courtesy at the breakfast buffet",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014019",
+    "abstract": "Two hotel guests repeatedly took food from various breakfast buffets every morning before starting the daily tour. Not only is this considered a violation of etiquette, it also violated the hotel restaurant policy. Following complaints from other tour group members, and a polite but firm request from a hotel restaurant manager to address the unacceptable behavior, the tour guide was faced with a dilemma. As the offenders were, after all, his customers, the guide risked offending his clients by asking them to respect hotel policy. If he did nothing, the tour guide risked the appearance of ignoring the other clients who adhered to proper etiquette and felt embarrassed by association. He also risked damage to his reputation as a tour guide, as well as damage to the professional relationship between his employer and the hotel if he did not act. Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1725",
+    "title": "Wowiesatisfy online cancelation: Customer charged after canceling membership",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014021",
+    "abstract": "Customer goes online in order to cancel Wowiesatisfy (name disguised) membership after receiving an email from them on February 1st. Upon receiving a cancelation confirmation that her account has been deactivated, she again receives an email from them on February 2nd letting her know that her monthly boutique is ready and that she has 24 hours to either skip the month, or she'll be charged her monthly membership fee of $39.95. The customer calls Wowiesatisfy customer service in order to resolve the problem and they assure her that her membership has been canceled. On February 5th, the customer's bank account shows a charge of $39.95 to Wowiesatisfy. What should the company do? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1726",
+    "title": "Out of soup: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014022",
+    "abstract": "A customer orders two bowls of soup at a Neighborhood chain restaurant and after paying is informed that the store is out of one of the soups. The customer refuses a different variety of soup and insists she needs the original soup choice. The soup will be available again in one hour. What should the Neighborhood chain restaurant do? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1727",
+    "title": "Dilemma in a high-speed train: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014023",
+    "abstract": "Rules are not always followed. If rules are broken, there may be a valid reason. Staff charged with maintaining order must be encouraged to identify the reason for the violation and provide creative solutions. An example of such a situation occurred when a German high-speed train passenger prebooked a seat for his return trip on a southbound train from Hannover to Stuttgart. After claiming his seat, he walks away to buy a cup of coffee for the long trip. Upon returning, he finds a young father with a baby occupying his seat. Although sympathetic to the young father's needs, the tired passenger paid for the seat for the five-hour trip and he would like what is his. After the young father refuses to move, the passenger calls the conductor for assistance. How should the conductor respond? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1728",
+    "title": "Can concierge class offer concierge service for our cruise vacation? Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014024",
+    "abstract": "A family of three pays a premium to upgrade to Concierge Class cabins for a cruise vacation. After setting sail, they decide to add a shore excursion (sight-seeing option) to their vacation package. Upon making their way to the Concierge Desk, they are told that excursions are an \"add-on\" service provided by a third party company. The family felt that the butler service provided for Concierge Class passengers had overlooked sharing this information. The misunderstanding results in dissatisfaction with the premium Concierge services as well as the whole vacation experience. What should the cruise line company do? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1729",
+    "title": "Front-desk agents versus flight attendants - \"can you just check me in?\" Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014025",
+    "abstract": "A British Airways flight crew arrives after a long flight from London to Chicago to find their hotel rooms are not ready for check-in. The front-desk agents tell them that the hotel is overbooked. The flight crew is asked to wait in the hotel lobby for more than one and a half hours while housekeepers prepare their rooms. Upon returning to London, the pilot complains to British Airways. What should the hotel have done differently to avoid complaints? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1730",
+    "title": "NoName nightmare: Resolving customer complaints in hospitality management",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014029",
+    "abstract": "A customer ordered NoName trainers from NoName shoe.co.nz. The shoes did not arrive even after three weeks; therefore, the customer sent an email inquiring why the shipping status was still \"pending.\" The customer received no reply from the supplier. Five weeks later the customer sent an additional email, demanding a full refund after discovering alarming reviews on the internet, which suggested the site was a scam. The refund was in the customer's account within the next few days. What should the firm have done to create customer loyalty without jeopardizing profits or recovering costs? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1731",
+    "title": "Strike three. You're out! Service recovery in retail banking services",
+    "journal": "Advances in Culture, Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S1871-317320170000014033",
+    "abstract": "An existing customer goes to his bank to apply for a debit card. The bank required that the customer provide additional supportive documents and complete a pending procedure. However, after two visits, the employee failed to inform the customer of the additional procedure that should be completed. With multiple visits to the bank to complete the application, the customer filed a complaint. What should the bank do? Copyright © 2018 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1732",
+    "title": "HOW DO WE COUNTER FINANCIALISATION?",
+    "journal": "Critical Studies on Corporate Responsibility, Governance and Sustainability",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S2043-905920210000015016",
+    "abstract": "Financialisation being but the end product of a complex process, countering it is not a question of modifying individual behaviour but of changing the law. In sharecropping, the standard contract between landowner and labourer gets shared only based on what has actually been produced: risk is being shared along the terms of the contract guaranteeing to both parties a share of the produce, not a fixed quantity of it. Imbalance creeps in when rent is being paid without being a true share of wealth having been created, in what is nowadays called 'consumer credit': when interest is charged and paid from wealth that has not been generated through combining human labour with the resources lent as an investment but by the borrower mortgaging wages yet to come. Got historically added to the dysfunction of consumer lending, speculation with the meaning traditionally assigned to it in finance of 'wagers on the rise or fall of the price of financial products'. Speculation doesn't add any economic value but shifts only amounts of money between bettors, generating a number of risks. Counterparty risk: the loser possibly defaulting, triggering then a damaging chain reaction of defaults. Moral hazard risk: bettors attempt to push the market in the direction favouring their bet. Systemic risk: bettors take advantage of the well-established fact that should they lose, the public sector will act as a saviour of last resort, bailing them out. This all can be redressed by law, and by law only. © 2021 David Bourghelle, Roland Pérez and Philippe Rozin. Published under exclusive licence by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1733",
+    "title": "Service quality, passenger expectations and profitability in the chinese airline industry",
+    "journal": "Advances in Airline Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1108/S2212-160920180000007010",
+    "abstract": "Service quality has become an important area for competition among Chinese carriers. This paper focuses on studying the relationship between customer satisfaction measured by customer complaints and their expectation of the on-time performance of Chinese carriers and how the customer complaints affect the financial performance of carriers. By using a quarterly balanced panel data set covering six large listed carriers, the empirical results show that an increase in actual on-time performance reduces customer complaints. However, an increase in expected on-time performance significantly raises customer complaints. An increase in customer complaint reduces the yield measured as revenue per revenue ton kilometer (RTK) of carriers. © 2019 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1734",
+    "title": "Three dimensions of service recovery: examining relationship and impact",
+    "journal": "Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SCM-03-2015-0086",
+    "abstract": "Purpose – The purpose of this paper is to evaluate the interrelationship between process recovery, employee recovery and customer recovery in a financial services call centre. The authors also investigate how process recovery affects customer recovery via employees – the bridge between organisation and customers. Design/methodology/approach – A case study–based approach is adopted in this study, and data triangulation is achieved through multiple data collection methods including semi-structured interviews, employees’ survey and company reports. Justice theory is the theoretical lens considered to understand the “service recovery (SR)” phenomenon. Findings – This paper helps in understanding the relationship of process and employee recovery with customer recovery. Findings suggest that SR could be used for complaint management as well as in understanding and addressing the gaps in internal operations and employee skill sets. Factors such as training, operating systems, empowerment, incentives, and feedback were identified as critical in providing effective SR. Process improvement is necessary to control complaints by conducting root cause analysis and learning from failure. Research limitations/implications – Findings are limited to a case company in financial services sector and thus limit its generalisability to other context. Questionnaire distributed to employees only included important dimensions of SR, which would be further developed in future research. Originality/value – This paper explores the specific reverse exchange strategies, termed in this paper as SR, and analyses the different factors responsible for better performance in the exchange process. The paper highlights how the imbalance in the process and employee recovery dimensions can impact on customer recovery. Closing the customer complaint loop by using the SR perspective may help organisation to not only deal with complaints in a better way but also prevent such complaints in the future. © 2016, © Emerald Group Publishing Limited."
+  },
+  {
+    "article_id": "CS_1735",
+    "title": "The influence of supply chain quality management practices on quality performance: an empirical investigation",
+    "journal": "Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SCM-08-2016-0286",
+    "abstract": "Purpose: The extant literature highlights the notable lack of a consensus among operations and supply chain management scholars regarding the theoretical underpinnings and associated empirical evidence for the performance impact of supply chain quality management (SCQM) practices on quality. The purpose of this paper is to redress this imbalance in the literature through empirical examination of the relationship between SCQM practices and quality performance outcomes. Design/methodology/approach: In accordance with the research aim, a quantitative approach was adopted, and a multi-item scale Web-based survey was designed to collect primary data. A total number of 325 questionnaires were collected from a sample of UK-based manufacturing companies. Factor analysis, internal consistency and multivariate regressions were used to validate the multi-item scale and test the hypotheses. Findings: The findings confirm the proposed hypotheses and reveal statistically significant results for the performance impact of SCQM practices on quality at an aggregate level. However, the results of the individual level analysis of SCQM practices appear to vary from practice to practice. Of various SCQM practices, customer focus with the highest beta value (i.e. ß = 0.303; t-value = 6.120; p = 0.000) was found to have the greatest impact on quality performance. Practical implications: The findings encourage managers to place high priority on both inter-firm and intra-firm relationships as prerequisites for achieving superior quality performance. The propositions and the results of the study provide managers with some guidelines about effective management of upstream, midstream and downstream supply chain networks and awareness of the potential synergies arising from the combined effects of SCQM practices that could bring about desired quality performance outcomes across the entire supply chain network. Originality/value: Real and sustainable quality performance often requires an equal focus on both intra- and inter-firm relationships among supply chain partners. Therefore, effective management of quality across the entire supply chain is deemed essential if a firm is to smoothly supply high-quality products and services to customers. But little research has been devoted to understanding conceptual underpinnings of SCQM as well as empirical support and validation for the conceptualisation and measurement of SCQM practices. Based on the insights gained from social network theory, this paper makes an attempt to address this gap and examine the impact of SCQM practices on quality performance. © 2017, © Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1736",
+    "title": "Dedicated followers of m-branding fashion: Retail apps are playing a big part in promoting and selling products",
+    "journal": "Strategic Direction",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SD-02-2015-0021",
+    "abstract": "Purpose – This paper aims to review the latest management developments across the globe and pinpoint practical implications from cutting-edge research and case studies. Design/methodology/approach – This briefing is prepared by an independent writer who adds their own impartial comments and places the articles in context. Findings – Smartphone-user figures worldwide are approaching the two billion mark. Yet there has been little research into the way the design of mobile applications might affect the behavior of consumers. This piece redresses the balance, identifying key branding design elements while also indicating possible directions for further research into the subject. Practical implications – The paper provides strategic insights and practical thinking that have influenced some of the world’s leading organizations. Originality/value – The briefing saves busy executives and researchers hours of reading time by selecting only the very best, most pertinent information and presenting it in a condensed and easy-to-digest format. © 2015, Emerald Group Publishing Limited."
+  },
+  {
+    "article_id": "CS_1737",
+    "title": "Bracing for backlash: Understanding anti-brand behavior and how to deploy brand recovery strategies",
+    "journal": "Strategic Direction",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SD-03-2022-0030",
+    "abstract": "Design:: This briefing is prepared by an independent writer who adds their own impartial comments and places the articles in context. Purpose:: This paper aims to review the latest management developments across the globe and pinpoint practical implications from cutting-edge research and case studies. Findings:: Anti-brand communities seek only to destroy the reputation and value of a brand. In doing so, brands are finding the challenges involved with shifting public perception. Originality:: The briefing saves busy executives, strategists and researchers hours of reading time by selecting only the very best, most pertinent information and presenting it in a condensed and easy-to-digest format. © 2022, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1738",
+    "title": "Tweeting your way out of disaster: Using social media to enhance customer relations",
+    "journal": "Strategic Direction",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SD-05-2017-0079",
+    "abstract": "Purpose: This paper aims to review the latest management developments across the globe and pinpoint practical implications from cutting-edge research and case studies. Design/methodology/approach: This briefing is prepared by an independent writer who adds their own impartial comments and places the articles in context. Findings: Social media now rules our online lives. It is an inescapable part of our modern existence, and as such, it is being embraced by companies to allow them to survive in the digital age. Twitter is becoming the go-to destination for customer service issues, mainly because of its public and instantaneous nature. Customers are able to make use of a huge audience and the potential for brand damage to a company by using Twitter to complain about a service failure. The costs are now so great that companies need to seriously consider and invest in their Twitter customer services. Success here can not only mitigate brand damage, but also improve it, whereas failure to do so can be catastrophic. Twitter is now the key to how well a company can do globally. Practical implications: The paper provides strategic insights and practical thinking that have influenced some of the world’s leading organizations. Originality/value: The briefing saves busy executives and researchers hours of reading time by selecting only the very best, most pertinent information and presenting it in a condensed and easy-to-digest format. © 2017, © Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1739",
+    "title": "Effectiveness of offline and online rewards in restoring satisfaction and trust",
+    "journal": "Spanish Journal of Marketing - ESIC",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SJME-07-2021-0143",
+    "abstract": "Purpose: This paper aims to compare the relative importance of tangible compensation across the offline and online service mediums, and assess tangible compensation as a trust recovery tactic. Methodology: This study is based on a 3 (compensation level: 20%, 50%, 100%) × 2 (compensation type: refund, coupon) × 2 (service medium: offline, online) scenario-based experimental design. Findings: The offline and online customers exhibit different satisfaction for the respective values of both the immediate and delayed compensation types. Moreover, offline customers exhibit more trust in the firm when they receive a refund, whereas their online counterparts demonstrate a higher trust when provided with a coupon. Practical implications: For a service failure such as the one presented in the experimental study’s scenario, a lower (higher) value coupon will generate more (less) satisfaction compared to providing the same value as a refund. Firms will be better off by providing partial compensation in the form of a coupon, rather than a refund. Originality: Unlike most studies of service recovery, this research takes into account the perceived differences of various tangible compensations to provide a comparison of offline and online customers’ recovery preferences. Furthermore, the previous studies have not focused on trust restoration and assessed causes and effects of trust based on trust at one point in time i.e. trust after recovery. While this study has included restored trust as a variable in the conceptual model. © 2021, Zonaib Tahir."
+  },
+  {
+    "article_id": "CS_1740",
+    "title": "Influence of emotions displayed by employees during service recovery",
+    "journal": "Spanish Journal of Marketing - ESIC",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SJME-07-2021-0146",
+    "abstract": "Purpose: While research evidences how customers’ emotions can influence their consumer experience, understanding of how employees’ displayed emotions affect the customer service experience is more limited. Drawing on affect transfer theory, the authors test for the mediating role of attitude towards the employee, which is proposed to mediate the effect of employees’ displayed emotion on customers’ satisfaction with recovery. As service recovery entails a critical service experience in which emotions can easily rise, this paper aims to highlight the pivotal role of employee-displayed emotions during service recovery. Methodology: A scenario-based experiment in the context of an airline service failure recovery (3 × 2 between-subjects design) manipulates frontline employees’ emotions (anger vs happiness vs no specific emotion) and the quality of the solution (bad vs good). Findings: Employees’ displayed emotions directly affect attitude towards the employee and indirectly affect service recovery satisfaction. Moreover, attitude towards the employee is affected more by the employee’s displayed emotion when the solution offered is bad compared to good. Practical implications: Employees’ emotions displayed during service recovery can enhance or damage service recovery strategies. Employees should control for negative emotions in the case of service failure, especially when unable to provide a good solution. Originality: Emotions displayed by employees can influence the customer’s service recovery evaluations. There is an interesting interaction between the quality of the solution and employees’ displayed emotions. Additionally, the mantra of “service with a smile” may not be valid in the case of service recovery: rather, employees should avoid displaying negative emotions. © 2021, María Sicilia, M. Carmen Caro-Jiménez and Estela Fernández-Sabiote."
+  },
+  {
+    "article_id": "CS_1741",
+    "title": "Consumer reaction towards corporate social responsibility in United Arab Emirates",
+    "journal": "Social Responsibility Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/SRJ-07-2013-0081",
+    "abstract": "Purpose - This paper aims to examine five distinct consumer reactions, including corporate social responsibility (CSR) awareness, consumers' complaining, boycotting behavior, work preferences and consumer donation behavior. Design/methodology/approach - The analysis in this paper was based on data collected by a team of experts in the Dubai Chamber of Commerce and Industry from more than 555 United Arab Emirates (UAE) individuals, aged 18 years or older. Our study postulated that there will be no statistically significant differences in any or all of the five reactions among respondents with different age, varying degree of CSR awareness, working preference, donation and boycotting behavior, and methods of complaining about companies or their products. Findings - Gender analysis indicated that there is a statistically significant difference between male and female in terms of boycotting and complaining behaviors. Our analysis also showed that young consumers in the age group of 18-24 years react significantly different than older age group in terms of job preference. Third, the results of location analysis indicated that the UAE consumers' contacting behavior to a company to voice an opinion about a company's product or services are significantly different across the seven Emirates of UAE. Research limitations/implications - The findings of this study have many implications. First, there is no doubt that such findings will raise the consumers' awareness of CSR. UAE companies will become more cognizant of their consumers' behavior, especially when the consumers' voice their opinion and show interest in the products or services offered by these companies. The implications of this study for the academics are that this study can be replicated in different parts of the globe to confirm or refute our findings. Practical implications - The findings of this study will enable UAE companies to design and implement strategies that aim at increasing their efficiency, competitiveness and the ability to compete in global markets. Social implications - Many of the developing economies started to realize how important CSR is. A fast growing economy such as that of UAE has given such topic an unprecedented attention. The social implication of our findings is that UAE corporations will have to rethink their strategies when it comes to their social responsibility toward society in which they exist. Our findings also enlighten consumers when it comes to their dealing with socially responsible corporations. Originality/value - This study is unique in that it is the first empirically based study to address the consumer behavior and their reaction toward socially responsible corporations. © Emerald Group Publishing Limited."
+  },
+  {
+    "article_id": "CS_1742",
+    "title": "The “nicest place on the Internet”? Trouble at Pinterest, Inc",
+    "journal": "CASE Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TCJ-01-2023-0016",
+    "abstract": "Research methodology: Data for the case came from public sources, including legal proceedings, court filings and Securities and Exchange Commission filings. The authors perused hundreds of court documents and identified 28 that were most relevant to this case. The authors also used press interviews with the women highlighted in the case. The authors have no relationship with the company and no one from the company has reviewed the information presented in this case. As the case is drawn from sworn legal testimonies, interviews and related documents in the public domain, the authors did not have to seek approval for publication. Case overview/synopsis: Pinterest touted itself as “the nicest place on the Internet.” It had an almost 80% female user base and purported to have an inclusive culture that embraced diversity. However, in June 2020, in the wake of the Black Lives Matter protests, two former female employees of color violated their non-disclosure agreements (NDAs) to publicly accuse Pinterest of racial and gender discrimination. In August 2020, Pinterest’s former Chief Operating Officer, Francoise Brougher, filed a lawsuit charging the company with gender discrimination, retaliation and wrongful termination, and authored a public blog post titled, The Pinterest Paradox: Cupcakes and Toxicity, detailing her own experience with the company’s discriminatory culture. Three days later 236 of Pinterest’s 2,545 employees staged a virtual walkout and 445 employees signed a petition in an attempt to change Pinterest’s policies and culture. The case provides a brief overview of Pinterest, including its mission, values and organizational culture, and details several incidents and complaints by female and minority employees. The case questions whether employee complaints are a relatively narrow issue involving disgruntled former employees who did not fit at the organization or a much broader issue involving discrimination and managerial neglect in creating and maintaining a nondiscriminatory, inclusive culture. Students are encouraged to evaluate the situation in which Co-Founder, Board Chair and Chief Executive Officer, Ben Silbermann finds himself, evaluate the actions taken and decide if Silbermann should take any additional actions to address the discrimination claims and ensure a positive culture for all employees. Complexity academic level: This case is appropriate for graduate and advanced undergraduate level courses in organizational behavior, human resource management and business law or any course where discrimination and workplace culture are discussed. © 2023, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1743",
+    "title": "Is AI and human co-creation a strategic fit for Klarna?",
+    "journal": "CASE Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TCJ-08-2025-0283",
+    "abstract": "Research methodology – This case is developed from secondary sources, including annual reports, social media outlets, company websites and news published in reputable outlets such as The Times of India. To meet the objectives of this case, the authors have used qualitative analysis of secondary data. In the next phase, the authors have mapped the data with the research objectives. Case overview/synopsis – In May 2025, the CEO of Klarna Group Plc, a Swedish Fintech company, Sebastian Siemiatkowski, aimed to cut costs and improve efficiency by automating customer services. This move seemed productive, but the uproar of customer complaints significantly impacted the brand image and the customer experience. The lack of human empathy in the robotic customer service irked the customers. As a reversal mechanism, Sebastian called humans back, employed them as gig workers; therefore, Klarna must strategise the value proposition of “human-AI” collaboration. Complexity academic level – This case is suited for advanced final-year undergraduate and postgraduate (MBA/Master’s) students studying Strategic Management or Business Policy, AI and Analytics or Digital Transformation, Human Resource Management or Future of Work and Services Marketing or Customer Experience Management. It is best placed in the middle to end of the course, when students are already familiar with the principles of HRM and employment models, including standard and gig work, as well as basic strategy concepts like trade-offs, competitive advantage and stakeholder perspectives, as well as introductory AI and automation concepts in services. The example is especially well-suited for courses on human–AI cooperation and co-value creation, automation methods and the ethical implications of AI and service innovation and customer experience in Fintech. © 2026 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CS_1744",
+    "title": "Categorizing product attributes efficiently in QFD-Kano: A case analysis in telecommunication",
+    "journal": "TQM Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TQM-03-2015-0036",
+    "abstract": "Purpose - The purpose of this paper is to propose a methodology to use complaints, claims and company innovation as an internal data source of customer needs for product development using the quality function deployment (QFD)-Kano approach instead of an ordinary customer survey. Design/methodology/approach - This paper confirms that the customer complaints and claims and company innovations from the internal data source are equivalent to the Kano model's product attributes. Data were selected from the company's documents. To investigate the data category, a Kano questionnaire was designed and tested with 100 random respondents. Based on their answers, categories for the quality characteristics were determined and compared with the initial data categories. A second survey using professional customer respondents was conducted to increase the results' reliability. Findings - The approach was shown to be effective in employing complaints, claims and innovations as an alternative source of customer needs in the QFD-Kano approach. Research limitations/implications - It is assumed that companies document their customer complaints and claims, as well as their strategic innovation plans. The complaint and claim data need to be extracted to reveal their quality characteristics. For future research, data extraction using text or data mining may be useful to bridge this gap. Practical implications - The product development team may ascertain customer needs as duly classified. This voice of the customer is more accurate and requires less time. Originality/value - The paper may be of value to researchers and practitioners involved in product design and development, since it offers a new source of customer need data obtained internally as an alternative to customer surveys. © Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1745",
+    "title": "Development of the critical success decision criteria for an equitable order sharing in an extended enterprise",
+    "journal": "TQM Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TQM-05-2019-0138",
+    "abstract": "Purpose: This study identifies and ranks the appropriate critical success decision criteria (CSDC) for the bulk order distribution (sharing) amongst multiple manufacturers (suppliers) working as an extended enterprise (EE). Design/methodology/approach: The study deploys a qualitative approach to generate the appropriate decision criteria. The balanced scorecard and Pareto's chart (using Minitab® version 18) were used for gathering and analysing the pertinent criteria. Findings: The process of evaluating and selecting the right manufacturers is essential. Manufacturer (supplier) selection is no longer decided solely based on cost/price criterion; currently, the quality and delivery criteria prevail. Additional incorporated criteria include price/cost, technical capability, production facilities and capacity, customer satisfaction and impression, geographical location, management and organisation, financial position, environmental concern, performance history, repair service, information technology and communication systems, procedural compliance, labour relation record, reputation, flexibility or diversification, attitude, operating controls, business desire, packaging ability, past business records, trust and loyalty, training aids, complaint handling service, warranties and claim policies, reciprocal arrangements, research and development and innovation, modern slavery concern, sustainable capability, collaborative/partnership and responsiveness. The study proposed a conceptual framework of an EE alongside how manufacturers working as a single virtual entity can consider the supply chain operations reference (SCOR®) model. Research limitations/implications: The identified CSDC are suitable for order allocation to domestic manufacturers. The deployed approaches could be extended to the mixed and quantitative approaches for increasing the generalisability. Originality/value: The study establishes the pertinent CSDC that are important to execute equitable order distribution to manufacturers in an EE framework. © 2020, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1746",
+    "title": "Complaint management model of manufacturing products using text mining and potential failure identification",
+    "journal": "TQM Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TQM-05-2021-0145",
+    "abstract": "Purpose: This paper aims to propose a framework on complaint management system for quality management by applying the text mining method and potential failure identification that can support organization learning (OL). Customer complaints in the form of email text is the input of the framework, while the most frequent complaints are visualized using a Pareto diagram. The company can learn from this Pareto diagram and take action to improve their process. Design/methodology/approach: The first main part of the framework is creating a defect database from potential failure identification, which is the initial part of the failure mode and effect analysis technique. The second main part is the text mining of customer email complaints. The last part of the framework is matching the result of text mining with the defect database and presenting in the form of a Pareto diagram. After the framework is proposed, a case study is conducted to illustrate the applicability of the proposed method. Findings: By using the defect database, the framework can interpret the customer email complaints into the list of most defect complained by customer using a Pareto diagram. The results of the Pareto diagram, based on the results of text mining of consumer complaints via email, can be used by a company to learn from complaint and to analyze the potential failure mode. This analysis helps company to take anticipatory action for avoiding potential failure mode happening in the future. Originality/value: The framework on complaint management system for quality management by applying the text mining method and potential failure identification is proposed for the first time in this paper. © 2021, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1747",
+    "title": "A case study on implementing Lean Six Sigma: DMAIC methodology in aluminum profiles extrusion process",
+    "journal": "TQM Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TQM-05-2021-0154",
+    "abstract": "Purpose: This paper aims to investigate the sources of variation in aluminum profiles hot extrusion process for the purpose of process capability improvement at National Aluminum and Profiles Company (NAPCO) in Palestine. The critical-to-quality characteristics (CTQ) have been determined as base variables to measure the process capability. Design/methodology/approach: The DMAIC (Define, Measure, Analyze, Improve, and Control) Lean Six Sigma (LSS) approach has been adopted to conduct this study. More specifically, historical data analysis and PARETO charts have been employed. The defects' root causes have been determined using the cause-and-effect diagram and decision matrix. A course of suggested actions has been established to help in improving extrusion process capability. Minitab-18 software was used for conducting inferential statistical analysis. A case study considering a geometry CTQ of D3 dimension of bottom sash aluminum profiles 4,332 was selected for analysis. Findings: The results indicated a reduction in DPMO from 89,649 to 15,659, sigma level was improved from 2.84 to 3.65, process yield was improved from 91.04% to 98.43% and cost was reduced from U$75,972 to U$13,250.9 (i.e. a saving of U$62,721). Studying and improving the sigma level of the extrusion process would yield fewer defective products and consequently fewer customer complaints. A validation process which has been conducted during the year 2019 showed a consistent improvement that aligns with the first stage of improvement made on October 1, 2018. Research limitations/implications: This study focuses on only one critical quality characteristic (CTQ), namely, a geometry CTQ of D3 dimension of bottom sash aluminum profiles 4,332 produced by NAPCO was selected for analysis. Practical implications: This study would be useful for researchers and practitioners to improve the process capability in aluminum profiles manufacturing industries in general and hot extrusion processes in particular. Originality/value: Many previous studies on applying LSS-DMAIC methodology have been conducted in aluminum industries in developed countries. According to the literature, it is highly recommended to have more case studies of applying LSS-DMAIC in different industries in developing countries. NAPCO is the only aluminum manufacturing plant in Palestine that hotly extrudes and coats aluminum profiles. Hence, the present study is the first of its kind in NAPCO and in Palestine. Projecting the assessment of the impact of process improvement opportunities and capability analyses into monetary measures are also innovative. © 2022, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1748",
+    "title": "Winning customers' hearts and minds using DFSS in the insurance industry",
+    "journal": "TQM Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TQM-05-2022-0171",
+    "abstract": "Purpose – This study aims to simultaneously examine customer complaints through the proposed novel Design for Six Sigma (DFSS) model which incorporates of creating the new insurance services to win customers' hearts and mind for the insurance industry. Design/methodology/approach – A novel DFSS research methodology which includes the theory of inventive problem solving (TRIZ), Pugh concept selection, creative product analysis matrix and importance–satisfaction model (I–S Model) was proposed. In addition, a real insurance company case was studied to illustrate the effectiveness of the proposed DFSS model. Findings – The results of a novel DFSS model not only can establish new services, but also can dramatically reduce the cost of resolving customer complaints. Practical implications – The findings of this study are useful for insurance companies and other related service providers in devising tailored strategies to offer quality and suitable services to their customers. Originality/value – This study addresses the paucity of research and marketing gaps through the proposed novel DFSS model for the first time in the insurance industry. These study findings would enable researchers and practitioners to formulate strategies for solving customer complaints effectively and develop new services from time to time. © 2022 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CS_1749",
+    "title": "Service quality cost management in Japanese call centers: study using preventive-appraisal-failure model",
+    "journal": "TQM Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TQM-05-2024-0166",
+    "abstract": "Purpose: This study uses the preventive-appraisal-failure (PAF) model to investigate the quality-cost behavior of call centers specializing in customer support, complaint handling and other telephone-based customer-service operations. Design/methodology/approach: This study conducted a mail questionnaire survey among call center companies in Japan and analyzed the quantitative data of 37 valid responses. Factors were derived from observed variables obtained through the survey using exploratory factor analysis. Findings: The study found that prevention costs exhibited a trade-off with external-failure costs. Also, appraisal costs demonstrated a positive correlation with internal-failure costs and acted as the indicators of internal failure. Supervisory control impacted both external and internal-failure costs. A positive relationship between internal and external-failure costs was suggested for the management of the quality cost of call centers. Research limitations/implications: This study has three limitations: the representativeness of the sample, the validity of the questions developed by the author and the need for additional qualitative research. Future research should explore the management of service-quality costs in call centers. Practical implications: This study recommends reducing prevention costs that increase external-failure costs and increasing prevention costs that reduce external-failure costs. Additionally, enhancing supervisor management can mitigate external and internal-failure costs. Originality/value: This study is the first to identify the relationship between quality and cost behaviors in call centers within the context of service studies, where quality-cost management has been underexplored. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1750",
+    "title": "From a quality management system (QMS) to a lean quality management system (LQMS)",
+    "journal": "TQM Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1108/TQM-06-2016-0053",
+    "abstract": "Purpose: This paper deals with the subject of \"Lean Normalization.\" The purpose of this paper is to propose a comprehensive methodology which combines the benefits of both International Organization for Standardization (ISO) standards and Lean Management. The application of this methodology leads manufacturing or service companies to certification without creating more documentation. It guarantees agility and flexibility in the day-to-day management of the company, and induces lower costs and reduced times. This methodology provides a new way of tackling the implementation of ISO standards in a company. Design/methodology/approach: This methodology is based on the synergistic combination of both ISO standards (Quality Management System) and the key concepts of Lean Management. After a short presentation of ISO standards and Lean Management, the possibility of implementing a synergy between these two different approaches will be discussed. At this point, ISO 9001 standards will be focused on. The proposed methodology will be introduced step by step. Each step of the model will be formalized using the Structured Analysis and Design Technique graphic representation tool. Moreover, each step is associated with a key concept of Lean Management. In order to illustrate the proposed method, an example of implementation will also be presented. Findings: To show the feasibility of this methodology, this paper finishes with a summary of the results achieved in a company and draws some interesting conclusions. Companies have the possibility of achieving certification in combination with a Lean Quality Management System (LQMS): a one-page quality manual, only ten records, no major non-conformities and no customer complaints over a two-year period. Research limitations/implications: The methodology may have to be adapted to better suit the needs of companies seeking to implement the latest version of the ISO 9001 standards. Practical implications: This paper presents the deployment of ISO 9001 standards whilst simultaneously respecting key Lean Management concepts. The practical results for enterprises are the implementation of an LQMS leading to a certification. Social implications: This paper presents a new method combining both ISO standards and Lean Management concepts to achieve certification with an LQMS. Originality/value: Due to its simplicity and the relevance of its steps, the proposed methodology can be applied to companies with a guaranteed success of certification. © 2018 Emerald Publishing Limited."
+  }
+]

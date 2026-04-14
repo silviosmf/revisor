@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1051",
+    "title": "Analysis of Gamification and Blockchain Integration in Intelligent Learning Systems",
+    "journal": "2024 3rd International Conference on Creative Communication and Innovative Technology, ICCIT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT62134.2024.10701220",
+    "abstract": "Gamification, the implementation of game mechanics in non-game settings, is the primary approach driving current advancements in education. Educational gamification has arisen as a possible way to address the issues posed by traditional learning methods, which are generally seen as incompatible with contemporary human features and behavior. Concurrently, blockchain technology has emerged as a highly popular subject and has experienced significant growth in recent years. Blockchain, which has its origins in diverse global communities and companies, serves as an infrastructure technology that is gaining prominence in several industries, such as industry and education. An inherent benefit of blockchain technology is its capacity to function autonomously, eliminating the necessity for third-party involvement and ensuring a heightened level of security, transparency, and integrity. Regrettably, the current body of research on the integration of blockchain technology in the realm of educational gamification remains scarce. Hence, this article seeks to analyze and address the primary challenges associated with education by utilizing educational gamification facilitated by the blockchain system. A mixed-methods approach was employed, involving quantitative surveys and qualitative interviews with 500 participants and 20 key informants. Findings indicate enhanced user engagement and motivation, with increased satisfaction and active participation. The study provides a first gamification model using blockchain, serving as a foundation for future research and development in this field. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1052",
+    "title": "Hounan: An Intelligent Mobile Application for Brain Cancer Classification",
+    "journal": "2024 3rd International Conference on Creative Communication and Innovative Technology, ICCIT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT62134.2024.10701244",
+    "abstract": "Diagnosing brain tumors is an important consideration, especially when given the significant increase in cancer prevalence globally. Hounan is an innovative application designed for diagnosing cancer patients, capable of diagnosing 14 different types of cancer. The application features a chatbot to address all user inquiries, and reminders for appointments to help users keep track of their scheduled appointments. Conventional cancer diagnosis methods often entail delays and can be cumbersome for patients. To address these challenges, \"Hounan\"leverages advanced machine learning algorithms and computer vision techniques to provide efficient and accurate cancer diagnosis remotely. The mobile application was developed using Flutter and integrated with a model that classifies and diagnoses brain tumors. Additionally, the chatbot feature offers personalized support and information on various aspects of cancer diagnosis and treatment. The integration of appointment reminders ensures that users stay informed and organized throughout their medical journey. Hounan represents a significant advancement in cancer diagnosis, offering convenience, accuracy, and personalized support to patients seeking timely medical assistance. The purpose of this research is to enhance the efficiency and accessibility of cancer diagnosis, ultimately improving patient outcomes and providing timely medical support. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1053",
+    "title": "Empowering Independent Learning in Web Development Using Intelligent Tutoring Systems",
+    "journal": "Proceeding - 2025 4th International Conference on Creative Communication and Innovative Technology: Empowering Transformative MATURE LEADERSHIP: Harnessing Technological Advancement for Global Sustainability, ICCIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT65724.2025.11166728",
+    "abstract": "The increasing demand for flexible and self-paced learning in higher education has underscored the need for intelligent digital tools that support autonomous study, particularly in foundational technical domains such as web development. This study aims to design and implement an Intelligent Tutoring System (ITS) to facilitate independent learning among undergraduate students in basic web development courses. The ITS was developed using the Laravel framework and integrated with a MySQL database, incorporating client-side and serverside programming components to deliver structured instructional content, interactive exercises, and automated feedback. A structured software development methodology, including requirements analysis, system design through use case and class diagrams, and iterative interface prototyping via Figma, guided the development process. The ITS was designed to supplement existing e-learning platforms and is intended to enhance accessibility, self-regulation, and learner engagement, particularly for students needing to review or retake the course material. Preliminary implementation results suggest that the system supports autonomous learning by providing modular course content, instructor-curated assessments, and a user-friendly interface. The platform also includes feedback mechanisms to continuously refine the instructional material based on learner input. The findings indicate that Intelligent Tutoring Systems have the potential to improve student outcomes by fostering independent learning habits and providing scalable instructional support in computer science education. This research contributes to the advancement of personalized e-learning technologies and offers a practical framework for ITS development in resource-constrained academic environments. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1054",
+    "title": "Integrating Smart Technologies and User Centered Design to Boost Collaborative Efficiency",
+    "journal": "Proceeding - 2025 4th International Conference on Creative Communication and Innovative Technology: Empowering Transformative MATURE LEADERSHIP: Harnessing Technological Advancement for Global Sustainability, ICCIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT65724.2025.11166852",
+    "abstract": "As digital transformation accelerates, modern workspaces must evolve to support increasingly complex and collaborative workflows. This study explores the integration of smart technologies and user centered design (UCD) principles to enhance collaborative efficiency in contemporary work environments. The research aims to identify how intelligent systems such as sensor driven environmental controls, adaptive digital collaboration tools, and ergonomically responsive furniture can be aligned with user needs to optimize team performance. A mixed methods approach was employed, incorporating structured surveys, semi structured interviews, and on site observational studies across diverse organizational settings. Data collection focused on user interactions with workspace features, perceived comfort, communication flow, and technological usability. The analysis revealed that workspaces integrating flexible seating arrangements, personalized digital interfaces, and real time environmental adjustments significantly improved team communication, engagement, and overall productivity. Smart technologies enabled the customization of shared environments to individual and team preferences, resulting in more effective collaboration and reduced cognitive load. These findings highlight the importance of embedding human centered principles in the development of smart workspace infrastructures. The study contributes to the growing discourse on the convergence of design thinking and intelligent systems, offering a practical framework for organizations seeking to enhance workplace outcomes through innovation. The results underscore that the synergy between UCD and smart technologies fosters not only operational efficiency but also user satisfaction and well being, aligning with current trends in human computer interaction and smart system integration in IEEE research domains. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1055",
+    "title": "The Impact of E-Chatbot Service Quality on Customer Satisfaction in Indonesian Banking",
+    "journal": "Proceeding - 2025 4th International Conference on Creative Communication and Innovative Technology: Empowering Transformative MATURE LEADERSHIP: Harnessing Technological Advancement for Global Sustainability, ICCIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT65724.2025.11166908",
+    "abstract": "The rapid digital transformation of the banking industry has led to the widespread adoption of Artificial Intelligence (AI)-powered e-chatbots as essential tools for customer service. As banks strive to enhance customer engagement and satisfaction, understanding the role of e-chatbot service quality becomes crucial. This study aims to examine the impact of e-chatbot service quality on customer satisfaction in the Indonesian banking sector, focusing on key dimensions such as interaction, entertainment, trendiness, customization, and problem-solving. Using a quantitative approach, a survey was conducted with 432 respondents who had prior experience with e-chatbots in Indonesian banks. Structural Equation Modeling (SEM) with Partial Least Squares (PLS) was employed to analyze the data. The findings reveal that all five dimensions of chatbot service quality significantly influence customer satisfaction, with communication quality acting as a partial mediator in this relationship. The results highlight the importance of effective communication, personalization, and responsiveness in chatbot interactions to foster customer loyalty and satisfaction. This study contributes to the growing body of knowledge on AI-driven customer service in the banking sector, offering practical insights for financial institutions aiming to optimize their digital services. The implications suggest that enhancing chatbot performance through targeted improvements in communication quality and customization features can significantly boost customer satisfaction and trust in digital banking services. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1056",
+    "title": "The Impact of AI Adoption on Guest Experience and Satisfaction in Hospitality Industry",
+    "journal": "Proceeding - 2025 4th International Conference on Creative Communication and Innovative Technology: Empowering Transformative MATURE LEADERSHIP: Harnessing Technological Advancement for Global Sustainability, ICCIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT65724.2025.11167002",
+    "abstract": "The integration of Artificial Intelligence (AI) technologies in the hospitality industry has gained significant attention, particularly in enhancing guest experiences and operational efficiency. This study investigates the impact of AI adoption on guest experience and post-stay satisfaction in hotels, focusing on three AI-driven technologies chatbots, Augmented Reality (AR) applications, and Virtual Influencers (VI). The research aims to map how these AI touchpoints influence guest perceptions and satisfaction, guided by the SOR framework. A quantitative approach was used, with data collected from 300 Generation Y/Z travelers who interacted with at least one of the AI technologies during their stay. The model was tested using Partial Least-Squares Structural Equation Modeling (PLS-SEM), employing a two-step measurement and structural approach. The results indicate that AI adoption positively influences the perceived quality of chatbots, AR, and VI, with AR having the strongest impact on guest experience and satisfaction. VI also contributed to improved guest experience, while chatbots showed a small negative effect on experience, suggesting an empathy gap despite technical proficiency. The findings emphasize the critical role of guest experience in driving satisfaction and highlight that immersive AR and empathetic chatbot interactions are key to enhancing the guest journey. This study offers valuable insights for hotels looking to optimize AI technologies, suggesting that AR should be prioritized, and chatbots should be redesigned to improve emotional engagement. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1057",
+    "title": "Sentiment Analysis of Transjakarta User Feedback Using Machine Learning Models",
+    "journal": "Proceeding - 2025 4th International Conference on Creative Communication and Innovative Technology: Empowering Transformative MATURE LEADERSHIP: Harnessing Technological Advancement for Global Sustainability, ICCIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT65724.2025.11167507",
+    "abstract": "The transjakarta bus rapid transit system plays a crucial role in Jakarta's transportation network, serving millions of passengers annually. However, user feedback often highlights concerns regarding service quality, punctuality, and fleet cleanliness. To address these issues, this study conducts a sentiment analysis of user reviews from the Transjakarta app on the Google Play Store, aiming to evaluate public perception and provide actionable insights for service improvement. The research employs machine learning techniques, including Naïve Bayes, Support Vector Machine (SVM), and Decision Tree algorithms, to classify user sentiments into positive, negative, and neutral categories. The results indicate that the SVM model outperforms other algorithms in terms of classification accuracy, achieving a significant level of precision in identifying both positive and negative sentiments. These findings suggest that while most user feedback highlights dissatisfaction with punctuality and cleanliness, there are notable positive sentiments regarding the application's usability. The study concludes that sentiment analysis is a powerful tool for understanding user opinions and can guide decision-making for enhancing service quality in public transportation systems. The insights gained from this research can be utilized by Transjakarta management to address service deficiencies, optimize customer satisfaction, and improve operational efficiency, thereby fostering a more effective public transportation system in Jakarta. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1058",
+    "title": "AI Chatbots Driving Fintech User Satisfaction via Trust and Service Quality",
+    "journal": "Proceeding - 2025 4th International Conference on Creative Communication and Innovative Technology: Empowering Transformative MATURE LEADERSHIP: Harnessing Technological Advancement for Global Sustainability, ICCIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCIT65724.2025.11167781",
+    "abstract": "This study explores the impact of AI chatbots on user satisfaction in the fintech sector, emphasizing trust and service quality as primary drivers. The background underscores the increasing use of AI chatbots to enhance fintech user experiences. The objective is to investigate how Perceived Ease of Use (PEU), Perceived Usefulness (PU), Service Quality (SQ), and Trust (TR) shape user satisfaction. The research questions are: How do trust and service quality influence fintech user satisfaction, and what roles do PEU and PU play? Employing Structural Equation Modeling (SEM), the study analyzes data from 329 respondents. Findings indicate that trust is the strongest predictor of user satisfaction, followed by service quality, which significantly improves user experience. PEU exerts a moderate positive effect, while PU has a negligible or negative impact, suggesting trust and quality are more critical than perceived utility. These results highlight the pivotal role of trust in fintech platforms, with service quality as a key contributor. Limitations include the sample's representativeness, which may limit generalizability. Future research should explore additional factors and longitudinal designs for deeper insights. The findings provide fintech companies with actionable strategies to optimize AI chatbot performance by prioritizing trust-building and high-quality service, contributing to enhanced user satisfaction in digital financial platforms. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1059",
+    "title": "Towards Smart City through Virtualized and Computerized Car parking System using Arduino in the Internet of Things",
+    "journal": "2020 International Conference on Computer Science, Engineering and Applications, ICCSEA 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCSEA49143.2020.9132876",
+    "abstract": "Nowadays, IoT offering many smart systems to internet users. This smart system has played a vital role in many real-time applications like medicine, cultivation, and security. This paper proposes a new architecture with an algorithm for better to park the vehicle further in this document, examine the parking availability status of the registered and / or reserved vehicle to park the vehicle and examine the sensor-based intelligent parking system. Using mobile applications, the system will help the user detect the parking space in the user's current arena. The IoT-based smart car hosts heterogeneous sensors, each of which has unique assiduously. The smart parking system requires an Arduino microcontroller, a cloud server, an ultrasonic sensor, and an IR sensor, enough to efficiently park a vehicle in the assigned slot. The ultrasonic sensor can check the availability of the slot in the parking area. Similarly, the IR sensor is used to control the entry and exit of the vehicle. The main intention of the car parking system is to distribute the slot in the vehicle (user) in the parking area without becoming rigid for vehicle parking. At last, this paper explains and also shows a general description of the intelligent system. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1060",
+    "title": "Shop GO : An IoT based solution for smart shopping",
+    "journal": "2020 International Conference on Computer Science, Engineering and Applications, ICCSEA 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCSEA49143.2020.9132889",
+    "abstract": "Supermarkets and shopping complexes contain a variety of products at the same place to help customers find their items easily without traveling to different places and get their items in one place. But due to long queues at bill payment and checking place the customers get frustrated. Shop Go is a smart shopping solution which could help customer solve these problems using IoT. In this paper, a smart shopping solution has been implemented using IoT to solve few problems of customers to save their time. Firstly, all the shopping carts are affixed with an RFID scanner and every product would be having an RFID tag attached to it. The microcontroller used for this whole system is Particle Photon. The second part of the system is a native mobile application which would be featuring a user interface where the customers could see what the products were brought and this is implemented using firebase as a back end. The payments for their products could be on the go using Razor pay payment gateway and also a Chatbot has been implemented using DialogFlow which would help to keep track of the items are likely to be brought, tell about the discounts available in-store and also gives information about where the items could be found in the supermarket. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1061",
+    "title": "Analytical study on use of AI techniques in tourism sector for smarter customer experience management",
+    "journal": "2020 International Conference on Computer Science, Engineering and Applications, ICCSEA 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCSEA49143.2020.9132925",
+    "abstract": "Artificial Intelligence is the new prime factor for paradigm shift of the new age technologies. It has created a new realm in every field- from education to entertainment or from biotechnology to manufacturing industry. Though tourism is a late runner in this race, but this sector has also witnessed a huge change with the magical touch of AI. This sector being one of the highly emerging sectors, contributing very high GDP , has adapted several machine learning techniques or data analytics, which has made tourism model smarter and dynamic. In India , tourism has an ample scope to grow and Indian tourism sectors are also adapting several popular AI techniques like deep learning, Artificial neural network, predictive analytics, robotics or new technologies like virtual reality or augmented reality. This technological adaptation has made their services much better, heled in dynamic pricing, or for smart customer experience management. This paper has conducted a study on Indian tourism sectors providing online services and discusses about the current AI technologies used by them while exploring the pros and cons faced by them. The paper is alienated in three different segments- section 1 contains introduction part, section 2 discusses about related works in similar area, third section deliberates about different AI techniques adapted by Indian tourism sectors along with their pro and cons. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1062",
+    "title": "Analysis and Implementation of Odia Part of Speech Tagger in recent IoT based devices through Chatbot: A review",
+    "journal": "2020 International Conference on Computer Science, Engineering and Applications, ICCSEA 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCSEA49143.2020.9132940",
+    "abstract": "Part of speech tagging (POST) is a challenging and advance research work as well as a sub task of Natural Language Processing (NLP) which is the most essential and useful part in various task of NLP. Now a day's research in Internet of Things (IoT) with Natural Language Processing is growing rapidly for the dedication of the society in terms of artificial intelligence and helping people to handle their hardware equipment very smoothly. This paper shows the every meaning of full text how it works in IoT based devices in terms of Chatbot with one of the functionality of Part of Speech Tagging. To simulate the text conversation by Chatbot with human users is an active process over the internet. Here text processing is deeply emphasized in terms of understanding point of view by the IoT based smart devices which are connected through internet and sensor. The role of POST is here the most important part which is helpful in text processing to support human users to simulate IoT based devices like fridge, fan and some electronics equipment. The functionality of Chatbot receives a text from the human being with the help of any natural language and process (translate the feelings of the inputted text) it, after that it understanding in a proper manner, then starts taking action and hit the target accordingly but all devices should be connected through either local area network or wide area network. Both training and test corpus is required for tagging to simulate Chatbot programming to communicate with IoT devices. Large number of tagged corpus gives more accuracy while testing the system once it is trained. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1063",
+    "title": "An Automated Intrusion Detection System with Audio Alert using Passive Infrared Sensor",
+    "journal": "2022 International Conference on Data Analytics for Business and Industry, ICDABI 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDABI56818.2022.10041542",
+    "abstract": "Security is a prime concern of any individual all over the world. Home Intrusion is one of the main threats in any part of the world. Although there are mechanisms to prevent intrusions in an area using surveillance cameras and personal security systems, there arises the necessity of attention of an individual person throughout the surveillance time. This process is comparatively time-consuming and man power requirement is high in case of very large surveillance area like a factory, production area, farm field etc. So, we propose an automated solution to the above said problem using the concept of Internet of Things (IoT). Here, we deploy an intelligent system with an inbuilt speaker and sensors to monitor the given area. The various sensors and actuators are integrated with a central coordinator Arduino. The system will continuously monitor the area. The sensor input will be high, when an intruder is detected in the area and the speaker will automatically alert that area and an email alert is initiated. Thus, the user can take necessary actions to prevent that area from intruders. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1064",
+    "title": "Analyzing the Application of Artificial Intelligence for E-Commerce Customer Engagement",
+    "journal": "2022 International Conference on Data Analytics for Business and Industry, ICDABI 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDABI56818.2022.10041655",
+    "abstract": "The new era of enterprise business disruption has been significantly influenced by the technological revolution driven by the expanding use of artificial intelligence. Consumers' growing desire for comfort and safety has led to drastic shifts in the consumption patterns for retail due to the widespread use of digital and mobile technologies, especially after the Covid-19 pandemic. Hence, the popularity of e-commerce is expected to considerably grow. Through this study, the authors attempt to identify the various factors of artificial intelligence that affect customer engagement in the Indian e-commerce sector. The authors also propose a CAPE model (Captivating Consumers by Using Chatbots for Interaction, Augmented AI Advertising, Personalized Content and Offerings, Engaging Consumers based on AI Data Insights) indicating the strategies that Indian e-commerce businesses and marketers may adopt for enhancing the levels of customer engagement in a post-pandemic scenario. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1065",
+    "title": "Privacy Preserving Machine Learning Model Personalization through Federated Personalized Learning",
+    "journal": "2023 4th International Conference on Data Analytics for Business and Industry, ICDABI 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDABI60145.2023.10629638",
+    "abstract": "The widespread adoption of Artificial Intelligence (AI) has been driven by significant advances in intelligent system research. However, this progress has raised concerns about data privacy, leading to a growing awareness of the need for privacy-preserving AI. In response, there has been a seismic shift in interest towards the leading paradigm for training Machine Learning (ML) models on decentralized data silos while maintaining data privacy, Federated Learning (FL). This research paper presents a comprehensive performance analysis of a cutting-edge approach to personalize ML model while preserving privacy achieved through Privacy Preserving Machine Learning with the innovative framework of Federated Personalized Learning (PPMLFPL). Regarding the increasing concerns about data privacy, this study evaluates the effectiveness of PPMLFPL addressing the critical balance between personalized model refinement and maintaining the confidentiality of individual user data. According to our analysis, Adaptive Personalized Cross-Silo Federated Learning with Differential Privacy (APPLE+DP) offering efficient execution whereas overall, the use of the Adaptive Personalized Cross-Silo Federated Learning with Homomorphic Encryption (APPLE+HE) algorithm for privacy-preserving machine learning tasks in federated personalized learning settings is strongly suggested. The results offer valuable insights creating it a promising scope for future advancements in the field of privacy-conscious data-driven technologies. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1066",
+    "title": "Intelligent Chatbot for Hospital Recommendation System",
+    "journal": "2024 2nd International Conference on Disruptive Technologies, ICDT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT61202.2024.10488954",
+    "abstract": "The main objective of this project is to create a user-friendly intelligent chatbot for Medical guidance and support. This application has been classified into two different modes based on user preference, those are Online and Offline modes of interaction. In the Online mode of interaction, there is no need for any automation, there will be a real person at the other end answering user queries. Users can even ask for untrained data and will receive instant replies. This application is similar to a normal chat application, but the main disadvantage is that a real person is needed at the other end at all times. In the Offline mode of conversation which is entirely automated the user will be performing an interaction with the chatbot itself. The chatbot must consist of data sets and trained data collection, in this process there is no need for any real person, the chatbot itself will reply instantly based on the trained data. The chatbot will be more accurate when a large number of data is trained. This application is compatible with working in various browsers and varied networks. The Admin of the application plays a significant role. Admin can access all the given functions and is responsible for data training. Data training plays a vital role in this application, the trained data will be used by the chatbot while answering user queries i.e. Offline mode. This chatbot application can be accessed by several users at the same time, where IP address plays the main role. The main function of this application is that user can post their corresponding queries and the application will be providing relevant information based on queries. The Latest Modern chatbots are used in applications where simple interaction is needed, for example, service and marketing technology to provide answers such as products, services, and consultancy. If the customer's queries don't match with the trained data sets, the customer will be escalated to manual interaction i.e. Online mode. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1067",
+    "title": "Depression Detection Using Multimodal Analysis with Chatbot Support",
+    "journal": "2024 2nd International Conference on Disruptive Technologies, ICDT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT61202.2024.10489080",
+    "abstract": "Depression, a widespread psychiatric disorder affecting people globally, spans all age groups, predominantly impacting adults. This bipolar disorder characterized by symptoms including pessimism, hopelessness, anhedonia, and sadness, significantly influences lives, contributing to depression. Our paper proposes a multi-model approach for depression detection, utilizing facial expression analysis, audio evaluation, and user text input through deep learning algorithms, alongside an intelligent chatbot for personalized support. This hybrid model integrates facial expressions, audio features, and textual input for a comprehensive approach to depression detection. The methodology includes four key objectives: a CNN model for real-time or pre-recorded video facial expression analysis, audio evaluation using an NLP algorithm to transcribe users' voices, text-based analysis uncovering linguistic patterns and emotional context, and Multimodal Fusion integrating outputs for a unified multimodal approach. The intelligent chatbot encourages users to share emotions openly, enhancing the system's accuracy in identifying individuals at risk of depression. Results demonstrate the fusion's contribution to early depression detection, enabling timely interventions and improving accuracy, efficiency, and overall performance. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1068",
+    "title": "A User Preference-Based Food Recommender System using Artificial Intelligence",
+    "journal": "2024 2nd International Conference on Disruptive Technologies, ICDT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT61202.2024.10489453",
+    "abstract": "The World Health Organization has identified the growing prevalence of non-communicable diseases, including premature cardiac diseases, cancer and diabetes, as a significant concern. A significant public health issue, unhealthy eating habits have a significant impact on an individual's overall health. The development of systems that are able to suggest nutritious recipes that can effectively influence eating behavior is one potential approach to resolving this problem. This would make it easier for people to change their eating habits. This paper presents an extensive layout of the general structure of our feast idea framework. The cycle begins with the list of relatives, which is accordingly trailed by the assortment of individual food inclinations and variables relating to the season. One eminent trademark includes the joining of a remote helper into sound/show gadgets through the Web of Things, which further develops client situated menu suggestions and advance a feasting experience that is not difficult to explore and charming for the user. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1069",
+    "title": "PlantCare: Community-Driven Agri-Aid",
+    "journal": "2024 2nd International Conference on Disruptive Technologies, ICDT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT61202.2024.10489523",
+    "abstract": "Agriculture servers as a fundamental pillar of the nation's economy, safeguarding the health and productivity of crops is paramount. India's vast agricultural landscape depends on the well-being of crucial crops like tomatoes, bell peppers, potatoes, wheat, rice, and sugarcane. However, the looming threat of diseases poses a significant risk to crop destruction. The 'PlantCare: Community-Driven Agri-Aid' initiative is taken to address the problem of a comprehensive platform for plant care and disease diagnosis, focusing on six critical crops. With a dataset comprising 8,000 samples and 27 distinct disease categories, our goal is to empower farmers and agricultural enthusiasts with the tools and knowledge needed to protect their crops. The project includes functionalities such as plant identification, disease diagnosis using a CNN algorithm, disease classification through KNN, and crop advisory services. The Amity Social SDK facilitates a community forum that promotes knowledge sharing, and a chat-bot assistance feature, utilizing the Microsoft Bot API. Plant health assessment involves evaluating leaf texture, color, and disease presence, with scores normalized using min-max scaling and weighted accordingly. The platform delivers an intuitive plant care experience, allowing users to identify plants, detect diseases, and receive timely crop care alerts through push notifications. The community-driven approach promotes collaborative learning, and the health scoring system enables informed decisions about plants. Integrating technology with agricultural knowledge, PlantCare is a holistic solution for Indian farmers, representing a significant stride towards sustainable agriculture. This project equips farmers with tools to ensure crop well-being, revolutionizing their interaction with plants. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1070",
+    "title": "Conversational Ai: A Treatise About Vying Chatbots",
+    "journal": "2024 2nd International Conference on Disruptive Technologies, ICDT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT61202.2024.10489545",
+    "abstract": "With so many chatbot alternatives available today, users sometimes struggle to choose the best one for their sector. This research paper offers a comprehensive comparison of various chatbots including Microsoft Copilot, ChatGPT, GPT-4, BlenderBot-3, and Gemini to aid users in selecting the most suitable option for their respective sectors like for educational purposes. By helping consumers comprehend the capabilities of chatbots and enabling well-informed decision-making during chatbot installation, the research seeks to offer insightful information about the state of chatbot technology today. In order to give a thorough evaluation of chatbot efficacy, the study also explores important factors including emotional presentation, management of objectionable information, and flexibility to human input. Key features like discussion applicability, cost-effectiveness, accessibility, quality of training data, answer relevance, bias control and emotional expression were rigorously examined through a comprehensive review procedure that involved specific inquiries directed to different chatbots. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1071",
+    "title": "Revolutionizing Business Intelligence: Harnessing AI and Machine Learning for Strategic Insights and Competitive Advantage",
+    "journal": "2024 2nd International Conference on Disruptive Technologies, ICDT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT61202.2024.10489687",
+    "abstract": "Optimizing Performance Management through Data Analytics and Artificial Intelligence in the Manufacturing Sector. There have been a lot of new breakthroughs and opportunities made possible as a result of the increased usage of machine learning and artificial intelligence in business intelligence. Because of these cutting-edge technological advancements, businesses are now able to perform data analysis, gain new insights, and make decisions that are superior to those made in the past. It important to note that predictive analytics are becoming increasingly popular. Using algorithms designed for machine learning, businesses are able to sort through mountains of data in order to make predictions about the future that are based on accurate information. Because of this, organisations have the opportunity to increase their efficiency, decrease risk, and anticipate the needs of their customers. With the help of business intelligence, companies are able to optimise their operations, find new chances for growth, and make decisions that are driven entirely by data, all of which have a direct influence on the bottom line of the firm. Another trend that is picking up steam is the employment of chatbots and digital assistants that are driven by Radial Basis Function (RBF). The possibilities that machine learning and artificial intelligence present in terms of business intelligence are extremely extensive. Automated data analysis, anomaly detection, demand forecasting, and dynamic pricing are examples of the types of technologies that assist businesses in streamlining processes, lowering expenses, and locating untapped sources of revenue. To summarise, there have been some fascinating new breakthroughs, as well as countless opportunities, in the area of using AI and machine learning to business intelligence. Businesses have the potential to acquire a competitive advantage, produce innovation, and unlock new levels of success in the digital world if they adopt these technologies and use them. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1072",
+    "title": "Emotion Recognition Using a Hybrid Model of Transformer and CNN-LSTM for Improved Performance",
+    "journal": "ICDT 2025 - 3rd International Conference on Disruptive Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT63985.2025.10986535",
+    "abstract": "Emotion recognition is a crucial aspect of AI technology that fills in the gap of human-machine interaction, allowing systems to react to human emotions effectively. The traditional models often struggle with precision and robustness when it comes to noisy data along with the complexity of analyzing human emotions. This paper proposes a hybrid model architecture by combining the Transformer model and CNN-LSTMs in order to maximize emotion recognition. The Transformer module captures input data's long-range dependencies, whereas the CNN-LSTM architecture extracts spatial and temporal features from voice signals, with potential extension to multimodal inputs such as facial expressions and physiological data. This work shows the capability of advanced hybrid architecture in developing emotionally intelligent systems in healthcare, education, customer service, and other applications. The findings pave the way for future work on multimodal data integration and generalization in complicated environments. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1073",
+    "title": "Bi-Lingual Audio Detection for Sentiment Analysis",
+    "journal": "ICDT 2025 - 3rd International Conference on Disruptive Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT63985.2025.10986620",
+    "abstract": "This study proposes a hybrid deep learning framework in the field of sentiment analysis of bilingual (Hindi-English) audio recordings, acknowledging the problems caused by code-switching in mixed language conversation. This model based on Bi Directional Long short-term memory (BiLSTM) and long short-term memory (LSTM) networks captures temporal and contextual patterns for the classification of emotions, such as happiness, fear, sadness, and neutrality. Results demonstrate the capability of the model to capture emotional nuances in code-switched audio; these abilities may enable further applications in multilingual environments, including virtual assistants and automated customer support systems. The research establishes a fundamental platform for addressing code-switching problems in audio sentiment analysis. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1074",
+    "title": "Dynamic Resource Allocation Strategies for Cloud Computing: A User-Centric Approach Using AI",
+    "journal": "ICDT 2025 - 3rd International Conference on Disruptive Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT63985.2025.10986665",
+    "abstract": "Cloud computing has simplified resource accessibility to most organizations and private individuals. It is flexible, scalable, and economical, but managing those resources can be a challenge, especially in the face of changing user demands. This study proposes a smart system that enables machine-learning algorithms in predicting and managing resources such as CPU, memory, and cost. The system, after analyzing past data files and understanding user needs, predicts workloads with an approach to resources adapted automatically. Doing so does allow resources to be managed more efficiently, thereby saving both costs and time. The system was put to test on real data files and showed clearer performance with less waiting time and cost-saving efforts while keeping the users satisfied. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1075",
+    "title": "Leo: Personal Desktop Assistant Using Python",
+    "journal": "ICDT 2025 - 3rd International Conference on Disruptive Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT63985.2025.10986691",
+    "abstract": "Personal assistants or the desktop assistant have proven to be very useful in daily life as they made our work easier. If the user wants to perform some action without using their hands, they can just call out the assistant to do so by speaking which would then be converted into speech via python speech recognition module. The assistant can perform the tasks for which it was designed so like they can help you message someone in WhatsApp or play some YouTube video. If you want to take the screenshot of any page you can give command to the assistant to do it, and the assistant will work accordingly. These used to work on deep learning. They are getting advanced day by day by learning like the humans through machine learning and in future it would turn out to respond to as like the humans will respond. Alternatively, they may say, 'Tell me latest news,' and the assistant would tell it, or 'Play my favourite songs,' and the music would begin playing. Despite their easiness, many people overlook the complexities of their operation. Virtual assistants are driven by AI, which allows them to understand natural language, whether spoken or written, and perform tasks according to it. In this project, we are using Python to construct a voice assistant. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1076",
+    "title": "On-Device Financial Data Management Using ML and NLP: A Privacy-Focused Approach",
+    "journal": "ICDT 2025 - 3rd International Conference on Disruptive Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT63985.2025.10986714",
+    "abstract": "Personal finance management has become more difficult due to the exponential rise of digital financial services, with SMS-based notifications being a crucial channel for transaction updates. However, the unstructured nature of SMS data poses challenges for users in organizing financial information effectively. This paper introduces a novel, privacy-preserving on-device financial data management system that makes use of Natural Language Processing (NLP) and Machine Learning (ML). The proposed solution incorporates three core functionalities: SMS transaction classification, data extraction, and data categorization, complemented by a chatbot interface for user interaction. A Random Forest classifier achieves a remarkable 99.15% accuracy in transaction classification, while a Bi-LSTM-CRF model, combined with BERT embeddings, attains 99.61 % accuracy in extracting transaction details. Transactions are categorized into spending categories facilitating detailed expense analysis. Optimized for mobile deployment, the system ensures data privacy and efficiency. This work bridges a critical gap in personal finance management by enabling users to securely track, analyse, and gain insights into their financial behaviour, laying the groundwork for future enhancements like real-time alerts and predictive analytics. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1077",
+    "title": "Intelligent Bilingual Chatbot for Enhanced User Engagement on College Websites",
+    "journal": "ICDT 2025 - 3rd International Conference on Disruptive Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICDT63985.2025.10986747",
+    "abstract": "The paper introduces an intelligent, bilingual chatbot specifically designed for the educational college website to streamline user interactions and provide instant assistance. It addresses a variety of queries, including admissions, courses, campus facilities, and events, through an intuitive and engaging interface. By facilitating bilingual interaction through support for English and Telugu, the chatbot ensures inclusivity across diverse audiences. Leveraging advanced Natural Language Processing (NLP), the chatbot accurately interprets inquiries and delivers context-aware responses. Additionally, it integrates with the college's systems to provide current and reliable information. Built with scalability in mind, the system can handle multiple user interactions simultaneously without compromising performance. The chatbot reduces response times and enhances accessibility by providing personalized, bilingual text and audio support tailored to individual needs. This initiative enhances the efficiency and engagement of the college website, making it a valuable tool for students, parents, faculty, and visitors. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1078",
+    "title": "Real-Time Monitoring of Road Traffic Using Data Stream Mining",
+    "journal": "2018 IEEE International Conference on Engineering, Technology and Innovation, ICE/ITMC 2018 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICE.2018.8436271",
+    "abstract": "The development of applications for advanced Intelligent Transportation Systems (ITS), is a growing research area, pushed especially by the need to mitigate problems related to transportation inefficiency, overuse and pollution, mainly caused by the increasing of traffic congestions in big cities. Nowadays, traffic related data coming from the road infrastructure, user's cars or mobile phones, is generated in unprecedent volume and speed. Therefore, ITS face new challenges, with respect to growing demand to process large volumes of traffic data in real-time, and extract value that can be immediately used for decision making. The work presented here, proposes a scalable architecture supported by Big Data technologies, capable of processing real-time traffic data captured from 349 inductive loop counters, placed in Slovenian road network. The main goal is to propose an approach which can be adopted by national road operators, capable of monitoring, in real-time, the current status of the road network. Traffic events need to be detected in real-time and require the collection of data from several fixed sensors. To deal with data volume and velocity challenges, a data stream management system was used, able to collect traffic data that arrives and process it on a continuous (24×7) basis. Results achieved, suggest that there's a great advantage in the adoption of a data stream management system, with respect to traditional database management systems, illustrated by practical examples, providing quantitative metrics about data processing performance. © 2018 IEEE."
+  },
+  {
+    "article_id": "CA_1079",
+    "title": "The Impact of Interactive technology by using Artificial Intelligence on the Formation of Social Interactions: A Study in Tourism Industry 4.0",
+    "journal": "2022 IEEE 28th International Conference on Engineering, Technology and Innovation, ICE/ITMC 2022 and 31st International Association for Management of Technology, IAMOT 2022 Joint Conference - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICE/ITMC-IAMOT55089.2022.10033162",
+    "abstract": "Artificial intelligence and interactive technology can be effective in shaping social interaction between people by identifying them as users, and consequently lead to a positive personalization in the industry. The purpose of this article is to investigate the impact of interactive and intelligent technologies to create personalization and to design a different collective experience in the tourism industry. The interactive technology in this research interacts with the user in the form of an intelligent system embedded in the body of a building. In this research, firstly, the formation of cognition and experience in humans has been investigated, as a means to effectively interact between computers and humans. Findings show that human perceptions are divided into linguistic and non-linguistic types, and sensory perceptions are part of these non-linguistic cognition. This positive emotional perception also has a positive effect on a person's mood and social interactions. By examining the moods and feelings of users through faces and analyzing them based on the intelligent building system, this study defines new methods for adapting the space to users' emotions and the impact of these changes on users' social interactions with each other. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1080",
+    "title": "Speech Assistance: Use Cases in Industry",
+    "journal": "2022 IEEE 28th International Conference on Engineering, Technology and Innovation, ICE/ITMC 2022 and 31st International Association for Management of Technology, IAMOT 2022 Joint Conference - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICE/ITMC-IAMOT55089.2022.10033166",
+    "abstract": "Over the past few years, there has been a boost in the use of commercial virtual assistants in the smart home and entertainment domain. Expectations have risen that this technology from consumer market will soon be adopted in industrial applications. However, the functionality they offer and the adaptability to a specific domain is limited. Companies are afraid to become 'vendor-locked', while data privacy issues remain unsolved. The described approach of the project SPEAKER opens a new path to industry adapted speech assistance that meets the needs for European data privacy regulations. First proof-of-concept implementations and a domain specific benchmarking of the automatic speech recognition component are introduced. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1081",
+    "title": "Artificial intelligence for futuristic banking",
+    "journal": "2021 IEEE International Conference on Engineering, Technology and Innovation, ICE/ITMC 2021 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICE/ITMC52061.2021.9570253",
+    "abstract": "Artificial Intelligence (AI) has become an essential resource for large banks that deal with regulatory changes, new Anti-Money Laundering (AML) obligations and vulnerable fraud-prone clients. Cybersecurity has thus become a hot topic due to security failures using traditional methods and concerns about how companies use the personal data collected from clients or their regular users. The most obvious apparent reason why cybersecurity is critical in banking sector transactions is to protect client assets with a high level of data privacy. The main approaches in the front office conventional banking such as AI chatbots, smart virtual assistants and biometric user authentication are discovered to answer security challenges and to enhance prosperity in the field. Concurrently, advanced AI applications in fraud detection, fraud risk monitoring, anti-money laundering techniques and cross-border payments handling are observed under the back-office operations. The paper reviews the conceptualizations of privacy concerns and the antecedents and consequences of using AI-power in the banking sector. Moreover, overlooked limitations of AI such as scarcity of quality data, a rise of hidden-bias in suggestions and obliviousness of lacking knowledge are discussed with several thriving solutions. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1082",
+    "title": "AI Applications in the Configuration and Calibration of Industrial Machines",
+    "journal": "Proceedings of the 30th ICE IEEE/ITMC Conference on Engineering, Technology, and Innovation: Digital Transformation on Engineering, Technology and Innovation, ICE 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICE/ITMC61926.2024.10794282",
+    "abstract": "The development and integration of Artificial Intelligence (AI) applications for Industrial Machines (IMs) has been increasing, transforming manual operational processes into semi- or fully automated ones. Time-consuming and specialized tasks can now be assisted by intelligent systems that support or replace machine operators, with the potential of improving efficiency and lowering costs. Establishing a standardized procedure for configuring and calibrating new IMs proves challenging due to the inherent divergences among manufacturers, client-specific requirements and adaptations, and the distinctive characteristics of various application fields. This paper presents an overview of the emerging applications of AI applications for 1M calibration and configuration processes, highlighting the transformative impact of AI on enhancing operational efficiency, reducing downtime, and improving overall performance in industrial settings compared to traditional approaches to machine setup and optimization. This work is being developed in the AIDEAS project, where it will be implemented in a pilot with Computer Numerical Control (CNC) IMs. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1083",
+    "title": "Intelligent Agent-Based Approach to Purchasing Negotiations in Manufacturing: A Conceptual Model",
+    "journal": "Proceedings of the 31st ICE IEEE/ITMC Conference on Engineering, Technology, and Innovation: AI-Driven Industrial Transformation: Digital Leadership in Technology, Engineering, Innovation and Entrepreneurship, ICE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICE/ITMC65658.2025.11106584",
+    "abstract": "This paper presents a conceptual model based on intelligent agents for purchasing negotiation in classical manufacturing strategies within the supply chain: Make to Stock (MTS), Assembly to Order (ATO), Make to Order (MTO) and Engineer to Order (ETO). In the proposed conceptual model, two key agents are considered: the Provider Agent (PA) and the Consumer Agent (CA), whose behaviours and capabilities vary according to the complexity of the manufacturing strategy in which they are involved. The agents adopt cooperative or competitive approaches, depending on the context of the negotiation in the purchasing process. In addition, the conceptual model has enabled the identification of various methods that improve the computational, analytical and negotiation capabilities of the agents involved in the purchasing process. The proposed conceptual model has the potential to guide the development of innovative tools that can significantly optimise the efficiency and flexibility of negotiations in the purchasing process within the manufacturing supply chain. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1084",
+    "title": "Enabling Interactive AI in Industry 5.0 with RAG-Enhanced GenAI Chatbots",
+    "journal": "Proceedings of the 31st ICE IEEE/ITMC Conference on Engineering, Technology, and Innovation: AI-Driven Industrial Transformation: Digital Leadership in Technology, Engineering, Innovation and Entrepreneurship, ICE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICE/ITMC65658.2025.11106634",
+    "abstract": "Industry 5.0 advances sustainable development through human-machine collaboration and personalised manufacturing. The increase in intelligent industrial equipment creates data scalability challenges for human workers who face difficulties in making decisions based on relevant data sources. Advanced interactive AI systems, capable of integrating diverse data sources and delivering real-time, context-aware insights, present promising solutions to the challenges of the industrial environment. This research introduces a retrieval-augmented generation (RAG)-enhanced Generative artificial intelligence (GenAI) chatbot to address these challenges. The system integrates a variety of information sources, including government reports, news websites, academic studies, and industry reports. This industry 5.0 chatbot aims to offer users extensive knowledge of the industrial sector through a Question-and-Answer interface. It provides relevant and accurate information through intuitive, context-aware interactions to reduce cognitive load for users, which improves decision-making efficiency and user experience. Through experimental evaluation, the RAG-enhanced GenAI chatbot significantly improves accuracy, relevance and user satisfaction, outperforming models like ChatGPT-4o. This system presents an innovative practical solution to tackle Industry 5.0 core issues particularly in enhancing human-machine collaboration and decision-making efficiency. This research contributes to the theoretical and practical development of RAG-enhanced AI systems, laying a foundation for future investigations of industrial AI interaction. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1085",
+    "title": "Knowledge Model to Manage Customer Satisfaction Based on Claims",
+    "journal": "Proceedings - 14th IEEE International Conference on E-Business Engineering, ICEBE 2017 - Including 13th Workshop on Service-Oriented Applications, Integration and Collaboration, SOAIC 207",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE.2017.38",
+    "abstract": "This article is designed and developed a model of knowledge for a customer relationship management strategy that controls and manages the satisfaction of customers by their claims and feedback conducted and run by the CommonKADS methodology. Emphasis is mainly focused on the vision of the strategy according to the knowledge and the importance of knowledge as an engine for the strategy and specific knowledge domain using schemas. This article identifies the reasoning to manage customers' satisfaction and is translated into rules of inferences. Subsequently, the model is deployed in the tool of visual technology known as Visirule rules. As a result, the driven type of knowledge that can be utilized for the further development of an intelligent system to administer customer satisfaction by their claims. © 2017 IEEE."
+  },
+  {
+    "article_id": "CA_1086",
+    "title": "A Survey on Chatbot Implementation in Customer Service Industry through Deep Neural Networks",
+    "journal": "Proceedings - 2018 IEEE 15th International Conference on e-Business Engineering, ICEBE 2018",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE.2018.00019",
+    "abstract": "Nowadays it is the era of intelligent machine. With the advancement of artificial intelligent, machine learning and deep learning, machines have started to impersonate as human. Conversational software agents activated by natural language processing is known as chatbot, are an excellent example of such machine. This paper presents a survey on existing chatbots and techniques applied into it. It discusses the similarities, differences and limitations of the existing chatbots. We compared 11 most popular chatbot application systems along with functionalities and technical specifications. Research showed that nearly 75% of customers have experienced poor customer service and generation of meaningful, long and informative responses remains a challenging task. In the past, methods for developing chatbots have relied on hand-written rules and templates. With the rise of deep learning these models were quickly replaced by end-to-end neural networks. More specifically, Deep Neural Networks is a powerful generative-based model to solve the conversational response generation problems. This paper conducted an in-depth survey of recent literature, examining over 70 publications related to chatbots published in the last 5 years. Based on literature review, this study made a comparison from selected papers according to method adopted. This paper also presented why current chatbot models fails to take into account when generating responses and how this affects the quality conversation. © 2018 IEEE."
+  },
+  {
+    "article_id": "CA_1087",
+    "title": "MsdoBot: An Extensible Chabot Platform for Microservice Development and Operations",
+    "journal": "Proceedings - 2022 IEEE International Conference on e-Business Engineering, ICEBE 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE55470.2022.00030",
+    "abstract": "The microservice architecture (MSA) is among the most popular systems in use today; however, development and operations are hindered by the variety of languages, platforms, and tools, as well as difficulties in collecting and organizing information scattered throughout complex DevOps environments. This study developed a chatbot system to facilitate the development and maintenance of MSAs under various usage scenarios dealing with single/multiple microservices, single/multiple tools, and atomic/composite functionality. The proposed MicroService Development and Operation Bot (MsdoBot) integrates numerous auxiliary tools to make available the information required for system development, as well as real-Time system status reports for monitoring and maintenance. Notably, MsdoBot preserves extensibility by making it easier for users to add new functionality and integrate existing tools simply by altering configuration files. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1088",
+    "title": "An Intelligent System for Semantic Information Extraction and Knowledge Graph Construction from Multi-Type Data Sources",
+    "journal": "Proceedings - 2022 IEEE International Conference on e-Business Engineering, ICEBE 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE55470.2022.00037",
+    "abstract": "Knowledge graph technology has been widely used in various fields and numerous platforms provides the knowledge-graph-based applications. Nevertheless, most of the applications require users to master expertise and programming ability. In this paper, a knowledge graph construction and application platform for general fields is completed in the web application form, which is user-friendly and interactive. Primarily, it can construct knowledge graphs of various fields automatically or semi-Automatically from multiple types of data sources, including structured and unstructured data. Additionally, it can store, manage and update multiple versions of knowledge graphs by graph database Neo4j, and visualize specific information about each node and relationship of the knowledge graph. Finally, the system establishes a semantic parsing-based knowledge base Question Answering(KBQA) system based on the user-built knowledge graph, assisting users to realize the graph-related applications based on their own data. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1089",
+    "title": "I am old too!: Understanding the Impact of Empathy and Voice Characteristics on Older Adults' Perception of Voice Assistants",
+    "journal": "Proceedings - 2022 IEEE International Conference on e-Business Engineering, ICEBE 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE55470.2022.00059",
+    "abstract": "Despite improvements in the universal usability of digital technologies and growing numbers of conversational agents (CAs), new technologies rarely reflect older adults' needs, perceptions, and interests. Following this urgent call, we aim to identify older adults' (ranging in age from 65 to 75) perceptions, needs and challenges when conversing with a smart speaker-based voice assistant (Google Home) about the Covid-19 pandemic during the first-Time user interaction. Based on CASA (Computers are Social Actors) Paradigm and Similarity Attraction Theory, our user-centered qualitative research showed that an emphatic voice assistant triggered older adults to disclose to a CA more than a human being and build a digital companionship with them. Going beyond the standard universal usability considerations, we revealed how their cultural biases, beliefs and ageing stereotypes affected their perception of the voice assistant. However, the similarity attraction effect is not activated in older adults since a voice assistant with an older voice was not perceived as close or similar to them and they perceived technology as a young tool to be adapted. Unexpectedly, the older is wiser stereotype has been deactivated in a technological context for older adults in Turkey. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1090",
+    "title": "Evaluation of Large Language Model Responses for 32 Diverse Personality Types Using the Best Worst Method (BWM)",
+    "journal": "Proceedings - 2024 IEEE International Conference on e-Business Engineering, ICEBE 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE62490.2024.00048",
+    "abstract": "Today, Chat Generative Pre-trained Transformer (GPT), a generative language model tool created by OpenAI in November 2022, has greatly impacted the AI field. Large language models (LLMs) effectively gather useful information from interaction with humans in diverse fields, including tutoring, translation, customer support, etc. Certainly, ChatGPT is a chatbot designed to be used in conversation to generate human-like responses, and it can answer all kinds of questions in different fields. This study aims to analyze the performance of LLMs by examining how they respond to different prompts based on individual preferences. We applied different personalities and car features to the prompts and employed the Best-Worst Method (BWM). In This approach, ChatGPT generated responses regarding which car features were considered best and worst based on the 32 different personality types. We evaluated the LLM's responses and examined its performance by categorizing all ChatGPT outputs. We categorize them based on each feature chosen and by which type of 32 personality is the best or least feature. This approach enables us to observe how various personalities of humans influence the responses generated by the language models. It will also show us how ChatGPT's decision-making process makes sense to experts in the field of psychology. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1091",
+    "title": "A User-Centered System for Reliable Cross-Border Trade Fraud Detection",
+    "journal": "Proceedings - 2025 IEEE International Conference on e-Business Engineering, ICEBE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE68123.2025.00035",
+    "abstract": "In the domain of cross-border trade, the adoption of AI models for detecting sophisticated procurement fraud is hindered by their 'black-box' nature, which results in decision explanations that lack sufficient reliability and comprehensibility for business and regulatory personnel. To address this challenge, this paper proposes a reliable explanation framework. By integrating a gradient-driven attribution method into a deep learning-CBR model that processes numerical transaction features, we establish a transparent 'feature → prototype → classification' decision path, with explanations derived directly from the model's own gradients to ensure high fidelity. Based on this method, we have developed a complete interactive detection system. It features a multi-level visualization interface and a conversational 'Regulatory AI Agent' to intuitively present complex analytical insights to non-technical stakeholders. Furthermore, we have designed several key technical indicators and have conducted and discussed experiments based on them. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1092",
+    "title": "Advancing Prediabetes Care with Personalised Conversational Agents",
+    "journal": "Proceedings - 2025 IEEE International Conference on e-Business Engineering, ICEBE 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEBE68123.2025.00050",
+    "abstract": "Type 2 diabetes (T2D) ranks among the leading chronic conditions globally, with 90 % of cases attributable to excess weight and sedentary lifestyles. Given the urgent need for cost-effective interventions that promote physical activity and diabetes awareness, this study introduces a chatbot prototype aimed at mitigating the growing prevalence of T2D by focusing on the physical activity dimension. Incorporating semi-structured interviews from Sydney and Jeddah, the study performed thematic analysis to garner insights into the participants' impressions, the chatbot's functionality, and potential improvements. Findings highlight the critical role of user-friendly design and personalised, interactive content in promoting health education through a mobile application. This research contributes by presenting actionable recommendations for chatbot development in healthcare to foster better health outcomes amidst rising T2D challenges. Offering personalised and context-aware interactions can uniquely enhance physical activity engagement in T2D management and showcase a novel approach to Human-Computer Interaction (HCI) for health promotion. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1093",
+    "title": "HIVA: Holographic Intellectual Voice Assistant",
+    "journal": "Proceedings - 2023 17th International Conference on Electronics Computer and Computation, ICECCO 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICECCO58239.2023.10146600",
+    "abstract": "Holographic Intellectual Voice Assistant (HIVA) aims to facilitate human computer interaction using audiovisual effects and 3D avatar. HIVA provides complete information about the university, including requests of various nature: admission, study issues, fees, departments, university structure and history, canteen, human resources, library, student life and events, information about the country and the city, etc. There are other ways for receiving the data listed above: the university's official website and other supporting apps, HEI (Higher Education Institution) official social media, directly asking the HEI staff, and other channels. However, HIVA provides the unique experience of 'face-to-face' interaction with an animated 3D mascot, helping to get a sense of 'real-life' communication. The system includes many sub-modules and connects a family of applications such as mobile applications, Telegram chatbot, suggestion categorization, and entertainment services. The Voice assistant uses Russian language NLP models and tools, which are pipelined for the best user experience. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1094",
+    "title": "Rain Sheltering Car Parking Station with Illumination using IoT",
+    "journal": "10th International Conference on Electrical Energy Systems, ICEES 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEES61253.2024.10776936",
+    "abstract": "Rain detection in parking lots is a crucial task for various reasons. Using the Internet of Things, concurrent operations like lighting and sheltering are proposed for experimentation in this work. The system utilizes an LM393 rain sensor and Arduino Uno to automate the shelter mechanism and illumination. Experimental results demonstrate that the system effectively detects rain and operates the shelter within two seconds of detection, ensuring timely protection. The integration of LED lighting significantly improves visibility during rain. This dual-function system offers a practical solution for keeping parking lots dry and well-lit, enhancing user safety and convenience. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1095",
+    "title": "Design and Implementation of an IoT-Enabled Smart Battery Charging and Monitoring System",
+    "journal": "International Conference on Electrical Energy Systems, ICEES",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICEES67011.2025.11213092",
+    "abstract": "This paper presents the design and implementation of an IoT-enabled Smart Charger Monitoring System for real-time, intelligent battery management in energy-critical applications such as renewable energy systems and electric vehicles. The system utilizes the ESP8266 (NodeMCU) microcontroller to monitor key battery parameters - including voltage, current, and temperature - for the estimation of State of Charge (SoC) and State of Health (SoH). By integrating IoT technologies, the collected data is transmitted to a cloud-based platform, enabling users to remotely monitor battery performance through a responsive web interface. The system supports both single and multibattery configurations, ensuring optimized charging cycles, improved safety, and reduced maintenance overhead. Its modular, low-cost architecture enhances scalability and promotes sustainable practices, contributing to energy efficiency and environmental goals by minimizing energy waste and supporting green technology initiatives. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1096",
+    "title": "Enhancing Cancer Information Access with a Retrieval-Augmented Generation Chatbot",
+    "journal": "Proceedings - 2025 11th International Conference on Education and Technology: Personalized AI for Digital Well-being: Bridging Technology and Humanity, ICET 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICET67257.2025.11290733",
+    "abstract": "Cancer is one of the leading causes of death worldwide, with millions of new cases and deaths reported each year. As cancer-related research and guidelines progress at a fast pace, both patients and healthcare professionals face difficulties in accessing trustworthy and up-to-date information. Retrieval-Augmented Generation (RAG) architecture is introduced using the LangChain framework to solve this problem by combining generative capabilities of LLM and vector-based retrieval. The knowledge used in this chatbot consists of cancer-related articles from NIH and hundreds of research abstracts related to cancer from PubMed. Users can ask the chatbot about cancer-related questions, such as symptoms, diagnosis, and treatment. The chatbot generates responses using the retrieved information from the vector database and provides the retrieved sources. RAGAS framework and 50 questions from the MedQuAD dataset are used to evaluate the chatbot's performance in faithfulness, context precision, answer relevancy, and context recall. The retrieval showed robust performance, but the generation component still struggles. This can be further improved by using pre-trained LLMs and better prompting techniques. Future work will focus on developing better knowledge base and better chunking strategies. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1097",
+    "title": "Cognitive Assistance for Dementia Patients",
+    "journal": "2024 ASU International Conference in Emerging Technologies for Sustainability and Intelligent Systems, ICETSIS 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICETSIS61505.2024.10459484",
+    "abstract": "This paper addresses the growing global health concern of dementia through the introduction of an innovative Cognitive Assistance System to locate personal items. Our proposed system utilizes smart spectacles equipped with a camera, driven by an ESP 32 CAM to capture the user's field of vision and Live stream. This Real-time video feed is processed using YOLO v8 for object detection, and the extracted labels data is stored in a MongoDB database. This data is then used to find the objects and recognize the location of the objects, using a list of object labels seen at that time. The proposed methodology involves continuous video streaming, object detection, and scene recognition. Notably, a Random Forest Classifier, trained on a custom dataset, attains an average accuracy of 91 % in recognizing indoor scenes based on label data. A DialogFlow-integrated chatbot on Telegram assists users in locating personal belongings and retrieves details on the scene detected and time of objects. Hardware development focuses on creating compact, comfortable, and lightweight spectacles tailored for regular use. Results showcase the effectiveness of the Random Forest Classifier and YOLO v8 in scene detection and object recognition. The seamless integration of the chatbot with Telegram enhances user accessibility, representing a significant advancement in providing practical support for dementia patients and addressing challenges for caregivers. Future work involves integrating voice assistants, refining accuracy, and expanding capabilities for indoor navigation, aiming to extend the solution's reach and enhance the lives of those affected by cognitive decline. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1098",
+    "title": "The Contribution of Chatbot to Enhanced Customer Satisfaction: A Systematic Review",
+    "journal": "2024 ASU International Conference in Emerging Technologies for Sustainability and Intelligent Systems, ICETSIS 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICETSIS61505.2024.10459497",
+    "abstract": "Artificial intelligence (AI) has grown in business by deploying machine learning algorithms. One of the AI technologies is a chatbot that reacts like a human and allows interaction with humans in a natural language. They offer different opportunities to enhance customer services and boost customer satisfaction. This research aims to delve into the role of chatbots in increasing customer satisfaction and improving customer services. A systematic literature review was conducted of 10 papers, extracted, and examined to identify the impact of chatbots on customer satisfaction and services. Based on the review, the study discovered that the use of chatbots has increased over the COVID-19 period (2020-2022) due to the need for social media, which positively impacts customer satisfaction by offering improved high-quality services. The present literature review has found a significant research gap regarding the impact of chatbots on customer satisfaction. Specifically, although many studies are available on chatbots, only a few studies have been conducted to focus on a specific sector. Furthermore, there is a need for more research because there is a lack of information regarding the impact of chatbot emotional expressions on customer satisfaction. Therefore, to gain a deeper understanding of this emerging subject and the impact of chatbots on customer satisfaction, future research must concentrate on analyzing these elements in greater detail. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1099",
+    "title": "Towards a Metamodel for Proactive Chatbots",
+    "journal": "2024 ASU International Conference in Emerging Technologies for Sustainability and Intelligent Systems, ICETSIS 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICETSIS61505.2024.10459517",
+    "abstract": "Recently, increasing popularity has been gained by chatbots in various activity fields as they can automate customer service and reduce the effort of humans. However, the effectiveness of chatbots is still not satisfactory because some drawbacks are associated with these applications, such as NLP service lock-in and high costs linked to their implementation platforms. Therefore, one of the possible solutions to solve this issue in chatbot development is the development of a domain-specific language (DSL), which is defined through three main components: abstract syntax, concrete syntax, and semantics. In this paper, the proactive behavior within chatbots is pre-sented, and the proactive mechanisms offered by some chatbot development tools are discovered. Thus, a new metamodel for proactive assistance based on the Rasa framework is proposed. The proposed metamodel integrates all the components (concepts, classes, attributes, and relationships) that facilitate the building of DSL for chatbots. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1100",
+    "title": "E-Commerce Assistance with a Smart Chatbot using Artificial Intelligence",
+    "journal": "Proceedings of 2021 2nd International Conference on Intelligent Engineering and Management, ICIEM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIEM51511.2021.9445316",
+    "abstract": "In this present research we use design science analysis to express chatbot design awareness in higher education. For previous research into the design process, we carried out a literature review. Furthermore, we studied the content of student emails and forum articles from four instances of a fundamental Java programming course. We introduce a conceptual architecture for chatbots in higher education from literature and evidence and show how this is applied. We conclude with a debate with tentative design recommendations and a plan for further research. Chatbot rules-based program performs prefixed acts based on playbooks that you have setup at the back of the user interface. Just like a virtual assistant, chat-based rules-based technologies can function on the basis of click acts, such as Yes against No.Website and social networking outlets have become more and more popular places for people to voice their opinions on different issues, in particular their frustrations with brands and corporations. © 2021 IEEE."
+  }
+]

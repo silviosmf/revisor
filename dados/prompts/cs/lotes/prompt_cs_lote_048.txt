@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_2351",
+    "title": "The past, the present and the future of online road vehicle diagnosis from car and scan tool communication perspective",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE230419",
+    "abstract": "In the luxury vehicle class, online internet connection has become a standard feature in the recent years. This process is likely to spread completely in all vehicle categories in the coming years. In the past, computer supported vehicle diagnostics started with On-Board Diagnostic (OBD) I standard in the late 1960's. This has been followed by OBD II in 1996, which allows a fully standardization regardless of vehicle manufacturer and models, based on a generic scan tool. Even its communication with the vehicle electronic architecture has been developed rapidly followed by the new technologies. This way of car analysis has been extended also for non-emission related functions. Online data collecting and analysis provides not only solutions in the car production and service but in its development process too. For example, it can help you to set realistic thresholds by defining an OBD strategy for many in-car systems and functions to avoid customer complaints, warranty costs and recalls afterwards. From predictive maintenance / repair perspective it is possible to monitor material properties, vibrations, damages potentials also in processes e.g. welding and soldering. The dynamic development of telecommunication and automotive technologies hand in hand will provide completely new ways for 'car to diagnostics back end' communication in the future without using a scan tool device and its physical in-vehicle interface. © 2023 The Authors."
+  },
+  {
+    "article_id": "CS_2352",
+    "title": "A New Customer Complaint Handling Process Redesign for Five-Axis Machinery Solution Sales and Delivery in Aviation Manufacturing Industry",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE230627",
+    "abstract": "Organizations face a significant challenge globally as a result of environments marked by sharp shifts in customer requirements and expectations. Happy and delighted customers are assets for any company, company's customer compliant (CC) system playes an important role in retention and satisfaction of the customer. Obviously, a better understanding of customers' expectations and their outlooks towards high-quality products and services, competitor behaviors, widespread information technology, and smart applications is an important research issue. For this reason, this paper proposes a methodology aiming to handel Customer complait based on Customer complaint handling (CCH) system and a case study of business redesign is demonstrated, This research paper employed participant observation and business process redesign method to inform the design of an effective customer complaint handling system for APEC company. The researcher gained valuable insight into the dynamics, challenges, and underlying factors that influence complaint resolution through active absorption in the complaint handling environment. The findings from this approach were used to design a new customer-centric process that addressed identified obstacles and aligned with the specific requirements of the case company. © 2023 The Authors."
+  },
+  {
+    "article_id": "CS_2353",
+    "title": "Climate Change-Induced Challenges of Civil Engineering Infrastructures: A Critical Role of OpenAI",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE251239",
+    "abstract": "Climate change poses a significant threat to civil engineering infrastructure (CEI) due to unprecedented precipitation, floods, hydrological changes, heatwaves, sea-level rise, and excessive erosion. Climate-induced events make CEI vulnerable by increasing the risk to human safety, service failures, and disruption. Therefore, in this paper, a comprehensive approach to the advancement of artificial intelligence (AI), especially OpenAI, with an advanced capability of problem-solving nature, makes it easier to capture a realistic pattern of the climate-induced capability of the infrastructure. For precise and accurate prediction of the various climate-induced phenomena such as flood, drought, and sedimentation problems, OpenAI is an adaptive and user-friendly tool that can deal with large-scale data and has the ability of decision-support systems. Such application of OpenAI makes it a powerful approach that helps researchers, engineers, and policymakers for precise prediction of climate-induced events, sustainable resources, and resource utilization. Besides the significant contribution, OpenAI has major issues like (a) ethical considerations, (b) model interpretability, and (c) data availability. Therefore, future research should integrate advanced explainable AI models and multi-disciplinary task-based approaches. The integration of OpenAI into CEI will help in making it climate-resilient, adaptive, and smarter with the increasing risk of climate change. © 2025 The Authors."
+  },
+  {
+    "article_id": "CS_2354",
+    "title": "The effect of reliability and empathy on customer satisfaction: A survey of PT Telkom Indonesia's IndiHome customers",
+    "journal": "Human Systems Management",
+    "journal_impact_factor": 2.045,
+    "doi": "10.3233/HSM-230003",
+    "abstract": "BACKGROUND: Many customers often complain about Indihome facilities, causing dissatisfaction with the service of Indihome products at PT. Telkom. OBJECTIVE: This study examines physical evidence, reliability, responsiveness, assurance, and empathy on customer satisfaction at PT. Telkom. METHODS: This study uses quantitative research with a population of all Indihome customers who make complaints or make payment transactions at PT. Telkom. RESULTS: Based on the study results, service quality, as seen from the variables of physical evidence, reliability, responsiveness, assurance, and empathy, significantly influences customer satisfaction in Indihome PT. Telkom. This study found that reliability and empathy affect Indihome customer satisfaction. Meanwhile, physical evidence, responsiveness, and guarantees do not affect Indihome customer satisfaction. Reliability and empathy are the five service quality variables with the most dominant influence. CONCLUSIONS: The results of this study can be used as input for PT. Telkom retains and attracts new customers by maintaining quality, reliability, and empathy. Customers feel that Telkom employees deliver products clearly and in detail and do not discriminate between customers, even though sometimes service completion could be more timely. © 2024-IOS Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2355",
+    "title": "Satisfaction with official statistics producers",
+    "journal": "Statistical Journal of the IAOS",
+    "journal_impact_factor": null,
+    "doi": "10.3233/SJI-150912",
+    "abstract": "The national statistical institutes (NSIs), the pillars of official statistics, have become increasingly aware of the importance of serving their users well. Several quality initiatives require NSIs to monitor satisfaction of their users. However, practical implementation of this obligation is left to the discretion of every institution, as relevant theoretical foundations and operationalization are lacking. To fill that gap, this paper reviews the relevant theoretical bases and proposes a conceptual model for measuring user satisfaction. Data from a satisfaction survey of official statistics users in Slovenia was used to empirically verify the model. The results suggest that monitoring and managing satisfaction is imperative for producers of official statistics. They also confirm that technical quality (quality of official statistics data) is of utmost importance, as long as users get high-quality data they are not so sensitive to the quality of service delivery. However, the quality of service delivery is more important for infrequent and novice users. © 2015-IOS Press and the authors. All rights reserved."
+  },
+  {
+    "article_id": "CS_2356",
+    "title": "Communicating Banking Cyber-security Measures, Customer Ethical Concerns, Experience, and Loyalty Intentions: A Developing Economy’s Perspective",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": 1.441,
+    "doi": "10.32479/irmm.16095",
+    "abstract": "AI technology-based banking services development has disrupted the way people participate in banking transactions. It has created easier and faster banking transaction possibilities with the use of electronic gadgets. However, ethical concerns about these applications have also been amplified together with the need for management communication of safety features and protocols for customer information protection, and redress when infringements occur. The study was an attempt to highlight how AI-enabled banking services safety communication affects customers’ ethical concerns and how the concerns shape their banking services value perception, attitude, and loyalty intentions. A conceptual framework based on the generic AI technology, ethical concerns, and loyalty intentions was used as a basis for this study. It attempted to test the link between management communication, ethical concerns, satisfaction/dissatisfaction, and customer loyalty to AI-based banking services in a developing economy context. The study used three theoretical grounding bases to empirically test the proposed hypotheses. The results analysis followed Structural equation modeling (SEM). The results confirmed the impact of management communication on customers’ ethical concerns of security, privacy, diversity, and discrimination, and the positive influence of privacy and security on satisfaction/dissatisfaction. However, the relationship between diversity and discrimination concerns with customer satisfaction was not confirmed. Lastly, customer satisfaction was proven to impact their loyalty intentions. © 2024, Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CS_2357",
+    "title": "Decoding Users’ Continuance Intentions towards Digital Financial Platforms in the Indian Economy",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.32479/irmm.17199",
+    "abstract": "Indian financial sector has seen a dramatic change in recent years, with digital finance unlocking new possibilities for financial inclusion. This paper investigates the factors influencing the continuous usage intention and advocacy intention, regarding digital finance, in the Indian economy. Utilizing the Stimulus-Organism-Response (S-O-R) model, the study examines how ease of use, credibility and ubiquity (stimulus) could influence user trust, satisfaction, and engagement (organism), ultimately affecting their intention to use and recommend the service (response) continuously. Non-probability convenience sampling technique was used to select the study sample. Based on the results, features of digital financial platforms such as ease of use, credibility and ubiquity, were found to have a significant impact on user trust, satisfaction, and engagement. These factors partially mediate the stimulus and response variables. The research findings provide digital financial service providers (DFSPs) with practical guidance on creating and implementing user-centric platforms that create engagement and trust. User experience should be prioritized and making sure that platform should be accessible, easy to use and compatible with a variety of devices. © 2024, Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CS_2358",
+    "title": "Service Recovery Strategy in Private Hospitals: The Role of Experience, Symbolic, and Functional Brand Images",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.32479/irmm.17306",
+    "abstract": "This study investigates the influence of brand image on service recovery strategy, customer satisfaction, word-of-mouth communication, and revisit intentions within the context of private hospitals. The research identifies four dimensions of brand image: experiential, symbolic, functional, and social. The findings reveal that experiential, symbolic, and functional images positively impact service recovery strategy, while the social image does not have a significant positive effect. Service recovery strategies based on perceived justice significantly enhance customer satisfaction, which, in turn, fosters positive word-of-mouth and increases revisit intentions. The study highlights the importance of managing brand image to improve service recovery outcomes and maintain positive behavioural intention. Theoretical implications suggest further exploration of brand image factors and perceived justice in service recovery. Managerial implications emphasise the need for targeted marketing strategies that enhance functional and experiential brand images while avoiding social status associations. This study offers valuable insights for academia and practice, contributing to understanding and managing brand image and service recovery strategies in private hospitals. © 2025, Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CS_2359",
+    "title": "Emotional Brand Attachment as a Pathway to Brand Nostalgia, Brand Involvement and Brand Forgiveness",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.32479/irmm.18512",
+    "abstract": "This study explores the relationships between Emotional Brand Attachment (EBA), Brand Nostalgia, Brand Involvement, and Brand Forgiveness, focusing on their roles in consumer-brand recovery dynamics. Using Emotional Brand Attachment Theory and Structural Equation Modeling (SEM), the findings reveal that EBA strongly influences Brand Involvement and directly contributes to Brand Forgiveness, while Brand Involvement serves as a key mediator in restoring trust. However, Brand Nostalgia shows minimal direct impact on forgiveness, highlighting its context-dependent nature. These insights emphasize the importance of fostering emotional connections and consumer involvement in brand recovery strategies, while suggesting that the effectiveness of nostalgia may vary across scenarios. The study provides actionable recommendations for leveraging emotional attachment and involvement in post-failure brand management while encouraging further exploration of contextual influences. © 2025 Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CS_2360",
+    "title": "Consumer demand information as a re-balancing tool for power asymmetry between food retailers and suppliers",
+    "journal": "Economia Agro-Alimentare",
+    "journal_impact_factor": 0.507,
+    "doi": "10.3280/ecag2-2021oa12283",
+    "abstract": "This conceptual paper presents a model that may be used to redress the power balance between retailers and suppliers in the supply chain through better information symmetry and mutual dependence. It explores power dependence and resource dependence theories to conceptualise the use of demand information, by drawing on the diverse viewpoints within the extant literature on the effect of supply chain power asymmetry on exchange relationships and mutual dependence. Co-optation adds stability and reduces uncertainty through the exchange of resources. The dynamic nature of relationships and power between retailers and suppliers requires a multi-theory approach to identify a robust understanding of the interplay of different influence factors. This study has both operational and strategic implications for the food supply chain, as power asymmetry in relationships affects sustainability, especially in sales promotions periods for both retailers and suppliers. Improving power equilibrium between the buyer and supplier through information symmetry with the integration of power and resource dependence theory is novel. © 2021 Franco Angeli Edizioni. All rights reserved."
+  },
+  {
+    "article_id": "CS_2361",
+    "title": "Leveraging IT Service Management to Enhance Helpdesk Service Quality in Handling Consumer Complaints",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2024.0418",
+    "abstract": "Information Technology Service Management (ITSM) is a collection of responsibilities shared responsibilities, plus interrelated disciplines and processes, that enable organizations to measure, control, and ultimately manage IT infrastructure to deliver high-quality, cost-effective services to meet short-term and long-term needs. This ITSM can involve other supporting business areas, ranging from a single application access to a complex set of facilities spread across several different platforms. This study contributes to knowledge about the use of ITSM in certain organizational contexts because several problems are often encountered in handling problems in company information system support operations. The problem-solving approach is carried out quantitatively using factor analysis methods to look for the factors causing the gap between the targeted service level and the actual service that occurs, then proceed with building a model using the regression analysis method so that an abstraction of the problems that occur from several new factors is formed. formed, so that it can be used to predict the management of information technology services for the future in the company. The results achieved in this research are the existence of new factors full management maintenance service, human resources, and service process which greatly influence and need to be considered for optimal information technology service management performance in companies. © 2024, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2362",
+    "title": "Enhancing IT Service Desk Performance through Six Sigma and ITIL: A Case Study of an Oil Company Contractor in Indonesia",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2024.0514",
+    "abstract": "There are still few out there who know about the concept of Six Sigma combined with information technology. The Six Sigma approach can be used in every sector, here the author wants to share information related to the application of Six Sigma in the IT field. If an organization is engaged in providing a service to the community, slow response and long repair time will cause dissatisfaction. Recognizing that there are user complaints about the quality of IT Staff performance and the service desk system is currently not running as expected. it is necessary to evaluate it so that it is according to the plan and objectives by what is expected. The purpose of this paper is to improve services on the side of the system and IT Staff by integrating the Six Sigma approach and the ITIL framework. In addition to the limitations of existing features in the current system such as no active directory, untimely notification of reports, and compliance with ISO 270001 as a reason for replacing the new system. From the ITIL framework side, the author focuses on the service operation side, which will suggest changes to the current service desk system. The results of empirical studies regarding Critical Success Factor (CSF) factors that can influence and determine the success of service desk services are performance, efficiency, and accuracy of problem-solving. This is to determine the value of how much difference in DPMO value and sigma value with the current running conditions and to be able to determine the success rate of the recommendations proposed in this study. After calculating based on the level of defects DPMO defects per million found a DPMO value of 169,983.41 with a sigma conversion of 2.45 σ. With a probability of success in handling all problem reports of 83.00% of the total opportunity of 804 cases. © 2024, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2363",
+    "title": "Utilization of Text Mining for the Classification of Complaint Tickets Using Naïve Bayes in the Banking Industry",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2024.0706",
+    "abstract": "This study applies text mining techniques, specifically the Naïve Bayes algorithm, to classify complaint tickets at Bank XYZ. The aim is to demonstrate how leveraging business intelligence principles can enhance the bank's operational efficiency and service quality. The CRISP-DM framework is followed, and the dataset comprises 11,371 complaint tickets. The results show that the Naïve Bayes algorithm achieves an accuracy of 100%, a Kappa score of 1.000, and a classification error of 0.00%. The findings highlight the potential of text mining in addressing challenges in complaint report handling and improving operational workflows in the banking industry. However, the study has limitations, and future research should explore the scalability and adaptability of text mining solutions in dynamic business environments. © 2024, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2364",
+    "title": "Comparative Analysis of Naive Bayes and GPT-2 for Twitter-Based Sentiment Analysis in Bank Reputation Management",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2024.1210",
+    "abstract": "This study employs sentiment analysis to assess bank reputation during system failures, using Twitter data from 959 tweets collected between 2023 and 2024. We compare the performance of Naive Bayes and GPT-2 algorithms in analyzing customer complaints about banking application issues. The research focuses on three variables: problem features, initial customer sentiment, and sentiment after bank response. Naive Bayes achieved accuracies of 76.75%, 62.23%, and 87.78% for these variables respectively, while GPT-2 recorded 82.02%, 67.33%, and 61.39%. The study reveals that GPT-2 outperforms Naive Bayes in initial sentiment classification, likely due to its superior ability to understand context. These findings provide valuable insights for banks to improve their reputation management strategies and customer service responses during system failures. © 2024, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2365",
+    "title": "The Impact of Online Service Recovery Strategies on Perceived Justice and Customer Satisfaction: A Gender-Moderated Analysis",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2025.0417",
+    "abstract": "The paper investigates the influence of various service recovery strategies (SRS) on consumer-perceived justice and satisfaction, with gender explored as a potential moderating variable. The study is well-structured and theoretically grounded, drawing on justice and social exchange theories, and employs structural equation modeling with a substantial sample of 510 Vietnamese online consumers. The findings showed that problem solving, follow-up, apology, response speed, explanation, courtesy, and effort significantly influence consumers' perceived justice and contribute to satisfaction with service recovery. Additionally, the findings indicate that problem-solving exerts the most significant influence on perceived justice, and that gender significantly moderates only the relationship between effort and justice. Overall, the research offers valuable contributions both theoretically and managerially. © 2025, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2366",
+    "title": "Using Delone & Mclean information system success model to evaluate the success of online platform",
+    "journal": "Journal of System and Management Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JSMS.2021.0212",
+    "abstract": "The platform that functions as a place for buying and selling online voucher reservations for tours owned by PT XYZ is used by tourists and product and service owners to transact with each other with the efficiency and effectiveness offered by the platform. There is a problem with this platform which causes the platform owner to get several complaints from its users about users, namely tourists who have purchased the tour voucher, but when the location has run out of places or products and services that have been purchased due to collisions with users from competitors whose orders will not be integrated to the PT XYZ’s system or there are non-technical problems at these tourist sites that require tourists not to be able to use the vouchers, and as far as the platform is implemented, there has never been a measurement of what factors affect the successful implementation of the platform to see the success of its implementation. This study uses variables from the success of Delone and McLean's Information Systems, namely information quality, system quality, service quality, usage, user satisfaction, net benefits, and added with external variables, namely trust based on the modified research of Delone and McLean's model. This study was tested with a structural equation model-partial least square with SmartPLS 3 software. Online questionnaires were distributed to a total sample of 262 respondents via Google Form. This study concludes that 9 out of 10 hypotheses are considered proven and system quality, information quality, and service quality are three constructs that are proven to directly affect net use and benefits, and use is strongly influenced by information quality, service quality, and trust. © 2021, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2367",
+    "title": "Factors Affecting Customer Loyalty Moderated by Switching Cost on the Customer Satisfaction of Digital Streaming Services",
+    "journal": "Journal of System and Management Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JSMS.2023.0101",
+    "abstract": "Digital video streaming service is online on-demand entertainment that delivers content over an Internet connection to a subscriber's computer, TV, or mobile device. One of the video streaming service platforms has several problems that have caused customer complaints regarding the subscription system that stays the same premium when the customer has made a payment. The applications are not compatible with all display devices, be it smartphones, iPads, or tablets, and delays. Video content uploaded needs consistent showtimes. However, it keeps customers from leaving this platform; the number of customers is increasing yearly. Therefore, as far as the platform stands, there has never been a measure of what factors influence a customer to keep using this digital video streaming service to see the attitude of customer loyalty. This study uses a model modified from several research models that have existed before. The variables used are taken from previous research, which significantly influences customer loyalty. This study was tested using a structural equation model (Partial Least Squares using SmartPLS 3 software). There are five independent variables: content library, price, service quality, social media marketing, and customer satisfaction. Then one moderating variable is switching cost, and the dependent variable is customer loyalty. This study obtained 310 respondents, of which only 301 are Viu users. This study concludes that 4 of the six hypotheses are proven, and customer satisfaction is a construct that affects customer loyalty directly. Meanwhile, the library of content and social media marketing is proven to affect customer satisfaction directly and indirectly influence customer loyalty. This study also found that switching costs moderated the effect of customer satisfaction on customer loyalty. Through the empirical analysis of this study, it was found that social media marketing has the strongest influence on customer satisfaction. High customer satisfaction will also increase customer loyalty to Viu, influenced by Social Media Marketing factors. This study suggests creating a program that connects all customers in the application to connect with social media and improves marketing through social media by providing up-to-date content information. For future research, it is necessary to expand the scope and add aspects to the research model that are useful for the digital video streaming service industry. © 2023, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2368",
+    "title": "Evaluation of the Level of Use of IT Helpdesk Application: A Case Study",
+    "journal": "Journal of System and Management Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JSMS.2023.0129",
+    "abstract": "Seeing the number of user growth decreasing from year to year, there needs to be an evaluation of the level of use of the IT Helpdesk application at XYZ University. This study aims to determine the factors that have a positive effect on the level of use of the IT Helpdesk application by employees at XYZ University. With this evaluation, it is expected to increase the number of users and their total use and no more complaints or requests for IS/IT services are found that are not recorded by the IT Helpdesk application. The model used in this study is a combination of the DeLone McLean IS Success model and the UTAUT model with the independent variables of Trust and Loyalty, where the DeLone McLean IS Success model uses six variables, namely Information Quality, System Quality, Service Quality, User Satisfaction, Behavioral Intention, and Use. Then the UTAUT model uses two variables: Performance Expectancy and Effort Expectancy. Questionnaire data collection was carried out using a simple random sampling technique with a total of 352 employees and partial least square (PLS) with Structural Equation Modeling (SEM) was used as a data analysis technique. Based on the research results, Behavioral Intention and Loyalty have a direct positive influence on the level of use of the IT Helpdesk application at XYZ University, which is 60.7%. Where Behavioral Intention itself is positively influenced by Information Quality, System Quality, Service Quality, and Trust, then Loyalty is positively influenced by Trust, then Trust is positively influenced by User Satisfaction, and User Satisfaction is proven to be positively influenced by Information Quality, System Quality, and Service Quality. Thus it is concluded that several things can be done to create user loyalty and intention to increase the level of use of the IT Helpdesk application at XYZ University, such as: (a) ensuring that the same problem does not occur in the application after the solution is implemented and the service ticket is resolved, (b) ensuring that users can initiate IS/IT services using personal devices such as mobile phones and tablets and not limited to company-owned laptop/pc devices, (c) ensuring that IS/IT services provided are in accordance with the requests submitted by users with the promised timeframe, and (d) simplifying the appearance and flow of the IS/IT service submission process so that users do not have difficulty knowing the current status of previously initiated tickets. © 2023, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2369",
+    "title": "Evaluation of The Success of Business Travel Management System Using Delone & McLean Approach",
+    "journal": "Journal of System and Management Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JSMS.2023.0412",
+    "abstract": "XYZ Group is an education-based company that has several branches spread across Indonesia. In supporting business needs, especially in terms of business trip, XYZ Group developed an application called eTravel. During the use of eTravel, several problems found in the system. This has resulted in many complaints from eTravel users such as slow application performance, errors that occur in the approval process, incomplete information in the system, etc. Since implementing the eTravel system, there has been no evaluation process to determine the success rate of the eTravel system. This study aims to evaluate the success rate of the eTravel system using the DeLone & McLean method. The variables used in this study are system quality, service quality, information quality, use, user satisfaction, and net benefits. This study uses SEM-PLS and SmartPLS 3. Questionnaire data was collected from 214 eTravel users. Then data collected was analyzed using SmartPLS 3. The result of this research shows seven of the eight research hypotheses are categorized as valid. There were significant effect of System Quality and Information Quality to Use of eTravel System. On the other hand, Service Quality does not have significant effect to Use. System Quality, Information Quality, and Service Quality have significant effect on User Satisfaction. Use and User Satisfaction have significant effect on Net Benefit given by eTravel System. It is expected from this study to be a good reference for XYZ Group which depends on eTravel to organize their business trip information. This will help to optimize the eTravel’s support and benefits for XYZ group. This study recommends for organizations to give attention to their system’s information quality, service quality, system quality to give more benefits for the organization. © 2023, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CS_2370",
+    "title": "A comparative study of differences in consumers' impulse buying behaviour, purchase satisfaction, and complaint behaviour based on types of product purchased",
+    "journal": "Sport Mont",
+    "journal_impact_factor": null,
+    "doi": "10.33462/jotaf.10.26773/smj.201009",
+    "abstract": "The internet enables consumers not only to buy products anywhere and at any time but also to compare prices and make informed consumption decisions. However, the increased convenience resulting from advancements in technology has simplified consumers' decision-making process, thereby leading to impulse buying behaviour. In the present study, the differences among consumers' impulse buying behaviour, purchase satisfaction, and complaint behaviour were compared based on the types of product purchase decisions (online v. offline). A total of 382 customers who had previously bought sportswear and voluntarily participated in the present study were divided into two groups, based on their preferred type of purchase. The respondents completed a questionnaire survey regarding their impulse buying behaviour, purchase satisfaction, and complaint behaviour. SPSS/AMOS 23.0 version was used to confirm the reliability and credibility of the collected data, and a multivariate analysis of variance was used to compare the participants' questionnaire responses regarding their consumption behaviour, based on their preferred type of purchase. The results showed that although consumers who preferred online purchasing were increasingly likely to exhibit impulse buying behaviour, they did not complain about their purchase dissatisfaction. In comparison, although consumers who preferred offline purchasing were more satisfied with the product they bought, they indulged in private complaint behaviour regarding their purchase dissatisfaction. The study results show that consumers exhibited different behaviours, depending on their preferred type of purchase. The present study results serve as an important reference for understanding evolving consumption trends through a multi-faceted approach. © 2020 Montenegrin Sports Academy. All rights reserved."
+  },
+  {
+    "article_id": "CS_2371",
+    "title": "CONSUMER RIGHTS & CUSTOMER LOYALTY OF ONLINE FOOD DELIVERY SERVICES AMONG CONSUMERS IN SARAWAK",
+    "journal": "International Journal of Business and Society",
+    "journal_impact_factor": 1.133,
+    "doi": "10.33736/ijbs.8195.2024",
+    "abstract": "Online Food Delivery Services (OFDS) is gaining popularity as one e-commerce platform. This paper aims to empirically evaluate consumers' awareness of their rights using OFDS services, determine whether their experience exercising consumer rights when using OFDS, and examine whether their experience exercising these rights affects their loyalty to their preferred OFDS. The selected consumer rights for this investigation include Rights to Basic Needs, Rights to Information, Rights to Choose, Rights to Safety and Rights to Redress. Employing a quantitative approach, this study surveyed questionnaire distribution across four main divisions in Sarawak: Kuching, Samarahan, Sibu and Miri. The data was analysed using multiple regression analysis techniques. The results indicate that Consumer Rights to Basic Needs, Rights to Information, and Rights to Choose significantly influence loyalty. Both the Rights to Safety and Rights to Redress positively affect loyalty, but their influence is not statistically significant. Furthermore, Mann-Whitey U Test was employed to compare the means of two prominent OFDS platforms preferred by the respondents, namely GrabFood and Foodpanda. The findings suggest no significant difference between the sample means for all the variables used in this study. This study provides a fresh insight into the consumer rights and protection of OFDS from both marketing and consumerism perspectives. © 2024, Universiti Malaysia Sarawak. All rights reserved."
+  },
+  {
+    "article_id": "CS_2372",
+    "title": "THE IMPACT OF HOTEL RESPONSES TO ONLINE NEGATIVE REVIEWS ON CONSUMERS' PURCHASE INTENTION",
+    "journal": "Enlightening Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.33776/et.v12i1.6916",
+    "abstract": "This research investigates the hotel response strategies of businesses being responsive online to stimulate customers purchase intention in eWOM communications. Specifically, this study explores the online managerial responses in terms of length, speed, and relevance of management response to customer negative reviews and how customer personality moderates the purchase intention of the hotel. A non-probability convenience sampling technique was applied to collect 441 responses from Chinese residents who have made online hotel reservations and selected the hotel only after checking the online reviews and the hotel responses. The findings confirm that hotel response to negative reviews has an essential impact on 'consumers' purchase intention and consumer personality traits. Further, the research includes the practical implications for hotels to set up the reply format and carry out effective service recovery through different expression ways of negative reviews response. © 2022, Universidad de Huelva. All rights reserved."
+  },
+  {
+    "article_id": "CS_2373",
+    "title": "Cost Analysis of a Finite Capacity Queue with Server Failures, Balking, and Threshold-Driven Recovery Policy",
+    "journal": "International Journal of Mathematical, Engineering and Management Sciences",
+    "journal_impact_factor": 1.603,
+    "doi": "10.33889/IJMEMS.2024.9.5.063",
+    "abstract": "The study is on the cost dynamics which is concerned with finite queues in particular to susceptibility to server outages, threshold-driven recovery and Catastrophic events, but main focus is on balking behaviour of the customers. A thorough investigation of the financial implications of interruptions and efficacy to recovery strategies is done and to alleviate the impact of breakdowns, disasters and customer refusals the queue system designs through empirical research is conducted. Various recovery policies have been compared with the existing thresholds, and the study further endeavors to categorize the cost-effective approach to mitigate the economic concerns of server failures and catastrophic incidents. The study brings discernments on the expected development in the management of the queuing system along with the assistance in complete decision-making in cost efficiency and enhancement of the complete system performance. © Ram Arti Publishers."
+  },
+  {
+    "article_id": "CS_2374",
+    "title": "An Experimental Study of How Missing Employee Empathy in Failed Service Interactions Affects Empathetic Customers’ EWoM-Giving Behaviour",
+    "journal": "Administrative Sciences",
+    "journal_impact_factor": 4.362,
+    "doi": "10.3390/admsci13050123",
+    "abstract": "Empathy as an influencing factor of consumer behaviour has mostly been analysed from an empathetic employee’s perspective. Empirical investigations into customer empathy in the context of failed service interactions are still scarce. This study investigates customer–employee reciprocity related to a failed service interaction and its meaning as a predictor of electronic-worth-of-mouth (eWoM)-giving behaviour. The eWoM phenomenon in the context of online purchases is well researched, but the (a) impact of failed service interactions and (b) empathetic customer service agents still needs to be explored. For this purpose, two situational experiments of customer–employee interactions (n = 260) were conducted. Both situations depict disgruntled customers who are looking for help and call the customer support centre after an online purchase. They experience negative customer–employee interaction. The experiments test (a) the impact of employee and customer empathy on eWoM-giving behaviour after failed service interactions and (b) the mediating role of negative emotions. The results show that in service situations, negative emotions fully mediate the relationship between customer empathy and eWoM-behaviour. In addition, empathetic customers seem to be more sensitive to a poorly empathetic employee in comparison to non-empathetic customers. The research enriches the service understanding of empathy in eWoM research and provides practical implications for the management of complaint handling, such as how to consider customer empathy as a complainer’s characteristic to improve the customer service experience, effectiveness, and efficiency. © 2023 by the authors."
+  },
+  {
+    "article_id": "CS_2375",
+    "title": "“The Dark Side of the Brand” and Brand Hate: A Review and Future Research Agenda",
+    "journal": "Administrative Sciences",
+    "journal_impact_factor": 4.362,
+    "doi": "10.3390/admsci13110234",
+    "abstract": "The present study aimed to analyze the current state of the art regarding brand hate with the main intention of identifying possible gaps to be explored in future studies. Brand hate can be described as a set of negative emotions on the part of consumers concerning a certain brand, whose implications involve a reduction in the profitability of companies, as well as of their market shares. From the research carried out in the Scopus and Web of Science databases, 90 publications related to the theme were identified, of which 25 were selected and read in full. The analyzed literature points out that research on the subject has focused almost exclusively on the development of the phenomenon and its consequences from the perspective of consumer behavior. Therefore, the emphasis has been on identifying its direct antecedents, on the effects of its mediators in a set of behaviors such as complaints, negative word of mouth, protests, sponsorship reduction and assignment, brand change, and wishes for revenge, among others. Few studies have been dedicated to understanding the direct effects of brand hate on consumer behavior, its evolution over time in different industries and contexts, who its mediators are, and how the phenomenon is perceived and managed from the perspective of the companies involved in this phenomenon, providing opportunities for future research. © 2023 by the authors."
+  },
+  {
+    "article_id": "CS_2376",
+    "title": "Exploring the Impact of COVID-19 Recovery Strategies in the Hospitality and Tourism Industry",
+    "journal": "Administrative Sciences",
+    "journal_impact_factor": 4.362,
+    "doi": "10.3390/admsci15040142",
+    "abstract": "The COVID-19 pandemic presented an unprecedented challenge for the tourism industry, disrupting operations, reducing customer demand, and forcing businesses to adapt quickly to a new reality. This study explored the impact of COVID-19 on the tourism and hospitality industry and addresses a specific research gap: the limited application of structured theoretical frameworks—particularly the three-R stakeholder collaboration model—in examining recovery strategies. Prior studies have largely focused on individual tactics or short-term impacts, rather than a structured, stakeholder-driven, multi-phase recovery process. Employing a qualitative research design, this study used grounded theory to investigate how tourism service providers and key stakeholders navigated the challenges of the pandemic. Data were collected through semi-structured interviews with 20 participants, including tourism business owners, hotel and event managers, public sector employees, and academics. These insights offer a comprehensive, multi-perspective view of how the industry navigated the pandemic. Grounded theory was used to inductively develop a model of recovery behaviors, with data coded through open, axial, and selective stages using MAXQDA 2020 software. Findings revealed several key strategies—such as cost-cutting, digital transformation, and cultural adaptation—that enabled businesses to maintain operations during the pandemic and recover in its aftermath. Finally, refashioning business models through digital transformation, the diversification of services, and a shift to local markets helped tourism providers adapt to the changing environment and ensure long-term resilience. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2377",
+    "title": "The Digital Shock: Administrative Burden and the Governance–Service Trade-Off in Indonesia’s Public Service Reform",
+    "journal": "Administrative Sciences",
+    "journal_impact_factor": 4.362,
+    "doi": "10.3390/admsci16030159",
+    "abstract": "This study explores the impact of implementing a mandatory e-government reform within Indonesia’s national ISBN service (Regulation No. 5/2022). It examines the effects of this policy shift on public service quality and the resulting administrative burden placed on stakeholders, specifically publishers. The study employs an explanatory sequential mixed-methods design (QUAN → qual). The first phase analyzes longitudinal quantitative data from annual Public Satisfaction Surveys (2021–2024). The subsequent qualitative phase analyzes thousands of archival records, including complaint logs and policy memos, to contextually explain the quantitative findings. The results indicate that the reform induced a severe digital shock, causing the Public Satisfaction Index (IKM) to plummet from Good in 2021 to Poor (75.03) in 2022. The most significant declines were observed in the Procedures (2.79/4) and Service Time (2.30/4) indicators. Qualitative analysis reveals that this collapse was driven by specific policy-induced frictions: the mandatory implementation of a Single Account system and the intentional tightening of governance and validation parameters. While limited in statistical generalizability due to its single-case archival design, this study clearly demonstrates that public managers must recognize the inherent trade-off between tightening institutional governance (control) and maintaining public service quality (satisfaction). Proactive friction management and user-centric change management are essential to mitigating such digital shocks. Ultimately, this study offers a unique longitudinal analysis that forensically links quantitative satisfaction metrics with qualitative policy frictions. © 2026 by the authors."
+  },
+  {
+    "article_id": "CS_2378",
+    "title": "Evaluation of consumers’ wtp for service recovery in restaurants: Waiting time perspective",
+    "journal": "Administrative Sciences",
+    "journal_impact_factor": 4.362,
+    "doi": "10.3390/admsci9030063",
+    "abstract": "Restaurant service quality assessment has generally focused on the dining service. However, restaurant service begins with waiting for the meal. When service failure occurs due to a long waiting time, restaurant managers should adopt appropriate service recovery measures to retain consumers and reduce loss. This approach would allow them to mitigate customer dissatisfaction and negative impressions. In this study, we explore the importance of pre-processing service in the context of possible restaurant service crises and construct a restaurant service recovery model for willingness to pay (WTP) through the contingent valuation method (CVM) to measure the effects before and after implementing service recovery. Overall, several psychological and tangible service recovery measures are provided to enhance people’s willingness to extend their waiting time. Within our study group, relatively young participants showed a high willingness to extend their waiting time. Furthermore, the opportunity cost of high-income people in the waiting process was relatively high. Compared with psychological service recovery programs, our results show that tangible service recovery programs prompt respondents to wait for an additional ~10 min. This paper offers support for restaurant managers to manage consumer relationships. © 2019 by the authors. Licensee MDPI, Basel, Switzerland."
+  },
+  {
+    "article_id": "CS_2379",
+    "title": "Exploring Factors Impacting User Satisfaction with Electronic Payment Services in Taiwan: A Text-Mining Analysis of User Reviews",
+    "journal": "Big Data and Cognitive Computing",
+    "journal_impact_factor": 4.504,
+    "doi": "10.3390/bdcc9070165",
+    "abstract": "Electronic payments are becoming increasingly popular in Taiwan; however, there is a lack of studies examining the factors affecting user satisfaction with electronic payments in Taiwan. This study focuses on Android phone users to identify key factors influencing their experiences based on user reviews of electronic payment mobile applications. It analyzes which factors contribute to positive satisfaction and which lead to negative experiences. The study employed BERTopic for topic modeling, which flexibly accommodates multiple languages, enabling effective examination of reviews written in Chinese. Additionally, we utilized the semantic understanding capabilities of large-scale language models to preliminarily name the generated topics with the help of ChatGPT Plus. These preliminary names were then manually refined to determine the final topic titles. The findings reveal that for Android phone users, electronic payment services that enhance user convenience and offer discounts tend to foster positive satisfaction. Conversely, the instability of electronic payment applications results in many user complaints. These research results can provide valuable insights for specialized electronic payment institutions in Taiwan to enhance their services. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2380",
+    "title": "Pricing Cat Bonds for Cloud Service Failures",
+    "journal": "Journal of Risk and Financial Management",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jrfm15100463",
+    "abstract": "The use of the cloud to store personal/company data and to run programs is gaining wide acceptance as it is more efficient and cost-effective. However, cloud services may not always be available, which could lead to losses for customers and the cloud provider (the provider is typically obligated to compensate its customers). It can protect itself from such losses through insurance, which transfers the risk to the insurer. In the case of poor cloud availability, the amount that the insurer has to pay back to the cloud provider may become so high that it endangers the insurer’s financial solvency. We propose the use of cat bonds as reinsurance tools as well as the Nowak–Romaniuk pricing scheme. The outage frequency was described by the Poisson process and the loss severity was described by a Pareto random variable; we derived a closed formula for the price of a cat bond in a stochastic interest rate environment, using both one-factor and two-factor short-rate models. We demonstrated the applicability of our pricing formula in a real context. © 2022 by the authors."
+  },
+  {
+    "article_id": "CS_2381",
+    "title": "The Cryptocurrencies in Emerging Markets: Enhancing Financial Inclusion and Economic Empowerment",
+    "journal": "Journal of Risk and Financial Management",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jrfm17100467",
+    "abstract": "The present study discusses how adopting cryptos affects financial inclusion in developing economies. Primary constructs like financial inclusion (FI), perceived economic empowerment (PEE), trust in financial institutions (TFI), user satisfaction (US), and cryptocurrency adoption (CA) were tested through Structural Equation Modeling (SEM). The results indicated that CA significantly and positively influenced FI, US, TFI, and PEE. These relationships extend to the interaction effects: US, TFI, and PEE, all positively related to FI. This is a reflection of cryptocurrencies as an opportunity to redress most of the afflictions characteristic of traditional finance systems and to promote financial inclusion and economic empowerment in developing countries. Future research should also investigate whether digital literacy and regulatory environments support cryptocurrency access. © 2024 by the authors."
+  },
+  {
+    "article_id": "CS_2382",
+    "title": "Benefits First: Consumer Trust Repair in Mobile Commerce",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer16040061",
+    "abstract": "The purpose of this study is to explore trust repair strategies and the outcomes in mobile (m-)commerce. Consumer trust in m-commerce is a calculus-based form of trust; service failures, “inaction” and “excessive actions” are the typical trust decline situations. Three strategies of the fulfillment of consumers’ psychological contract for compensation, arousal, and regulation are proposed as trust-repaired solutions regarding the abovementioned three situations. The experimental results demonstrate that trust cannot be repaired by a single relational psychological contract strategy and that it can be repaired by both a single transactional and interactive strategy; the interactive strategy is more effective in competence-based decline. Second, in integrity-based decline, both the single and interactive strategy negatively influence trust repair; the relational strategy has the strongest effect. The “boomerang effect” shows that the more m-vendors repair, the more the trust decreases. Third, trust can be repaired, respectively by arousal and regulation strategy regarding corresponding situations of inaction and excessive actions. Finally, the trust repair paradox (TRP) has not been verified in m-commerce. © 2021 by the authors."
+  },
+  {
+    "article_id": "CS_2383",
+    "title": "Behavioral Patterns beyond Posting Negative Reviews Online: An Empirical View",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer17030049",
+    "abstract": "Negative reviews on e-commerce platforms are posted to express complaints about unsatisfactory experiences. However, the exact knowledge of how online consumers post negative reviews still remains unknown. To obtain an in-depth understanding of how users post negative reviews on e-commerce platforms, a big-data-driven approach with text mining and sentiment analysis is employed to detect various behavioral patterns. Specifically, using 1,450,000 negative reviews from JD.com, the largest B2C platform in China, the posting patterns from temporal, perceptional and emotional perspectives are comprehensively explored. A massive amount of consumers across four sectors in recent 10 years is split into five levels to reveal group discrepancies at a fine resolution. The circadian rhythms of negative reviewing after making purchases are found, suggesting stable habits in online consumption. Consumers from lower levels express more intensive negative feelings, especially on product pricing and customer service attitudes, while those from upper levels demonstrate a stronger momentum of negative emotion. The value of negative reviews from higher-level consumers is thus unexpectedly highlighted because of less emotionalization and less biased narration, while the longer-lasting characteristic of these consumers’ negative responses also stresses the need for more attention from sellers. Our results shed light on implementing distinguished proactive strategies in different buyer groups to help mitigate the negative impact due to negative reviews. © 2022 by the authors."
+  },
+  {
+    "article_id": "CS_2384",
+    "title": "Impact of AI-Oriented Live-Streaming E-Commerce Service Failures on Consumer Disengagement—Empirical Evidence from China",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer19020077",
+    "abstract": "Despite the popularity of AI-oriented e-commerce live-streaming, the service failures that can result from real-time interaction and instant transactions have not been taken seriously. This study aims to assess the failure of AI-oriented live-streaming e-commerce services and help retailers identify various risks. Based on expectancy disconfirmation theory and a stressor–strain–outcome framework, this study identified a comprehensive framework including information, functional, system, interaction, and aesthetic failures. The structural equation modeling (SEM) method is used to further examine its effect on consumers’ discontinuance behavior. Further research reveals the mediating role of consumer disappointment and emotional exhaustion, as well as the moderating role of the live-streaming platform type. These results shed light on the negative influence of AI-oriented live-streaming e-commerce service failures and contribute to the literature on live-streaming commerce, service failure, and virtual streamers. © 2024 by the authors."
+  },
+  {
+    "article_id": "CS_2385",
+    "title": "The Evolution of Price Discrimination in E-Commerce Platform Trading: A Perspective of Platform Corporate Social Responsibility",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer19030094",
+    "abstract": "The widespread use of data in e-commerce has facilitated the implementation of different pricing strategies for platforms and merchants. However, the excessive use of algorithms for differential pricing has sparked discussions about fairness and price discrimination, disrupting the platform trading system. To address this challenge, we adopt an evolutionary game approach to analyze the evolutionary strategies of all parties from the perspective of platform CSR. It is based on a special type of e-commerce platform trading in which major merchants have data analytics capabilities. We construct an evolutionary game model considering reputation and punishment, explore the impact of different situations and factors on the system’s evolutionary stability strategy, and conduct its verification via simulation experiments. The results show that long-term reputation is the internal driving force for platforms to fulfill responsibilities. The joint punishment of collusion is the external binding force. Consumer complaints are key to restricting merchants’ integrity operation. Moreover, penalties imposed by e-commerce platforms can help eradicate price discrimination. This study provides a new perspective to solve price discrimination in the digital era. Measures based on reputation and punishment can guide platforms to fulfill other social responsibilities. © 2024 by the authors."
+  },
+  {
+    "article_id": "CS_2386",
+    "title": "How Customer Avoidance Leads to Customers Returning: A Longitudinal Study Concerning Online Travel Agencies",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20010035",
+    "abstract": "Customers’ intentions to avoid a product or service tend to be dynamic. Thus, this study aims to explore the influence of trajectory changes in customers’ avoidance after service recovery on relationship strength, negative word-of-mouth (WOM) intentions, and revisit intentions. Using a longitudinal approach with three-month lag intervals, we implement a latent growth model analysis to test our proposed hypotheses. Our findings demonstrate that customers’ desire to engage in avoidance after a service failure evolves, but its impact wanes. As avoidance decreases, negative WOM intentions likewise decline, and intentions to revisit a firm (which, in this study, is a travel agency) increase, thereby attenuating an avoidance-becomes-defection effect over time. Meanwhile, relationship strength initially grows but then weakens after service recovery. In contrast, negative WOM intentions slightly decrease from the early to mid-stage, followed by an increase in the late stage. Furthermore, relationship strength does not affect negative WOM or revisit intentions at the subsequent service recovery phase. Our findings offer innovative insights into upgrading customer avoidance perspectives regarding service recovery. We also present managerial implications regarding service recovery and customer relationship strategies that vary over time. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2387",
+    "title": "Understanding the Impact of Inconsistency on the Helpfulness of Online Reviews",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20020080",
+    "abstract": "This study investigates how review inconsistency influences perceived helpfulness in online restaurant reviews both in ratings and specific aspects of service attributes. Drawing on 106,464 Yelp reviews spanning 666 restaurants, we employed aspect-based sentiment analysis and Tobit regression to capture not only rating inconsistencies but also differences in sentiment toward décor, taste, service, and price. Results indicate that rating inconsistency negatively affects review helpfulness, suggesting that highly divergent ratings reduce credibility. However, aspect inconsistency shows mixed effects. Discrepancies in décor and taste positively influence perceived helpfulness by offering novel information, whereas service-related inconsistencies diminish review helpfulness, due to heightened consumer sensitivity to possible service failures. Reviewer expertise further strengthens the negative influence of inconsistency as readers expect experienced reviewers to provide objective feedback. These findings extend current research by shifting the analytical lens from individual reviews to sets of reviews, thereby capturing the relational dynamics that shape consumers’ perceptions of review credibility. The results also highlight the importance of analyzing review content by specific aspects to uncover nuanced effects. Practically, platforms can benefit from grouping reviews by attributes and alerting users to noteworthy inconsistencies, facilitating more informed consumer decision-making. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2388",
+    "title": "Identification and Evaluation of Key Risk Factors of Live Streaming e-Commerce Transactions Based on Social Network Analysis",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20030169",
+    "abstract": "As an emerging e-commerce model, live streaming e-commerce integrates instant interaction, content marketing, and online sales to bring consumers a new shopping experience. However, there are many risks in the process of live e-commerce transactions. Identifying key risk factors and implementing targeted control measures are crucial for promoting the sustainable and healthy development of live streaming e-commerce. This paper firstly constructs a business model of live streaming e-commerce transactions according to the transaction scenario and summarizes 24 risk factors from the three dimensions of live streaming e-commerce platforms, merchants, and anchors based on relevant national standards and other relevant literature. Secondly, the Delphi method is employed to modify and optimize the initial risk factors. On this basis, the social network model of risk factors is constructed to determine the influence relationship among risk factors. By calculating the degree centrality, factor types are segmented, and key risk factors as well as influence paths are identified. Finally, corresponding countermeasures and suggestions are proposed. The results indicate that Credit Evaluation System Perfection, Service Evaluation System Perfection, Qualification Audit Mechanism Perfection, Dispute Complaint Handling Channels Perfection, Risk Identification Mechanism Perfection, Platform Qualification, Merchant Qualification, and Merchant Credit are the critical risk factors affecting live streaming e-commerce transactions. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2389",
+    "title": "Turning Setbacks into Smiles: Exploring the Role of Self-Mocking Strategies in Consumers’ Recovery Satisfaction After E-Commerce Service Failures",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20030183",
+    "abstract": "In today’s competitive environment of online service industries, particularly e-commerce, meeting consumer expectations is essential for service providers to ensure service quality. However, service failures are unavoidable, leading to unfavorable consequences for businesses. Understanding the mechanisms for customer recovery after negative service experiences is crucial. Using cognitive–emotional personality systems theory and benign violation theory, this study constructed a theoretical model. A total of 351 samples were collected through a situational simulation experiment for a linear regression analysis. A self-mocking response strategy positively influenced brand trust through perceived brand authenticity regarding the dimensions of credibility, integrity, and symbolism. Simultaneously, brand trust was identified as a key driver of post-recovery satisfaction. This study proposes a chain mediation model, which incorporates perceived authenticity and brand trust, to fully comprehend the mechanisms underlying consumers’ satisfaction after service recovery. Our findings provide empirical evidence for the effects of self-mockery on post-recovery satisfaction, as well as suggestions for marketers seeking efficient means to meet consumers’ emotional and cognitive demands during service recovery situations. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2390",
+    "title": "Algorithmic Fairness and Digital Financial Stress: Evidence from AI-Driven E-Commerce Platforms in OECD Economies",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20030213",
+    "abstract": "This study examines the role of algorithmic fairness in alleviating digital financial stress among consumers across OECD countries, utilizing panel data spanning from 2010 to 2023. By introducing a digital financial stress index—constructed from indicators such as household credit dependence, digital debt penetration, digital default rates, and financial complaint frequencies—the research quantitatively captures consumer financial anxieties within AI-driven e-commerce platforms. Employing two-way fixed-effects regression and system-GMM methods to address endogeneity and dynamic panel biases, findings robustly indicate that increased algorithmic fairness significantly reduces digital financial stress. Furthermore, the moderating analysis highlights digital literacy as a critical factor amplifying fairness effectiveness, revealing that digitally proficient societies derive greater psychological and economic benefits from equitable algorithmic practices. These results contribute to existing scholarship by extending discussions of algorithmic ethics from individual-level analyses to a macroeconomic perspective. Ultimately, this research underscores algorithmic fairness as a crucial policy lever for promoting consumer welfare, calling for integrated national strategies encompassing ethical algorithm governance alongside enhanced digital education initiatives within OECD contexts. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2391",
+    "title": "Rethinking Picky Shoppers and Store Reputation: Effective Online Service Recovery Strategies for Products with Minor Defects",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20040259",
+    "abstract": "This study examines how the initiation of monetary compensation and the sincerity of apologies influence customers’ repurchase intentions after receiving products with minor defects, and how these effects are moderated by consumer pickiness and the e-store’s reputation. Two scenario-based, between-subjects online experiments were conducted in China via the Wenjuanxing online survey platform, with participants voluntarily taking part in exchange for monetary compensation. We propose that consumers have a higher repurchase intention when online customer service initiatively offers monetary compensation (vs. passive vs. no compensation) and that the effect of monetary compensation modes can be enhanced by a serious apology from customer service. Building on these findings, Study 1 (n = 330) reveals that picky consumers are more sensitive to the enhanced effect of initiative monetary compensation on repurchase intentions under serious apologies. Moreover, Study 2 (n = 537) confirms that consumers are more stringent in their expectations of high-reputation stores, whereas low-reputation stores can achieve similar positive effects with casual apologies that high-reputation stores only obtain through serious apologies. This study provides theoretical support for the importance of the initiation of actions and sincerity in service recovery and offers guidance for businesses dealing with picky consumers. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2392",
+    "title": "Descriptive Trajectories of How Service Innovation Shapes Customer Exit Intentions in Online Travel Agencies",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20040280",
+    "abstract": "This study examines the descriptive trajectories through which service innovation is associated with customer exit dynamics after service failures, drawing on a three-wave panel of 532 online travel agency users and employing partial least squares structural equation modeling with predictive assessment. We analyze how innovation is associated with switching intentions via brand hate and brand distrust over time. Results reveal distinct temporal patterns: service innovation is linked to consistent reductions in both hate and distrust, yet only hate emerges as a salient mediator whose marginal association with switching intensifies over time. In contrast, distrust, although mitigated by innovation, remains relatively stable and behaviorally inert. Rather than asserting a causal explanation, we document temporal associations—labelled here as a “dilution effect”—to indicate that innovation coincides with weakening negative emotions but only partial attenuation of their behavioral correlates. By distinguishing between the fading but influential role of hate and the persistent yet inert nature of distrust, this study clarifies differentiated pathways through which negative states coincide with customer exit. For managers, the results highlight the need for staged innovation strategies to dissipate hate, complemented by long-term trust-repair initiatives to address enduring distrust and reduce customer churn. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2393",
+    "title": "From Big Data to Cultural Intelligence: An AI-Powered Framework and Machine Learning Validation for Global Marketing",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20040288",
+    "abstract": "This research addresses the ‘cultural blind spot’ in Big Data and AI, where algorithms treat global user-generated content monolithically, fostering biased marketing models. It proposes a dynamic ‘contextual value amplification’ framework, integrating Impression Management and Construal Level Theories. The study argues that service context—luxury versus budget—systematically reconfigures how cultural values are expressed in online customer reviews. A dual-method approach was applied to 284,746 negative hotel reviews. First, a high-dimensional fixed-effects model provided evidence for ‘cultural complaint signatures’ and revealed a novel mechanism: the luxury context amplifies individualists’ focus on relational Service but dampens their focus on transactional Value. Second, an XGBoost model offered computational validation. Including these theoretically derived features improved the model’s ability to classify a reviewer’s cultural orientation by over 220%. The study proposes a dynamic, context-contingent theory of cross-cultural expression, offers a methodological template fusing econometrics and machine learning to mitigate bias, and advances a conceptual framework for ‘Cultural Intelligence’. © 2025 by the author."
+  },
+  {
+    "article_id": "CS_2394",
+    "title": "AI-Based Sentiment Analysis of E-Commerce Customer Feedback: A Bilingual Parallel Study on the Fast Food Industry in Turkish and English",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer20040294",
+    "abstract": "Across digital platforms, large-scale assessment of customer sentiment has become integral to brand management, service recovery, and data-driven marketing in e-commerce. Still, most studies center on single-language settings, with bilingual and culturally diverse environments receiving comparatively limited attention. In this study, a bilingual sentiment analysis of consumer feedback on X (formerly Twitter) was conducted for three global quick-service restaurant (QSR) brands—McDonald’s, Burger King, and KFC—using 145,550 English tweets and 15,537 Turkish tweets. After pre-processing and leakage-safe augmentation for low-resource Turkish data, both traditional machine learning models (Naïve Bayes, Support Vector Machines, Logistic Regression, Random Forest) and a transformer-based deep learning model, BERT (Bidirectional Encoder Representations from Transformers), were evaluated. BERT achieved the highest performance (macro-F1 ≈ 0.88 in Turkish; ≈0.39 in temporally split English), while Random Forest emerged as the strongest ML baseline. An apparent discrepancy was observed between pseudo-label agreement (Accuracy > 0.95) and human-label accuracy (EN: 0.75; TR: 0.49), indicating the limitations of lexicon-derived labels and the necessity of human validation. Beyond methodological benchmarking, linguistic contrasts were identified: English tweets were more polarized (positive/negative), whereas Turkish tweets were overwhelmingly neutral. These differences reflect cultural patterns of online expression and suggest direct managerial implications. The findings indicate that bilingual sentiment analysis yields brand-level insights that can inform strategic and operational decisions. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2395",
+    "title": "Disconfirmation Dynamics in Service Recovery: Insights from Online Customer Reviews",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.3390/jtaer21020045",
+    "abstract": "This paper analyzes the effects of service recovery and the double-deviation phenomenon on customer satisfaction using an analysis of online reviews. With the application of Word2Vec and AFINN sentiment analysis to 4793 Skytrax review comments, this paper bridges the gap between conceptual theories about customer behavior and big data analysis. Findings from this research indicate that although overall types of service recovery increase customer satisfaction, explanation is the most preferable yet effective type of recovery. Most importantly, this analysis shows that service recovery disconfirmation has been found to be a highly important moderator. When service efforts involve intangible actions, such as an apology or explanation, that fail to satisfy customers, they tend to perform worse than no recovery at all, thus supporting the double-deviation phenomenon. Compensation, however, has been found to be an efficient type of recovery since its impacts are not reduced much due to service recovery disconfirmation. These insights provide service providers with critical guidance on prioritizing transparent communication and avoiding poorly executed intangible recoveries. © 2026 by the authors."
+  },
+  {
+    "article_id": "CS_2396",
+    "title": "Analysis of Parcel Delivery Issues at ‘State Parcel Company’: An Examination of Customer Complaints and Interrelationships",
+    "journal": "Logistics",
+    "journal_impact_factor": null,
+    "doi": "10.3390/logistics9010016",
+    "abstract": "Background: The research presented here looks into ongoing problems with the package delivery services of a State parcel company, especially concerning damaged, wrongly delivered, late, and missing packages. These problems greatly affect customer satisfaction, so it is important to understand how they are connected. Methods: Three hundred and seventy-five customer complaints made between 2021 and 2023 were analyzed. Paniotto’s method was used to ensure that the study data accurately represented the situation. Pearson’s correlation coefficients helped find statistical links between different delivery problems. Results: The analysis revealed significant linkages among the core delivery issues. A strong positive correlation was found between damaged shipments and misdelivered shipments (r = 0.93835) and between prolonged delivery delays and lost goods (r = 0.9188). These findings suggest that addressing one issue may reduce the prevalence of others, given their tendency to coexist. Conclusions: The study emphasizes the necessity for the State parcel firm to execute a comprehensive strategy to improve the overall quality of parcel delivery services. Addressing concerns such as poor delivery and delays is critical since they are closely related to package damage and loss, which affects customer satisfaction. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2397",
+    "title": "Geoinformation Internet Platform for Interactive Charity Tourism in the Current Realities of Ukraine",
+    "journal": "Tourism and Hospitality",
+    "journal_impact_factor": null,
+    "doi": "10.3390/tourhosp5040067",
+    "abstract": "In the context of armed conflicts, regions often face infrastructure destruction and economic difficulties. The development of tourism can be a key factor in recovery and economic growth. Geospatial platforms for interactive charitable tourism offer a promising solution for attracting tourists and stimulating the development of affected regions. The aim of this study is to assess the effectiveness of geospatial platforms for interactive charitable tourism as a tool for attracting tourists and promoting the recovery and development of regions affected by armed conflicts. This study employed regression and correlation analysis methods. The analysis revealed significant positive correlations for all variables. The correlation coefficient for audience reach was 0.75, for the effectiveness of attracting donations—0.8, for the economic impact on the region—0.9, for user interaction with the platform—0.85, for platform sustainability—0.78, and for social impact—0.92. The t-statistic values exceeded the critical thresholds, and the p-values were below 0.05, confirming the statistical significance of the results. The coefficient of determination was 0.91, indicating a high explanatory power of the model. For the four obtained clusters, approaches to the development and use of geospatial platforms were justified. For regions of Cluster 1 with high audience reach (0.75) and moderate effectiveness of attracting donations (0.8), it is recommended to use technologies to improve connectivity and effectively promote their strengths. For regions of Cluster 2 with high sustainability and high tourism potential (high social impact = 0.92), it is necessary to include advanced geospatial solutions to increase visitor engagement and optimize recovery strategies, building on existing strengths to attract more tourists and stimulate sustainable development. For regions of Cluster 3, significant investments are required both in geospatial platforms and in tourism infrastructure to benefit from high tourism potential (economic impact on the region = 0.9). Strategic development and targeted marketing should be a priority to attract tourists and stimulate economic growth. Regions of Cluster 4 with low sustainability and tourism potential (low user interaction with the platform = 0.85 and platform sustainability = 0.78) require comprehensive support, as they are in a crisis situation. © 2024 by the authors."
+  },
+  {
+    "article_id": "CS_2398",
+    "title": "Exploring the Impacts of Service Gaps and Recovery Satisfaction on Repurchase Intention: The Moderating Role of Service Recovery in the Restaurant Industry",
+    "journal": "Tourism and Hospitality",
+    "journal_impact_factor": null,
+    "doi": "10.3390/tourhosp6030147",
+    "abstract": "This study integrates Expectation–Confirmation Theory (ECT) and the existing literature on service failure to propose a novel service gaps model. This model categorizes service gaps into three dimensions: Gap 1—the service delivery system gap; Gap 2—the customer needs and requests gap; and Gap 3—the unprompted and unsolicited service behaviors gap. This study examines the effects of these service gaps and recovery satisfaction on repurchase intention, as well as the moderating role of service recovery in the relationship between recovery satisfaction and repurchase intention. Based on the findings, this study offers practical recommendations to address service gaps, enhance recovery satisfaction, and ultimately improve customers’ repurchase intentions in the restaurant industry. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_2399",
+    "title": "Recovering Together: A Moderated Mediated Analysis of Co-Created Recovery on Repatronage Intentions",
+    "journal": "Proceedings of the International Conference on Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.34190/ictr.8.1.3409",
+    "abstract": "Service failures can significantly impact hotel customers' loyalty, often leading to negative re-patronage intentions. However, how service recovery efforts are designed and implemented is crucial in mitigating these adverse effects. Co-created service recovery, where customers actively participate in solving service failures, has emerged as a critical strategy to improve customers' subsequent behaviours. Drawing on the value co-creation theory, this study investigates the moderating effect of co-created service recovery on customers' responses to service failures and their subsequent re-patronage intentions. A two-phase quasi-experimental study was conducted to determine the effectiveness of co-created service recovery relative to customers' aversion, distrust, and negative re-patronage intentions. Quantitative data was obtained from 153 purposively sampled participants. Data was analysed using a t-test and moderated mediation analysis using Model 14 in PROCESS macro. The findings suggest that when customers perceive their input as valued during recovery efforts, they are less likely to be aversive and distrustful towards the hotel. In turn, their negative re-patronage intentions are reduced. These findings provide important insights for hotel managers on enhancing co-creation as a service recovery strategy to improve customer loyalty and retention. © ICTR 2025. All rights reserved."
+  },
+  {
+    "article_id": "CS_2400",
+    "title": "Communication and customer relations strategy in improving hotel guests' satisfaction in Samosir tourism area, North Sumatra, Indonesia",
+    "journal": "International Journal of Management",
+    "journal_impact_factor": null,
+    "doi": "10.34218/IJM.10.6.2019.009",
+    "abstract": "The present study examines and analyzes the strengths and weaknesses of the communications and customer relationship strategies that have been developed by public relations and individually simultaneously, influencing guests to visit at Hotels in Samosir. The research population is Hotel managers located on Samosir Island with saturated sample techniques where population units are sampled as a whole. Then, the data obtained were analyzed using regression analysis based on the Structural Equation Modeling (SEM) Partial Least Square (PLS). The empirical results of this study have shown that customer relationship marketing has an effect on the satisfaction of hotel guests. The success of the Hotel strategy in the Samosir area has given the guests satisfaction that has been a parameter for their future hotel success. Hotels that have failed in general have suffered a loss of trust and dissatisfaction with guests and communities. The communication strategies that have been established by the customer relationship hotel in Samosir area have shown good strategy. The customer relationship strategy that hotels in Samosir have created to increase guest satisfaction among them; Hotel provides Family Gathering activities. Family gatherings are of two types - employee gatherings are a regular event for all employees to develop intimacy between employees. Customers gathering is a special event for guests to foster relationships. Customers relationship Hotel in Samosir area also has strategies in handling guest complaints. The strategy of the Hotel in the Samosir area in dealing with guest complaints is through a cooperative approach to guests. Customers relations Hotel in Samosir area is divided into two parts; guest service and customer information section. The existing customer relations of the Samosir Hotel has become a mediator that connects the agency with its guests. The needs of any guest they want should go through the customer relations section. Here the role of customer relations is also the communicator of the agency. The service department has the task of welcoming guests; providing services for all guests' needs and providing information on procedures. Customer relations have been able to increase hotel guests’ satisfaction in Samosir area through innovation. It has been proven to increase the satisfaction of hotel guests. It is also closely linked to the hotel's customer relations strategy. © IAEME Publication"
+  }
+]

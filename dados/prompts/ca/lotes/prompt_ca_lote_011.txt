@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_0501",
+    "title": "Hybrid analytical approach to understanding male consumer behavior: Integrating PLS-SEM, ANN, and sentiment analysis in the context of green grooming products",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104661",
+    "abstract": "This research investigates the application of chatbots, specifically in the male grooming industry. It explores the transformative potential of solutions enabled by chatbots. While consumers are willing to adopt new technologies, the extent of their adoption of green grooming products and chatbots for purchase decisions remains unclear. This research addresses the gap by developing a conceptual framework grounded in chatbot technology. This study examines male consumers’ interactions with chatbots in purchasing green grooming products, focusing on technological and behavioral factors influencing acceptance and adoption. A two-stage mixed-methods design was employed. In the first stage, consumer reviews (n = 3503) were analyzed to capture insights grounded in real-world experiences. In the second stage, survey data from male consumers (n = 390) were examined using partial least squares structural equation modeling, based on the Technology Acceptance Model. Artificial neural network analysis was conducted to enhance model validation and predictive accuracy, offering nonlinear insights into the differential significance of predictors of purchase intention. This research contributes to the literature on digital adoption in sustainable markets by extending TAM to the underexplored context of green grooming among male consumers. Findings highlight the significance of empathic capacity and responsive communication in chatbot design, revealing consumer preference for human-like and personalized digital interactions. Managerially, the results guide integrating chatbots into green marketing strategies, fostering effective engagement, and encouraging eco-friendly grooming practices. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0502",
+    "title": "Can AI make us less green? Insights from four experiments on digital speed, time perception, and sustainable consumption",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104696",
+    "abstract": "Digital technologies increasingly rely on artificial intelligence (AI) agents to guide consumer choices. Although AI agents are designed to facilitate efficiency, their perceived speed may subtly alter consumers' temporal experience during decision making. Across four controlled experiments conducted with 1462 Chinese consumers recruited through a national online research panel, we investigate how AI (vs. human) agents influence sustainable consumption. Interacting with an AI agent heightens state arousal and weakens future self-continuity, accelerating consumers' internal sense of time and shortening their perceived connection to future outcomes. Consequently, consumers become less willing to wait for environmentally friendly options when those options involve delayed benefits (e.g., eco-shipping or carbon offsets). When temporal extensions yield continued or cumulative rewards (e.g., long-term green plans), however, the same temporal distortion enhances patience and promotes sustainability. These effects are moderated by interface tempo and agent anthropomorphism, which temper arousal and restore temporal balance. Together, these findings demonstrate that perceptions of digital speed shape consumers’ temporal horizons and sustainable decision making, extending theories of intertemporal choice and human–AI interaction while identifying design strategies that can align algorithmic efficiency with environmental responsibility. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0503",
+    "title": "How chatbot anthropomorphism shapes customer purchase decisions: Evidence from a field experiment on a cosmetic E-commerce retailer",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104721",
+    "abstract": "This study investigates how chatbot anthropomorphism influences customer purchase behavior through a real-world field experiment on a Japanese cosmetic e-commerce website. Using a 2 × 2 framework of form realism (human-like/cartoon appearance) and behavioral realism (warmth/competence response styles), the experiment examines how chatbot anthropomorphic designs influence one-time and subscription purchases over the short and long term. The findings show that low form realism (cartoon appearance) combined with high behavioral realism (warmth response) significantly enhances subscription purchases, aligning with the expectancy-disconfirmation theory. In contrast, chatbots with high behavioral realism (competence response) are more effective for one-time order customers, reflecting that cognitive cues are preferred in the exploration phase of customer–seller relationships. The study also reveals contrasting temporal patterns: while the novelty effect of chatbots diminishes over time for one-time purchases, subscription purchases exhibit no comparable decline, suggesting a persistent impact of chatbots in the maturity phase. These findings enhance the external validity of prior laboratory research and clarify the conditions under which low form realism can outperform human-like designs. The study demonstrates that consumers’ responses to chatbots evolve across repeated transactions, highlighting the importance of considering relationship phases and timeframes. No previous study has simultaneously examined both dimensions of realism; this study addresses this gap, offering theoretical insights into the effects of chatbot anthropomorphism and practical guidance for tailoring chatbot appearance and communication style to different customer segments. © 2026 The Authors"
+  },
+  {
+    "article_id": "CA_0504",
+    "title": "Face meets machine: How price promotions shape consumer preference for virtual assistants (VAs) vs. human in luxury retail",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2026.104767",
+    "abstract": "Advances in artificial intelligence encourage luxury firms to consider virtual assistants (VAs) as frontline service providers. It is thus important to understand whether consumers are willing to accept VAs as service providers in luxury retail. Drawing on face theory, this study examines consumer preferences for VAs versus human salespeople under price promotion versus full-price conditions. We also test the mediating effect of face consciousness and the moderating role of concern for face. Across three studies and an additional robustness check, we find that consumers prefer VAs under price discount conditions but prefer human salespeople in full-price luxury consumption. This phenomenon is explained by face consciousness. When purchasing full-price luxury products, consumers perceive more face gain if a salesperson provides service. In contrast, when price discounts are offered, consumers perceive less face loss if a VA provides service. Our result also indicates that differences in the stable individual trait of concern for face strengthen these effects, which further supports that face consciousness is an important mechanism in luxury consumption. Our findings offer insights for luxury firms to deploy and design VAs to meet consumers’ needs for signaling social status by purchasing luxury products. © 2026 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0505",
+    "title": "The voice or the script? Unlocking AI agent persuasion through modality and mental imagery",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2026.104775",
+    "abstract": "AI agents are increasingly used in marketing to deliver personalized product recommendations through text- or voice-based interactions. While prior research has focused on content characteristics, the influence of communication modality remains underexplored. This research investigates how the modality of AI agent communication (text vs. voice) shapes consumers’ recommendation adoption behavior and how this effect varies across message contexts. We first conducted a field experiment in collaboration with a local mobile phone retailer, which provided initial behavioral evidence that text-based AI recommendations lead to higher engagement than voice-based recommendations. Building on this real-world pattern, three controlled experimental studies further unpack the underlying psychological mechanism and boundary conditions. Across these studies, we show that text-based recommendations generally elicit stronger recommendation adoption behavior by facilitating vivid mental imagery. However, when embodied cognition cues are present, voice-based recommendations become more persuasive due to their alignment with sensory simulation. This pattern is further moderated by temporal framing: under near-future framing, voice with embodied cues evokes stronger imagery and engagement, whereas under distant-future framing, text remains more effective. Together, these findings position mental imagery as a core explanatory mechanism through which AI agent modality translates into consumer response, and demonstrate how aligning modality with sensory and temporal contexts can enhance the effectiveness of AI-mediated recommendations. © 2026 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0506",
+    "title": "Should AI disclose diagnostic uncertainty? Understanding consumer responses through the lens of information diagnosticity",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2026.104794",
+    "abstract": "Diagnostic uncertainty is unavoidable in clinical practice and often undermines consumers' willingness to accept medical recommendations. Although medical artificial intelligence (AI) has the potential to alleviate physicians' communication burden, little is known about how consumers respond when AI delivers diagnoses that vary in uncertainty. Drawing on information diagnosticity theory, this research investigates how agent type (AI vs. human physicians) and diagnostic uncertainty jointly shape consumers’ acceptance of medical diagnoses, the mediating role of perceived diagnosticity, and the boundary role of AI personalization. Across four experiments involving both online and offline samples, the findings reveal that, when diagnostic uncertainty is high, consumers show greater acceptance of diagnoses from human physicians than from AI agents because they perceive human-delivered uncertain diagnoses as more diagnostic. When diagnostic uncertainty is low, acceptance does not differ between the two sources. Moreover, AI personalization serves as an effective design-based boundary condition. When uncertain diagnoses are delivered by a personalized AI system, consumers judge the information as more diagnostic and exhibit higher acceptance compared with diagnoses delivered by non-personalized AI; this advantage diminishes when uncertainty is low. Together, these findings enrich the literature on medical AI acceptance, diagnostic uncertainty, and the application of information diagnosticity theory. Practically, this research offers actionable guidance for developing AI systems capable of communicating unavoidable diagnostic uncertainty while maintaining consumer acceptance through personalization and diagnosticity-enhancing design strategies. © 2026 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0507",
+    "title": "The relational power of friendly AI shopping assistants: A serial mediation model of sense of care, reliance, and stickiness intention",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2026.104795",
+    "abstract": "The rapid rise of generative AI has produced conversational AI shopping assistants that provide socially expressive, curated guidance in online retail. Yet existing research continues to focus largely on functional, service-oriented chatbots, offering limited insights into how these assistants shape consumers' relational and emotional responses. Drawing on attachment theory, this study examines how consumers' perceptions of AI shopping assistant personality—professional versus friendly—affect their stickiness behavior through perceived care and psychological reliance. Two experimental studies are conducted: Study 1 finds that friendly (vs. professional) AI assistants elicit greater stickiness intention, which is explained by a sequential pathway in which perceived care increases reliance, in turn enhancing stickiness. Study 2 demonstrates that decision difficulty moderates this process: the relational advantages of friendly AI assistants intensify with greater difficulty but diminish when decisions are easy. These findings extend attachment theory to consumer–AI interactions and show that emotional relational processes, not merely functional performance, are central to fostering sustained engagement with AI shopping assistants. For practitioners, the results highlight when and why deploying friendly AI personalities can strengthen consumers’ relational connections and continued use in online retail environments. © 2026"
+  },
+  {
+    "article_id": "CA_0508",
+    "title": "AI-chatbots’ positive emotional expression may backfire: A perspective of emotional intensity",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2026.104802",
+    "abstract": "As emotional artificial intelligence (AI) chatbots become increasingly prevalent in customer service settings, understanding how their emotional expressions shape customer responses has become ever more important. Based on expectancy violations theory (EVT) and feelings-as-information theory (FIT), this study explores how positive emotional intensity (PEI) expressed by AI-chatbots influences customer satisfaction. Through three scenario-based experiments, this study reveals an inverted U-shaped relationship between AI-expressed PEI and customer satisfaction and demonstrates that this effect is mediated by perceived emotional expectancy violations. Moreover, customers’ own PEI significantly moderates this inverted U-shaped relationship. Specifically, when customers are in low PEI states, AI-expressed PEI exhibits an inverted U-shaped effect on their satisfaction. In contrast, when they are already in a moderate or high PEI state, AI-expressed PEI positively influences their satisfaction. These findings not only advance our understanding of human–AI emotional interaction, but also offer actionable insights for the effective deployment of emotional AI-chatbots in customer service settings. © 2026 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0509",
+    "title": "The selling-oriented versus customer-oriented retail chatbot and effects on customer satisfaction",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2026.104805",
+    "abstract": "Chatbots in e-retailing settings have so far mainly been examined in their role as service providers, although there is a growing pressure on human service employees to engage in selling activities. The current study addresses this gap by examining an online retail chatbot with a selling orientation. Contrasted with a customer-oriented approach in two between-subjects experiments, the study shows that customer satisfaction was significantly reduced when the chatbot used a selling orientation. This effect was mediated by perceived chatbot warmth and competence as well as attributions of theory of mind to the chatbot. When agent identity (chatbot vs. human employee) was manipulated in the second experiment, the results remained invariant. © 2026 The Authors"
+  },
+  {
+    "article_id": "CA_0510",
+    "title": "Designing persuasive chatbots: Cross-market evidence on cognitive and affective pathways in AI-mediated retail interactions",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2026.104809",
+    "abstract": "Artificial intelligence enabled chatbots are increasingly embedded in retail customer journeys, yet evidence remains limited on how specific chatbot design features translate into customers’ willingness to recommend the retailer. Grounded in the Elaboration Likelihood Model, this study develops and tests a dual route persuasion framework in which chatbot cognitive cues, namely information depth and response quality, and peripheral cues, namely interface aesthetics, shape recommendation intention via two distinct user evaluations, perceived informativeness and perceived enjoyment, conditional on customer involvement. Two 2 × 2 scenario-based experiments were conducted in different retail contexts. Study 1 (N = 420) involved a Chinese online electronics retailer; Study 2 (N = 508) replicated the model with United States consumers interacting with an omnichannel fashion and home accessories retailer. Across both studies, cognitive cues increased recommendation intention indirectly through perceived informativeness, whereas peripheral cues operated primarily through perceived enjoyment; once these mediators were included, the direct effects of chatbot cues on recommendation were no longer significant, indicating full mediation. Involvement strengthened the cognitive cue to informativeness pathway and its associated indirect effect on recommendation, while leaving the enjoyment pathway largely unchanged. For retailers, the findings suggest two complementary design levers: prioritizing accurate, diagnostic responses, especially for highly involved customers, while also investing in interface features that sustain enjoyable interactions to stimulate positive word of mouth and recommendation. © 2026 The Authors"
+  },
+  {
+    "article_id": "CA_0511",
+    "title": "Grounding the detection of the user's likes and dislikes on the topic structure of human-agent interactions",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2016.05.038",
+    "abstract": "This paper introduces a knowledge-based system which grounds the detection of the user's likes and dislikes on the topic structure of the conversation. The targeted study is set in a human-agent interaction with the aim to help the creation of dialogue strategies of an agent based on the user's interests. In this paper, we first describe the system based on linguistic resources such as lexicons, dependency grammars and dialogue information provided by the dialogue system. Second, we explain how the system merges its outputs at the end of each topic sequence. Finally, we present an evaluation of both the linguistic rules and the merging process. The system enables a better identification of the target of the user's likes and dislikes and provides a synthetic representation of the user's interests. © 2016 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0512",
+    "title": "Combining Markov model and Prediction by Partial Matching compression technique for route and destination prediction",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2018.05.007",
+    "abstract": "Thanks to the built-in GPS device embedded in almost all smartphones, the facility of tracking users’ positions fostered new research opportunities. Among these opportunities, of particular interest in this work is the field of route and destination prediction. Suggesting a user to take a deviation to avoid a congested route is among the potential benefits of our research. Many of the approaches available in the literature consolidate the Markov model as suitable to prediction. Moreover, the Prediction by Partial Matching (PPM) compression technique has presented encouraging results for predicting route and destination. Thus, this paper proposes a novel predictor that combines Markov model with PPM technique, extracting the better of these two approaches. Our user-personalized predictor is able to predict the route and destination automatically in a real-time manner, including places never visited by the user. We evaluated our model with real world data collected from 21 users, obtaining a precision rate between 63% and 82%. © 2018 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0513",
+    "title": "Transportation sentiment analysis using word embedding and ontology-based topic modeling",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2019.02.033",
+    "abstract": "Social networks play a key role in providing a new approach to collecting information regarding mobility and transportation services. To study this information, sentiment analysis can make decent observations to support intelligent transportation systems (ITSs) in examining traffic control and management systems. However, sentiment analysis faces technical challenges: extracting meaningful information from social network platforms, and the transformation of extracted data into valuable information. In addition, accurate topic modeling and document representation are other challenging tasks in sentiment analysis. We propose an ontology and latent Dirichlet allocation (OLDA)-based topic modeling and word embedding approach for sentiment classification. The proposed system retrieves transportation content from social networks, removes irrelevant content to extract meaningful information, and generates topics and features from extracted data using OLDA. It also represents documents using word embedding techniques, and then employs lexicon-based approaches to enhance the accuracy of the word embedding model. The proposed ontology and the intelligent model are developed using Web Ontology Language and Java, respectively. Machine learning classifiers are used to evaluate the proposed word embedding system. The method achieves accuracy of 93%, which shows that the proposed approach is effective for sentiment classification. © 2019 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0514",
+    "title": "IntelliBot: A Dialogue-based chatbot for the insurance industry",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2020.105810",
+    "abstract": "Chatbots have become the go-to platform for users to receive answers to their queries. They are now being used by many businesses too to provide their customers with a virtual assistant to answer their queries. But when it comes to engaging with a user in a dialogue, existing chatbots have several shortcomings, with issues such as failing to provide a meaningful response to the user, offering semantically incorrect information etc. This paper studies the working styles of existing chatbots in generating a response and then identifies their shortcomings from the viewpoint of engaging in a dialogue with a user. It then proposes a domain-specific chatbot named IntelliBot, which is a response-generating dialogue-based chatbot that uses multiple strategies to generate a response. IntelliBot was trained on two datasets, namely the Cornell movie dialogue and a custom-built insurance dataset so it has domain-specific knowledge. The performance of IntelliBot was then validated and compared with three other chatbots from the literature, namely RootyAI, ChatterBot and DeepQA. The results demonstrate IntelliBot's superiority in engaging with the user and providing a complete answer in the insurance domain. © 2020 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0515",
+    "title": "A framework for building closed-domain chat dialogue systems",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2020.106212",
+    "abstract": "This paper presents HRIChat, a framework for developing closed-domain chat dialogue systems. Being able to engage in chat dialogues has been found effective for improving communication between humans and dialogue systems. This paper focuses on closed-domain systems because they would be useful when combined with task-oriented dialogue systems in the same domain. HRIChat enables domain-dependent language understanding so that it can deal well with domain-specific utterances. In addition, HRIChat makes it possible to integrate state transition network-based dialogue management and reaction-based dialogue management. FoodChatbot, which is an application in the food and restaurant domain, has been developed and evaluated through a user study. Its results suggest that reasonably good systems can be developed with HRIChat. This paper also reports lessons learned from the development and evaluation of FoodChatbot. © 2020 The Authors"
+  },
+  {
+    "article_id": "CA_0516",
+    "title": "A multimodal hierarchical approach to speech emotion recognition from audio and text[Formula presented]",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2021.107316",
+    "abstract": "Speech emotion recognition (SER) plays a crucial role in improving the quality of man–machine interfaces in various fields like distance learning, medical science, virtual assistants, and automated customer services. A deep learning-based hierarchical approach is proposed for both unimodal and multimodal SER systems in this work. Of these, the audio-based unimodal system proposes using a combination of 33 features, which include prosody, spectral, and voice quality-based audio features. Further, for the multimodal system, both the above-mentioned audio features and additional textual features are used. Embeddings from Language Models v2 (ELMo v2) is implemented to extract word and character embeddings which helped to capture the context-dependent aspects of emotion in text. The proposed models’ performances are evaluated on two audio-only unimodal datasets – SAVEE and RAVDESS, and one audio-text multimodal dataset – IEMOCAP. The proposed hierarchical models offered SER accuracies of 81.2%, 81.7%, and 74.5% on the RAVDESS, SAVEE, and IEMOCAP datasets, respectively. Further, these results are also benchmarked against recently reported techniques, and the reported performances are found to be superior. Therefore, based on the presented investigations, it is concluded that the application of a deep learning-based network in a hierarchical manner significantly improves SER over generic unimodal and multimodal systems. © 2021 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0517",
+    "title": "Automatic update strategy for real-time discovery of hidden customer intents in chatbot systems",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2022.108529",
+    "abstract": "Model degradation is still a challenge in real-time applications such as chatbot systems. This work refers to a webchat service of a Brazilian energy utility company, whose central part is composed of a supervised model and a question-and-answer list. User queries not met by it go to an NLP-based clustering model, responsible for identifying unknown customer intents. Manual labeling is impractical in this case due to the large volume of data. This work proposes an automatic update strategy for this clustering model, necessary due to changes in customer behavior from time to time. A series of experiments showed considerable temporal variation in the number of user queries per customer intent, the allocation of queries from unknown intents to few clusters, and larger relative variations in cluster sizes for unknown rather than known intents over time. Based on these findings, a monitoring metric, together with a cut-off point, was proposed to be used as a trigger for updating the clustering model. This update task was demonstrated in a real situation, from which the discovery of new customer intents was confirmed by experts. This resulted in a significant recovery rate of 13.9% (2251 messages), as 85.1% of the queries are already answered promptly by the central part of the chatbot system. These findings are valuable for the company to improve service quality and, ultimately, customer satisfaction. © 2022 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0518",
+    "title": "SigOpt Mulch: An intelligent system for AutoML of gradient boosted trees",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2023.110604",
+    "abstract": "Gradient boosted trees (GBTs) are ubiquitous models used by researchers, machine learning (ML) practitioners, and data scientists because of their robust performance, interpretable behavior, and ease-of-use. One critical challenge in training GBTs is the tuning of their hyperparameters. In practice, selecting these hyperparameters is often done manually. Recently, the ML community has advocated for tuning hyperparameters through black-box optimization and developed state-of-the-art systems to do so. However, applying such systems to tune GBTs suffers from two drawbacks. First, these systems are not model-aware, rather they are designed to apply to a generic model; this leaves significant optimization performance on the table. Second, using these systems requires domain knowledge such as the choice of hyperparameter search space, which is an antithesis to the automatic experimentation that black-box optimization aims to provide. In this paper, we present SigOpt Mulch, a model-aware hyperparameter tuning system specifically designed for automated tuning of GBTs that provides two improvements over existing systems. First, Mulch leverages powerful techniques in metalearning and multifidelity optimization to perform model-aware hyperparameter optimization. Second, it automates the process of learning performant hyperparameters by making intelligent decisions about the optimization search space, thus reducing the need for user domain knowledge. These innovations allow Mulch to identify good GBT hyperparameters far more efficiently—and in a more seamless and user-friendly way—than existing black-box hyperparameter tuning systems. © 2023"
+  },
+  {
+    "article_id": "CA_0519",
+    "title": "Evaluation of semantic relations impact in query expansion-based retrieval systems",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2023.111183",
+    "abstract": "With the increasing demand of intelligent systems capable of operating in different contexts (e.g. users on the move) the correct interpretation of the user-need by such systems has become crucial to give consistent answers to the user questions. The most effective applications addressing such task are in the fields of natural language processing and semantic expansion of terms. These techniques are aimed at estimating the goal of an input query reformulating it as an intent, commonly relying on textual resources built exploiting different semantic relations like synonymy, antonymy and many others. The aim of this paper is to generate such resources using the labels of a given taxonomy as source of information. The obtained resources are integrated into a plain classifier for reformulating a set of input queries as intents and tracking the effect of each relation, in order to quantify the impact of each semantic relation on the classification. As an extension to this, the best tradeoff between improvement and noise introduction when combining such relations is evaluated. The assessment is made generating the resources and their combinations and using them for tuning the classifier which is used to reformulate the user questions as labels. The evaluation employs a wide and varied taxonomy as a use-case, exploiting its labels as basis for the semantic expansion and producing several corpora with the purpose of enhancing the pseudo-queries estimation. © 2023 The Author(s)"
+  },
+  {
+    "article_id": "CA_0520",
+    "title": "FedGODE: Secure traffic flow prediction based on federated learning and graph ordinary differential equation networks",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2024.112029",
+    "abstract": "Traffic flow prediction (TFP) plays a key role in optimizing intelligent transportation systems and reducing congestion in smart cities. However, current centralized TFP systems suffer from several limitations: limited adaptability to localized traffic patterns, privacy concerns associated with sharing raw data, inability to provide real-time predictions, network inefficiency due to large data transmissions, and difficulties in handling heterogeneous traffic environments. FedGODE (Federated Graph Ordinary Differential Equations) model offers a comprehensive solution to these issues. By employing federated learning (FL), FedGODE enables Roadside-Units (local clients) to contribute to the model training process, addressing challenges of localized traffic patterns and ensuring a more accurate representation of diverse scenarios. FedGODE incorporates privacy-preserving mechanisms (local differential privacy, homomorphic encryption, and secure aggregation), mitigating privacy concerns. FedGODE facilitates real-time updates to the global model, ensuring adaptability to dynamic traffic conditions while reducing network inefficiencies by transmitting only model updates. FedGODE utilizes (average/median) aggregation methods to aggregate the client's local updates. The performance of FedGODE was evaluated using six real-world traffic flow datasets and compared against nine baselines (ARIMA, VAR, FC-LSTM, STGCN, DCRNN, ASTGCN, Graph WaveNet, STG2seq, STGODE, and FedGRU). The results showed that FedGODE outperforms all baselines for short-and-long-term prediction. This approach makes FedGODE an effective solution for TFP scenarios, particularly in environments with heterogeneous traffic dynamics and privacy considerations. © 2024 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0521",
+    "title": "Customer service chatbot enhancement with attention-based transfer learning",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2024.112293",
+    "abstract": "Customer service is an important and expensive aspect of business, often being the largest department in most companies. With growing societal acceptance and increasing cost efficiency due to mass production, service robots are beginning to cross from the industrial domain to the social domain. Currently, customer service robots tend to be digital and emulate social interactions through on-screen text, but state-of-the-art research points towards physical robots soon providing customer service in person. This article explores the feasibility of Transfer Learning different customer service domains to improve chatbot models. In our proposed approach, transfer learning-based chatbot models are initially assigned to learn one domain from an initial random weight distribution. Each model is then tasked with learning another domain by transferring knowledge from the previous domains. To evaluate our approach, a range of 19 companies from domains such as e-Commerce, telecommunications, and technology are selected through social interaction with X (formerly Twitter) customer support accounts. The results show that the majority of models are improved when transferring knowledge from at least one other domain, particularly those more data-scarce than others. General language transfer learning is observed, as well as higher-level transfer of similar domain knowledge. For each of the 19 domains, the Wilcoxon signed-rank test suggests that 16 have statistically significant distributions between transfer and non-transfer learning. Finally, feasibility is explored for the deployment of chatbot models to physical robot platforms including “Pepper”, a semi-humanoid robot manufactured by SoftBank Robotics, and “Temi”, a personal assistant robot. © 2024 The Author(s)"
+  },
+  {
+    "article_id": "CA_0522",
+    "title": "Integrating query data for enhanced traffic forecasting: A Spatio-Temporal Graph Attention Convolution Network approach with delay modeling",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2024.112315",
+    "abstract": "Accurate prediction of road traffic conditions is essential for the effectiveness of Intelligent Transportation Systems (ITS) and the advancement of smart cities. While existing methodologies mainly focus on the complex structures of road networks and consider factors like weather, holidays, and accidents, the impact of social events is often overlooked. Queries, representing user requests in navigation applications, offer valuable insights into the popularity of social events and their effects on the road network. In this paper, we introduce the Query-aware Spatio-Temporal Graph Attention Convolution Network (QA-STGACN), which utilizes query data to model the impacts of events and forecast traffic conditions. Initially, spatial and temporal blocks are developed to extract spatial dependencies among road segments and capture traffic dynamics. A dynamic query-aware graph constructor then adaptively learns and retains periodic interactions between road segments and queries. Furthermore, three novel query-aware blocks – convolution, attention, and pattern transformation – are designed to uncover hidden dependencies between traffic conditions and query counts during events, as well as to model the delayed impacts of these counts on traffic. Ultimately, a gated fusion mechanism integrates the spatio-temporal correlations in road networks with the representations derived from queries. Comprehensive experiments on six datasets validate the superiority of QA-STGACN over robust baselines. © 2024 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0523",
+    "title": "Intelligent chatbot dialogue breakdown solutions and challenges: A systematic literature review",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2025.114054",
+    "abstract": "Chatbots are being widely used by businesses worldwide to offer customer service and facilitate interactions with their clients. They are becoming increasingly advanced due to their foundation in artificial intelligence and natural language processing, enabling them to address complicated requests and responses. However, chatbots face numerous issues and challenges that could potentially result in low-quality outcomes. One of these issues is chatbot dialogue breakdown, an issue which needs to be solved to enhance user satisfaction and elevate the chatbot quality of service. Although there are several reviews related to chatbots, this is the first review to focus on chatbot dialogue breakdown. In this study, we comprehensively discuss intelligent solutions for chatbot dialogue breakdown. We apply a systematic literature review approach to identify and analyze the methodologies and the datasets used with their evaluation metrics to answer our two key questions. Then, we comprehensively examine studies that offer intelligent solutions to dialogue breakdowns and compare them with our defined requirements to build a chatbot dialogue breakdown early warning system. Finally, based on the findings, we identify seven areas of open challenges that could guide future research. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0524",
+    "title": "Recursive-match prompting to enhance LLM-powered conversational AI capabilities in the judicial system",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2025.114856",
+    "abstract": "Legal systems around the world are widely perceived as complex and challenging to navigate, creating a psychological barrier that deters individuals from seeking justice due to fears of potential harm or entanglement. As a result, many are discouraged from pursuing legal recourse. We propose a legal advisor chatbot for the Indian legal system, currently implemented for consumer law, to bridge this knowledge gap by providing actionable information and guidance accessible to the average citizen. Existing solutions do not effectively address the challenge of sifting through the vast corpus of available legal information. They lack mechanisms to determine relevant precedents which is crucial for providing meaningful context and accurate advice to users. To achieve this, we introduce a novel approach called Recursive-Match Prompting (RM prompting), which iteratively refines user queries through a dialogue-based interaction. By leveraging a database of Landmark cases and performing cyclic information matching, the chatbot incrementally collects information about the user case to provide relevant legal precedents and guidance. We deep dive into the existing cases to find the matching precedent and provide accurate advice to users. Our approach empowers users with limited legal knowledge with accurate, context-sensitive advice, thereby lowering the entry barriers to accessing justice. We evaluate the effectiveness of RM prompting by using EM (Exact-Match) and F1 score and observe an improvement of 20 %. We measure the overall chatbot performance in terms of user-retention using average conversation turns. Furthermore, we have done a performance survey with 4 legal experts verifying the accuracy of the chatbot. © 2025 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0525",
+    "title": "MDR: Memory distillation and reproduction for personalized dialogue generation",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2025.115252",
+    "abstract": "Personalized dialogue generation requires chatbots to generate dialogue content that meets users’ persona and aligns with historical interactions. The long conversations pose difficulties for personalized and coherent responses, which becomes more challenging given that most current systems generate responses by directly encoding features derived from various persona. To make better use of the correlation between encoded features and actual responses, in this paper the Memory Distillation and Reproduction (MDR) framework is proposed. For utterance feature encoding, we utilize the student encoder to align with and fit the response features encoded by the teacher encoder through knowledge distillation, enhancing the understanding of underlying persona and complex contexts. For response generation, the decoding process is tailored to accommodate the contribution degree of response tokens. Therefore, MDR integrates users’ historical dialogue and personalized knowledge to construct up-to-date user profiles. Extensive experiments are conducted on ConvAI2 and Baidu PersonaChat datasets, compared with 8 strong existing methods through automatic evaluation. The results validate the superiority of MDR in terms of Coherence, Diversity and Consistency. Notably, MDR achieves BLEU-1 20.33 and Coh-Con.S 38.06 on ConvAI2, and ROUGE-L 30.05 and S-Dist-2 91.23 on Baidu PersonaChat. © 2026 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0526",
+    "title": "PCNA-IDS: An integrated lightweight intrusion detection system in internet of vehicles with federated contrastive learning and differential privacy",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2026.115346",
+    "abstract": "Internet of Vehicles (IoV) has emerged as a crucial component of intelligent transportation systems, where ensuring security and reliability is vital to protect vehicle users and traffic infrastructures. Intrusion Detection Systems (IDSs), as one of the key technologies for resisting cyberattacks, have attracted increasing attention in recent years. At present, two-stage federated learning (FL)-based IDSs in IoV have become predominant. However, these IDSs fall short of providing comprehensive protection for the entire IoV. To address these issues, this study proposes an integrated IDS for IoV, PCNA-IDS, based on federated contrastive learning and differential privacy. This system enhances the security of IoV by protecting the privacy of vehicle users, effectively detecting multiple in-vehicle and out-of-vehicle attacks. Specifically, this study initially designs a lightweight network based on progressive feature extraction (PFE) block and neighborhood attention (NA), PCNA, for attack detection in IoV. Secondly, a federated contrastive learning framework based on differential privacy is introduced to enhance the training of the PCNA network and protect vehicle users privacy. Thirdly, to enable the trained network to be better deployed on resource-constrained edge devices for real-time attack detection, this study employs an 8-bit dynamic quantization technology to further compress model parameters. Extensive experiments are conducted on two datasets covering both in-vehicle and out-of-vehicle attacks, verifying the high speed and effectiveness of PCNA-IDS. © 2026 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0527",
+    "title": "Q-rung picture fuzzy sets theory-based ensemble learning method for credit risk assessment",
+    "journal": "Knowledge-Based Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.knosys.2026.115581",
+    "abstract": "Credit risk assessment is conducted to assess the credit repayment capacity of a customer and determine the associated risk level. Traditional methods often face limitations in the effective modeling of uncertainties and the management of large datasets, highlighting the need to improve the risk management processes of banks. In addition, evaluating credit risk is essential to guide decision-making mechanisms within financial organizations; however, traditional approaches often struggle with the complexity and uncertainty involved. q-rung picture fuzzy sets (q-RPFSs), a theory well known for its ability to handle uncertainty, offer significant potential to address these challenges. In this study, we propose a novel framework that integrates q-RPFS-based feature selection with a stacking ensemble learning method to enhance predictive performance. The framework was tested on the German credit dataset. The findings demonstrated the effectiveness of the method, achieving an accuracy of 0.768 and an AUC of 0.792 on the German dataset, placing it among the top-performing approaches in the literature. Additionally, comparative experiments were conducted using several widely adopted fuzzy-MCDM methods. These included fuzzy Analytic Hierarchy Process (fuzzy-AHP), fuzzy Best Worst Method (fuzzy-BWM), and fuzzy Criteria Importance Through Intercriteria Correlation (fuzzy-CRITIC). The results indicated that the proposed q-RPFSs-based approach consistently outperforms these alternative techniques in terms of predictive performance. As a result, by integrating q-RPFSs with machine learning, this approach not only introduces innovative solutions to the financial sector but also provides a robust framework for handling uncertainty in real-world decision-making, thereby advancing the state of the art in intelligent systems. © 2026 Elsevier B.V."
+  },
+  {
+    "article_id": "CA_0528",
+    "title": "A stratified decision-making model for long-term planning: Application in flood risk management in Scotland",
+    "journal": "Omega (United Kingdom)",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.omega.2022.102803",
+    "abstract": "In a standard decision-making model for a game of chance, the best strategy is chosen based on the current state of the system under various conditions. There is however a shortcoming of this standard model, in that it can be applicable only for short-term decision-making periods. This is primarily due to not evaluating the dynamic characteristics and changes in status of the system and the outcomes of nature towards an a priori target or ideal state, which can occur in longer periods. Thus, in this study, a decision-making model based on the concept of stratification (CST), game theory and shared socio-economic pathway (SSP) is developed and its applicability to disaster management is shown. The game of chance and CST have been integrated to incorporate the dynamic nature of the decision environment for long-term disaster risk planning, while accounting for various states of the system and an ideal state. Furthermore, an interactive web application with dynamic user interface is built based on the proposed model to enable decision makers to identify the best choices in their model by a predictive approach. The Monte Carlo simulation is applied to experimentally validate the proposed model. Then, it is demonstrated how this methodology can suitably be applied to obtain ad hoc models, solutions, and analysis in the strategic decision-making process of flooding risk strategy evaluation. The model's applicability is shown in an uncertain real-world decision-making context, considering dynamic nature of socio-economic situations and flooding hazards in the Highland and Argyll Local Plan District in Scotland. The empirical results show that flood forecasting and awareness raising are the two most beneficial mitigation strategies in the region followed by emergency plans/response, planning policies, maintenance, and self help. © 2022"
+  },
+  {
+    "article_id": "CA_0529",
+    "title": "Generative AI in Responsible Conversational Agent Integration: Guidelines for Service Managers",
+    "journal": "Organizational Dynamics",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.orgdyn.2024.101045",
+    "abstract": "Responsible integration of conversational agents (CAs) like chatbots is crucial for service firms to mitigate risks and foster positive outcomes. This article provides managerial guidelines through a Corporate Digital Responsibility (CDR) lens, focusing on CDR Culture, Management Structure, and Digital Governance across the service firm, software provider, and customers/society. It examines how organizational sensemaking processes of creation, interpretation, and enactment are triggered by CA-related issues and events. The research highlights the role of generative AI (GenAI) in implementing CDR factors and responsible CA software development lifecycle phases during development and integration. Guidelines are provided for leveraging GenAI to enhance CDR Culture, incorporate ethical considerations into CDR Management Structure, and enable robust Digital Governance mechanisms to prioritize customer/societal well-being. A multilevel framework illustrates reinforcing the guidelines through organizational sensemaking processes, and fostering responsible CA integration aligned with ethical principles and societal values. © 2024 The Authors"
+  },
+  {
+    "article_id": "CA_0530",
+    "title": "Introducing the Co-oriented Scansis (CoS) model: A case of chatbot, Lee-Luda",
+    "journal": "Public Relations Review",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.pubrev.2023.102360",
+    "abstract": "This study presents the Co-oriented Scansis (CoS) model, which provides a comprehensive understanding of scansis—a recently identified crisis type integrated into the Situational Crisis Communication Theory (SCCT). Using a crisis case of Scatter Lab, a South Korean AI company, as a model case, the study applies the CoS model to analyze the perceptions and meta-perceptions of both the organization and the public regarding the crisis. The data collection involved three official statements released by Scatter Lab and an analysis of 365 reviews from the Google Play users' reviews page of Science of Love—the app used by Scatter Lab to collect intimate conversations between romantic partners. The findings highlight the utility of the CoS model in explaining how Scatter Lab's AI crisis evolved into a scansis. Specifically, the organization's failure to accurately comprehend the public's perception of the crisis (second level co-orientation) and the resulting discrepancy between the organization and the public's perceptions (third level co-orientation) contributed to moral outrage, ultimately leading to a scansis. The study concludes by discussing the theoretical contributions of the CoS model and its practical implications for crisis management. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0531",
+    "title": "Shaping corporate character via chatbot social conversation: Impact on organization-public relational outcomes",
+    "journal": "Public Relations Review",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.pubrev.2023.102385",
+    "abstract": "As an empirical effort to explore the public relations potential of AI-enabled technologies such as chatbots, this study examined how chatbot social conversation—a communication strategy that encompasses both social presence and conversational human voice and is conceptualized in consideration of chatbots’ mediated communication environment—can contribute to organization-public relational outcomes (i.e., OPRs). To understand how this process works, we incorporate the personification approach to organizations, and also investigate the impact of chatbot social conversation in shaping public perceptions of corporate character (i.e., agreeableness, enterprise, competence, and ruthlessness). A survey of 778 Facebook users in the United States was conducted, where participants were randomly assigned to have a guided conversation with an AI-enabled social chatbot utilized by real companies on Facebook. Results confirm that chatbot social conversation can serve as a strong antecedent of the corporate character of the organization that deployed it and OPRs. Perceived corporate character also directly influences the quality of OPRs, demonstrating the potential of using AI-enabled social chatbots for public relations purposes. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0532",
+    "title": "Leveraging AI in CSR: How social-oriented chatbots influence Chinese consumers’ supportive actions via dialogic communication",
+    "journal": "Public Relations Review",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.pubrev.2025.102541",
+    "abstract": "The use of artificially intelligent (AI) chatbots in the Chinese market is increasing along with corporate social responsibility (CSR). We surveyed 606 Chinese consumers to examine how a company's chatbot can contribute to CSR dialogues by enhancing users’ perceptions of chatbot listening and shared meaning creation. The findings revealed that Chinese consumers appreciate the use of AI-enabled chatbots in CSR conversations, particularly if the chatbot has a social-oriented communication style. This communication style helps shape shared meaning of CSR and enhances consumers’ perceptions of a chatbot's ability to listen. Furthermore, the communication style facilitates consumers’ willingness to engage in CSR dialogues, provide support, and recommend the business to others (supportive intent). In addition, we found that perceived chatbot listening and shared CSR meaning partially mediate the positive link between the social-oriented communication style and users’ supportive intent. Trust in the chatbot played a moderating role in the indirect effect of chatbot communication style (social-oriented) on supportive intent through perceived shared meaning. This effect increased with consumers’ trust in the chatbot's competence and communication integrity. The theoretical and practical implications of these findings are also discussed. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0533",
+    "title": "Brave new procurement deals: An experimental study of how generative artificial intelligence reshapes buyer–supplier negotiations",
+    "journal": "Journal of Purchasing and Supply Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.pursup.2025.101012",
+    "abstract": "The technological breakthrough of artificial intelligence (AI) is impacting buyer-supplier negotiations, which are increasingly moving toward human-to-machine negotiations using AI-based chatbots. While the first AI-powered negotiation solutions are currently being used by procurement professionals to negotiate for non-critical spend items, which is an example of structural influence, the behavioral influence of AI-based chatbots (i.e., on negotiation approach) remains unknown. It is unclear in which behavioral settings these chatbots deliver value to the buying firm in terms of economic, psychological, and relational outcomes. To fill this gap, we conduct three experiments in buyer–supplier negotiation settings, two in a lab-setting with undergraduate business students and one online experiment with professional negotiators. In our interactive simulations, participants play the role of the supplier, while a ChatGPT-based custom-trained chatbot acts as the buyer. We find that when the chatbot deploys a competitive, as compared to a collaborative, negotiation approach, it will achieve a higher price discount, better payment terms, and a quicker negotiation. However, suppliers trust a collaboratively prompted, as compared to a competitively prompted, chatbot more and demonstrate higher outcome satisfaction, as well as a stronger desire for future interaction. A text analysis of the chat interactions indicates a higher level of similarity when a competitively prompted chatbot is employed, which implies that suppliers also use more insistent and intimidating language, thereby matching the chatbot's negotiation approach to a greater degree. While the negotiation approach is a significant influencing factor, we do not find significant evidence that item type, in our case non-critical or bottleneck, matters, which indicates that AI-based chatbots can be effective in various buyer–supplier settings. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0534",
+    "title": "An era of ChatGPT as a significant futuristic support tool: A study on features, abilities, and challenges",
+    "journal": "BenchCouncil Transactions on Benchmarks, Standards and Evaluations",
+    "journal_impact_factor": 2.182,
+    "doi": "10.1016/j.tbench.2023.100089",
+    "abstract": "Open Artificial Intelligence (AI) published an AI chatbot tool called ChatGPT at the end of November 2022. Generative Pre-trained Transformer (GPT) architecture is the foundation of ChatGPT. On the internet, ChatGPT has been rapidly growing. This chatbot enables users to discuss with the AI by inputting prompts, and it is based on OpenAI's language model. Although ChatGPT is fantastic and produces exciting results for writing tales, poetry, songs, essays, and other things, it has certain restrictions. Users may ask the bot questions, and it will reply with pertinent, convincing subjects and replies. ChatGPT has now risen to the top of several academic agendas. Administrators create task teams and hold institution-wide meetings to react to the tools, with most of the advice being to adopt this technology. This paper briefs about the ChatGPT and its need. Further, various Progressive Work Flow Processes of the ChatGPT Tool are stated diagrammatically. Specific features and capabilities of the ChatGPT Support System are studied in this paper. Finally, we identified and discussed the significant roles of ChatGPT in the current scenario. The neural language models that form the foundation of character AI have been developed from the bottom up with talks in mind. This technology implies that the programme uses deep learning methods to analyse and produce text. The model “understands” the subtleties of human-produced natural language using vast amounts of data from the internet. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0535",
+    "title": "Analyzing the potential benefits and use cases of ChatGPT as a tool for improving the efficiency and effectiveness of business operations",
+    "journal": "BenchCouncil Transactions on Benchmarks, Standards and Evaluations",
+    "journal_impact_factor": 2.182,
+    "doi": "10.1016/j.tbench.2023.100140",
+    "abstract": "The study addresses the potential benefits for companies of adopting ChatGPT, a popular chatbot built on a large-scale transformer-based language model known as a generative pre-trained transformer (GPT). Chatbots like ChatGPT may improve customer service, handle several client inquiries at once, and save operational costs. Moreover, ChatGPT may automate regular processes like order tracking and billing, allowing human employees to focus on more complex and strategic responsibilities. Nevertheless, before deploying ChatGPT, enterprises must carefully analyze its use cases and restrictions, as well as its strengths and disadvantages. ChatGPT, for example, requires training data that is particular to the business domain and might produce erroneous and ambiguous findings. The study identifies areas of deployment of ChatGPT's possible benefits in enterprises by drawing on the literature that is currently accessible on ChatGPT, massive language models, and artificial intelligence. Then, using the PSI (Preference Selection Index) and COPRAS (Complex Proportional Assessment) approaches, potential advantages are taken into account and prioritized. By highlighting current trends and possible advantages in the industry, this editorial seeks to provide insight into the present state of employing ChatGPT in enterprises and research. ChatGPT may also learn biases from training data and create replies that reinforce those biases. As a result, enterprises must train and fine-tune ChatGPT to specific operations, set explicit boundaries and limitations for its use, and implement appropriate security measures to avoid malicious input. The study highlights the research gap in the dearth of literature by outlining ChatGPT's potential benefits for businesses, analyzing its strengths and limits, and offering insights into how organizations might use ChatGPT's capabilities to enhance their operations. © 2023"
+  },
+  {
+    "article_id": "CA_0536",
+    "title": "Virtual agents and flow experience: An empirical examination of AI-powered chatbots",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2022.121772",
+    "abstract": "The aspects that could shape customers' virtual experiences with chatbot applications are poorly understood. Therefore, this study aims to empirically examine the main factors that shape customers' virtual flow experiences with AI-powered chatbots. The conceptual model was based on flow theory and the technology interactivity model. This model was extended to include the impact of both readability and transparency. The data were collected using an online questionnaire survey posted to 500 customers of courier, package delivery, and express mail services. The statistical results largely supported the role of readability, transparency, personalisation, responsiveness, and ubiquitous connectivity in shaping the virtual flow experience with chatbots, which in turn has a significant impact on both communication quality and satisfaction. This study opens new horizons for researchers and practitioners to consider dimensions other than satisfaction and intention to use, to facilitate and accelerate the pace of success of chatbot applications. However, several areas have not been fully addressed in the current study which could be worth considering in future research, as discussed in the related subsection. © 2022 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0537",
+    "title": "AI anthropomorphism and its effect on users' self-congruence and self–AI integration: A theoretical framework and research agenda",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2022.121786",
+    "abstract": "This paper examines how users of anthropomorphised artificially intelligent (AI) agents, which possess capabilities to mimic humanlike behaviour, relate psychologically to such agents in terms of their self-concept. The proposed conceptual framework specifies different levels of anthropomorphism of AI agents and, drawing on insights from psychology, marketing and human–computer interaction literature, establishes a conceptual link between AI anthropomorphism and self-congruence. The paper then explains how this can lead to self–AI integration, a novel concept that articulates the process of users integrating AI agents into their self-concept. However, these effects can depend on a range of moderating factors, such as consumer traits, situational factors, self-construal and social exclusion. Crucially, the conceptual framework specifies how these processes can lead to specific personal-, group- and societal-level consequences, such as emotional connection and digital dementia. The research agenda proposed on the basis of the conceptual framework identifies key areas of interest that should be tackled by future research concerning this important phenomenon. © 2022 The Authors"
+  },
+  {
+    "article_id": "CA_0538",
+    "title": "VCAs as partners or servants? The effects of information sensitivity and anthropomorphism roles on privacy concerns",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2023.122560",
+    "abstract": "Advances in machine learning and natural language processing have driven the growing popularity of virtual conversational agents (VCAs). This anthropomorphic communication approach relies on user information sharing and real-time feedback from VCAs, and has raised privacy concerns while affecting various social interactions and relationships. Previous research on reducing user privacy concerns has mainly focused on user information mining, sensitive user information requests and privacy policies, while little is known about the anthropomorphic roles of partners and servants at the human-machine social hierarchy level. Therefore, this study, based on human-computer interaction (service) anthropomorphism at social level, develops a framework to investigate the impact of information sensitivity and VCAs' anthropomorphic roles, including partner and servant, on users' privacy concerns, as well as the mediating effects of competence- and integrity-based trust. The results show that when highly sensitive information is requested, user privacy concerns are greater for a partner VCA than a servant VCA, and vice-versa. Meanwhile, when a VCA requests highly sensitive information, integrity-based trust mediates the relationship between servant VCAs and privacy concerns, and when a VCA requests low-sensitivity information, competence-based trust mediates the same relationship. These insights provide actionable implications for managers. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0539",
+    "title": "Social companionship with artificial intelligence: Recent trends and future avenues",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2023.122634",
+    "abstract": "The social companionship (SC) feature in conversational agents (CAs) enables the emotional bond and consumer relationships. The heightened interest in SC with CAs led to exponential growth in publications scattered across disciplines with fragmented findings, thus limiting holistic understanding of the domain and warrants a macroscopic view of the domain to guide future research directions. The present study fills the research void by offering a comprehensive literature review entailing science performance and intellectual structure mapping. The comprehensive review revealed the research domain's major theories, constructs, and thematic structure. Thematic and content analysis of intellectual structure resulted in a conceptual framework encompassing antecedents, mediators, moderators, and consequences of SC with CAs. The study discusses future research directions guiding practitioners and academicians in designing efficient and ethical AI companions. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0540",
+    "title": "Can AI chatbots help retain customers? An integrative perspective using affordance theory and service-domain logic",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2023.122921",
+    "abstract": "Chatbots' role in service contexts is changing to ensure better connectedness with customers in the digital marketing era. Thus, developing an understanding of how to enhance user perceptions and behaviors through interface design has become crucial. Using affordance theory and service-dominant logic as theoretical lenses, this study examines how chatbot affordances affect consumers' continuance intention through value-in-use. Data collected from 405 chatbot users of selected banks were analyzed using structural equation modeling. The results reveal that chatbot affordances positively influence personalization and experience. Furthermore, personalization influences switching costs and psychological ownership, whereas experience affects psychological ownership. Moreover, switching costs affect continuance intention through inattentiveness to alternatives. Finally, psychological ownership influences customer citizenship behavior, which impacts continuance intention. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0541",
+    "title": "Anthropomorphic chatbots' for future healthcare services: Effects of personality, gender, and roles on source credibility, user satisfaction, and intention to use",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2023.123025",
+    "abstract": "In healthcare, chatbots are used to automate interactions between healthcare professionals and patients. To make these conversations realistic, designers anthropomorphized chatbots (e.g., attributed human characteristics to chatbot) by equipping them with personality (warmth/competence), attributable gender (male/female), and role (prevention/diagnosis/therapy). Notwithstanding, scholarly inquiry has predominantly disregarded these factors when ascertaining the proclivity of individuals to utilize chatbots in healthcare. Based on human-machine interactions and counter-stereotypes theories, the aim of this research is to evaluate the conditions under which chatbot anthropomorphism can increase users' satisfaction and intention of using related services. Analyses conducted on a sample of 1147 users show that chatbots' personality does not directly influence intention of being used in healthcare. Instead, this relationship is mediated by chatbots' perceived credibility and user satisfaction, and moderated by chatbots' anthropomorphism, gender, and role. Specifically, when there is a mismatch between chatbot's gender and its stereotypical descriptive property (i.e., competence for female chatbots; warmth for male chatbots), the chatbot is more credible, satisfying, and inviting to use. Moreover, chatbots with female anthropomorphic characteristics or with a low level of anthropomorphism are better suited for prevention roles such as counseling, while chatbots with male characteristics are more appropriate for therapeutic roles. © 2023"
+  },
+  {
+    "article_id": "CA_0542",
+    "title": "Factors affecting performance expectancy and intentions to use ChatGPT: Using SmartPLS to advance an information technology acceptance framework",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2024.123247",
+    "abstract": "Few studies have explored the use of artificial intelligence-enabled (AI-enabled) large language models (LLMs). This research addresses this knowledge gap. It investigates perceptions and intentional behaviors to utilize AI dialogue systems like Chat Generative Pre-Trained Transformer (ChatGPT). A survey questionnaire comprising measures from key information technology adoption models, was used to capture quantitative data from a sample of 654 respondents. A partial least squares (PLS) approach assesses the constructs' reliabilities and validities. It also identifies the relative strength and significance of the causal paths in the proposed research model. The findings from SmartPLS4 report that there are highly significant effects in this empirical investigation particularly between source trustworthiness and performance expectancy from AI chatbots, as well as between perceived interactivity and intentions to use this algorithm, among others. In conclusion, this contribution puts forward a robust information technology acceptance framework that clearly evidences the factors that entice online users to habitually engage with text-generating AI chatbot technologies. It implies that although they may be considered as useful interactive systems for content creators, there is scope to continue improving the quality of their responses (in terms of their accuracy and timeliness) to reduce misinformation, social biases, hallucinations and adversarial prompts. © 2024 The Author(s)"
+  },
+  {
+    "article_id": "CA_0543",
+    "title": "How does the anthropomorphism of AI chatbots facilitate users' reuse intention in online health consultation services? The moderating role of disease severity",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2024.123407",
+    "abstract": "This study aims to ascertain the significance of the anthropomorphic features of AI chatbots in online health consultation (OHC) services. A conceptual model drawing on social presence theory was developed to interpret the paths through which the anthropomorphic features of AI chatbots influence users' intentions to reuse OHC services. A total of 502 valid responses were collected through an experimental survey and analyzed using structural equation modeling. The results suggest that all the proposed anthropomorphic features of AI chatbots can enhance users perceived social presence and facilitate their communication quality with and trust in AI chatbots directly and/or indirectly, eventually leading to a high intention to reuse OHC services. In addition, the influence of perceived social presence on trust and communication quality was more significant for those experiencing relatively mild symptoms of the disease than for those experiencing intense symptoms. This study contributes by proposing a framework from the perspective of anthropomorphism and social presence to understand users' behavioral intentions in the OHC context. The findings of the empirical analysis have key implications for the improvement of OHC services. © 2024 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0544",
+    "title": "Experimental study on the effect of adopting humanized and non-humanized chatbots on the factors measure the intensity of the user's perceived trust in the Yellow September campaign",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2024.123414",
+    "abstract": "The article aims to identify if there is a difference between the groups that interacted with the non-humanized and humanized chatbot from the Yellow September campaign and if these factors measure the intensity of the user's perceived trust. The experiment built two chatbots with different characteristics but with the same purpose to inform participants about the campaign. The researchers used Facebook Messenger to conduct the experiment, resulting in a sample of 511 participants. A survey was conducted, and the data obtained was analyzed in the following stages: EFA, experiments (moderations, ANOVA, and GLM), and ANN-based models as a post-hoc analysis. The first one proved that all the analyzed constructs had a high significance level when analyzing the difference between the two groups. We observed that similarity to human, perceived competence, and satisfaction had higher results in the group that interacted with the humanized chatbot. In the moderation analysis stage, expertise proved to be a moderating variable in the chatbot's relationship with perceived competence and satisfaction. Users of the humanized chatbot have greater perceptions of trust than users of the non-humanized chatbot. Notably, humanized chatbots demonstrated significantly greater trust across all factors examined. © 2024 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0545",
+    "title": "Examining chatbot usage intention in a service encounter: Role of task complexity, communication style, and brand personality",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2024.123806",
+    "abstract": "This study investigates the role of chatbot communication style (task vs. social oriented), task complexity (high vs. low), brand personality (sophisticated vs. sincere), and anthropomorphism on consumer trust and chatbot usage intention. Data is collected through three experiments conducted among US respondents (N = 328, 200, and 336). The results offer mixed insights as only one experiment supports that task complexity moderates the effect of communication style on trust, such that, task-oriented communication style of the chatbot leads to higher trust under high task complexity conditions. No significant differences in the moderating effect of task complexity on the relationship between communication style and trust is observed between sincere and sophisticated brands. Consistent across the three studies, it is observed that perceived anthropomorphism mediates the effect of communication style on trust which, in turn, affects intention to use the chatbot. The study contributes to literature on AI-enabled conversational agents, human computer interaction, anthropomorphism, and trust. Practically, the study offers insights for managers and service providers who wish to integrate chatbots and other AI enabled technology to enhance service delivery by providing efficient, cost-effective, and consistent support. © 2024 The Authors"
+  },
+  {
+    "article_id": "CA_0546",
+    "title": "Let me shop alone: Consumers' psychological reactance toward retail robotics",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2024.123962",
+    "abstract": "Service robots, autonomous agents combined with artificial intelligence, have gained significant momentum in retail industry. Research on service robots has been attracting increased attention across various disciplines, with focuses on technical issues, benefits, and adoption/acceptance. However, little is known about consumer reactance to service robots and its psychological mechanisms. This study, based on reactance theory, examines how perceived threat to freedom triggers consumer reactance, and how psychological inertia moderates this process. In doing so, this study identifies a model of reactance to service robots by comparing two existing reactance models. A survey of 352 US consumers who used service robots for in-store shopping was conducted. This study found that consumer reactance to service robots is best explained by a dual-process cognitive-affective model. Increased threats to freedom drive resistance intentions both directly and indirectly through negative cognition, and psychological inertia moderates this process. The findings contributes to the literature by highlighting the adverse aspects of new retail technology and presenting a model of consumers' reactance to service robots. This study offers practical insights into what to consider in designing consumer-service robot retail environments to reduce reactance. © 2024 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0547",
+    "title": "How AI chatbots shape satisfactory experiences: A combined perspective of competence expansion and emotional extension",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2025.123979",
+    "abstract": "To explore the formation mechanism of consumers' experiences with AI chatbots, this study, grounded in the assemblage theory, focuses on the centrality of “interaction.” We selected AI chatbot conversational quality as the antecedent, with perceived chatbot competence/warmth, consumer creative self-efficacy, and rapport as mediators. Structural equation modeling and fuzzy-set qualitative comparative analysis (fsQCA) set qualitative comparative analysis were employed to test the theoretical model. The research results indicate that AI chatbot conversation quality and its various dimensions positively promote consumers' experiences with AI chatbots. The competence expansion path represented by “perceived competence - creative self-efficacy” and the emotional extension path represented by “perceived warmth - rapport” each play a chain mediation role in this process. The results of fsQCA support these findings and identify different antecedent configurations for enhancing consumers' experiences with AI chatbots. Moreover, they demonstrate the significant role of emotional factors in shaping a satisfying consumers' experience with AI chatbots over both short and long-time spans. The conclusions offer practical guidance for improving chatbot services and advancing human-chatbot interaction. © 2025"
+  },
+  {
+    "article_id": "CA_0548",
+    "title": "Solutions and trends of recommendation systems for massive open online courses",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2025.124118",
+    "abstract": "Massive Open Online Courses (MOOCs) have been widely disseminated due to the arrival of Web 2.0. In recent years, recommendation systems have been applied to support MOOCs users in choosing suitable learning materials (e.g., courses and videos) in this modality. However, implementing such systems remains a challenge since several recommendation aspects should be considered. In this work, we identify and analyze such aspects (e.g., inputs, approaches, and outputs), investigating several implementation possibilities based on the literature. Results show that collaborative filtering and content-based are the most used approaches. More than 60 techniques are used to support recommendations in MOOCs, and most of the studies focus on recommending courses. The main contributions are: (1) a better understanding of the aspects, benefits, and limitations of MOOCs recommendation; and (2) the identification of open issues and research trends, providing an analysis that can support the implementation of emerging recommendation systems for MOOCs. © 2025 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0549",
+    "title": "Customer behavior in the presence of algorithmic marketing agents: The role of hedonic values",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2025.124322",
+    "abstract": "Artificial intelligence (AI) marketing agents have increasingly emerged as a viable alternative to human representatives for direct customer interactions. In this research, we investigated customer behaviors in response to sales scenarios managed by AI agents considering individual customers' values. In three pre-registered studies, we examined the willingness of 1417 participants to engage in promotional activities related to purchasing real estate and vehicles. Using regression and simple slope analyses, we examined how the interaction among agents (human or algorithm), response types (negative or positive), and customers' hedonic values influence the likelihood of becoming promoters. Our results revealed a moderation effect in which the relationship between the type of marketing agent and the response type was influenced by customers' hedonic values. We found a positive relationship between hedonic values and promotion behavior when negative feedback was delivered by a human agent and when positive feedback came from an algorithmic agent. In contrast, algorithmic agents tend to elicit flatter responses across hedonic levels when delivering negative feedback, indicating reduced emotional engagement but also less potential for dissatisfaction. These insights emphasize the importance of aligning the source of communication with individual consumer characteristics to enhance customer promotion. © 2025 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0550",
+    "title": "Discursively negotiating AI: A social representation theory approach to LLM-based chatbots",
+    "journal": "Technological Forecasting and Social Change",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.techfore.2025.124352",
+    "abstract": "To date, users have not merely interacted with large language model (LLM)-based chatbots. Notably, they collectively discussed about them, flooding the online information ecosystem with a sheer volume of social media posts about LLM-based chatbots. Despite research on users' reception of this equivocal technology is on the rise, it is mainly rooted in positivist and functionalist paradigms, leaving a finer-grained understanding of how early adopters collectively make sense of such novel and unfamiliar technology in dedicated online environments elusive. Drawing upon Social Representation Theory, this study employs a computationally grounded analysis of user-generated content to investigate how the social representations of LLM-based chatbots formed in online communities. Findings reveal that users, through different discursive and emotional anchoring and objectification mechanisms, represent the LLM-based chatbot as a “creative partner”, a “multistable artifact”, a “connective hackaton”, and a “technology of power”. This work contributes to the emerging literature about LLM-based chatbots acceptance by unveiling how users discursively make sense of such unfamiliar social objects, and how they renegotiate the agentic roles of both actants involved in human-chatbot interactions. It showcases an original text-mining protocol to study social representations based on social media data; and it offers managerial implications to AI service providers and policy makers. © 2025 The Authors"
+  }
+]

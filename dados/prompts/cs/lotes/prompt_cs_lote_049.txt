@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_2401",
+    "title": "Effectiveness of online marketing and its determinants: Marketers’ perspective",
+    "journal": "International Journal of Management",
+    "journal_impact_factor": null,
+    "doi": "10.34218/IJM.11.3.2020.047",
+    "abstract": "The present study aims to the profile of the marketers, their e-marketing behavior and its antecedents and the service quality in online marketing and the factors leading to the successful implementation. And also the effectiveness of online marketing, its determinants and its consequences, causes for service failure in online marketing and the expected service quality in online marketing. In total 535 marketers were identified. Out of the 535 marketers only 392 marketers responded the questionnaire given to them. Hence the sample size of customers came to 392 had been used to collect the data. The present study conclude that the level of EE adoption have a significant impact on the rate of implementation of online marketing. The important antecedents to implement online marketing are convenience, merchandize, interactivity, reliability, navigation, and promotion. © IAEME Publication."
+  },
+  {
+    "article_id": "CS_2402",
+    "title": "Analyzing Public Sentiment on Digital Banks in Indonesia via Social Media X",
+    "journal": "APTISI Transactions on Technopreneurship",
+    "journal_impact_factor": null,
+    "doi": "10.34306/att.v8i1.530",
+    "abstract": "This study aims to analyze public sentiment towards digital banks in Indonesia, specifically Bank Jago, using data from social media Twitter. Sentiment analysis methods were used to classify tweets into positive, negative and neutral categories. The findings show that public perceptions are generally positive, with a focus on technological innovation and ease of service. However, key complaints related to technical issues and customer service remain noteworthy. Most tweets had neutral to positive sentiments, reflecting a favorable public view of digital banks. These results highlight the importance for digital banks to continuously improve the customer service and technical stability of their apps to maintain a good reputation in the eyes of the public. In addition, the positive sentiments that arise regarding technological innovation can be leveraged to reinforce the bank’s image as a modern and efficient institution. Recommendations from this study include developing a more responsive customer support system and improving app stability. With these measures, digital banks can maintain public trust and compete in an increasingly competitive market, as well as increase customer satisfaction and loyalty. This research provides valuable insights for digital bank business strategy in Indonesia. © Authors retain all copyrights."
+  },
+  {
+    "article_id": "CS_2403",
+    "title": "Justicia Percibida, Lealtad y Confianza en Fallos en el Servicio",
+    "journal": "Investigación administrativa",
+    "journal_impact_factor": 0.274,
+    "doi": "10.35426/iav54n135.01",
+    "abstract": "This study aims to analyze the relationship between perceived justice and loyalty and trust of 625 consumers in scenarios of failure in airline service companies. The research method used was structural equations based on covariance; the results show positive and significant effects of perceived justice by airline users on trust and loyalty, validating the hypotheses raised and reinforcing empirical evidence in the field. The originality lies in perceived justice analysis and its effects in the context of a service failure. The findings promote the analysis of justice as a fundamental principle to establish long-lasting relationships with customers, as well as the importance of quality in air service and the response to the user when there are failures in the service provided. The limitations are related to the sample focus on airline users from the southern area of the state of Tamaulipas at the Francisco Javier Mina airport."
+  },
+  {
+    "article_id": "CS_2404",
+    "title": "Research on the relationship between social capital and enterprise performance in supply chain environment",
+    "journal": "Journal of Korea Trade",
+    "journal_impact_factor": null,
+    "doi": "10.35611/jkt.2020.24.4.34",
+    "abstract": "Purpose - The rapid rise of e-commerce enterprises has led to the development of the logistics industry. At the same time, some enterprises are motivated by the interests to start reducing costs and inputs, which on the contrary leads to low quality of service, thus reducing customer satisfaction. In recent years, vicious competition, violent express delivery and lack of professionalism in the logistics market have led to high annual customer complaint rate, which has resulted in the company losing many loyal customers, but also unable to obtain new customers. Therefore, to pay attention to and understand the psychological needs of customers and improve the quality of logistics distribution service has become a pressing problem for Every express company. Design/methodology - By analyzing the problems existing in logistics distribution of express companies, this paper explores various factors affecting customer satisfaction and takes consumer sentiment as a mediating variable. Through questionnaires to collect relevant data, put forward hypotheses for empirical analysis, use two different software including SPSS 21.0 and AMOS 21.0 to analyze the information, draw conclusions and make recommendations. Findings - According to the above research results, the reliability, convenience, efficiency, professional can have a positive impact on customer satisfaction through the mediating effect of their sentiment, convenience and professional on consumer sentiment and satisfaction are more significant. Originality/value - This paper the establishment of distribution service indicators related to customer satisfaction and empirical analysis can not only enrich and supplement the distribution service quality indicator system studied by the former, but also provide a theoretical basis for future research. © 2020 Korea Trade Research Association."
+  },
+  {
+    "article_id": "CS_2405",
+    "title": "The Influence of Service Failures on Customer Emotions amongst Banking Customers in Gauteng",
+    "journal": "Journal of Contemporary Management",
+    "journal_impact_factor": null,
+    "doi": "10.35683/jcm18097.0019",
+    "abstract": "There has been an increase in the demand for services in South Africa due to poor service delivery. Service providers in sectors such as the banking industry are recognised as those that deliver poor services. Customers' demand for better services has increased the level of interaction required between banking service providers and customers, but this interaction could lead to increased levels of frustration and negative emotions if the service is not provided correctly. This study therefore aims to identify the influence of a service failure on the emotions experienced by customers following service failure in the banking industry which could assist banks in developing more strategic marketing strategies focused on customer satisfaction, service recovery and customer retention. Data were gathered amongst customers of the Big 5 banks who had experienced a service failure with the bank using convenience sampling in the Gauteng area of South Africa. Results from the 281 useable questionnaires analysed using factor analysis and correlation testing reveal that any service failure significantly increases the negative emotions customers' experience. In most cases, customers experienced both external and situational emotions after experiencing the service failure by their bank such as anger, frustration and unhappiness. The study provides empirical evidence to bank marketers that a service failure will cause negative emotions amongst customers. This could then negatively impact the satisfaction levels of customers. Bank marketers therefore need to consider the negative emotions experienced by customers in their service recovery strategies such as apologising, providing compensation or ensuring the failure does not occur again in the future."
+  },
+  {
+    "article_id": "CS_2406",
+    "title": "Focusing on complaints handling for customer satisfaction and loyalty: The case of Indonesian public banking",
+    "journal": "European Research Studies Journal",
+    "journal_impact_factor": 0.392,
+    "doi": "10.35808/ersj/1071",
+    "abstract": "The purpose of this study is to examine and explain the effect of customer complaints handling and the quality of bank services on customer loyalty to public sector banks owned by the government in Jakarta, Indonesia. These banks have been the subject of several complaints to the Indonesian Consumer Foundation and the Financial Services Authority. The variables in this study are the quality of bank service (6 indicators), the handling of customer complaints (4 indicators), the customer loyalty (3 indicators) and the customer satisfaction (5 indicators). A total of 275 respondents from four state-owned commercial banks have been used. The study presents a proposed conceptual model, which is a key determinant of customer loyalty. The results show that the quality of the service has a positive effect on satisfaction, but the quality of service does not affect customer loyalty. Customer complaints have a positive effect on satisfaction, but the handling of customer complaints has no effect on customer loyalty. The customer satisfaction has a positive effect on customer loyalty. The result of mediation path hypothesis testing shows that the influence of service quality on customer loyalty can be mediated by customer satisfaction showing positive relationship. The influence of complaints on customer loyalty can be mediated by customer satisfaction showing a positive relationship also. Complaint handling has the greatest coefficient value in creating customer satisfaction and impacting customer loyalty. The study develops a framework for further research with more variables and indicators. © 2018 International Strategic Management Association. All Rights Reserved."
+  },
+  {
+    "article_id": "CS_2407",
+    "title": "Consumer-complainant’s contentment with reference to performance of consumer dispute redressal machinery",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.35940/ijrte.B1070.0782S719",
+    "abstract": "Recognizing the significance of customer retention and creation, customer centric firms are continuously and systematically measuring customer satisfaction in terms of how well their customers are being treated and what are the factors influencing customer satisfaction level. Even when conscious efforts are being made by the business to keep its customers satisfied, there may be an instance where a consumer instead of getting his/her grievance resolved with the vendor/service provider approaches the consumer forum i.e. third party for resolution of grievance. An important question that arises in such scenario is that whether such aggrieved persons are satisfied with the offering of the forum or not. Moreover, in today’s dynamic and digital world, third party complaints are on continuous rise. The present study focuses on identifying various factors which influence the satisfaction level of consumer complainants. Through well designed questionnaire, involving likert scale statements related to distributive, procedural and interactional justice, responses have been collected from 300 respondents from the district of Ludhiana from the State of Punjab. Analysis of responses, using factor analysis technique, has enabled the identification of factors such as convenience and cost, behavioural aspect and credentials of the personnel working with consumer dispute redressal forums, established under Consumer Protection Act 1986. © BEIESP."
+  },
+  {
+    "article_id": "CS_2408",
+    "title": "A real-time augmented reality system for water distribution system",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.35940/ijrte.C4974.098319",
+    "abstract": "Control of water distribution network by Real-Time Monitoring System (RTMS) can play an inerrant role in its management. RTMS could be used to monitor and analyse hydraulic and water quality parameters in a Water Distribution Network (WDN). Besides, the RTMS warns operators on actions such as to stop pumping, to conserve water, and minimise risks when needed. RTMS can also provide many operational benefits (improve water quality, decrease operational costs, reduce customer complaints, reduce water losses, and modelling capability, etc.). For Quality & Maintenance of the distribution network, the concept of Augmented Reality (AR) can be used as a tool to support maintenance task as the Data from the distribution network can be gathered and parsed in real-time. The useful information will be transmitted to the AR device (PC tablet, smartphone, glasses, watch…) through wireless connectivity. This paper aims to introduce the concept of RTMS and AR technology. It provides a review of some RTMS application in the drinking water sector and shows the benefit of the implementation of AR in that environment. Furthermore, this paper attempts to propose how the RTMS and AR can be merged as system architecture and be applied to enhance the quality of the water within the network, the distribution system management, and maintenance of the distribution network. © BEIESP."
+  },
+  {
+    "article_id": "CS_2409",
+    "title": "A novel method to evaluate students sentiments from twitter messages",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.35940/ijrte.C5667.098319",
+    "abstract": "Classroom education is a dynamic environment, which brings students from different backgrounds with diverse abilities. By introducing machine-learning algorithms to learn the sentiments of the students in a classroom-based environment, can provide us a better research tool to understand the student psychology behind their attentiveness as well as the impact the instructor has on them while delivering lectures. Emotions can be analyzed mainly through many ways like facial features, audio signals and text messages. In this study, we have proposed a student emotion classifying mechanism that works after the lecture by analyzing the tweets posted by the students in the social media platform, Twitter to study their sentiments, or thoughts as expressed in the department twitter handle as a feedback to the classroom lecture. Students can post a tweet to their respective department’s twitter handle about their opinions, emotions, suggestion. Our application has been designed to monitor the department’s handle, a unique user-id via twitter API handler and when any posts appear, collects it and predicts the emotion. A hybrid-based approach which contains lexical and learning based approaches will be used to handle the twitter-based data and to predict the emotions of a student. A lexicon dictionary will be used in lexical based approach and for learning based approach, a manually customized dataset was used, and a support vector machine was designed to train the datasets and classify the emotions. The use-case of this application can be ideal for colleges, companies and wherever anyone wants to ease up the process of analyzing the feedback, suggestions or complaints from the students or employees, thereby saving considerable manpower and time. Our proposal is expected to garner good results and improved prediction time and accuracy. © BEIESP."
+  },
+  {
+    "article_id": "CS_2410",
+    "title": "“But It’s Truly Aggravating and Depressing”: Voicing Counter-Expectancy In US–Philippines Service Interactions",
+    "journal": "Journal of Intercultural Communication",
+    "journal_impact_factor": null,
+    "doi": "10.36923/jicc.v23i4.344",
+    "abstract": "Intercultural competence is essential in a globalised business environment, where successful cross-border transactions rely on effective intercultural communication. Interactions between US customers and Filipino customer service representatives (CSR) in call centres are one example where intercultural competence is required. This study examines the use of counter-expectancy expressions in call centre complaint calls by American consumers and Filipino CSRs in the insurance sector. This study used a systemic functional linguistic (SFL) framework to examine the various linguistic realisations used in the dialogues, with a focus on the appraisal system. To further explore the connection between the use of business language, cultural norms, and the growth of intercultural competence, this study also considered Hall’s context cultures along with Hofstede’s cultural classifications. Using a mixed approach, the present study examined 20 authentic audio recordings of complex insurance complaint calls (approximately four hours long and containing 39,440 words). These spoken data were transcribed and analysed for linguistic characteristics that indicated concessive expressions, for example, connectives such as 'but' and 'however', and adjuncts such as 'just' and 'only'. The results of this study are significant for language and cultural awareness training programmes and, ultimately, for enhancing intercultural communication skills in professional settings. © 2023 by author(s)."
+  },
+  {
+    "article_id": "CS_2411",
+    "title": "Electronic Word of Mouth, Brand Image, Trust and Online Utilization Intention",
+    "journal": "Academic Journal of Interdisciplinary Studies",
+    "journal_impact_factor": 0.788,
+    "doi": "10.36941/ajis-2022-0057",
+    "abstract": "This research intends to prove the causing factors: electronic word of mouth, brand image, and trust as the determinant of the online utilizing intention of streaming music platform: Spotify Premium. Moreover, this research follows the hypothesis testing design to implement this aim. To get the samples and their response, we selected 100 people in Bandar Lampung as the candidates of users of Spotify Premium based on the snowball sampling technique through the online survey. Also, we use the structural equation model with the variance approach to examine the three proposed hypotheses. After discussing the statistical results related to the hypothesis testing, we deduce that intention to use Spotify Premium is positively affected by electronic word of mouth, brand image, and trust. Additionally, brand image has the highest size effect, followed by electronic word of mouth and trust. To attract the attention of the candidates, Spotify needs to commit to keeping its motto: Listening is everything; by creating the lyrics on the video, give feedback to the suggestion and complaints on its official social media: Instagram, Twitter, and Facebook, and keep users' data secret and compensate the consumers for any losses. © 2022 Pandjaitan et al."
+  },
+  {
+    "article_id": "CS_2412",
+    "title": "Balancing Legal Framework, Regulatory Mechanisms and Competition across Number Portability in Albania",
+    "journal": "Academic Journal of Interdisciplinary Studies",
+    "journal_impact_factor": 0.788,
+    "doi": "10.36941/ajis-2023-0168",
+    "abstract": "Electronic communication markets are influenced by various factors that impact the development of competition. Sector-specific policies aim to improve consumer access to affordable products and services while offering flexibility in their choices. The mobile phone market, in particular, places a significant emphasis on number portability services, attracting attention from sector-specific policies and regulatory oversight throughout their implementation and monitoring. This article seeks to scrutinize the legal framework in Albania, identify practical obstacles to number portability, and assess its impact on fostering effective market competition. Number portability, a process that significantly impacts market competition, plays an instrumental role in enabling subscribers to switch networks seamlessly. This observation finds support in outcomes from various countries. Evidence shows that this tool positively influences market competition by shifting the balance of power towards consumers, exerting pressure on service providers to improve their offerings and adhere to contract conditions. Over the last two decades, number portability has evolved into a vital instrument for diversifying choices and reducing prices, ultimately benefiting consumers and creating fair conditions for new market entrants. Number portability is essential for preserving competition and freedom of choice in the mobile service market. However, in markets with duopoly scenarios, such as the current situation in Albania, where two operators dominate the market and may engage in cooperation or secret agreements, specific challenges and impacts on number portability and market competitiveness may emerge. This situation can result in weak competition and limited choices for consumers. In these cases, number portability serves as the sole recourse for consumers to leverage the limited competition by switching to the other operator. In Albania, although the principle of number portability has been enshrined in law since 2008, the legislation has not kept pace with innovations established in EU directives. Harmonizing Albanian law with EU standards, particularly Directive 2018/1972/EU, known as the European Electronic Communications Code, is a priority through the revision of the \"Law on Electronic Communications in the Republic of Albania.\" Despite some positive legal developments, ensuring effective competition and consumer protection in the electronic communications market continues to be a challenge in Albania. © 2023 Jonida Gjika and Endirë Bushati."
+  },
+  {
+    "article_id": "CS_2413",
+    "title": "The Microstructure of Mis-Selling: Financial Investment Markets and Regulation in Korea",
+    "journal": "Academic Journal of Interdisciplinary Studies",
+    "journal_impact_factor": 0.788,
+    "doi": "10.36941/ajis-2024-0001",
+    "abstract": "Financial consumer protection has been ever strengthened around the world after the Global Financial Crisis. Nonetheless, there occurred mis-selling events that caused massive damage to financial consumers and mis-selling still accounts for the largest proportion of financial consumer disputes and complaints recently filed in Korea. Based on the regulatory framework in Korea, this study aims to explore the microstructure of mis-selling, that is, the major influential factors and their interactions. For this, an analytical model is proposed concerning the suitability principle and explanation duty in financial investment markets. The model consists of three basic components: the types of investors, a financial services company’s objective of profit maximization, and the damage compensation structure set by the regulator. Using the model, the simulation results provide meaningful implications. Strict liability turns out to be effective to prevent mis-selling. The suitability principle is more prone to be violated than the explanation duty and therefore more emphasis should be placed on the former in terms of efficient regulation. Furthermore, this study found a meaningful link between business conduct regulation and financial education, which are the two pillars in financial consumer protection. © 2024 Chul Choi."
+  },
+  {
+    "article_id": "CS_2414",
+    "title": "Communication, trust, and loyalty in the hotel sector: The mediator role of consumer's complaints",
+    "journal": "Tourism Analysis",
+    "journal_impact_factor": null,
+    "doi": "10.3727/108354220X15758301241648",
+    "abstract": "The purpose of this study was to analyze how the relationship between communication with customers, loyalty, and trust are mediated by a correct handling of customers' complaints. A survey of 629 customers of the hotel sector, and using structural equations modeling, was used. The results demonstrated that good customer communication and information when handling claims positively and significantly influences customer loyalty and trust. Loyal and trusting customers is one of the aims of companies. These are generally determined by the communication carried out by the firm. Nevertheless, it is understandable that there is a mediator variable: the firm's handling of customers' complaints. © 2020 Cognizant Communication Corporation."
+  },
+  {
+    "article_id": "CS_2415",
+    "title": "Influencing factors on spectators' revisit intention in minor league baseball (milb): Spectators' perceptions of complaint management practices",
+    "journal": "Event Management",
+    "journal_impact_factor": 0.969,
+    "doi": "10.3727/152599518X15403853721295",
+    "abstract": "This study investigates four influencing factors (i.e., facility quality, performance quality, interaction quality, and complaint management) on fans' satisfaction and perceived value, which further leads the intention to return. A total of 238 respondents of a Class A Short Season Minor League Baseball (MiLB) team participated in an online survey. Data were analyzed primarily with structural equation modeling (SEM) to investigate the relationship between study variables. The results indicated that spectators' satisfaction was influenced by interaction quality, performance quality, and complaint management while perceived value was predicted by facility quality and interaction quality. In predicting spectators' revisit intention, fans' perceived value was more critical in comparison to their perceived level of satisfaction. © 2019 Cognizant, LLC."
+  },
+  {
+    "article_id": "CS_2416",
+    "title": "How hotel responses to negative online reviews affect customers' perception of hotel image and behavioral intent: An exploratory investigation",
+    "journal": "Tourism Review International",
+    "journal_impact_factor": null,
+    "doi": "10.3727/154427218X15202734130422",
+    "abstract": "Online guest reviews have become an important facet of consideration when customers decide on a hotel. However, limited research has been done to examine how hotel management's responses to comments posted to online review sites such as TripAdvisor influence customers' hotel perception and choice. This pilot study uses a semiexperimental approach to investigate how customers' perceived hotel image, attitude, and hypothetical intent to stay are impacted by three different hotel responses to negative guest online feedback, respectively, including \"no response,\" \"negative response,\" and \"service recovery response\" scenarios. The results reveal that providing a service recovery response to negative online reviews enhanced hotel image, attitude, and hypothetical intent to stay at the hotel. Comparatively, respondents' hotel image and attitude toward the hotel were ranked lowest under the \"no response\" strategy, which indicates that any hotel response, even negative, would be better than taking no action. This study provides valuable implications and strategies for academics and hotel management in terms of addressing negative online reviews. © 2018 Cognizant, LLC."
+  },
+  {
+    "article_id": "CS_2417",
+    "title": "Tourism and aquatic safety: No lifeguard on duty-swim at your own risk",
+    "journal": "Tourism in Marine Environments",
+    "journal_impact_factor": null,
+    "doi": "10.3727/154427317X15016348972677",
+    "abstract": "The law requires a tourism operator to undertake due diligence in relation to reasonably foreseeable risks. In the marine environment it is now well established that international tourists are a particular \"at risk\" group for drowning and near drowning events due to factors such as poor swimming ability, unfamiliarity with aquatic environments and marine recreational activities, language, possible alcohol and drug use, and general disorientation. The employment of lifeguards is increasingly recognized as an appropriate risk management and quality service response, as other popular injury prevention initiatives may not be as successful with tourists. This article examines the law and practice relating to the supply of lifeguards in tourist settings, suggesting that quality customer service has moved beyond reliance on static safety signage. © 2017 Cognizant, LLC."
+  },
+  {
+    "article_id": "CS_2418",
+    "title": "Examining the relationship between service quality and customer satisfaction in the public service. The case of Botswana",
+    "journal": "WSEAS Transactions on Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.37394/23207.2020.17.57",
+    "abstract": "Sustaining public confidence in any government is also a function of the consistency in the delivery of public goods and services. For several years, customers across public organizations have complained about the quality of services delivered to them. It is therefore important for public organizations to regularly evaluate service quality in order to better understand how best to satisfy customers. This study investigated the extent to which dimensions of service quality influence customer satisfaction in the Tonota Sub Region. With the aid of a questionnaire, data were collected from 135 r espondents located at 27 basic education sites (secondary and primary schools) in the Tonota Sub Region. Descriptive and inferential statistics were used for data analysis. The findings reveal that service quality dimensions of tangibility, empathy, assurance, and responsiveness impact customer satisfaction positively. This study recommends amongst others, training of employees on managing customer complaints, records management and increasing service reliability to improve service quality. The outcome of this study will guide the formulation of customer satisfaction strategy and policy aligned with service standards to drive service quality delivery. Future research is recommended on perceptions of teachers and other members of the public regarding the extent to which service quality impacts customer satisfaction so as to comprehensively discern public service quality dimensions. An understanding of customer satisfaction within the public service will likely kindle better relations between the public and government thereby improving public trust in government programs. Managers are also likely to tap into this to further levels of job satisfaction for public sector employees. © 2020, World Scientific and Engineering Academy and Society. All rights reserved."
+  },
+  {
+    "article_id": "CS_2419",
+    "title": "Construction and application of customer satisfaction model with the service quality of last-mile delivery in rural areas",
+    "journal": "WSEAS Transactions on Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.37394/23207.2021.18.69",
+    "abstract": "The backward last-mile delivery infrastructures, the greater difficulties in last-mile delivery due to the scattered residences of rural customers and the lack of logistics professionals in rural areas have emerged as the important factors hindering the improvement of the service quality of last-mile delivery in rural areas. This study combines the classic satisfaction index model and transformation of the SERVQUAL standard scale to draw up the connotations and observation variables of customer expectations, quality perception, perceived value, customer satisfaction, customer complaints and customer loyalty with the service quality of last-mile delivery in rural areas, and takes 460 permanent residents in rural areas as the research objects, then constructs and tests the customer satisfaction model of the service quality of last-mile delivery in rural areas, and deeply analyzes the relationship between customer satisfaction and its influencing factors; by constructing a two-dimensional combination potential of entropy weight-satisfaction average value, the in-depth application of the model is discussed, and at the same time, it provides policy suggestions for local governments, logistics companies and other entities to improve the customer satisfaction with the service quality of last-mile delivery in rural areas. © 2021, World Scientific and Engineering Academy and Society. All rights reserved."
+  },
+  {
+    "article_id": "CS_2420",
+    "title": "Implications related to Bank’s Customers Satisfaction (The case of Albanian banks grouped by the origin of shareholder’s capital)",
+    "journal": "WSEAS Transactions on Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.37394/23207.2022.19.73",
+    "abstract": "-This study skims the much debatable issue of customer satisfaction (quality matching expectations) in the banking system, as for banks are the main actors of the Albanian financial system. In fact, the customer satisfaction in the banking sector is an important criterion for customer to differentiate and build their loyalty toward the bank, consequently increasing the odds for loyal customers towards more than a service of the bank. Previous studies and research suggest that consumer perceptions and their expectations are likely to differ as per their customer satisfaction. This particular study examines implications related to bank’s customers satisfaction for Albanian banks which for study purpose are grouped in two different clusters based on the origin of shareholder’s capital. Satisfied customers are an important advantage for any business likewise banks. The difference is made by customer satisfaction and loyalty created through some components on the behavior of bankers serving to their customers. The SERVQUAL model that is the pillar of this article methodology, whereas structured and semi structured questionnaire is the instrument for performing the survey. A sample of 246 respondents which are banks customers from cluster 1 (local capital origin) is used for the qualitative research. The results of this study help bankers in order to maintain their business indicators in a highly competitive market and other stakeholders for identifying the implications faced in the banking industry in Albania. To achieve this, the Bank must conduct frequent research regarding customer expectations and respond to customer complaints with precise corrective actions. © 2022, World Scientific and Engineering Academy and Society. All rights reserved."
+  },
+  {
+    "article_id": "CS_2421",
+    "title": "Choosing the Right Recovery Marketing Strategies for Future Tourism Crises: Re-Attracting Tourists in the Post-COVID-19 Era",
+    "journal": "Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.37741/t.72.1.8",
+    "abstract": "Over the years 2020-2022, as more and more countries recover gradually from the COVID-19 pandemic, the question arises as to which image repair strategy marketers will choose to re-attract tourists anew. Choosing the right image repair strategy is a topic that has been neglected so far. The COVID-19 tourism crisis is an opportunity to bridge this theoretical gap, as several surveys in assorted countries asked potential consumers about their future travel plans. Analyzing these surveys provided a valuable look into the selection process of recovery marketing strategies. Combining twenty recovery marketing strategies used in past crises with recent surveys examining planned consumer behavior in the post-COVID-19 era will allow us to recommend the most valuable strategies to be adopted by DMOs. Out of the twenty recovery marketing strategies, we discovered six image repair strategies for the post-COVID-19 era. These strategies were found suitable according to three criteria: the practicality of implementing the strategy considering the COVID-19 crisis’ characteristics, proof of the strategy’s effectiveness in previous crises, and the results of surveys regarding future tourism consumption in the post-COVID-19 era. In addition to the study’s theoretical contributions, its findings can also be helpful for practitioners. © 2023 The Author(s)."
+  },
+  {
+    "article_id": "CS_2422",
+    "title": "Responses of Turkish consumers to product risk information in the context of negative EWOM",
+    "journal": "Journal of Business Economics and Management",
+    "journal_impact_factor": null,
+    "doi": "10.3846/jbem.2020.13383",
+    "abstract": "This study explores the risk-based effects of negative electronic word-of-mouth (neWOM) perception (financial and performance risks) on electronic word-of-mouth (eWOM) credibility and purchase intention for promotion-and prevention-focused consumers. In this experimental study, a survey was conducted in which 344 people from Turkey participated. Automobiles were chosen as the subject of the survey because they are in the high-risk product category. The results from regression analysis show that the neWOM perception containing financial risk information plays a more significant role than the one containing performance risk in terms of the effect on eWOM credibility for both promotion-and prevention-focused consumers. Moreover, the neWOM containing performance risk has no effect on the eWOM credibility for promotion-focused consumers. When exposed to neWOM, the purchase intentions of both consumers are even more negatively affected by the neWOM information containing performance risk than the one with financial risk content. The results and future predictions are discussed. © 2020 The Author(s). Published by Vilnius Tech Press."
+  },
+  {
+    "article_id": "CS_2423",
+    "title": "EXPLORING JUSTICE PERCEPTIONS IN ONLINE BANKING RECOVERY: GENDER MODERATION AND BEHAVIORAL OUTCOMES",
+    "journal": "Journal of Business Economics and Management",
+    "journal_impact_factor": null,
+    "doi": "10.3846/jbem.2025.22831",
+    "abstract": "The study addresses the recovery from service failures in online banking. It focuses on the three dimensions of perceived recovery justice – namely, distributive justice (DJ), procedural justice (PJ), and interactional justice (IJ) – and investigates their impact on post-recovery satisfaction (PRS), the moderating effect of gender, and further, the influences of PRS on customer trust (CT), affective commitment (AFFC), and customers’ behavioral intentions (CBI). The study uses partial least squares structural equation modelling to examine the data collected in Egypt from 445 respondents who experienced a service failure with online banking. The results show that the three dimensions of perceived recovery justice – DJ, PJ, IJ – exert positive influences on PRS, and gender moderates the effects of PJ and IJ on PRS: procedural justice makes women exhibit higher levels of PRS. In contrast, interactional justice makes men encounter higher levels of PRS. The results also show that PRS positively influences CBI through its direct and indirect effects (via CT and AFFC). Furthermore, PRS mediates the positive effects of DJ, PJ, and IJ on customers’ behavioral intentions. The study outcomes have significant theoretical and practical implications for online banking. © 2025 The Author(s)."
+  },
+  {
+    "article_id": "CS_2424",
+    "title": "LA PROTECTION DU CONSOMMATEUR PAR LE DROIT DE LA CONCURRENCE: ANALYSE CIVILISTE ET PRATIQUE DES POSITIONS CANADIENNE ET EUROPÉENNE",
+    "journal": "Revue Internationale de Droit Economique",
+    "journal_impact_factor": null,
+    "doi": "10.3917/ride.303.0289",
+    "abstract": "Competition law contributes to protect the consumers. European competition law proves the link between competition law and consumer law. The single market needs a protection of the European consumers. Nonetheless, all the occidental countries don't know this link between the consumer law and the competition law. Canadian competition law illustrates this issue. Indeed, constitutionals barriers explain this difficulty. The Canadian parliament has a legislative power in the regulation of trade and commerce, but also in criminal law. So the Canadian competition law has been taking under the power in regulation of trade and in criminal law. In Canada, the consumer protection is provided by the provinces who can take a law to protect the consumer's contracts. This power is based on the power of the Canadian provinces in civil law. The Quebec civil code and the consumer protection Act of this province shows this competence. There is, in Canada, a direct protection of the consumers by the provinces, like in Quebec, and an indirect protection by the federal competition law. For example, the misleading advertising is punishing under the criminal rules of the competition law. Another aspect of this subject is the private enforcement of the competition law. The section 36 of the competition law permits to the consumer to sue the person who had a conduct that was contrary to any provision of the criminal part of the law. The constitutional validity of this section was disputing at the Canadian Supreme Court. For the court, the section 36 was constitutional. Consequently, this section protects directly the consumer against a violation of the competition law. This paper tries to identify how the civil law, particularly in Quebec, can be used to improve the protection of consumers in the area of competition. The competition damages is one of the solutions can be explored. In this context, the comparison is made with European law. The Directive 2014/104 shows that consumer protection can take place in competition law. In a civil law system, such as France, the introduction of collective redress demonstrates that there may be a link between consumer law and competition law. This article finally shows that consumer protection occurs at two levels. The supranational law ensures healthy competition in the market and consumer safety. National law protects consumers in contractual relations. We find this situation in Canada and in the European Union. But in these two legal systems reconcile consumer law and competition law is done by the private enforcement of competition law. The article explores this new reality. © De Boeck Supérieur. Tous droits réservés pour tous pays."
+  },
+  {
+    "article_id": "CS_2425",
+    "title": "Elderly consumers: protection without exclusion. The relevance of criminal law in combating abuses of vulnerability relating to old age when concluding consumption contracts; [Le consommateur âgé: protéger sans exclure La pertinence du droit pénal pour lutter contre l'abus de vulnérabilité liée au grand âge lors de la conclusion d'un contrat de consommation]",
+    "journal": "Retraite et Societe",
+    "journal_impact_factor": null,
+    "doi": "10.3917/rs1.088.0072",
+    "abstract": "On 11 September 2019, the European Commission of Social Rights handed down an interesting ruling on the relevance of French criminal law Article 223-15-2 to combat abuses of vulnerability relating to old age. The ruling resulted from a complaint filed with the Commission by Fédération internationale des associations de personnes âgées (international federation of associations of the elderly, FIAPA), which considered that the refusal of French courts to establish old age as an objective criterion of vulnerability in the application of the law constituted a breach of Article 23 of the European Social Charter. Applied specifically to the case of elderly consumers, the analysis of the decision shows how the tools of criminal law, as well as those of consumer law, that sanction the abuse of weakness after the fact offers not just an effective means of appeal to vulnerable seniors having been subject to abuse or to their beneficiaries, but also serves to protect the independence of these individuals and ensure their continued role as economic players in their own right. Regarding the criterion of age, the Commission underlined that age could not be established as an objective criterion of vulnerability because it could discriminate against elderly consumers by excluding them from the market. This is the position taken by the French judge, whose case law makes it possible to repress abusive behaviour towards elderly people who are effectively vulnerable, without preventing them, de facto, from concluding a consumption contract. This is no doubt the best way to protect elderly consumers without excluding them. © 2022 Dares. All rights reserved."
+  },
+  {
+    "article_id": "CS_2426",
+    "title": "Investigating the impact of complaints handling and perceived behavioral control on customer loyalty in car repair service Kendari, Southeast Sulawesi",
+    "journal": "International Business Management",
+    "journal_impact_factor": 0.0,
+    "doi": "10.3923/ibm.2016.92.100",
+    "abstract": "The study aims to empirically investigate the relationship between complaints handling, perceived behavioral control and customer loyalty in car repair service in Kendari, Southeast Sulawesi at the level of construct dimensions. A survey method approach was used in this study. A questionnaire is designed to focus on issues related to efforts made to investigate causes of service failure and to develop recovery strategies that meet customer expectations of how their car repair service should handle such problems. Data collected have been analyzed by using statistical techniques such as confirmatory factor analysis and multiple regressions. Results show that complaints handling that have the more significant positive influence on customer loyalty and perceived behavioral control has a significant positive impact on customer loyalty. However, the simultaneous complaints handling and perceived behavioral control have significant effects on customer loyalty in car repair service. For a more holistic investigation approach of customer loyalty, a future study could examine other antecedents such as complaints handling and perceived behavioral control of alternatives. Moreover, the investigation of the mediation role of perceived behavioral control on the link between complaints handling and loyalty could enhance the research model. The major contribution of this study is that it is the first attempt to investigate the impact of complaints handling and perceived behavioral control on loyalty in car repair service. © Medwell Journals, 2016."
+  },
+  {
+    "article_id": "CS_2427",
+    "title": "A conceptual model of medical tourism service supply chain",
+    "journal": "Journal of Industrial Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.3926/jiem.3008",
+    "abstract": "Purpose: Medical tourism service requires involvement of multiple parties from the service network, however medical tourism is not well studied from a supply chain management perspective. This study suggests a conceptual model of medical tourism service supply chain (MTSSC) to provide a clearer understanding of its nature, and defines its business processes. Design/methodology/approach: Triangulation which makes use of literature review, in-depth interviews, and expert evaluations was applied to develop and validate the suggested model. The proposed model is initialized based on the relevant literature. In-depth interviews were used to refine and finalize the model. Expert evaluations ensure the trustworthiness of the model and the business process definitions. Findings: The proposed model uses a nested process structure rather than a one-dimensional supply chain model, where the assistance company maintains an intermediary role between the patient and all the service providers (e.g. medical institutions, transportation, accommodation). Additionally, the conceptual model identifies seven business processes: service design, service recovery management, customer relationship management, supplier relationship management, demand management, capacity and resource management, and service delivery management. Practical implications: The results provide a better understanding of the MTSSC structure and processes, and a recognition of the MTSSC members. The process definitions give the members an idea about their roles in the service design and delivery in practice. Additionally, a better understanding of the system as a whole leads to better process development and control. MTSSC members may shape their organizations internally and supply chain-wide by considering this conceptual model. Moreover, the model acts as a basis for supply chain collaboration decisions. Originality/value: The conceptual model is built upon the theories and practice of medical tourism services, supply chain management, and service operations management. This study contributes to the theory of medical tourism services management by explaining the MTSSC concepts and business processes, and extends existing knowledge. © 2020, Universitat Politecnica de Catalunya. All rights reserved."
+  },
+  {
+    "article_id": "CS_2428",
+    "title": "An Approach to Define Service Strategies: The Case of an Ecotourism Hotel in Mexico",
+    "journal": "Journal of Industrial Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.3926/jiem.6099",
+    "abstract": "Purpose: This article harmonizes the causal diagram with the objective tree to evaluate service quality and to identify action strategies that improve the quality of service in the hotel industry. Design/methodology/approach: In stage I, we obtained the quality perception records of 127 historical costumers, and 384 questionnaires. Subsequently, a causal diagram was generated in stage II. And finally, the above-mentioned strategies were created. The Causal Diagram clarifies the relationship between customer complaints and company weaknesses. Findings: The goal tree makes it possible to categorize these strategies according to target levels. Research limitations/implications: Costumers’ opinions could generate biases in their responses. Future studies must consider other methods, such as Fuzzy Logic to reduce this bias. Practical and social implications: This study approach can be replicated in other industrial sectors and is particularly useful for defining improvement plans related to service quality. Originality/value: The integration of these tools will allow managers to better understand the experiences reported by guests because it allows understanding of the behaviors between the variables that influence the quality of service and the variables under the tangible elements of the service. © 2024, OmniaScience. All rights reserved."
+  },
+  {
+    "article_id": "CS_2429",
+    "title": "Classifying populations in health services: Practical reasons and discretion; [Le classement des publics aux guichets de la santé: Raisons pratiques et travail discrétionnaire]",
+    "journal": "Sociologie du Travail",
+    "journal_impact_factor": null,
+    "doi": "10.4000/SDT.1727",
+    "abstract": "How can providing health services generate inequality? This paper seeks to clarify the classifications practised by public health workers and to reveal the forms of discretionary practice implicit in their work. In a free and anonymous AIDS screening setting, everyone is present for the same reason. This makes it possible to observe how health service providers divide their clients into social categories such as class, gender, sexuality and race and offer different service responses to an essentially identical demand. The research analyses NGO archives, quantitative data and interviews with health workers, as well as observation of their work in public and at NGO screening centres. It shows that gender and class affiliations receive little attention, whereas racial and sexual categories are of prime importance. Only white men are asked about their (homo)sexuality and receive more personalised information. Women and non-white men are presumed to be heterosexual, and therefore receive more standardised advice, unless health workers obtain more accurate biographical information during longer consultations. © 2018 Centre de sociologie des organisations. All rights reserved."
+  },
+  {
+    "article_id": "CS_2430",
+    "title": "Customer service on twitter: Company-customer expectations and service configurations",
+    "journal": "Maximizing Commerce and Marketing Strategies through Micro-Blogging",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-4666-8408-9.ch006",
+    "abstract": "Twitter is one of the world's most popular social media websites, and company spending on social media is rapidly increasing. One area of investment for companies in social media is customer service, but many marketers struggle to understand how micro-blogging can be integrated into customer service efforts. The purpose of this chapter is to explore customer service interaction on micro-blogs by understanding company and customer expectations on Twitter. The authors examine (1) whether gaps in service expectations exist between consumers and companies in a customer service scenario and (2) the impact of specific customer service response configurations on these consumer-company expectation gaps. Results of a study of Twitter users and customer service providers suggest that differences exist between customers' expectations of customer service on Twitter and companies' understanding of these expectations. The authors discuss how managers can use their understanding of these differences to make better decisions about service delivery through Twitter and other social media websites. © 2015 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2431",
+    "title": "Future research directions in e-tourism studies: Blind spots and complaint analyses using data science method",
+    "journal": "New Business Opportunities in the Growing E-Tourism Industry",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-4666-8577-2.ch017",
+    "abstract": "As this book has the limited numbers of chapters and pages, many important issues remain unanalyzed. This chapter picks up and roughly discusses some of them for the future analyses in more analytical ways. The focuses are placed on how to apply the data scientific methods to the analyses of public voice, claims and behaviors of tourists, customers and the general publics by using the big data already acquired and stored somewhere. © 2015, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2432",
+    "title": "Social media: Strategic decision making tool",
+    "journal": "Competitive Social Media Marketing Strategies",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-4666-9776-8.ch005",
+    "abstract": "Social media is seen very much as a marketing tool and there is little in the literature that considers its use as a strategic decision making tool. This conceptual paper is an attempt to redress the balance. Social media user-generated content from blogs or consumer feedback are methods that social media can support effective strategic decision making. However, the business and organisational environments are influential on the effective of the data collected and ultimately its analysis. The decision making approach - single or multistage are significant influencers on the quality of the decisions. Multistage decision making is supportive of controversial decision making, which leads to better utilisation of the information and consequently, better decision making. Ultimately, robust decision making is underpinned by the effectiveness of the decision making process. © 2016 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2433",
+    "title": "Online service failure and recovery strategy: The mediating role of social media",
+    "journal": "Competitive Social Media Marketing Strategies",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-4666-9776-8.ch006",
+    "abstract": "The Internet environment has transformed the concepts of service failure and recovery strategies from a dyadic customer-provider focus into a multidimensional web quality scope. In traditional encounters, the research spectrum of service failure and recovery strategies is very much developed from a customer service approach, and the responsibility of recovery has been traditionally assumed to be something that is assigned to the marketer. Studies pay little or no attention to the multidimensional nature of service failures contingent to recovery strategies in the evolving social media. To date, empirical studies have focused on service failures and recovery strategies in online marketing environments, but pay limited attention to social media platforms. This paper aims to provide some insights on the need for a broader conceptualisation of service failure and recovery strategies, incorporating social media platforms for the development of effective marketing communications programme. © 2016 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2434",
+    "title": "Beyond the embodied digital service encounter: The co-creation of a web service recovery",
+    "journal": "Advances in E-Business Research Series",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-5225-5026-6.ch001",
+    "abstract": "When a digital service encounter develops diferently than anticipated, the client becomes a user. This transformation reveals the ambiguous nature of digital service encounter being neither well-functioning tools, nor having the same sensitivity to and tolerance for service failures as in human service encounters. Through the case-study of a service failure and subsequent co-creation of the service recovery, this chapter introduces and unfolds the concept of 'cognitively dominated service encounters'. This category is suggested to supplement and criticise Paul Dourish's (2001) concept of Embodied Interaction. With a micro analysis of the interaction in this service journey, we identify the need for a category of knowledge intensive service encounters that acknowledge both the complexity of the service provided, but also the constraints and possibilities in the digital design material. Copyright © 2018, IGI Global."
+  },
+  {
+    "article_id": "CS_2435",
+    "title": "Improving bikesharing service quality: A case study for BIXI Montreal",
+    "journal": "Handbook of Research on Interdisciplinary Approaches to Decision Making for Sustainable Supply Chains",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-5225-9570-0.ch016",
+    "abstract": "Bike sharing is a typically structured non-motorized transportation service that provides users point-to-point transportation. The services are flexible to users as they do not have to wait in a line to pick up a bicycle from any bike sharing system and can return it to any other location of the bike sharing system. This chapter mainly focuses on why it is important to use bike sharing transportation rather than any other mode of transportation. In this chapter, the authors address the customer satisfaction level and focus on the service quality of the bike sharing system BIXI in Montreal. A questionnaire survey is conducted with the users of BIXI. A total of 580 responses are collected. Descriptive statistics, complaint analysis, and data analysis are done to identify areas of improvement. © 2020, IGI Global. Copying or distributing in print or electronic forms without written permission of IGI Global is prohibited."
+  },
+  {
+    "article_id": "CS_2436",
+    "title": "Active social listening and its impact on firm strategies: Study of indian context",
+    "journal": "Research Anthology on Business Continuity and Navigating Times of Crisis",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-6684-4503-7.ch032",
+    "abstract": "Due to the present customer voice in a digital world, keeping a watchful eye on what customers were expressing on social media became a necessary firm imperative. For this study, the authors found that rather than using FGDs and survey research, digital tools like the applications of social media listening could serve as a valuable platform for gathering insights about a firm's latest strategy. This could be complemented by the existing channels of feedback. This research study focused on customer perspective. Data was collected from Indian consumers and social media handling experts regarding social listening based upon a semi structured open-ended questionnaire. The data collected was content analyzed based upon thematic content analysis. Customer voices were reading majorly complaints and compliments followed by advocacy. This helped to comprehend how well firm managers aligned and helped in getting insights regarding marketplace reflections for assessing a firm, its products, and its brands. © 2022 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2437",
+    "title": "The impact of customer dissatisfaction regarding revenue management on perceptions of airline experience and loyalty",
+    "journal": "Global Air Transport Management and Reshaping Business Models for the New Era",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-6684-4615-7.ch010",
+    "abstract": "This chapter examines the effects of the complaints about the practices of revenue management (RM) on the travel experience perception and loyalty of the customers. The analysis shows that the complaints about the RM practices have positive effects on the travel experience perception, and the travel experience perception has a positive effect on the loyalty of the customer who travel short distances. The results of the detailed sub-hypothesis test performed in relation to the travel purposes of the customers and the business model adopted by an airline company show that the companies which adopt low-cost business model are obliged to manage their RM practices on a much more customer-centric basis. The companies in the sector should develop special customer programs for their customer segments which remain outside the business purpose. Thus, the operational efficiency will increase, and revenues will be maximized. © 2022, IGI Global."
+  },
+  {
+    "article_id": "CS_2438",
+    "title": "Mortgage financing frauds in the US: An analysis of CFPB complaint database",
+    "journal": "Concepts, Cases, and Regulations in Financial Fraud and Corruption",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-6684-5007-9.ch001",
+    "abstract": "In the US, the Consumer Financial Protection Bureau (CFPB) monitors the financial institutions which sell financial products and services to consumers. CFPB ensures that the consumers of financial products receive transparent and competitive services from financial institutions. The chapter contributes to the literature on state-run consumer protection organizations. The CFPB complaint database is used to analyze the performance of CFPB and to find some real-world behaviors of financial institutions from the perceptions of financial consumers. The weaknesses of CFPB are discussed in light of the current social, political, and economic changes happening in the USA. Results show that predatory behaviour is more dominant in non-banking credit and lending institutions. During COVID-19, the people took benefit of others ' misery by engaging in manipulative fraud-for-profit schemes. Overall, despite creating awareness, CFPB was not so successful in getting relief for the customer. © 2023, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2439",
+    "title": "Digitalization and the consumer experience: The case of the health sector in Portugal",
+    "journal": "Internet of Behaviors Implementation in Organizational Contexts",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-6684-9039-6.ch006",
+    "abstract": "Digital transformation is a reality in practically all business industries and has influenced the development of new marketing practices and, consequently, consumer experiences, particularly in the health sector. The aim of this research is to analyze the potential benefits that digital transformation and digital marketing may have in the customer's experiences with health service providers. This study allowed the confirmation of many of the aspects researched in previous academic works and reinforced the importance of using more technological solutions for current users, as well as the need to improve, namely in terms of service personalization, with greater speed and response, and quality of the service provided in an integrated way by the different touchpoints. Furthermore, it reinforced some important objections of users, namely related to the presumed greater difficulty of personal interaction, especially in cases of dissatisfaction and complaint, or in groups of patients with less digital training. © 2023, IGI Global."
+  },
+  {
+    "article_id": "CS_2440",
+    "title": "Handling private label customer complaints to improve customer satisfaction: Qualitative evidence from Turkish retailers",
+    "journal": "Improving Marketing Strategies for Private Label Products",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-0257-0.ch007",
+    "abstract": "There have been disruptive changes in retail industry due to changing consumer expectations and hyper competition. The aim of the current study is to provide an initial attempt at addressing a less researched area: customer dissatisfaction with private label brands. Since retailers are in search of finding new sources of competitive advantage-besides cost advantage-customer intimacy, complaint management, and creating secondary customer satisfaction for private label loyalty is an essential strategy in today's retailing industry. This study covers a review on private label branding and customer complaint management literature. In order to provide support for the existing literature, in depth interview with managers of two leading retailers is included in the study. The findings reveal the need and importance of focusing on antecedents of customer complaints and developing recovery strategies for gaining secondary satisfaction. © 2020, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2441",
+    "title": "A leadership coaching case study: Shifting mindsets, building practices, improving performance",
+    "journal": "Cases on Performance Improvement Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-3673-5.ch015",
+    "abstract": "Barbara, Manager of Talent Development for a business-to-business sales operations outsourcing company, was badly underperforming. Her manager had received complaints about the quality of her customer service and collaboration with peers. Her manager endorsed coaching to improve critical skills and related performance. Barbara enthusiastically accepted the chance to be coached. Client and coach co-designed an individual development plan with goals. The client completed self-assessments and the coach structured 360 interviews and debriefed the data. Client and coach refined the development plan and goals. Coaching calls were held regularly, with learning assignments made and regular reviews done for progress, challenges, and lessons learned. Overall, the client progressed in several emotional intelligence skills, delivered better customer service, and collaborated better. When reassigned to an individual contributor role, she adapted well, led, and contributed to two critical projects. © 2020 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2442",
+    "title": "Negative customer experience in lifestyle hotels: A netnography perspective",
+    "journal": "Building Consumer-Brand Relationship in Luxury Brand Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-4369-6.ch007",
+    "abstract": "The primary purpose of the present research is to develop a methodology which can accurately analyse online public reviews on Google using Netnography studies combined with text mining analyses. By analysing the current techniques applied to a lifestyle hotel brand in nine properties in different countries and carefully studying how negative reviews are expressed online by costumers, this study aims to create a pattern of lifestyle customer complaints. This research seeks to demonstrate patterns of consumer behaviour that are not fully satisfied with the hotel service and how it can negatively affect the brand. This study identifies the areas that five stars lifestyle hoteliers and hotel managers need to pay attention to improve services, considering online reviews on online platforms, such as social networks and other tourism sites. Today, online reviews and customer experiences have a significant impact on the choice of a hotel. © 2021 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2443",
+    "title": "Online food ordering in Vietnam: An examination of customer evaluations",
+    "journal": "Handbook of Research on Innovation and Development of E-Commerce and E-Business in ASEAN",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-4984-1.ch015",
+    "abstract": "This study examines Vietnamese customers' feelings and thoughts about the online food order service recently developed in the country. Through interviews of 21 female customers in the capital city of Hanoi, two categories of customer feelings were identified: positive and negative. The reasons for or causes of these feelings were distributed across the five steps of the order and consumption process: pre-order (information and options), order (order, payment, and cancellation processes), delivery (staff attitude and waiting time), use (food quality and quantity), and post-use (complaint and complaint response). Based on these findings, theoretical implications about online food order services in particular and ecommerce in general are discussed. In addition, practical implications for restaurants, food deliverers, and app developers are proposed. © 2021, IGI Global."
+  },
+  {
+    "article_id": "CS_2444",
+    "title": "Service design and enterprise risk management for knowledge-based services: A practical approach for auditors and consultants",
+    "journal": "Handbook of Research on Recent Perspectives on Management, International Trade, and Logistics",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-5886-7.ch001",
+    "abstract": "Services make most of the value in developed economies. In knowledge-based (credence) services, during each transaction, clients look for transmission of value through advice, information, knowledge, or counselling. Providers and clients interact during the service profusion; the human nature of these transactions makes errors inevitable. This chapter intends to guide managers step-by-step in providing better services and managing risks effectively. Each phase includes the presentation of a hands-on managerial tool. To design or improve a service, blueprint can help to visualize and fine-tuning its value chain. Riskoprint allows capturing the complexity of service risks, their sources, and severity. Finally, feed-forward controls contribute to preventing and recovering from service failures. © 2021, IGI Global."
+  },
+  {
+    "article_id": "CS_2445",
+    "title": "Storytelling as an Approach to Voice Complaints and eWOM on Social Media/Facebook",
+    "journal": "Research Anthology on Strategies for Using Social Media as a Service and Tool in Business",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-9020-1.ch067",
+    "abstract": "Customer complaints are unavoidable in any businesses and how firms handle such complaints will affect the public’s perception of the company’s brand and reputation. While storytelling is being embraced by an increasing number of companies as a different way to communicate their brand, many customers are now also using storytelling as an approach to voice their unfavourable experiences on the social media in regards to a particular unsatisfactory purchase as part of electronic word-of-mouth (eWOM). Such creative and humorous complaints serve as a way to cut through the clutter in order to gain the company’s attention. Those companies that embrace such complaints by responding in an equally humorous and creative manner as part of their service recovery process will manage to recover their customers as well as their employees. As such posts are often shared publicly on the Internet, they may become viral and thus can create great positive effect on the company’s reputation. Hence, it is important to empower the employees to recover the services using untraditional responses. © 2021 by IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2446",
+    "title": "How Does Culture Impact Customer Evaluation in Online Complaining? Evidence from Germany and India",
+    "journal": "Research Anthology on Social Media Advertising and Building Consumer Relationships",
+    "journal_impact_factor": null,
+    "doi": "10.4018/9781668462874.ch083",
+    "abstract": "This article investigates how customers’ cultural orientation impacts their service evaluations when complaining online on social media. Two separate scenario-based experimental studies were conducted using non-student samples from two culturally diverse countries (Germany and India). Study 1 using 83 participants from Germany and 83 from India shows that when causal explanations for service failure are given, individualists have higher perceived justice. Study 2 with 81 participants from Germany and 82 from India shows that when cognitive control is given through regular updates during service recovery to high uncertainty avoidance seekers, they show higher perceived justice. The three independent justice dimensions positively influence recovery satisfaction, with informational justice showing the strongest impact, followed by procedural and distributive justice. This research thus contributes to the nascent literature in social media complaining. Managers of online service organizations can benefit from these findings when developing their complaint management strategies. This chapter published as an Open Access Chapter distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by/4.0/) which permits unrestricted use, distribution, and production in any medium, provided the author of the original work and original publication source are properly credited. © 2022 by IGI Global."
+  },
+  {
+    "article_id": "CS_2447",
+    "title": "Decoding consumer emotions in quick commerce: A qualitative analysis",
+    "journal": "Methods and Applications of Quick Commerce (Q-Commerce)",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1712-0.ch003",
+    "abstract": "Quick delivery,merging business model, with orders placed and delivered in a much shorter time frame than traditional e-commerce. Q-commerce growing instant gratification, convenience, and seamless experiences in shopping. This chapter looks at how Quick Commerce is a paradigm-changing business model spanning The chapter explore consumers' sentiments toward Q-commerce sites and how online reviews act upon their dispositions and preferences in the present time a qualitative method adopted in the chapter to analyze consumer behavior toward Q-commerce through web reviews. chapter does a sentiment analysis toward the sentiment of the consumers of Q-commerce, elucidating their main sentiments as negative, positive. The analysis providing reflective insights into customer expectations, and strategic barriers that Q-commerce companies experience in an environment with rapid changes and high competition. The survey discovers a mostly negative take by customers towards Q-commerce platforms, and complaints are about delivery experience, customer support, and reliability of service. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CS_2448",
+    "title": "Consumer complaints management in the digital era",
+    "journal": "Digital Business and Optimizing Operating Strategies",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-0428-0.ch003",
+    "abstract": "The aim of this research is to provide theoretical insights into effectively managing complaints made by businesses and brands on digital platforms. In this context, the authors first explain the consumer complaint process in the digital environment. Following that, they provide guidance on how businesses should handle these complaints. Managing complaints is crucial for fostering satisfied and loyal consumers. To this end, the authors provide a detailed breakdown of each step in the complaint resolution process, including deciding on a complaint resolution strategy, collecting complaints, reviewing complaints, resolving complaints, acquiring customers, and conducting a comprehensive analysis of complaints. Briefly, they outline the procedures that businesses should establish for complaint resolution, how they should go about resolving complaints, and how to analyze complaints using causeand-effect relationships. The research will also feature practical examples from digital platforms, and the authors examine the findings of relevant studies on this topic. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2449",
+    "title": "Enhancing service excellence in the hospitality industry through effective service recovery from failures",
+    "journal": "Innovative Technologies for Increasing Service Productivity",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-2019-8.ch007",
+    "abstract": "The hotel sector is a fiercely competitive and continuously expanding industry with a multitude of dif¬ficulties and prospects. The objective of this study is to investigate the significant impacts of providing high-quality service and effectively managing service recovery on both visitor happiness and the overall success of enterprises in the tourism industry. This study utilises a qualitative methodology, specifi¬cally focused on conducting focus group interviews. The results of this study will aid in the continuous endeavours to improve customer satisfaction and promote the success of the hotel and tourism sectors. The knowledge gained from experts in the industry will provide a clear understanding of the strategies and viewpoints that contribute to the success of firms in this field. It acknowledges the importance of aligning the expectations of management and customers in order to provide great service. © 2024, IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2450",
+    "title": "Breaking of ethical quandaries by celebrity brand ambassadors: A study of misleading and unethical advertising in India",
+    "journal": "Ethical Quandaries in Business Practices: Exploring Morality and Social Responsibility",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-3948-0.ch012",
+    "abstract": "Recently an order was passed by District Consumer Disputes Redressal Commission of Indore (Madhya Pradesh) against online coaching Company Byju and celebrity superstar Shahrukh Khan. Priyanka Dikhsit an innocent IAS aspirant enrolled for Byju's coaching classes in 2021 after getting influenced by their advertisement. But, after paying the fees she found herself cheated and lodged a complaint in consumer forum. The court given the verdict in the favor of Priyanka and the defendants are directed to return the fees along with interest of 12% per annum. Additionally the litigation charges USD 59.84 and compensation of mental sufferings (USD 599.35) is also to be charged from the defendants. Sometimes back, another famous celebrity Akshay Kumar made news by publicly apologizing and stepping down as brand ambassador of Vimal Eliachi. He made his decision after receiving criticism for endorsing a Pan Masala brand. The actor announced to donate the whole fees charged for public welfare causes when people excessively started posting negative comments about him. In another case, a criticism was raised against celebrities Rashmika Mandanna and Vicky Kaushal for promoting vulgarity, inappropriate content and objectifying men in the advertisement of an inner clothes of Macho. These three are among the latest heard cases of unfair advertisements by the celebrity brand ambassadors, but the list is endless. Actually in India, fraudulent and bait advertising is a very common practice followed by advertisers to influence the innocent consumers. The present paper makes an attempt to study the evolution, present status, regulatory framework and trends of Indian celebrity endorsements. Further, the paper evaluates the recent cases of deceptive advertisement in India, various ethical and unethical issues involved in celebrity endorsements and its impact on the consumer. © 2024, IGI Global. All rights reserved."
+  }
+]

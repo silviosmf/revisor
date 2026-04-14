@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_2251",
+    "title": "Just Human-Like! Gender, Conversation Styles and Emojis in the Perceived Anthropomorphism of Chatbots and Purchase Intention; [似人不是人？聊天機器人之性別特徵、對話風格與表情符號透過知覺擬人化影響購買意圖機制之研究]",
+    "journal": "Journal of Management and Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.6504/JMBR.202409_41(3).0002",
+    "abstract": "This study investigates key factors in the perceived anthropomorphism of a chatbot via gender, conversation style and emoji use. Perceived anthropomorphism and social presence are the mechanisms by which chatbots influence consumers’ purchase intentions. Three between-subject experiments were performed to test the research arguments. The results confirmed that gender features alone do not increase perceived anthropomorphism; however, a warm conversation style was more closely associated with higher perceived anthropomorphism. Moreover, in terms of the moderating effect of emoji use, when the chatbot is perceived as female, compared with not using emoji, the warm conversation style with emoji use will increase perceived anthropomorphism. In contrast, when the chatbot’s gender is male, using emojis with a competence style elicits higher perceived anthropomorphism than those that do not use emojis. In addition, experiments confirmed a series mediation effect from perceived anthropomorphism and social presence. That is, the interaction effect of gender features, conversation styles, and emoji use influence behavioral intention through perceived anthropomorphism and social presence. The findings of this study have several valuable implications for marketing professionals and chatbot developers. © 2024 Chinese Management Association. All rights reserved."
+  },
+  {
+    "article_id": "CA_2252",
+    "title": "Conversational Service Experiences in Chatbots: A Perspective on Cognitive Load",
+    "journal": "Management Review (Taiwan)",
+    "journal_impact_factor": null,
+    "doi": "10.6656/MR.202101_40(1).CNI021",
+    "abstract": "Purpose – This study examines the issues of cognitive load within the context of stimulus-organism-response theory and the information systems success model in developing a conceptual model by which to characterize interactions with chatbots in terms of system quality, information quality, and service quality. Design/methodology/approach – Structural equation modeling is employed to analyze survey data collected from 193 chatbot users recruited via convenience sampling. Findings – Our results reveal the following: (1) Customers perceiving a positive interaction with chatbots are less encumbered by cognitive load and are more likely to express a positive attitude toward the chatbot system; and (2) Reduced cognitive load and a positive attitude toward the chatbot both have significantly positive effects on the intention of consumers to continue using the system. Research limitations/implications – Within the context of digital environment, each consumer has different service contact experience, platform experience or habits. The capability to deal with various information may vary along with different levels of prior knowledge and experience of a consumer. Therefore, scholars can further study the impact of consumer’s cognitive schema on their cognitive load in the future. Practical implications/Social implications – Our research suggests that companies might benefit from developing a chatbot-based conversational service to provide consumers with good interactive quality, which can not only reduce consumers’ cognitive load, but also create excellent service experience. Originality/value – Most of the existing literature on chatbots has focused on its interface design, anthropomorphism, and stability, with relatively little research examining the cognitive mechanisms involved in the use of this technology. To contribute to this knowledge gap, this study develops a empirical model by which to characterize interactions with chatbots in terms of information overload and interactive quality (i.e., system quality, information quality, and service quality). The research findings provide valuable insights for scholars as well as marketers seeking to leverage the benefits of chatbots to enhance the customer experience. © 2021, Kung-Hwa Management Foundation. All rights reserved."
+  },
+  {
+    "article_id": "CA_2253",
+    "title": "Retail chatbots: The challenges and opportunities of conversational commerce",
+    "journal": "Journal of Digital and Social Media Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.69554/apsb6546",
+    "abstract": "Artificial intelligence (AI) refers to the ability of machines and/or robots to perform intellectual tasks like humans. AI technologies are widely used to support different activities in retail operations. In particular, retail firms have adopted chatbots to interact with consumers through various communication channels, including social media, live chat, SMS etc. In addition, chatbots have been used to support conversational commerce in which companies automate conversations with consumers about product selection and assist consumers to make informed choices throughout the shopping and decision-making processes. To investigate the state of the art of chatbots in the retail industry, this article qualitatively studies commercial chatbots from 40 retail firms. The study finds that chatbots assist consumers in completing general tasks, such as searching information, purchasing products, making reservations and collecting feedback. Chatbots are good enough to perform such general tasks, although they have limited capability with respect to processing and interpreting natural language. Chatbots also provide menus to address the most predominant issues encountered by consumers while running at a lower operational cost. It is anticipated that chatbots will gain popularity in the retail industry, and consumers would benefit from chatbots with improved features like more accurate predictions and better product recommendations. © Henry Stewart Publications."
+  },
+  {
+    "article_id": "CA_2254",
+    "title": "The coming democratisation of emotions analytics",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/edri2633",
+    "abstract": "The ability to understand emotion from human communication is essential for marketers and data analysts, particularly in a world of growing non-verbal communication, such as reviews, complaints, surveys social media and chatbots. Thanks to advancements in artificial intelligence (AI) text analytics, a lot of information typically missed in sentiment analysis can now be analysed and early warning of issues flagged much earlier. This paper looks at how AI text analytics will succeed sentiment analysis and how it can identify additional customer emotion and intent by using concepts rather than simple keywords in its analysis. The paper also looks at how the most successful AI text analytics feature human-in-the-loop technology that optimises the combination of automation and human involvement. This makes the need for data scientists to run day-to-day models obsolete as the human input can come from the business user instead. The paper presents examples of how AI text analytics and emotions analytics can be applied, and argues that AI text analytics can reduce reliance on data scientists, provide early warnings of issues and analyse a much deeper level of sentiment and customer intent with higher levels of accuracy. © Henry Stewart Publications."
+  },
+  {
+    "article_id": "CA_2255",
+    "title": "Do conversational platforms represent the next big digital marketing opportunity?",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/hiur2549",
+    "abstract": "This paper examines the evolution of conversational platforms. Over the next three to five years, the technology will likely evolve rapidly, allowing conversational platforms to move beyond established customer service use cases to applications that facilitate more informed customer decision-making and create more immersive brand engagement experiences. Marketers will need to sort through the legal, regulatory and brand trust issues associated with the Big Data generated by conversational platforms, as well as integrate conversational platforms into their user experience roadmap, data strategies and marketing technology stack. © Henry Stewart Publications."
+  },
+  {
+    "article_id": "CA_2256",
+    "title": "Conversational marketing: Creating compelling customer connections",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/ircx9392",
+    "abstract": "Conversational interfaces allow people to direct devices and programs through natural dialogue. Chatbots (which integrate with messaging apps like Facebook Messenger) and virtual assistants (including Apple’s Siri and Amazon’s Alexa) are examples of conversational interfaces that have emerged in recent years. As adoption of conversational interfaces increases, so will opportunities for marketers to utilise them to better meet consumer needs. This paper highlights the trends driving the rise of conversational interfaces, identifies the types of conversational ‘jobs to be done’ for customers in the context of the marketing funnel, and discusses the implications of conversational data for marketers. © Henry Stewart Publications 2054-7544 (2018)."
+  },
+  {
+    "article_id": "CA_2257",
+    "title": "The rise of conversational commerce: What brands need to know",
+    "journal": "Journal of Brand Strategy",
+    "journal_impact_factor": null,
+    "doi": "10.69554/jhvl9858",
+    "abstract": "This paper explains how the three major shifts of mobile-first consumer evolution, messaging platforms evolving into payment platforms, and rapid advancement of Artificial Intelligence have enabled the new era of the internet: conversational commerce. It will define conversational commerce and break down the different dimensions of this phenomenon. The paper explores the benefits for users, and how companies are already taking full advantage of creating assisting interfaces. The paper concludes with practical advice for brands concerning what they should take into account when they create their conversational commerce activities. © HENRY STEWART PUBLICATIONS."
+  },
+  {
+    "article_id": "CA_2258",
+    "title": "Personalisation the artificial intelligence way",
+    "journal": "Journal of Digital and Social Media Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.69554/jjgr7331",
+    "abstract": "The era of artificial intelligence (AI) has arrived. Companies all over the world are championing their latest progress with AI, machine learning and deep learning, even though most of it is far short of anything that could be described as a breakthrough. Unfortunately, this excitement does not always translate into quantifiable success — it can take up to six months to go from concept to production, and even then, only one in three AI projects turns out successful. These odds might be low, but the effort is well worth it as the potential payoff could be huge. This paper describes five different types of AI — sound, time series, text, image and video — and illustrates various ways that AI can be used, including in customer relationship management, e-commerce, customer recommendations, security, voice assistance and natural language processing for customer understanding. This article argues that AI will become the basis for a level of customer personalisation that will not only be recognised but soon be demanded by fickle customers everywhere. As the paper will show, it is imperative for brands to utilise AI in their marketing because it allows them to have both a single view of the customer as well as a single view of their media. © Henry Stewart Publications 2050-0076 (2020)."
+  },
+  {
+    "article_id": "CA_2259",
+    "title": "Measuring the value of artificial intelligence in improving search and chatbot outcomes",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/kark8296",
+    "abstract": "This paper recommends that the best way to measure the success of artificial intelligence used in internal search or chatbots is not to use the data driving these improvements, but rather to tune a standard user behaviour measurement system to the metrics that matter and use carefully constructed experiments to assess the return on investment. The paper also maintains that digital marketers can learn a great deal about their customers and products from these enhancements, including what products need the most online marketing help. Through this process, the marketer can learn as much about the system as the system is learning from its users. © 2021, Henry Stewart Publications. All rights reserved."
+  },
+  {
+    "article_id": "CA_2260",
+    "title": "How to go from storytelling to fact telling and still sell products, ideas and hope",
+    "journal": "Journal of Brand Strategy",
+    "journal_impact_factor": null,
+    "doi": "10.69554/kprl8731",
+    "abstract": "We exist now in what can sometimes feel like an alternative universe, where fake news headlines go viral, algorithmic bias targets us with content that is popular and engaging but not necessarily trustworthy, chatbots are powered by artificial intelligence and deepfake video technology runs amok. The global rise of misinformation and the decline of consumer trust in both government and media have coincided with technological advances and tarnished demand for brand strategists’ old tricks. One of these is storytelling. Now, if you are a brand that is being even a little disingenuous with your communications today, then to some you may as well be a bald-faced liar. Instead, regardless of the industry, whether B2B or consumer, brands today should be in the business of fact telling. At stake are a business’ reputation, customer loyalty and the bottom line. Furthermore, it is up to us to help ensure that the information environment does not deteriorate further on our watch. The most exciting thing a brand can do today is to be audaciously authentic. But have we forgotten how to be? Moreover, can we tell the truth and still get consumers to add our products to their shopping carts, become brand advocates and loyalists and even learn to trust again? Within, we outline a framework for brands to meaningfully differentiate with truth telling. © 2024, Henry Stewart Publications. All rights reserved."
+  },
+  {
+    "article_id": "CA_2261",
+    "title": "Improving brand outcomes through consumer co-creation: An agile formula for success",
+    "journal": "Journal of Brand Strategy",
+    "journal_impact_factor": null,
+    "doi": "10.69554/NJNM2963",
+    "abstract": "This paper analyses how consumer perception makes and breaks brands. Historically, brand owners have sought feedback from their audience to mitigate the risks of failure and improve the ways in which they develop and market their products and services.The collection of such feedback has assumed many forms over the past 60 years, from door-to-door interviews to direct mail surveys and from customer service hotlines to chatbots driven by artificial intelligence. Nevertheless, the utility of such exercises remains limited. How might the dynamic change if consumers assumed a more active role in guiding solution development through an agile and iterative creative process? Once radical and still underutilised, consumer co-creation initiatives have demonstrated the power and potential to challenge entrenched marketing behaviours and reshape conventional wisdom around how brands view, engage and activate their audiences. Moreover, co-creation offers marketers an opportunity to meaningfully increase speed to market and improve their odds of commercial success when compared with traditional customer feedback implementation methodologies. © HENRY STEWART PUBLICATIONS."
+  },
+  {
+    "article_id": "CA_2262",
+    "title": "Powerful tools for personalisation: Using large language model-based agents, knowledge graphs and customer signals to connect with users",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/NMCE9908",
+    "abstract": "This paper discusses how large language models’ (LLMs) agentic workflows powering ChatGPT types of applications can use a combination of enterprise data sources to hyper-personalise information at scale for customers or employees. Typical use cases include marketing communications, customer support, content creation and digital assistants. The approaches described are at one level established in theory; however, practical adoption has been challenging and the combination of templated prompts with LLMs and agent call outs to external application programming interfaces and knowledge sources are new. The data sources using these approaches include knowledge, content and transactional data with near real time and real time customer signals. Customer signal data can include first, second or third party data that describes the characteristics of a customer or employee, as well as real time ‘digital body language’ — click paths, searches, responses to campaigns and chatbot dialogues. Two use cases in two industries — automotive and industrial manufacturing — will be detailed to illustrate how the same principles and approaches can be applied in situations that are very different, and how a knowledge architecture combined with retrieval augmented generation (RAG) should be developed and applied. Analytics to monitor outcomes and enable manual and automated course corrections will be discussed. The outcomes are unified and contextualised experiences realising the sometimes ambitious designs of user experience developers. It is easier to storyboard a design than it is to make it a reality. Marketing organisations are more and more responsible for the end-to-end customer journey and experience. However, the customer journey is a knowledge journey. At each step of the process, they are asking questions about the company, product or service. What product and solutions do you offer? Which ones are right for me? How do I choose a particular offering? How do I purchase or procure the product or service? How can I maintain it, and get service or support? How do I get the most from my purchase? What are the options for upgrading or enhancing my solution? These are marketing communications that consist of educating the prospect rather than selling to them. Today’s prospects are empowered with greater information and understanding of offerings and the competition than ever before. Marketing is therefore responsible for helping them make the decision based on information and references that are presented at each stage of the journey. © Henry Stewart Publications 2054-7544 (2024)."
+  },
+  {
+    "article_id": "CA_2263",
+    "title": "How graphs help marketers get super slick on user data",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/oown2610",
+    "abstract": "The paper discusses why and how brands need to embrace ‘Recommendations 2.0’ in the shape of highly-personalised data-driven digital brand experiences. Amazon has demonstrated the value of being able to predict what else customers might want to buy, by analysing online sales data. This is a lesson that any brand wishing to survive needs to learn — and apply. However, the retail, banking and services arena is getting increasingly competitive — and Recommendations ‘1.0’ does not suffice. The paper will argue that AI-based shopbot-styled recommendations, or ‘Recommendations 2.0’ is the approach now needed. Examples of intelligent recommendation technology across a wide range of industries will be considered, notably, Google Assistant’s eBay’s AI-based shopbot and augmented reality e-marketing agency Quander. The paper will conclude that to improve meaning and precision requires richer context, which is what AI-enriched applications such as chatbots or augmented reality e-marketing provide, and graph database technology is the way to make this available for the retailer and service provider. © Henry Stewart Publications."
+  },
+  {
+    "article_id": "CA_2264",
+    "title": "Why people use virtual assistants: Understanding engagement with Alexa",
+    "journal": "Journal of Brand Strategy",
+    "journal_impact_factor": null,
+    "doi": "10.69554/tfge1396",
+    "abstract": "This study explores how and why early adopters use voice-powered artificial intelligence (AI) assistants and integrate them into their lives. These assistants are examined as personalisable, highly interactive media capable of building a two-way relationship with users. Using the framework of uses and gratifications theory and the Calder–Malthouse set of experiences, this study analyses what value engagement with virtual assistants provides consumers, what the meaning of the experiences are and what contextual factors influence those ongoing interactions. Insights from in-depth interviews reveal three overarching types of experiences with Alexa: removing friction, enabling personalisation and extending self and enriching life. These experiences comprise two types of goals satisfied through interaction with Alexa: Those that related to ‘Helping do’ — focusing on functional elements or tasks that Alexa performed — and those that related to ‘Helping become’ — focusing on enabling users to become better versions of themselves. This is the first qualitative study globally to explore the meaning of interacting with AI assistants, and establishes a much-needed foundation of consumer understanding, rooted in the words and perspectives of the audience themselves, on which to build future research. Recommendations for helping organisations identify opportunities for building their brands through voice-powered AI are discussed. © HENRY STEWART PUBLICATIONS."
+  },
+  {
+    "article_id": "CA_2265",
+    "title": "Voice-activated change: Marketing in the age of artificial intelligence and virtual assistants",
+    "journal": "Journal of Brand Strategy",
+    "journal_impact_factor": null,
+    "doi": "10.69554/wuqt4128",
+    "abstract": "The Internet of Things promises to make relationships with technology more personal than ever. Voice-controlled virtual or artificial intelligence assistants such as Amazon’s Alexa or Google Assistant execute the commands of their users, providing information, entertainment, utility and convenience while enabling consumers to bypass the advertising they would typically see on a screen. This ‘screen-less’ communication presents significant challenges for brands used to ‘pushing’ messages to audiences in exchange for the content they seek in hopes of creating preference. It also raises ethical questions about data collection, usage and privacy. Little is known about the role marketing will play in the increasingly connected, voice-controlled home. This case study will explore critical cases to describe the implications, applications and opportunities for voice-controlled personal assistants in marketing and advertising in the USA. © HENRY STEWART PUBLICATIONS."
+  },
+  {
+    "article_id": "CA_2266",
+    "title": "Agentic artificial intelligence in the enterprise",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/WYMY7854",
+    "abstract": "The next major wave of value creation from generative artificial intelligence (AI) will come from enterprises implementing agentic systems. Previous waves of AI innovation (such as machine learning) have proven very effective at automating and enhancing large-scale processes which have a quantitative element. In the marketing and advertising industry, this has been evident in the impact of predictive modelling for targeting and personalisation. However, other parts of the marketing industry, such as business-to-business account-based marketing, have proven harder to improve, because these rely on a lower volume of decisions with much higher dimensionality, supported by unstructured data that includes e-mail exchanges, proposal documents, product descriptions and so on. Generative AI agents possess the potential to add real value in these areas as they can reason over such data very effectively and generate actions that can be automated through account-based marketing and customer relationship marketing systems, enhancing business-to-business sales and marketing effectiveness. While much has been written about the strategic importance of agentic AI (and major industry players such as Hubspot and Salesforce are pushing agentic capabilities hard), this paper provides a practitioner-focused guide to the underlying architectural patterns and implementation choices and explores the governance and agent management practices that organisations will need to implement to reduce risks associated with agentic AI. This article is also included in The Business and Management Collection which can be accessed at http://hstalks/business. © Henry Stewart Publications 2054-7552 (2025)."
+  },
+  {
+    "article_id": "CA_2267",
+    "title": "ChatBot preference and personality",
+    "journal": "Applied Marketing Analytics",
+    "journal_impact_factor": 0.467,
+    "doi": "10.69554/znoh7454",
+    "abstract": "Chatbots are a growing subject of interest to marketers. This paper analyses the comparison of Prosper Insights and Analytics September 2023 data on consumer preference for chatbots to a live person, including the Big Five personality dimensions. Chatbot preferers are younger, have children and are also more likely to work at home. They prefer contactless retail activities and use ChatGPT. The personality characteristics that most strongly associate with chatbot preference are conscientiousness (efficient versus extravagant), emotional stability (sensitive versus confident), agreeableness (friendly versus critical) and openness (curious versus cautious). Most chatbot preferers report more emotional conditions, such as anxiety, depression, loneliness and anger. Emotional involvement in chatbot preference varies by personality characteristics. High levels of chatbot preference are associated with big spending plans; therefore understanding them is crucial for marketers. © Henry Stewart Publications 2054-7544 (2024)."
+  },
+  {
+    "article_id": "CA_2268",
+    "title": "AI INTEGRATED LANGUAGE LABS FOR TECHNICAL UNIVERSITIES AND THEIR IMPACT ON ENGLISH PROFICIENCY DEVELOPMENT",
+    "journal": "Archives for Technical Sciences",
+    "journal_impact_factor": 0.601,
+    "doi": "10.70102/afts.2025.1833.366",
+    "abstract": "In the modern world of education, the use of Artificial Intelligence (AI) in language learning has caused a shift in approach, particularly in AI-enabled technical universities where learning the English language is critical for academic success and employment opportunities worldwide. This paper examines the concepts, design, and consequences of AI-enabled language laboratories in the context of applied higher education and focuses on the strengthening of English competencies among students of engineering and technology. While traditional language labs are beneficial, they rarely offer personalization when it comes to learning pathways, instant feedback, and content adaption. AI-integrated language labs solve these problems using Natural Language Processing (NLP) algorithms, speech recognition capabilities, machine learning, and conversational AI to provide intelligent, interactive, and self-directed language learning. These smart labs can track learner milestones and diagnose specific difficulties such as pronunciation, grammar, vocabulary, or fluency. In addition, AI-powered virtual tutors, chatbots, and voicing teaching aids foster automation of self-evaluation and practice, allowing users to develop their writing and speaking skills beyond the class context. This paper discusses the case studies and other working data recorded from various technical universities that have adopted language learning platforms powered with AI technology. The results note positive gains on students’ engagement with lessons alongside easing students' language-related anxiety, in addition to improvements with learners' listening, speaking, reading, and writing (LSRW) skills. There is also discussion on how AI aids in the differentiation of instruction for self-paced and problem-based personalized learning that permits instructors to shift focus from repetitive teaching to structural mentoring. This study also analyses the lack of infrastructure necessary to support the deployment of AI systems alongside data privacy issues, unused resources prone to faculty burning out and teaching-strategies-silo-thinking exhaust, as challenges with implementing the technology. As per request, there is a provided enduring plan for taking AI language labs and weaving them into the technical curriculum through both institutional and industry frameworks. © 2025, Technical institute of Bijeljina. All rights reserved."
+  },
+  {
+    "article_id": "CA_2269",
+    "title": "An Intelligent Teaching Aid System for English Linguistics Courses Based on Computer Generated Dialogue System",
+    "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+    "journal_impact_factor": 0.096,
+    "doi": "10.70917/ijcisim-2026-0068",
+    "abstract": "Information technology is of great significance in the curriculum setting and implementation of college English. Traditional college English pays more attention to the extension of the application of multimedia facilities, which is characterized by the problems of untimely updating of content, heavy workload of teachers' preparation and insufficient reinforcement of grammatical context. In this paper, a reinforcement learning-based dialog generation model is proposed based on reinforcement learning theory, which fully considers the one-to-many relationship in dialog data, i.e., there may be multiple reasonable replies for each user input. Then on the basis of the model, an intelligent teaching dialogue system is further developed to realize assisted teaching for English language courses. Through the comparison experiments and case studies of different baseline models in the dataset, it is found that the dialogue generation model proposed in this paper performs better than the other baseline models in various indexes, while the intelligent system can still support about 55% of the users to complete the request when the users reach 700 in the functionality test. Finally, the statistical analysis of the performance in the study case shows that the intelligent dialog generation system proposed in this paper can affect the actual effectiveness of teaching and learning. © 2026 by the authors."
+  },
+  {
+    "article_id": "CA_2270",
+    "title": "Smart Home Voice Assistants: A Literature Survey of User Privacy and Security Vulnerabilities",
+    "journal": "Complex Systems Informatics and Modeling Quarterly",
+    "journal_impact_factor": 0.686,
+    "doi": "10.7250/csimq.2020-24.02",
+    "abstract": "Intelligent voice assistants are internet-connected devices, which listen to their environment and react to spoken user commands in order to retrieve information from the internet, control appliances in the household, or notify the user of incoming messages, reminders, and the like. With their increasing ubiquity in smart homes, their application seems only limited by the imagination of developers, who connect these off-the-shelf devices to existing apps, online services, or appliances. However, since their inherent nature is to observe the user in their home, their ubiquity also raises concern of security and user privacy. To justify the trust placed into the devices, the devices must be secure from unauthorized access and the back-end infrastructure tasked with speech-to-text analysis, command interpretation, and connection to other services and appliances must maintain confidentiality of data. To investigate existing possible vulnerabilities, approaches to mitigate them, as well as general considerations in this emerging field, we supplement the findings of a recent study with results from a systematic literature review. We were able to compile a list of six main types of user privacy vulnerabilities, partially confirming previous findings, but also finding additional issues. We discuss these vulnerabilities, their associated attack vectors, and possible mitigations users can take to protect themselves. © 2020 Khairunisa Sharif and Bastian Tenbergen."
+  },
+  {
+    "article_id": "CA_2271",
+    "title": "Desarrollo del simulador conversacional o chatbot @Antidotos_bot para el manejo de intoxicaciones",
+    "journal": "Farmacia Hospitalaria",
+    "journal_impact_factor": 0.662,
+    "doi": "10.7399/fh.11620",
+    "abstract": "Objective: To describe the development of the Antidotos_bot chatbot tool, which is used to facilitate the search for information in the Antidote Administration Guide and to perform useful calculations in the use of antidotes. Method: In January 2019, we proposed developing a freely accesible chatbot on Telegram® using Xenioo®. Software development defined the way it interacts with users and incorporated calculation functionalities. Internal validation was conducted and it was presented as Antidotos_bot in June 2019. Results: Antidotos_bot included information in Spanish on 49 antidotes and 57 poisonings. Three types of calculations were provided and two treatment algorithms could be consulted. Consultation was posible through 332 questions. Internal validation needed five sets of training over 2 months. By July 2020, it had 415 users. The most frequently consulted antidotes were glucagon, penicillin G, protamine, n-acetylcysteine and flumazenyl. Regarding monthly activity, there was an average of 29 calculations and an average of three new users and three queries per user. Conclusions: Antidotos_bot is a poisoning management decisionmaking tool that provides up-to-date information in a user-friendly manner. It could contribute to improving the quality and safety of care in emergency situations."
+  },
+  {
+    "article_id": "CA_2272",
+    "title": "10th International Conference on Decision Support System Technology, ICDSST 2024",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 10 papers. The special focus in this conference is on Decision Support System Technology. The topics include: MCDA Calculator: A Streamlined Decision Support System for Multi-criteria Decision Analysis; research on Cost Estimation of Launch Vehicle Based on Grey Neural Network; a Decision Support Tool for Paratransit Systems Planning; data Driven Approach to Support the Design of Road Safety Plans in Portuguese Municipalities; performance of Holistic Evaluation for Multi-criteria Decisions Comparing Selection or Elimination of Alternatives; A Comprehensive Examination of User Experience in AI-Based Symptom Checker Chatbots; framework for Understanding Consumer Perceptions and Attitudes to Support Decisions on Cultured Meat: A Theoretical Approach and Future Directions; if Digital Tools are the Solution to Knowledge Transfer, What is the Problem?."
+  },
+  {
+    "article_id": "CA_2273",
+    "title": "11th International Symposium on Business Modeling and Software Design, BMSD 2021",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 27 papers. The special focus in this conference is on Business Modeling and Software Design. The topics include: Privacy Enabled Software Architecture; modeling the Handling of Knowledge for Industry 4.0; quantification of Knowledge Transfers: The Design of an Experiment Setting for the Examination of Knowledge Transfers; digital Transformation of Business Process Governance; revisiting Human Relativism – Guidelines for Precision in Information Systems Modelling; digital Transformation: Current Challenges and Future Perspectives; conceptual Model of the Ecosystem Value Balance; enterprise Architecture and Agility: A Systematic Mapping Study; view and Viewpoint Reconstruction for Assisting the Preparation of Participatory Modeling Sessions; disruption and Images of Organisation; what to Do When Requirements Are Changing All the Time?: A Control System Example; value-Based Fuzzy Approach for Non-functional Requirements Prioritization; towards Augmented Enterprise Models as Low-Code Interfaces to Digital Systems; bridging the Gap Between Structural and Behavioral Models in a Software-Centric Environment; a Heuristic Technique for Project Time Analysis in Conditions with High Uncertainty; chainOps for Smart Contract-Based Distributed Applications; a Stakeholders Taxonomy for Opening Government Data Decision-Making; towards IoT-Based Transport Development in Smart Cities: Safety and Security Aspects; VR-UML: The Unified Modeling Language in Virtual Reality – An Immersive Modeling Experience; a Reference Architecture for Enhanced Design of Software Ecosystems; managing Knowledge of Intelligent Systems: The Design of a Chatbot Using Domain-Specific Knowledge; From Elementary User Wishes and Domain Models to SQL-Specifications; towards Well-Founded and Richer Context-Awareness Conceptual Models; on Context Frames and Their Implementations."
+  },
+  {
+    "article_id": "CA_2274",
+    "title": "13th Annual Information Systems and Neuroscience, NeuroIS 2021",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 27 papers. The special focus in this conference is on Information Systems and Neuroscience. The topics include: Predicting In-Field Flow Experiences Over Two Weeks from ECG Data: A Case Study; an Inward Focus of Attention During Information Security Decision Making: Electrophysiological Evidence; EyeTC: Attentive Terms and Conditions of Internet-Based Services with Webcam-Based Eye Tracking; detecting Flow Experiences in the Field Using Video-Based Head and Face Activity Recognition: A Pilot Study; understanding the Potential of Augmented Reality in Manufacturing Environments; on How Mind Wandering Facilitates Creative Incubation While Using Information Technology: A Research Agenda for Robust Triangulation; Consumers Prefer Abstract Design in Digital Signage: An Application of Fuzzy-Trace Theory in NeuroIS; topographic Analysis of Cognitive Load in Tacit Coordination Games Based on Electrophysiological Measurements; Active Learning Techniques for Preparing NeuroIS Researchers; towards a Psychophysiological Investigation of Perceived Trustworthiness and Risk in Online Pharmacies: Results of a Pre-study; examining the Impact of Social Video Game Tournaments on Gamers’ Mental Well-Being; Continuing Doctoral Student Training for NeuroIS and EEG During a Pandemic: A Distance Hands-On Learning Syllabus; design Mode, Color, and Button Shape: A Pilot Study on the Neural Effects of Website Perception; does Media Richness Influence the User Experience of Chatbots: A Pilot Study; development of a New Dynamic Personalised Emotional Baselining Protocol for Human-Computer Interaction; mediators of the Relationship Between Self-control and Pathological Technology Use: Negative Affect and Cognitive Failures, but not Self-efficacy; high Fidelity Vibrokinetic Stimulation Augments Emotional Reactivity and Interhemispheric Coherence During Passive Multimedia Interaction."
+  },
+  {
+    "article_id": "CA_2275",
+    "title": "14th Global Islamic Marketing Conference, GIMAC 2023",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 22 papers. The special focus in this conference is on Global Islamic Marketing. The topics include: The Souls of Man: Marketing and the Welfare of Man; are Halal Hotels Green? An Exploratory Study from Malaysia; Factors Influencing Customers’ Behavioral Intention in Online Banking: Second Order PLS-SEM; digitalization of Halal Food Supply Chain Management Based on Blockchain Technology; faith-Centric Consumerism?—Halal Brand Attitude and Research Agenda; exploring Customer Loyalty in Islamic Traditional Markets: Insights from Relationship Marketing and Experiential Marketing Theories; the Factors Influencing Brand Love: Evidence from Moroccan Football; Glass Ceiling Influence on the UAE Women’s Professional Development: A Crystalized Exposition; impact of Sustainability Mediated by Corporate Governance in Extra Large Size Microfinance Institutions of Bangladesh; the Role of Educational Research in Sustainable Development. The Reality of Sustainable Education in the Arab World and Future Perceptions; impact of Advertising on the Buying Behavior of Gen Z Indian Muslim Consumers; husband’s Rights on the Working Wife’s Income (An Economic Study in Islam); investigating the Key Drivers of Islamic Insurance in Morocco: A Structural Equation Modeling Analysis; from Taghrīr to Trust: A Comparative Study of Misrepresentation Challenges in Online Sales Contracts Within Islamic Law and the Jordanian Legal Framework; exploring the Influence of E-Trust on Virtual Organizations’ Success Through Knowledge Sharing; consumer Empowerment and Privacy: The Case of Morocco; The Challenges and Opportunities of COVID-19 for Islamic Microfinance Institutions in Bangladesh; tabayyun Measures for Self-Regulating Social Media Behaviour Among Muslim Consumers; AI-Driven Chatbots in Halal Marketing Communication—Challenges and Opportunities."
+  },
+  {
+    "article_id": "CA_2276",
+    "title": "14th International Conference on Business Excellence, Business Revolution in the Digital Era, ICBE 2020",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 28 papers. The special focus in this conference is on Business Excellence, Business Revolution in the Digital Era. The topics include: Designing Better Policies for a Cleaner Air: The Case of Electric Vehicles in Europe; Nonrenewable Energy Prices and Stock Prices of EU Financial Companies: A Short Versus Long-Term Analysis; the Current Context of the Smart City Concept Development. Case Study: Romania; Romanians’ Perceptions Regarding the Drivers of Social Venture. Evidence Based on AGER Data; the Optimal Definition of an Institution Using Analytic Hierarchy Process; price Probability Predictor. Capital Investments Assisted by a Probability Field; the Role of Chatbots in End-To-End Intelligent Automation and Future Employment Dynamics; an Econometric Analysis of the Relationship Between Tourist Arrivals in Tourist Accommodation Structures in Romania and the Number of Overnight Stays; ensembles of Convolutional Neural Networks Trained Using Unconventional Data for Stock Predictions; the Influence of Presence of Art in the Life of Individuals and Society; intuitive Fuzzy Real Options in Digital Coaching for Strategic Investment Decisions; the Vulnerabilities of the Risk Assessment Model Elaborated by the Basel Committee for Banking Supervision; structural Funds for the Business Environment: The Illusion of Reducing Disparities; bad Counter Knowledge: Case Studies and Countermeasures; identifying Circular Business Models Through Traditional and Snowball Sampling; impact of National Culture in Reaction to Service Failures; preface; regional Convergence in the European Union: A Success Story or an Unaccomplished Goal?; the Effect of Proper Complaint Handling on Customers’ Satisfaction and Loyalty in Online Shopping."
+  },
+  {
+    "article_id": "CA_2277",
+    "title": "14th International Conference on Research Challenges in Information Sciences, RCIS 2020",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 45 papers. The special focus in this conference is on Research Challenges in Information Sciences. The topics include: User-Experience in Business Intelligence - A Quality Construct and Model to Design Supportive BI Dashboards; FINESSE: Fair Incentives for Enterprise Employees; explainable Recommendations in Intelligent Systems: Delivery Methods, Modalities and Risks; participation in Hackathons: A Multi-methods View on Motivators, Demotivators and Citizen Participation; a Systematic Literature Review of Blockchain-Enabled Smart Contracts: Platforms, Languages, Consensus, Applications and Choice Criteria; Scriptless Testing at the GUI Level in an Industrial Setting; improving Performance and Scalability of Model-Driven Generated Web Applications: An Experience Report; tesCaV: An Approach for Learning Model-Based Testing and Coverage in Practice; automatic Classification Rules for Anomaly Detection in Time-Series; a Big Data Conceptual Model to Improve Quality of Business Analytics; text Embeddings for Retrieval from a Large Knowledge Base; predicting Unemployment with Machine Learning Based on Registry Data; Anomaly Detection on Data Streams – A LSTM’s Diary; discovering Business Process Simulation Models in the Presence of Multitasking; TLKC-Privacy Model for Process Mining; incremental Discovery of Hierarchical Process Models; ontology Evolution in the Context of Model-Based Secure Software Engineering; blockchain-Based Personal Health Records for Patients’ Empowerment; COPri - A Core Ontology for Privacy Requirements Engineering; privacy Preserving Real-Time Video Stream Change Detection Based on the Orthogonal Tensor Decomposition Models; how to Measure Influence in Social Networks?; how the Anti-TrustRank Algorithm Can Help to Protect the Reputation of Financial Institutions; punctuation Restoration System for Slovene Language."
+  },
+  {
+    "article_id": "CA_2278",
+    "title": "18th International Conference on Wirtschaftsinformatik, WI 2023",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 36 papers. The special focus in this conference is on Wirtschaftsinformatik. The topics include: Understanding Business Process Evolution in Digital Ventures; exploring Platform Types and Related Concepts in Service Research—A Systematic Scoping Literature Review; trust Me, I’m an Intermediary! Exploring Data Intermediation Services; governance of Decentralized Platform Ecosystems; from Challenges to Solution Pathways for Industrial Data Ecosystems—A Socio-technical Perspective; from Apathy to Algoactivism: Worker Resistance to Algorithmic Control in Food Delivery Platforms; introducing a Methodological Approach to Determine Value Shares in Digital Ecosystems; digital Service Innovation for Sustainable Development: A Systematic Literature Review; managing Customer Data in Data-Driven Service Innovation: A Framework of Data Principles; Towards Designing a NLU Model Improvement System for Customer Service Chatbots; Executive AI Literacy: A Text-Mining Approach to Understand Existing and Demanded AI Skills of Leaders in Unicorn Firms; empowering Leadership, Job Satisfaction, and the Moderating Effect of Individual Ambidexterity of Information Technology Workers; low-Coders, No-Coders, and Citizen Developers in Demand: Examining Knowledge, Skills, and Abilities Through a Job Market Analysis; design Principles for Institutionalized Data Ecosystems—Results from a Series of Case Studies; Unpacking the Black Box: A Cognitive Process Model of Escalation of Commitment in IS Project Management; designing In-Store Navigation Systems in Physical Retail; what Measures Can Government Agencies in Germany Take Against Digital Disinformation? A Systematic Literature Review and Ethical-Legal Discussion; toward Government as a Platform: An Analysis Method for Public Sector Infrastructure; gender and Mobility—A Literature Review on Women’s (Non-)Use of Shared Mobility Services."
+  },
+  {
+    "article_id": "CA_2279",
+    "title": "1st Saudi Conference on Information Systems, SaudiCIS 2024",
+    "journal": "1st Saudi Conference on Information Systems, SaudiCIS 2024",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 35 papers. The topics discussed include: Qarsh: Arabic financial management application for adults and children; the impact of enablers and disablers on students' switching intention from generative artificial intelligent chatbots; integrating blockchain technology in healthcare delivery integrating blockchain technology in healthcare delivery services: a cybernetics perspective; from screens to dreams: how social media influences mind wandering; neurodiversity in the metaverse: advancing customer neurodiversity in the metaverse: advancing customer augmentation and service accessibility; visual literature reviews; and agility and digital transformation: the case of Saudi Arabia."
+  },
+  {
+    "article_id": "CA_2280",
+    "title": "2021 IoT Vertical and Topical Summit for Tourism",
+    "journal": "2021 IoT Vertical and Topical Summit for Tourism",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 9 papers. The topics discussed include: managing accessible tourist services in a social manner; sustainable digital transformation of heritage tourism; Coimbatore destination chatbot: a study on customer preference; optimizing quality of experience in tourist traveling problem with time windows; sustainable tourism, technology and internet 4.0: opportunities and challenges for small island developing states; mobility analysis during the 2020 pandemic in a touristic city: the case of Cagliari; and improving the user engagement in a fully immersive experience by the means of a conversational non-playable character used as a tourist guide."
+  },
+  {
+    "article_id": "CA_2281",
+    "title": "2025 16th International Conference on E-Education, E-Business, E-Management and E-Learning, IC4e 2025",
+    "journal": "2025 16th International Conference on E-Education, E-Business, E-Management and E-Learning, IC4e 2025",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 136 papers. The topics discussed include: research on sustainable purchasing behavior of organic agricultural product consumers in the e-commerce environment; IskarGul: development of a blockchain-driven smart contract cloud market platform; effectiveness of an e-portfolio to enhance self-regulated learning; ai enhanced education: impacts on students engagement and learning outcomes in tourism & hospitality education; development and evaluation of an educational mobile game for enhancing integer learning among grade 7 students; the roles of anthropomorphism and perceived usefulness on usage intention of ai-based chatbot application; and assessment of security risk awareness: a case study of information systems in government agencies."
+  },
+  {
+    "article_id": "CA_2282",
+    "title": "20th International Conference on Business Information Systems, BIS 2017",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 25 papers. The special focus in this conference is on Business Information Systems. The topics include: Two stage business and IT-alignment: Initial experiences from portal implementation for non-traditional study formats of a university; the impact of digitization on information system design -An explorative case study of digitization in the insurance business; evaluation of application architecture change cases: Building blocks reusability assessment method; triple-agile: A paradigm for cloud based SME process support; human-computer cloud for smart cities: Tourist itinerary planning case study; on battery management strategies in multi-agent microgrid management; continuous requirements engineering support environment model in methodologically heterogeneous projects; enrichment of information in multilingual wikipedia based on quality analysis; a social recommendation mechanism for crowdfunding; hazard index for assessment of reliability of supply and risk in maritime domain; behavioural profiling authentication based on trajectory based anomaly detection model of user’s mobility; social media – profiling users movement trajectory and visited places; classification and preprocessing in the stock data; relative quality assessment of wikipedia articles in different languages using synthetic measure; completeness and reliability of wikipedia infoboxes in various languages; principal sources for the identification of tacit knowledge within an IT company, as part of an intelligent system; sentiment-Analysis for German Employer Reviews; product knowledge management support for customer-oriented system configuration; transformation algorithms of knowledge based UML dynamic models generation; analysis of users buying behaviour to improve the coupon marketing; identifying Lithuanian native speakers using voice recognition; dereferencing service for navigating enterprise knowledge structures from diagrammatic representations."
+  },
+  {
+    "article_id": "CA_2283",
+    "title": "21st International Conference on Business Process Modeling, Development and Support, BPMDS 2020, and the 25th International Conference on Exploring Modeling Methods for Systems Analysis and Development, EMMSAD 2020, held at the 32nd International Conference on Advanced Information Systems Engineering, CAiSE 2020",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 29 papers. The special focus in this conference is on Business Process Modeling, Development and Support. The topics include: Truncated trace classifier. Removal of incomplete traces from event logs; secure multi-party computation for inter-organizational process mining; visualizing business process evolution; Mining BPMN processes on GitHub for tool validation and development; an empirical investigation of the intuitiveness of process landscape designs; a multi-concern method for identifying business services: A situational method engineering study; modeling complex business environments for context aware systems; towards automating the synthesis of chatbots for conversational model query; conceptualizing capability change; supporting early phases of digital twin development with enterprise modeling and capability management: Requirements from two industrial cases; exception handling in the context of fragment-based case management; Integrated on-demand modeling for configuration of trusted ICT supply chains; a modeling method for systematic architecture reconstruction of microservice-based software systems; can we design software as we talk?: A research idea; non-functional requirements orienting the development of socially responsible software; A journey to BSO: Evaluating earlier and more recent ideas of mario bunge as a foundation for information systems and software development; A new DEMO modelling tool that facilitates model transformations; reference method for the development of domain action recognition classifiers: The case of medical consultations; An evaluation of the intuitiveness of the PGA modeling language notation; does enterprise architecture support customer experience improvement? Towards a conceptualization in digital transformation context; a formal basis for business model evaluation with linguistic summaries: (Work-in-progress paper); scheduling processes without sudden termination."
+  },
+  {
+    "article_id": "CA_2284",
+    "title": "23rd International Conference on Business Information Systems, BIS 2020",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 32 papers. The special focus in this conference is on Business Information Systems. The topics include: Novel version of pagerank, cheirank and 2drank for wikipedia in multilingual network using social impact; internet-of-things marketplaces: State-of-the-art and the role of distributed ledger technology; complementor satisfaction with boundary resources in iiot ecosystems; avoiding vendor-lockin in cloud monitoring using generic agent templates; challenges of data management in industry 4.0: A single case study of the material retrieval process; design of an architecture of a production planning and control system (ppc) for additive manufacturing (am); rem sleep stage detection of parkinson’s disease patients with rbd; a model management platform for industry 4.0 – enabling management of machine learning models in manufacturing environments; refining rule bases for intelligent systems: Managing redundancy and circularity; audio-visual emotion recognition system for variable length spatio-temporal samples using deep transfer-learning; towards an automatized way for modeling big data system architectures; empowering domain experts to preprocess massive distributed datasets; efficient construction of behavior graphs for uncertain event data; real-time detection of unusual customer behavior in retail using lstm autoencoders; a novel multi-agent-based chatbot approach to orchestrate conversational assistants; computer vision for the ballet industry: A comparative study of methods for pose recognition; preface; legal requirement elicitation, analysis and specification for a data transparency system; specific language impairment detection through voice analysis; the role of openness and extension modularization in value capture for platform-based digital transformation; influence of relationship capability on project performance of post-merger is integration."
+  },
+  {
+    "article_id": "CA_2285",
+    "title": "26th Pacific Asia Conference on Information Systems, PACIS 2022",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 347 papers. The special focus in this conference is on Information Systems. The topics include: Acceptance in Human-Robot Interaction: User's Personality and the Anthropomorphic Design of the Robot as Influencing Factors; A Conversational & Reflective Approach for Dietary Logging with the Food Pyramid: Chatbot RAINA; a Data Driven Approach to Board Cybersecurity Governance; a Deep Learning-Based Cyber-Physical System for the Detection of Defective Capsules Using a Transfer Learning Strategy; A Disjointed Harmony: IT-Business Alignment with LOB-led IT Innovation; a Qualitative Investigation of Privacy Concerns in the Digital Euro; agent-Based Models Using Artificial Intelligence: A Literature Review; agile and DevOps in Digital Transformation - A Comparative Analysis; AI and the Vulnerable; AI-Enabled Adaptive Learning using Automated Topic Alignment and Doubt Detection; AI in Accounting: A Value-Focused Thinking Study; alignment in Hybrid Organisations: A Platform-driven Impact Sourcing Case Study; a Literature Review on Pedagogical Conversational Agent Adaptation; A Method for an IT-GRC Approach in SMEs - Design Phase; a Method for Predicting Workarounds in Business Processes; Analyzing Healthcare AI Adoption in China and Germany through the Lens of Socio- Technical Theory: A Literature Analysis; an Empirical Investigation of Behavioral Response toward Algorithmic Predictions; A new approach to the NFC payment authorization performed on the user's application side; an Experimental Study on Discovering the Value of Private Data in Data Marketplace; An interaction-based Digital Maturity Model for SMEs; antecedents and impact of 5G for Telemedicine in India; antecedents of Knowledge Sharing & Seeking Binary Behaviour in Crowdsourcing Contest."
+  },
+  {
+    "article_id": "CA_2286",
+    "title": "28th Pacific Asia Conference on Information Systems, PACIS 2024",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 242 papers. The special focus in this conference is on Information Systems. The topics include: Actualising AI Affordances: Insights from a Professional Service Firm’s Journey: Completed Research Paper; AI Strategy in Action: A Case Study on Makeor-Buy for AI-based Services; AI-centered vs. Human-centered: Exploring Users’ Attitude toward AIGC in Varying Forms of Human-AI Collaboration; evaluation Framework for Large Language Model-based Conversational Agents; evolutionary Algorithms to Optimize Pricing Decisions for new Products in B2C Shops–Should one really use Dynamically Adjusted Group Pricing?; Exploring the Technological Potential and Moral Perils of Generative AI in Post-Adoption Use; Human Reaction to GenAI Threats: A Perspective of Protection Motivation Theory; Impact of AI Capabilities on IT Ambidexterity and Organizational Agility; Is Friendly Always Better and Alert Always Worse? The Mechanisms of Different Styles and Alert Presence in AI Interview; Navigating New Frontiers: Insights into the Normalization of ChatGPT within Organizational Data Analysis Teams; News by AI, Gains for All: Retail Investors’ Ride with Caution’s Call; noise-Robust Readability for Corporate Disclosures; phase Space Reconstructed Neural Ordinary Differential Equations Model for Stock Price Forecasting; privacy by Design: Data-Saving Activity Estimation Using Room-Based Non-Intrusive Load Monitoring for Ambient Assisted Living; service level optimizing and shared bike rebalancing based on multi-agent deep reinforcement learning; The Dialog Trap: Exploring Potentially Detrimental Effects of Dialog-Based Interfaces for Generative AI Content Creation; The Philosopher’s Stone for Science-The Catalyst Change of AI for Scientific Creativity; The Value of AI-Inferred Facial Personality Traits: Evidence from Chinese Financial Analysts."
+  },
+  {
+    "article_id": "CA_2287",
+    "title": "35th International Conference on Advanced Information Systems Engineering , CAiSE 2023",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 18 papers. The special focus in this conference is on Advanced Information Systems Engineering. The topics include: Integrating IoT-Driven Events into Business Processes; adaptive Task-Oriented Chatbots Using Feature-Based Knowledge Bases; Cicero: An AI-Based Writing Assistant for Legal Users; AIDA: A Tool for Resiliency in Smart Manufacturing; conceptual Formalization of Massive Storage for Advancing Decision-Making with Data Analytics; towards Leveraging Tests to Identify Impacts of Metamodel and Code Co-evolution; Advancing IS Strategy for Natural History Museums with Method Engineering in the Digital Age; The KYKLOS Tool for Modeling Changing Capabilities; Towards a UML Profile for Designing Smart IoT Data-Centric Applications; an End-to-End Approach for Online Decision Mining and Decision Drift Analysis in Process-Aware Information Systems; towards Designing Energy-Aware Cybersecurity Policies; a Data-Driven Methodology for Guiding the Selection of Preprocessing Techniques in a Machine Learning Pipeline; parsing Causal Models – An Instance Segmentation Approach; visualising Personal Data Flows: Insights from a Case Study of Booking.com; rsourcer: Scaling Feedback on Research Drafts; predictive Recommining: Learning Relations Between Event Log Characteristics and Machine Learning Approaches for Supporting Predictive Process Monitoring."
+  },
+  {
+    "article_id": "CA_2288",
+    "title": "36th International Conference on Advanced Information Systems Engineering, CAiSE 2024",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 18 papers. The special focus in this conference is on Advanced Information Systems Engineering. The topics include: Incorporating Behavioral Recommendations Mined from Event Logs into AI Planning; trustworthy Collaborative Business Intelligence Using Zero-Knowledge Proofs and Blockchains; Towards Intelligent Systems to Improve IEC 62559 Use Cases and Smart Grid Architecture Models Quality; pricing4SaaS: Towards a Pricing Model to Drive the Operation of SaaS; Validity at the Forefront: Investigating Threats in Green AI Research; requirement-Based Methodological Steps to Identify Ontologies for Reuse; Toward Ontology-Guided IFRS Standard-Setting; towards an Explorable Conceptual Map of Large Language Models; proReco: A Process Discovery Recommender System; recPro: A User-Centric Recommendation Tool for Business Process Execution; predictive Maintenance in a Fleet Management System: The Navarchos Case; CDMiA: Revealing Impacts of Data Migrations on Schemas in Multi-model Systems; MApp-KG: Mobile App Knowledge Graph for Document-Based Feature Knowledge Generation; CAKE: Sharing Slices of Confidential Data on Blockchain; PADI-web for Plant Health Surveillance; PROMISE: A Framework for Model-Driven Stateful Prompt Orchestration."
+  },
+  {
+    "article_id": "CA_2289",
+    "title": "5th International Workshop on Artificial Intelligence for Business Process Management, AI4BPM 2021, 17th International Workshop on Business Process Intelligence, BPI 2021, 1st International Workshop on BPM Governance for and Beyond DigitalTransformation, BPMGOV 2021, 1st International Workshop on Business Process Management and Routine Dynamics, BPM and RD 2021, 14th International Workshop on Social and Human Aspects of Business Process Management, BPMS2 2021, 9th International Workshop on DEClarative, DECision and Hybrid approaches to processes, DEC2H 2021, 5th International Workshop on Business Processes Meet the Internet-of-Things, BP-Meet-IoT 2021, 4th International Workshop on Security and Privacy-enhanced Business Process Management, SPBP 2021 held at 19th International Conference on Business Process Management, BPM 2021",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 33 papers. The special focus in this conference is on Artificial Intelligence for Business Process Management. The topics include: Process Innovation in the EU Public Sector Through the Lens of BPM Ambidexterity; The BPM Governance Supporting Factors and Implementation Barriers – The Experience of a Public University; about a Process-Technology Fit for Process Improvements in an Ambidextrous Environment; exploring the Key Factors of Process Improvement that Drive Competitive Advantage: A Case of Serbia; expanding Modeling Notations: Requirements for Creative Process Modeling; analyzing Digital Trace Data to Promote Discovery – The Case of Heatmapping; predicting Process Structure After a Disruption: An Example from the Clinical Documentation Process; capabilities for Digital Process Innovation: Results of an Ongoing Action Research Study; digital Twin of an Organization: Are You Serious?; creating Unbiased Public Benchmark Datasets with Data Leakage Prevention for Predictive Process Monitoring; pair Modeling: Does One Plus One Add Up?; on the Systematic Analysis of Process Landscape Method Implementation Using Grounded Theory; business Process Improvement in Industry 4.0: An Interorganizational Perspective; the Effect of Self-healing on Process Acceptance; PACAs: Process-Aware Conversational Agents; intelligent Robots in Business Processes: A Students’ Perspective; modeling Objectives of Knowledge Workers; extracting Decision Dependencies and Decision Logic from Text Using Deep Learning Techniques; decision Modelling in Timed Dynamic Condition Response Graphs with Data; A Context and Augmented Reality BPMN and BPMS Extension for Industrial Internet of Things Processes; exploring Gated Graph Sequence Neural Networks for Predicting Next Process Activities; supporting Users in the Continuous Evolution of Automated Routines in Their Smart Spaces; matching Metadata on Blockchain for Self-Sovereign Identity."
+  },
+  {
+    "article_id": "CA_2290",
+    "title": "6th International Conference on Digital Age and Technological advances for Sustainable Development, DATA 2025",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 39 papers. The special focus in this conference is on Digital Age and Technological advances for Sustainable Development. The topics include: Digitalization of City and Coastal Environment Using Open Source Software; does Multi-dataset Combination Impact Machine Learning Performance? Emotion Recognition Use Case; assessing Digital Transformation in Business Process Management: Towards Sustainable Development; determinants of Adoption Intention of Electronic Government Procurement: A Conceptual Model for Sri Lanka; e-learning Recommendation Systems: Synthesis, Applications, and Future Trends; Exploring the Determinants of Business Performance: A Regional Perspective Using Spatial Econometrics and AI-Powered Analytics; the Digital Health with the Psychology of Fear of Missing Out in Electronic Commerce: Implications for Social Commerce and Purchase Intentions; from Concept to Reality: A Grey Literature Review on Digital Twin Applications in Supply Chains; digital Learning in Public Service; a Comprehensive Evaluation of Data Balancing Techniques and Machine Learning Models for Credit Risk Assessment; The Impact of ChatGPT on the Entrepreneurial Intention of Students at Sidi Mohamed Ben Abdellah University: A Gender-Based Approach; a Systematic Review of Recommender Systems for Student Academic and Career Guidance; Designing a Low-Cost CNC Milling Machine for Sustainable Digital Manufacturing; An AI-Powered Chatbot Using a Transformer-Based Language Model for Graduate Educational Schemes Recommendation; implementation of a Digital Twin in an Industrial Production Line: Real-Time Visualization and Monitoring; AI-Driven Customer Segmentation for Enhanced Loyalty Programs; evaluating the Benefits of Regulated and Sustained Deficit Irrigation for Yield, Water Use and Sustainability in the Moroccan Menara Olive Cultivar."
+  },
+  {
+    "article_id": "CA_2291",
+    "title": "7th International Conference on Business and Information Management, ICBIM 2023",
+    "journal": "7th International Conference on Business and Information Management, ICBIM 2023",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 13 papers. The topics discussed include: competitive strategy of cash-back website platform based on referral reward program; the use of ai chatbots in mental healthcare for university students in Thailand: a case study; alumni tracking dashboard: the importance of data cleaning; the mediating effect of online trust on the relationship of consumer engagement to purchase intention of Gen Z: the case of TikTok shop cues; research and practice on the construction of e-government intranet website: case study of the ministry of natural resources; factors affecting e-government adoption at the micro level of government in developing countries: a systematic literature review; user experience towards chatbots in Myanmar; and artificial intelligence and sustainable manufacturing supply chain: a bibliometric analysis and cluster analysis."
+  },
+  {
+    "article_id": "CA_2292",
+    "title": "9th Global Leadership Research Conference, GLRC 2024",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The proceedings contain 18 papers. The special focus in this conference is on Global Leadership Research. The topics include: Blockchain in Managing Waste for a Better Planet; digitally Inclusive Finance and Financial Behavior of Millennials: An Interplay of Knowledge Skills and Attitude; india in Geo-Political Relations: An Analysis of Pre and Post Pandemic Situation; What Can India Learn from the UAE? Making GIFT IFSC a Favored Destination by Incorporating the Learnings from DIFC and ADGM; business Environment Analysis of McDonald’s Marketing Strategy; AI-Driven DeFi: Catalyzing Innovation A Cosmic Partnership Shaping Finance's Tomorrow; evolutionary Metamorphosis of Money Management: Analysing Financial Frauds in India; impact of Augmented Reality Trail on Eyewear Purchase Intentions; paradigm Shift in Stakeholder's Perspective and Implementation of Dairy Development Policies and Robust Mechanism in Supply Chain and Agro-Business; Measuring the Impact of Chatbot Attributes in Enhancing Consumer Satisfaction and Brand Loyalty Among Centennials: PLS-SEM Analysis; assessing Role and Perception of IoT, Big Data Analytics in Managing Supply Chain for Smart Cities; measuring Return on Investment in Influencer Marketing; a Systematic Literature Review on the Role of Sharing Economy Towards Sustainable Development and Future Research Direction; deep Reinforcement Learning for Dynamic Portfolio Optimization in Financial Markets; user Perception on Benefits and Problems Associated with Digital Fintech Services in Maharashtra, India; positioning of Fish/Meat for Sustainable Competition Using Electronic Nose."
+  },
+  {
+    "article_id": "CA_2293",
+    "title": "A black-box approach evaluation on conversational agent using Loebner Prize Competition datasets",
+    "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+    "journal_impact_factor": 0.096,
+    "doi": null,
+    "abstract": "Conversational Agents, or more commonly known as chatbots have been well-accepted in most enterprises. Chatbots have been widely used in major enterprises to perform the main purpose of customer service in delivering routine and frequently asked questions on behalf of humans. Bearing the goal to create believable conversational agents in providing accurate, reliable and up-to-date information, researchers have practiced natural language processing, machine learning, and deep learning in chatbot creation. In order to create a chatbot which is indistinguishable from human, many researchers have attempted to create human-like chatbots by neglecting the necessity to evaluate the general knowledge of the chatbot before proceeding into the creation of domain-specific knowledge. This paper presents the black-box approach to evaluate the response quality of a developed conversational agent named Tarie through datasets obtained from Loebner Prize Competition. The black-box approach is therefore deemed necessary to be used as the evaluation approach to evaluate the response quality of the conversational agent. The intelligence of the chatbot denotes the correct answers given to the user's queries. The results obtained via the black-box approach is further deduced to indicate whether the chatbot is ready for the domain-specific knowledge creation or to further improve its current general knowledge. This paper presents the black-box approach to evaluate the response quality of a proposed conversational agent named Tarie through datasets obtained from Loebner Prize Competition. © MIR Labs."
+  },
+  {
+    "article_id": "CA_2294",
+    "title": "A Blueprint for Breaking Stereotypes: Design Principles for Conversational Agents to Empower Girls in Computer Science Education",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "In our study, we delve into gender disparities within online computer science courses, focusing on the impact of stereotypes on learners. Our focus is narrowed to gender disparities within online computer science courses, where we investigate the impact of gender stereotypes on learners' choices and performance. Drawing on Stereotype Threat Theory, we pinpoint psychological barriers hindering inclusivity and propose conversational agents as a design intervention to address these challenges. Our conversational agent prototype, developed and evaluated with a seventh-grade class, aims to dismantle gender stereotypes, to motivate girls to pursue computer science, and contribute to broader societal goals of gender equality in the IT field. Utilizing a design science approach, our findings provide actionable insights for platform providers to engage underrepresented users. In addition, our research contributes valuable design knowledge for conversational agents, specifically tailored to support girls in computer science education. © 2024, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2295",
+    "title": "A case study of the application of digital technology in the fast-food-breakfast industry to optimize consumer demand",
+    "journal": "Proceedings of the International Conference on Electronic Business (ICEB)",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "According to research in many medical journals, breakfast is extremely important to human health. A nutritious breakfast can make people energetic and improve the efficiency of study and work. People in different countries and regions have a unique breakfast culture. In Taiwan, the breakfast/brunch-based industry is one of the franchise channels that has always been the fastest and easiest way for Taiwanese self-employed people to start a business. Some brands even have gone international and started to expand their business. This research study used G.C. Group as the research object and investigated the use of digital tools by franchisees through case combing and in-depth interviews with key stakeholders. The research analysis the digital implementation to assist the franchise headquarters on how to use digital technology to optimize franchisees, consumer services, and brand value enhancement. The research results find possible business models at the emergence stage, and maximizing value exchange and business opportunities through the interaction of all important stakeholders will be the direction of future research. © 2021 International Consortium for Electronic Business. All rights reserved."
+  },
+  {
+    "article_id": "CA_2296",
+    "title": "A ChatBot UI with blockchain",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "A bot is defined as software capable of performing an automated task. Chat-bots perform automated tasks through an interface that humans can interact with. Some chat-bots operate off of predefined scripts and are only capable of handling a limited amount of specific questions. AI chat-bots use a combination of machine learning and what’s known as natural-language processing. Machine learning employs special algorithmsthat analyze input data and identify patterns within that data?-?the more input data it has, the more patterns it identifies and the smarter it gets. With the advancement in artificial intelligence and natural language processing, AI chat-bots are now capable of more complex interactions. Combine blockchain technology with AI chat-bots and you get an automated way of managing those assets in a trusted and secure manner. The proposed chat-bot which automatically gives immediate responses to the users request there by one can retrieve, upload files by means of authentication and validation of the request to access the stored files by comparing the hash of the stored file in blockchain, using this Artificial Intelligence Markup Language (AIML), BOTUI a framework coupled with blockchain which praises business transactions using AI powered chat-bots will be the future. © BEIESP."
+  },
+  {
+    "article_id": "CA_2297",
+    "title": "A Cognitive Heuristics Perspective on Augmented Human Agents: Disclosure and Communication Style in E-Commerce",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "This paper examines the impact of Augmented Human Agents (AHAs)—hybrids of human and AI agents—on customer engagement in e-commerce, focusing on the role of agent identity disclosure and communication style. Using the Human-AI Interaction Theory of Interactive Media Effects (HAII-TIME), the study explores how disclosing agent types (human, AI, or AHA) and communication styles (social-oriented vs. task-oriented) influence customer engagement, with cognitive heuristics (social presence and machine heuristics) acting as mediators. A 3x2 interactive experimental design will investigate these dynamics, revealing how AHAs trigger both social presence and machine-related perceptions. The findings aim to offer new insights into the psychological drivers of customer engagement, inform best practices for agent identity transparency in customer service, and guide the responsible implementation of AI in organizations. This research enhances understanding of human-AI collaboration and provides practical recommendations for improving e-commerce interactions and innovation. © 2025, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2298",
+    "title": "A Conversational & Reflective Approach for Dietary Logging with the Food Pyramid: Chatbot RAINA",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Mobile health (mHealth) applications have the potential to assist users in tracking and monitoring their behavior with the goal of raising awareness and finally supporting a healthier lifestyle. However, current nutrition-related applications mainly support weight loss through calorie counting rather than focusing on a balanced, healthy diet. In this work, we develop a chatbot that follows a more holistic approach to tracking and monitoring one’s diet. It incorporates the principles of a food pyramid to track a personal diet via free-text input and reflect on it via visual feedback. In a seven-day user study with 18 participants, we assess the user engagement and experience by analyzing usage data and results from a pre-/post-study questionnaire. Our results provide first promising insights into the user perceptions of this alternative approach regarding usability and usefulness, nutrition self-efficacy, reflective thinking, health consciousness, as well as intentions and recommendations for future use. © 2022, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2299",
+    "title": "A Literature Review On Chatbots In Healthcare Domain",
+    "journal": "International Journal of Scientific and Technology Research",
+    "journal_impact_factor": 0.0,
+    "doi": null,
+    "abstract": "Research says 60% of visits to a doctors are for simple small-scale diseases, 80% of which can be cured at home using simple home remedies. These diseases mostly include common cold and cough, headache, abdominal pains, etc. They may be caused due to the changes in the weather, intake of improper diet, fatigue, etc. and can be cured without the intervention of a doctor. There are a number of chatbots which provide services for the healthcare domain. But the problem with these chatbots is that they only provide answers for general healthcare FAQs. That is, these systems are unable to provide a natural communication with the user just as a doctor can. Work is being carried out to enable the chatbots to communicate in a way similar to the communication carried out between two humans. That is, the user must experience the feel of communicating to a person and not to a bot. This makes the chatbot a virtual communicating friend of the user. This type of smart communication (usually used in healthcare counselling) can be achieved by inclusion of NLU, NLP and ML techniques in the conventional scripted chatbots. There are a number of domains wherein the smart chatbots provide their functionalities. This paper briefs about the chatbot system for the healthcare domain. Also, it specifies various NLU, NLG and ML techniques to be incorporated in the chatbot and the comparison of the same. © 2019 International Journal Of Scientific and Technology Research. All rights reserved."
+  },
+  {
+    "article_id": "CA_2300",
+    "title": "A Literature Review on Pedagogical Conversational Agent Adaptation",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Conversational agents (CAs)—software systems emulating conversations with humans through natural language—have been widely used to communicate and collaborate with humans in various settings. A rising application domain is education since so-called Pedagogical Conversational Agents (PCAs) hold the potential for individualized learning and thus the long-term improvement of learning success. However, existing research on CA adaptation is scattered across different application domains and user groups, so researchers face difficulty in understanding the current state of the art on the adaptation design of PCAs as an independent field of interest. To address this gap, we systematically analyze existing scientific literature and discuss identified adaptation aspects of PCAs in scientific publications. Our literature review contributes to IS research by providing an overview of existing adaptive and adaptable PCA designs, identified gaps, and future research streams with the rising potential thereupon. © 2022, Association for Information Systems. All rights reserved."
+  }
+]

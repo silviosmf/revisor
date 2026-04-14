@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_2451",
+    "title": "Management of customer relationships: Strategies and initiatives",
+    "journal": "Consumer Experience and Decision-Making in the Metaverse",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-4167-4.ch010",
+    "abstract": "It is imperative for companies to develop and manage customer relationships effectively. The objective of the study is to analyze the effective management of customer relationships by companies. The methodology adopted is a conceptual analysis of the various strategies and initiatives adopted by companies for managing customer relationships. Companies customize and personalize their offerings with the help of permission marketing and engagement marketing. They empower their customers, manage customer word of mouth, and deal with customer complaints effectively. Academicians may analyze the existing strategies and initiatives and suggest effective strategies and initiatives for management of customer relationships. Practicing managers may evaluate the existing strategies and initiatives and implement effective strategies and initiatives in future. All these will enable companies to develop strong bondage with their customers, to manage customer relationships effectively, and to achieve business excellence in the long run. © 2024, IGI Global."
+  },
+  {
+    "article_id": "CS_2452",
+    "title": "Investigating Supply Chain Disruptions at Walmart and the Boeing Company: When Saying “I'm Sorry” Is Not Enough",
+    "journal": "Expanding Operations Through Agile Principles and Sustainable Practices",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-6274-7.ch015",
+    "abstract": "This chapter explored the salient themes emerging as disruptions in the supply chain management at Walmart and Boeing. It examined how both companies have responded to highly publicized disruptions in their supply chains, compromising customer satisfaction. Complaints against Walmart were classified as: 1) Profiling (allegations of theft, race- based refusal of services, locking up items); 2) Damaged goods; 3) Billing issues; 4) Delivery problems /Missing goods; 5) Communication barriers due to delayed, inconsistent, or incoherent messages; and 6) Employee complaints. Walmart's typical response was an apology, a courtesy gift card, or a settlement. In the case of Boeing, investigations unveiled deception in business practices which resulted in inaccurate information being shared with regulating agencies as well as poor coordination of repair efforts, lack of documentation, ineffective communication, and neglect. Boeing's problems led to catastrophic failures for which Boeing has paid billions of dollars in damages. Strict monitoring will help ensure compliance with safety standards. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CS_2453",
+    "title": "Transforming the service sector with new technology",
+    "journal": "Transforming the Service Sector With New Technology",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-7447-4",
+    "abstract": "Technology can impact the service sector in a variety of ways. It can be used to transform a number of service-related businesses, including hospitality, tourism, banking, healthcare, and others. Businesses navigating the rapidly changing landscape of services and technology can benefit from it by using emerging technology to create new services or improve existing ones. With the rapid rise in technology, the regulatory landscape is changing, requiring additional changes to ensure responsible innovation and protect consumers' interests. Transforming the Service Sector with New Technology strives to stimulate innovation, aid in strategic decision-making, and benefit service industries as a whole. It provides valuable information about how technology is impacting and transforming the services sector and insights in responsibly regulating it. Covering topics such as customer engagement, recovery strategies, and technology-driven product placement, this book is an excellent resource for industry decision makers, Industrialists, hospitality professionals, entrepreneurs, policymakers, scholars, academicians, professionals, and more. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CS_2454",
+    "title": "Service recovery strategies and customer satisfaction in the digital age: Evidence from customers of utility service providers in Ghana",
+    "journal": "Transforming the Service Sector With New Technology",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-7447-4.ch021",
+    "abstract": "Customers of utility service providers in developing economies face frequent interruptions in service delivery by service providers. Customers experience power outages, disconnecting customers from service without recourse to prompt reconnection, billing discrepancies etc. are among the problems encountered by customers of utility service providers. Customers on the other hand resort to open confrontation, non-refusal to pay bills and other mechanisms to register their displeasure towards the utility service providers. A key tool available to utility service providers to ensure customer satisfaction and that customers' concerns are adequately addressed is the effective application of service recovery strategies. How effectively can the application of service recovery strategies influence the level of customer satisfaction? The current study is among the few studies in sub-Saharan Africa that investigate service recovery as an antecedent to customer satisfaction in today's digital space. Details of the outcome are discussed in the chapter. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CS_2455",
+    "title": "Utilizing business intelligence and machine learning in CRM data to reduce customer churn in E-commerce platforms",
+    "journal": "AI-Powered Business Intelligence for Modern Organizations",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-8844-0.ch009",
+    "abstract": "In the ever-changing world of online business, keeping clients to achieve long-term growth and profitability is crucial. This work uses customer relationship management (CRM) data and machine learning techniques to reduce customer turnover. Initially, the previous CRM data is employed to identify clients no longer affiliated with the platform. Through analyzing prior encounters, such as reviews and purchase histories, valuable information about them preferences and complaints can be obtained. More precisely, negative comments are isolated to identify areas where the product might be improved or eliminated from the e-commerce catalogue. Furthermore, predictive analytics methods are utilized to improve client involvement and contentment. The proposed approach combines CRM data analysis with machine learning algorithms such as Logistic Regression, Decision Tree, SVM, Random Forest, and XGBoost to provide a proactive strategy for reducing customer churn in e-commerce platforms. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CS_2456",
+    "title": "Does FinTech uplift vulnerable consumers? Evidence from the cash app",
+    "journal": "Intersecting Natural Language Processing and FinTech Innovations in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3693-9944-6.ch009",
+    "abstract": "FinTech, digitally enabled innovation for financial services, is important for uplifting vulnerable consumers. This paper examines consumer vulnerability in fintech, service innovation for social innovation, through the lens of Transformative Service Research. The Cash App, a peer-to-peer payment service platform targeted at low-income consumers, was examined as an empirical context with the consumer complaints filed to the U.S. Consumer Financial Protection Bureau. Natural language processing was applied to examine whether the Cash App uplifts vulnerable consumers in addition to Pearson's chisquared test, spatial analysis, and discourse analysis. Evidence-based implications to practitioners and academia are discussed. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CS_2457",
+    "title": "Mitigating the Effect of Negative Word-of-Mouth in E-Commerce",
+    "journal": "International Journal of Customer Relationship Marketing and Management",
+    "journal_impact_factor": 1.4,
+    "doi": "10.4018/IJCRMM.386145",
+    "abstract": "This study explores the impact of negative word of mouth in the e-commerce market, with a focus on artwork products from small businesses for data analysis. To leverage Amazon’s extensive customer base, sellers from various countries were selected. Secondary data, including customer reviews, ratings, and star evaluations, were collected for analysis. The findings reveal that customer dissatisfaction, negative perceptions, and negative word of mouth significantly influence a seller’s performance. Notably, negative word of mouth serves as an indicator of product or service failure. Additionally, the study identifies key dimensions of negative word of mouth, primarily driven by overall product quality, color, and image evaluation. In conclusion, the study suggests that e-commerce sellers can mitigate the impact of negative word of mouth by adopting strategies such as ensuring fast delivery and enhancing information transparency. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2458",
+    "title": "The role of service recovery in online privacy violation",
+    "journal": "International Journal of e-Business Research",
+    "journal_impact_factor": 4.533,
+    "doi": "10.4018/IJEBR.2018100101",
+    "abstract": "In this study, the authors address the question of whether firms may successfully pursue service recovery strategies after severe online privacy violations. The study treats online privacy violations as a service failure and uses justice theory to measure repurchasing intention after consumer complaints in three different scenarios. The three scenarios differ in the sense that the accountability and the outcome of the service failure are different. The results indicate that despite the different instances of online privacy violation in each scenario, the service recovery efforts consistently created satisfaction with service recovery, significantly increased consumer trust, decreased perceived risk and increased repurchase intentions. The study finds that that both distributive and procedural justice plays an important role in online service recovery while interactional justice did not have any impact. Finally, even in cases of severe online privacy violation service recovery plays an important role generating repurchase intentions. Copyright © 2018, IGI Global."
+  },
+  {
+    "article_id": "CS_2459",
+    "title": "Impact of Customer Perception of Value Co-Creation for Personalization in Online Shopping",
+    "journal": "International Journal of e-Business Research",
+    "journal_impact_factor": 4.533,
+    "doi": "10.4018/IJEBR.309388",
+    "abstract": "Electronic commerce firms adopt advanced technologies to provide personalization of marketing-mix with data for personalization co-created by consumers. This study explores customer's perception of value co-creation and how it impacts intention to co-create value. Customer perception of value cocreation for personalization in an e-commerce context was operationalized as second order construct comprising of fulfilment, service recovery, price perception, algorithmic fairness, personalization benefits, security, and privacy. Survey results of 638 respondents analyzed using AMOS showed that process quality and relationship quality mediate the relationship between customer's perception of value co-creation and intention to co-create value with relationship quality showing stronger effect. Thus, this study contributes to marketing value co-creation literature and provides implications for practicing managers. © 2022 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2460",
+    "title": "Prediction and Analysis of Customer Complaints Using Machine Learning Techniques",
+    "journal": "International Journal of e-Business Research",
+    "journal_impact_factor": 4.533,
+    "doi": "10.4018/IJEBR.319716",
+    "abstract": "Businesses must prioritize customer complaints because they highlight critical areas where their products or services may be improved. The goal of this study is to use machine learning approaches to anticipate and evaluate customer complaint data. The current study used logistic regression and support vector machine (SVM) to predict customer complaints, and evaluated the datasets using machine learning techniques after collecting five distinct length datasets from the Consumer Financial Protection Bureau (CFPB) website and cleaning the data. Both logistic regression and SVM can accurately predict customer complaints, according to this study, but SVM gives the greatest accuracy. The current study also found that SVM provides the highest accuracy for a one-month dataset and Logistic regression provides for a three-month dataset. In addition, machine learning codes were utilized to display and tabulate consumer complaints across many dimensions. © 2023 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2461",
+    "title": "A fast-moving consumer goods company and business intelligence strategy development",
+    "journal": "International Journal of Enterprise Information Systems",
+    "journal_impact_factor": 5.25,
+    "doi": "10.4018/IJEIS.2017040102",
+    "abstract": "The paper used the case study approach to report on how a Fast Moving Consumer Goods (FMCG) company developed their Business Intelligence strategy. Many companies are aware of the benefits that Business Intelligence brings to the corporation-however struggle to have an appropriate or well defined strategy. The authors document in the paper how the company experienced limited benefits with their initial Business Intelligence implementation-however, the subsequent development of a Business Intelligence strategy allowed the firm to redress initial project short-comings across several business areas. The company's Business Intelligence strategy included elements that directly addressed governance and resource management, business technology alignment, innovation and skills capability. The research investigated the experiences of a global FMCG company regarding their Business Intelligence use and the findings may not be generalizable. Copyright © 2017, IGI Global."
+  },
+  {
+    "article_id": "CS_2462",
+    "title": "Examining Factor Analysis Results of Customers' Experiences With the Banking Electronic Services (CEBES) Scale: Evidence From the Saudi Retail Banking Industry",
+    "journal": "International Journal of E-Services and Mobile Applications",
+    "journal_impact_factor": 0.654,
+    "doi": "10.4018/IJESMA.357651",
+    "abstract": "This article examines the validity of a newly developed research instrument, the Customers' Experience of Banking e-Services (CEBES) scale. The study was conducted in Saudi Arabia during the COVID‐19 pandemic; it used both exploratory and confirmatory factor analysis to measure the original 75-item scale. A convenience sampling technique was used to select 555 electronic banking services customers. Exploratory factor analysis yielded a four-factor, 54-item scale, which was run with a cutoff point of .5 to ensure high proportional contribution of each scale item. The four factors were: reflections on bank processing of complaints; recovery of e-banking services; bank webpages; and perceived safety and confidentiality of information. The newly developed scale could be used to measure customers' experience of banking e-service and identify areas requiring improvement. Despite achieving an acceptable level of statistical strength, the 54-item CEBES requires further testing on other populations. © 2024 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2463",
+    "title": "Furniture Shape Change Process Based on the Application of Intelligent Sensing Technology",
+    "journal": "International Journal of Knowledge Management",
+    "journal_impact_factor": 1.403,
+    "doi": "10.4018/IJKM.395334",
+    "abstract": "In response to the evolving demands of modern lifestyles, this study investigates the integration of intelligent sensing technologies into furniture design, focusing on user experience enhancement, technical performance optimization, and energy efficiency improvements. Through a comprehensive analysis encompassing market surveys, laboratory testing, and real-world monitoring from 2020 to 2023, significant advancements were observed in market penetration, user satisfaction, and complaint reduction for smart metamorphic furniture. The research highlights the superior responsiveness and precision of displacement sensors in applications such as height-adjustable desks, while also noting challenges related to cost and energy consumption. Multi-sensor fusion is identified as a key innovation, offering synergistic improvements in system robustness. Furthermore, the integration of hybrid power systems incorporating solar panels has demonstrated potential for reducing net energy consumption, thereby aligning with global sustainability goals. © 2025 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2464",
+    "title": "Service recovery, perceived fairness, and customer satisfaction in the telecoms sector in Ghana",
+    "journal": "International Journal of Service Science, Management, Engineering, and Technology",
+    "journal_impact_factor": 2.879,
+    "doi": "10.4018/IJSSMET.2018100105",
+    "abstract": "This article seeks to explore service recovery strategies adopted by mobile service providers operating in Ghana. The article adopts a quantitative approach design. A sample size of 384 respondents was used for this study comprising mobile phone subscribers in Ghana. The study revealed a significant positive relationship between service recovery based on firm's understanding of customer complaints, firm's fair treatment of customer complaints and customer satisfaction. Furthermore, the study also found a positive correlation between service recovery and customer satisfaction. The article contributes to extant literature on service recovery from developing country perspective. © 2018, IGI Global."
+  },
+  {
+    "article_id": "CS_2465",
+    "title": "Services and their new realities: Challenges, opportunities, and initiatives",
+    "journal": "International Journal of Service Science, Management, Engineering, and Technology",
+    "journal_impact_factor": 2.879,
+    "doi": "10.4018/IJSSMET.2021090101",
+    "abstract": "Companies providing services operate in a dynamic business environments. They require understanding and appreciating the new service realities. They should devise and implement appropriate strategies to sustain the competition. The objective of the study is to analyze the strategies. New service realities include shifting customer relationships, customer empowerment, and customer co-creation. The study aims at a conceptual analysis of the literature. Service companies require satisfying both customers and employees to remain competitive. Companies should aim to prevent service failures from occurring, rectify service failures once they have occurred to the satisfaction of customers, involve employees at each stage, and ensure that employee enthusiasm and motivation are high. Findings of the study suggest that proper understanding of the new service realities will allow companies to develop strategies, implement the strategies, and execute the strategies effectively. All such initiatives provide a direction for service companies to excel, delight their customers, and build long-term customer relationships. © 2021 IGI Global."
+  },
+  {
+    "article_id": "CS_2466",
+    "title": "Service Excellence in Marketing for Firms: Strategies and Initiatives",
+    "journal": "International Journal of Service Science, Management, Engineering, and Technology",
+    "journal_impact_factor": 2.879,
+    "doi": "10.4018/IJSSMET.290331",
+    "abstract": "Innovation and differentiation are imperative for companies to sustain competition. Innovation and differentiation are possible more in services than in physical products. It is difficult to imitate differentiation incorporated in services. The study discusses the various marketing strategies adopted by service companies and the roles played by service profit chain. Service companies adopt different initiatives to achieve excellence. These include a strategic orientation, commitment from the top management, maintaining high standards, having profit tiers, monitoring service performance, and prompt action on customer complaints. The study discusses differentiation of services, management of service quality, and management of service productivity. The study analyzes the strategies taken by service companies to achieve excellence. Proper implementation and execution of strategies provide a direction for service companies to excel, delight their customers, and develop long-term customer relationships. © 2022 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2467",
+    "title": "Do hotel responses matter? A comprehensive perspective on investigating online reviews",
+    "journal": "Information Resources Management Journal",
+    "journal_impact_factor": 2.58,
+    "doi": "10.4018/IRMJ.2019070104",
+    "abstract": "This article aims to examine how hotel responses to online reviews influence how potential consumers perceived the helpfulness of the online reviews. Response length and voice were employed to measure the hotel’s response quality. 637 reviews with responses were used for empirical analysis. The study identified three different types of response voices: disputed voice, professional voice, and empathetic voice. The results show that both response length and response voice have significant effects on the helpfulness perceived by potential consumers. Moreover, they also have some interaction effects with star ratings, review length, and review image. This study suggests that hotels should strategically respond to both positive and negative online reviews so as to both create a positive interaction atmosphere and resolve consumer complaints. The findings of this study can, to some extent, help manage word of mouth reputations. © 2019 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2468",
+    "title": "How does culture impact customer evaluation in online complaining? Evidence from Germany and India",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.2020040107",
+    "abstract": "This article investigates how customers’ cultural orientation impacts their service evaluations when complaining online on social media. Two separate scenario-based experimental studies were conducted using non-student samples from two culturally diverse countries (Germany and India). Study 1 using 83 participants from Germany and 83 from India shows that when causal explanations for service failure are given, individualists have higher perceived justice. Study 2 with 81 participants from Germany and 82 from India shows that when cognitive control is given through regular updates during service recovery to high uncertainty avoidance seekers, they show higher perceived justice. The three independent justice dimensions positively influence recovery satisfaction, with informational justice showing the strongest impact, followed by procedural and distributive justice. This research thus contributes to the nascent literature in social media complaining. Managers of online service organizations can benefit from these findings when developing their complaint management strategies. Copyright © 2020, IGI Global."
+  },
+  {
+    "article_id": "CS_2469",
+    "title": "Effects of Utilitarian and Hedonic Emotion on the Use of Online Banking Services",
+    "journal": "Journal of Global Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/JGIM.20211101.oa5",
+    "abstract": "The online banking service is the key element for the development of e-commerce and e-businesses. It provides users with convenient daily transaction services, such as wire transfer and online payment. Past studies on online banking services mostly focused on their functionality, whereas little pay attention to users’ hedonic feelings or a sense of pleasure. Besides, discussions about post-adoption behavior are also immature. Thus, this study aims to explore the impacts of customers’ positive or negative experience of using online banking services on consumers’ emotions. Furthermore, a discussion of post-adoption behaviors, including recommendations, complaints, and continuance intention is also provided. The result shows that positive user experience will have a significantly positive impact on the generation of utilitarian emotion. As for the sense of utilitarian emotion, users worry more about whether their goal could be achieved successfully via their operations or not, such as completing wire transfer transactions in the online banking environment. © 2021 IGI Global. All rights reserved."
+  },
+  {
+    "article_id": "CS_2470",
+    "title": "Public relations crisis and social media: An investigation into extant and prospective consumers’ perceptions through the lens of attribution theory",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.4067/S0718-18762015000200004",
+    "abstract": "Online social media has shifted the balance of power from businesses to consumers, with consumers now being able to share information almost unrestrictedly in real-time. As a result, an effort to suppress what may be considered as harmful information can easily backfire, causing the information to instantly spread through user ties. However, what is considered important in such occasions is the way extant and prospective customers may interpret such crises. In this paper, we discuss the case of a Greek Apple authorized service provider and the manner in which it responded to a customer’s complaint in a blog post. The company, instead of using social media to reach out to its customers, chose to move legally against the disgruntled customer, aiming to suppress the relevant blog post, which quickly resulted to the company’s viral defamation. Building upon attribution theory and employing a content analysis of user postings in social media, our study explores stakeholders’ perceptions regarding the company’s reaction and response strategy, seeking to investigate attributions of cause and responsibility. Our results show that, in the initial stages of a crisis, hostile behaviour or refraining from comments altogether, can lead to negative outcomes in relation to a company’s reputation. © 2015 Universidad de Talca - Chile."
+  },
+  {
+    "article_id": "CS_2471",
+    "title": "The role of emotions and trust in service recovery in business-to-consumer electronic commerce",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.4067/S0718-18762015000200006",
+    "abstract": "This study proposes a service recovery model to describe how cumulative satisfaction, loyalty and word-of-mouth are affected by complaints. The model is based on the role of positive and negative emotions in satisfaction with service recovery processes, with trust acting as a mediator of the relationship between satisfaction with service recovery and cumulative satisfaction, and between positive and negative emotions, satisfaction with service recovery and loyalty. The sample for this study consists of 303 business-to-consumer e-commerce users who made a complaint after an electronic transaction. The results show that positive emotions are a key factor in satisfaction with service recovery processes; this is in contrast to the major role that negative emotions have traditionally played in these models. Furthermore, trust mediates the relationship between satisfaction with service recovery and cumulative satisfaction, and between positive emotions and loyalty. Trust has an important influence on loyalty, and cumulative satisfaction is a strong predictor of word-of-mouth. While prior satisfaction with service recovery studies usually investigated only negative emotions and satisfaction with a specific transaction, this research considers both positive and negative emotions, as well as the mediating effect of trust on the relationship between satisfaction with a specific transaction and cumulative satisfaction. © 2015 Universidad de Talca - Chile."
+  },
+  {
+    "article_id": "CS_2472",
+    "title": "Factors influencing live customer support chat services: An empirical investigation in Kuwait",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.4067/S0718-18762015000300006",
+    "abstract": "This study investigates factors influencing live customer support chat services in Kuwait. Live Customer Support Chat represents a newly implemented type of customer service in E-commerce websites. Live Support Chat allows online agents through company’s websites to answer customer questions, complaints, and concerns on the spot through a live chat session, which bypasses the traditional e-mail and web forms. The theoretical framework used in this study is based on the well-established Technology Acceptance Model and the Theory of Reasoned Action. The study tries to validate these theoretical frameworks in the context of Live Customer Support Chat to see if they can be equally applied to the E-commerce enlivenment as in the other technology fields. Using a sample of 324 respondents, the hierarchical regression revealed that factors such as usefulness, ease of use and attitude have a significant influence on customers’ intention to use Live Customer Support Char services. Our model explains around 31% for the variance in customers’ intention to use Live Customer Support Chat. © 2015 Universidad de Talca - Chile."
+  },
+  {
+    "article_id": "CS_2473",
+    "title": "Shifts in online consumer behavior: A preliminary investigation of the net generation",
+    "journal": "Journal of Theoretical and Applied Electronic Commerce Research",
+    "journal_impact_factor": null,
+    "doi": "10.4067/S0718-18762018000100102",
+    "abstract": "The main purpose of this study is to examine the factors affecting the online shopping behavior of Net-generation comparing with pre Net-generation. To do so, the research develops a research model including nine independent variables that are hypothesized to predict the intention of purchase using the online shopping context and Net-geners’ characteristics. The partial least squares method of structural equation modeling was used to analyze 293 Net-geners and 246 preNet-geners. The results of the study show that the six online purchase determinants (product variety, feedback, responsiveness, personalization, acceptance of complaints, and enjoyment) are more important for Net-geners than for preNet-geners. This study contributes to the understanding of online purchasing behavior of the Net generation (Net-geners) and will help to envision new strategies for marketing to Net-geners. Previous research has focused on shifts in technology and overlooks the shift of consumer demographics as the Net-geners are the first to grow up surrounded by digital media and the Internet. © 2018 Universidad de Talca - Chile."
+  },
+  {
+    "article_id": "CS_2474",
+    "title": "Opportunities and challenges of social media in supply chain management: A study in the South African FMCG retail industry",
+    "journal": "Acta Commercii",
+    "journal_impact_factor": 1.012,
+    "doi": "10.4102/ac.v20i1.864",
+    "abstract": "Orientation: Social media is often described a double-edged sword, yielding opportunities and challenges. It brings organisations closer to their customers, and when executed properly it can help drive business and provide a significant return on investment. Research purpose: To explore the opportunities and challenges that social media has created in SCM in the South African FMCG retail industry. Motivation for the study: Limited research has been conducted on the innate link between supply chain management (SCM) and social media, especially within the context of the fast-moving consumer goods (FMCG) retail industry and within a developing country context such as South Africa. Research design, approach and method: A generic qualitative research approach was adopted. Semi-structured interviews were conducted with 12 top and middle managers from the South African FMCG retail industry. Thematic analysis was used to analyse data. This was done in sequential phases, namely by data familiarisation, generating codes, identifying themes, constructing thematic networks and drawing conclusions from the data. Main findings: The findings indicate that social media has created faster and more collaborative communication between an organisation's suppliers and their customers. However, it has also empowered consumers and forced FMCG retailers to respond faster to consumer complaints and queries to maintain customer relationships for sustained competitive advantage. The lack of control over content that is shared by customers on organisations' social media platforms is a challenge that organisations experienced. The predominant social media platforms found to be used were WhatsApp, Facebook and Twitter. Practical/managerial implications: Traditional methods of communicating are changing, and organisations need to adapt to social media as an alternative form of technology customer engagement and relationship management. For managers, if social media is embedded in the supply chain, the supply chain can gather information from a broad base of different sources. Contribution/value-add: This collective intelligence can be used to uncover evolving trends or for better-informed decision-making, planning and overall collaboration between supply chain partners. © AOSIS (pty) Ltd. All rights reserved."
+  },
+  {
+    "article_id": "CS_2475",
+    "title": "Anthropomorphic service recovery: the panacea following service failure of automated CSAs",
+    "journal": "Acta Commercii",
+    "journal_impact_factor": 1.012,
+    "doi": "10.4102/ac.v25i2.1348",
+    "abstract": "Orientation: Automated customer service agents (CSAs) are not mere tools but social interaction entities with anthropomorphic traits capable of predicting consumer responses following unique online service failures scenarios. Research purpose: The study advances the discourse in how automated CSAs can seem more human, with acute understanding of shopper experiences. Thus, anthropomorphism remains an ineluctable ingredient preceding the alteration of shoppers’ trustworthiness perceptions via forgiveness. Motivation for the study: Selected anthropomorphic traits of automated CSAs could make shoppers personify these agents as endowed with human qualities such as humour and response empathy, thereby enhancing the trustworthiness of non-human computer social actors. Research design, approach and method: A scenario-based quantitative survey was distributed as a hyperlink, yielding 287 valid participants. Main findings: The SEM-PLS analysis demonstrated good model fit. The findings showed a significant effect between empathy and anthropomorphism with perceived trustworthiness. In addition, anthropomorphic CSAs provide a trust shield effect, reducing the loss of trust following a service failure. Consequently, shoppers are more willing to forgive the online retailer. Practical/managerial implications: The findings of this study could shape customers’ response mechanisms during failed interactions with automated CSAs, offering salient insights to adequately address service failures while tapping into the judicious utilisation of human-robot collaboration opportunities. Contribution/value-add: The study provides initial lenses for considering the social acting nature of automated CSAs. The positionality in this paper is that during a online service failure, humans pardon and are more trusting of a technological service agent that demonstrates anthropomorphic and humanist attributes. © 2025. The Author. Licensee: AOSIS."
+  },
+  {
+    "article_id": "CS_2476",
+    "title": "The influence of cell phone users' relationship intentions on expectations and perceptions of service recovery",
+    "journal": "South African Journal of Business Management",
+    "journal_impact_factor": null,
+    "doi": "10.4102/sajbm.v46i1.83",
+    "abstract": "With the first-time cell phone user market quickly shrinking, it is becoming increasingly important for South African cell phone network providers to retain customers by building long-term relationships with them and consistently offering quality service. Despite cell phone network providers' best intentions, service failures do occur. Not all customers want to build relationships with cell phone network providers, and therefore it is important to consider the influence of customers' relationship intentions within a service failure and recovery setting. The purpose of the study was to determine the influence of relationship intention on expectations and perceptions of two service recovery scenarios within the cell phone industry. Non-probability convenience sampling was used to collect data from 605 cell phone users residing in Gauteng. Results indicate that as respondents' relationship intentions increase, so do their expectations that their cell phone network providers should take service recovery action. It was also found that respondents with high and moderate relationship intentions perceived service recovery strategies of their cell phone network providers including an acknowledgement, apology, explanation and rectification of the problem more favourable, compared to a service recovery strategy only rectifying the problem, than those respondents with low relationship intentions."
+  },
+  {
+    "article_id": "CS_2477",
+    "title": "An assessment of consumers’ subconscious responses to frontline employees’ attractiveness in a service failure and recovery situation",
+    "journal": "South African Journal of Economic and Management Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.4102/sajems.v20i1.1612",
+    "abstract": "Background: Initial analyses of the impact of physical attractiveness in a business context have supported the ‘what is beautiful is good’ contention. However, in circumstances characterised by negative emotions, duress and stress, very little is known about how human beings respond at the subconscious level to the attractiveness of frontline service providers. Aim: The purpose of this study was to assess whether consumers who complain to a frontline service provider about a service failure respond differently at the subconscious level when the service provider involved in the service encounter is attractive compared with one who is less attractive. Method: Forty respondents were exposed to a video clip of a service failure and service recovery situation. While viewing the hypothetical scenario, two neuro-physiological measurements were used to collect data at the subconscious level, namely galvanic skin response (GSR) and electroencephalography (EEG). Results: The results suggest that, at the subconscious level, customers respond differently to the service recovery efforts depending on the attractiveness of the frontline service provider who attempts to rectify the service failure. Conclusion: The results seem to suggest that the physical attractiveness of a frontline service provider moderates (or softens) the negative emotions that a complaining customer might experience during a service failure and complaint situation – consistent with the ‘what is beautiful is good’ contention. © 2017. The Authors. Licensee: AOSIS."
+  },
+  {
+    "article_id": "CS_2478",
+    "title": "The impact of training and assessment register (TAR) on productivity in the automotive parts manufacturing organisation in South Africa",
+    "journal": "SA Journal of Human Resource Management",
+    "journal_impact_factor": null,
+    "doi": "10.4102/sajhrm.v17i0.1179",
+    "abstract": "Orientation: Organisations are confronted with the challenge of competency among its employees for productivity improvement. They implement strategies that improve employee skills proficiencies for higher productivity. These can also be achieved by implementing a training model that develops employee’s skills and knowledge so that they become the specialists in their work areas. This sentiment underpins the concept of employee Training and Assessment Register (TAR). Purpose: This study evaluates the influence of TAR on productivity in automotive parts manufacturing organisation in South Africa. Motivation for the study: The South African manufacturing sector has a low level of productivity compared to its counterpart industries in the Asian and Western countries. The sector experiences the lack in short to medium term growth in productivity. Research design, approach and methods: The automotive parts manufacturing company that has used a TAR strategy for productivity improvement participated in the study. The study objectives were achieved by examining the production and related experiences in the company. The collection of data was carried out in two phases. This includes the collection of pre-and post-quarterly data for spoilage, overtime and customer complaints. The pre-TAR results were quarterly data reflecting the company’s performance over the three-year period prior to the implementation of TAR. This company operates in the eThekwini District Municipality in KwaZulu-Natal. Main findings: The results established that spoilage rate has a relationship with company productivity. Any decrease in spoilage rate would result to an increase in company productivity. However, the overtime and customer complaints do not statistically have a relationship with company productivity. Contribution: This article uncovers the strengths and weaknesses of TAR on productivity in the automotive parts manufacturing organisation in South Africa. © 2019. The Authors."
+  },
+  {
+    "article_id": "CS_2479",
+    "title": "Information and communication technology as an enabler to contact centre service delivery: A case of a public sector",
+    "journal": "South African Journal of Information Management",
+    "journal_impact_factor": null,
+    "doi": "10.4102/sajim.v26i1.1720",
+    "abstract": "Background: The contact center industry is one of the world’s fastest expanding, and it has become a vital basis for businesses communicating with clients, whether through information sharing (inbound) or telesales (outbound). The goal of a contact center is to handle existing and future client queries, product support, and regular transactions. Objectives: The purpose of the article was to examine the effectiveness of ICT in improving service delivery at the public sector contact centre and to determine the non-technical and technical factors that influence the effectiveness of the contact centre service delivery. Methods: This article adopted a quantitative approach, using a survey questionnaire to solicit data from respondents. Convenience sampling method was deemed fit to sample contact centre agents and team leaders and managers in the contact centre of the Department of Home Affairs. Quantitative data were analysed using the Statistical Package for the Social Sciences (SPSS). Results: Both the literature review and the empirical results revealed that the role of effective technology in service delivery has a significant influence on the quality-of-service results. The findings support the notion that many service failures are caused by a lack of technology training for employees. Conclusion and contribution: It is concluded that the use of technology in the contact centre has significantly altered how employees perform their roles and responsibilities. Contribution: The study found that training on new technological systems can help with service delivery. © 2024. The Authors."
+  },
+  {
+    "article_id": "CS_2480",
+    "title": "An empirical study on antecedents of perceived service recovery quality in E-banking context",
+    "journal": "Journal of Internet Banking and Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.4172/1204-5357.1000130",
+    "abstract": "The wide usage of IT enabled options for service delivery has increased the occurrence of irrepressible service failures in the contemporary banking landscape. The enhanced service quality levels exhibited by the dedicated employees suffer badly due to ever-increasing number of tech-driven service failures. The purpose of this study was to examine the linkages among constructs such as perceived service quality, perceived organizational service orientation, perceived automation quality, perceived employee proficiency and perceived service recovery quality to recovery satisfaction in the E-banking context. This investigation examined the moderating role of perceived initial negative feelings of the customer due to service failures, on recovery satisfaction. Data collected from 248 banking customers were analyzed by structural equation modeling approach using, Smart PLS 2.0 M 3, software to identify significant linkages among variables under study. Apart from perceived employee proficiency, all other variables significantly developed perceived service recovery quality leading to recovery satisfaction. Initial negative feelings from a service failure failed to cause significant moderating effect on post recovery satisfaction. The most disturbing service failures in the automated service delivery environment was identified as technical failures such as delay in online transactions, issues related to ATMs and interrupted connectivity. The study could establish that excellent service recovery quality develops service recovery satisfaction and customers gain more confidence in the bank and perceive higher value in their association with the bank. © 2015 Rejikumar G."
+  },
+  {
+    "article_id": "CS_2481",
+    "title": "Caste and the conundrum of religion and development in India",
+    "journal": "The Routledge Handbook of Religions and Global Development",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9780203694442-25",
+    "abstract": "Introduction The emerging debate on ‘religion’ and ‘development’ has been challenged by some for unquestioningly deploying what are historically contingent, socially constructed and mutually constitutive categories. Arguably, separating out ‘religion’ renders development secular, as a value-free project of modernization, or the expansion of consumer capitalism and liberal democracy, while the paired idea of ‘development’ strips the political economy out of religion, making it available for instrumental packaging as the ‘missing element’ (faith, trust, values, commitment) now supplied by self-dened faith-based organizations (FBOs) (Fountain 2013). Such an idea certainly lies behind the complaint that the ‘religion and development’ agenda is normative and instrumental in its approach, agency-driven, and involves a narrow or overly institutional notion of religion, focused on ‘faith agencies’ (mostly Christian), as well as enclosing a Christian conception of religion as a matter of belief (Jones and Juul Petersen 2011). © 2015 Emma Tomalin. All rights reserved."
+  },
+  {
+    "article_id": "CS_2482",
+    "title": "BRILLIANT POSITIVE DEVIANCE: Innovation beyond disconnected and disciplined domains",
+    "journal": "Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9780429346033-9",
+    "abstract": "This chapter argues the importance of innovation sourced from internal instances of positive deviance particularly those serendipitous moments that bring joy, generate delight, and exceed expectation; that is, moments of brilliance. This follows a need to redress the seeming preoccupation with innovation sourced from elsewhere be it a different organisation, a different sector, or a different department within the same organisation. Innovation sourced from elsewhere is often born from a disconnected and disciplined domain; furthermore, reliance on such innovation can suggest there is little to learn from serendipitous experiences within an organisation that occur in an unmanaged or undisciplined way. This can have several implications. As such, this chapter makes a case for internally conceived, undisciplined innovation specifically, positive deviance. By drawing on exemplars, this case is grounded in healthcare. This is because: first, this sector is relevant to us all, as (potential) patients or carers; and second, understanding how to promote and sustain innovation in this complex and contested sector is likely to have relevance to other sectors. This chapter has important implications for scholars, managers, and their personnel, as well as consumers. For scholars, there is considerable opportunity to clarify the relationship between positive deviance and innovation conceptually, theoretically, methodologically, and empirically. For managers and their personnel, this chapter provokes questions about how to involve colleagues and consumers in positive deviance and relatedly, innovation; furthermore, the chapter points to the potential value of an authorising environment, leaderfulness, as well as discipline of noticing. Finally, this chapter invites consumers to ask how they too can demonstrate their leaderful and positively deviant capacities. Consumers are encouraged to connect with organisations, problematise the oft-cited calls for consumer engagement and consumer participation, and raise the profile of the moments they deem to be brilliant. © 2023 selection and editorial matter, Renu Agarwal, Eric Patterson, Sancheeta Pugalia and Roy Green; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2483",
+    "title": "Humanistic management in Latin America",
+    "journal": "Humanistic Management in Latin America",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9780429351174",
+    "abstract": "Humanistic management has been part of a growing conversation about a different approach to management that contributes to dignity in the workplace and better organisations overall. The theoretical concepts have mostly derived from developed countries. This book seeks to redress the balance and looks at the development and application of the concepts, approaches and models of inequality, corruption, poverty, and uncertainty in the context of Latin America. The book provides a comprehensive overview of what is happening in Latin America in terms of Humanistic Management and the promotion of the Sustainable Development Goals. The first section describes the development of Humanistic Management by reviewing two different schools that have strongly influenced the discipline: the Montreal School and the Saint Gallen School. Humanistic Management is then presented as a model that can be used by scholars and practitioners in Latin America. The third part aims to explore how Humanistic Management has been, and could be, implemented across different organizations and business sectors in Latin America. Part four examines the implications of Humanistic Management for external stakeholders such as customers and consumers, suppliers, community, government, and universities. Finally, the conclusion provides new approaches to Humanistic Management for Latin America. Humanistic Management in Latin America will serve as a key reference and resource for teachers, researchers, students, experts and policy makers, who want to acquire a broad understanding of social responsibility and business across the world. © 2021 selection and editorial matter, Consuelo A. García-de-la-Torre, Osmar Arandia and Mario Vázquez-Maguirre; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2484",
+    "title": "Designing Hospitality Processes",
+    "journal": "Modern Hotel Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003022329_13",
+    "abstract": "A menu, a chair or a waitress, for example, are all touchpoints that make up a restaurant service. Designing hospitality processes is about creating these touchpoints and defining how they interact both with each other and with the user. An important part of designing great service is determining who the users of that service will be – guests, employees or suppliers. Job design is the way in which a company structures the content and environment of individual staff member’s jobs within the workplace, and the interface with the technology or facilities that they use. The use of design tools and methods can deliver an in-depth understanding of user behaviours, likes and needs, which allows new solutions to be developed. Identify potential service bottlenecks – the service designers can design the service in such a way as to avoid identified possible service failures; this can improve the quality of the service and the customer experience. © 2016 Noordhoff Uitgevers bv Groningen/Houten, The Netherlands."
+  },
+  {
+    "article_id": "CS_2485",
+    "title": "Delivering Hospitality Services",
+    "journal": "Modern Hotel Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003022329_14",
+    "abstract": "The key issue for hotel management is to deliver what they have said they will deliver. Tangible products and services and employee performance are fundamental elements of successful hotel service delivery. Given the difficulties inherent in service delivery, quality management systems have been developed for the quality management of services. These service quality management systems have been used extensively in hospitality operations. Traditional service quality literature suggests that employee performance is a key determinant of service quality and, thereby, customer satisfaction. Service requirements vary according to the service being purchased; in essence, it is important to communicate an expectation and then ensure that these planned customer expectations are met during the service experiences. Employee reactions to service delivery system failures can be critical, because customers are more likely to pardon a service failure if the fault is acknowledged and quickly corrected. © 2016 Noordhoff Uitgevers bv Groningen/Houten, The Netherlands."
+  },
+  {
+    "article_id": "CS_2486",
+    "title": "Benchmarking Islamic Finance: A Framework for Evaluating Financial Products and Services",
+    "journal": "Benchmarking Islamic Finance: A Framework for Evaluating Financial Products and Services",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003089988",
+    "abstract": "Pricing or benchmarking is a process of evaluating the performance of a financial company's products and services or systems, against other businesses, considered to be at the top of their field, by applying a measurement of \"best in performance\". This book includes contributions from the leading global experts in the field who tackle topics such as whether the Islamic financial system has been dependent on the LIBOR/EURIBOR in its benchmarking exercises to date and, thus, whether it will be affected negatively by the predicted non-existence of the LIBOR/EURIBOR from 2021 onwards. They also address the question of whether the Islamic financial system requires benchmarking of its products and services and consider the emergence of Shariah-justified benchmarking in today's Islamic financial system. Additionally, they look at how benchmarking formulas should be adapted to ensure the satisfaction of customers within the principles of Maqasid al-Shariah. It takes a legal and institutional approach to the subject, which readers will find particularly valuable, as there are various forms of Islamic finance institutions that do not conform to established models in the finance industry. Furthermore, there are emerging business models that will benefit from this line of investigation. This book offers a timely analysis of these issues and redresses the existing misconceptions and misinterpretations pertaining to benchmarking in an Islamic finance context and, as such, provides guidance and strategies for future directions. It will appeal to researchers of Islamic banking, finance, and insurance, as well as practitioners, particularly standard-setting bodies, regulators, and policy makers. © 2022 selection and editorial matter, Mohd Ma'Sum Billah. All rights reserved."
+  },
+  {
+    "article_id": "CS_2487",
+    "title": "The Practical Guide to Achieving Customer Satisfaction in Events and Hotels",
+    "journal": "The Practical Guide to Achieving Customer Satisfaction in Events and Hotels",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003154600",
+    "abstract": "The Practical Guide to Achieving Customer Satisfaction in Events and Hotels is the fourth title in the Routledge Series The Practical Guide to Events and Hotel Management and presents expert-led insight of customer service best practice within events and hotels. Typical to the other titles in the series, this latest book is written in a logical format and contains practical tips drawn from real-life industry examples, case studies, industry leaders, and the authors’ extensive backgrounds working in events and hotel management. Topics include definitions of customer service, an answer to that question ‘Is the customer always right?’, how to deal with complaints, how to empower staff to recover customer service, and how to turn new customers into loyal customers. This book is ideal for students of the management of events, hotels, hospitality, or tourism, to be used as a practical resource alongside existing theoretical textbooks. It is also an essential tool for anybody working in the customer-facing industries. © 2023 Philip Berners and Adrian Martin."
+  },
+  {
+    "article_id": "CS_2488",
+    "title": "I WANT A BRAND NEW CAR",
+    "journal": "International Case Studies in Tourism Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003182856-23",
+    "abstract": "Resort hotels are properties where customers holiday, mostly with their family members, usually for a minimum duration of one week. This duration is critical as customers have numerous interactions with the hotel’s offerings and with other people including customers and hotel workers. If the hotel property is a large scale business, it is inevitable that some customers will experience some service failures which require the implementation of some recovery strategies so that customers will be satisfied with their experience. This case will highlight for participants the importance of managing the customer service recovery process in a resort hotel. The case concerns a customer who was incolved in a car crash and the actions taken by the operations manager to overcome the disappointment and dissatisfaction of the customer. © 2022 selection and editorial matter, Gürhan Aktaş and Metin Kozak; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2489",
+    "title": "USING ONLINE REVIEWS TO MEASURE CUSTOMER EXPERIENCE ASSESSMENT",
+    "journal": "International Case Studies in Tourism Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003182856-5",
+    "abstract": "Online reviews have become a useful tool for both companies and customers. They provide key information for improving satisfaction with the shopping experience. In this case study, we analyse two main theme parks in Spain, Parque Warner Madrid and PortAventura. In particular, we study the relationship between online reviews and customer experience assessment. By gathering data on complaints found at TripAdvisor.com, we can then apply statistical methods to identify differences in customer assessment of these two theme parks regarding a number of issues. Several managerial implications emerge from the results of the study. © 2022 selection and editorial matter, Gürhan Aktaş and Metin Kozak; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2490",
+    "title": "Enforcing Brands to Be More Sustainable: The Power of Online Consumer Reviews",
+    "journal": "Social and Sustainability Marketing: A Casebook for Reaching Your Socially Responsible Consumers through Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003188186-14",
+    "abstract": "“People are coming to recognize that connection, both to others and to Nature herself, is the wellspring of human happiness.” Helena Norberg-Hodge, Research Problem: How do online reviews of the customers force brands to be more sustainable? Chapter overview The power balance between the two actors in the market, consumers and companies, has considerably changed. Especially with the improvements in technology, consumers can increase their voice and share their societal, social, and environmental concerns with other consumers and companies. Online consumer reviews not only reflect satisfaction, frustration, and complaints but they are also an extension of consumer power that influences companies. This chapter’s purpose is to search and highlight the traces of consumer power created through online reviews to make brands more sustainable and to offer more sustainable consumer solutions. Following the aforementioned purpose, the chapter will scrutinize how online consumer reviews push brands toward sustainability. The discussion will be initialized by explaining online transformation in marketing as the power shift from companies to brands and from word of mouth to electronic word of mouth followed by online consumer reviews. The chapter will be finalized by highlighting the power of online consumer reviews on brands’ sustainability efforts by using illustrative global cases. Overall, this chapter summarizes how changes in marketing and consumers lead companies toward sustainability due to the effect of online consumer reviews. © 2022 selection and editorial matter, Jishnu Bhattacharyya; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2491",
+    "title": "Unsocial and Irresponsible Behaviour: What Happens When Customers Lie?",
+    "journal": "Social and Sustainability Marketing: A Casebook for Reaching Your Socially Responsible Consumers through Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003188186-18",
+    "abstract": "One relevant quote What happens when customers lie? Research/case problem What happens when a service has not failed and customers misbehave, fraudulently claiming compensation. Case Synopsis Service recovery and reinstatement of customer satisfaction after a service has failed that have been studied in different industries. Best practice in the management of service recovery exists within the tourism industry, where a wide range of responses are used to repair the damage caused. What however happens when the service has not failed, and customers fraudulently claim this compensation? In other words, what happens when customers lie? This chapter examines the false claims made by British tourists against Spanish hotels, more generally known as the “holiday sickness scam” as customers claimed to be suffering from food poisoning as a result of their stay at the hotel in order to claim undue compensation. The study adopts the business ecosystem to identify the role of different players in the scam at three key stages. First, it traces the origins of the scam back to 2015 when an increase in claims was first identified, and highlights the role of a previously unimportant actor in the ecosystem, the claims management companies who encouraged British customers to make fraudulent claims. Second, it identifies the financial and reputational impact on the Spanish tourism industry in 2016 at the height of the scam when resorts experienced an unprecedented increase in customer claims. Finally, it identifies how the industry worked with distant ecosystem members from 2017 to resolve the issue (e.g. the European Commission and the Spanish and UK Governments). This case serves to stimulate discussion on socially responsible consumers by addressing the converse - misbehaving customers. It identifies the role of the firm in changing consumer behaviour from unsocially responsible to socially responsible by examining the effectiveness of existing business practices and demonstrating the benefits of adopting a business ecosystem approach. © 2022 selection and editorial matter, Jishnu Bhattacharyya; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2492",
+    "title": "The review response genre: Structures, language, and functions",
+    "journal": "The Review Response Genre: Structures, Language, and Functions",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003213970",
+    "abstract": "Expanding the scope of the metadiscourse construct, Ho offers a comprehensive analysis of the online review response genre using hotel managers' responses to negative reviews posted by dissatisfied customers on TripAdvisor. He adopts a robust research methodology that involves both quantitative and qualitative analyses of three different types of data: managerial responses to negative comments, questionnaire responses from dissatisfied customers who wrote the reviews, and interview responses from hotel managers who wrote the responses. By drawing upon the genre theory and the construct of rapport and metadiscourse, the analysis shows that hotel management's attempts at service recovery can be materialized through the move structures of the managerial responses, and the strategies used in managing rapport with dissatisfied customers and in persuading both existing and potential customers to purchase accommodation services from the hotels. An essential reading for students and researchers of pragmatics and professional communication, along with anyone interested in the role of language in persuading customers, neutralizing criticisms, and managing interpersonal relationships, particularly in the context of open forums online. © 2024 Victor Ho. All rights reserved."
+  },
+  {
+    "article_id": "CS_2493",
+    "title": "Always Making Progress: The Fundamentals of Continuous Improvement for the Process Industry",
+    "journal": "Always Making Progress: The Fundamentals of Continuous Improvement for the Process Industry",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003244707",
+    "abstract": "This book guides process-industry professionals from the implementation of the basic foundations of Continuous Improvement (CI) through to an organization where CI is a “way of life” and a defining feature of the culture of the organization. The readers of this book are seeking solutions to such pressing issues as: • Eliminating accidents and near misses. • Reducing customer complaints. • Improving customer delivery performance. • Elimination of accidents and near misses. • Reducing customer complaints. • Improving customer delivery performance. • Introducing new products. • Improving staff productivity. • Removing costs to meet the budget. • Dealing with absence and poor morale. • Improving staff retention. This book provides them with guidance on how to address issues in these areas in a way that enables improvements to be realized quickly but not at the expense of a long-term goal of a sustainable Continuous Improvement culture. In addition, this book presents the implementation of CI as a cyclical journey with no endpoint. The stages are ordered in a sequence that enables the reader to get started in their area of the company and build up the elements without the need for an overall organizational strategy at the beginning. Continuous Improvement is a vast subject with many takes on principles, approaches, and tools. This book is about how all the fundamentals of these areas fit together and, as such, covers only some of them. However, within the bibliography, I have signposted the books that have guided me during my career and which go into the principles, approaches, and tools further. © 2022 Ian Madden."
+  },
+  {
+    "article_id": "CS_2494",
+    "title": "Improving Productivity and Service in Depot Businesses: How Haulage, 3PL, and Service Companies Can Increase Quality and Customer Satisfaction",
+    "journal": "Improving Productivity and Service in Depot Businesses: How Haulage, 3PL, and Service Companies Can Increase Quality and Customer Satisfaction",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003323822",
+    "abstract": "This book is specifically for working operations managers across the broad range of business types that deploy fleet and product via a myriad of service types. It is applicable to businesses with small medium to large fleets in haulage, 3PL, and any service business operating a depot structure. The book is less about theoretical concepts – although specific references point to theories including Lean, continuous improvement, net promoter score, and balanced scorecard – but is essentially a practical guide applying worked examples and generic templates regarding the core ten activities that are critical to achieving service and profit expectation in any depot, route-based business deploying fleet. Every working manager – front-line to COO – will identify with and grasp that these are fundamental areas and that, if improvement can be sustained, will deliver better service to customers and enhanced profit in both local and business levels. The key areas examined are: People management Fleet management Route scheduling Optimisation of non-productive (on-depot) time Driver debrief Customer service and complaint management and measurement Key performance indicators The operating rhythm Continuous improvement. © 2023 Colin Woodland."
+  },
+  {
+    "article_id": "CS_2495",
+    "title": "Routledge handbook of consumer protection and behaviour in energy markets",
+    "journal": "Routledge Handbook of Consumer Protection and Behaviour in Energy Markets",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003375883",
+    "abstract": "The Routledge Handbook of Consumer Protection and Behaviour in Energy Markets provides a comprehensive study of consumer protection and consumer behaviour in selected jurisdictions worldwide. Each chapter is written by experts and provides a contemporary overview of national consumer protection and policy developments in the energy sector. Today energy has become an essential factor in ensuring the socio-economic development of any country and improving the quality of life of society and is now an essential element of life for everyone. The energy market has become a competitive market, based on the assumption that generation and sale of energy is not a natural monopoly and that market mechanisms, in particular competition between energy companies, are the best way to reduce prices and improve customer service. The purchase of energy is inextricably linked with its distribution from the producer to the purchaser. The book shows that well-functioning energy markets need informed and well protected consumers, who can benefit from competition and transparent offers. They are free to choose the most competitive providers, and know their rights, with access to effective means of redress. Given that the energy market has a specific, technical nature, the book analyses the energy market within the scope of free market principles, with a focus on the protection of the weaker party to the contract: the consumer. In addition, consumers can also play an active part of the clean energy transition. © 2025 selection and editorial matter, Tina Soliman Hunter, Marcin Krasniewski, Jurgita Malinauskaite and Marzena Czarnecka. All rights reserved."
+  },
+  {
+    "article_id": "CS_2496",
+    "title": "Energy customers in the changing landscape of the Lithuanian energy market",
+    "journal": "Routledge Handbook of Consumer Protection and Behaviour in Energy Markets",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003375883-14",
+    "abstract": "Before 1989, Lithuania lacked a functional energy market. The post-1989 era, marked by large-scale privatization and energy market liberalization, significantly altered the roles of the state, energy producers, and customers. Lithuania's energy laws and customer protection evolved notably after regaining independence in 1990. These changes were driven by the transition from a Soviet energy system to a global one, EU accession pressures, and geopolitical safety needs. Energy laws in these regions remain highly politicized, particularly in the context of energy security and pricing. The recent energy crisis following Russia's invasion of Ukraine highlighted the varying energy customer policies across Eastern Europe. In Lithuania, the institutional framework for energy customer protection is based on market liberalization, with bodies like the National Energy Regulatory Council, the State Consumer Rights Protection Authority, and municipal entities playing key roles. These organizations address complaints, safeguard customer interests, and offer alternative dispute resolution, highlighting a strong customer rights protection system. The chapter also discusses the challenges in dispute resolution, particularly in electricity grid connections, where disagreements often revolve around technical plans and contract terms. Factors influencing the growing number of disputes include customer activism, operators' discretionary powers, and the complexities of the institutional framework. © 2025 selection and editorial matter, Tina Soliman Hunter, Marcin Krasniewski, Jurgita Malinauskaite and Marzena Czarnecka. All rights reserved."
+  },
+  {
+    "article_id": "CS_2497",
+    "title": "From coal to clean electricity: Consumer behavior and consumer protection in Indian energy law and policy",
+    "journal": "Routledge Handbook of Consumer Protection and Behaviour in Energy Markets",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003375883-28",
+    "abstract": "Energy is the most important factor for economic growth. Energy comes in many forms and there are various levels of consumers: industrial consumers, agricultural consumer,s, government consumers, or domestic consumers. All these consumers face different kinds of issues. The energy sector in India is bifurcated into different ministries, and consumer protection is dealt with accordingly. This chapter provides an overview of the energy sector and focuses in particular on domestic consumers, which is the largest group. The Consumer Protection Act provides for the basic legislation for protection of consumers; however, the power sector or electricity sector is governed by Electricity Act. Domestic consumers of oil and gas have a different grievance redressal mechanism. Renewable energy is gaining pace over the years and faces different issues. This chapter provides a comprehensive understanding of the consumer protection mechanism in the energy sector in India. © 2025 selection and editorial matter, Tina Soliman Hunter, Marcin Krasniewski, Jurgita Malinauskaite and Marzena Czarnecka. All rights reserved."
+  },
+  {
+    "article_id": "CS_2498",
+    "title": "Iranian system of consumer and competition laws in the electricity market",
+    "journal": "Routledge Handbook of Consumer Protection and Behaviour in Energy Markets",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003375883-31",
+    "abstract": "This chapter provides an in-depth analysis of Iran's electricity sector, focusing on consumer protection and competition. It emphasizes the importance of safeguarding consumer rights, given the significant influence producers and service providers wield over prices and product quality, which could potentially jeopardize consumer interests. The chapter examines the privatization of the electricity sector and the significance of consumer rights and competition in this context. Despite two decades of reforms, issues persist, impacting consumers' rights and hindering genuine competition. The analysis evaluates consumer protection laws and their application in the electricity sector, particularly focusing on access to energy and the right to redress. Additionally, competition law enforcement in the electricity market is explored to understand the level of competition regulation. Thus, Iran faces challenges in its electricity sector, with significant implications for consumer rights. Despite improvements in access to energy and avenues for seeking redress, critical challenges remain, including an unreliable electricity supply, blackouts, and the lack of a competitive market. The government's partial privatization has not fostered genuine competition, hindering investment and exacerbating the supply-demand gap. © 2025 selection and editorial matter, Tina Soliman Hunter, Marcin Krasniewski, Jurgita Malinauskaite and Marzena Czarnecka. All rights reserved."
+  },
+  {
+    "article_id": "CS_2499",
+    "title": "Examining Cryptocurrency Platform Coinbase through the Lens of Critical Incident Technique: A Text Mining Approach",
+    "journal": "Blockchain, Metaverse, and Digital Payments: A Global Digital Consumer Perspective",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003401452-5",
+    "abstract": "This research examines the service failures of Coinbase, a cryptocurrency platform with a critical incident technique, to understand how a consumer interacts with disruptive innovation. Consumer complaints (2017 to 2022) from the U.S. Consumer Financial Protection Bureau were analyzed with Pearson’s Chi-square test and topic modeling. The former was used to explore the relationship between consumer characteristics, and the latter was implemented for the automated critical incident technique. The test result revealed that self-identified older Americans and service members are less likely to receive service recovery with monetary compensation. Topic modeling identified what drives the complaint resolution types (e.g., explanation or monetary compensation). This research helps academics enhance their understanding of service failure practices, and managers and policymakers design more inclusive services for disruptive innovation. © 2025 selection and editorial matter, Aijaz A. Shaikh, Galimkair Mutanov and Heikki Karjaluoto; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2500",
+    "title": "The Abusive Customer: Breaking the Silence Around Customers’ Aggressive Behavior",
+    "journal": "The Abusive Customer: Breaking the Silence Around Customers’ Aggressive Behavior",
+    "journal_impact_factor": null,
+    "doi": "10.4324/9781003402565",
+    "abstract": "Breaking the silence around an all-too-common problem, this book offers insights into the triggers of customer aggression against service employees, explores its consequences, and provides practical advice for handling abusive customers and mitigating the damage they inflict. Today, more than half of the world’s population is employed in the service sector. This fundamental economic shift is accompanied by heightened attention to customer service and the ‘customer is always right’ paradigm. But when customers act aggressively, everyone pays a price: frontline employees, their families, their companies, and even the abusive customers themselves. Unlike breezier titles on the subject, this book is based in academic research-exploring the ‘why?’ and ‘when?’ behind abusive behavior-that underpins its practical approach, illustrated with real-world stories from professionals on the front lines of customer service. The book’s useful tools include a sample anti-customer abuse policy and management process, a cheat sheet of practices that work for handling its consequences, a summary of effective service recovery processes and practices, and abuse-handling training list and curriculum templates. Managers and workers in customer-facing roles, in industries such as retail, hospitality, tourism, banking, and contact centers, will welcome this essential resource as part of their efforts to stop aggressive customer behavior, and improve employee morale, job satisfaction, and engagement. © 2024 Ivaylo Yurgov."
+  }
+]

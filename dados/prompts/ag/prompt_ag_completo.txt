@@ -1,0 +1,155 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the AG intersection:
+AI Agents, Governance and Decision Alignment.
+
+This intersection includes studies that analyze:
+- Use of AI agents in service recovery processes
+- Governance, control, monitoring, and accountability of AI decisions
+- Alignment between AI decisions and organizational objectives
+- Delegation of decision-making to AI agents
+- Agency-related issues (autonomy, misalignment, control)
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the AG intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "AG"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical AI or algorithm-focused studies
+- Studies without organizational or managerial implications
+- Articles about AI in general service contexts WITHOUT service recovery or failure
+- B2C-only studies without relevance to interorganizational/B2B context
+- Articles that do not address decision-making, governance, or control
+- Peripheral mention of AI or service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "AG" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "AG_0001",
+    "title": "Better alone than in bad company: Addressing the risks of companion chatbots through data protection by design",
+    "journal": "Computer Law and Security Review",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.clsr.2024.106019",
+    "abstract": "Recent years have seen a surge in the development and use of companion chatbots, conversational agents specifically designed to act as virtual friends, romantic partners, life coaches or even therapists. Yet, these tools raise many concerns, especially when their target audience is comprised of vulnerable individuals. While the recently adopted AI Act is expected to address some of these concerns, both compliance and enforcement are bound to take time. Since the development of companion chatbots involves the processing of personal data at nearly every step of the process, from training to fine-tuning to deployment, this paper argues that the General Data Protection Regulation (“GDPR”), and data protection by design more specifically, already provides a solid ground for regulators and courts to force controllers to mitigate these risks. In doing so, it sheds light on the broad material scope of Articles 24(1) and 25(1) GDPR, highlights the role of these provisions as proxies to Fundamental Rights Impact Assessments (“FRIAs”), and peels off the many layers of personal data processing involved in the companion chatbots supply chain. That reasoning served as the basis for a complaint lodged with the Belgian data protection authority, the full text and supporting evidence of which are provided as supplementary materials. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "AG_0002",
+    "title": "Construction Noise Risk Assessment Model Focusing on Construction Equipment",
+    "journal": "Journal of Construction Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1061/(ASCE)CO.1943-7862.0001480",
+    "abstract": "Environmental issues are becoming a growing concern for the construction sector and cause a number of complaints. Construction noise is one of the most prevalent stressors to the public, especially for residents near worksites. Many academic and practical studies have been conducted to address such noise-related problems. However, conventional approaches typically focus on monitoring noise and experts' judgment; they are limited at evaluating the degree of risk caused by noise. This paper proposes a model for determining the noise-induced risk, with the severity based on the predicted noise level from a Monte Carlo simulation and the occurrence probability of the noise exceeding a certain limit. Case studies were conducted to confirm the applicability of the model. The results indicate the crucial period that needs to be carefully managed, which is more applicable to determining the noise-induced risk compared to existing approaches. This paper contributes to the literature for noise management by presenting a method for evaluating the impact of noise-related risk and providing a pragmatic alternative to supplement existing approaches during the preconstruction phase. © 2018 American Society of Civil Engineers."
+  },
+  {
+    "article_id": "AG_0003",
+    "title": "Reinforcement Learning Based Recovery of Education After Natural Hazards",
+    "journal": "International Conference for Artificial Intelligence: Applications, Innovation and Ethics, AI2E 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/AI2E64943.2025.10983197",
+    "abstract": "School facilities are essential in offering a safe and stable environment for education. However, schools are prone to damage during natural hazard events, causing education disruptions. It is imperative to rapidly reopen schools after such events so that students can receive timely education. In the meantime, the continued delivery of education services also depends on the infrastructure supporting schools, such as roads and bridges. In this paper, a reinforcement learning-based approach to recovering schools considering associated bridges is proposed. Two separate but interactive crews are modeled to deliver recovery actions to schools and bridges respectively. The effectiveness of the proposed approach is demonstrated with a case study in the Dominican Republic. Results show that the use of reinforcement learning leads to the identification of recovery strategies that are more efficient than the ones identified by heuristic based ranking priorities. © 2025 IEEE."
+  },
+  {
+    "article_id": "AG_0004",
+    "title": "Analyzing Traffic-Complaint Tweets Based on Time-Location Context Analysis to Develop A Traffic Urgency Model",
+    "journal": "2023 8th International Conference on Business and Industrial Research, ICBIR 2023 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICBIR57571.2023.10147706",
+    "abstract": "Intelligent transportation systems in urban areas in developing countries are still being developed. In this process, there are plenteous reports from society that complain about traffic jams, accidents, and other conditions that require immediate handling. For instance, in Surabaya, one of the urban areas in Indonesia, there were 7,975 complaints via @e100ss Twitter's account, the transportation media in Surabaya, in December 2022. This research aims to find contexts from the traffic complaint text to determine the urgency factor from the text. Traffic urgency factors are used to determine the complaint's handling priority. Therefore, the main steps in this research are as follows. The first step is preprocessing and tokenizing the text data. The second step is calculating the term frequency (TF) from the tokenized word. Furthermore, the words with the highest TF values were categorized according to their context. In this context, a model to determine urgency was developed in this research. This research suggests that traffic urgency is moderated by the context of location, context of a group people that being reported, context of the object that mentioned in the complaint text, and context of the condition. This research also found that a specific location has the most frequent reported time. © 2023 IEEE."
+  },
+  {
+    "article_id": "AG_0005",
+    "title": "Women Complaint - Generator AI AGENT and Management System",
+    "journal": "2025 2nd International Conference on New Frontiers in Communication, Automation, Management and Security, ICCAMS 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICCAMS65118.2025.11234117",
+    "abstract": "The project aims to make it easier for women to file complaints by using AI and mapping tech. The system sorts incidents, finds related constitutional rights, and creates and sends complaints based on location. This approach tries to fix problems with the current manual system by boosting productivity, ease of use, and responsibility. The paper goes into depth about the methods, data, and ways to measure success used to build the system. It also shows how much better this system works compared to old-school approaches. © 2025 IEEE."
+  },
+  {
+    "article_id": "AG_0006",
+    "title": "Performance evaluation of emergency department physicians using robust value-based additive efficiency model",
+    "journal": "International Transactions in Operational Research",
+    "journal_impact_factor": 2.563,
+    "doi": "10.1111/itor.13099",
+    "abstract": "We propose a novel variant of the value-based additive data envelopment analysis model. It conducts a comprehensive robustness analysis of efficiency outcomes for all feasible input and output weights using mathematical programming and the Monte Carlo simulation. We also introduce the original procedures for selecting a common vector of weights and an approach for investigating the stability of results in a multiscenario setting. The presented framework is applied to evaluate the performance of emergency department physicians using data from the Children's Hospital of Eastern Ontario in Ottawa. Our focus is on the physicians' performance when dealing with groups of patients' complaints related to abdominal pain and constipation, fever, extremity injury, head injury, and laceration/puncture. The obtained results emphasize the strong dependence of the physicians' performances on the selected weight vectors. However, they prove helpful in pointing out overall good performers who can serve as universal benchmarks or niche performers being markedly better in providing care to a given complaint group. They also offer a basis for developing an improvement plan for the underperforming physicians, identifying the priorities for a practice-oriented model, and recognizing the most challenging patients' complaints. © 2021 The Authors. International Transactions in Operational Research © 2021 International Federation of Operational Research Societies."
+  },
+  {
+    "article_id": "AG_0007",
+    "title": "A Privacy-Preserving and Edge-Collaborating Architecture for Personalized Mobility",
+    "journal": "Journal of Advanced Transportation",
+    "journal_impact_factor": 1.627,
+    "doi": "10.1155/2023/8333560",
+    "abstract": "Driven by technologies and demands, the modern transportation system has developed from intelligent transportation systems (ITS) to autonomous transportation systems (ATS) to resolve intertwined demands and supplies with few human interventions. In ATS, personal mobility service (PMS) is the service that can sense real-time traffic conditions comprehensively, learn travelers' preferences accurately, recommend multimodal travel options appropriately, and provide service responses timely to elevate the level of personalization and intelligence in smart mobility services. Since current PMS widely employs centralized approaches (CPMS) to process massive sensitive data from individuals and support diverse edge devices, resulting in high pressure in privacy protection and performance balancing, this paper presents a federated PMS (FPMS) and its design architecture in logical and physical views by adopting federated learning to provide multimodal, dynamic, and personalized travel options with system-saving safety and efficiency guaranteed. Moreover, through an extensive evaluation, the performances of CPMS and FPMS are compared to reveal the merits of FPMS in reducing costs and latency. © 2023 Weitao Jian et al."
+  },
+  {
+    "article_id": "AG_0008",
+    "title": "A medical specialty outpatient clinics recommendation system based on text mining",
+    "journal": "International Journal of Grid and Utility Computing",
+    "journal_impact_factor": 0.642,
+    "doi": "10.1504/IJGUC.2021.119558",
+    "abstract": "Many prospective medical patients have difficulty determining which type of outpatient specialist to consult for their complaints, and their resulting inquiries impose an additional administration cost for hospitals. The symptoms data of outpatient treatment in different specialties are collected from various hospitals to establish a database fronted by a chatbot-based interface to develop a medical specialty outpatient clinic recommendation system. The proposed system integrates speech recognition, the Jieba word segmentation algorithm and the conditional random field algorithm to retrieve keywords during the dialogue process. The C4.5 decision tree model is used to provide clinical department referrals for the symptoms reported by patients. Through continuous revision, the system gradually reduces the error rate of outpatient recommendations, thus reducing patients' waiting times and the workload of frontline hospital staff. Eleven subjects were invited to use this system, and seven of them felt that this system could help them. © 2021 Inderscience Enterprises Ltd.. All rights reserved."
+  },
+  {
+    "article_id": "AG_0009",
+    "title": "System dynamics modeling of the effects of the decision to purchase industrial robots on a manufacturing organization",
+    "journal": "PICMET 2019 - Portland International Conference on Management of Engineering and Technology: Technology Management in the World of Intelligent Systems, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.23919/PICMET.2019.8893874",
+    "abstract": "Over time, all industries have adapted to the ever-increasing demand for higher product quality and throughput by embracing automation and industrial robots. The impact of the purchasing decision of automation equipment such as robots on an organization's profitability needs to be better understood, given the paucity of published empirical data on the topic. One alternative approach to deal with the scarcity of data is simulation, and among the available simulation methods for redressing this issue, System Dynamics (SD) has proved to be a reliable alternative. This work presents a SD-based simulation model for the purchasing decision of an industrial robot (purchasing option) within a manufacturing organization that is based on a previously established technological archetype. The intent of this study is to create a suitable simulation environment based on a combination of the two simulation models to study in greater detail the economic effects of purchasing industrial robots. © 2019 PICMET."
+  },
+  {
+    "article_id": "AG_0010",
+    "title": "Factors influencing adoption intention of ai powered chatbot for public transport services within a smart city",
+    "journal": "International Journal on Emerging Technologies",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Cities are growing in size in all parts of the world.This puts a burden on the public transport infrastructure and creates numerous issues such as overcrowding, delayed services, and commuter dissatisfaction. Government authorities in various countries including India are adopting smart city concepts to overcome these problems. Smart cities are characterized by their extensive use of emerging technologies for managing various citizen services. Accordingly, researchers of this paper studied the adoption intention of Artificial Intelligence (AI) powered Chabot by smart city citizens for delivering anytime, anywhere, and automated public transport information services. These services can include finding routes and schedules, buying tickets, registering complaints,or collecting feedback from commuters. The study employed an extended UTAUT model to measure the adoption intention. A primary survey is conducted using a structured questionnaire and the data is analyzed using the structural equation modeling technique.The findings from this study suggest that performance expectancy, effort expectancy, social influence, facilitating conditions, anthropomorphism, and trust directly affectthe adoption intention of the Chatbot. The proposed Chatbot solution in this study has social implications in terms of attracting more citizens to use public transport instead of their private vehicles thereby reducing congestion, travel delays, and climate pollution. The study also provides vital insights to public transport officials and policymakers while designing or upgrading public transport information systems in a developing country like India. This study makes a novel contribution to literature as it empirically validates the intention to use AI powered Chatbot for public transport in the context of a large developing country like India. © 2020, Research Trend. All rights reserved."
+  }
+]

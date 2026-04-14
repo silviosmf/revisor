@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_2301",
+    "title": "A new paradigm for brand touchpoints",
+    "journal": "Brand Touchpoints",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Technology has created an unprecedented level of transparency that is placing power back in the hands of consumers. Companies are required to act ethically and in an environmentally responsible manner. They are also finding that to be successful they need to offer more customised products and experiences. All of this has resulted in a new paradigm for brands and branding. Brands now need to be more Agile in order to compete in a dynamic environment, adaption and evolution is imperative to keep up with consumers' growing demands and an ever-changing marketplace. This change still needs to be rooted in strong strategy and defining principles however, and brands need to be clear on who they are and what they stand for in order to ensure as they adapt, they also stay true to what makes them unique and useful to their customers. This new agile way of thinking facilitates the need to create brand communities as we seek to create a dialogue with our end customers and co-create solutions that are highly tailored and relevant. Technology will continue to play an increasing role as we move from simple customisation to Artificial Intelligence and a higher degree of utility in what we provide consumers. Consumers will expect more and brands will need to evolve to survive. With the evolution of branding, naturally comes the evolution of brand touchpoints. Traditional brand touchpoints, whilst still in play, now encompass a myriad of new ways to engage with consumer. The customer journey is no longer linear, but an omni-channel experience made up of every interaction with your brand, from social media influencers to digital chatbots. Each of these touchpoints enhances the customer experience - driving engagement, equity and loyalty for your brand. Today's organisations are facing unprecedented levels of change and as such, need to follow a new playbook when considering how to activate their brand through every touch point and interaction with their consumers. © 2018 Nova Science Publishers, Inc."
+  },
+  {
+    "article_id": "CA_2302",
+    "title": "A recommender system based on group method of data handling Neural Network",
+    "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+    "journal_impact_factor": 0.096,
+    "doi": null,
+    "abstract": "Nowadays, the transition of the customers' desire to move forward from traditional to intelligent systems has caused rising trends of Ecommerce businesses. This can bring lots of opportunities and challenges for internet businesses to absorb the customer desire in a competitive manner. In this regard, recommender systems help users to find and select their desired items. These systems cannot recommend without having enough information about users and their desired items such as film, music, book. One of the main goals in these systems is to collect various information about user interest and available items of the system. Most of these systems operate based on collaborative filtering method in which similarity measures are used to select similar neighbors for a user and then the recommendation is offered based on the evaluation of their comments. In this paper, a recommender system using GMDH Neural Network algorithm is proposed to recommend films to users. The proposed model is based on exploring implicit trust from active users' rates. Implicit trust networks among users are used to reduce prediction error of the improved user-oriented collaborative filtering algorithm. GMDH Neural Network offers a high learning speed even when there are few numbers of training data due to using the evolutionary genetic algorithm for the optimal design of the network structure. The proposed model is implemented using GevoM on MovieLens datasets and the results are compared with other algorithms in terms of Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE). Results show that the proposed model outperforms other algorithms like MLP, Naïve Bayesian, J48, Bagging, SMO, RBF network, Logistic, and Random Forest with precision of 76% and absolute mean error of 0.273. © 2019, MIR Labs."
+  },
+  {
+    "article_id": "CA_2303",
+    "title": "A Taxonomy of User-centered Explainable AI Studies",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The progress in the research field of machine learning is fast-paced and it is most noticeable in terms of prediction performance. However, there seems to be a lack of understanding of the explanatory value for the actual user. As only a user-appropriate implementation realizes effective human-machine cooperation, this must be the goal for any intended intelligent system development. Accordingly, some studies have addressed the problem. However, their aims and methods vary, and a meta synthesis of the results is missing. To address these problems, we have developed a taxonomy of user-centered XAI studies. It allows both the conception and the classification of current user-centered XAI studies. Furthermore, through descriptive analytics and a cluster analysis, we identify patterns and archetypes to better conceptualize the field and support future research. © 2022, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2304",
+    "title": "A User-Based Study on the Acceptance of Artificial Intelligence-Based Decision-Support Systems",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The rapid adoption of artificial intelligence (AI) technologies is transforming enterprises and challenging established paradigms, reshaping the landscape of business operations, strategy, and employee engagement. This technology shift is not without its complexities. Human-centric barriers, such as black-box issues and technology-related anxiety, can impede AI acceptance, hindering long-term success and integration of AI-based systems in organizational settings. This study posits that embracing AI decision support systems presents unique challenges, which are critical factors in end-user acceptance. We analyzed the literature and identified such factors, and conducted a survey of 218 respondents in a low-stake scenario with a modified Unified Theory of Acceptance and Use of Technology model. Our findings suggest that human-centric barriers necessitate reevaluating and expanding existing acceptance models, as well as generating explanatory knowledge for a more comprehensive understanding of AI acceptance and adoption. © 2024, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2305",
+    "title": "Advances in natural language processing –a survey of current research trends, development tools and industry applications",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Natural Language Processing (NLP) is a subfield of Artificial Intelligence and getting lot of focus on research and development due to emergence of its applications. The research areas in focus are conversation systems, Language processing, Machine Translation, Deep learning. The researches in these areas lead to development of many tools to build industrial applications. Combining Deep Learning techniques with Natural Language Processing is finding lot of applications in domains such as Healthcare, Finance, Manufacturing, Education, Retail and customer service. This paper provides bird’s view of advancement in research, development and application areas of Natural Language Processing. This paper captures21research focus areas, 22 development tools and 6 domains where Natural Language Processing are making rapid advancements. © BEIESP."
+  },
+  {
+    "article_id": "CA_2306",
+    "title": "AI and Data Science in Business Services: Enhancing Efficiency and Driving Innovation",
+    "journal": "Advanced Digital Technologies in Financial and Business Management: Unleashing the Power of Artificial Intelligence, Machine Learning, Blockchain, and the Internet of Things",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The integration of Artificial Intelligence (AI) and Data Science into the business services sector is transforming the way companies operate and is driving efficiency and innovation. These technologies are providing businesses with new opportunities to automate repetitive tasks, improve decision-making processes, and gain valuable insights from large amounts of data. The integration of AI and Data Science is changing the business services industry by increasing productivity, streamlining processes, and improving customer engagement. This chapter provides a comprehensive overview of AI and Data Science in business services, examining the various applications of these technologies and their impact on the industry. We explore how AI is being used to automate tasks such as customer service inquiries and data entry, while data science is providing businesses with insights into customer behavior, market trends, and overall business performance. Predictive analytics, customer sentiment analysis, and advanced data visualization techniques are just a few of the ways that data science is enhancing the business services sector. Our novel contribution to this field of research is the emphasis on the importance of combining AI and Data Science to maximize their benefits. By using AI to automate tasks and data science to gain insights, businesses can improve their operations and gain a competitive edge. Additionally, we highlight the benefits of using AI and data science to better understand customers, leading to improved customer engagement and increased customer satisfaction. © 2025 Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_2307",
+    "title": "AI and the Vulnerable",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Firms increasingly deploy artificial intelligence (AI) based agents for service delivery. While extant research suggests that consumers are oftentimes reluctant to rely on AI agents and prefer human agents, this short paper suggests that for vulnerable consumers the opposite should be the case. The authors theorize that vulnerable consumers make inferences about whether an agent is likely to devalue them in the service interaction. As AI agents are attributed inferior mental abilities than human agents, vulnerable consumers should deem them less capable of social devaluation, resulting in favorable firm-related and consumer-related outcomes. However, if an AI agent is anthropomorphized, the preference for AI agents should diminish or even disappear fully. Therefore, in light of consumer vulnerability, the taken-for-granted assumption of \"the more human-like, the better\" may not hold. The authors present the conceptual framework, derive research propositions and discuss the planned empirical studies and contributions. © 2022, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2308",
+    "title": "AI-based Conversational Agents for Customer Service – A Study of Customer Service Representative’ Perceptions Using TAM 2",
+    "journal": "17th International Conference on Wirtschaftsinformatik, WI 2022",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "This study aimed to identify the various factors that may influence customer service representatives’ perceptions of artificial intelligence (AI)-based conversational agents (CAs) for customer service. By analyzing 180 publications, a conceptual research model is developed for identifying the factors that may influence customer service representatives’ perceptions of AI-based CAs for customer service. The underlying conceptual research model comprises ten factors. The study is grounded in the application of the Technology Acceptance Model 2 (TAM 2) approach. The research model is empirically evaluated with survey data from 128 participants. Our results show that the direct positive effect of subjective norm on customer service representatives’ perception of using AI-based CAs in customer service decreases with increasing experience. Moreover, our results reveal new insights regarding trust. The results of this study provide an overview of the predominant characteristics of the influencing factors of customer service representatives’ perceptions of AI-based CAs for customer service. © 2022 17th International Conference on Wirtschaftsinformatik, WI 2022. All rights reserved."
+  },
+  {
+    "article_id": "CA_2309",
+    "title": "Ai-Enabled Chatbot to Drive Marketing Automation for Financial Services",
+    "journal": "Journal of Management Information and Decision Sciences",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The purpose of this study was to determine how AI-enabled chat bots could stimulate marketing automation for financial services. Secondary data from the Consumer Financial Protection Bureau (CFPB) was utilized to identify the most frequent issues customers cited in accessing financial services, products, and information. This information was then contextualized with both the identified challenges from the literature as well as the innate benefits of chat bots. From this, it was identified that chat bots not only offers a potential to enhance sales and marketing operations by enhancing both customer understanding and personalization of customer service and service delivery, but it is also the future of service delivery. Specifically, the study identified that chat bots are instrumental in sales and marketing automation, promotion of self-service type of customer support, and ensuring digital financial inclusion and financial sustainability. Therefore, in line with the prevalent knowledge economy, which is characterized by problem solving and critical thinking, chat bots serve the need of not only addressing present-day customer centrism requirements, but also aligning the delivery of financial services, products, and information with emergent trends and pattern. They do so by ingraining proactivity in banking and other financial institutions’ operations, and strategic outlook as they relate to customer experience, and product innovation. © 2021. All Rights Reserved."
+  },
+  {
+    "article_id": "CA_2310",
+    "title": "AI-powered CRM in the post-COVID-19 pandemic",
+    "journal": "Customer Relationship Management: Methods, Opportunities and Challenges",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The post-COVID-19 pandemic period has significantly impacted the world economic sector. However, there is a bright spot behind this situation: technological developments give birth to new opportunities, especially online business. For example, online transactions increased by 26% in Indonesia. Not only that, daily transactions increased to 4.8 million, and the percentage of new consumers increased by 51%. Online business is growing due to changes in consumer behavior. The current era of customer service has changed into a customer experience that allows increased penetration of technological innovation, one of which is Artificial Intelligence (AI) technology. AI is the talk of every businessperson and has received enough attention to achieve CRM technology in the future. With AI, CRM systems can provide better service and build management to offer a good customer experience. By 2025, we predict that 25% of customer operations will use virtual assistants, and AI-enabled CRM systems will play a critical role. These systems can help companies track information about their customers and prospects, such as contact information, demographics, and buying habits. In addition, various features in this AI-powered CRM can automate the business that we develop, including increasing sales and revenue. © 2024 Nova Science Publishers, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CA_2311",
+    "title": "AI Products in E-Commerce and Commercial Bank",
+    "journal": "Advances in AI for Cloud, Edge, and Mobile Computing Applications",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "As more people enter the financial industry, commercial banks are adopting artificial intelligence more widely in finance. This study looked into how commercial banks were using AI applications to improve their financial processes. The investigation into artificial intelligence (AI) in online trading is also summarized in this paper, and this study stream may benefit from understanding how information systems function. AI, also known as intelligent machines on occasion, is a replication of human intelligence. Robots have an inbuilt form of cognition that is different from human comprehension. The primary subjects of this study include the potential utilization of AI in the financial sector, how technology has affected finance, how it has transformed human work, and so on. We are all aware that mistakes are made by people, but as the world changes and technologies follow suit, there aren’t enough highly trained professionals to oversee the automation. Considering the industry’s significant and quick evolution, the public’s opinion of banking in India is changing as a result of the present applications of AI in banking, which are highlighted by this research. Secondary data were used in the study on how AI is affecting commercial bank operations. According to study, AI is employed in the banking industry for a number of tasks, including Chatbot, risk evaluation, money laundering prevention, detection of fraud, and algorithms. The implementation of AI in banking is always changing, but three goals that have a consequence on daily operations are the focus of the bank’s overall AI application trend. The implications of artificial intelligence on banking operations, particularly those on client satisfaction, bank performance and costs, risk management, and compliance. © 2025 Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_2312",
+    "title": "Amalgamation of deep learning in healthcare systems",
+    "journal": "Deep Learning for Healthcare Decision Making",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Deep learning's massive powers are transforming healthcare. In recent years, AI and machine learning have grown in popularity and acceptability. The situation became much more convoluted when the COVID-19 outbreak broke out. During the crisis, we witnessed a rapid digital renovation and the adoption of disruptive technology across different industries. Healthcare was one of the potential sectors that gained many benefits from deploying disruptive technologies. Artificial intelligence, machine learning, and deep learning have all become the most vital mechanisms of the business. Deep learning had a significant influence in healthcare, allowing the industry to progress patient monitoring and diagnosis. Drug development, medical imaging and diagnostics, personalized treatments, and patient monitoring improved the health record management, health insurance, and fraud detection. These are some of the most ground-breaking solicitations of deep learning in healthcare. Deep learning and machine learning models can process and analyze various medical and healthcare data, both structured and unstructured. Document classification and maintaining up-to-date health records might become manually difficult. As a result, smart health records can be well-maintained using machine learning with its subsection deep learning. With the advent of telemedicine, wearable, and remote patient monitoring, there is now abundant real-time data on health and deep learning which help in perceptively monitoring the patients and predict risks. Deep learning can efficiently detect insurance frauds and predict future risks. Health insurance benefactors are also an advantage if they use deep learning because the models can predict future trends and behavior to recommend smart insurance policies to the clients. Natural language processing (NLP) forces deep learning algorithms for classification and identification. These two technologies can be used in recognizing and categorizing health data and can also be leveraged to develop chatbots and voice bots. In the current scenario of telehealth, chatbots play a crucial role. It makes the interface with patients. This chapter provides a detail summary about the role of artificial intelligence, machine learning, and deep learning in extemporizing the technological improvements in healthcare. It also gives a brief introduction about the various deep learning models, spots out some of the important radiological applications of deep learning algorithms, and finally explains the various applications of deep learning in healthcare. © 2022 River Publishers."
+  },
+  {
+    "article_id": "CA_2313",
+    "title": "An intelligent decision support system for SMED and its application in textile industry",
+    "journal": "Proceedings of the International Conference on Industrial Engineering and Operations Management",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The new trend is to avoid high-volume batch-and-queue manufacturing to produce small batches with short lead-time due to fluctuation in customer demands. However, producing more products at small batches results in more changeovers. Thus, a rapid changeover provides to be able to manufacture small quantities of the large diversity of customer demands. One of the most common method for changeover time reduction is Single Minute Exchange of Dies (SMED) which is a technique of Lean Manufacturing. The developed prototype intelligent SMED decision support methodology uses the expertise of different experts, professionals and scientific papers. Intelligent system approach for SMED has two main functions. First one is gathering data that the system asks some questions to the user to obtain the facts of the company and the second one is intelligent recommendations. According to \"the facts\" and \"inference engine\", the system manages the SMED application and can give some suggestions. The methodology has forward chaining mechanism and 90 rules. One of the original aspects of the system is starting the methodology with the vision of the firm and strategy. If the strategy is proper for the firm, the system may continue, if not, suggest another strategy such as outsourcing or investment in production technology. © IEOM Society International."
+  },
+  {
+    "article_id": "CA_2314",
+    "title": "An intelligent system for early assessment and classification of brain tumor in mri images using pnn",
+    "journal": "International Journal of Scientific and Technology Research",
+    "journal_impact_factor": 0.0,
+    "doi": null,
+    "abstract": "Cerebrum tumor is the strange development of mind cell and it is one of the unsafe reasons for death among individuals. Beginning period tumor analysis is conceivable by a mind tumor identification framework. This paper proposes a shrewd framework for the finding and grouping of mind tumor illness that a client is experiencing alongside malady depiction and sound exhortation. The framework deals with a restorative picture utilizing neural system technique. The proposed framework contains four stages like pre-preparing, division, include extraction and order. Highlight extraction by utilizing the Gray Level Co-Occurrence Matrix (GLCM). Programmed mind tumor organize arrangement is finished by utilizing probabilistic neural system (PNN). Division process is finished by utilizing K-implies bunching calculation and furthermore identifies the mind tumor locale. Quantities of deformity cells are finding in the spreader locale. PNN is quickest method and furthermore give the great grouping exactness. © IJSTR 2020."
+  },
+  {
+    "article_id": "CA_2315",
+    "title": "An intelligent system for fraud detection in coin futures market's transactions of Iran mercantile exchange based on Bayesian network",
+    "journal": "Journal of Information Technology Management",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "In order to gain more illicit profit, some traders in the stock market try to make a targeted impact on prices by placing fake orders and false advertising. Due to the high customer population, it is not possible to discover these frauds using traditional methods. The present study seeks to provide a system for preventing the frauds in future market-trading coins based on Bayesian classifier model for Iran Mercantile Exchange. The proposed model has polynomial time complexity and high accuracy because of considering important dependencies among different features of data. The primary labeling of data has been done by Kmeans clustering. The test of model shows 94.55 percent similarity between model's output and labeled data. Using this system can helps to identify the fraudulent from nonfraudulent traders."
+  },
+  {
+    "article_id": "CA_2316",
+    "title": "An intelligent system to business and enterprise management - IDEA",
+    "journal": "2008 IEEE International Technology Management Conference, ICE 2008",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "IDEA system assists all the specific processes of an enterprise from the meat processing industry to support decision makers to manage performances by implementing the concepts Business Performance Management (BPM) and Business Intelligence (BI). IDEA system transforms data into information and then into knowledge being focused on business, technological and economical aspects specific to the meat processing enterprises helping them to realise an efficient use of their business policies, financial, human and material resources. IDEA system integrates solutions implemented in the software components to decision processes management, customer relation management and enterprise resources planning components. IDEA integrates the BPM organisation's processes with its CRM components and ERP components. IDEA system offers support for an intelligent management to business processes, manufacture flows and the enterprise resources. The tools considered in the development of IDEA system are oriented on business management, business workflow analysis, business performance management, OLAP (Online Analytical Processing), data modelling, data visualisation, report servers, AJAX (Asynchronous JavaScript and XML) technology. © 2008 Nottingham University."
+  },
+  {
+    "article_id": "CA_2317",
+    "title": "Application and Sustainability of AI and Machine Learning in the Various Stages of the Value Chain in Online Fashion Retail: A Conceptual Review",
+    "journal": "Sustainability in Marketing Practice: Strategies for Industry 4.0",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Technology enablers, particularly AI-based tools and processes, have taken the online retail industry by storm. This conceptual chapter outlines the different areas in which machine learning (ML) and deep learning algorithms contribute to enhancing the value chain of online fashion retail processes in such a way that it provides a competitive advantage and increased return on investment. Starting from the product design phase, catalog creation with visual images, manufacturing or retailing, through to customer service with chatbots, and finally the last mile of logistics and delivery of the products, technology empowered by AI is improving the value chain. The contribution of AI techniques such as supervised machine learning, collaborative filtering, k-means clustering, GAN (generative adversarial network), DNNs (deep neural networks), regression models, computer vision (CV) can be directly correlated to increased personalization for customers in giving them products they desire. This directly translates to increased customer satisfaction and loyalty. The chapter brings out the marketing and managerial implications of the use of these intelligent technologies and their sustainability. Increasingly, most retailers, both big and small, are taking advantage of AI-based technologies to improve service satisfaction, sales, and reduce product returns. © 2025 by Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_2318",
+    "title": "Application of Data Science and Artificial Intelligence in Retail Sector",
+    "journal": "Advanced Digital Technologies in Financial and Business Management: Unleashing the Power of Artificial Intelligence, Machine Learning, Blockchain, and the Internet of Things",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Data science applications in the retail sector have increased as a result of the advantages being fully utilized by internet behemoths like Netflix and Amazon. Deep analytics are used by these companies, and their supply chains are improved. Marketing strategies are also tailored. Customers enjoy their experiences more as a result, and businesses profit more. Behavioral analytics and consumer intelligence are also used by AI in retail to enhance a number of customer service touchpoints and gain insightful knowledge about various market demographics. The chapter is based on the configuration of data science applications and implications of AI on the retail sector. In this chapter, the proposed method is based on empirical data drawn from various research papers and journals, as well as domain sites and online shopping apps of retail giants running business online, brick and mortar, or even omnichannel way. It presents the importance of Data science and AI technology used in the retail sector with complete technology solutions given and illustrations attached herewith. The secondary data is collected keeping in view the technology introduced and on cards in relation to AI and data science application in the retail sector post year 2020. Results and findings in this chapter show that data science applications in the retail industry like CRM, behavior analytics, Fraud detection, merchandise management, etc., are being explained. AI applications like AI-based self-checkout technology, Chatbots, point of sale automation, AR, computer vision, etc., are elucidated in the chapter. New technologies are being adopted by retailers. Consumer behavior, society, and retail are all constantly evolving. The retail industry has done a good job of adapting to the times. Retailers are making changes to their business plans, store designs, methods of interacting with customers, and operational procedures. For marketing, retail operations, and commercial transactions, modern merchants use new technologies. Social networking is a tool that modern businesses utilize to connect with their customers. Artificial intelligence (AI) is transforming the retail sector. Retailers can utilize artificial intelligence (AI) to interact with customers and operate more efficiently. Techniques include using computer vision to tailor promotions in real time and machine learning for inventory management. Digital transformation in retail is made feasible by data science. It entails transforming data into insights that inform choices and boost corporate performance. AI in retail, more specifically machine learning and deep learning, is responsible for a major portion of these discoveries. Amazing customer experiences, opportunities to enhance revenue, rapid innovation, and savvy operations are the results for retailers, all of which aid them in achieving operational and financial efficiency. High consumer expectations and a new covenant of data-driven retail experiences define the current retail sector. To develop a meaningful and relevant personalized shopping experience at scale, however, is not an easy task for retailers. When digital and physical purchase channels mix, the retailers who can grow their retail channels will stand out as the market leaders. © 2025 Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_2319",
+    "title": "Applying Affordance Actualization Theory to Explore Chatbot Service Continuan Intention",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "AI-based technologies act as a recommendation agent to provide suggestions for customers to assist with their product seeking or product choices. However, AI application in marketing literature is relatively scarce. Not much attention is paid on how AI-based technologies impact interfaces at the point of contact between service provider and the customers. Therefore, this study attempts to investigates how chatbot affordances influence continuance intention (affordance effects) through affordance actualization (value in use) from the perspective of affordance actualization theory. © 2022, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2320",
+    "title": "Artificial Intelligence (AI) Deployment and the Performance Implications of Banks in Ghana",
+    "journal": "Emerging Digitalization Trends in Business and Management: a Roadmap to Industry 5.0",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The influence of artificial intelligence (AI) extensively covers many sectors such as manufacturing, finance, retail, healthcare, supply chain, and logistics. Chatbots are used on social media to offer a new opportunity to provide customized attention to users. Chatbots serve the purpose of enhancing communications between users/customers and brands. This innovative impact of AI has attracted significant academic attention, with current studies exploring the effects and importance of the technology beyond the performance implications of AI and the evaluation of chatbots. Scholars argue that the metrics that should be used to evaluate the success of a chatbot are not well-structured or integrated. Due to the aforementioned gap in literature and research recommendations, this chapter aims to compare the performance implications of chatbots (an AI tool) in the Ghanaian banking industry. A total of 237 respondents, comprising 227 customers and 10 bank employees, were included in the study. Data were organized and processed using IBM Statistical Package for Social Sciences (SPSS) version 22. The research employed narrative and thematic data analysis techniques to analyze interviewee responses. The study revealed that banks’ chatbots are customized to perform various roles as determined by the banks. Selected banks were found to have incorporated their chatbots into their social media channels, especially on WhatsApp. From the perspective of customers, there are no easy means or difficulties associated with chatbot usage. Selected banks were indifferent about all evaluation metrics of the chatbot they use. The study recommends that managers or agents in charge of their banks’ chatbots should use chatbots in experience delivery and as a repository of data in revising their customer personas and journey maps. Future studies can incorporate the Unified Theory of Acceptance and Use of Technology (UTAUT) theory to discover the predictors that influence banks to adopt chatbots. Studies can be conducted to evaluate chatbots based on different evaluation metrics such as linguistic perspective, business perspective, and technology perspective. © 2025 by Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_2321",
+    "title": "Artificial intelligence (AI) in electrical vehicles",
+    "journal": "Recent Advances in Energy Harvesting Technologies",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "For decades, the whole world's energy production has been based mostly on unsustainable fossil fuels such as coal, oil and gas, resulting in serious issues such as climate change, heightened global tensions, resource depletion, and negative health consequences. As a result, prominent environmental organisations and governments have risen to the challenge, adopting programmes such as the Paris Agreement to implement action plans to lower carbon emissions and battle climate change. Despite the various environmental and performance benefits of currently available commercial electric vehicles, electric vehicles only account for a small portion of the automobile market. Consumer interest in electric vehicles (EVs) is waning due to greater pricing, a restricted driving range, and a lack of supporting infrastructure when compared to conventional internal combustion vehicles. In order to reduce the cost of the EV's battery pack, the greater cost is a vital issue to consider. Machine learning is a low-cost, time-saving way of identifying low-cost, high-performance battery materials and enhancing battery manufacturing efficiency. Artificial intelligence (AI) algorithms and controls can estimate actual driving ranges and optimise energy conservation, allowing for more driving range and lowering customer range anxiety. However, a number of obstacles must be overcome before such benefits can be realised. Because of the limited range and costs associated with charging EV batteries, it is critical to design algorithms that reduce costs while also preventing users from becoming stranded. In today's world, AI algorithms provide simpler and more comfortable solutions. We end our study by outlining our expectations for the discipline in the future, and the research opportunities that remain open to both the corporate and academic sectors. © 2023 River Publishers."
+  },
+  {
+    "article_id": "CA_2322",
+    "title": "Artificial intelligence and e-business",
+    "journal": "The Future of E-Commerce",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The world is now shifting to electronic side of things with augmentation through Artificial intelligence. There is a tremendous growth of ebusiness and technology has played a vital role in this upliftment. Use of Artificial Intelligence and E-Business has many advantages like tracking the marketing efforts with precise accuracy using sophisticated tools like 'Google Analytics.' This chapter highlights the importance of AI for the e-business and the significant role which AI plays in the whole customer life cycle with customer acquisition, enhancement and retention. For customer acquisition there are AI based applications like Google Analytics which offer search through natural languages ad advertisements for relevant material. They are also used to show offer of various products on Amazon and Flipcart. AI applications are also used for enhancing the experience of the customer through chatbots which are offering online 24 x 7 supports. There are particular applications like OnChat from HDFC bank which suggests sale through automatic cashback on cards, automatic integration of the coupons and discount vouchers. Also, AI is running the customer loyalty and retention programmes. The chapter also defines various opportunities and challenges for AI in e-Business. © 2022 Nova Science Publishers, Inc."
+  },
+  {
+    "article_id": "CA_2323",
+    "title": "ARTIFICIAL INTELLIGENCE CHATBOTS FOR LIBRARY REFERENCE SERVICES",
+    "journal": "Journal of Management Information and Decision Sciences",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The digital based world is very competent in the use of cutting edge, innovative technologies in various fields. It covers every area, from higher education to information resources. The aim of this study is to identify the potential of applying artificial intelligence chatbot applications to library reference services. This paper systematically reviews and explores the integrated applications of artificial intelligence chatbots into academic library reference services in order to cater to the demands of millennial users. The researchers discuss the benefits and the potential impact of artificial intelligence chatbots on the reference services of academic libraries. The artificial intelligence chatbot features in the reference services to enhance the library commitment of the millennial users with library services. This study discussed the benefits of artificial intelligence chatbots in reference services of academic libraries in general and especially in Bahrain. © 2020, Library Philosophy and Practice. All rights reserved."
+  },
+  {
+    "article_id": "CA_2324",
+    "title": "Artificial intelligence in tourism software solutions: Opportunities and challenges until 2024",
+    "journal": "Managing Technology for Inclusive and Sustainable Growth - 28th International Conference for the International Association of Management of Technology, IAMOT 2019",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Artificial Intelligence (AI) used in the software industry has experienced great success during the last years. Especially emerging and technology affine markets in Asia and Latin America offer great opportunities for new AI solutions that support the customer. Additionally, to the technological development, there is also a growing demand in the tourism and hospitality industry. As a result, software companies specialized in the tourism and hospitality industry have started to adopt artificial intelligence in many different forms in their products. Especially in the tourism industry, customers require personalized service and are also highly emotional. As a consequence, the industry lives or dies on excellent service. Furthermore, there is a high pressure on prices, AI and automatization can help to offer tourism products and services for reasonable costs. However, AI software systems have become more and more complicated and society’s expectations regarding the capabilities and intelligence of such systems are also growing. That results in higher costs, higher difficulty levels and higher computational requirements tourism software companies have to cope with. For these reasons, the main goal of this research is to find sectors within the tourism industry in which AI software solutions are helpful for the travelers’ experience and also reasonable in efforts and costs for tourism software technology providers within a defined time horizon of 5 years. To get an impression of future developments, various foresight methods such as the Delphi method and a structural analysis were used. This paper elaborates on the practical opportunities and challenges to be faced by tourism software companies when developing AI software solutions and provides recommendations on how to deal with these challenges. The analysis shows that major improvements because of AI can be implemented in online travel agencies (OTAs) which are considered as the most important field for application of AI technology. Within this sector, chatbots, individual offers, mobile apps and social networks as a data source will improve travelers experience which leads consequently to an increase in revenues. © IAMOT 2019."
+  },
+  {
+    "article_id": "CA_2325",
+    "title": "Beyond boundaries: Multichannel strategies in customer relationship management",
+    "journal": "Customer Relationship Management: Methods, Opportunities and Challenges",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "This chapter delves into the evolving dynamics of modern customer relationship management (CRM) as it adapts to an increasingly interconnected digital ecosystem. Recognizing the pivotal role of multichannel communication, the chapter underscores the necessity of delivering unified and consistent customer experiences across various touchpoints. From the ubiquitous presence of social media to the personalization offered by mobile apps, businesses are leveraging multiple channels to optimize their CRM strategies. Another transformational shift highlighted is the integration of AI-powered tools like chatbots and virtual assistants, which promise 24/7 customer support while ensuring efficiency and consistency. Furthermore, the chapter emphasizes the importance of self-service portals and knowledge bases, addressing the contemporary customer's desire for immediacy and autonomy in resolving queries. As businesses navigate the confluence of traditional and digital channels, central to their CRM success will be a balance of innovative technology and the indispensable human touch. This chapter serves as a comprehensive guide for businesses to effectively navigate the multichannel communication landscape, ultimately fostering deeper, more fruitful customer relationships. © 2024 Nova Science Publishers, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CA_2326",
+    "title": "Big data analytics and intelligent systems for cyber threat intelligence",
+    "journal": "Big Data Analytics and Intelligent Systems for Cyber Threat Intelligence",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "In recent years, a considerable amount of effort has been devoted to cyber-threat protection of computer systems which is one of the most critical cybersecurity tasks for single users and businesses since even a single attack can result in compromised data and sufficient losses. Massive losses and frequent attacks dictate the need for accurate and timely detection methods. Current static and dynamic methods do not provide efficient detection, especially when dealing with zero-day attacks. For this reason, big data analytics and machine intelligence-based techniques can be used. This book brings together researchers in the field of big data analytics and intelligent systems for cyber threat intelligence CTI and key data to advance the mission of anticipating, prohibiting, preventing, preparing, and responding to internal security. The wide variety of topics it presents offers readers multiple perspectives on various disciplines related to big data analytics and intelligent systems for cyber threat intelligence applications. Technical topics discussed in the book include: Big data analytics for cyber threat intelligence and detection Artificial intelligence analytics techniques Real-time situational awareness Machine learning techniques for CTI Deep learning techniques for CTI Malware detection and prevention techniques Intrusion and cybersecurity threat detection and analysis Blockchain and machine learning techniques for CTI. © 2022 River Publishers. All rights reserved."
+  },
+  {
+    "article_id": "CA_2327",
+    "title": "Blood In Need: An Application for Blood Management",
+    "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+    "journal_impact_factor": 0.096,
+    "doi": null,
+    "abstract": "The most important substance in a human body is blood. Blood is required for treatment of accidental injuries, burns, diseases like Haemorrhagic, Anaemia, Leukaemia’s, Thalassemia’s and Haemolytic ailments. In most of the cases, the loss of life might occur due to absence of this element. One blood donation can save up to three lives, according to DeSimone. Hence, voluntary donation is the only way of accumulating blood at safe storage to meet emergency requirements for saving lives. According to a report, in every 2 seconds someone in the U.S. needs blood or platelets. Blood transfusion is used to address this condition, and in order to do so, it is critical that the receiver and the suitable blood donor are in close proximity. Therefore, it is very essential to develop an interface which meets both the interests. The key purpose of the proposed work is to create an application which very easily connects a blood seeker to a blood donor. The fundamental goal of this application is ‘Life Sharing’, a significant technology advancement in the medical industry, in order to conduct a location-based search for blood donors in times of need and so save time and ‘Life’. In situations of emergencies, the application truly serves as a life saver. Also, providing chatbot support on social media so that consumers can receive an immediate response and aid with subsequent inquiries. The app is built with Firebase, a cloud-based platform that includes a real-time database, authentication, and storage. Donors can use the Blood Donation Application to register, update their information, and check the availability of blood in their area. Blood seekers can request blood based on the type of blood needed and the location, and donors are notified of the hospital's need and location. The Blood Donation Application will be able to manage serverless computing with Firebase Cloud Functions, allowing for quick and cost-effective processing of donor and seeker requests. With the help of users’ survey, authors have evaluated the application and discovered that users have found it simpler, more efficient and effective to use in facilitating blood donations. According to our findings, the Blood Donation Application can be a useful tool for improving the coordination and supply of blood donations, thus saving more lives. © MIR Labs, www.mirlabs.net/ijcisim/index.html"
+  },
+  {
+    "article_id": "CA_2328",
+    "title": "BOT-O-PEDIA - Learning simplified",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "A standalone teacher Bot that can be interacted through the user’s voice. The Bot works as a teaching assistant which has the ability to respond for the voice input. The Bot has features like recognizing the voice, reading the text and searching in Wikipedia. The 21st-century people are in the era of intelligence and the communication between humans and Bot goes to the next level through intelligent technologies. The foundation of human-computer interaction is robot teaching. It can help the user in doing tasks like querying database, searching Wikipedia etc.. A customized teaching assistant is not implemented so far for primary kids and visually challenged people. Any visually challenged or a primary school kid can interact with the Bot The bot has the ability to understand the Human language and it is coded with Language Processing. The traditional teaching methods for physically challenged people can be made much more effective through Bot teaching methods. Bots have the ability to remember, to learn and to perceive which helps the intelligent system in teaching [8]. There are three main directions; teaching based on recognizing the speech, searching for the content from the local database as well as in Wikipedia, converting text into a voice output. The user interacts with the system through voice command, the system in-turn returns the output through the speakers attached to the system. The core concepts used in the project are speech-to-text conversion (for understanding user input) and text-to-speech conversion (for giving output to the user), reading the document in the local database, connecting with Wikipedia. The system can search Wikipedia and give the results through voice. It can help the visually challenged to connect with the world by giving them access to Wikipedia through their voice. A raspberry pi module is chipped with android things operating system and is also connected with a mic and a speaker for output. The raspberry pi is paired with the mobile application of android things and the module is modified in such a way that it continuously waits for the user’s voice input to respond accordingly[6]. The voice-controlled Bot can be used for visually challenged students in primary school. © BEIESP."
+  },
+  {
+    "article_id": "CA_2329",
+    "title": "Boundary Conditions for the Impact of Humanized Chatbots on Service Outcomes: Evidence from Two Experimental Studies",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Humanized chatbots are widely used by online platforms to deliver cost-effective customer service. While prior research suggests that chatbot humanization often positively impacts user experience, these effects are often context-dependent. This study investigates the boundary conditions under which humanized chatbot designs can effectively improve customer service outcomes, with a focus on the contingent roles of service personalization and the nature of the service context (embarrassing vs. non- embarrassing). Two experimental studies were conducted using online tourism platforms as the empirical context. The results reveal that humanized chatbot design boosts consumer satisfaction and recommendation adoption when paired with high personalization. However, in less personalized or highly embarrassing contexts, the effects are weaker or even negative. These findings highlight that the success of humanized chatbot designs depends on contextual factors, underscoring the importance of selective implementation in customer service design. © 2025, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2330",
+    "title": "Capacity credit assessment on renewable distributed generation considering the package and paper industry user behavior",
+    "journal": "Paper Asia",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "This paper aims to assess the capacity credit (CC) and mechanical efficiency of renewable distributed generation (RDG) in the distributed generation (DG) system framework in consideration of user behavior impact. A hybrid possibilistic-probabilistic model was developed for DR characterization. The model decomposes DR resource characteristics into the instant response and inter-temporal effect, and considers the package and paper industry user behavior in the two aspects. Then, the CC was calculated by sequential Monte Carlo simulation (MCS), and a case study was performed on a 20kV distribution network in China. © 2018, SHPMedia Sdn Bhd. All rights reserved."
+  },
+  {
+    "article_id": "CA_2331",
+    "title": "Chatbot based on LLMs for Support and Development Teams",
+    "journal": "Atas da Conferencia da Associacao Portuguesa de Sistemas de Informacao",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "This work explores the integration of large language models (LLMs) with Retrieval Augmented Generation (RAG) to enhance internal support systems. Focusing on closed-domain knowledge bases, the study develops a chatbot deployed within a team communication platform to improve accessibility and efficiency. Through a modular framework, various vector storage, document structure and retrieval methods were evaluated, alongside multiple LLM architectures, balancing performance and resource constraints. Initial experiments highlight challenges such as handling multi-question inputs, user language variability, and context-aware response generation. A manual evaluation process helped refine system configurations, with plans for comprehensive user testing in collaboration with the technical team. This project demonstrates the practical potential of LLMs with RAG for scalable, context-aware internal support systems. © 2025 Associacao Portuguesa de Sistemas de Informacao. All rights reserved."
+  },
+  {
+    "article_id": "CA_2332",
+    "title": "Chatbot Integration on a Knowledge Sharing Platform: A Competitive Analysis",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "This study examines the strategic challenges facing knowledge sharing platforms competing with general Large Language Models (LLMs) service providers. We investigate how platforms can leverage their user-generated content (UGC) while balancing traditional content against AI chatbots. Using a game-theoretic model based on a spoke network structure, we reveal that knowledge sharing platforms should balance direct competition effects between UGC and chatbots against indirect effects where UGC enhances chatbot quality. We find that a platform's optimal chatbot quality investment strategy depends critically on its UGC integration capability. With low integration capability, the knowledge sharing platform increases chatbot quality as UGC sensitivity increases to compensate for competition effects. Market value significantly affects outcomes—increasing UGC sensitivity strengthens platforms in low-value markets but creates vulnerabilities in high-value markets where LLM providers gain advantage through aggressive quality investments. These findings provide strategic guidance for platforms navigating the AI transition while highlighting market concentration concerns. © 2025, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2333",
+    "title": "Chatbots en redes sociales para el apoyo oportuno de estudiantes universitarios con síntomas de trastorno por déficit de la atención con hiperactividad",
+    "journal": "Revista Iberoamericana de Tecnología en Educación y Educación en Tecnología",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "It is estimated that the prevalence of Attention Deficit Hyperactivity Disorder (ADHD) in university students is from 2 to 4.53% but varies from one university to another. However, many students avoid therapies due to grief, nervousness, fear, or because they feel that the problems of others are greater than their own or they are unaware of the symptoms of ADHD. This contribution presents the design and implementation of a chatbot for the application of the Adult Self Report Scale-Version 1.1 (ASRS v1.1) questionnaire as well as the results of its application and the opinion of users regarding its usefulness and user experience"
+  },
+  {
+    "article_id": "CA_2334",
+    "title": "Chatbots Versus Customer Service Agents: A Comparative Evaluation of Shopee Virtual Assistant’s Dimensions and Satisfaction as Perceived by Users",
+    "journal": "Review of Integrative Business and Economics Research",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The continuous progress of the economy has propelled the evolution of business transactions, through the emergence and growth of Shopee as an e-commerce platform. Chatbots offer 24/7 availability, allowing customers to access assistance at any time without being restricted by working hours. On the other hand, customer service agents play a crucial role in delivering exceptional customer experiences. In light of this issue, the encompassing factors of service quality (SERVQUAL) model were used as independent variables. These dimensions influence customer satisfaction — a dependent variable. Using a quantitative approach and a descriptive-comparative research design, the study incorporates a sample of 385 respondents who are all users of the e-commerce platform. This highlights the results of higher user ratings for the reliability of Customer Service Agents. In contrast, chatbot interactions received lower ratings for assurance, and showed significant disparities in tangibility. Substantial differences in user satisfaction were observed in terms of empathy, while responsiveness between the Shopee chatbot and Customer Service Agents was generally comparable. With overall user satisfaction, the Shopee chatbot performed significantly lower than interactions with Customer Service Agents. The research also unveils four key challenges in such, encompassing chatbot limitations, response times, problem resolution, and the levels of empathy exhibited by customer service agents which are faced by users when utilizing the Shopee virtual assistant. This study contributes valuable insights to the existing literature on E-Commerce customer support, offering implications for optimizing virtual assistants and enhancing user experiences on the Shopee platform. © 2025 GMP Press and Printing."
+  },
+  {
+    "article_id": "CA_2335",
+    "title": "Chatting with AI: Investigating Snapchat Users' Engagement with Bots and Its Privacy Implications",
+    "journal": "1st Saudi Conference on Information Systems, SaudiCIS 2024",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "This study investigates the interactions between Snapchat users and the newly introduced feature - automated bots, focusing on the topics discussed and the underlying motivations, within the framework of the Technology Acceptance Model (TAM). As Snapchat continues to integrate artificial intelligence into its platform, understanding user behavior and preferences becomes crucial. TAM, which posits that perceived usefulness and ease of use significantly influence technology acceptance, provides a lens to explore these dynamics. To achieve this, we intend to conduct qualitative interviews with a diverse group of Snapchat users. These interviews will delve into the specific topics users engage with bots, uncovering patterns and trends in these interactions. Additionally, we aim to understand the primary motivations driving users to interact with bots, assessing how perceived usefulness and ease of use influence their engagement. Moreover, this study will address the critical issue of privacy. As bots collect and utilize user data, there are inherent privacy concerns that could impact user trust and behavior. By exploring these concerns through the qualitative data, we aim to provide a comprehensive understanding of how privacy issues intersect with user acceptance of Snapchat bots. The findings from this research will contribute to the broader academic discourse on technology acceptance, particularly in the context of social media and artificial intelligence. Additionally, the insights gained will offer practical implications for developers and designers, guiding the design of user-friendly and privacy-conscious bot interactions on Snapchat. Through this investigation, we hope to shed light on the complex interplay between user behavior, technology acceptance, and privacy in the digital age\". © 2024 1st Saudi Conference on Information Systems, SaudiCIS 2024. All rights reserved."
+  },
+  {
+    "article_id": "CA_2336",
+    "title": "Classifying and Measuring Affordances of Mental Health Chatbots (MHCAs)",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Amid rapid advancements in artificial intelligence (AI) technologies, mental health chatbots (MHCs) have emerged as innovative solutions in healthcare. Yet, our understanding of how users perceive the diverse possibilities enabled by MHCs—termed mental health chatbot affordances (MHCAs)—remains limited. To deepen insights into human-chatbot interaction in this context, we developed the MHCAs scale using a mixed-methods approach that integrates qualitative and quantitative techniques. In the qualitative phase, we conducted a literature review on affordances, and performed grounded theory-based interviews with 8 users and 4 developers/designers. A third- order construct of MHCAs was conceptualized, comprising 4 dimensions and 13 first- order constructs. In the quantitative phase, we conducted two surveys for scale development to generate reliable measurements. Subsequently, drawing on affordance theory and conservation of resources theory, a nomological survey was performed to examine how MHCAs enhance psychological resilience. Theoretical and practical implications are discussed. © 2025, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2337",
+    "title": "Confronting AI-Induced Power Disparity and Emotional Disruption: Expansive Duties of Broker-Dealers and Investment Advisers",
+    "journal": "Northwestern Journal of International Law and Business",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The increasing use of AI models in investment services has raised concerns about ineffective responses, power disparity, and investor harm caused by emotional disruption. Generative AI-driven investment service providers often fail to address consumer issues quickly, guiding customers through superfluous and meaningless verbiage or professional terminology in infinite loops without providing an option to talk with a human customer service staff. Customers who are “stuck” in ineffective or inaccurate responses from AI agents may waste time for investors, make poor investment or trading decisions, and the platform may profit from investor rational decision-making owing to investors’ emotional disruption. This article examines these concerns through the lens of broker-dealers and investment advisers regulation in the United States. While the Investment Advisers Act, Securities Exchange Act, and Regulation Best Interest set fiduciary duty and duty to work for the best interest of investors, these rules are designed on the assumption of human service providers who can feel the emotional pressure from investors and have physical and mental limits. These rules fail to address the fundamental power disparity between investors and the platform, as well as the harm and new forms of conflicts of interest caused by AI-powered investment service providers. To address these problems, this article argues for expansive duties of brokers and investment advisers to guarantee that AI models provide objective and effective recommendations free of biases and conflicts of interest. Customers should be able to get timely human service with a one-click simple operation during regulatory business hours. Investment service providers should establish algorithmic evaluation programs to prevent fraudulent activities and conflicts of interest. These programs should include personnel, policies, standards, and procedures for evaluating and adjusting models. Human specialists with expertise in programming and compliance are needed to analyze source code, examine documentation, and assess training data and model design. When there are no conflicts of interest between the investment service providers and the investor, or when investors are willing to accept the risks and conflicts associated with certain investment suggestions, comprehensive and accurate disclosure is essential for monitoring and regulation. This involves revealing not only any conflicts of interest, but also the decision-making process, data, and algorithm utilized to make important investment recommendations. © 2024, Northwestern University School of Law. All rights reserved."
+  },
+  {
+    "article_id": "CA_2338",
+    "title": "Considerations on Novel Network Edge Physical Node Architectures: Leveraging Unprecedented (Bottom-up) Technology-centric Approaches Empowered by Micro/Nanotechnologies (MEMS/NEMS) and Federated Learning, with an Outlook on AI/5G-empowered Applications",
+    "journal": "Considerations on Novel Network Edge Physical Node Architectures: Leveraging Unprecedented (Bottom-up) Technology-centric Approaches Empowered by Micro/Nanotechnologies (MEMS/NEMS) and Federated Learning, with an Outlook on AI/5G-empowered Applications",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The relentless pace of technological advancement, particularly in telecommunications, is reshaping how we connect and communicate. What once took a decade to standardize now evolves in just a few years, blurring generational divides and delivering seamless transitions to users. Against this backdrop, Considerations on Novel Network Edge Physical Node Architectures explores the complex paradigm of 6G mobile communications—anticipated to emerge around 2030—and casts a longer-term vision toward future networks (FNs). The scientific community has been engaged in 6G research since 2017–2018, defining use cases, key enabling technologies (KETs), and performance indicators (KPIs). Ambitious targets include peak data rates of 1 Tbps, average user rates of 10–100 Gbps, sub-0.1 ms latency, and reliability greater than 10⁻⁸. Application domains span holographic communications, digital twins, multi-sensory extended reality (XR), tactile and haptic interactions, and integrated space–terrestrial networks. While these expectations hold the promise of a more interconnected world, realizing them demands a fundamental shift in approach. The projected density of 10–100 million smart devices per square kilometer in 6G networks cannot be addressed through conventional hardware–software co-design alone. This book proposes new ways of conceiving the physical building blocks of edge intelligence (EI), where intelligence is embedded at the network’s edge. Central to this vision is the use of micro- and nanotechnologies (MEMS/NEMS) to create miniaturized sensors, actuators, and transducers (SATs) that serve as distributed intelligence units. These physical innovations are examined alongside non-physical enablers such as artificial intelligence (AI) and federated learning (FL), illustrating how a holistic integration of technologies can enable practical, scalable applications. By bridging physical and digital innovations, Considerations on Novel Network Edge Physical Node Architectures aims to inject fresh ideas into scientific discourse and provide a foundation for turning the ambitious visions of 6G and future networks into reality. It is an essential resource for researchers, engineers, and industry professionals seeking to shape the next generation of telecommunications infrastructure. ©2026 River Publishers."
+  },
+  {
+    "article_id": "CA_2339",
+    "title": "Consumption Values, Attitudes and Continuance Intention to Adopt ChatGPT-driven E-Commerce AI Chatbot (LazzieChat)",
+    "journal": "Pakistan Journal of Commerce and Social Sciences",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The rapid rise of chat generative pre-trained transformer (Chat GPT) has brought huge opportunities for e-commerce platforms to use it for consumer communication and service. This paper proposes a research framework to expand the value-attitude-behavior model by integrating the theory of consumption values. The purpose is to explore key consumption values that affect consumers' attitudes and their continuance intention to adopt ChatGPT-driven chatbots (i.e., LazzieChat) in the e-commerce services context while examining the moderating effect of online shopping self-efficacy in this process. A questionnaire survey was conducted in Singapore, involving 305 participants who had experienced LazzieChat in Lazada. Use the structural equation modelling of Smarts 4 to analyze the data. The results show that consumer 'attitudes towards LazzieChat have significantly affected their continuance intention to adopt LazzieChat, and online shopping self-efficacy has moderated this relationship. In addition, the research confirms that emotional value and epistemic value are the main driving factors of consumer 'attitudes, followed by functional value, social value and epistemic value. Consumers' attitudes towards LazzieChat mediate the relationship between functional value, social value, epistemic value, and continuance intention to adopt LazzieChat. By developing a research framework that follows the logic of value-attitude-behavior model, this study provides theoretical and practical insights based on the theory of consumer values, which could guide e-commerce platforms to more effectively cater to their consumers' continuance intention of adopting ChatGPT-driven e-commerce AI chatbot service. © (2024), (Johar Education Society Pakistan). All Rights Reserved."
+  },
+  {
+    "article_id": "CA_2340",
+    "title": "Context-aware Intelligent Tourist Assistant",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The increasing demand for personalised travel experiences has driven the need for intelligent systems capable of automating itinerary planning. Traditional recommendation platforms often lack adaptability to individual preferences and real- time constraints, limiting their effectiveness. This paper presents a context-aware intelligent tourist assistant that generates personalised travel itineraries, dynamically adjusting to POI availability and external factors. It contributes to the digital transformation of the tourism industry by automating travel planning through AI- driven personalisation and real-time adaptability. The system applies NLP, sentiment analysis and graph-based optimisation to build user interest profiles from chatbots, social media and surveys, integrating preference modelling and VRPTW-based route optimisation. Experiments confirm that AI-generated itineraries adapt dynamically, improving efficiency over manual planning. This work advances AI-driven travel planning, integrating adaptive recommendations and heuristic route optimisation, with future improvements in preference refinement and augmented reality integration. © 2025, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2341",
+    "title": "Conversation management in task-oriented turkish dialogue agents with dialogue act classification",
+    "journal": "IC3K 2020 - Proceedings of the 12th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "We study the problem of dialogue act classification to be used in conversation management of goal-oriented dialogue systems. Online chat behavior in human-machine dialogue systems differs from human-human spoken conversations. To this end, we develop 9 dialogue act classes by observing real-life human conversations from a banking domain Turkish dialogue agent. We then propose a dialogue policy based on these classes to correctly direct the users to their goals in a chatbot-human support hybrid dialogue system. To train a dialogue act classifier, we annotate a corpus of human-machine dialogues consisting of 426 conversations and 5020 sentences. Using the annotated corpus, we train a self-attentive bi-directional LSTM dialogue act classifier, which achieves 0.90 weighted F1-score on a sentence level classification performance. We deploy the trained model in the conversation manager to maintain the designed dialogue policy. Copyright © 2020 by SCITEPRESS - Science and Technology Publications, Lda. All rights reserved."
+  },
+  {
+    "article_id": "CA_2342",
+    "title": "Conversational Agent Design and Consumer Decision Journey: Research Synthesis; Direction",
+    "journal": "Advances in Consumer Research",
+    "journal_impact_factor": 26.323,
+    "doi": null,
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CA_2343",
+    "title": "Convincing or Odd: Anthropomorphic Design Cues in Chatbots",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Chatbot anthropomorphic design is essential to the perception and behaviors of users who interact with chatbots. However, limited attention has been given to empirical investigations on whether certain anthropomorphic design successfully induce users’ perception of anthropomorphism. To fill in the gap, the study draws on dual-process theory to examine the impact of different design cues on users’ perception of chatbot’s anthropomorphism. By analyzing the data of a between-subject online experiment, we found significant impact of identity cues and communicative cues on users’ perception of anthropomorphism in user-chatbot interaction. Meanwhile, the frequently used visual cues are not so influential as expected in prior studies. Moreover, when multiple cues are present at the same time, a compensation effect is found between the impact of visual/identity cues and that of communicative cues. © 2022, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2344",
+    "title": "Cyber sales as the latest tool for optimizing an enterprise strategy",
+    "journal": "International Journal of Scientific and Technology Research",
+    "journal_impact_factor": 0.0,
+    "doi": null,
+    "abstract": "An independent and informed buyer, for the most part, no longer responds to attempts to sell him something ―on the forehead‖. The paradigm of ―cold‖ sales and the constant search for new customers does not compete with the new strategy-building long-term relationships with customers using specially designed ―sales tunnels. The article reveals the concept of cyber-sales or auto-funnels. The methodology of construction and operation of automatic sales tunnels is shown, both at the preparation and planning stage and at the stage of technical implementation of the sales tunnel. Particular attention in the article is given to chatbots, which are used in instant messengers for the technical organization of sales tunnels. They can build communication with the client around the clock, perform tasks of information and promotion. They significantly reduce the cost and simplify work with clients. Every year, bots are becoming smarter and more functional. The article considers five main proposals that are necessary for the consumer to move through the funnel: Lead Magnet, Tripwire, Core Product, Profit Maximizer and Recurring Payments. The article also lists the main tools used in the planning, implementation and analysis of auto-funnels. Cyber sales in business is a customer communication system that works automatically. A sequential chain of interconnected content that, like a tunnel, leads a customer to a purchase. In fact, this automated system is an alternative to the services of a sales manager. This article will help optimize the digital strategy of the enterprise by moving from cold sales with a loss of up to 99% of traffic to automatic sales using chatbots and the highest conversion. © IJSTR 2020."
+  },
+  {
+    "article_id": "CA_2345",
+    "title": "Data Driven Content Creation using Statistical and Natural Language Processing Techniques for Financial Domain",
+    "journal": "Proceedings of the 3rd Financial Narrative Processing Workshop, FNP 2021",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Over the years customers’ expectation of getting information instantaneously has given rise to the increased usage of channels like virtual assistants. Typically, customers try to get their questions answered by low-touch channels like search and virtual assistant first, before getting in touch with a live chat agent or the phone representative. Higher usage of these low-touch systems is a win-win for both customers and the organization since it enables organizations to attain a low cost of service while customers get served without delay. In this paper, we propose a two-part framework where the first part describes methods to combine the information from different interaction channels like call, search, and chat. We do this by summarizing (using a stacked Bi-LSTM network) the high-touch interaction channel data such as call and chat into short search-query like customer intents and then creating an organically grown intent taxonomy from interaction data (using Hierarchical Agglomerative Clustering). The second part of the framework focuses on extracting customer questions by analyzing interaction data sources. It calculates similarity scores using TF-IDF and BERT (Devlin et al., 2019). It also maps these identified questions to the output of the first part of the framework using syntactic and semantic similarity. © Proceedings of the 3rd Financial Narrative Processing Workshop, FNP 2021. All rights reserved."
+  },
+  {
+    "article_id": "CA_2346",
+    "title": "Design and Evaluation of an EmployeeFacing Conversational Agent in Online Customer Service",
+    "journal": "Pacific Asia Conference on Information Systems",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Conversational agents (CAs) are increasingly deployed to automate online customer service encounters. Hence, researchers and practitioners have so far predominantly addressed attributes and features of customer-facing CAs toward more efficient customer request processing. However, as CAs still regularly fail to answer complex issues, the concept of Hybrid Intelligence (HI) suggests combining artificial with human intelligence in a Hybrid Intelligence System to overcome the weaknesses of CAs and service employees (SEs) and promote their strengths leading to enhanced performance results and collaborative learning through mutual augmentation. Thus, following a Design Science Research approach, we formulate design principles (DPs) to develop an employee-facing CA for augmenting SEs simultaneously to their customer interaction. We implement a CA prototype and evaluate it with 21 participants in a user test. We found that the DPs were successfully implemented. Thereby, we contribute to practice, customer service, and HI research and provide avenues for future research. © 2022, Association for Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2347",
+    "title": "Design Knowledge for the Lifecycle Management of Conversational Agents",
+    "journal": "17th International Conference on Wirtschaftsinformatik, WI 2022",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Organizations spend extensive resources on artificial intelligence (AI) solutions in customer service in order to remain customer-focused and competitive. A rising language-based application of AI emerges in the context of conversational agents (CAs), such as chatbots, which represent increasingly intelligent, autonomous, scalable, and cost-effective service platforms. However, AI-based CAs bring new organizational challenges. They are underrepresented in current research, leading to many unanswered questions and research potential regarding the management of their introduction, operation, and improvement. To address this issue, we provide design knowledge that considers the organizational perspective of CAs. Therefore, we conducted a systematic literature review (SLR) and qualitative interview study to reveal and analyze individual issues and challenges, develop meta-requirements, and finally, use them to create design principles. We contribute to the emerging field of CAs that has previously focused mainly on the individual, behavioral, interactional, or technical design. © 2022 17th International Conference on Wirtschaftsinformatik, WI 2022. All rights reserved."
+  },
+  {
+    "article_id": "CA_2348",
+    "title": "Design of farmer friendly intelligent system to monitor and control the parameters in precision agriculture",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The principle objective of the proposed framework is to outline a convenient, versatile and low cost farmer friendly intelligent system to accomplish efficient use of water supply and motor control. It senses on field data like climate temperature and soil moisture level, rainfall, with the assistance of sensors used in the system. And also check for 3-ϕ supply availability, no load condition of water pump, intruder detection (humans, animals etc.). farmer receives all the parameters data sensed on field, for further decision making about the need for watering. Also need for motor Turn ON/OFF based on sensing rain fall and the same will be sent to the farmer, who might be away from the field. If any intruder is detected alarm gets enabled and the same is notified to the farmer via SMS. In the proposed system “SMS on demand service” is provided to get the status of all parameters like water resource availability, soil’s moisture content, 3-ϕ power supply availability and the intruder detection. The system helps the farmer in switching the motor according to his need i.e., whether the water is required for the crop or not. A user friendly mobile application and normal SMS service will enable the farmer to monitor and control the land parameters from the remote place efficiently. Hence the proposed method shows satisfactory performance to measure and monitor the land parameters and moreover 3-ϕ supply availability based motor operation saves from motor failure. © BEIESP."
+  },
+  {
+    "article_id": "CA_2349",
+    "title": "Developing a chatbot using machine learning",
+    "journal": "International Journal of Recent Technology and Engineering",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "In recent years, the development of chatbot has become trendier and so far several conversational chatbots were designed which replaces the traditional chatbots. A chatbot is a computer program which is used to interact with humans and fulfill their needs. Chatbot gives the response for the user query and sometimes they are capable of executing tasks also. Early development of chatbots became so difficult whereas recent chatbots development is much easier because of the wide availability of development platforms and source code. A chatbot can be developed using either Natural Language Processing (NLP) or Deep Learning. When compared to traditional chatbots, bots designed using Deep Learning requires huge amount of data to train. The aim of this paper is to present, in what different ways the chatbot can be developed and their classifications. This paper also makes a discussion about the metrics for accessing the performance of bots. This helps in designing more effective bot. © BEIESP."
+  },
+  {
+    "article_id": "CA_2350",
+    "title": "Digital Matchmakers: How Chatbots Use Positive Emotions to Influence Human Self-Disclosure",
+    "journal": "1st Saudi Conference on Information Systems, SaudiCIS 2024",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "Despite the growing popularity of chatbots, their success depends on humans disclosing personal and sensitive information. Prior research indicates that human-like chatbots enhance self-disclosure by subconsciously applying social scripts and mirroring user characteristics. However, the role of emotions in chatbot-human interactions, especially regarding privacy tradeoffs, remains complex. This study aims to improve understanding of how chatbots' use of positive emojis influences self-disclosure in online dating contexts. We developed an experimental matchmaking chatbot, TinderBot, and conducted two randomized experiments with 759 participants. Experiment 1 manipulated the chatbot's use of emojis, while experiment 2 also varied the sensitivity of personal questions. The results suggest that chatbots using positive emojis significantly increase perceived friendliness of the chatbot, which positively influences users' emotional state and self-disclosure behavior. This effect is substantial for highly sensitive questions but negligible for less sensitive ones. Our findings highlight the potential of emotion-driven chatbot design to foster trust and enhance user engagement and information sharing in digital matchmaking platforms, while also underscoring the importance of being aware of privacy tradeoffs. © 2024 1st Saudi Conference on Information Systems, SaudiCIS 2024. All rights reserved."
+  }
+]

@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_0651",
+    "title": "Developing human/AI interactions for chat-based customer services: lessons learned from the Norwegian government",
+    "journal": "European Journal of Information Systems",
+    "journal_impact_factor": 5.77,
+    "doi": "10.1080/0960085X.2022.2096490",
+    "abstract": "Advancements in human/AI interactions led to smartification of public services via the use of chatbots. Here, we present findings from a clinical inquiry research project in a key public service organisation in Norway. In this project, researchers and practitioners worked together to generate insights on the action possibilities offered to human service agents by chatbots and the potential for creating hybrid human/AI service teams. The project sensitised service agents to discover affordances based on their actual practices, rather than on the predefined use of chatbots. The different affordances identified can be useful for practitioners who design and deploy chatbot-based services. The action possibilities afforded by chatbots provide new ways for service agents and chatbots to work as a team addressing citizens’ needs. Drawing from the whole research process, we offer three lessons learned from the Norwegian Government on human/AI partnerships, theory-based interventions, and institutionalised collaborative research that can be useful for researchers that want to engage with practice and organisations that want to evolve their technology use, stimulate innovation, and engage with research. © 2022 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0652",
+    "title": "Engagement with chatbots versus augmented reality interactive technology in e-commerce",
+    "journal": "Journal of Strategic Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0965254X.2020.1740766",
+    "abstract": "As competition intensifies in the retail industry organizations are increasingly turning to forms of artificial intelligence as a means of differentiation. E-commerce companies are moving towards integrating technologies such as chatbots and augmented reality interactive technology which have proved to be popular solutions to customer service in the practitioner domain. However, little is known about consumers’ attitude and engagement with these emerging technologies when used in a retail environment. A theory-based research model which was designed to uncover the motivational mechanisms needed to provide engagement and effective decision-making processes in this context. Empirical testing conducted with a field study supported the proposed model. © 2020 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0653",
+    "title": "Hey chatbot, why do you treat me like other people? The role of uniqueness neglect in human-chatbot interactions",
+    "journal": "Journal of Strategic Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0965254X.2023.2175020",
+    "abstract": "Resistance to chatbots is a real challenge that companies must overcome, although they (i.e., chatbots) have several advantages. Based on the stereotype content model, this research seeks to understand customer reactions in the context of human-chatbot interactions by integrating the concept of uniqueness neglect as a moderator of customer reactions to the competence of bank chatbots. A sample of 378 respondents was collected in France using the snowball sampling technique, and hypotheses were tested using SmartPLS. We find that chatbot competence does influence customer satisfaction, the latter of which in turn affects both recommendation intention and continuance intention. Further, we find that uniqueness neglect moderates the effect of chatbot competence on satisfaction such that the effect is stronger (weaker) when uniqueness neglect is low (high). We find that warmth does not have a significant moderating effect. This study is among the first attempts to understand customer reactions to interactions with bank chatbots and offers insightful theoretical and managerial implications of use to both academics and practitioners alike. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0654",
+    "title": "Smart banking chatbots and consumer engagement: the role of trust and privacy in AI-driven banking",
+    "journal": "Journal of Strategic Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/0965254X.2025.2481140",
+    "abstract": "This study examines the role of smart banking chatbots (SBCs) in shaping consumer trust and engagement in digital banking, with a focus on exploring the moderating impact of privacy concerns. Grounded in the stimulus-organism-response (SOR) model, the research investigates how immersive experience impacts trustworthiness, which in turn influences consumer engagement, measured by intention to explore and cognitive absorption. Data collected from 287 banking customers using structured survey questionnaire. The findings of the study reveals that conversational agility and ubiquitous connectivity significantly enhance trustworthiness, whereas responsiveness, personalization, perceived control, and social presence do not. Furthermore, the study reveals that privacy concerns negatively moderate the impact of responsiveness, conversational agility, and social presence on trustworthiness. The study uniquely contributes to the literature on AI-human interactions in financial services. This study also offers strategic insights for banks on optimizing SBCs to enhance customer trust and engagement to provide better consumer experience while addressing privacy concerns. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0655",
+    "title": "From agility to action: how AI chatbot promotes green customer citizenship behavior",
+    "journal": "Journal of Sustainable Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/09669582.2026.2616653",
+    "abstract": "As generative artificial intelligence (GenAI) increasingly penetrates the hospitality industry, AI chatbots are reshaping customer-hotel interactions and may become vital drivers of sustainable behavior. This study investigates how AI agility-the capability of chatbots to respond adaptively, rapidly, and intelligently- affects customers’ green citizenship behavior in the context of green hotels. Drawing on social facilitation theory, six experiments were conducted with 1,555 participants from the United States, the United Kingdom, and China. The findings reveal that AI agility enhances green customer citizenship behavior (Study 1). Social presence and subjective happiness serve as sequential mediators for this effect (Studies 2A–2C), with Study 2C employing an incentive-compatible behavioral task to validate actual green citizenship behavior. Moreover, communication style (task- vs. social-oriented; Study 3) and customer mindset (busy vs. leisure; Study 4) moderate the effect of AI agility, such that task-oriented contexts and busy mindsets amplify its positive influence on green behavior. This research extends social facilitation theory to human–AI interactions, elucidates the socio–affective mechanism through which AI agility fosters prosocial behavior, and offers practical guidance for designing agile AI chatbots that enhance customer well-being and sustainability engagement. © 2026 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0656",
+    "title": "The Role of Commitment Amongst Tourists and Intelligent Virtual Assistants",
+    "journal": "Journal of Promotion Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10496491.2021.1987979",
+    "abstract": "This paper aims to analyze Attachment and Emotional Values as antecedents of Commitment to intelligent virtual assistants (IVA) and Commitment as a driver of Loyalty Intentions toward the IVA. Data is collected from a sample of 124 active users of IVA systems in tourism settings by the mean of an online survey. The findings contribute to the existing literature by revealing that Attachment and Emotional Values positively influence tourists Commitment to Intelligent Virtual Assistants. Moreover, findings reveal that Commitment positively influences Loyalty Intentions. This study is a first attempt to analyzing the commitment process between users (i.e., tourists) and artificial intelligent systems (i.e., intelligent virtual assistants). © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0657",
+    "title": "You Are Only Mine! Engage with Voice Assistant While Find Destinations and Accommodations",
+    "journal": "Journal of Promotion Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10496491.2021.1987986",
+    "abstract": "In a changing world, where artificial intelligent devices are communicating with consumers, understand the communication interaction between firms and consumers is key to the success of business. The current study aims to analyze the consumer-virtual assistant communication by demonstrating the effect of authenticity and attachment as drivers of engagement via psychological ownership. A panel sample of 170 users of voice assistants were recruited to fulfill a survey using Qualtrics. Findings show that when users view their communication with virtual assistants as authentic, they become engaged. Yet, the strength of the relationship between attachment and engagement tends to be higher than the relationship between authentic and engagement. Prominence is more important in creating attachment then self-connection. Therefore, consumers who are closer to their virtual assistant, thinking, feeling, and using the device to interact with firms and brands are also more related to the information and recommendations given by the device and stablish a stronger interaction. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0658",
+    "title": "Is ChatGPT a Responsible Communication: A Study on the Credibility and Adoption of Conversational Artificial Intelligence",
+    "journal": "Journal of Promotion Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10496491.2024.2332987",
+    "abstract": "In the realm of generative artificial intelligence (AI), ChatGPT has garnered widespread acclaim for its remarkably realistic chatbot interactions. Despite its popularity, recent challenges in reliability have emerged. This research uniquely combines the Stimulus-Organism-Response (S-O-R) framework with dual-process theory to dissect the factors influencing ChatGPT’s credibility and popularity. Employing cross-sectional data from select social media platforms, the study identifies quality, accuracy, timeliness, audience familiarity, and congruence with other sources as pivotal elements shaping ChatGPT’s credibility. Significantly, this research reveals how users evaluate the reliability of generative AI-generated search results by comparing them to conventional methods. The study’s novel contribution lies in its exploration of ChatGPT as a medium of communication, offering valuable insights into understanding and enhancing the reliability of generative AI applications in the information landscape. © 2024 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0659",
+    "title": "Promoting Sustainability Through AI Chatbots: The Role of Trust and Engagement in Shaping Consumer Behavior",
+    "journal": "Journal of Promotion Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10496491.2025.2612587",
+    "abstract": "AI chatbots have emerged as innovative promotional tools in the service sector, yet limited research has explored how their attributes influence consumer sustainable behavior (CSB) within the context of sustainable tourism. This study examines how perceived usefulness (PU), perceived personalization (PP), and perceived emotional intelligence (PE) of chatbots shape CSB in the hotel industry. Drawing on the Stimulus–Organism–Response (S-O-R) framework, the study investigates the mediating roles of trust (TS) and engagement (EN), and the moderating effects of age and technology readiness (TR), in alignment with Saudi Arabia’s Vision 2030 sustainability goals. Data were collected through an online survey of 368 hotel customers in Saudi Arabia, and structural equation modeling (SEM) was used to test the proposed relationships. The findings indicate that PP and PE exert stronger impacts on CSB than PU. EN significantly mediates these effects, while TS does not. Moreover, age and TR act as significant moderators. This study contributes to promotional management literature by positioning AI chatbots as strategic marketing communication tools that foster customer engagement and advance sustainability goals, offering both theoretical and managerial implications for hospitality marketing. © 2026 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0660",
+    "title": "Anthropomorphism and OTA chatbot adoption: a mixed methods study",
+    "journal": "Journal of Travel and Tourism Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10548408.2022.2061672",
+    "abstract": "Anthropomorphizing chatbots can facilitate effective customer interaction. Based on a mixed method, this study explores perceived chatbot anthropomorphism cues and their effects on customers’ chatbot usage intentions (UIs)in the online travel agency context. Findings suggest that (1) social presence cues and emotional message cues are major anthropomorphic cues of interest for customers and enterprises; (2) social presence cues by simply using a human avatar or mentioning the customer’s name might not be sufficient; (3) anthropomorphic emotional message cues are essential in shaping customers’ UIs; and (4) perceived trustworthiness, intelligence, and enjoyment mediate the above effect. © 2022 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0661",
+    "title": "Apology or gratitude? The effect of communication recovery strategies for service failures of AI devices",
+    "journal": "Journal of Travel and Tourism Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10548408.2022.2162659",
+    "abstract": "As social actors, artificial intelligence (AI) devices are used in tourism. However, it’s challenging for enterprises to choose recoveries for their service failures. To fill this gap, we divide these service failures from the perspective of consumers’ basic psychological needs: being rejected and being ignored due to AI lacking flexibility and common sense. Based on the Need-Threat model and three experiments, we find that chatbots express gratitude (vs. apology) will be more likely to gain consumers’ forgiveness if service failures of AI devices are being rejected (vs. being ignored); this main effect is mediated by relational needs (vs. efficacy needs). © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0662",
+    "title": "Tourist acceptance of ChatGPT in travel services: the mediating role of parasocial interaction",
+    "journal": "Journal of Travel and Tourism Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10548408.2024.2364336",
+    "abstract": "ChatGPT has revolutionized the travel industry. This study employs the stimulus-organism-response (SOR) model to develop and validate a conceptual model for ChatGPT acceptance. Social influence and perceived value emerge as key determinants of user cognitive appraisals of ChatGPT’s expertise, trustworthiness, and emotional connections through parasocial interaction. These factors subsequently influence traveler acceptance of ChatGPT for travel-related services. Findings reveal that social influence is the most potent predictor of ChatGPT acceptance, while perceived trust directly impacts user acceptance during the cognitive process. These insights advance research on parasocial interaction, while providing valuable guidance for implementing ChatGPT in tourism services. © 2024 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0663",
+    "title": "Who are you talking to? How chatbot identity disclosure affects service satisfaction",
+    "journal": "Journal of Travel and Tourism Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/10548408.2024.2369755",
+    "abstract": "Chatbots are increasingly able to talk as humans. Disclosing the identity of chatbots can negatively impact the user trust, but withholding is considered illegal. Disclosing is an inevitable trend, and it is crucial to study different disclosure types. However, most research focuses on comparing disclosure versus non-disclosure. This article investigates the impact of interaction between disclosing and service contact types on service satisfaction. Specifically, pre-dialogue (vs. post-dialogue) disclosure appears more satisfying for high-contact services, whereas post-dialogue disclosure is better suited to low-contact services. Trust is the mediating mechanism of these effects. These findings can help service providers devise marketing strategies. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0664",
+    "title": "The effect of motivated consumer innovativeness on the intention to use chatbots in the travel and tourism sector",
+    "journal": "Asia Pacific Journal of Tourism Research",
+    "journal_impact_factor": 4.705,
+    "doi": "10.1080/10941665.2023.2264972",
+    "abstract": "This study explores the dimensions of motivated consumer innovativeness (functional, social, hedonic, and cognitive) in the context of the travel and tourism industry and examines how they influence consumers’ attitude, trust and intention to use chatbot services. The results show that all dimensions of motivated consumer innovativeness positively impact attitude, while only functional and cognitive dimensions positively affect trust building, leading to consumers’ chatbot usage intentions. These findings provide insights into what motivates consumers traditionally comfortable with using human assistance to develop behavioral attitude and intention to use chatbots to make online tour and travel-related queries. © 2023 Asia Pacific Tourism Association."
+  },
+  {
+    "article_id": "CA_0665",
+    "title": "ChatGPT use in hospitality and tourism: a multi-analytic approach",
+    "journal": "Asia Pacific Journal of Tourism Research",
+    "journal_impact_factor": 4.705,
+    "doi": "10.1080/10941665.2025.2474016",
+    "abstract": "This study explored the antecedents of tourists’ intentions to use ChatGPT for seeking information, and investigated the effect of these, using a fuzzy-set approach. The study performed a complex configurational assessment of the technology acceptance model (TAM), the theory of planned behavior (TPB), and behavioral reasoning theory (BRT) to predict tourists’ strong and weak intentions to use AI chatbots for hospitality and tourism information. To attain this research goal, a total of 604 questionnaires were collected using Korean customers who used ChatGPT in Korea. Results of the analyses indicated that multiple factors rooted in the TAM, TPB, and BRT, showed significant interactions resulting in both desirable and undesirable outcomes. Furthermore, the essential role of convenience was found to be one of the BRT factors that increased intentions to use ChatGPT. The present research differs from earlier studies in that it investigated the complex nature of tourists’ behavioral intentions, and therefore the findings advance current knowledge and offer novel insights for practitioners. © 2025 Asia Pacific Tourism Association."
+  },
+  {
+    "article_id": "CA_0666",
+    "title": "Effect of interaction type and social playfulness on AI recommendation adoption",
+    "journal": "Asia Pacific Journal of Tourism Research",
+    "journal_impact_factor": 4.705,
+    "doi": "10.1080/10941665.2025.2548855",
+    "abstract": "Generative artificial intelligence (AI) technologies have received ample attention in hotel concierge services to enhance customer interactions, yet the influence of different interface styles on customer behavior has not been sufficiently examined. This paper explores the cognitive and emotional mechanisms underlying generative AI-powered concierge services through the lens of media richness theory (MRT) focusing on the customer–AI agent relationship. Results show that visual-centric interfaces, which promote user participation through visual menus, enhance recommendation adoption. This effect is mediated by social playfulness and responsiveness. Additionally, customers who prioritize rationality display higher recommendation adoption under visual-centric conditions in emoji-present conditions. This paper applies MRT by integrating emotional cues and interface structures into AI service contexts. This paper also provides practical insights by clarifying how interface elements such as chat-based dialogue, visual menus, and emojis can be integrated in engaging concierge services. © 2025 Asia Pacific Tourism Association."
+  },
+  {
+    "article_id": "CA_0667",
+    "title": "Artificial intelligence-enabled conversational agents in tourism & hospitality: a systematic literature review & future research directions",
+    "journal": "Asia Pacific Journal of Tourism Research",
+    "journal_impact_factor": 4.705,
+    "doi": "10.1080/10941665.2025.2555204",
+    "abstract": "Artificial intelligence (AI)-enabled conversational agents (AICAs) are transforming the tourism and hospitality sector. While studies focus on technical and operational aspects, there is limited exploration of consumer behaviour. This study employs the TCCM (Theory, Context, Characteristics and Methodology) framework to analyse the theoretical, contextual and methodological dimensions of AICA use. By utilising an AI-first, human-lens-second approach along with Leximancer for thematic analysis, it emphasises the importance of emotional, ethical and trust-related factors that are often overlooked in adoption models. The paper proposes an integrated conceptual framework that highlights the mechanisms, modifiers and implications of AICA use, along with offering future research directions. © 2025 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0668",
+    "title": "How does anthropomorphism of AI-powered chatbots shape emotions and brand love? A study on Online Travel Agencies",
+    "journal": "Asia Pacific Journal of Tourism Research",
+    "journal_impact_factor": 4.705,
+    "doi": "10.1080/10941665.2025.2561707",
+    "abstract": "Despite increasing adoption of chatbots by Online Travel Agencies (OTAs), there remains a paucity of research on how anthropomorphism of AI-powered chatbots improves consumers’ brand love. Accordingly, the study addresses this gap by investigating the impact of chatbot anthropomorphism on brand love and recommendation intentions for OTAs. Anchored in the stimulus-organism-response theory, the study conceptualises a model where anthropomorphism acts as stimulus, emotional responses (pleasure-arousal-dominance theory) serve as organism, and brand love and recommendation intentions function as response. The findings demonstrate that anthropomorphism of OTAs’ chatbots triggers emotional responses which positively influence brand love. Further, brand love is found to be a strong predictor of recommendation intentions. Furthermore, the mediating effects of emotions are confirmed. The findings contribute to the valuable theoretical insights on evolving literature of AI and chatbots in specific, and add to the broader discussion of tourism and hospitality. © 2025 Asia Pacific Tourism Association."
+  },
+  {
+    "article_id": "CA_0669",
+    "title": "Virtual companions: the impact of AI travel companions’ language and gesture types on tourists’ stickiness",
+    "journal": "Asia Pacific Journal of Tourism Research",
+    "journal_impact_factor": 4.705,
+    "doi": "10.1080/10941665.2026.2639691",
+    "abstract": "AI travel companions have emerged as an innovative tool for enhancing the experience and mental well-being of tourists. This study constructs a model based on symbolic interaction theory to explore the impact mechanism of the language and gestures of an AI travel companion on the stickiness behavior of tourists. Applying symbolic interaction theory, this study examines how AI travel companions’ language (objective vs. subjective) and gestures (fixed vs. free) influence tourists’ stickiness. Three experiments show: (1) Objective language paired with fixed gestures better boosts stickiness, while subjective language with free gestures is more effective; (2) Self-disclosure and social connectedness sequentially mediate this relationship; (3) Tourists’ self-referencing tendency amplifies the direct and indirect effect of language-gesture combinations. These findings advance multimodal human–computer interaction research by highlighting the need to align AI agent’s verbal and nonverbal cues with user psychology. © 2026 Asia Pacific Tourism Association."
+  },
+  {
+    "article_id": "CA_0670",
+    "title": "AI-enabled social support chatbot usage: flowing ambivalence and liminalities",
+    "journal": "Journal of Decision Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1080/12460125.2024.2443226",
+    "abstract": "Interest in social and emotional support chatbots has recently surged, making human–chatbot relationships increasingly common. However, users’ subjective experiences with these chatbots often extend beyond simple interactions, reflecting the complex dynamics of liminality and ambivalence. Through a netnographic study of the chatbot Replika, we explore how users experience relational liminality, and control and agency liminality. These dynamics contribute to what we term flowing ambivalence, where users feel both comforted and unsettled, fostering dependency on chatbots despite an awareness of their artificial empathy. Our findings suggest that emotional support chatbots provoke complex emotional states that fluctuate and adapt, underscoring the need for nuanced frameworks to understand how users relate to AI tools. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0671",
+    "title": "Predicting consumer intentions for shopping using generative AI chatbots",
+    "journal": "Journal of Decision Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1080/12460125.2025.2521614",
+    "abstract": "The study investigates factors associated with consumers’ attitude and behavioural intentions to use generative AI (gen AI) chatbots while shopping of retail products. To accomplish this, we develop a conceptual model based on the theory of planned behaviour by identifying the purchase task related and customer-related antecedents of attitude towards using gen AI chatbots. Data are collected using an online questionnaire from a sample of 448 adult shoppers in India and analysed using PLS-SEM. Results demonstrate that shopping enjoyment, optimism and perceived control are strong predictors of attitude, which in turn, affects intention to shop via chatbots. Discomfort is found to have associations with neither attitude nor intention, while consumers’ need for touch is negatively associated with both. The study illuminates consumer decision-making with regard to chatbot use in purchase contexts. Implications are made for managers to identify the early adopters of gen AI chatbots in retail shopping. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0672",
+    "title": "This embodied conversational agent looks very human and as old as I feel! The effect of perceived agent anthropomorphism and consumer-agent age difference on brand attitude",
+    "journal": "Journal of Marketing Communications",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13527266.2023.2199026",
+    "abstract": "In a study with 320 Canadian participants, we explore the effect of perceived physical and non-physical anthropomorphism of an Embodied Conversational Agent (ECA) and the perceived actual and subjective age difference between an individual and this ECA on the ECA’s likeability and credibility. We also explore the effect of likeability and credibility on the attitude towards the website on which the ECA appears and the brand on the website. Perceived physical anthropomorphism has a positive effect on ECA likeability and credibility. The perceived differences between a consumer’s subjective and actual age and perceived ECA age have a negative effect on ECA likeability. This effect is attenuated by an interaction effect between the subjective age difference and perceived non-physical anthropomorphism: for a given level of the subjective age difference, the more the ECA is perceived as having human emotions and motivations, the more positive the effect on ECA likeability is. ECA likeability and credibility lead to more positive attitudes towards the website and the brand. For the conceptualization of our study, we draw upon the Attraction to Similarity Theory, complemented by insights from anthropomorphism studies, Self-Congruity Theory, and relational characteristics research. Theoretical and managerial contributions are discussed. © 2023 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0673",
+    "title": "Anthropomorphic chatbots as a catalyst for online customer experience (CX): The case of Egyptian consumers",
+    "journal": "Journal of Marketing Communications",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13527266.2025.2453229",
+    "abstract": "Chatbot anthropomorphism has become a valuable tool for enhancing marketing strategies and improving overall CX. The study aims to investigate the influence of chatbot anthropomorphism on online CX in Egypt, specifically focusing on cognitive, linguistic, and visual anthropomorphic cues. It is a conclusive descriptive research in which quantitative research methods are utilized and the sample included 123 respondents from Egyptian Consumers. The study showed that cognitive and linguistic cues significantly impact online CX for Egyptian consumers. However, visual anthropomorphic cues were found to have minimal impact. The paper provides original data on the influence of chatbot anthropomorphism on online CX, focusing on cognitive, linguistic, and visual anthropomorphic cues, as well as the growing nuances of Artificial Intelligence in the context of applying Chatbots with human characteristics. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0674",
+    "title": "A Bibliometric analysis of artificial intelligence’s impacts on customer experience in tourism: insights for the Vietnamese market",
+    "journal": "Asia Pacific Business Review",
+    "journal_impact_factor": 2.228,
+    "doi": "10.1080/13602381.2025.2582625",
+    "abstract": "This study conducts a bibliometric analysis to synthesize research on the impact of artificial intelligence on customer experience in tourism, focusing on potential insights for further studies for the Vietnamese market. Analysing 1,675 publications from the Scopus database, the study highlights key trends and identifies research gaps, including the influence of AI features on user perception and opportunities within emerging tourism markets. Findings highlight how emerging AI applications in tourism, such as chatbots and virtual assistants, are particularly relevant for young, tech-savvy Vietnamese travellers, who exhibit increasing demand for customized, AI-powered experiences. These findings enhance our understanding of AI’s role in shaping tourism experiences and provide directions for future research tailored to Vietnamese tourism. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0675",
+    "title": "Intelligent conversational agent as an active strategy for school safety management",
+    "journal": "Journal of Risk Research",
+    "journal_impact_factor": null,
+    "doi": "10.1080/13669877.2025.2579309",
+    "abstract": "Unsafe educational environments jeopardize the well-being of children and adolescents and negatively impact their educational results. This study presents the development and evaluation of an AI-based platform designed to enhance school safety management and support the systematic creation and dissemination of Comprehensive School Safety Plans (PISE) within Chilean educational institutions located in high-risk coastal areas. Using a participatory design thinking approach, the research involved school communities from two secondary schools in southern Chile. The platform comprises two main components: a Web application that facilitates collaborative development and a generative AI-powered conversational chatbot integrated into WhatsApp, which serves as an accessible communication channel to disseminate emergency plans and respond to community queries. The content analysis revealed significant gaps in existing emergency plans, particularly in terms of identifying territorial risks, protocols for specific emergencies, and communication strategies. The intelligent platform addressed these issues by streamlining the creation of plans, providing contextualized guidance, and enhancing user engagement. Interaction with the conversational chatbot revealed a wider range of perceived safety threats than those officially documented, including internal and external violence, health emergencies, and accidents, highlighting discrepancies between institutional records and community concerns. User feedback demonstrated high acceptance of the platform’s usability and utility, with the chatbot fostering anonymous, real-time dialogue that improved awareness and identified training needs. However, challenges such as response accuracy and system limitations were noted and addressed through iterative refinements. The study underscores the potential of AI-driven tools to improve traditional safety management by promoting participatory risk identification, improving communication, and supporting dynamic emergency planning tailored to local contexts. Further validation in diverse educational settings is recommended to generalize findings and optimize implementation strategies. This research contributes a novel model for integrating AI conversational agents in school safety, emphasizing ethical design and community involvement to safeguard student well-being and educational continuity. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0676",
+    "title": "Predicting the intentions to use chatbots for travel and tourism",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2019.1706457",
+    "abstract": "As with other businesses, tourist companies are taking advantage of modern technologies. Chatbots are a recent technology that hotels, travel agencies, and airline companies are adopting. Despite this industry-wide implementation, there is no evidence about the factors that explain why consumers are willing to interact with chatbots. This work proposes a model to explain chatbot usage intention. The model and its hypotheses were tested by structural equations with the PLS technique. The study was conducted on a sample of 476 individuals who had travelled on vacation in the previous 12 months. The study reveals that the intentions behind using chatbots are directly influenced by the following factors: the chatbots’ expected performance, the habit of using chatbots, the hedonic component in using them, the predisposition to using self-service technologies, the social influences, and the fact that the chatbot behaves like a human. The inconvenience and problems related to communicating with the chatbot were found to have a negative influence. Lastly, the possibility that chatbots could replace jobs had a surprisingly positive influence, and not a negative one. © 2019 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0677",
+    "title": "Analysis of the attributes of smart tourism technologies in destination chatbots that influence tourist satisfaction",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2021.1997942",
+    "abstract": "Chatbots are an emerging technology that is disrupting the tourism industry. Despite their implementation in companies and at destinations, there is little research that evaluates chatbots’ smart tourism technologies (STTs) attributes and their influence on tourist satisfaction. This study seeks to examine the relationship between informativeness, empathy, accessibility, interactivity and chatbot user satisfaction. The research was based on an experiment and a survey conducted on a sample of 468 potential tourists who used a chatbot during their trip. Statistical tools such as exploratory factor analysis and the hierarchical regression method were used in the data analysis. The results suggest that informativeness, empathy and interactivity of destination chatbots are the attributes that influence and predict tourist satisfaction while accessibility does not. The main contribution of this study is the analysis of the attributes of STTs applied to destination chatbots, which also provides valuable information for both tourism chatbot developers and smart destination managers who wish to adopt this technology. Highlights: The communication with a chatbot resembles the dialogues they have with human agents. Informativeness is a predictor factor in users’ satisfaction with chatbot The empathic ability of the chatbot is a factor that predicts user satisfaction A high level of interactivity in a human-chabot interaction predicts user satisfaction. © 2021 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0678",
+    "title": "Should chatbots use dialects? Exploring the influence mechanism of chatbot language form on value co-creation intention",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2024.2431520",
+    "abstract": "Incorporating dialects into chatbot interactions is crucial for building stronger connections with users and promoting value co-creation, especially in contexts where personalisation is prioritised. This study draws on social cognitive theory, social presence theory, and social identity theory to investigate how the language form used by chatbots affects individuals’ value co-creation intention. Across four distinct experiments, we find that dialects, as opposed to standard language, considerably enhance users’ value co-creation intention. This impact is driven by heightened perceived warmth, perceived competence, and social presence. Furthermore, the study emphasises the differing effects based on group membership, showing that dialect usage positively influences perceived warmth, competence, social presence, and value co-creation intention, but only within in-group contexts. These results point out the power of dialects as cultural markers in human-AI interactions, offering valuable insights for designing more engaging and culturally resonant chatbots. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0679",
+    "title": "Factors affecting customer experience, attitude, and repurchase intention on smart tourism applications",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2024.2440809",
+    "abstract": "The tourism sector has been experiencing continuous growth and development over the years due to new technologies and service delivery methods. In order to introduce innovations in the provided services, there is a growing need for new opportunities, which has led to the increasing popularity of smart tourism applications in recent years. In this context, the aim of this study is to examine the impact of smart tourism applications (such as digital assistants, chatbots, interactive voice response systems, augmented reality, virtual reality) on customer experience, attitude, and repeat purchase intention. The sample of the study consisted of 591 individuals who had previously conducted online shopping and vacation planning through digital technology systems. Confirmatory factor analysis and path analysis were conducted using the AMOS programme for data analysis. The results of the analyses revealed that augmented reality applications had a positive impact on customer experience, attitude, and repeat purchase intention, while interactive voice response systems and chatbot services had a positive impact on customer attitude. However, virtual reality applications were found to have no significant effect on customer experience, attitude, and repeat purchase intention. Based on the findings, various recommendations were provided to tourism businesses. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0680",
+    "title": "Do word-of-mouth-based conversational AI recommendations enhance tourism consumers’ acceptance? The moderating role of transparency",
+    "journal": "Current Issues in Tourism",
+    "journal_impact_factor": 4.114,
+    "doi": "10.1080/13683500.2025.2462188",
+    "abstract": "AI agents play a crucial role in providing recommendations during interactions with consumers. This study demonstrates that, in the context of conversational AI recommendation, word of mouth-based recommendations exert a more significant impact on tourism consumers’ trust and acceptance compared to content-based recommendations, with trust also serving a mediating role. This impact is further amplified under higher transparency, but differences in the effects of various recommendation types were reduced. This study advances research on conversational AI recommendations within tourism contexts and suggests that tourism companies and destinations should utilise highly transparent and word of mouth-based AI agent recommendations for enhanced marketing effectiveness. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0681",
+    "title": "Investigating the Effects of Perceived Autonomy in Chatbot Advertising",
+    "journal": "Journal of Interactive Advertising",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15252019.2023.2262456",
+    "abstract": "The use of chatbots in advertising has gained significant attention recently due to the advancements in artificial intelligence. To obtain some insights on chatbot advertising effectiveness, this study examined the role of perceived autonomy on consumers’ perceptions with chatbot advertising interfaces. Through two experimental studies, results showed that chatbots elicited a lower level of perceived autonomy compared to the website interface, which decreased consumers’ perceived usefulness and perceived ease of use of the chatbots, and further influenced satisfaction and product attitude. In addition, this negative effect could be mitigated by anthropomorphizing the chatbot as a servant to consumers. Theoretical and managerial implications of these findings were discussed. © 2023 American Academy of Advertising."
+  },
+  {
+    "article_id": "CA_0682",
+    "title": "U.S. and Japanese Consumer Attitudes Toward Tailored and Targeted Communication with Human and Chatbot Agents",
+    "journal": "Journal of Interactive Advertising",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15252019.2024.2303008",
+    "abstract": "Consumers in the United States (n = 290) and Japan (n = 221) participated in 2 × 2 experiments designed to test effects of agent type (online human or chatbot) and communication strategy (targeted or tailored) on attitudes toward messages and agents. In both national samples, tailored messages were more effective in positively affecting attitudes. In addition, perceived humanness was found to mediate the relationships between agent type and attitudes such that when human or artificial agents are perceived as more human in text exchanges, perceived humanness in turn increases attitudes toward both the agents and messages. Hypothesized effects based on individualism-collectivism were not found. Theoretical and practical implications for designing interactive message strategy via conversational chatbots in an era of artificial intelligence (AI) and global communication are discussed. © 2024 American Academy of Advertising."
+  },
+  {
+    "article_id": "CA_0683",
+    "title": "Advertising Artificial Intelligence (AI) Agents: The Effects of Social Presence, Sincerity, and Social Benefit Appeals",
+    "journal": "Journal of Interactive Advertising",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15252019.2024.2383212",
+    "abstract": "The present study investigates the distinct advantages that conversational artificial intelligence (AI) agents provide consumers, including social benefits and communication sincerity. Additionally, this research examines how the exhibition of these attributes in advertisements impacts consumer perceptions. In doing so, this study represents an initial look at how advertisers can strategically promote conversational AI agents to consumers. The present study employed a 2 (AI agent sincerity condition vs. control condition) × 2 (AI agent benefits appeal: social benefits condition vs. utilitarian benefits condition) between-subjects online experimental design with a sample of 256 U.S. adults. Study results suggest that promoting social benefits of AI agents and emphasizing a sincere personality influence consumer social presence perceptions in human–AI interaction. Consumers’ perceived social presence leads to more favorable attitudes toward the advertisement and the use of the AI agent. In contrast, without the mediating role of social presence, accentuating the utilitarian benefits of AI agents in the advertisement is more effective than highlighting social advantages in influencing consumers’ positive attitudes. The current study contributes to the literature on consumer AI interactions, social presence, parasocial interactions, and brand personalities. © 2024 American Academy of Advertising."
+  },
+  {
+    "article_id": "CA_0684",
+    "title": "Reflecting on 25 Years and Forecasting the Future: Shaping JIA as a Leading Authority on Interactive Advertising",
+    "journal": "Journal of Interactive Advertising",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15252019.2025.2537822",
+    "abstract": "This paper reflects on the efforts involved in planning and launching the Journal of Interactive Advertising 25 years ago. It reviews the advances in interactive advertising research based on the journal’s most cited articles. As the rise of generative artificial intelligence (AI) represents an unprecedented development in interactive advertising, the paper advocates for future research in several key areas, including advertising creativity, personalized advertising, AI-powered persuasion agents, contextual targeting, advertising in the metaverse, and the AI-driven transformation of advertising agencies. The paper argues that interactivity remains central to effective advertising, emphasizing the importance of the consumer, who is always at the core of any advertising campaign, especially in the era of AI. © 2025 The Author(s). Published with license by Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0685",
+    "title": "When Chatbots Create Doubt: Unpacking AI-Driven Risks and Consumer Skepticism in the Hospitality Sector",
+    "journal": "International Journal of Hospitality and Tourism Administration",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15256480.2026.2646652",
+    "abstract": "This study examines how perceived risks shape consumer skepticism and booking intention toward AI chatbots in hotel services. Drawing on Perceived Risk Theory, we analyzed survey data from 309 hotel customers in Vietnam using partial least squares structural equation modeling (PLS-SEM). The findings show that misinformation, data privacy, expectation, and anthropomorphic risks significantly increase consumer skepticism, whereas interaction risk does not. Skepticism, in turn, significantly reduces booking intention and mediates the effects of most risk dimensions. By identifying skepticism as a key psychological mechanism in AI-enabled hotel booking, this study extends chatbot adoption research and offers practical guidance for improving transparency, information accuracy, privacy communication, and chatbot design. © 2026 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0686",
+    "title": "New Insights into Consumers’ Intention to Continue Using Chatbots in the Tourism Context",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2022.2136817",
+    "abstract": "Several industries recognize the potential of Artificial Intelligence to complete tasks. However, there is limited research on chatbots, and a gap in the research on what factors contribute to consumers’ intention to continue using them. This research aims to analyze the relationship of the TAM and ISS dimensions, continuing to use satisfaction and brand attachment as mediators, and using the need for interaction with the employee as a moderating dimension. The results indicated that the role of brand attachment increases the model’s explanatory power, and the need for interaction with the employee positively favors the relationship between brand attachment and satisfaction. © 2022 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0687",
+    "title": "Female Gendering of Artificial Intelligence in Travel: A Social Interaction Perspective",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2023.2275263",
+    "abstract": "Implementing artificial intelligence enables the travel industry to improve efficiency, attract customers, and enhance their experiences. However, the typically biased social perceptions of humans are now applied to artificial intelligence, which has reinforced its female gendering in the industry. Nevertheless, the mechanism of its gendering process remains unclear. Guided by the gender theory, this study has explored how gendering is constructed through the social interaction perspective. Sixteen respondents who interacted with service robots or virtual assistants during their trip were recruited and interviewed via Zoom. Our findings suggest that the female gendering of artificial intelligence can be mapped from human-human to human-artificial intelligence interaction. Four main factors related to the social construction of the gendering process are identified. The findings contribute to understanding human-technology interaction and help tourism practitioners find a more cost-effective way to integrate human-technology collaboration strategies into their daily operations. © 2023 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0688",
+    "title": "Examining the Customer Experience of Using Banking Chatbots and Its Impact on Brand Love: The Moderating Role of Perceived Risk",
+    "journal": "Journal of Internet Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332861.2019.1567188",
+    "abstract": "In today’s digitally enabled world, banks offer chatbots to improve customer service. This research looks at chatbots as a form of an information system. It observes the effect of the three quality dimensions of the information system success model on customer experience, further leading to love for the bank brand. As chatbots are a new technology platform, consumers may find some risk in its use. Hence, the moderating role of perceived risk between the three quality dimensions and customer experience is also observed. The survey method was employed to conduct the study. Data were collected from 258 respondents. The results provide a definite direction for banks to strengthen the consumer–brand relationship by offering chatbots suiting their customers’ expectations. © 2019, © 2019 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0689",
+    "title": "The Impact of Anthropomorphism on Consumers’ Purchase Decision in Chatbot Commerce",
+    "journal": "Journal of Internet Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332861.2020.1863022",
+    "abstract": "Numerous businesses have employed chatbots with a human-like speaking ability to assist customers with online shopping and customer service; however, it is uncertain whether or not these efforts will pay off by consumers engaging with them. Would young, digital-native consumers use chatbots as we anticipated? If so, what would make them use chatbots? Academic investigations into consumers’ perceptions and acceptance of chatbot commerce are lacking. This research tries to address this question by examining the effect of anthropomorphism on consumers’ perceptions of mobile messenger chatbots and its impact on behavioral decision making. The findings confirm that anthropomorphism plays a positive role in shaping consumers’ intentions to purchase through chatbot commerce. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0690",
+    "title": "Organizational Factors Affecting Successful Implementation of Chatbots for Customer Service",
+    "journal": "Journal of Internet Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332861.2021.1966723",
+    "abstract": "While chatbots have become an important part of customer service operations, there is a knowledge gap concerning organizational aspects of chatbot implementation and management. In response to this gap, we present a study of organizational factors affecting successful chatbot implementation. The study involved six organizations that had implemented chatbots for customer service within the last three years. Interviews were conducted with chatbot project owners, managers, developers, and customer service personnel–a total of 14 interviews. Through thematic analysis, five organizational factors were detailed as important for successful chatbot implementation: (1) work and team organization, (2) change management, (3) competencies and competency acquisition, (4) organizational resources, and (5) performance measures. We also present findings on the organizations' motivations and key success criteria for chatbot implementation. Based on the findings we summarize implications for theory and practice and point out directions for future research. © 2021 The Author(s). Published with license by Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0691",
+    "title": "From Exclusion to Connection: The Role of Anthropomorphic Chatbots in Shaping Customer Responses Post-Social Exclusion",
+    "journal": "Journal of Internet Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332861.2024.2375965",
+    "abstract": "In a world where digital interactions have become the norm, chatbots are evolving to not only assist with tasks but also to alleviate feelings of social exclusion. This study investigates how anthropomorphic chatbots influence customer engagement and emotional responses following social exclusion, and further impact their commercial decisions. Through a between-subject experiment involving 609 participants, we explored the effects of anthropomorphic (vs. non-anthropomorphic) chatbots across three social exclusion conditions (ignored, rejected, and control). Our findings reveal that anthropomorphic chatbots significantly enhance purchase intention, relational investment, and organizational trust, mediated by increased senses of belonging and control and enhanced parasocial interactions. This research enriches the marketing literature by applying the need-threat model and illuminating the psychological mechanisms underlying customer responses. The practical implications for marketing and public relations professionals include strategies for optimizing brand-consumer interactions through the strategic use of anthropomorphic chatbots. © 2024 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0692",
+    "title": "Mixed Method Approach towards Continuous Use of Chatbots in Healthcare Apps: An Integration of Humanizing Experience Theory",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2024.2349342",
+    "abstract": "The unprecedented adoption of apps has transformed consumer interactions. Chatbots are revolutionizing healthcare apps, but more than their integration is needed to guarantee a seamless user experience. This study advances the technology acceptance model by including anthropomorphic elements that build trust in technology for continuous chatbot use in mobile health apps. It leverages the humanizing experience theory to comprehensively examine the boundary conditions that explain the effects of humanizing digital experiences, such as self-representation and intimacy, on utilitarian and hedonic conversational cues. This research contributes to interactive marketing and mobile commerce by offering insights into user behavior for continued usage of health apps. © 2024 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0693",
+    "title": "Self-Promotion by Non-Human Service Agents: An Examination of the Impact on Customer Satisfaction",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2025.2504291",
+    "abstract": "This study examines one specific form of presentation content for digital service agents, self-promotion. It is frequently occurring among humans in various settings and it is likely to be richly represented in the training material for digital agents. Two experiments, in which customer satisfaction was the dependent variable, were conducted to manipulate a digital agent’s level of self-promotion (relatively low vs. relatively high) in initial service encounters with potential users. The results show that a relatively high level of self-promotion attenuated customer satisfaction, and that the agent’s perceived self-focus, warmth, and competence mediated this negative impact. © 2025 The Author(s). Published with license by Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0694",
+    "title": "Virtual Assistant Usage Habit: The Mediating Role of Emotional and Cognitive Trust in the Context of Anthropomorphism, Enjoyment, Intelligence",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2025.2531683",
+    "abstract": "The aim of this study is to examine the relationship between the habit of using virtual assistants and perceived anthropomorphism, perceived enjoyment and perceived intelligence. Additionally, the study tests the mediating role of emotional and cognitive trust in the relationship between perceived anthropomorphism, perceived intelligence and the habit of using virtual assistants. The research model was tested using the Structural Equation Modeling (SEM) approach. Data for the study were collected through an online survey from 598 consumers aged 18–25 residing in Turkey. This study advances consumer behavior literature and provides guidance to managers of emerging technology-based businesses. © 2025 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0695",
+    "title": "Generative AI Chatbot Prompting for Excellent Customer Service in Tourism",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2025.2610137",
+    "abstract": "This article explores the impact of prompting on the performance and service quality of artificial intelligence (AI) customer service chatbots, and the relationship between the prompting process and service quality elements. The data were collected in September 2024 from responses generated by three chatbots, each using a range of prompting techniques. The chatbots responded to real customer inquiries collected by the Visit Helsinki customer service office in summer 2020. The results show that prompting has a significant impact on the quality of online customer service that AI chatbots can provide. © 2026 The Author(s). Published with license by Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0696",
+    "title": "Some elaborate comparisons of several distribution-free schemes in short production runs and some new results",
+    "journal": "Quality Technology and Quantitative Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/16843703.2025.2489240",
+    "abstract": "The trend towards small batch production is accelerating due to advancements in manufacturing processes and the evolution of customer demands. Besides, there is oftetn an unknown or non-normal distribution of process observations in real manufacturing scenarios. To address this challenge, we study the WRS scheme for monitoring the location parameter, three distribution-free schemes for jointly monitoring location and scale parameters, and the Cramér–von Mises scheme for general shift detection in short production runs. In this paper, we employ an extensive Monte-Carlo simulation to compare the performance of these SPM schemes under various underlying distributions. This evaluation takes account of factors such as the truncated average run length and the relative mean index. Furthermore, we investigate the impact of various charting parameters on the detection performance. A numerical example is offered. The paper concludes with a summary of our findings. © 2025 International Chinese Association of Quantitative Management."
+  },
+  {
+    "article_id": "CA_0697",
+    "title": "The influence of an artificial intelligence chatbot coach assistant on the human coach-client working alliance",
+    "journal": "Coaching",
+    "journal_impact_factor": null,
+    "doi": "10.1080/17521882.2024.2304792",
+    "abstract": "Using stand-alone AI chatbot coaches in organisational coaching is becoming a reality promising to democratise, scale and enhance human coaching. However there is limited research on the hybrid use of human and AI coaching. Using the working alliance theory this paper reports on the perceptions of coaches and clients on the use of chatbot-assisted human coaching. In two qualitative studies coaches (study 1) and clients (study 2) were exposed to an AI chatbot coach assistant after which interviews were conducted and data analysed using thematic analysis. Themes were classified using working alliance theory. Coaches were concerned about the chatbot’s potential negative interference in the coach-client relationship. Clients on the other hand described a more synergetic, psychologically safe experience provided the chatbot is endorsed by the human coach. Coaches and clients thought the chatbot was useful for goal tracking, accountability and convenience and stressed as a prerequisite the importance of the chatbot being flexible, reliable and humane. This study provides important initial insights into the under-researched, new frontier of human-AI collaboration in organisational coaching, highlighting the pivotal role of the coach’s attitude towards this technology. This knowledge can help to operationalise the immense potential benefits of AI into organisational coaching practice. © 2024 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0698",
+    "title": "Comparing GROW, solution-focused and CBT coaching chatbots: a self-determination and transformative learning perspective",
+    "journal": "Coaching",
+    "journal_impact_factor": null,
+    "doi": "10.1080/17521882.2026.2625707",
+    "abstract": "Artificial intelligence (AI) coaching chatbots are increasingly used to support personal and professional development, yet little is known about how different coaching models translate into AI-mediated practice. This study compares three established coaching approaches: GROW, Solution Focused (SF) and Cognitive Behavioural Therapy (CBT) as implemented in generative AI chatbots. Drawing on Self-Determination Theory (SDT) and Transformative Learning Theory (TLT), we examine how these approaches influence three outcomes central to coaching: goal attainment, working alliance (bond, goal, task) and client technology adoption. In a two-wave experimental study (N = 592), participants were randomly assigned to engage with one of the three coaching chatbots over two sessions. Contrary to expectations derived from human coaching literature, the CBT-based chatbot outperformed both GROW and SF chatbots across most measures, suggesting that AI-mediated coaching may activate different psychological processes than human coaching. These findings extend coaching theory by exploring how established models function in AI contexts and highlight implications for coaching practice, training and the integration of AI into organisational and developmental settings. The study also raises critical questions about the unique contribution of human coaches in an era of increasingly capable AI coaching tools. © 2026 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CA_0699",
+    "title": "ChatGPT and the hospitality and tourism industry: an overview of current trends and future research directions",
+    "journal": "Journal of Hospitality Marketing and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/19368623.2023.2211993",
+    "abstract": "Since its launch, ChatGPT, an artificial intelligence chatbot developed by Open AI based on the premises of generative pre-trained transformer autoregressive language models, has gained widespread popularity and is making significant impact on society with its unique features, such as natural language processing and contextual awareness. ChatGPT is viewed as a major disruptive innovation that is likely to revolutionize the operations in many industries including the hospitality and tourism industry. The adoption of ChatGPT will result in substantial changes throughout the hospitality and tourism industry by disrupting how customer search for information, make decisions, and how businesses produce, create, and deliver customized services and experiences. This conceptual paper provides a comprehensive discussion on generative pre-trained transformers’ (GPTs) benefits, and potential challenges and threats they pose to the hospitality and tourism industry. The feasibility of integrating GPT into different travel stages and decision-making processes is also discussed. The article concludes by proposing a potential future research agenda on using GPT in creating and delivering hospitality and tourism experiences, which can guide further advancements in the field. © 2023 Taylor & Francis Group, LLC.; ChatGPT 是一款由 Open AI 开发出来的人工智能聊天机器人,它基于生成预训练转换器的自回归语言模型。自其发布以来, ChatGPT 因其独特的功能特性,如自然语言处理和上下文感知等,备受欢迎,并对社会产生了重要的影响。ChatGPT 被认为是一种重大的颠覆性创新,这种创新可能会彻底改变许多行业领域的运行方式,包括旅游和酒店业。把ChatGPT应用在酒店和旅游业中,将会在该行业中产生重大变革,这将改变顾客搜索信息和做出决策的方式,转变企业生产创造以及提供个性化服务和体验的方式。这篇概念性论文全面探讨了生成预训练转换器 (GPT) 的优点,以及它将对旅游与酒店业带来的潜在威胁和挑战。本文还讨论了将 GPT 应用到不同的旅行阶段和决策过程中的可行性。在文章最后,提出了使用 GPT为旅游和酒店业创造和传递体验的未来研究方向,这将对该领域的进一步发展起到导向作用。. © 2023 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CA_0700",
+    "title": "Effects of contemporary technologies, such as blockchain and artificial intelligence (AI) in enhancing consumers’ trustworthiness of online reviews",
+    "journal": "Journal of Hospitality Marketing and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/19368623.2023.2258522",
+    "abstract": "The research note discusses the potential effects of contemporary technologies, such as blockchain and artificial intelligence (AI), in enhancing consumers’ trustworthiness of online reviews in the tourism and hospitality context. The study postulates that three characteristics of blockchain–decentralization, immutability, and timestamping–ensure transparency in the online review process. Using a socio-technical systems approach, the current study provides insights into how blockchain technology, AI agents, and human factors interact to facilitate such transparency and thereby enhance consumers’ trustworthiness of online reviews for their decision-making. Therefore, the study proposes that perceived transparency mediates the relationship between these three blockchain characteristics and the trustworthiness of online reviews. In proposing an investigation of the characteristics of blockchain and its interaction with AI in online reviews, the study highlights that researchers and practitioners pay attention to a specific characteristic of contemporary technologies to actualize potential benefits. © 2023 Taylor & Francis Group, LLC."
+  }
+]

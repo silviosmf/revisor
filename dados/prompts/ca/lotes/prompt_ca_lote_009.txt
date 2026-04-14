@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_0401",
+    "title": "Interacting with Chatbots: Message type and consumers' control",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2022.08.012",
+    "abstract": "With advances in technology, personalized services provided by offline salespeople are replaced by new sales assistant methods, such as personalized chatbots in online and mobile environments. However, providing conversation-based recommendations may be insufficient to support consumers in online or mobile stores because they cannot experience the product in real-time. A salesperson often provides one-to-one customer support in an offline store, including verbal and visual recommendations. In this context, chatbots, the sales assistants, may better support consumers in the online and mobile environments by providing additional real-time visual information. This study aims to determine the condition of chatbots as online and mobile sales assistants, and the mechanisms by which consumers accept chatbots. The results indicate that a higher level of personalized chatbot messages enhances purchase intention through a sense of ease and understanding of the product. Moreover, additional real-time visual information (i.e., AR) supports chatbots in acting as successful sales assistants. © 2022 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0402",
+    "title": "“How mAy I help you today?” The use of AI chatbots in small family businesses and the moderating role of customer affective commitment",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2022.08.035",
+    "abstract": "In a digitally empowered business world, a growing number of family businesses are leveraging the use of chatbots in an attempt to improve customer experience. This research investigates the antecedents of chatbots’ successful use in small family businesses. Subsequently, we determine the effect of two distinctive sets of human–machine communication factors—functional and humanoid—on customer experience. We assess the latter with respect to its effect on customer satisfaction. While a form of intimate attachment can occur between customers and small businesses, affective commitment is prevalent in customers’ attitudes and could be conflicting with the distant and impersonal nature of chatbot services. Therefore, we also test the moderating role of customers’ affective commitment in the relationship between customer experience and customer satisfaction. Data come from 408 respondents, and the results offer an explicit course of action for family businesses to effectively embed chatbot services in their customer communication. The study provides practical and theoretical insights that stipulate the dimensions of chatbots’ effective use in the context of small family businesses. © 2022"
+  },
+  {
+    "article_id": "CA_0403",
+    "title": "It's a Match! The effects of chatbot anthropomorphization and chatbot gender on consumer behavior",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2022.113412",
+    "abstract": "Chatbots are increasingly used as substitutes for human service agents in online shops. This has led researchers to analyze how chatbot characteristics influence consumer responses. However, while the relevance of chatbot characteristics has been examined, to date, consumers’ personalities have remained unattended in the research on this innovative mode of online support. Therefore, this study aims to understand how the interaction of consumer characteristics and chatbot characteristics influences consumer behavior. In doing so, we focus on how chatbots’ visual cues (i.e., anthropomorphization, gender) influence consumer behavior while also considering consumers’ self-concept. To answer the research question, we first conceptually discuss why consumer behavior depends on perceived self-congruence between consumers and a chatbot, which can be reached by anthropomorphizing chatbots and giving them the “right” gender. Subsequently, based on multiple studies, we empirically test the hypotheses considering male, female, and non-binary consumers. Our results demonstrate the relevance of both chatbot anthropomorphization and chatbot gender. © 2022 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0404",
+    "title": "Are AI chatbots a cure-all? The relative effectiveness of chatbot ambidexterity in crafting hedonic and cognitive smart experiences",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2022.113526",
+    "abstract": "Whether AI chatbots improve smart experiences and generate revenue is an under-researched topic. This study fills this research gap by investigating and comparing the effects of the full range of chatbot ambidexterity on smart experiences. Using empirical data from 1,026 customers, the results indicate that chatbot ambidexterity is not a cure-all. Only efficiency-flexibility ambidexterity benefits smart experiences and customer patronage, while service-sales ambidexterity is detrimental to the creation of smart experiences. Furthermore, high service-low sales (vs low service-high sales) ambidexterity has a stronger impact on hedonic smart experiences but a weaker influence on cognitive smart experiences. Low efficiency-high flexibility and low existing-high new product selling ambidexterity outperform high efficiency-low flexibility and high existing-low new product selling ambidexterity, respectively, in crafting either hedonic or cognitive smart experiences. The results also reveal that hedonic smart experiences have a stronger impact on customer patronage than cognitive smart experiences. This study contributes to the literature on smart experiences and chatbot ambidexterity and provides fruitful and meaningful guidance for service providers regarding the deployment of AI chatbots in the frontline interface. © 2022 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0405",
+    "title": "Designing trust: The formation of employees’ trust in conversational AI in the digital workplace",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2023.113707",
+    "abstract": "The COVID-19 pandemic accelerated the adoption and use of AI technologies to support the virtualisation of the workplace. While previous research showed that systems’ use critically depends on users’ trust, little is known about the development of trust in AI technologies. This research focuses on an AI chatbot as a type of organisational AI system and asks how and why employees’ trust towards an AI chatbot is formed and sustained. To answer the research questions, we conducted an interpretive single case study of a global organisation. The study identifies three types of trust experienced by AI chatbot users – emotional, cognitive and organisational – and develops a framework of experiential and sustained trust formation. It contributes to the information systems literature by demonstrating the critical importance of emotional and organisational trust in complementing cognitive trust, as well as the key design features that promote trust in AI chatbot use. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0406",
+    "title": "Artificial intelligence empowered conversational agents: A systematic literature review and research agenda",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2023.113838",
+    "abstract": "Consumer research on conversational agents (CAs) has been growing. To illustrate and map out research in this field, we conducted a systematic literature review (SLR) of published work indexed in the Clarivate Web of Science and Elsevier Scopus databases. Four dominant topical areas were identified through bibliographic coupling. They are 1) consumers’ trust in CAs; 2) Natural Language Processing (NLP) in developing and designing CAs; 3) communication with CAs; 4) impact of CAs on value creation and the value of CAs for business. We leverage these findings to provide an updated synopsis of extant scientific work. Moreover, we draw a framework whereby we identify the: 1) drivers of and motivators for adoption and engagement with CAs; and 2) the outcomes of CA adoption for both users and organizations. Finally, we leverage the framework to develop an agenda for future research. © 2023 The Author(s)"
+  },
+  {
+    "article_id": "CA_0407",
+    "title": "I am attracted to my Cool Smart Assistant! Analyzing Attachment-Aversion in AI-Human Relationships",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2023.113863",
+    "abstract": "The conversation between humans and Artificial Intelligence (AI)-enabled intelligent voice assistants (IVA) can create bonds that go beyond a mere utilitarian purpose. The emotional cues in a Human-AI conversation can lead consumers to feel connected with the AI-agents and even consider such a relationship as cool. Although brand coolness is known to affect consumer behavior, little is known about how consumers perceive a close relationship with IVAs and what the drivers of their use or avoidance are. Therefore, the current paper adds to the literature by analyzing how AI-enabled voice assistant experience affects IVA coolness and customer-brand relationships using the attachment-aversion (A-A) theory. A total of 308 consumers showed that affective, behavioral, and intellectual experiences with the intelligent voice assistant affect IVA coolness. IVA coolness was also found to affect A-A relationships positively, influencing consumers’ motivational strength to adopt, maintain and enhance the relationship in the future. © 2023 The Author(s)"
+  },
+  {
+    "article_id": "CA_0408",
+    "title": "Managerial responses to online communication: The role of mimicry in affecting third-party observers’ purchase intentions",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2023.113979",
+    "abstract": "In interpersonal communication, humans tend to mimic one another verbally and non-verbally, producing beneficial outcomes for the mimicker. The growth in online communication has moved many manager-customer interactions from in-person to a virtual environment visible to others. Thus, we investigate whether and how managers’ conscious mimicking of wording from consumers’ online reviews affects the purchase intentions of third-party readers of the exchange. We propose that mimicking is a signal of the firm's attentiveness that increases trust, resulting in increased purchase intentions. A series of experimental studies support this hypothesis under varying conditions, such as whether the valence of the customer's communication is positive or negative, or the frequency of the use of mimicry varies. An examination of field data finds that the use of mimicry increases the ratings of subsequent reviews. Thus, we provide managers with a straightforward tool that can increase consumer trust, purchase intentions, and subsequent review ratings. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0409",
+    "title": "Inducing consumers’ self-disclosure through the fit between Chatbot's interaction styles and regulatory focus",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2023.114127",
+    "abstract": "With rising concerns among consumers over the sharing of personal information in the digital era, it is increasingly difficult to collect abundant and timely consumer data for modern online marketing practices. This paper suggests that well-designed AI agents (e.g. chatbots) can play a vital role in online marketing strategy by enhancing consumers’ willingness to self-disclosure personal information. More specifically, based on the stereotype content model (SCM) and regulatory focus theory, we examined how the interaction effect between the chatbot interaction style and individual regulatory focus influences consumers’ willingness to self-disclosure. The results from four studies (N = 1075) indicate that chatbots with warm interaction styles lead to a stronger willingness to self-disclosure for promotion-focused consumers than those who are prevention-focused, while chatbots with a competent interaction style lead to a stronger willingness to self-disclosure for prevention-focused consumers than those who are promotion-focused. Further, consumers’ trust in chatbots acts as a psychological mechanism in the disclosure induction process. This paper contributes to AI agent-related research by providing insights into how to enhance the positive effect of consumer-chatbot interaction and by offering suggestions for future research. © 2023 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0410",
+    "title": "Empathic voice assistants: Enhancing consumer responses in voice commerce",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2024.114566",
+    "abstract": "Artificial intelligence (AI)-enabled voice assistants (VAs) are transforming firm-customer interactions but often come across as lacking empathy. This challenge may cause business managers to question the overall effectiveness of VAs in shopping contexts. Recognizing empathy as a core design element in the next generation of VAs and the limits of scenario-based studies in voice commerce, this article investigates how empathy exhibited by an existing AI agent (Alexa) may alter consumer shopping responses. AI empathy moderates the original structural model bridging functional, relational, and social-emotional dimensions. Findings of an individual-session online experiment show higher intentions to delegate tasks, seek decision assistance, and trust recommendations from AI agents perceived as empathic. In contrast to individual shoppers, families respond better to functional VA attributes such as ease of use when AI empathy is present. The results contribute to the literature on AI empathy and conversational commerce while informing managerial AI design decisions. © 2024 The Author(s)"
+  },
+  {
+    "article_id": "CA_0411",
+    "title": "The mind in the machine: Estimating mind perception's effect on user satisfaction with voice-based conversational agents",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2024.114573",
+    "abstract": "Given the interest in imbuing voice-based conversational agents with humanlike features, understanding how this affects user satisfaction is ultimately important for business performance. Mind perception theory explains how ascribing the mental capacity for agency and experience to artificial intelligence shapes subsequent user attitudes. Hence, we estimate the effect of mind perception on satisfaction in users with high/low innovativeness using data from text-based online reviews, which better reflect actual usage than traditional surveys. Methodologically, where numerous controls affect the cause and outcome variables in a model, traditional machine learning methods produce biased estimates. We overcome this by deploying Double/Debiased Machine Learning (combined with text analytics). Results show that user satisfaction is increased by two forms of perceived experience: directed at moral agents, or moral patients. Perceived agency, however, has no significant influence. The increase in satisfaction from both types of perceived experience is stronger among users with high (vs. low) innovativeness. © 2024 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0412",
+    "title": "Enhancing trust in online grocery shopping through generative AI chatbots",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2024.114737",
+    "abstract": "Generative Artificial Intelligence (GAI) is witnessing a lot of adoption across industries, but literature is yet to fully document the nuances of these applications. We develop a comprehensive framework for understanding the factors that affect trust in online grocery shopping (OGS) using GAI chatbots. Our exploratory study was conducted via interviews, which helped to build our model. We integrate the Elaboration Likelihood Model (ELM) and Status Quo Bias (SQB) theory to develop the Unified Framework for Trust on Technology Platforms. In our confirmatory study, by analyzing 372 responses from users, using structural equation modelling (SEM), we initially validate our path model. Subsequently, we used fuzzy set qualitative comparative analysis (fsQCA) to check the causal combinations to explain different trust levels. Apart from perceived regret avoidance, all of the other factors had a significant effect on attitude and trust. Perceived anthropomorphism moderated the associations between interaction quality, credibility, threat, and attitude. © 2024 The Author(s)"
+  },
+  {
+    "article_id": "CA_0413",
+    "title": "Betrayed by AI: How perceived betrayal by a virtual assistant affects consumers’ purchase intentions for recommended products",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2024.114940",
+    "abstract": "AI-powered virtual assistants (VAs), such as Amazon's Alexa, have transformed consumers’ interactions with technology. Consumers develop relationships with VAs, a phenomenon that has proven beneficial to firms. By employing the “computers are social actors” (CASA) paradigm, we examine a potential vulnerability in the consumer–VA relationship. Users’ relationships with VAs may expose firms to negative consequences when consumers perceive that their VA has betrayed them. Across three studies, we demonstrate that VA betrayal reduces consumers’ purchase intentions for products later recommended by their VA. The VA's betrayal generates psychological discomfort for the user, which amplifies the user's perceptions of betrayal and reduces their feelings of closeness to their VA. This process reduces users’ purchase intentions toward products recommended by their VA. VA developers should consider design features that recognize and repair the user–VA relationship after a perceived betrayal. © 2024 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0414",
+    "title": "Empathic chatbots: A double-edged sword in customer experiences",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2024.115074",
+    "abstract": "Recent breakthroughs in affective computing have enabled the shift from mechanical to empathic chatbots, now capable of detecting, decoding, and mimicking customers’ thoughts and feelings to respond appropriately. While artificial empathy is believed to potentially bridge the human-artificial intelligence gap in customer experience, recent studies offer mixed support for its effectiveness in improving customer outcomes, leaving managers perplexed about the added value of empathic chatbots. Building on social presence theory, this paper investigates whether, how, and when empathic chatbot-led services enhance customer experience. Results from three experiments show that empathic chatbots trigger perceptions of social presence and information quality, which positively influence customer satisfaction. The findings further reveal that empathic chatbots can harm customer experience under certain conditions, particularly when customers feel time pressure. This paper provides insights into how and when to implement empathy in chatbots to enhance customer experience and boost customer satisfaction. © 2024 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0415",
+    "title": "Language translation effects in Chatbots: Evidence from a randomized field experiment on a mobile commerce platform",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2024.115158",
+    "abstract": "This study investigates the impact of language translation innovations in artificial intelligence (AI) digital assistants. We use data from a mobile com- merce platform application in India that introduced a Hindi and English version of its previously English-only language chatbot. The data, obtained from a randomized field experiment conducted on new users, help determine the impact of introducing language translation in conversational chatbots by quantifying its effect on user metrics such as purchases and uninstalls. In the experiment, the firm only altered the language of interaction, from English- only to Hindi and English. The firm did not make any other changes in the design or purchase flow within the application. We find that language trans- lation innovations significantly increase the number of user sessions and also improve user purchases and engagement. The increase in the engagement did not emerge from an increase in the number of sessions but from an increase in interactions within a session in the bilingual app. We also observe a sharp rise in uninstalls for the population that received the bilingual app. We find that in the bilingual chatbot, uninstalls rise with increased user interactions in a high involvement product category. In sum, the results from the field experiment show that while language translation in artificially intelligent as- sistants leads to greater purchases, it could also lead to increased uninstalls. This result suggests that implementing similar language translation innova- tions in isolation, without any modifications to in-application experience, has the potential to yield negative outcomes for the firm. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0416",
+    "title": "Proposing the “Digital Agenticity Theory” to analyze user engagement in conversational AI chatbot",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2024.115162",
+    "abstract": "The emergence of conversational AI tools, such as voice assistants and chatbots, has completely changed how consumers engage with companies and goods. However, if we limit our search to characteristics that make humans, we may experience the “Uncanny Valley” effect and other unanticipated outcomes. In particular, this work presents DIGA, a philosophical concept for defining AI autonomy in this setting. DIGA is the ability of digital entities to effectively communicate, understand the intentions of others, and absorb influences. This study develops and assesses the Digital Agenticity Theory (DAT) to examine how DIGA impacts user engagement and how it relates to negative emotions, perceived anthropomorphism, and perceived anthropomorphism. The study explores the multidisciplinary nature of DAT using viewpoints from technology, society, and consumer behavior. The intricate relationship between people and digital entities is clarified by this study, which also offers guidance for upcoming advancements in AI systems. Moreover, DIGA theory offers a wide range of insights and implications for the design and implementation of autonomous digital agents in a number of domains, such as consumer behavior, AI development, and human–computer interaction. © 2024 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0417",
+    "title": "Online chat encounters: Satisfying customers through dialogical interaction",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2025.115197",
+    "abstract": "This research examines the effects of dialogical interaction within online chat (DIOC) on satisfaction, given the marketplace prevalence of these online customer–agent interactions and limited scholarly evidence about their impact. Drawing on service-dominant logic, person–environment fit theory, and existing dialogical interaction (DI) literature, the authors assess predictions using six experiments, including one on the live chat platform Slack, to demonstrate that DIOC significantly boosts satisfaction, especially among customers with utilitarian versus hedonic motives. This effect is explained by goal congruency. The authors also investigate boundary conditions where DIOC's impact varies, finding it more beneficial for utilitarian-motivated customers when customer–agent similarity is low. Further, dialogical interaction with chatbots and human agents yields similar levels of customer satisfaction for utilitarian-motivated customers. In contrast, hedonically driven customers have higher levels of satisfaction when interacting with human agents. These findings offer practical implications for optimizing customers’ experiences in online chats. © 2025 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0418",
+    "title": "Is AI suitable to speak about morality? Consumer response to AI-generated moral appeals in the case of fair trade products",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2025.115487",
+    "abstract": "While marketing can refer to morality, it remains insufficiently explained how consumers respond to AI-generated moral appeals. Motivated by that gap, the current research applied incongruity theory to investigate the effect of moral appeal presence on the persuasiveness of AI (vs. human) product advice in two experiments (N = 445), manipulating moral appeal presence in fair-trade product messages. The effect of moral appeal presence on purchase intent through message-source fit was more positive when the product recommendation was provided by humans (vs. AI) (Study 1). For AI-generated advice, the effect of moral appeal presence on AI advice following intent through message-source fit was less negative when the AI agent was perceived as more anthropomorphized, and AI superiority belief was higher (Study 2). The results extend the knowledge of consumer response to AI and the role of incongruity in AI perception. Marketers are guided on how to involve moral appeals in AI communication. © 2025 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0419",
+    "title": "The influence of artificial intelligence chatbot problem solving on customers’ continued usage intention in e-commerce platforms: an expectation-confirmation model approach",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2025.115661",
+    "abstract": "The rapid advancement of artificial intelligence (AI) technology has led to its widespread application across various fields, including e-commerce platforms. AI chatbots, powered by large data models, have emerged as a crucial tool for enhancing customer service and user experience. This study aims to investigate the impact of AI chatbot problem-solving capabilities on users’ intention to continue using these services within e-commerce platforms. By integrating elements from the Expectation-Confirmation Model (ECM) and the Technology Acceptance Model (TAM), a comprehensive research model is proposed to examine the relationships between problem-solving, confirmation, perceived ease of use, satisfaction, trust, and continued usage intention. The study employs structural equation modelling (SEM) to analyse data collected from 315 participants through an online questionnaire. The findings reveal that problem-solving abilities positively influence users’ confirmation, which in turn positively affects satisfaction, perceived ease of use, and trust. Furthermore, perceived ease of use exhibits a positive impact on satisfaction, trust, and continued usage intention. Satisfaction and trust have a positive impact on continued usage intention, with satisfaction showing a stronger influence than both problem-solving ability and ease of use. The study contributes to the theoretical understanding of user perceptions and behaviours in AI-driven interactions within e-commerce platforms. It highlights the importance of problem-solving capabilities, perceived ease of use, satisfaction, and trust in driving users’ continued engagement with AI chatbots. Practical implications for AI technology developers and e-commerce companies are discussed, emphasizing the need to focus on enhancing chatbots’ problem-solving proficiency and user-friendliness to foster long-term user retention. Future research directions are proposed, addressing the study's limitations and exploring the generalizability of the findings beyond the e-commerce context. © 2025 The Author(s)"
+  },
+  {
+    "article_id": "CA_0420",
+    "title": "From static to conversational: The role of landing pages and chatbots in B2B lead generation",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2025.115681",
+    "abstract": "This research investigates the effectiveness of WhatsApp-based chatbots versus traditional landing pages for Business-to-Business lead generation. Through two field experiments with over 16,000 participants, we demonstrate that chatbots generate significantly more leads of higher quality than conventional landing pages. Drawing on theories of interactivity and perceived personalization, we explain how chatbots foster stronger customer engagement through enhanced responsiveness and tailored interactions. Additional in-depth interviews with B2B managers reveal three key drivers of chatbot preference: responsiveness, perceived security, and personalized experiences. However, chatbot effectiveness seems to be moderated by purchase complexity, desire for control, and cultural practices. This study offers a comprehensive process-based framework that elucidates potential mediators and moderators of chatbot performance in B2B contexts, offering actionable insights to optimize automated customer interactions in the early stages of the B2B customer journey. © 2025 Elsevier Inc."
+  },
+  {
+    "article_id": "CA_0421",
+    "title": "AI agents, agentic AI, and the future of sales",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2025.115799",
+    "abstract": "This article conceptualizes and explores autonomous artificial intelligence (AI) agents in personal selling and sales management contexts. Unlike traditional AI assistants that merely augment or automate specific tasks, autonomous AI agents perceive, reason, and act independently, enabling multi-step processes such as lead generation, qualification, customer interaction, and performance management. We conceptualize autonomous AI agents, distinguishing them from conventional AI tools, and map their emerging applications across selling and sales management processes. Building on this foundation, we outline seven research priorities: (1) understanding performance effects, (2) exploring customer reactions, (3) optimizing organizational embedding, (4) contributing to technical development, (5) designing managerial frameworks, (6) revisiting the balance between replacement and enablement of sales professionals, and (7) understanding how to bring autonomous AI agents to market. We conclude by outlining actionable guidance for educators seeking to integrate autonomous AI agents into their curricula. Furthermore, we introduce five articles featured in this special issue. © 2025 Elsevier Inc. All rights are reserved, including those for text and data mining, AI training, and similar technologies."
+  },
+  {
+    "article_id": "CA_0422",
+    "title": "Reducing consumers’ resistance to AI agents in online healthcare consultations: the role of human-AI teaming from a trust transfer perspective",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2025.115959",
+    "abstract": "While collaborative models that integrate human doctors and AI agents are increasingly critical in online healthcare consultations, little is known about how variations in doctors’ professional titles (e.g., senior vs. junior) within these teams influence healthcare consumers’ resistance to AI agents. Drawing on trust transfer theory, this study examines how various compositions of human doctor-AI teams affect consumers’ resistance to the AI agent. Across four scenario-based studies, we discovered that human doctor-AI teaming can reduce consumers’ resistance to the AI agent. Specifically, senior doctor-AI teaming more effectively reduces consumers’ resistance to the AI agent by enhancing trust transfer compared to junior doctor-AI teaming. However, this effect was not observed when the severity of the diseases consulted by consumers was low or the AI agent served as a partner. This study enriches human-AI collaboration research and suggests strategies to improve consumer acceptance of AI in healthcare services. © 2025 Elsevier Inc. All rights are reserved, including those for text and data mining, AI training, and similar technologies."
+  },
+  {
+    "article_id": "CA_0423",
+    "title": "Don’t shoot the messenger: the impact of anthropomorphized chatbots and recommendations during a process service failure☆",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2026.115991",
+    "abstract": "Anthropomorphized service and retail technologies offer many advantages for both consumers and retailers. However, the impact of anthropomorphism on consumers’ experiences with service failure and recovery is still unclear. Based on attribution theory and existing literature on anthropomorphism, this paper suggests that anthropomorphized chatbots may elicit more contempt than non-anthropomorphized ones after a service failure, which could lead to lower shopping intentions and less use of the technology. This research identifies two main factors that influence this effect: customers’ need for interaction and the use of a recommendation-based recovery strategy. Specifically, this research examines how providing alternative product suggestions during a stockout can lessen negative consumer reactions to anthropomorphized chatbots. Four studies conducted in a mobile shopping context demonstrate that anthropomorphized retail technologies can sometimes backfire during service failures, particularly for customers with low need for interaction, but offering product recommendations can improve perceptions and help restore shopping intentions. © 2026 Elsevier Inc. All rights are reserved, including those for text and data mining, AI training, and similar technologies."
+  },
+  {
+    "article_id": "CA_0424",
+    "title": "I hereby consent: Leveraging consent management and chatbot anthropomorphism to influence information disclosure and usage intentions",
+    "journal": "Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jbusres.2026.116091",
+    "abstract": "As the use of artificial intelligence (AI) chatbots becomes more prevalent, organizations face increasing pressure to adopt ethical and transparent data collection practices. This research investigated how variations in consent management (CM) design, guided by social contract theory, and different levels of chatbot anthropomorphism influenced users’ intentions to use chatbots and to disclose personal information, across three experimental studies. The findings demonstrate that transparent CM, especially when presented ‘just-in-time’, significantly increases willingness to disclose information. Contrary to prior assumptions, we found that anthropomorphism does not significantly influence disclosure intentions. These findings suggest that CM transparency plays a critical role when interacting with chatbots. Our findings also provide actionable implications for organizations in designing ethical and effective chatbot systems. © 2026 The Authors. Published by Elsevier Inc. This is an open access article under the CC BY license. http://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "article_id": "CA_0425",
+    "title": "Uncertainty of input parameters and sensitivity analysis in life cycle assessment: An Italian processed tomato product",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2017.12.258",
+    "abstract": "In the last years, food industries have sought to achieve more sustainable productions to meet the consumers’ needs and limit the damages to the environment. The agri-food sector is one of the most impactful on the environment, due to resources depletion, land degradation and emissions. In Italy, one of the most important sectors in the agri-food industry is the tomato processing. Indeed, Italy is one of the world leading processed tomato producers, representing approximately 13% of the global production and 48% of European production. According to the latest data released by the National Association of the Canned Vegetables Industry (Anicav), Italy's processed tomato production totalled 5.1 million metric tons (MMT) in 2016. Among them, mashed tomato (“passata”) represents about 50% of packaged tomato volumes in Italy. The aim of this work is to use a Life Cycle Assessment (LCA) approach to make a “from cradle to grave” analysis of this Italian processed product. In particular, the environmental performances of 500 g mashed tomato packaged in Tetra Pak®, produced by a Southern Italy company, are studied. The uncertainty of the input parameters is taken into account and a Monte Carlo simulation is performed. All data are analyzed using SimaPro 8.4.0 software, adopting ReCiPe 1.12 method at midpoint and endpoint level. It is clear that both agricultural steps, processing steps and packaging materials’ production generate relevant contributions to impact categories at midpoint and endpoint level. In particular, cultivation is the main contributor to the majority of midpoint categories. In order to identify, among the processing steps, the most affecting ones, an in-depth analysis is proposed. Among them, blanching, concentration and pasteurization steps are the main contributors to the emissions. A sensitivity analysis, considering the effect of the substitution of the energy sources, is conducted. Two improved scenarios are proposed to minimize the emissions at endpoint level, and it can be observed that the most promising solution, from the environmental point of view, would lead to a global reduction of 33.3% of the emissions affecting human health, ecosystem diversity and resource bioavailability. © 2017 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0426",
+    "title": "Greenhouse gas emissions and mitigation options for German wine production",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2018.11.206",
+    "abstract": "In the light of a dire need to reduce greenhouse gas emissions (GHG) from food value chains, this paper analyses GHG emissions from wine production based on primary data from 5 wineries, one wine cellar and 9 grape producers in Germany and explores main emission sources based on their contributions to variance. Considering system boundaries from cradle to gate we found a 90% confidence interval for results between 0.753 and 1.069 kg CO2e per bottle of wine. Main contributors to variance were bottle weight (31%), electricity usage (18%), heat (11%), yield (−9%), and diesel use in vineyards (9%). Looking at production process phases, 19% of emissions resulted from the production of wine grapes, while 81% were attributable to the winery phase, mainly to the packaging materials (57%). Exploring the mitigation potential of a reduction in bottle weight, reuse of glass bottles, increase in packaging volume and renewable energies, we found that the reuse of glass bottles deserves close attention from wine producers, consumers, and policy makers who strive for an effective decarbonization of the wine value chain. The mitigation potential of the reuse of an average bottle exceeds the mitigation potential from a reduction in bottle weight by more than threefold. A combination of the replacement of grid electricity by renewable energies, bottle weight reduction and reuse can curb GHG emissions per bottle of wine by 47%. © 2018 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0427",
+    "title": "Deliver Me from food waste: Model framework for comparing the energy use of meal-kit delivery and groceries",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2019.07.062",
+    "abstract": "This work shares a model that was developed to compare the energy requirements of meal-kit delivery systems to conventional grocery shopping. Meal-kit services can reduce food waste because the kits pre-portion ingredients for each recipe, thereby saving energy. However, the supply chain and packaging requirements of meal-kit delivery are different than those for grocery stores, potentially offsetting any energetic benefits of reduced food waste. If meal-kit delivery replaces some trips to the grocery store, then transportation-related savings might be significant. The tradeoffs of these competing effects are non-obvious, so mass and energy balances were used to assess embedded energy in both pathways. The model was illustrated under representative operating conditions for a consumer in Austin, Texas using Monte Carlo simulation. Both per-meal and per-week, a meal-kit delivery service meal is more energy intensive than procuring the same meal from conventional grocery stores primarily due to single-use packaging. Consumer transportation to the grocery store was also found to be particularly energy intensive. These results suggest that the energetic requirements of meal-kit delivery services could be reduced such that they are less than conventional grocery shopping if reusable or low-impact packaging is used, and if the delivery services are able to reduce the number of weekly trips to the grocery store.2 © 2019"
+  },
+  {
+    "article_id": "CA_0428",
+    "title": "E-waste in Australia: Generation estimation and untapped material recovery and revenue potential",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2019.117787",
+    "abstract": "This study presents an estimation of electrical and electronic equipment (EEE) products put-on-market (PoM), electronic-waste (e-waste) generation and the stock of EEE products in Australia from the year 2000–2047, considering seven categories that encompass 51 different types of product. Holt's double-exponential smoothing and dynamic lifespans (using the Weibull distribution function) are applied to compute past and future PoM and in e-waste generation, respectively. With the estimation, it is found that EEE PoM was increased from 470 kilo tons (kt) to 2135 kt in a timeframe of 2000–2015. On the other hand, e-waste generation was 115 kt in the year 2000, which then increased to 485 kt in the year 2010. For the projected period (2018–2047), the annual average growth of e-waste generation will be around 3%. E-waste generation will increase, particularly for large household appliances (LHA), small household appliances (SHA) and consumer equipment (CE), in terms of weight. This study evaluates the potentially recoverable material and revenue potential of regulated products (e.g., computer, televisions and other IT peripherals currently considered under the national television and computer recycling scheme (NTCRS) and mobile phones) and e-waste generated outside of the current product coverage. The gap between revenue generation from regulated and non-regulated products is quantitatively assessed for the first time and reported in this paper. Sensitivity and uncertainty analysis performed by Monte Carlo simulation showed the robustness and accuracy of this study. This quantification will provide invaluable insights to policymakers, including products in future legislative reform as well as the development of the recycling industry in Australia. Furthermore, this study presents a transparent process of calculation for time-series data that can be used for e-waste generation estimation for other countries, as well. © 2019 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0429",
+    "title": "Research on the spatial-temporal distribution of electric vehicle charging load demand: A case study in China",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2019.118457",
+    "abstract": "The surge in the number of electric vehicle (EV) users has brought a large amount of EV charging demands in recent years, making China construct tens of thousands of charging piles. However, the blind construction of charging infrastructures in cities brings about problems such as waste of land and funds, as well as irregular fluctuations in power grids. Only knowing the spatial-temporal distribution of EV charging load demands can these problems be solved and charging infrastructures be scientifically arranged. Therefore, this paper mainly discusses the spatial-temporal distribution of EV charging load demands in different urban functional areas and temperatures. First, involving individual differences into the hypothesis of rational people and taking multiple random factors such as time, location, temperature and road conditions into account, this paper establishes a spatial-temporal distribution model of charging load demands and applies the Monte Carlo simulation to solve it. Then, a case study is conducted. The results show that charging load demands of different functional areas have obvious spatial-temporal distribution characteristics and vary from each other. The temperature changes significantly affect the ratio of fast and slow charging load demands. Finally, this paper suggests that the proportion of slow and fast charging piles can be set to 50:1 in residential areas, 85:1 in working areas, while 3:1 in other functional areas, and the proportion in shopping entertainment areas and social rest areas can be set from 4:1 to 5:1. These proportions are related to the rated power of the charging pile. © 2019 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0430",
+    "title": "Integrating life-cycle assessment and life-cycle cost analysis to select sustainable pavement: A probabilistic model using managerial flexibilities",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2020.120046",
+    "abstract": "Sustainable development requires decision-making systems based on sustainability criteria and overpassing just economic and financial criteria. Integration of life-cycle cost analysis (LCCA) and life-cycle assessment (LCA) to select pavement alternative is a solution to address economic and environmental issues simultaneously. While most of current methods related to sustainable design of pavements consider environmental parameters as economic factors i.e. cost, this paper takes the two criteria of carbon emissions and energy consumption into account. Moreover the presented method considers the embedded managerial flexibilities which are available due to existing uncertainties in pavement project valuation procedure. Agency costs, user costs, carbon emissions, and energy consumption are considered as the main criteria, and Monte Carlo simulation (MCS) technique is used with a recursive procedure for analyzing flexibility in each time step of pavement life-cycle. For making the best decision in each time step and the best overall alternative, technique for order of preference by similarity to ideal solution (TOPSIS) is used, and the best alternatives are reported. The model is applied in a highway project in Iran to demonstrate its capabilities to analyze the sustainability of different asphalt and concrete alternatives for pavement projects. Various alternatives of the two pavement types are compared and it is clarified that the best asphalt alternative has lower life-cycle costs but more carbon emissions and much more energy consumption. Selection of concrete pavement instead of asphalt pavement in last decade in Iran, will approximately 35% increase related costs but it will result in about 2,000,000 tons of carbon emissions reduction and 700,000 GJ reduction in energy consumption annually. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0431",
+    "title": "Environmental life cycle assessment of the incorporation of recycled high-density polyethylene to polyethylene pipe grade resins",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2021.128580",
+    "abstract": "Plastic recycling involves a range of potential environmental benefits, from curbing landfill and incineration rates to the reduction of greenhouse gas emissions. However, the main challenge is to find applications where recycled plastic can successfully provide the same functionality as the replaced virgin plastic. Particularly, the incorporation of recycled high-density polyethylene (HDPE) to polyethylene (PE) pipe grade resins is a great challenge that is not currently being implemented in the manufacture of pressure pipes. In this study, life cycle assessment (LCA) is applied to quantitatively evaluate the potential environmental impacts from producing PE pipe grade resins from recycled HDPE blended with virgin HDPE. The LCA involves four HDPE waste feedstocks (crates/caps, packaging/detergency bottles, post-consumer industrial containers, and automobile fuel tanks) and two PE pipe grades (PE80 and PE100). Moreover, different allocation approaches that affect the LCA of plastic recycling, namely the cut-off approach and the Circular Footprint Formula, were investigated. The recycled content was found to largely determine the LCA results. In this regard, the production of PE80 quality from the pure HDPE waste feedstocks (such as automobile fuel tanks and post-consumer industrial containers) allows a higher recycled content, thus resulting in lower impacts. Compared with a 100 % virgin resin, these two scenarios show 80 % and 53 % less carbon footprint if the waste feedstock is considered burdens free (cut-off allocation). These percentages however decrease to 32 % and 20 % if the impacts and benefits are shared according to the Circular Footprint Formula. These trends were similarly observed for most of the impact categories evaluated, such as, acidification and fossil resources. The robustness of these results is supported by error propagation via Monte Carlo simulation. © 2021 The Authors"
+  },
+  {
+    "article_id": "CA_0432",
+    "title": "Multi-energy microgrid optimal operation with integrated power to gas technology considering uncertainties",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2021.130174",
+    "abstract": "In recent years, multi-energy microgrids (MEMGs) have emerged as an invaluable framework for enabling the use of clean and efficient electro-thermal resources as well as the integration of multi-energy storage facilities. Uncertainties modelling in such systems is a challenge because of the heterogeneity of the resources and consumers involved. This paper tackles this issue by proposing a hybrid robust energy management tool for MEMGs encompassing electric, heat, hydrogen and gas sub-networks. The variety of uncertainties brought by unpredictable demand and renewable generation are managed using adequate techniques. This way, renewable generation is modelled using the Hong 2m + 1 approach, the electrical and heat demands are managed using the information gap decision theory and the fuel-cell electric vehicles refueling demand is modelled via scenarios. The novel methodology is validated on a benchmark case study, in which extensive simulations are performed. The obtained results demonstrate the accurateness of the novel proposal and its effectiveness to manage a wide variety of uncertainties. The evidence for accurateness is that the difference in the objective function with the Monte Carlo and Hong 2m + 1 uncertainty modelling approaches only differs by ∼0.2%. Moreover, the new proposal is computationally competitive with the Monte Carlo simulation, improving its computation time by 2–3 times. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0433",
+    "title": "Regional feed-in tariff mechanism for photovoltaic power generation in China considering tradable green certificate revenue",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2024.140641",
+    "abstract": "This study introduces a new regional feed-in tariff (FIT) pricing mechanism for solar photovoltaic (PV) energy in China, informed by real option (RO) theory and incorporating the increasing significance of tradable green certificate (TGC) policy revenues. The mechanism aims to balance government and consumer burdens with investor benefits. By factoring in additional income from green certificate sales, the study calculates the internal rate of return (IRR) to fall between 8 and 16% and uses a Monte Carlo simulation to determine optimal FITs for 30 Chinese provinces. These optimal FITs are then compared with current FITs, which are categorized by three types of solar resource regions, revealing that many current FITs are set within an inappropriate range and require adjustment. Additionally, the study observes minor differences in provincial FITs within six regional power grids, suggesting that setting FIT guide prices at the regional grid level is more practical than by solar resource regions. A sensitivity analysis examines the impact of green certificate prices, carbon prices, and technological advancements on the FIT for solar PV, comparing scenarios in a realistic environment versus a more favorable one. The results indicate that in a better environment—with higher TGC and carbon prices and encouraged corporate innovation—the FIT for solar PV is closer to the cost of coal-fired electricity, thus promoting grid parity. The study advocates for adjustments to the FIT mechanism, higher TGC and carbon prices, and the encouragement of innovation to enhance the competitiveness of solar PV energy in China's energy market. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0434",
+    "title": "Sustainable mix design of recycled aggregate concrete using artificial intelligence",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2024.140994",
+    "abstract": "Recycled aggregate concrete (RAC) enhanced with supplementary cementitious materials (SCMs) presents a sustainable alternative in the construction industry. This study involved a comprehensive analysis of the compressive strength (CS) of RAC made with SCM, compiling a dataset of 3519 samples from published literature. A variety of machine learning (ML) techniques were applied to predict the compressive strength (CS) of RAC, including Elastic Net regression, K-Nearest Neighbor, Artificial Neural Network, Support Vector Machine, Decision Tree, Random Forest, eXtreme Gradient Boosting, Light Gradient Boosting, Category Boosting, and stacking methods. Particularly noteworthy was the use of the stacking technique to boost ML model predictive accuracy. The top-performing stacking model demonstrated a 4.2 % improvement in the root mean squared error over the next best model, Category Boosting, during testing. Sensitivity analysis, conducted with both the compiled and Monte Carlo-simulated databases, identified concrete testing age and cement content as critical factors influencing the CS of RAC. This aligns with existing experimental research. Additionally, the multi-objective water cycle algorithm was utilized to optimize CS, CO2 emissions, and cost of RAC, resulting in a sustainable mix design practice. Lastly, a user-friendly graphical interface was developed that allows users to input custom parameters, such as properties of RAC components and optimization algorithm settings, to obtain sustainable RAC mixtures. © 2024 The Authors"
+  },
+  {
+    "article_id": "CA_0435",
+    "title": "How to promote sustainable consumption and development of NEV? Decoding complex interrelationships in consumer requirements and design practice",
+    "journal": "Journal of Cleaner Production",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jclepro.2024.144524",
+    "abstract": "In addressing the global need for sustainable development, the rapidly growing new energy vehicle (NEV) industry has gained international attention as a key emerging sector. This investigation explores the complex interrelationships between sustainable design factors from both consumer-focused and operational perspectives across the stages of design, production, and market introduction of NEVs. Furthermore, the research highlights the importance of creating intelligent design solutions that align with the psychological and emotional expectations of consumers, thereby promoting the sustainable use of NEVs and contributing to worldwide sustainability initiatives. This study introduces an innovative framework designed to clarify the complex interactions among sustainable design factors and to create consumer-centric, intelligent design solutions. Initially, using extensive big data from the Chinese NEV market, the research utilizes natural language processing techniques to identify consumer-relevant factors. Subsequent analyses explore the profound impact and importance of these factors within sustainable design. Additionally, the study assesses sustainable design practices well-suited to the Chinese market with significant growth potential, utilizing hierarchical decomposition and network visualization to facilitate effective managerial implementation. Ultimately, this research employs latent diffusion models and prioritization strategies to evaluate and refine designs that align with consumer preferences for the aesthetic aspects of NEVs. It guides companies and designers to abandon traditional design approaches in favor of innovative, intelligent, and sustainable designs that engage consumers. By integrating insights from operations research, design studies, and the fields of neural networks and intelligent systems, this study provides a comprehensive exploration of consumer and design practices within the sustainability domain, delivering innovative insights that drive global progress and sustainable consumption of new energy vehicles. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0436",
+    "title": "Impact of artificial intelligence on aeronautics: An industry-wide review",
+    "journal": "Journal of Engineering and Technology Management - JET-M",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jengtecman.2024.101800",
+    "abstract": "Curiously, there are few contributions in the scientific literature on the subject of artificial intelligence (AI) and its impact on aeronautics. However, many communications and reports have been published by aeronautic companies about their applications of AI technologies. This article makes an industry-wide review of AI in aeronautics using a three-step sequential approach: (i) a review of AI and its concepts to define and develop a conceptual map; (ii) a selection of 100 use cases from aeronautics companies that use AI technologies (e.g., Airbus, Boeing, Air France, Safran, EasyJet, Dassault Aviation, Altair); and (iii) an analysis of the use cases using the topics defined in the conceptual map. The main results describe a rising interest in the integration of AI technologies by entities in the aeronautic sector. Moreover, the results from the use cases show that the most recurrent technologies are big data analytics, autonomous intelligent systems, predictive analytics, machine learning, and robotics. Another finding is related to the several benefits that motivate companies to integrate AI technologies into their industrial and operational processes. The most frequent benefits include customer satisfaction, saving time, safety and security, cost reduction, better decision making, solving complex problems, and ensuring optimisation and efficiency. It also appears that the performance of companies is positively impacted by using these AI technologies. Such impacts span all operational departments including marketing, where these technologies help satisfy customer needs; the industrial and operational area, which is provided with quality products; and where productivity and economic performance are optimised for more efficiency. © 2024 The Authors"
+  },
+  {
+    "article_id": "CA_0437",
+    "title": "Chatbot usage in restaurant takeout orders: A comparison study of three ordering methods",
+    "journal": "Journal of Hospitality and Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jhtm.2020.09.004",
+    "abstract": "The purpose of this study was to explore customers’ perceptions and behaviors when using chatbots in restaurant takeout orders. Built on the social presence theory, this study conducted a lab experiment to examine and compare three ordering methods in quick-service and full-service restaurants. Results revealed that phone ordering and online ordering were both better than chatbot ordering in terms of satisfaction and behavioral outcomes. The phone ordering method elicited best social presence and cognitive attitudes, while the online ordering method generated highest order amounts. Chatbot ordering is better suited for use in quick-service restaurants due to their simpler menus. In terms of order items, chatbot method was used for simple menu items and core products, phone method for specials and more complicated items, while online method for more expensive items and add-ons. The findings offer new insight for restaurant practitioners into designing and adopting chatbots. © 2020 CAUTHE - COUNCIL FOR AUSTRALASIAN TOURISM AND HOSPITALITY EDUCATION"
+  },
+  {
+    "article_id": "CA_0438",
+    "title": "Conversational AI in Tourism: A systematic literature review using TCM and ADO framework",
+    "journal": "Journal of Hospitality and Tourism Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jhtm.2025.101310",
+    "abstract": "This systematic literature review explores how conversational AI chatbots revolutionise tourism by altering how travellers gather information, make decisions, and interact with services. Using the theory, context, and method (TCM) and antecedents, decisions, and outcomes (ADO) frameworks, this review analyses 77 articles from EBSCOhost, ProQuest, Scopus and Web of Science. The study complies with primary bibliometric data, categorises 49 commonly employed theories and maps their relevance to chatbot adoption and user engagement. It organises these theories, examines ADO framework relationships, and identifies key antecedents influencing user trust, emotional engagement, and satisfaction, such as user characteristics, technological attributes, and service quality. Further, this study applied the Mixed Methods Appraisal Tool (MMAT) to systematically evaluate the risk of bias among the included articles. The analysis highlighted the significant role of cultural contexts and emotional factors, such as trustworthiness and chatbot intelligence, in shaping user perceptions. The review addresses research gaps regarding cross-cultural nuances, ethical issues, and the need for personalisation by contributing a relationship map within the ADO framework and suggesting future research directions based on TCM and ADO. These insights offer valuable guidance for researchers and practitioners aiming to leverage chatbots to improve customer experience and operational benefits in tourism. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0439",
+    "title": "Chatbot usage intention analysis: Veterinary consultation",
+    "journal": "Journal of Innovation and Knowledge",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jik.2020.09.002",
+    "abstract": "This study uses artificial intelligence and big data technologies to develop a chatbot prototype for veterinary consultations. To understand pet owners’ behavioral intentions to use the chatbot for veterinary consultations, we modify the technology acceptance model to develop a usage intention model for the veterinary consultation chatbot. We survey members of a pet network community by using Google Forms to collect data and partial least squares structural equation modeling for analysis. The results indicate that the perceived accuracy, perceived completeness, and perceived ease of use increased pet owners' user satisfaction of veterinary consultation chatbot; the perceived convenience and pet owners' user satisfaction increased pet owners' behavioral intention to use chatbot for veterinary consultations. This study can be used as a basis for evaluation of using intelligent technologies in pet healthcare consultation and pet disease management. © 2020 Journal of Innovation & Knowledge"
+  },
+  {
+    "article_id": "CA_0440",
+    "title": "Overcoming customer innovation resistance to the sustainable adoption of chatbot services: A community-enterprise perspective in Thailand",
+    "journal": "Journal of Innovation and Knowledge",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jik.2022.100211",
+    "abstract": "The primary goal of utilizing chatbots for customer service is to fulfill customer requests without requiring a conversation. However, the challenge to the sustainable adoption of innovations is overcoming the obstacles that prevent the innovation's spread. The current study examined factors including consumers' perceptions, barriers and perceived risks that influence consumers' intentions to continue utilizing chatbot services in community enterprise. Modeling integrates the innovation-decision process in Phase 1 (knowledge, persuasion, and decision) with the technology acceptance model (TAM), perceived convenience and information quality. We also consider technological anxiety and openness to experience as potential barriers to individual innovation. The research model was tested using partial least squares structural equation modeling (PLS-SEM) from 401 users with no more than 6 months of community-enterprise chatbot experience. Key findings that perceived privacy and time risk directly affected attitudes and intentions toward using chatbots. Moreover, technological anxiety is a barrier that affects attitudes toward chatbot usage, while perceived information quality indirectly influences users to use chatbots continually. However, there was no correlation between openness to experience and attitudes toward the continued use of chatbots. The finding indicates that experienced chatbot users are concerned with privacy and time constraints. This study contributes significantly to knowledge of the impediments to the diffusion of sustainable innovations among community-enterprise entrepreneurs. © 2022 The Authors"
+  },
+  {
+    "article_id": "CA_0441",
+    "title": "AI companionship or digital entrapment? investigating the impact of anthropomorphic AI-based chatbots",
+    "journal": "Journal of Innovation and Knowledge",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jik.2025.100835",
+    "abstract": "Anthropomorphic AI-based chatbots are reshaping human-machine interactions, enabling users to form emotional bonds with AI agents. While these systems provide companionship and engagement, they also raise concerns regarding digital entrapment: a complex and circular causal loop, progressively distorting relationship expectations, reinforcing emotional dependency, and increasing cognitive strain. This study investigates user perceptions and behaviors toward AI-based chatbots by analyzing 6396 Reddit threads, 47,955 comments, and 270,644 interactions across 24 communities. Using text mining techniques, sentiment analysis, and topic modeling (LDA), we identify dominant discussion themes, including AI companionship, filtering policies, and emotional entanglement with chatbots. Findings reveal that negative sentiment dominates discourses across 24 communities, with users reporting experiences of AI-induced dependency, withdrawal-like symptoms, and chatbot over-personification. Profile of Mood States (POMS) was used to triangulate the sentiment analysis and indicates that confusion and bewilderment are the most prevalent emotional states, often co-occurring with depression and exhaustion. These findings suggest that AI chatbots, while engaging, may contribute to psychological distress and unrealistic relationship expectations. Our research further highlights ethical concerns in AI engagement strategies, particularly regarding romanticized AI interactions and prolonged user retention mechanisms. Based on these findings, we propose policy and design recommendations for mitigating risks related to AI-induced digital entrapment, safeguarding vulnerable users, and enforcing ethical chatbot interactions. © 2025 The Author(s)"
+  },
+  {
+    "article_id": "CA_0442",
+    "title": "Developing banking intelligence in emerging markets: Systematic review and agenda",
+    "journal": "International Journal of Information Management Data Insights",
+    "journal_impact_factor": 11.903,
+    "doi": "10.1016/j.jjimei.2021.100026",
+    "abstract": "The current banking industry is heavily dependent on technological artifacts supported by intelligent systems for performance on operational and marketing parameters. However, the attributes for enabling practice between such technological interfaces with managerial adoption are been lagging creating a knowledge gap. To address this, present research surveys the prior work from 1970 to 2020 on intelligent decision support models specific to banking. Subsequently, findings are synthesized on quadrant outcomes; technology; employees, customers, and organizations for service ecosystems. In addition, the managerial perceptions of technology on work are captured through short survey. Finally, scope of advancements like big data, internet of things (IoT), virtual reality (VR) along other untapped conceptual relationships into this framework are discussed. © 2021 The Authors"
+  },
+  {
+    "article_id": "CA_0443",
+    "title": "Graph embedding approaches for social media sentiment analysis with model explanation",
+    "journal": "International Journal of Information Management Data Insights",
+    "journal_impact_factor": 11.903,
+    "doi": "10.1016/j.jjimei.2024.100221",
+    "abstract": "ChatGPT, the revolutionary chat agent launched in November 2022, is still an active topic of discussion among technology enthusiasts. This open-ended chatbot allows human-like conversations with it on almost all topics since it was trained on millions of documents and developed as a large language model. Since its inception, there have been several discussions and deliberations, especially on twitter and other social media handles, on the potential of ChatGPT and how the power of artificial intelligence is growing leaps and bounds in general. These platforms also witnessed several debates on the negative side of ChatGPT, such as adversely affecting the integrity and ethics and the biased training data. This work uses graph neural network embeddings with machine learning algorithms for classifying the user sentiments on ChatGPT. We have collected a total of 8202 tweets and manually labeled them into multiple classes such as positive, negative, and neutral. We make the models explainable using SHAP (SHapley Additive exPlanations), which is a game theoretical technique for explaining the output of any machine learning models. This paper also publishes our labeled dataset for other researchers to use and train advanced classification models. When our proposed approach was compared with some chosen baselines, the proposed graph embedding-based machine learning classifiers were found to be outperforming in terms of precision, recall, and accuracy. © 2024 The Author(s)"
+  },
+  {
+    "article_id": "CA_0444",
+    "title": "Adoption and impacts of generative artificial intelligence: Theoretical underpinnings and research agenda",
+    "journal": "International Journal of Information Management Data Insights",
+    "journal_impact_factor": 11.903,
+    "doi": "10.1016/j.jjimei.2024.100232",
+    "abstract": "Large language models (LLMs) have received considerable interest in the field of natural language processing (NLP) owing to their remarkable ability to generate clear, consistent, and contextually relevant materials. Among the numerous LLMs, ChatGPT (Generative Pre-trained Transformer for Chatbots) is emerging as a prominent prospective tool for developing conversational agents such as chatbots. However, there is a need for a clear conceptual understanding of ChatGPT's potential implications for the industry and its role in marketing. This study explores the adoption of ChatGPT in marketing and examines theories that may influence its adoption by marketers and consumers, as well as its implications for marketers. This study discusses how ChatGPT may allow for more personalized and engaging content, better customer experience, and improved ROI. However, adoption also brings challenges, including ethical considerations and the need for new skill development. This study also discusses future research opportunities for the adoption of ChatGPT and other generative artificial intelligence technologies in marketing. The goal is to provide insights for organizations that consider implementing these technologies, and to contribute to the literature on the adoption of Artificial Intelligence (AI) and the use of Generative AI in marketing. © 2024"
+  },
+  {
+    "article_id": "CA_0445",
+    "title": "Genie: Enhancing information management in the restaurant industry through AI-powered chatbot",
+    "journal": "International Journal of Information Management Data Insights",
+    "journal_impact_factor": 11.903,
+    "doi": "10.1016/j.jjimei.2024.100255",
+    "abstract": "In the dynamic restaurant industry, we introduce \"Genie,\" an AI-powered chatbot, represents an advancement in customer service efficiency through technological innovation. Designed to enhance restaurant operations including order processing, reservations, and FAQs management, Genie leverages advanced Natural Language Processing (NLP) techniques. By converting input queries into word embeddings and applying a sophisticated tag classification system, Genie precisely interprets customer intents and generates accurate responses, thereby markedly improving the dining experience. Our thorough examination of various word embeddings and classifiers—Word2Vec, Glove, BERT, Gaussian Naive Bayes, XGB, Artificial Neural Networks (ANN), and Recurrent Neural Networks—revealed that the combination of Word2Vec and ANN is the most effective, achieving an impressive accuracy rate of 88.9 %. This discovery highlights Genie's capability to not only streamline restaurant operations but also enhance customer satisfaction by minimizing wait times and facilitating contactless service options. Additionally, this study enriches the understanding of AI's application in service industries and explores the potential future impact of generative AI technologies on chatbot interactions. As AI technology advances, its integration is essential for Genie to deliver increasingly personalized and dynamic customer experiences, aligning with the evolving demands of the digital era. This research emphasizes the transformative impact of AI in the restaurant industry, providing valuable insights into its practical applications and future prospects for automated customer service solutions. © 2024"
+  },
+  {
+    "article_id": "CA_0446",
+    "title": "Digital marketing strategies for luxury fashion brands: A systematic literature review",
+    "journal": "International Journal of Information Management Data Insights",
+    "journal_impact_factor": 11.903,
+    "doi": "10.1016/j.jjimei.2024.100309",
+    "abstract": "The main objective of this study is to examine how digital marketing strategies can be put into practice and integrated into the actual operation of luxury fashion brands. To do this, the study explores the implementation of digital marketing strategies that are adopted by the luxury fashion brands. It uses a systematic literature review (SLR) and the real cases of luxury fashion brands as the research methodology. After conducting the SLR, the 15 digital marketing strategies for luxury fashion brands mapping into six categories in terms of types of digital marketing media, and the level of company's control and communication are identified. As digitization has become part of our daily routines and consumers are spending more time online and using social media, this study proposes that digital marketing strategies emerge as a powerful force for luxury fashion brands to better succeed in the competitive global market. © 2024 The Author(s)"
+  },
+  {
+    "article_id": "CA_0447",
+    "title": "Integrating trust and satisfaction into the UTAUT model to predict Chatbot adoption – A comparison between Gen-Z and Millennials",
+    "journal": "International Journal of Information Management Data Insights",
+    "journal_impact_factor": 11.903,
+    "doi": "10.1016/j.jjimei.2025.100332",
+    "abstract": "This paper examines the key determinants of behavioral intention, user satisfaction, and chatbot adoption among urban, college-educated student populations within Generation Z and Millennials in India. While Millennials grew up with the Internet, Gen Z was born into the era dominated by social media and smartphones, making them inherently tech-savvy and drawn to chatbots for information access. This study extends the Unified Theory of Acceptance and Use of Technology (UTAUT) by integrating technological elements with trust and satisfaction to propose a conceptual model. Using a mixed-method approach, data were collected through a cross-sectional online survey of 487 chatbot users from urban educational institutions in India. Partial Least Squares Structural Equation Modeling (PLS-SEM) was used to test 11 hypothesized direct relationships. The results suggest that users' willingness to adopt chatbots is significantly influenced by performance expectancy, social influence, trust, and satisfaction. Regarding user satisfaction, both facilitating conditions and trust played substantial roles. Additionally, this study found meaningful associations between facilitating conditions, satisfaction, intention, and adoption. Multi-group analyses revealed notable differences in chatbot adoption factors between Gen Z and Millennials within the study's sampled population. Given the importance of trust in chatbot adoption, the paper highlights that reducing perceived risks can strengthen trust, enhance user satisfaction, and drive chatbot intention and adoption. The above findings offer context-specific insights for chatbot providers in devising strategies to improve user trust, satisfaction, and adoption within similar demographics. © 2025"
+  },
+  {
+    "article_id": "CA_0448",
+    "title": "Do chatbots support consumer performance? Investigating the role of E-lifestyle and anthropomorphism in the service industry",
+    "journal": "International Journal of Information Management Data Insights",
+    "journal_impact_factor": 11.903,
+    "doi": "10.1016/j.jjimei.2025.100339",
+    "abstract": "The growing implementation of chatbots in the service industry reflects continued innovation in this area. However, concerns persist regarding chatbot competence in addressing consumer inquiries, potentially hindering both the interaction experience and consumer performance. This study investigates the factors driving consumer performance in chatbot interactions. Data were collected via an online survey of 336 Indonesian consumers. Partial least squares-structural equation modeling (PLS-SEM) was employed to test the structural model. The findings reveal that e-lifestyle significantly influences both chatbot experience and competence. Anthropomorphism significantly impacts chatbot experience, competence, and the resulting consumer performance. Moreover, both chatbot experience and competence significantly affect consumer performance. Furthermore, chatbot competence significantly shapes the user experience. This study contributes to both theoretical and practical understanding of chatbots within the service industry. © 2025 The Author(s)"
+  },
+  {
+    "article_id": "CA_0449",
+    "title": "Autonomous Shopping Systems: Identifying and Overcoming Barriers to Consumer Adoption",
+    "journal": "Journal of Retailing",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretai.2019.12.004",
+    "abstract": "Technologies are becoming increasingly autonomous, able to make decisions and complete tasks on behalf of consumers. Virtual assistants already take care of grocery shopping by replenishing used up ingredients while cooking machines prepare these ingredients and implement recipes. In the future, consumers will be able to delegate substantial parts of the shopping process to autonomous shopping systems. Whereas the functional benefits of these systems are evident, they challenge psychological consumption motives and ingrained human–machine relationships due to the delegation of decisions and tasks to technology. The authors take a cross-disciplinary approach drawing from research in marketing, psychology, and human–computer interaction to examine barriers to adoption of autonomous shopping systems. They identify different types of psychological and cultural barriers, and suggest ways to craft the online and bricks-and-mortar retail environment to overcome these barriers along the consumer journey. The article finishes with implications for policy makers and a future research agenda for researchers examining autonomous technologies. © 2019 The Authors"
+  },
+  {
+    "article_id": "CA_0450",
+    "title": "Facilitating retail customers’ use of AI-based virtual assistants: A meta-analysis",
+    "journal": "Journal of Retailing",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretai.2024.04.001",
+    "abstract": "Retailers rely on virtual assistants (VAs), such as Amazon's Alexa and chatbots, to deliver 24/7 customer service at low costs, as well as novel shopping opportunities. Despite improved VA capabilities due to artificial intelligence (AI), many retailers still struggle to convince customers to become repeat users of VAs. Therefore, to establish recommendations for how to facilitate VA use, this meta-analysis extracts 2,766 correlations from 244 independent samples of customers interacting with VAs. The results suggest that customer-, VA-, and shopping occasion–related factors all influence technology use. Price value is the strongest driver, followed by support, social influence, and anthropomorphism. Performance risk, competence, and trust matter to lesser extents. These factors exert strong indirect effects by triggering two customer responses: cognitive and emotional. Negative emotions emerge as a particularly important mediator. Finally, several VA types enhance or weaken the noted effects, including whether they are intelligent/less intelligent, commercial/noncommercial, voice-/text-based, and avatar-/non-avatar-based. The results suggest no one-size-fits-all approach applies for VAs, because their performance varies across customer responses. The current meta-analysis provides in-depth guidance for retailers seeking to select appealing VAs. © 2024 The Author(s)"
+  }
+]

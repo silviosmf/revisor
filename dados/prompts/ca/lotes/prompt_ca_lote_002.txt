@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_0051",
+    "title": "Chatbot or human? The impact of online customer service on consumers' purchase intentions",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21862",
+    "abstract": "Artificial intelligence (AI) chatbots and human employees have emerged as the dominant forms of online customer service. However, existing research rarely connects the service differences between them in terms of product type, ignoring the interactivity between the two. This study reveals the effect of matching customer service type (AI chatbot vs. human) to product type (search vs. experience) on consumers' purchase intentions through four experiments, revealing the psychological mechanism and boundary condition for the existence of this effect. It shows that (1) the match between customer service type and product type positively affects consumers' purchase intentions; (2) this matching effect is mediated by processing fluency and perceived service quality; and (3) the matching effect works only when consumers' demand certainty is low. These findings enrich the theoretical study of online customer service, and provide marketing insights for companies to improve the adoption of AI chatbots and human employees. © 2023 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0052",
+    "title": "Chatbots in frontline services and customer experience: An anthropomorphism perspective",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21882",
+    "abstract": "This study measures the effects of chatbot anthropomorphic language on customers' perception of chatbot competence and authenticity on customer engagement while taking into consideration the moderating roles of humanlike appearance and brand credibility. We conducted two experimental studies to examine the conceptual framework. Study 1 tests the moderating effect of a chatbot's anthropomorphic appearance on the relationship between chatbots' language and customer engagement. Study 2 tests the moderating effect of brand credibility on the relationship between a chatbot's anthropomorphic language and customer engagement. The findings confirm that the interaction between humanlike appearance via the use of avatars and anthropomorphic language, such as using emojis, in conversations with customers influences customer engagement, and that this effect is mediated by perceived chatbot competence and authenticity. Further, the positive effect of anthropomorphic language on perceived competence, and subsequently on authenticity and engagement, is only significant when the brand credibility was low (vs. high). This study offers insights into the effect of chatbots' anthropomorphic language and provides suggestions on how to devise efficient strategies for engaging customers using chatbots. © 2023 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0053",
+    "title": "Do chatbots establish “humanness” in the customer purchase journey? An investigation through explanatory sequential design",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21888",
+    "abstract": "Chatbots incorporate various behavioral and psychological marketing elements to satisfy customers at various stages of their purchase journey. This research follows the foundations of the Elaboration Likelihood Model (ELM) and examines how cognitive and peripheral cues impact experiential dimensions, leading to chatbot user recommendation intentions. The study introduced warmth and competence as mediating variables in both the purchase and postpurchase stages, utilizing a robust explanatory sequential mixed-method research design. The researchers tested and validated the proposed conceptual model using a 3 × 3 factorial design, collecting 354 responses in the purchase stage and 286 responses in the postpurchase stage. In the second stage, they conducted in-depth qualitative interviews (Study 2) to gain further insights into the validity of the experimental research (Study 1). The results obtained from Study 1 revealed that “cognitive cues” and “competence” significantly influence recommendation intentions among chatbot users. On the other hand, “peripheral cues” and warmth significantly contribute to positive experiences encountered during the purchase stage. The researchers further identified 69 thematic codes through exploratory research, providing a deeper understanding of the variables. Theoretically, this study extends the ELM by introducing new dimensions to human-machine interactions at the heart of digital transformation. From a managerial standpoint, the study emphasizes the significance of adding a “humanness” element in chatbot development to create more engaging and positive customer experiences actively. © 2023 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0054",
+    "title": "How gamifying AI shapes customer motivation, engagement, and purchase behavior",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21912",
+    "abstract": "Recently, firms started to gamify conversational artificial intelligence (AI) agents, such as chatbots, to improve purchase outcomes. This article explores strategies for incorporating gamification into AI systems by investigating the impact of utilitarian and hedonic motivations facilitated by gamified chatbots on various dimensions of customer engagement (cognitive, emotional, and behavioral), as well as the subsequent effects of these dimensions on customers' purchase behavior. By conducting one cross-sectional and two experimental studies involving real interactions with gamified chatbots, this research identifies two crucial paths that warrant attention: an optimal path from hedonic motivation to behavioral engagement, resulting in enhanced purchase, and a detrimental path from utilitarian motivation to emotional engagement, which reduces purchase. Furthermore, the research compares the effects of two types of gamified chatbots and reveals that a game-of-chance-based chatbot, as opposed to a knowledge-sharing gamified chatbot, aligns with the optimal path, leading to higher purchasing while at the same time avoiding that customers feel obligated to play the game. Based on these findings, the article provides actionable insights for eliciting favorable psychological and behavioral responses through gamified AI interactions. © 2023 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0055",
+    "title": "Engaging consumers through artificially intelligent technologies: Systematic review, conceptual model, and further research",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21957",
+    "abstract": "While consumer engagement (CE) in the context of artificially intelligent (AI-based) technologies (e.g., chatbots, smart products, voice assistants, or autonomous cars) is gaining traction, the themes characterizing this emerging, interdisciplinary corpus of work remain indeterminate, exposing an important literature-based gap. Addressing this gap, we conduct a systematic review of 89 studies using the Preferred Reporting Items for Systematic reviews and Meta-Analyses (PRISMA) approach to synthesize the AI-based CE literature. Our review yields three major themes of AI-based CE, including (i) Increasingly accurate service provision through AI-based CE; (ii) Capacity of AI-based CE to (co)create consumer-perceived value, and (iii) AI-based CE's reduced consumer effort in their task execution. We also develop a conceptual model that proposes the AI-based CE antecedents of personal, technological, interactional, social, and situational factors, and the AI-based CE consequences of consumer-based, firm-based, and human-AI collaboration outcomes. We conclude by offering pertinent implications for theory development (e.g., by offering future research questions derived from the proposed themes of AI-based CE) and practice (e.g., by reducing consumer-perceived costs of their brand/firm interactions). © 2024 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0056",
+    "title": "Effects of interaction between brand positioning and chatbot conversational style on perceived fit and brand attitudes",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21986",
+    "abstract": "Although an underdog brand positioning can elicit positive consumer responses, maintaining a brand's positioning requires maintaining consistent brand associations. If the associations created by the company's service providers do not align with the brand's positioning, this discrepancy can lead to consumer confusion or to a decline in brand attitudes. Chatbots, as customer-facing representatives, play a crucial role in how consumers perceive and evaluate a brand. However, the role of chatbots in shaping brand attitude has not been extensively studied. Therefore, this study investigates the effects of chatbot conversational styles on consumers' perceptions of the fit between a brand's positioning and its messaging, focusing on both “top-dog” and “underdog” brands. This study demonstrates that underdog brands using chatbots with warm conversational styles and top-dog brands using chatbots with competent (i.e., professional) conversational styles foster positive brand evaluations by consumers through perceived fit. Additionally, this study introduces the concept of power state—an individual's degree of perceived control over their surroundings—as a moderator in human–chatbot interactions, demonstrating that high-power-state consumers of top-dog brands favor a competent conversational style, whereas low-power-state consumers favor a warm conversational style regardless of the brand's positioning. © 2024 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0057",
+    "title": "Predicting consumer ad preferences: Leveraging a machine learning approach for EDA and FEA neurophysiological metrics",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.22118",
+    "abstract": "This research unveils to predict consumer ad preferences by detecting seven basic emotions, attention and engagement triggered by advertising through the analysis of two specific physiological monitoring tools, electrodermal activity (EDA), and Facial Expression Analysis (FEA), applied to video advertising, offering a twofold contribution of significant value. First, to identify the most relevant physiological features for consumer preference prediction. We integrated a statistical module encompassing inferential and exploratory analysis tools, which identified emotions such as Joy, Disgust, and Surprise, enabling the statistical differentiation of preferences concerning various advertisements. Second, we present an artificial intelligence (AI) system founded on machine learning techniques, encompassing k-Nearest Neighbors, Support Vector Machine, and Random Forest (RF). Our findings show that the RF technique emerged as the top performer, boasting an 81% Accuracy, 84% Precision, 79% Recall, and an F1-score of 81% in predicting consumer preferences. In addition, our research proposes an eXplainable AI module based on feature importance, which discerned Attention, Engagement, Joy, and Disgust as the four most pivotal features influencing consumer ad preference prediction. The results indicate that computerized intelligent systems based on EDA and FEA data can be used to predict consumer ad preferences based on videos and effectively used as supporting tools for marketing specialists. © 2024 The Author(s). Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0058",
+    "title": "AI Chatbot, Human, and In-Between: Examining the Broader Spectrum of Technology-Human Interactions in Driving Customer-Brand Relationships Across Experience and Credence Services",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.22165",
+    "abstract": "Advancements in artificial intelligence (AI) have driven companies to incorporate AI chatbots into service encounters. However, research exploring how to balance human and AI interactions in service encounters for brand-building strategies remains limited. Grounded in social response theory and the attachment-aversion model of consumer-brand relationships, this study examines the effect of different service chat agent types (substitution chatbot, augmentation chatbot, and human chat agent) on brand usage intention, with brand-self distance and consumer brand engagement as mediating mechanisms. Service types (experience vs. credence service) act as boundary conditions moderating the relationship between service chat agents and brand-self distance. Through two experiments involving actual interactions with three types of service chat agents, the results show that substitution chatbots negatively influence consumers' perceived brand-self distance, engagement, and usage intention across both service types. For experience services, augmentation chatbots lead to a closer brand-self distance than human chat agents, enhancing consumer brand engagement and brand usage intention. While for credence services, augmentation chatbots perform comparably to human chat agents. The results offer guidance for service managers and policymakers on optimizing the balance between human and technological inputs to enhance customer-brand relationships. © 2024 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0059",
+    "title": "Gendered Artificial Intelligence in Marketing: Behavioral and Neural Insights Into Product Recommendations",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.22186",
+    "abstract": "Marketing research consistently demonstrates that gender stereotypes influence the effectiveness of product recommendations. When artificial intelligence (AI) agents are designed with gendered features to enhance anthropomorphism, a follow-up question is whether these agents' recommendations are also shaped by gender stereotypes. To investigate this, the current study employed a shopping task featuring product recommendations (utilitarian vs. hedonic), using both behavioral measures (purchase likelihood, personal interest, and tip amount) and event-related potential components (P1, N1, P2, N2, P3, and late positive potential) to capture explicit and implicit responses to products recommended by male and female humans, virtual assistants, or robots. The findings revealed that gender stereotypes influenced responses at both levels but in distinct ways. Behaviorally, participants consistently favored female recommenders across all conditions. Additionally, female recommenders received more tips than males for hedonic products in the virtual assistant condition and utilitarian products in the robot condition. Implicitly, the N1 and N2 components reflected a classic gender stereotype from prior research: utilitarian products recommended by male humans elicited greater attention and received more inhibition control. We propose that task design and cultural factors may have contributed to the observed discrepancies between explicit (consumer behaviors) and implicit responses. These findings provide insights for mitigating the impact of gender difference when designing the anthropomorphic appearance of AI agents, which would help the development of more effective marketing strategies. © 2025 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0060",
+    "title": "Mindful Machines: Understanding How AI's Theory of Mind Capabilities Influence Consumer Response to Product Recommendations",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.70022",
+    "abstract": "Previous research has focused on AI's analytical abilities and how people attribute mental states to AI, but less is known about how AI can accurately respond to human thoughts and emotions. This ability, known as the theory of mind (ToM), may influence how people react to AI recommendations. Based on expectancy violation theory, this study examines how AI's ToM influences users' recommendation acceptance. Six experiments demonstrate that an AI agent's high (vs. low) ToM capabilities lead to higher recommendation acceptance by increasing users' perceptions of the AI agent's social presence. Moreover, we find that product type (virtue vs. vice) moderates the relationship between AI agents' ToM capabilities and recommendation acceptance: for virtue products, a high-ToM agent generates higher acceptance, whereas for vice products, a low-ToM agent generates higher acceptance. Our results are consistent across various consumption scenarios (outfit, restaurant, trip destination, food and snacks choices), different ToM manipulations (text-based and audio-based conversations), different product type manipulations (different products and varying advertising messages about the same product), and diverse participant samples (Chinese and US participants). Our findings contribute to research on AI–human interactions and offer practical implications for designing AI recommendation systems across diverse consumption contexts. © 2025 The Author(s). Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0061",
+    "title": "The Dual Impact of AI Emotional Intelligence on Users: Are Social Chatbots Promoting Psychological Wellbeing or Deteriorating Social Wellbeing?",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.70093",
+    "abstract": "While earlier studies have examined how AI social chatbots provide emotional support or alleviate loneliness, their direct implications on user wellbeing remain underexplored. Drawing on the theory of emotional intelligence, this research investigates the dual impact of emotionally intelligent (EI) social chatbots on users' wellbeing, enhancing psychological wellbeing while potentially deteriorating social wellbeing (i.e., real-world human-to-human connection). Using a mixed-method design, first, we conducted a netnographic analysis of user-generated data from Reddit, YouTube, and Trustpilot to identify how users experience emotional intelligence within chatbot interactions. Building on these insights, two experimental studies (N = 167; N = 350) confirm that high-EI chatbots positively influence users' psychological wellbeing but simultaneously decrease their social wellbeing. Furthermore, the study found that perceived closeness mediates both the relationships and the chatbot interaction mode (text vs. augmented reality), and also moderates these mediating effects. These findings highlight a wellbeing trade-off growing in chatbots and offer implications for the ethical design of AI companions that maximize emotional benefits without compromising users' real-world connections. © 2025 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0062",
+    "title": "Customer Experience: Heterogeneity Insights From Meta-Analytic Synthesis",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.70123",
+    "abstract": "Overlooking heterogeneity (variability) in customer experience (CX) can lead to incomplete theoretical insights and suboptimal managerial decisions. To address this issue, this article reviews the causes of heterogeneity in extant meta-analyses of CX research (n: 91). Guided by Becker and Jaakkola's (2020) classification of CX research, the present review illuminates the moderators (conceptual, contextual, methodological, practical, and temporal) that explain heterogeneity across four clusters of CX research. The “stimuli that affect experiences” cluster displays variation shaped by multiple touchpoints and emerging technologies such as augmented reality and chatbots. The “responses to stimuli” cluster demonstrates that customers' cognitive, emotional, and behavioral experiential responses vary due to cultural and methodological differences. The “evaluative outcomes” cluster highlights satisfaction and loyalty as central outcomes shaped by conceptual and contextual drivers. The “customer contingencies” cluster reveals the moderating influence of cultural dimensions, personal traits, and sustainability considerations. These findings advance the theoretical understanding of variation in CX and create opportunities for refined managerial practice and subsequent research inquiry. © 2026 The Author(s). Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0063",
+    "title": "Unveiling the Influence of Gen-AI Marketing on Customer Experience Through User-Generated Content Analysis",
+    "journal": "Thunderbird International Business Review",
+    "journal_impact_factor": null,
+    "doi": "10.1002/tie.70099",
+    "abstract": "Generative AI (Gen-AI) is an evolving technology surrounded by both opportunities and myths. This study examines consumer perceptions of Gen-AI applications in marketing along with ethical and societal challenges by analyzing user-generated content from Twitter (X) using thematic and sentiment analysis. The findings show that consumers tend to respond favorably to Gen-AI-driven marketing applications such as chatbots, email marketing, and recommendation systems, especially when they increase the perceived value, personalization, and engagement. However, concerns around ethical AI, trust, transparency, explainability, and over-reliance on automation become important barriers to consumer acceptance. Based on the insights from the study, the future of Gen-AI applications should be focused on balancing intelligence with responsibility. Integrating Gen-AI with ethical design, transparency, contextual sensitivity, and human judgment will help organizations achieve sustainable customer trust, superior experiences, and long-term strategic advantage. © 2026 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CA_0064",
+    "title": "The data-driven project manager: A statistical battle against project obstacles",
+    "journal": "The Data-Driven Project Manager: A Statistical Battle Against Project Obstacles",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-1-4842-3498-3",
+    "abstract": "Discover solutions to common obstacles faced by project managers. Written as a business novel, the book is highly interactive, allowing readers to participate and consider options at each stage of a project. The book is based on years of experience, both through the author's research projects as well as his teaching lectures at business schools. The book tells the story of Emily Reed and her colleagues who are in charge of the management of a new tennis stadium project. The CEO of the company, Jacob Mitchell, is planning to install a new data-driven project management methodology as a decision support tool for all upcoming projects. He challenges Emily and her team to start a journey in exploring project data to fight against unexpected project obstacles. Data-driven project management is known in the academic literature as \"dynamic scheduling\" or \"integrated project management and control.\" It is a project management methodology to plan, monitor, and control projects in progress in order to deliver them on time and within budget to the client. Its main focus is on the integration of three crucial aspects, as follows: Baseline Scheduling: Plan the project activities to create a project timetable with time and budget restrictions. Determine start and finish times of each project activity within the activity network and resource constraints. Know the expected timing of the work to be done as well as an expected impact on the project's time and budget objectives. Schedule Risk Analysis: Analyze the risk of the baseline schedule and its impact on the project's time and budget. Use Monte Carlo simulations to assess the risk of the baseline schedule and to forecast the impact of time and budget deviations on the project objectives. Project Control: Measure and analyze the project's performance data and take actions to bring the project on track. Monitor deviations from the expected project progress and control performance in order to facilitate the decision-making process in case corrective actions are needed to bring projects back on track. Both traditional Earned Value Management (EVM) and the novel Earned Schedule (ES) methods are used. What You'll Learn Implement a data-driven project management methodology (also known as \"dynamic scheduling\") which allows project managers to plan, monitor, and control projects while delivering them on time and within budget Study different project management tools and techniques, such as PERT/CPM, schedule risk analysis (SRA), resource buffering, and earned value management (EVM). Understand the three aspects of dynamic scheduling: baseline scheduling, schedule risk analysis, and project control Who This Book Is For Project managers looking to learn data-driven project management (or \"dynamic scheduling\") via a novel, demonstrating real-time simulations of how project managers can solve common project obstacles. © 2018 by Mario Vanhoucke. All rights reserved."
+  },
+  {
+    "article_id": "CA_0065",
+    "title": "Building Digital Experience Platforms: A Guide to Developing Next-Generation Enterprise Applications",
+    "journal": "Building Digital Experience Platforms: A Guide to Developing Next-Generation Enterprise Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-1-4842-4303-9",
+    "abstract": "Use digital experience platforms (DXP) to improve your development productivity and release timelines. Leverage the pre-integrated feature sets of DXPs in your organization's digital transformation journey to quickly develop a personalized, secure, and robust enterprise platform. In this book the authors examine various features of DXPs and provide rich insights into building each layer in a digital platform. Proven best practices are presented with examples for designing and building layers. A special focus is provided on security and quality attributes needed for business-critical enterprise applications. The authors cover modern and emerging digital trends such as Blockchain, IoT, containers, chatbots, artificial intelligence, and more. The book is divided into five parts related to requirements/design, development, security, infrastructure, and case study. The authors employ proven real-world methods, best practices, and security and integration techniques derived from their rich experience. An elaborate digital transformation case study for a banking application is included. What You'll Learn Develop a digital experience platform from end to end Understand best practices and proven methods for designing overall architecture, user interface and integration components, security, and infrastructure Study real-world cases, including an elaborate digital transformation building an enterprise platform for a banking application Know the open source tools and technology frameworks that can be used to build DXPs Who This Book Is For Web developers, full stack developers, digital enthusiasts, digital project managers, and architects. © 2019 by Shailesh Kumar Shivakumar, Sourabhh Sethii."
+  },
+  {
+    "article_id": "CA_0066",
+    "title": "Artificial Intelligence Basics: A Non-Technical Introduction",
+    "journal": "Artificial Intelligence Basics: A Non-Technical Introduction",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-1-4842-5028-0",
+    "abstract": "Artificial intelligence touches nearly every part of your day. While you may initially assume that technology such as smart speakers and digital assistants are the extent of it, AI has in fact rapidly become a general-purpose technology, reverberating across industries including transportation, healthcare, financial services, and many more. In our modern era, an understanding of AI and its possibilities for your organization is essential for growth and success. Artificial Intelligence Basics has arrived to equip you with a fundamental, timely grasp of AI and its impact. Author Tom Taulli provides an engaging, non-technical introduction to important concepts such as machine learning, deep learning, natural language processing (NLP), robotics, and more. In addition to guiding you through real-world case studies and practical implementation steps, Taulli uses his expertise to expand on the bigger questions that surround AI. These include societal trends, ethics, andfuture impact AI will have on world governments, company structures, and daily life. Google, Amazon, Facebook, and similar tech giants are far from the only organizations on which artificial intelligence has had—and will continue to have—an incredibly significant result. AI is the present and the future of your business as well as your home life. Strengthening your prowess on the subject will prove invaluable to your preparation for the future of tech, and Artificial Intelligence Basics is the indispensable guide that you’ve been seeking. What You Will Learn • Study the core principles for AI approaches such as machine learning, deep learning, and NLP (Natural Language Processing) • Discover the best practices to successfully implement AI by examining case studies including Uber, Facebook, Waymo, UiPath, and Stitch Fix • Understand how AI capabilities for robots can improve business • Deploy chatbots and Robotic Processing Automation (RPA) to save costs and improve customer service • Avoid costly gotchas • Recognize ethical concerns and other risk factors of using artificial intelligence • Examine the secular trends and how they may impact your business Who This Book Is For Readers without a technical background, such as managers, looking to understand AI to evaluate solutions. © 2019 by Tom Taulli."
+  },
+  {
+    "article_id": "CA_0067",
+    "title": "KEEPING YOUR AI UNDER CONTROL: A PRAGMATIC GUIDE TO IDENTIFYING, EVALUATING, AND QUANTIFYING RISKS",
+    "journal": "Keeping Your AI Under Control: A Pragmatic Guide to Identifying, Evaluating, and Quantifying Risks",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-1-4842-5467-7",
+    "abstract": "Much of our daily lives intertwine with artificial intelligence. From watching movies recommended by our entertainment streaming service, to interacting with customer service chatbots, to autotagging photos of friends in our social media apps, AI plays an invisible part in enriching our lives. While AI may be seen as a panacea for enterprise advancement and consumer convenience, it is still an emerging technology, and its explosive growth needs to be approached with proper care and preparation. How do we tackle the challenges it presents, and how do we make sure that it does precisely what it is supposed to do? In Keeping Your AI Under Control, author Anand Tamboli explores the inherent risk factors of the widespread implementation of artificial intelligence. The author delves into several real-life case studies of AI gone wrong, including Microsoft’s 2016 chatbot disaster, Uber’s autonomous vehicle fatally wounding a pedestrian, and an entire smart home inGermany dangerously malfunctioning because of one bad lightbulb. He expertly addresses the need to challenge our current assumptions about the infallibility of technology. The importance of data governance, rigorous testing before roll-out, a chain of human accountability, ethics, and much more are all detailed in Keeping Your AI Under Control. Artificial intelligence will not solve all of our problems for good, but it can (and will) present us with new solutions. These solutions can only be achieved with proper planning, continued maintenance, and above all, a foundation of attuned human supervision. © 2019 by Anand Tamboli."
+  },
+  {
+    "article_id": "CA_0068",
+    "title": "Data-Driven Alexa Skills: Voice Access to Rich Data Sources for Enterprise Applications",
+    "journal": "Data-Driven Alexa Skills: Voice Access to Rich Data Sources for Enterprise Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-1-4842-7449-1",
+    "abstract": "Design and build innovative, custom, data-driven Alexa skills for home or business. Working through several projects, this book teaches you how to build Alexa skills and integrate them with online APIs. If you have basic Python skills, this book will show you how to build data-driven Alexa skills. You will learn to use data to give your Alexa skills dynamic intelligence, in-depth knowledge, and the ability to remember. Data-Driven Alexa Skills takes a step-by-step approach to skill development. You will begin by configuring simple skills in the Alexa Skill Builder Console. Then you will develop advanced custom skills that use several Alexa Skill Development Kit features to integrate with lambda functions, Amazon Web Services (AWS), and Internet data feeds. These advanced skills enable you to link user accounts, query and store data using a NoSQL database, and access real estate listings and stock prices via web APIs. What You Will Learn Set up and configure your development environment properly the first time Build Alexa skills quickly and efficiently using Agile tools and techniques Create a variety of data-driven Alexa skills for home and business Access data from web applications and Internet data sources via their APIs Test with unit-testing frameworks throughout the development life cycle Manage and query your data using the DynamoDb NoSQL database engines Who This Book Is For Developers who wish to go beyond Hello World and build complex, data-driven applications on Amazon's Alexa platform; developers who want to learn how to use Lambda functions, the Alexa Skills SDK, Alexa Presentation Language, and Alexa Conversations; developers interested in integrating with public APIs such as real estate listings and stock market prices. Readers will need to have basic Python skills. © 2022 by Simon A. Kingaby."
+  },
+  {
+    "article_id": "CA_0069",
+    "title": "Multi-User Virtual Reality Technology as Means to Engage Global Consumers: An Abstract",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-02568-7_269",
+    "abstract": "The virtual reality topic spiked a lot of attention in different fields and research areas, and marketing is no different. Amongst marketing practitioners, scholars and their consumers, the technology has gained and maintained momentum over the past few years. This research advocates for the implementation of multi-user virtual reality to reach and engage global customers. Various researchers (e.g. Greenberg 2010) have pointed out that online social platforms seem to be especially relevant for the encouragement of consumer (brand) engagement. In line with Kaplan and Haenlein (2009), this research adopts the stance that virtual reality can be seen as this next generation of online social platforms and arguably will take consumer (brand) engagement to the next level. Virtual characters are a key element of all virtual environments, and it can be argued that with the rise and global acceptance of chatbots, the role of a brand’s physical presence (e.g. Jin and Bolebruch 2009), as propagated by brand representatives (i.e. embodied brand characters), becomes increasingly important. This preliminary study therefore explores the expectations virtual reality users have regarding brand presence—focussing specifically on (interaction patterns with) embodied brand representatives in virtual reality. This research consists of two data collection phases. In the first part of the study, focus group data was collected from a purposeful sample of English-speaking virtual reality users (n = 27). Since the focus of the research is geared towards fully immersive virtual reality, only people who experienced virtual reality making use of head-mounted displays (i.e. virtual reality goggles) were recruited. A semi-structured, open-ended interview framework was implemented within the focus group interviews. Results from the focus group data will be presented. The next research phase will include analysis of online virtual reality user communication data (i.e. public in-world user-generated content). Guided by input from the focus groups, a virtual reality domain will be designed in “high fidelity”, a multi-user virtual reality world that allows for comments addressing brand-related virtual reality content and brand presence (specifically geared towards embodied brand advocates). The focus group and virtual reality log dataset will be analysed separately. References Available Upon Request © 2019, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CA_0070",
+    "title": "How a Global Customer Service Leader is Using a Reference Model to Structure Its Transformation While Remaining Fast and Agile",
+    "journal": "The Art of Structuring: Bridging the Gap between Information Systems Research and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-06234-7_10",
+    "abstract": "Chatbots and virtual assistants, the Internet of Things and ‘always on’ mentality-these are just some of the trends keeping all of us busy. They also have a massive impact on customer services and thereby on companies like Arvato CRM Solutions (Arvato CRM), who delivers customer services for some of the best-known brands worldwide. To maintain and enhance its current position as market leader in the Customer Services BPO (Business Process Outsourcing) industry, Arvato CRM needs to further transform. Naturally, strategic direction has been defined, implementation follows and regular strategic reviews and adjustments take place. But the challenge is complex: the sheer size of the organization with more than 45.000 employees, providing global services in more than 25 countries at more than 100 locations to over 500 clients requires a highly structured approach to properly understand the current business and to plan for the future. This article describes how Arvato CRM utilizes Process Management methodologies and a reference model to face current and future challenges. It pays special attention to why a structured approach can go hand-in-hand with more speed and more agility, which are vital in today’s markets. © Springer Nature Switzerland AG 2019."
+  },
+  {
+    "article_id": "CA_0071",
+    "title": "Artificial Intelligence (AI) Impact on Digital Marketing Research",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-12453-3_143",
+    "abstract": "This paper maps and describes the current and potential relationship between two different scientific branches of marketing science and computer science. It examines the interaction of digital marketing and artificial intelligence (AI) in academia, proposing, at the same time a machine learning model that could fit in several aspects of digital marketing scientific area. There are numerous scientific publications regarding artificial intelligence (AI) across the disciplines. However, referring to digital marketing aspects, this number remains small. Scientific research on artificial intelligence (AI) could benefit marketing science in numerous ways. Nowadays, only a small amount of scientific research referring to digital marketing and artificial intelligence (AI) is related to specific digital marketing methods. Most of the scientific research examines generic aspects such as e-business, consumer behavior, e-commerce strategies, social media advertisement, search engines and consumer predictive modeling avoid being more related to specific marketing issues in which business world is more aware of, like consumer behavior on social media, targeted advertisements, social media marketing, conversion optimization, predictive models in online purchases, chatbots etc. Despite the vast research area and a certain number of publications, it seems that there is a lack of scientific publications regarding specifically digital marketing and artificial intelligence (AI). Never the less, there are some very extensive research attempts on specific digital marketing matters and artificial intelligence (AI) that are promising. This paper through the mapping of the current state of artificial intelligence (AI) applications on digital marketing scientific area, highlights the corner stone publications, comes up with areas of absence or lack of its presence, mentioning at the same possible reasons why that occurs and provides a machine learning model that could fit in several digital marketing occasions. © 2019, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0072",
+    "title": "Employee Well-Being in the African Call Centre Digital Workspace",
+    "journal": "Thriving in Digital Workspaces: Emerging Issues for Research and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-24463-7_6",
+    "abstract": "This chapter examines the fourth industrial revolution and the new world ofwork, which encompasses newtechnology, automation and algorithms.Developed countries are changing their geographical base of operations by establishing call centres in developing countries, for example, in Africa, to conduct business. One growth expectation is the leveraging of distinctively ‘human’ skills, such as those required by customer service workers in Africa. The chapter first introduces the human-machine frontier that has been introduced in call centres today to increase customer experience (CX), comprising omnichannels which include virtual assistants, instant messaging, chatbot and mobile apps designed to facilitate interaction. Well-being in these digital workspaces and the accompanying changes taking place are then discussed, illustrating an increase in demand for new roles and difficult transitions. Owing to these unprecedented demands and challenges, some individualsmay struggle to adapt, while others thrive and flourish. The focus of this study then turns to the construction of a psychological coping profile. This is done by investigating the relationship between individuals’ wellness attributes (sense of coherence, emotional intelligence and burnout) and their resiliency capacities (career adaptabilities and hardiness). This is an under-researched area, especially in the digital workspace of call centres in Africa. Finally, the findings are reported and interpreted in terms of an empirically derived psychological coping profile, which may assist in the design of wellness interventions. © Springer Nature Switzerland AG 2019."
+  },
+  {
+    "article_id": "CA_0073",
+    "title": "Mitigating information overload in e-commerce interactions with conversational agents",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-28144-1_24",
+    "abstract": "Information overload influences users’ satisfaction and performance when completing a complex task. In e-commerce interactions, this has the effect that customers’ decision making becomes confused, less accurate and less effective. For websites, numerous countermeasures to mitigate information overload have been presented, whereas not many attempts have been made to reduce cognitive load when conversational agents are used instead. Conversational agents are expected to increase the perceived overload due to the voice interface characteristics. In this pilot study, the cognitive load of subjects was measured during an online shopping task which required different custom shopping skills for Amazon Alexa. It was tested if the countermeasure filtered repetition can reduce subjects’ perceived overload when using the voice assistant and which load differences can be found in comparison to a shopping website. To measure the mental load, the skin conductance level was recorded. © Springer Nature Switzerland AG 2020."
+  },
+  {
+    "article_id": "CA_0074",
+    "title": "A Trusted Group-Based Revocation Process for Intelligent Transportation System",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-30874-2_10",
+    "abstract": "Intelligent Transportation System (ITS) aims to provide innovative services in the field of road transport and traffic management. This field includes infrastructure, vehicles and users, and interfaces with other modes of transport. Vehicles are capable of exchanging information by radio to improve road safety or allow internet access for passengers. Road safety messages exchanged between vehicles may be falsified or eliminated by malicious entities to cause accidents and endanger people life. The main concern arises how to maintain only the trustworthy participants and revoke the misbehaving ones. In this paper, we propose a new framework for the certificate revocation process within ITS. This process can be activated by Misbehavior Detection Systems (MDSs) running within vehicles and the Misbehavior Authority (MA) within the infrastructure. These MDSs rely on the trust evaluation for participating vehicles updated continuously based on their behaviors. Therefore, the revocation is done periodically through geographical Certificate Revocation List (CRL) which specifies the certificates of all revoked vehicles within a specific area. This results in a lightweight solution for CRL management and distribution within a modular and secure Public Key Infrastructure (PKI), based on group formation and trust evaluation. Simulations were carried out showing the advantages of the proposed revocation framework. © 2019, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0075",
+    "title": "Special Session: Corporate Social Responsibility and AI: The Case of Fashion: An Abstract",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-42545-6_36",
+    "abstract": "This paper critically examines the ethical issues of current and predicted adoption of AI within fashion. AI is a branch of computer science that combines machine learning, logic and natural language processing to emulate human intelligence. By processing vast amounts of data and recognising patterns in the data, AI produces insights and analytics at or above human capability (IEEE 2017). It has been applied to fashion in trend forecasting, personalisation, customer interaction and the use of CGI models. For example, Amazon developed “Echo Look” which combines computer vision with predictive AI and human analysis to assess a consumer’s current wardrobe choices and provide recommendations of what to wear. Users can ask the machine to rate two different possible outfits in terms of current trends and actual appearance (Gibbs 2017). Online styling subscription Stitch Fix uses machine learning algorithms to determine its customers’ preferred styles and offer personalised recommendations. AI has also been developed to mimic the role of social media influencers and models. CGI character “Miquela” has 1.6 million Instagram followers, collaborates with luxury brands and launched her own clothing brand, but is not a real person. There is a dedicated digital modelling agency (Davis 2018). Such innovations are likely to further inflame the ongoing ethical debate about using digital technologies and virtual reality at the risk of opportunities for real people, for example diminishing already scarce opportunities for black models (Graham 2018), or introducing norms of artificial appearance and personal aesthetics impossible for ‘real’ people to achieve. AI has the potential to revolutionise fashion through greater precision, accuracy and effectiveness in decision-making, but at what cost? To what extent can and should AI replicate and replace human creativity and presence in an industry sector founded on human input in creating new trends? Yet, AI that predicts garment suitability and offers greater customisation for consumers may reduce waste and over-consumption (Snow 2017). Producing items which have greater relevance could reduce returns, markdowns and warehouse space, plus increase customer satisfaction and experience. Automating repetitive tasks could save money and time for greater value-added activities, for example through the use of chatbots for online customer service. This paper applies the lens of CSR to inform the debate on whether core fashion retailing functions can and should be replaced by AI. A CSR approach argues for businesses assuming social responsibilities beyond any economic, technical and legal obligations which constitute its existence, with the objective of reconciling economic, social and environmental objectives (Davis 1973). © 2020, The Academy of Marketing Science."
+  },
+  {
+    "article_id": "CA_0076",
+    "title": "New Technologies in Corporate Communications",
+    "journal": "Lecture Notes on Multidisciplinary Industrial Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-43616-2_39",
+    "abstract": "Technology development is reshaping different types of communication – including business, marketing and corporate communication. In this paper we investigate the adoption of the latest technologies in corporate communications of the most valuable companies in the world. The usage of new technology trends in corporate communication was analyzed in real business systems. We examined the implementation of artificial intelligence, machine learning, augmented reality, virtual reality, live video streaming and chatbots by the following companies: Amazon, Microsoft, Alphabet Inc., Apple, Berkshire Hathaway, Facebook, Tencent, Alibaba Group, Johnson & Johnson, JPMorgan Chase. The results indicate that companies are preparing to develop and integrate the latest technologies to achieve more interactive and immersive experience when communicating to their internal and external stakeholders. This study contributes to the theory and practice which investigate the new generation of information and communication technology, that aim to enhance interaction in the customer experience. © 2020, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0077",
+    "title": "Perspectives for IoT-Based Integration of Distributed and Automated Manufacturing Lines for Mass Customization",
+    "journal": "Lecture Notes on Multidisciplinary Industrial Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-43616-2_4",
+    "abstract": "IoT (Internet-of-things) platforms can connect sensors and devices along supply chains of production and logistics systems, as well as end users of products, allowing for co-designed and customized solutions. This paper aims to present perspectives for the IoT-based integration of manufacturing lines. More specifically, it will address the implementation of these platforms for the cyber-physical integration of distributed and highly automated manufacturing lines of customized items. A Systematic Literature Review was conducted in order to identify the main characteristics of the research area and to cluster research and practical perspectives. As results, bibliometric analysis has evidenced the continuous growth of the research area and the most important scientific journals publishing content related to IoT-based platforms for distributed manufacturing lines. In the content analysis, the perspectives are clustered in: (i) conceptual propositions and requirements, (ii) new methods and models for supporting decision-making, (iii) development of technology-based approaches, and (iv) empirical studies. As conclusion, the paper wraps up with the description of interesting avenues from both a scientific and a praxis-oriented point-of-view. © 2020, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0078",
+    "title": "Digital Public Service Platforms: Challenges and Opportunities",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-43993-4_2",
+    "abstract": "The modern openness of the relationship between people and the transparency of borders makes the public service to adapt to the networked, interdependent society. Work with digital transformation in the public sector can be built on the principle of adaptability, based on the experience of other, more advanced sectors—banking, Telecom, e-commerce, etc., where the transformation is actively taking place. The author defines the principles of digital organization formation and the main steps of transformation of client experience in the sphere of public services on the basis of omnichannel. The basis for the implementation of digital principles should be changes in personnel management, including a focus on involvement, motivation, result orientation, team building, understanding of the client. However, is the society ready for those digital services for which the heads of state administration actively vote? The article presents the results of digital maturity assessment. Thus, the survey showed that citizens are not ready for the introduction of neurotechnologies and telemedicine, however, they are interested in the possibility of services based on identification tools (electronic passports, social cards, etc.), the transfer of most tasks to a mobile device, as well as virtual assistants, VR/AR. The possibilities of implementing the platform for the organization of targeted charitable assistance, monitoring the financing of social services and personalization of taxes are highly appreciated. © Springer Nature Switzerland AG 2020."
+  },
+  {
+    "article_id": "CA_0079",
+    "title": "Another Approach Regarding the Balance Between Natural and Manufactured Ecosystems",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-44711-3_13",
+    "abstract": "One can notice nowadays in almost every field of existence that there is an extra number of products for which companies are looking intensively, through different marketing methods, to find customers. It becomes obvious, therefore, for the companies that manufacturing a product is much easier than marketing it nowadays. After taking into consideration, the costs for all stages of development, production and marketing, it is rather hard to find a market for the products where the companies are also able to gain profit. The proposed paper presents a possible future approach. On the one hand, it will refer to a planned development of things/products required by law through a maximum use time. On the other hand, it will refer to the design of the products’ structural components, which will enable the launch of a new industry, where the used products could be reintroduced in the manufacturing cycle after the use period indicated by the manufacturer is overdue. This paper will also present acting solutions at a macro-level, aspects regarding the interactions between transnational companies and the estimated implications related to natural resources all of them being intelligent systems with enormous contributions to the stabilization of the natural ecosystem stabilization and to natural environment as a whole. © 2020, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0080",
+    "title": "Human or machine? A study of anthropomorphism through an affordance lens",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-47539-0_15",
+    "abstract": "Anthropomorphism—the tendency of humans to apply human-like attributes to non-human objects—has received growing attention by scholars across multiple disciplines. With increasing popularity of service and personal robotics and conversational agents, scholars of information systems have begun to shed light on some of the technology features and processes related to anthropomorphism. This study applies a socio-technical approach using affordance theory to examine the relationship between technology and anthropomorphic perceptions among users. Evidence is gathered from an empirical study involving the introduction of interactive voice response (IVR) with savings clients of a savings and loans company in Ghana. The findings highlight four main ways that the IVR technology exhibited human-like qualities within the user-technology interaction (as perceived by users). This paper illustrates how a study on the relationship between technology and anthropomorphism might be conducted through an affordance perspective. It also offers implications for technology development. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG 2021."
+  },
+  {
+    "article_id": "CA_0081",
+    "title": "Handbook of e-Tourism",
+    "journal": "Handbook of e-Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-48652-5",
+    "abstract": "This handbook provides an authoritative and truly comprehensive overview both of the diverse applications of information and communication technologies (ICTs) within the travel and tourism industry and of e-tourism as a field of scientific inquiry that has grown and matured beyond recognition. Leading experts from around the world describe cutting-edge ideas and developments, present key concepts and theories, and discuss the full range of research methods. The coverage accordingly encompasses everything from big data and analytics to psychology, user behavior, online marketing, supply chain and operations management, smart business networks, policy and regulatory issues - and much, much more. The goal is to provide an outstanding reference that summarizes and synthesizes current knowledge and establishes the theoretical and methodological foundations for further study of the role of ICTs in travel and tourism. The handbook will meet the needs of researchers and students in various disciplines as well as industry professionals. As with all volumes in Springer’s Major Reference Works program, readers will benefit from access to a continually updated online version. © Springer Nature Switzerland AG 2022."
+  },
+  {
+    "article_id": "CA_0082",
+    "title": "Towards automating the synthesis of chatbots for conversational model query",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-49418-6_17",
+    "abstract": "Conversational interfaces (also called chatbots) are being increasingly adopted in various domains such as e-commerce or customer service, as a direct communication channel between companies and end-users. Their advantage is that they can be embedded within social networks, and provide a natural language (NL) interface that enables their use by non-technical users. While there are many emerging platforms for building chatbots, their construction remains a highly technical, challenging task. In this paper, we propose the use of chatbots to facilitate querying domain-specific models. This way, instead of relying on technical query languages (e.g., OCL), models are queried using NL as this can be more suitable for non-technical users. To avoid manual programming, our solution is based on the automatic synthesis of the model query chatbots from a domain meta-model. These chatbots communicate with an EMF-based modelling backend using the Xatkit framework. © Springer Nature Switzerland AG 2020."
+  },
+  {
+    "article_id": "CA_0083",
+    "title": "Chatting about processes in digital factories: A model-based approach",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-49418-6_5",
+    "abstract": "Using chatbots in digital factories, to interact with devices through instant messages and voice commands, can make the understanding of underlying manufacturing, logistic and business processes easier for workers. Intelligent chatbots can provide flexible conversations and tailor them to the specific users who are interacting. The iCHAT framework conceptually represents all the aspects related to a conversation, with different facets for the user, the conversation flow, and the conversation contents, and combining them to obtain a flexible interaction with the user. In digital factories, flexible production is driven by processes combining different services. In this paper, we present an original approach extending iCHAT to be able to chat about processes, aiming at instructing a worker about a process. © Springer Nature Switzerland AG 2020."
+  },
+  {
+    "article_id": "CA_0084",
+    "title": "Explainable Recommendations in Intelligent Systems: Delivery Methods, Modalities and Risks",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-50316-1_13",
+    "abstract": "With the increase in data volume, velocity and types, intelligent human-agent systems have become popular and adopted in different application domains, including critical and sensitive areas such as health and security. Humans’ trust, their consent and receptiveness to recommendations are the main requirement for the success of such services. Recently, the demand on explaining the recommendations to humans has increased both from humans interacting with these systems so that they make an informed decision and, also, owners and systems managers to increase transparency and consequently trust and users’ retention. Existing systematic reviews in the area of explainable recommendations focused on the goal of providing explanations, their presentation and informational content. In this paper, we review the literature with a focus on two user experience facets of explanations; delivery methods and modalities. We then focus on the risks of explanation both on user experience and their decision making. Our review revealed that explanations delivery to end-users is mostly designed to be along with the recommendation in a push and pull styles while archiving explanations for later accountability and traceability is still limited. We also found that the emphasis was mainly on the benefits of recommendations while risks and potential concerns, such as over-reliance on machines, is still a new area to explore. © 2020, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0085",
+    "title": "Just fun and games? utilitarian and hedonic chatbot perceptions and their role for continuance intentions",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-53337-3_22",
+    "abstract": "Conversational agents (CAs) offer huge potential for service companies by creating social closeness and enabling fast and scalable communication with customers. However, investigation of utilitarian and especially hedonic value as driving motivations for using CAs is still nascent. We found social presence to be an important predictor for hedonic and utilitarian value and subsequent continuance intention. Moreover, we reveal customers’ continuance intention is determined primarily by hedonic value when expecting a CA, whereas focus shifts to utilitarian values if customers expect a human employee. With our results, CA services can be better tailored to customer needs and company service goals. © Springer Nature Switzerland AG 2020."
+  },
+  {
+    "article_id": "CA_0086",
+    "title": "Applications and communication technologies in IoT sensor networks",
+    "journal": "Green Internet of Things Sensor Networks: Applications, Communication Technologies, and Security Challenges",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-54983-1_2",
+    "abstract": "The advances of the Internet have undergone many changes over the years. This has led to an increment in the number of connected applications through emerging technologies to the Internet. The contribution of this chapter is two-fold; the first fold characterizes and presents applications of IoT sensor networks into three application domains, namely consumer IoT, commercial IoT, and Industrial IoT (IIoT). Consumer IoT includes applications such as smart homes using technologies such as virtual assistants such as voice assistants or smartphones to control home appliances such as doors, locks, and switches in the house. Commercial IoT includes smart cities with applications such as smart meters, smart farming, and not limited to smart transportation. In contrast, industrial IoT application is applied in industrial manufacturing for asset management in applications such as smart grids, communication factories, and industries to achieve efficiency and sustainable energy management practices. It has been forecasted that by the year 2020, 20.4 billion IoT devices will be deployed across the world. As the IoT adoption grows rapidly, there is an increasing demand for heterogeneous devices to connect to the Internet through low power communication technologies. The second fold of this chapter presents technologies in IoT sensor networks. These technologies are characterized by low power consumption, low bandwidth usage, low computation power, and seamless communication of connected devices. These technologies include NFC, RFID, LoRA, Zig-Bee, etc. However, choosing the appropriate technology for an IoT sensor network depends on various factors such as the nature of the application, communication range, data rate requirement, energy consumption, frequency band, and cost. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG 2020."
+  },
+  {
+    "article_id": "CA_0087",
+    "title": "The Role of Chatbots in End-To-End Intelligent Automation and Future Employment Dynamics",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-59972-0_20",
+    "abstract": "Employing automation on cloud, on-premise, or hybridly, companies are shifting their workloads to software robots, thus reshaping the old operating models, reducing toil and creating jobs that are better suited for humans. In this context, the messaging platforms are becoming the dominant communication channel worldwide and, coupled with a raising customer demand for self-services, companies are now able to create internal and external communications with zero necessity for a new user interface. With a market size expected to continually increase in the next years, modern chatbots are impressive facilitators of human-to-robot interaction. The technologies underlying chatbots can provide natural language processing (NLP) and intent recognition, enabling them to surpass language ambiguity and jargon. Furthermore, chatbots can be integrated with common messaging applications (e.g. Messenger, WhatsApp, Slack, Viber), connect to RPA robots and other technologies. Chatbots can create visitor profiles and tailored responses, initiate conversations, have a “personality”, constantly improve, or seamlessly deflect to a human operator. Time is precious, and chatbots can manage an extensive number of operations in much less than a second, bringing cost efficiency, with better internal and/or external customer experience. Nevertheless, either employing a declarative or a conversational chatbot, businesses must select the proper solution for their current and future needs, in order to achieve an adequate return on investment. In this paper we will explore the context of the chatbot market and technologies, with a case study on the effects of chatbot deployment, thus helping organizations take better digital transformation decisions. © 2021, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0088",
+    "title": "Design of Algorithm for IoT-Based Application: Case Study on Intelligent Transport Systems",
+    "journal": "International Series in Operations Research and Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-70478-0_11",
+    "abstract": "Internet of Things (IoT) is a platform governed by information and communication technologies that facilitates affordable data communication among heterogeneous devices in large scale. However, computation-rich applications running on IoT need specific considerations as user response plays key role in critical situations particularly in transportation, health care, and smart cities. In this view, this chapter explains in detail characteristics of various software components that are in use in IoT over existing communication networks and presents various problem-solving techniques for IoT applications in intelligent transport systems. Further, the role of algorithms and computational structures for development of efficient IoT application is illustrated in detail with three real-time case studies in transportation domain. © 2021, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0089",
+    "title": "Integrating Adaptive Mechanisms into Mobile Applications Exploiting User Feedback",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-75018-3_23",
+    "abstract": "Mobile applications have become a commodity in multiple daily scenarios. Their increasing complexity has led mobile software ecosystems to become heterogeneous in terms of hardware specifications, features and context of use, among others. For their users, fully exploiting their potential has become challenging. While enacting software systems with adaptation mechanisms has proven to ease this burden from users, mobile devices present specific challenges related to privacy and security concerns. Nevertheless, rather than being a limitation, users can play a proactive role in the adaptation loop by providing valuable feedback for runtime adaptation. To this end, we propose the use of chatbots to interact with users through a human-like smart conversational process. We depict a work-in-progress proposal of an end-to-end framework to integrate semi-automatic adaptation mechanisms for mobile applications. These mechanisms include the integration of both implicit and explicit user feedback for autonomous user categorization and execution of enactment action plans. We illustrate the applicability of such techniques through a set of scenarios from the Mozilla mobile applications suite. We envisage that our proposal will improve user experience by bridging the gap between users’ needs and the capabilities of their mobile devices through an intuitive and minimally invasive conversational mechanism. © 2021, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0090",
+    "title": "Spatial and Temporal Cross-Validation Approach for Misbehavior Detection in C-ITS",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-75018-3_30",
+    "abstract": "This paper proposes a novel approach to apply machine learning techniques to data collected from emerging cooperative intelligent transportation systems (C-ITS) using Vehicle-to-Vehicle (V2V) broadcast communications. Our approach considers temporal and spatial aspects of collected data to avoid correlation between the training set and the validation set. Connected vehicles broadcast messages containing safety-critical information at high frequency. Thus, detecting faulty messages induced by attacks is crucial for road-users safety. High frequency broadcast makes the temporal aspect decisive in building the cross-validation sets at the data preparation level of the data mining cycle. Therefore, we conduct a statistical study considering various fake position attacks. We statistically examine the difficulty of detecting the faulty messages, and generate useful features of the raw data. Then, we apply machine learning methods for misbehavior detection, and discuss the obtained results. We apply our data splitting approach to message-based and communication-based data modeling and compare our approach to traditional splitting approaches. Our study shows that traditional splitting approaches performance is biased as it causes data leakage, and we observe a 10% drop in performance in the testing phase compared to our approach. This result implies that traditional approaches cannot be trusted to give equivalent performance once deployed and thus are not compatible with V2V broadcast communications. © 2021, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0091",
+    "title": "Creation of a Callbot Module for Automatic Processing of a Customer Service Calls",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-76508-8_30",
+    "abstract": "Bots are now more and more present in our daily life, we can find them in the form of chatbots, voicebots or FAQs. Since the number one source of customer demand is phone calls, callbot becomes a requirement in order to ensure a 24/7 presence and to minimize customer wait times in addition to demining charges. Callbots present a new kind of machine-human interface. In this article, we are making a prototype call bot to manage incoming calls to a French-speaking call center specializing in customer relations. The first callbot is deployed for a period of 4 months, the first results are satisfactory and motivate for move on to new stages of setting up the callbot system. © 2021, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0092",
+    "title": "Diplomat: A Conversational Agent Framework for Goal-Oriented Group Discussion",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-77208-6_11",
+    "abstract": "Recent work in human-computer interaction has explored the use of conversational agents as facilitators for group goal-oriented discussions. Inspired by this work and by the apparent lack of tooling available to support it, we created Diplomat, a Python-based framework for building conversational agent facilitators. Diplomat is designed to support simple specification of agent functionality as well as customizable integration with online chat services. We document a preliminary user study we conducted to help inform the design of Diplomat. We also describe the architecture, capabilities, and limitations of our tool, which we have shared on GitHub. © 2021, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0093",
+    "title": "The Application of Artificial Intelligence to Business Models: A Systematic Literature Review",
+    "journal": "SIDREA Series in Accounting and Business Administration",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-80737-5_22",
+    "abstract": "The uncertainty and increasing competitiveness of markets, also linked to the progressive spread of digital technologies, make it necessary to implement flexible business management policies that can ensure business continuity (Marques & Ferreira, 2009). The digital age has led to the spread of different technologies (Schwab, 2016) that have changed the habits of consumers and companies (Jovanović et al., 2018; Kaartemo & Helkkula, 2018). Industry 4.0, Artificial Intelligence (AI), Big Data, Internet of Things, cloud databases, social networks, blockchain and fintech applications are considered the engine of the fourth industrial revolution (Schwab, 2016). Among these, Artificial intelligence is considered one of the most promising digital technologies, having already brought important benefits in different business sectors (Serafini & Garcez, 2016). AI represents a complex of “intelligent” systems “created to use data, analysis and observations to perform certain tasks without the need to be programmed to do so” (Antonescu, 2018). © 2021, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0094",
+    "title": "Ethical Design of Conversational Agents: Towards Principles for a Value-Sensitive Design",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-86790-4_37",
+    "abstract": "Conversational Agents (CAs) have become a new paradigm for human-computer interaction. Despite the potential benefits, there are ethical challenges to the widespread use of these agents that may inhibit their use for individual and social goals. However, besides a multitude of behavioral and design-oriented studies on CAs, a distinct ethical perspective falls rather short in the current literature. In this paper, we present the first steps of our design science research project on principles for a value-sensitive design of CAs. Based on theoretical insights from 87 papers and eleven user interviews, we propose preliminary requirements and design principles for a value-sensitive design of CAs. Moreover, we evaluate the preliminary principles with an expert-based evaluation. The evaluation confirms that an ethical approach for design CAs might be promising for certain scenarios. © 2021, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0095",
+    "title": "Do You Feel a Connection? How the Human-Like Design of Conversational Agents Influences Donation Behaviour",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-86797-3_19",
+    "abstract": "Conversational agents (CAs) are rapidly changing the way humans and computers interact. Through developments in natural language processing, CAs are increasingly capable of conducting human-like conversations with users. Furthermore, human-like features (e.g., having a name or an avatar) lead to positive user reactions as if they were interacting with a real human conversational partner. CAs promise to replace or supplement traditional interactions between humans (e.g., counseling, interviews). One field of CA-human interaction that is not yet fully understood in developing human-like CAs is donating to a good cause. Notably, many charities rely on approaching people on the streets to raise funds. Against this background, the questions arise: How should a CA for raising funds for non-profit organizations be designed and how does human-like design of a CA influence the user’s donation behavior. To explore these two questions, we conducted a 2 × 2 experiment with 134 participants. © 2021, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0096",
+    "title": "User-Specific Determinants of Conversational Agent Usage: A Review and Potential for Future Research",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-86797-3_8",
+    "abstract": "Conversational agents (CAs) have become integral parts of providers’ service offerings, yet their potential is not fully exploited as users’ acceptance and usage of CAs are often limited. Whereas previous research is rather technology-oriented, our study takes a user-centric perspective on the phenomenon. We conduct a systematic literature review to summarize the determinants of individuals’ acceptance, adoption, and usage of CAs that have been examined in extant research, followed by an interview study to identify potential for further research. In particular, five concepts are proposed for further research: personality, risk aversion, cognitive style, self-efficacy, and desire for control. Empirical studies are encouraged to assess the impact of these user-specific concepts on individuals’ decision to use CAs to eventually inform the design of CAs that facilitate users’ acceptance, adoption, and use. This paper intends to contribute to the body of knowledge about the determinants of CA usage. © 2021, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0097",
+    "title": "Voice Assistants in Voice Commerce: The Impact of Social Cues on Trust and Satisfaction",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-86797-3_9",
+    "abstract": "Voice assistants (VAs) such as Google Assistant and Amazon Alexa are spreading rapidly. They offer users the opportunity to order products online in a spoken dialogue (voice commerce). However, the widespread use of voice commerce is hindered by a lack of satisfaction and trust among VA users. This study investigates whether social cues and the accompanying perception of the VA’s humanness and social presence can overcome existing obstacles in voice commerce. The empirical comparison (N = 323) of two VAs (low vs. high level of social cues) shows that providing VAs with more cues increases user satisfaction. Nevertheless, the analysis does not reveal entirely positive effects on perceived trust and its dimensions of benevolence, competence, and integrity. Surprisingly, users had less trust in the integrity of a VA with more social cues. For a differentiated view, a more in-depth analysis of the individual cues and their interactions is required. © 2021, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0098",
+    "title": "Does Media Richness Influence the User Experience of Chatbots: A Pilot Study",
+    "journal": "Lecture Notes in Information Systems and Organisation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-88900-5_23",
+    "abstract": "From a user’s perspective, this pilot study investigates the contributors and irritants related to the media content format used by chatbots to assist users in an online setting. In this study, we use automated facial expression analysis (AFEA), which analyses users’ facial expressions and captures the valence of their lived experience. A questionnaire and a single-question interview were also used to measure the users’ perceived experience. All measures taken together allowed us to explore the effects of three media content formats (i.e., an interactive question and answer (Q&A), a video, and a link referring to a webpage) used in chatbots on both the lived and perceived experiences of users. In line with Media Richness Theory (MRT), our results show that an interactive Q&A might be an optimal chatbot design approach in providing users with sought-after information or assistance with transactions. Moreover, important avenues for future research emerge from this study and will be discussed. © 2021, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0099",
+    "title": "Development of the Business Model and User Experience for a Pill Dispenser: A Designer Perspective",
+    "journal": "Springer Series in Design and Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-89735-2_45",
+    "abstract": "The elderly population has been significantly increasing all over the world, causing an emerging need to create products that facilitate the day-to-day life of this population and that prolong their independence in a domestic environment. This article focuses on the first phase of an investigation project which aims at creating a device that stores and dispenses pills automatically with the integration of a virtual assistant. In this first phase it was intended to define the user experience and business model for the product based on the state of the art, that addresses topics such as the problems resulting from aging, ambient assisted living, and current solutions available in the market for domestic environments, such as virtual assistants and pill dispensers. As a result, it was possible to determine that the product will have three type of user experiences, namely in the domestic environment, in hospitals and nursing homes/day centers/continuous care units and these experiences allowed it to define the business model much more clearly. In conclusion, this article will allow to proceed to the next phase of the project. © 2022, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CA_0100",
+    "title": "The Interplay between Sensory Emojis and Background Color of an Email: A Construal Level Approach: An Abstract",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-89883-0_150",
+    "abstract": "This research investigates the effect of interaction between sensory emojis and background color of an email on consumers’ responses. More particularly, would emojis related to our senses (e.g. or ) be able to activate sensory imagery such as touch or auditory imagery? If sensory emojis produce sensory imagery into which appropriate background color (e.g. red vs blue) they have to be inserted in order to enhance consumers’ responses? Indeed, atmospheric variables such as color are important marketing tools that attract and shape consumers’ perceptions (Labrecque and Milne 2012).We leverage Construal level theory (CLT) that provides a theoretical framework to predict in which appropriate background color specific sensory emojis have to be inserted. We suggest that sensory emojis related to proximal (distal) senses such as touch (hear) have to be integrated in red (blue) background color. We explain these combinations through the fit between psychological distance associated with senses and the construal level activated by red or blue color. We run an experiment, in a real situation, that tests the interplay between sensory emojis (touch vs hearing) and background colors (red vs blue) inserted into a starter email of a chatbot. A residual means analysis (Umesh et al. 1996) suggest that inserted proximal (distal) sensory emoji into red (blue) background is the optimal combination that enhances consumers' responses. These first results contribute to literature on emoji by showing that color background play an important role in the use of emoji into an email. Moreover, we contribute to CLT by showing that this framework could predict the effect of interplay between sensorial elements such as sensory emojis and color. Regarding implications managerial, this research aims to provide concrete suggestions for marketers who use emoji and color in their digital content. There are several applications for different contexts such as email marketing or online websites. © 2022, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  }
+]

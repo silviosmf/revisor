@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0301",
+    "title": "Accountability in the Karnataka State police in India",
+    "journal": "Developing Country Perspectives on Public Service Delivery",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-81-322-2160-9_12",
+    "abstract": "The police department is generally considered to be more non-transparent than the other departments of the government. This paper details the trajectory of a study that Public Affairs Centre (PAC) carried out to look at practices of transparency and accountability in the police stations in Karnataka state (India), which are the focal points of direct citizen interaction with the police personnel to seek protection of their life and property and for grievance redress. Using the Citizen Report Card (CRC) approach, a systematic survey of 100 police stations covering 500 police personnel and 2,000 users of police services including complainants was carried out in Karnataka. The user survey focused on their experiences in reporting, registering and resolving grievances or problems. Observations of police stations and interviews with police personnel elicited views on how well they are able to process and settle the complainants’ problems and the difficulties and constraints they face in the course of this and other everyday work. The evidence generated was then used to stimulate the leadership of the State Police Department to create an agenda for reform to bring in greater transparency and accountability. The implementation of these reforms took place within a short period after the study report was submitted. © 2015, Springer India."
+  },
+  {
+    "article_id": "CS_0302",
+    "title": "Impact of the Interpretation of the Principle of Effectiveness in the Case Law of the Court of Justice of the European Union on National Case Law",
+    "journal": "The European Union 2004–2024: Twenty Years of Legal Experience, Challenges and Growth after Unprecedented EU Enlargement",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-94-6265-718-2_7",
+    "abstract": "Although the CJEU’s interpretation of the content and meaning of the EU’s principle of effectiveness still sparks debates in legal doctrine, it is already clear that the case law on this principle is too far gone to turn it back. This chapter does not intend to deny or criticize the CJEU’s case law regarding this principle; instead, it assesses its impact on the practice of national courts. Due to the principle of procedural autonomy, EU law does not harmonize the rules of implementation in the consumer protection area. However, as demonstrated in this chapter, the content of the principle of effectiveness, as interpreted in the CJEU’s case law, provides consumers with additional remedies, and influences both procedural and substantive legal norms. Assessment of the effectiveness of national rules is carried out not in abstracto, but in concreto, case by case, which makes it fragmented and haphazard. This undoubtedly impedes national courts’ ability to apply EU law norms effectively and ensure that the execution of consumer rights is timely and effective. © T.M.C. ASSER PRESS and the authors 2025."
+  },
+  {
+    "article_id": "CS_0303",
+    "title": "Financial consumers and applicable remedies: A European and italian framework",
+    "journal": "An International Comparison of Financial Consumer Protection",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-10-8441-6_8",
+    "abstract": "In Europe, general legislation requires protection of the economic interests of consumers. This includes, for instance, the consumer protection from financial services, misleading advertising and unfair contract terms. However, only after the global financial crisis, the European Union (EU) has become aware of the lack of transparency, poor handling of conflicts of interest, over-indebtedness, and low awareness of risks of the consumers in dealing with financial services. This paper aims to investigate the financial knowledge and overconfidence in Europe, and to provide an overview of consumer protection policy in EU. Here, it will be analyzed the EU regulatory framework, whose aim is to ensure the stability of the financial markets and to establish specific and common rules for banks and investments companies among the Member States. Furthermore, it deals with protections of financial consumers in the Italian legislation and within a European context. It concludes providing the Italian financial system as best example of crisis management and resolution, by providing out-of-court settlements, collective redress and crisis management procedures, with the aims to establish a systemic stability and financial consumers' confidence in the bank system. © Springer Nature Singapore Pte Ltd. 2018."
+  },
+  {
+    "article_id": "CS_0304",
+    "title": "Consumer law in the digital economy",
+    "journal": "Perspectives in Law, Business and Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-13-1080-5_5",
+    "abstract": "Consumer law in the digital economy is oriented to social issues and not to a system of classification of whatever shape or form is predetermined by the respective legal system. The Internet of Things (IoT) is becoming the ostensible phenomenon in which consumer law and data protection law are increasingly intertwined. The legal questions which arise from this deterritorialized connectivity, concern the conclusion of contracts, contracting parties, problems around the legal classification of the actions of platforms, liability for defects, IT security, data protection and problems regarding the enforcement of rights in deterritorialized contexts. The paper takes German law as paradigmatic. If one looks into the making of the contract until the enforcement, from cradle to grave so to say, a whole set of laws come to the fore: unfair commercial practices prior to the conclusion of the contract, the rules of the German civil code on offer and acceptance and on the control of standard contracts, data protection law that affects the content of the contract, last but not least procedural rules on the enforcement of individual and collective rights, inside and outside courts. EU law is omnipresent in the law on unfair commercial practices, in the control of standard terms, in data protection, in the alternative dispute settlement and in collective redress through the action of injunction. German law, however, has three particularities which need to be highlighted: the key role of unfair terms and unfair commercial practices legislation in the monitoring of the digital economy, private enforcement through consumer associations and the evolution of consumer data protection law. The paper concludes with a discussion on viable solutions. © Springer Nature Singapore Pte Ltd. 2018."
+  },
+  {
+    "article_id": "CS_0305",
+    "title": "Energy System Design Incorporating Socio-Technical Regimes and Sustainability in Japan: Energy Use, Knowledge, and Choice in a Liberalizing Energy Market",
+    "journal": "Technologies and Eco-innovation towards Sustainability II: Eco Design Assessment and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-13-1196-3_19",
+    "abstract": "This research explores energy system design-assessing probable and desirable energy scenarios based on user choice and future system participation preferences as identified in a recent survey across Japan. Scenarios are assessed from a sustainability viewpoint to clarify their economic, environmental, and social effectiveness in a quantitative manner. Conclusions identify that user choices about the energy mix and participation in the energy market can impact energy system and sustainability outcomes significantly. Further, scenario evaluations identify that sustainability and policy effectiveness are not necessarily mutually exclusive. However, technological decisions require redress in order that the future energy system can deliver desirable properties such as low cost and environmentally sound energy in an inclusive manner while contributing to Japan’s energy policy goals such as an 80% reduction in greenhouse gas emissions target for 2050. Incorporating household level stakeholder engagement under the auspices of user choice and participation has significant, positive ramifications for the future energy system, particularly for technology innovation and future deployment. An early understanding of energy system influencing trends, as explored in this research, will serve as an enabler for policy energy system design for governments and energy system policymakers. © Springer Nature Singapore Pte Ltd. 2019."
+  },
+  {
+    "article_id": "CS_0306",
+    "title": "Toward Sustainable Development for Emerging Economies: Statistical Capacity Indicators in Chile and the Andean Region",
+    "journal": "Marketization: Theory and Evidence from Emerging Economies",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-15-4514-6_11",
+    "abstract": "The authors examine Chile’s development in the context of countries that comprise the emerging economies of the Andean Region. An adapted version of the Sustainable Society Index (SSI) is used to assess and to compare the countries on dimensions that coincide with the triple-bottom-line of economic, natural-environmental and societal concerns, and to discern and project the sustainability of development in Chile and the Region. The analysis and subsequent interpretations draw on extant data and research to redress social traps; the authors present considerations for the sustainable development of the region and prognoses for consumer and societal wellness. Though some measures of inequality are a concern, findings suggest Chile is well-positioned, and indeed perhaps best positioned in the region, for sustainable development. Notable are Chile’s resource allocations for policies that stimulate economic development and inclusion, lower poverty rates, enhance schooling, facilitate health and well-being, nurture public trust, and foment political stability. © Springer Nature Singapore Pte Ltd. 2020."
+  },
+  {
+    "article_id": "CS_0307",
+    "title": "Service Recovery and Continuity in Emerging Markets",
+    "journal": "Services Marketing Issues in Emerging Economies",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-15-8787-0_13",
+    "abstract": "This chapter takes a look into the interplay of services marketing with the elements of the marketing mix. It is acknowledged that services have become a dominant force in today’s economy. Some of the important services marketing activities such as retail and health care are investigated and an effort is made to understand and appreciate the dynamics of these sectors. Simultaneously, the marketing mix has expanded to include three more Ps and their relevance and applicability to extant services marketing principles were researched and studied. In the end, the concept of social marketing for socially relevant and needed projects was studied as they are a very important vehicle of development in developing countries. Proper utilization of the service marketing mix builds brand awareness which finally results in customer loyalty. The marketing mix, in the process, must be supported by adequate service quality. So, services marketing today encompasses many facets of the economy and it is in the interest of the economy and society of developing countries to make full utilization of the concepts of services marketing and marketing mix. © Springer Nature Singapore Pte Ltd. 2020."
+  },
+  {
+    "article_id": "CS_0308",
+    "title": "Service Issues Affecting Consumer Behaviour Towards E-commerce Purchases in India",
+    "journal": "Services Marketing Issues in Emerging Economies",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-15-8787-0_5",
+    "abstract": "Globally, e-commerce is growing at an exponential rate. Several push factors, such as the growing middle class, tech-savvy young generation, increasing smartphone and Internet penetration, have contributed to this exponential growth, but there are several service issues that may adversely affect the purchasing behaviour of consumers on online platforms. These include delivery of items to consumers at the time of his/her choice, return pick-up of items delivered but not acceptable to the consumer, ease of payment and credit back in case of return of items, post-delivery warranty commitments, consumer grievance redressal in case of defective products, to name a few. This chapter analyses such consumer issues in e-commerce transactions and highlights the consumer protection regulations adopted in India, and broadly compares it with the systems in the developed economies. These issues may not only have microeconomic consequences by affecting the sales and profitability of online vendors but may pose macroeconomic challenges by slowing down the growth of the e-commerce sector in the respective countries unless otherwise addressed on time. © Springer Nature Singapore Pte Ltd. 2020."
+  },
+  {
+    "article_id": "CS_0309",
+    "title": "Quality certification of spices: Seven decades of progress",
+    "journal": "Handbook of Spices in India: 75 Years of Research and Development",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-19-3728-6_19",
+    "abstract": "This chapter explores the birth and growth of quality control and its importance in regulatory compliance and legal handling of spices, with emphasis on Indian context. Quality control involves checking and approval of various products as a result of manual or mechanical processing, right from simple sorting, grading, or drying to sophisticated processing steps to remove contamination even at trace level. In India, the specifications for each spice item have been fixed by national regulators, most importantly by the Food Safety and Standards Authority of India (FSSAI), in order to ensure compliance of various quality parameters to the stipulated legal limits as fixed based on scientific research. India is the largest producer and consumer of spices in the world, exporting spices to countries like the United States, Europe, Japan, Australia, and Middle East. So, it is important to comply to the standards of such countries for marketing the produce. It was under such a scenario that India started testing various contaminants like heavy metals, pesticides, and natural toxins and microbiological parameters. Though the quality checking and control was the responsibility of the trader in the initial stage of spice trade, due to the increasing quality complaints from the importers, the government of India started intervening in the matter to solve the issues. The government, through an act of the parliament, called Spices Board Act 1986, constituted the Spices Board, primarily for the quality maintenance of cardamom and, over the time, for other spices. Spices Board has taken several initiatives to sensitize the manufacturers and the farmers equally to get the idea of quality control percolate down to the lowest level of the primary producers. Improving the marketability of the spices is very crucial for augmenting the export which in turn benefit the country, trader, and farmer. The international and national standards necessitate the cultivation of organic products to safeguard the health of people and the environment. This chapter highlights the importance of spice export through maintaining the quality of the product because there is no shortcut toward quality. Increasing the export will bring prosperity to the country and ultimately to the farmer. The backbone of our country is the farmer, and without improving the quality of life of farmer, we cannot prosper. © Springer Nature Singapore Pte Ltd. 2024. All rights reserved."
+  },
+  {
+    "article_id": "CS_0310",
+    "title": "Applying Text Mining to Understand Customer Perception of Mobile Banking App",
+    "journal": "Handbook of Big Data and Analytics in Accounting and Auditing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-19-4460-4_14",
+    "abstract": "In this big data age, it is imperative to replace the traditional data analysis techniques with big data analytics that can deal with both structured and unstructured datasets from various sources. This study’s goal is to provide a method for analyzing unstructured data such as online customer reviews of mobile bank app to better understand customer perceptions. For analyzing customer online reviews, this study makes use of a text mining technique. Pre-processing of the extracted review data, analysis of the sentiment of each review, and an understanding of customer perception and evaluation are all part of the research process. This has come up with some important findings—when looking at it from the perspective of the customer, it was possible to determine which aspects of the app-based banking service are most important to them. As a result, service interruptions can be detected and avoided earlier, resulting in higher customer satisfaction levels. IBBL’s bank management should focus more on expanding mobile banking’s network reach from a practical standpoint. In order to prevent service failures, they can set up a systematic complaint management system that will allow them to identify and address customer complaints early. In this paper, we use sentiment analysis, one of the text mining applications, to measure service quality using customer reviews of a mobile bank. © The Editor(s) (if applicable) and The Author(s), under exclusive licence to Springer Nature Singapore Pte Ltd. 2023."
+  },
+  {
+    "article_id": "CS_0311",
+    "title": "Strategy and Technology Framework in the Pandemic Era Among Aviation Players",
+    "journal": "Technology Application in Aviation, Tourism and Hospitality: Recent Developments and Emerging Issues",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-19-6619-4_3",
+    "abstract": "Devastating impact on COVID-19‘s pandemic on aviation industry affecting millions of aviation players and users around the world. This unprece-dented crisis has led to billion dollars’ losses and expenses to the stakeholders in the industry. This pandemic has been thoroughly documented in recent scientific literature, with various studies analyzing various aspects of the changes triggered by COVID-19. Several studies have reported that COVID-19 has a positive long-term effects in air travel industry. In recent years, there are numerous technology has been implemented in the industry in order to remain competitive during these pandemic outbreaks. This paper provides an assessment that outlines the effects of the pandemic, technology application among aviation players in post COVID-19 era and recovery strategy among aviation players to encounter these issues. Despite many practices, recommendations, and suggestions arising during previous outbreaks, only a small number have been applied to air travel in civil aviation practices and oper-ations. In this paper, several initiatives and multiple approached introduced by the aviation players during these pandemic are discussed and highlighted. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2023."
+  },
+  {
+    "article_id": "CS_0312",
+    "title": "Challenges, Recovery Strategies and Solutions to the Covid-19 Pandemic in Universities: An Exploratory Literature Review",
+    "journal": "Innovation, Leadership and Governance in Higher Education: Perspectives on the Covid-19 Recovery Strategies",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-19-7299-7_4",
+    "abstract": "University systems, structures, and processes have been caught off guard by the unprecedented impacts of the Covid-19 pandemic, with almost all institutions lacking proactive contingency plans. In much of the world, most stakeholders, including consumers, are ill-prepared in technology, with academics and students having serious gaps in digital technology knowledge, mainly in poor and developing countries. In addition, funding uncertainties, inadequate technological infrastructure, intellectual lack of digital capability, and inflexible policies exacerbated the consequences of the pandemic. This has had adverse repercussions on the quality of teaching and learning. This book chapter critically synthesises the existing literature on the current strategies to recover from the pandemic, discusses the challenges encountered, and considers the new dimensions that have emerged from the empirical literature in the university sector (which can be applied in different settings). These objectives were achieved by rigorously analysing various relevant, recently published journal articles and three official reports from credible international organisations. The literature review study was based on grounded theory’s inductive approach, leading to the search for relevant articles and official reports. It is believed that the dissection and absorption of several realities challenges and solutions identified in the book chapter can be utilised as foundations of recovery strategies that can be planned and implemented at universities around the world. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2023."
+  },
+  {
+    "article_id": "CS_0313",
+    "title": "Governing Halal in Malaysia: Innovation towards Customer Interests and Satisfaction",
+    "journal": "The Halal Industry in Asia: Perspectives from Brunei Darussalam, Malaysia, Japan, Indonesia and China",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-96-0393-0_12",
+    "abstract": "Governing halal has become an important topic of discussion not only in terms of halal concerns but also in understanding the Islamic governance process with regard to consumer interest, satisfaction and innovations. Halal governance in Malaysia has been in place since 1974, and it has seen many changes, difficulties and innovations. This chapter examines the evolution of halal governance in Malaysia as well as the advances made in the halal certification process from 2017 to the present in order to meet customer interest and satisfaction. The discussion looks at how customer interest and satisfaction drive halal governance innovations, and how these innovations have improved halal practices and performance. The methods used in this study include interviews, a literature review and document analysis, notably the annual reports and Client Charter of Jabatan Kemajuan Islam Malaysia (JAKIM, Department of Islamic Development Malaysia). Thematic and content analyses are also used. Ten innovations are highlighted in addition to major client concerns. The four most common customer complaints are about slow management, difficult processes, dubious halal confirmation status and expensive fees. In response, the innovations in halal governance include: success in accelerating the processing of halal certification, the appointment of a special officer to handle halal complaints, the setting up of monitoring and enforcement officers, establishing a special task force, providing halal-specific counters, enhancing investigation and halal online procedures, implementing a privacy policy, resolving customer complaints, avoiding middlemen, and monitoring of halal certification and an awareness programme. © The Editor(s) (if applicable) and The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0314",
+    "title": "Demystifying Hospital Experiences via Online Reviews Beyond Star Ratings: An Aspect-Based Mining of Online Reviews",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-96-2548-2_16",
+    "abstract": "This study explores online reviews from patients and their families to understand customer perceptions in healthcare. Using data mining techniques, it analyses these reviews to gain insights into patient experiences across different hospital dimensions. By applying text-mining and part-of-speech tagging, the research systematically examines the aspects highlighted in the review data, such as doctors, staff, facilities, treatment, care, and overall management. Notably, Dharamshila Narayana Superspeciality Hospital in Delhi received a higher proportion of positive feedback using the DistilBERT model. There is also a positive correlation between star ratings and the quality of reviews, which in turn reflects the consumer experience. Additionally, the study compared the four machine learning models RF, DT, KNN, and Gradient Boosting for sentiment and bias prediction. Therefore, the government should have stringent policies to make customer reviews available to the public through complaint portals and keep a close monitor on hospitals with consistently low ratings. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2025."
+  },
+  {
+    "article_id": "CS_0315",
+    "title": "Designing a Prototype of Traditional Selop (Bustong) Based on Empathic Approach",
+    "journal": "Springer Series in Design and Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-96-8904-0_59",
+    "abstract": "The aim of this research is to develop traditional footwear “selop” (bustong) innovation for Javanese traditional attire, specifically Gagrag Yogyakarta. This research using an empathic approach in the design thinking me. Design thinking is a design methodology for addressing problems by understanding human needs. Researchers conducted observations and interviews with several individuals using a qualitative approach with semi-structured interview guidelines regarding complaints, behaviors, and preferences about using traditional selop, and needs that can support mobility and product comfort. The prototype results were technically and preferentially tested with samples of civil servants (ASN), employees, and students in Yogyakarta, as well as ergonomics and cultural experts. Some of the study results include data on the number of sample respondents, respondent identities. Aside from that respondents’ habits of wearing selop or not, types of shoes commonly used, reasons for not wearing selop, and selection beyond the recommended selop designs. Selection process of selop designs most prefer based on three recommended designs: design A, design B, and design C, with design descriptions. Design C was chosen by 75% of the respondents because aesthetically pleasing, well-executed, and non-slip bottom was highlighted as a significant advantage, enhancing safety and stability. Additionally, the design includes a heel height of approximately 3–5 cm, which provides both comfort and a slight elevation that many users find desirable. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2025."
+  },
+  {
+    "article_id": "CS_0316",
+    "title": "Tabayyun Measures for Self-Regulating Social Media Behaviour Among Muslim Consumers",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-97-5400-7_21",
+    "abstract": "In an era characterised by globalised technology, the rapid dissemination of information raises concerns about verifying news, especially due to the escalating prevalence of fake information leading to discord. Despite Malaysia having a predominantly Muslim population, the surge in fake news complaints in the country highlights the necessity of better adhering to Islamic teachings. This study aims to develop self-regulatory measures, specifically with regard to social media, based on the concept of tabayyun. While existing research identifies the limited understanding of tabayyun’s operational aspects, this study emphasises the importance of investigating and proposing effective measures to regulate social media behaviour among Muslim consumers. Tabayyun, which is defined as critically assessing and verifying information prior to dissemination, has significant relevance in terms of combating false accusations and defamation in contemporary society. Indeed, this Arabic term underscores the need for careful scrutiny of information, thereby preventing sensationalism and ensuring information accuracy. An increasing interest in studying the concept of tabayyun, particularly in Islamic education and social media contexts, is evident. However, there remains a lack of empirical basis, prompting this study to propose effective tabayyun measures that align with Islamic principles for self-regulating social media behaviour among Muslim consumers. Utilising a qualitative research design that employs a sequential exploratory instrument development process, this study addresses the limited understanding of self-regulation behaviour from an Islamic perspective. Moreover, it suggests related measures encompassing technical mechanisms, ethical practices and internalised values. This study contributes to defining an operational understanding of tabayyun and has implications for future research, emphasising the need for specific platform-focused measurement items. It also underscores the role of tabayyun in ethical communication and guiding individuals in navigating challenges on social media. The findings suggest practical interventions for individuals, policymakers and industry players to foster responsible social media use that is aligned with Islamic principles. Future studies should explore additional demographic factors and evaluate the suggested measures’ effectiveness over time, extending this study’s impact beyond the Muslim community. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2024."
+  },
+  {
+    "article_id": "CS_0317",
+    "title": "The Fellow Customers’ Engagement Behaviors in SEPs",
+    "journal": "Sharing Economy Platforms: A Casebook for Understanding Multiplayers in Sharing Economy Platforms",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-97-5404-5_9",
+    "abstract": "This chapter aims to advance the service management literature by further illuminating the relationships between focal customers’ online complaints following service failures and fellow customers’ engagement behavior (CEB). Using data from 39 cases of customers complaining about Tuniu (a leading online travel agency in China) on Weibo (China’s largest microblogging site), this chapter examines how distinct attributes of complaints and firm responsiveness relate to fellow CEB. The results show that non-frustration status of the focal customer is a necessary condition-in other words, a prerequisite-for high fellow CEB. The results also show that fellow customers are more likely to engage with focal customers when they receive more cognitive information from them rather than emotional descriptions. In addition, we find that fellow customers are more sensitive to firm responsiveness. This study provides a framework for service managers for participating in and managing online complaints. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2024."
+  },
+  {
+    "article_id": "CS_0318",
+    "title": "Risk Profile of the Airlines During the COVID-19 Pandemic: An Analysis Based on Narrative Press Release",
+    "journal": "Corporate Governance and Sustainability: Navigating Malaysia's Business Landscape",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-97-7808-9_10",
+    "abstract": "The COVID-19 pandemic has wrought catastrophic impacts on the airline industry, yet little is understood about its specific effects on airline business operations and the most critical risks faced during its emergence. This study aims to address these gaps from the perspective of companies within the industry. Data was collected through content analysis of airlines’ press releases and analyzed using the Epistemic Network Analysis (ENA) tool. The sample comprises 10 airline companies, half-rated as five-star airlines and the other half as three-star airlines by Skytrax ratings in 2019. Data collection spanned from January 1, 2020, to the end of April 2020, capturing the initial stage of the pandemic. Results reveal that three-star airlines were more adversely affected by COVID-19 than their five-star counterparts regarding regulatory changes, customer demand, and service failures. However, five-star airlines faced higher liquidity risks due to operational costs associated with employee salaries and fuel. These findings offer incremental insights for stakeholders and assist in making better-informed decisions. Additionally, they provide valuable guidance to airline management in understanding and mitigating the industry’s most critical risks during significant disruption or unforeseen events, enhancing their risk management strategies. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd. 2024."
+  },
+  {
+    "article_id": "CS_0319",
+    "title": "The Impact of Emotional Intelligence on Marketing Performance",
+    "journal": "Contributions to Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-99-6101-6_10",
+    "abstract": "The study aims to know the Impact of Emotional Intelligence (EI) on Marketing Performance (MP). The population of this study consisted of customers in commercial banks in Jordan. A convenience method was conducted to get the study data to follow the comprehensive survey method. Structural equation modelling (SEM) was applied to check the hypotheses of this study. It was found that there is a statistically significant effect for the emotional intelligence on marketing performance in commercial banks in Jordan. According to the result of this study, the researcher recommends to all bank officials and decision makers in all commercial banks in Jordan to give great attention from bank administrations to deal seriously with customer suggestions and complaints. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd 2023."
+  },
+  {
+    "article_id": "CS_0320",
+    "title": "Impact of Social Customer Relationship Management on Sustainable Competitive Advantage of Commercial Banks in Jordan",
+    "journal": "Contributions to Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-981-99-6101-6_9",
+    "abstract": "The study aimed to test the impact of social customer relationship management on achieving sustainable competitive advantage. The research population is all customers of Jordanian commercial banks. A Convenience sample was taken. SPSS and AMOS software was used to test hypotheses. The results showed an impact of social customer relationship management on sustainable competitive advantage of the commercial banks in Jordan. The researcher suggested that a unit be established to handle complaints in order to speed up service related to services, identify problems and diagnose them, identify areas of weakness in the bank’s operations. © The Author(s), under exclusive license to Springer Nature Singapore Pte Ltd 2023."
+  },
+  {
+    "article_id": "CS_0321",
+    "title": "Seeing opportunities from threats: How human employees respond to robot service failures from a social comparison perspective",
+    "journal": "Asia Pacific Journal of Management",
+    "journal_impact_factor": 2.36,
+    "doi": "10.1007/s10490-025-10093-7",
+    "abstract": "Despite the growing prevalence of robot deployment in service industries, the current robotic technology still occasionally falls short of meeting customer demands, resulting in inevitable service failures at the frontline. However, little research focuses on human employees’ responses to robot service failures from a colleague’s perspective. In this article, we draw on social comparison theory to explore how human employees perceive and respond to robot service failures. Across a time-lagged critical incident-based survey (Study 1: N = 173) and a scenario-based experiment (Study 2: N = 308), we found that when human employees feel threatened by service robots, service robot failures increase their state self-esteem, which in turn enhances employees’ customer-directed citizenship behavior. By shifting the focus from organizational outsiders to insiders, this research not only unravels the mechanism and boundary condition underlying how human employees perceive and respond to service failures of their robot colleagues, but also highlights the importance of considering downward social comparison processes within human-robot social comparison dynamics. © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2026."
+  },
+  {
+    "article_id": "CS_0322",
+    "title": "Who Should Apologize When an Employee Transgresses? Source Effects on Apology Effectiveness",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-014-2205-9",
+    "abstract": "This paper examines the interactive effects of apology source (i.e., whether an apology is given by a chief executive officer or employee) and apology components (i.e., acknowledgment, remorse, and compensation) on forgiveness. Results revealed a significant source by component interaction. A remorseful employee apology was more successful than a remorseful CEO apology because consumers felt more empathy for the employee. Furthermore, a compensatory CEO apology was more effective than a compensatory employee apology because CEOs could significantly affect consumer perceptions of justice. No significant differences were found between apology source and the apology component of acknowledging violated rules and norms. © 2014, Springer Science+Business Media Dordrecht."
+  },
+  {
+    "article_id": "CS_0323",
+    "title": "Wealth Effects of Rare Earth Prices and China’s Rare Earth Elements Policy",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-015-2773-3",
+    "abstract": "Rare earth elements (REEs) have become increasingly important because of their relative scarcity and worldwide increasing demand, as well as China’s quasi-monopoly of this market. REEs are virtually not substitutable, and they are essential for a variety of high-tech products and modern key technologies. This has raised serious concerns that China will misuse its dominant position to set export quotas in order to maximize its own profits at the expense of other rare earth user industries (wealth transfer motive). In fact, export restrictions on REEs were the catalyst for the U.S. to lodge a formal complaint against China in 2012 at the World Trade Organization (WTO). This paper analyzes possible wealth transfer effects by focusing on export quota announcements (the so-called MOFCOM announcements) by China, and the share price reactions of Chinese REE suppliers, the U.S. REE users, and the rest of the world REE refiners. Overall, we find limited support for the view of a wealth transfer in connection with MOFCOM announcements only when disentangling events prior to and post the initiation of the WTO trial, consistent with the trial triggering changes to China’s REE policy and recent announcement to abolish quotas. We do find, however, that extreme REE price movements have a first-order effect on all companies in the REE industry consistent with recent market trends to enable hedging against REE price volatility. © 2015, Springer Science+Business Media Dordrecht."
+  },
+  {
+    "article_id": "CS_0324",
+    "title": "E-commerce Ethics and Its Impact on Buyer Repurchase Intentions and Loyalty: An Empirical Study of Small and Medium Egyptian Businesses",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-017-3452-3",
+    "abstract": "The theoretical understanding of e-commerce has received much attention over the years; however, relatively little focus has been directed towards e-commerce ethics, especially the SMEs B2B e-ecommerce aspect. Therefore, the purpose of this paper is to develop and empirically test a framework that explains the impact of SMEs B2B e-commerce ethics on buyer repurchase intentions and loyalty. Using SEM to analyse the data collected from a sample of SME e-commerce firms in Egypt, the results indicate that buyers’ perceptions of supplier ethics construct is composed of six dimensions (security, non-deception, fulfilment/reliability, service recovery, shared value, and communication) and strongly predictive of online buyer repurchase intentions and loyalty. Furthermore, our results also show that reliability/fulfilment and non-deception are the most effective relationship-building dimensions. In addition, relationship quality has a positive effect on buyer repurchase intentions and loyalty. The results offer important implications for B2B e-commerce and are likely to stimulate further research in the area of relationship marketing. © 2017, Springer Science+Business Media Dordrecht."
+  },
+  {
+    "article_id": "CS_0325",
+    "title": "Consumer Rights Paradigm: Development of the Construct in the Jordanian Context",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-018-3815-4",
+    "abstract": "Due to the lack of empirical measures of consumer rights in developing countries in particular, this research aimed to tackle this issue in the context of Jordan. The research adopted a triangulated methodology of initial inductive research work followed by a deductive research approach, implemented empirically. Data were collected from 660 consumers, using a mall intercept method. Multiple statistical techniques were employed for data analysis, using SPSS-23 and a structural equation model (AMOS-23). Three key findings emerged from the current research work. First, the results identified six fundamental consumer rights. These were: (1) right to safety; (2) right to be informed; (3) right to be heard; (4) right to choose; (5) right to privacy; and (6) right to redress. These rights were measured on 29 items, based on confirmatory factor analysis results. (Original list included 53 items.) Second, the status of perceived consumer rights in the study area was not very satisfactory, reflecting a public discontent due to poor consumerism. Third, no significant differences were noticed in consumers’ perception regarding their rights due to their demographic factors. In view of the overall findings, the current authors made several recommendations to both marketing practitioners and public policy makers to improve the quality of consumer rights in the study area. The main contribution of the current research was the development and validation of a measuring scale of consumer rights based on 29 measuring items, structured in six categories. © 2018, Springer Science+Business Media B.V., part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0326",
+    "title": "What Do Online Complainers Want? An Examination of the Justice Motivations and the Moral Implications of Vigilante and Reparation Schemas",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-018-3850-1",
+    "abstract": "This research aims to understand how two basic schemas—vigilante and reparation—influence online public complaining. Drawing on two experiments, a longitudinal field study and content analysis of online complaints, the current research makes three core contributions. First, we show that for similar service failures, each schema is associated with different justice motivations (i.e., in terms of recovery, revenge, and protection of others), which have different moral implications for consumers. Second, vigilante and reparation complainers write complaints in a different manner and are drawn to different online platforms; this information is helpful to identify complainers using each schema. Third, the schemas moderate the process leading to different post-complaint benefits (i.e., resolution and positive affect). Specifically, perseverance has a greater effect on obtaining a resolution for reparation complainers compared to vigilantes. Additionally, whereas a recovery leads to an increase in positive affect for reparation complainers, vigilantes experience a high level of positive affect simply by posting their complaint (regardless of the resolution). The theoretical, ethical, and managerial implications of these findings are discussed. © 2018, Springer Science+Business Media B.V., part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0327",
+    "title": "Prosocial Compensation Following a Service Failure: Fulfilling an Organization’s Ethical and Philanthropic Responsibilities",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-018-3992-1",
+    "abstract": "Prosocial compensation (PC) is a corporate social responsibility (CSR) practice that involves donating money to a charitable cause on behalf of customers as a means to compensate them for their loss after a service failure. In order to determine the effectiveness of PC, we carried out three experiments while also comparing its effectiveness within private and public settings. Experiment 1 focused on the signaling effects of communicating the promise to offer PC to potential customers in the event of service failure. Results show that, in both private and public settings, PC has positive effects on corporate image, credibility, and word-of-mouth intent. More significantly, PC improved one’s CSR image, whereas more tangible compensation, such as a gift voucher, did not. Experiments 2A and 2B focused on the effects of offering PC after a service failure on perceptions of justice. Results show that PC contributes to perceived distributive justice, procedural justice, and post-recovery satisfaction in both private and public settings. Our study showed that PC could be a relevant new CSR practice for organizations wanting to enhance theirs CSR image while contributing to fulfilling their ethical and philanthropic CSR responsibilities. We discuss the implications of our findings and offer several avenues for follow-up research on this initial study on PC. © 2018, The Author(s)."
+  },
+  {
+    "article_id": "CS_0328",
+    "title": "Different Drivers: Exploring Employee Involvement in Corporate Philanthropy",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-018-4093-x",
+    "abstract": "Corporate Philanthropy (CP) is multi-dimensional, differs between sectors and involves both individual and organisational decision-making to achieve business and social goals. However, the CP literature characteristically focuses on strategic decisions made by business leaders and ignores the role of employees, especially those in lower status and lower paid positions. To redress this imbalance, we conducted a qualitative study of employees’ involvement in CP processes in ten workplaces in the South East of England to identify whether and how they are involved in CP decision-making and to capture their perspective on the nature of CP and the benefits generated by such activities. We specifically chose to study workplaces where employees are involved in the actual execution of the CP strategy, prioritising companies with a visible presence on the high street. The results illustrate the benefits of involving employees in CP decision-making, which we argue derives in part from the ‘liminal-like states’ that typify CP activities organised by shop floor staff, involving the temporary overturning of hierarchies, humanising of workplaces and opportunities for lower level staff to prioritise their personal philanthropic preferences and signal their charitable identity to colleagues and customers. Whilst the data also suggest that CP decision-making remains predominantly top-down and driven by profit-oriented goals, we conclude that employees should be involved in choosing charitable causes as well as in designing and implementing workplace fundraising, in order to maximise the advantages of CP for the company and for wider society. © 2018, The Author(s)."
+  },
+  {
+    "article_id": "CS_0329",
+    "title": "The Role of Ethical Perceptions in Consumers’ Participation and Value Co-creation on Sharing Economy Platforms",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-019-04314-5",
+    "abstract": "Consumers’ participation on sharing economy platforms is crucial for the success of the products, services, and companies on those platforms. The participation of consumers enables companies to not only exist, but also to create value for consumers. The sharing economy has witnessed enormous growth in recent years and consumers’ concerns regarding the ethics surrounding these platforms have also risen considerably. The vast majority of the previous research on this topic is either conceptual and focused on organizational aspects, or only discusses privacy and security issues, thus providing a very limited scope of discussion. Therefore, drawing on the marketing and business ethics literature, the present study takes into account a multidimensional view of ethical issues surrounding consumers’ participation on sharing economy platforms. Findings reveal that privacy, security, shared value, fulfillment/reliability and service recovery are the strongest determinants of consumers’ ethical perceptions. These aspects strongly predict the consumers’ value co-creation intentions. Consumers’ participation also predicts their intention to engage in co-creating value, but this effect is stronger with the mediating role of the consumer’s ethical perceptions. The theoretical and managerial implications are also discussed. © 2019, The Author(s)."
+  },
+  {
+    "article_id": "CS_0330",
+    "title": "Discrimination in Services: How Service Recovery Efforts Change with Customer Accent",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-021-04877-2",
+    "abstract": "Discrimination represents an important moral problem in the field of business ethics, and is often directed against minority groups. While most of the extant literature studies discrimination against employees, this paper studies discrimination against minority customers, addressing whether customers speaking English with an accent are discriminated against when contacting companies with a complaint. We draw upon the two literature streams of business ethics and service recovery to address discrimination in the service recovery process, as the recovery process after a service failure constitutes a critical incident for customers, in which discrimination would be a particularly important moral problem. The findings confirm that customers speaking with an accent are discriminated against, as employees may evaluate customers as both less credible and less competent depending on their accent. We further show that this discrimination extends to negative outcomes: service employees offer customers speaking with an accent lower compensation, and are less likely to go the extra mile for them. Having identified the existence of a discriminatory practice in the service recovery process, we further uncover both an underlying reason and a potential solution. Our results show that employees’ level of cultural intelligence helps alleviate discrimination. We conclude that companies could benefit from including cultural intelligence in the recruitment and training of their employees. © 2021, The Author(s), under exclusive licence to Springer Nature B.V."
+  },
+  {
+    "article_id": "CS_0331",
+    "title": "“Do Something Simple for the Climate”: How Collective Counter-Conduct Reproduces Consumer Responsibilization",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-023-05444-7",
+    "abstract": "This paper studies consumers’ reactions and resistance to being responsibilized for making climate-friendly food choices. While resistance to consumer responsibilization has been studied from an individual experiential perspective, we examine its collective characteristics. We do this by tracing the controversial marketing campaign of a Swedish poultry producer, encouraging consumers to “do something simple for the climate” by eating chicken rather than beef. In our analysis of social media comments and formal complaints to the consumer protection authority, we mobilize Foucault’s notion of counter-conduct to analyse subtle forms of resistance to consumer responsibilization. We identified four interrelated yet distinct forms of consumer counter-conduct: challenging truth claims, demanding ‘more,’ constructing ‘the misled consumer,’ and rejecting vilification. By theorizing these counter-conducts, we demonstrate how consumers collectively contested both the means and ends of responsibilization—but not the underlying premise of individualized responsibility. Thus, our study helps to explain how consumers’ resistance reproduces, rather than undermines, responsibilization. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_0332",
+    "title": "Don’t Humor Me! Customers’ Moral Perceptions Toward Companies’ Humorous Responses in Social Media Service Recovery",
+    "journal": "Journal of Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10551-025-06154-y",
+    "abstract": "Past research has proposed humor as an innovative complement to recovery strategies in social media complaint handling, as it can bring benefits to the company, such as increased social media engagement from other customers. However, these studies focused on the perspective of customers who are not directly affected by service failures. The current research suggests that humorous recovery poses a dilemma as it may be perceived and responded to differently by focal customers (i.e., those who experience service failures). Drawing on benign violation theory, we argue that humorous recovery will be less favored by focal customers due to the stressful situations they are experiencing, thereby impeding recovery effectiveness. Findings across a series of experimental studies indicate that humorous recovery reduces focal customers’ perceptions of company morality, primarily due to the increased likelihood of such responses being perceived as sarcastic. This decrease in perceived company morality subsequently heightens negative affect, leading to reduced focal customer forgiveness. Nevertheless, the negative effects of humorous recovery can be minimized under certain circumstances. First, companies should use humorous recovery only when the service failure is less relevant to the company’s core business. When the service failure is highly relevant to the core business, humorous recovery becomes counterproductive, regardless of the cause of the failure. Second, humorous recovery timing is crucial. Specifically, humorous recovery is more morally acceptable after the service failure has been resolved. When used before the service failure has been resolved, humorous recovery is less appropriate, further undermining its effectiveness. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0333",
+    "title": "Regulating Unfair Trade Practices: an Analysis of the Past and Present Indian Legislative Models",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-015-9302-8",
+    "abstract": "The Monopolies and Restrictive Trade Practices Act, 1969 (MRTP Act) which for the first time incorporated detailed provisions as to unfair trade practices (UTPs) in India has now been repealed and succeeded by the Consumer Protection Act, 1986 which has included the same substantive definition of UTPs. This article analyses the law as to UTPs under the repealed MRTP Act including the cases decided thereunder and compares it with the structure of the Consumer Protection Act with the objective of evaluating whether the present Consumer Dispute Redressal Agencies under the Consumer Protection Act have adequate substantive provisions and effective procedural competence to ward off UTPs. Our analysis of legislative provisions and decided cases shows that the present system of protection against UTPs under the Consumer Protection Act is blighted by a strict and restrictive definition of consumer; lack of in-house enquiry and investigation system, incompetency of traders and trade associations to pursue cases, and lack of inherent power of the Consumer Dispute Redressal Agencies to suo motu take up matters. The article uses analytical and statistical methods to quantify, in terms of actual effect, these drawbacks which significantly hamper the present system and suggests various means to improve the functioning of the system so as to effectively deal with UTPs. © 2015, Springer Science+Business Media New York."
+  },
+  {
+    "article_id": "CS_0334",
+    "title": "South African Complaint Forums in the Retail Industry: a Survey of Literature and Some Lessons from the EU",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-017-9344-1",
+    "abstract": "South African consumers receiving poor service in the retail industry want to complain, but have limited or no knowledge of the available consumer complaint forums. The consumer complaint forums in the retail industry can generally be divided into those established in terms of the Consumer Protection Act 68 of 2008 and other complaint forums. Before consumers can decide which forum they want to lodge their complaint with, they first need to identify possible complaint forums and then measure each forum according to certain factors. This study made a unique contribution by identifying possible factors which a consumer can refer to in this regard. In developing these factors, guidance was taken from the EU Consumer ADR Directive and the ODR Regulation. The factors suggested in this study included the following: the cost of and time spent on lodging a complaint, the effective functioning of the complaint forum, transparency in the operation of the complaint forum, the relief that a consumer may obtain from the complaint forum, and the user-friendliness of the complaint process. The National Consumer Tribunal, the National Consumer Commission, the Consumer Goods and Services Ombud, and ordinary civil courts were assessed using the above factors. A limitation of this study was that not all complaint forums could be assessed in terms of these factors, due to the lack of publicly available information. This study found that even though South Africans now have more complaint forums at their disposal, this does not translate into positive outcomes for aggrieved consumers. The strength of these forums lies in the buy-in received from both consumers and retailers. True consumer power arises through collective action after careful investigation, and resolving individual complaints may not result in the change of consumer policy which is actually what is required in the long run. © 2017, Springer Science+Business Media New York."
+  },
+  {
+    "article_id": "CS_0335",
+    "title": "Dissemination of Consumer Law and Policy in South Africa",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-018-9381-4",
+    "abstract": "This article considers to what extent some important areas of South African consumer law have been influenced by the laws of international bodies, other countries or regional bodies or, in turn, influenced other laws in Southern Africa and beyond. It focuses on rules on product safety, product liability, remedies for defective quality of goods, some basic rules on unfair commercial practices and various aspects of consumer law relating to the use of mobile phones by South African consumers. The main piece of legislation considered is the Consumer Protection Act 68 of 2008 (“CPA”), which came into force in 2011. The article considers whether aspects of this legislation were influenced by the EC Product Safety Directive, EC Product Liability Directive, EC Consumer Sales Directive, EC Unfair Commercial Practices Directive and EC Directive on Misleading and Comparative Marketing. It shows how the relevant provisions of the CPA influenced the laws of some African countries. The article also considers various issues faced by consumers in the mobile phone sector, including defective handsets, defective services, the high cost of mobile calls and data, the lapsing of “unused” data after short periods, data “disappearing” faster than expected, unfair contract terms, unsolicited marketing and the complexity of mobile phone contracts, which leads consumers to overestimate or underestimate their future usage, therefore paying too much because they are on an ill-suited plan. Conclusion of agreements via mobile phones, marketing of additional services like ringtones and apps and unsolicited marketing via mobile phones are also considered. Some complaints regarding the use of mobile phones should be better provided for in legislation, and enforcement of consumer rights in this sector could be improved. © 2018, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0336",
+    "title": "Collective Redress: The Need for New Technologies",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-018-9388-x",
+    "abstract": "After many years of debate on collective redress, the European Commission has proposed to introduce a representative mechanism to be controlled by public bodies and consumer associations that satisfy certain criteria. However, the Commission has only considered a single mechanism (the litigation-based class or representative action), which is in fact “old technology.” There are several other mechanisms that deliver collective redress—new technologies. The first is the partie civile mechanism in which a civil claim “piggy backs” onto a criminal conviction. The most important mechanisms are “regulatory redress”—where a regulatory authority intervenes and agrees or orders redress to be paid—especially if coupled with an ombudsman scheme (not arbitration-based alternative dispute resolution (ADR) schemes). The regulatory redress mechanism was proposed by the Commission in the revised Consumer Protection Cooperation (CPC) Regulation but what emerged was not ideal. All these mechanisms have recently been evaluated against criteria such as their speed, cost, and ability to deliver effective outcomes. The empirical data clearly demonstrate that the new technologies are better than the old technologies. The new technologies also deliver more functions than the old: not just resolution of a dispute or delivery of redress but also assistance to consumers and traders and the ability to aggregate data on trading issues that is fed back to improve compliance, behaviour, and performance in the market place. This evidence leads to the conclusion that the Commission’s proposals are unlikely to deliver effective collective redress for consumers. The proposed method is out of date technology, and other mechanisms are clearly preferable and should be adopted instead. Member States are permitted to maintain existing collective redress mechanisms. That will lead to considerable confusion and diversity, which does not support an integrated single market. Further, the proposal will lead to a diversity of available mechanisms between Member States and hence confusion and competition between intermediaries—forum shopping. The way forward is for the EU to adopt regulatory redress and consumer ombudsmen, rather than the old fashioned litigation model. The analysis also reveals that the Impact Assessment system has flaws. © 2018, The Author(s)."
+  },
+  {
+    "article_id": "CS_0337",
+    "title": "Consumer Protection Law in Ethiopia: The Normative Regime and the Way Forward",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-018-9389-9",
+    "abstract": "The 1960 Civil Code of Ethiopia and other laws have been providing a certain level of protection to consumers until the enactment of laws – in 2010 and 2014 – that expressly deal with consumer protection. This article examines consumer protection in Ethiopia with prime attention to the Trade Competition and Consumer Protection Proclamation No. 813/2013 (enacted in 2014). The social context which prompted the enactment of specific consumer laws in Ethiopia, sources that have influenced Ethiopia’s consumer law regime, rights of consumers, obligations of business persons, regulatory enforcement schemes and some features of consumer protection in digitalized services are highlighted. Moreover, the article briefly deals with the way forward regarding consumer enablement as a path to the effective implementation of consumer rights to choice, safety, information and redress. It is argued that the articulation of specific consumer laws can hardly be implemented unless consumers are adequately empowered to secure their rights and entitlements through effective redress which should include public interest litigation, class action and enhanced civil society engagement. © 2018, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0338",
+    "title": "Success or Failure?—Effectiveness of Consumer ODR Platforms in Brazil and in the EU",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-020-09448-y",
+    "abstract": "This article examines the effectiveness of out-of-court procedures, in particular in the form of online dispute resolution (ODR) mechanisms, in the settlement of business-to-consumer (B2C) disputes. It offers a comparative perspective of two public ODR initiatives: Consumidor.gov.br, a Brazilian ODR platform, and the EU-provided ODR platform. Focusing on the institutional and procedural design of these two platforms, we highlight the factors and incentives that might contribute to increasing consumers’ trust and traders’ engagement in ODR procedures. The article relies on a large dataset from Consumidor.gov.br, consisting of a sample of more than 800,000 consumer complaints. While the EU ODR platform is not yet very well known among EU consumers, the Brazilian platform is becoming widely popular among Brazilian consumers. It is put forward that this popularity could be the result of the procedural design of the Brazilian platform, which serves as a direct communication channel between the trader and the consumer. Furthermore, we argue that the EU ODR platform could be more effective if the incentives for both parties, traders and consumers, to use ODR were reinforced. The article provides further policy recommendations on how the potential of ODR can be better exploited in light of the two ODR platforms examined. © 2020, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0339",
+    "title": "Correction to: Understanding National Preferences in EU Consumer Policy: a Regime Approach (Journal of Consumer Policy, (2020), 43, 4, (767-798), 10.1007/s10603-020-09468-8)",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-020-09472-y",
+    "abstract": "The original article unfortunately contains cut-off Appendix A and missing Appendix B. The corrected Appendix A and B should be. About the informant Your name (first name and surname)? Please fill in the name of your country and institution National situation What is the role of your institution and position in national consumer policy? How large would you say that the consumer sector in your country is relative to the situation in other EU countries? Are there other differences you wish to highlight between the consumer sector in your country and the consumer sector in other EU/EEA countries? Preferences in EU consumer policy What meaning/effect has EU consumer law had for (the development of) consumer policy in your country? In your opinion, do countries have consistent positions in European consumer policy? In your opinion, are there any clear (or less clear) consumer policy interest coalitions among EU countries? If there are interest coalitions, are they more or less permanent, or do the country coalitions fluctuate from case to case? What are the main conflicts and conflict alignments in European consumer policy? Do you have any thoughts regarding what could explain potential differences in countries’ positions in European consumer policy? When establishing a country position to issues in EU consumer policy, how would you describe the preliminary national negotiations on which position to take? For the positions expressed by the various countries in CPN, is it your impression that it matters which ministry/organization they represent? Are you satisfied with the harmonization level of EU consumer and marketing law? How do you perceive the impact of EU consumer and marketing rules regarding benefits for businesses? In general, do you think that the various EU redress/enforcement mechanisms are effective? In general, do you think that self- and co-regulation initiatives by businesses are effective? In general, do you think that consumer rights should be strengthened? Do you think EU consumer and marketing law should be (further) standardized? (e.g., through streamlining of directives, harmonization and bringing rules together in a single instrument) In your opinion, are there any issues you find problematic in EU consumer law/policy? Do you have any other information that you would like to share with us or which you might think is useful for us to know or take into account? The original article has been corrected. © 2020, Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0340",
+    "title": "A Law and Economics Perspective on the EU Directive on Representative Actions",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-021-09491-3",
+    "abstract": "This article provides an analysis of the Directive on representative actions for the protection of the collective interests of consumers of 25 November 2020. The Directive enables qualified entities to bring representative actions on behalf of the consumer. The article uses a Law and Economics approach to stress the advantages of collective actions as a tool to remedy rational apathy and free-rider behaviour. The article therefore in principle welcomes the fact that this Directive will lead to all Member States having some form of collective redress. However, it is rather difficult to fit this Directive into the economic criteria for centralization as there is no obvious danger of cross-border externalities or a race-to-the-bottom. The article is critical of the fact that the Directive only provides for a representative action and does not mention the alternative of a group action (sometimes referred to as a class action). This is especially problematic if there are very few qualified entities that could bring the representative action. Furthermore, the fact that Member States may choose an opt-in procedure instead of an opt-out procedure is critically evaluated. The most problematic aspect of the Directive is the funding of the representative action. Punitive damages and contingency fees are rejected, and the possibility of third-party funding is restricted. It is therefore to be feared that this Directive, notwithstanding the good intentions, may not lead to much application in practice, since the question of how the representative action is to be financed is not resolved in any satisfactory manner. © 2021, The Author(s)."
+  },
+  {
+    "article_id": "CS_0341",
+    "title": "Strengthening Nigeria’s Digital Money Lending Ecosystem",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-024-09569-8",
+    "abstract": "The article examines the proliferation of short-term, unsecured credit offered by digital money lenders (DMLs) in Nigeria, with a focus on abusive debt collection practices such as unauthorised disclosure of personal information, the use of threats and the defamation of borrowers, often disregarding existing financial consumer safeguards. To balance the growth of digital lending with recognised consumer safeguards, the study employs a doctrinal research approach to assess consumer protection mechanisms within Nigeria’s legal and institutional framework. The article proposes several recommendations, including promoting consumer awareness, expanding judicial and administrative channels of reporting and redress, improving and publishing regulatory activities, introducing fair digital lending rules, employing Enforcement Technology to facilitate monitoring and redress, fostering industry collaboration in data sharing, expanding the scope of formal entities providing credit, simplifying access to formal credit and strengthening credit reporting. These measures aim to establish a sustainable, inclusive and empowering digital lending environment for all stakeholders. © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2024."
+  },
+  {
+    "article_id": "CS_0342",
+    "title": "3Rs of Sustainable Activism on Social Media: Relatability, Reliability and Redress",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-024-09574-x",
+    "abstract": "The achievement of sustainability goals will take a joint effort and content creators could be one of the actors helping with reaching it. Reliable but relatable communication on sustainable lifestyles on social media could reach many consumers and contribute to changing their behaviour patterns. However, the content creators’ activities need to fit within certain parameters for the benefits to outweigh the costs. This article identifies three important parameters that regulation should safeguard: Relatability, reliability, and redress. A key reason why content creators have managed to establish themselves as influencers is that they are relatable. But content creators may not be able to ensure what they tell their followers is reliable. That in turn raises the question of who should be responsible for providing redress in cases of misstatements. Following the critical analysis of the European legal framework, this article considers the need for further adaptations to the current rules or even the adoption of new rules more strictly regulating sustainable activism on social media. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_0343",
+    "title": "Misleading Marketing of Unhealthy Foods and Beverages to Children in South Africa as a Consumer Protection Issue",
+    "journal": "Journal of Consumer Policy",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10603-025-09587-0",
+    "abstract": "Childhood overweight and obesity, which predisposes children to various non-communicable diseases, is a fast-rising public health burden in South Africa. Children are growing up in an obesogenic food environment that features intense marketing of unhealthy food and beverages using various channels and appealing strategies including misleading health and nutrition claims. This paper examines the applicability of the Consumer Protection Act No. 68 of 2008 (the CPA) in addressing the misleading marketing of unhealthy foods to children. The Act provides certain standards to guide the marketing of goods, including the prohibition of false, misleading, or deceptive representation of material facts. The paper examines the legal prohibition of false, misleading, or deceptive representations in marketing and how they have been interpreted by the National Consumer Tribunal and the courts. It also explores avenues among the redress processes and mechanisms provided in the CPA in addressing misleading marketing of unhealthy food and beverages to children. The overall aim is to show that the South African consumer protection legal framework offers a viable opportunity amongst other legal and policy measures to address misleading marketing of unhealthy foods and beverages to children. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0344",
+    "title": "On the Use of Resource Reservation for Web Services Load Balancing",
+    "journal": "Journal of Network and Systems Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10922-014-9303-y",
+    "abstract": "A key issue for good performance of worldwide distributed web services is the efficiency of the load balancing mechanism used to distribute client requests among the replicated servers. The load balancing solution allows providers to make better use of their resources, soften the need for over-provision, and help tolerate abrupt load peaks. In this paper, we propose a new load balancing solution that reduces service response times by applying a protocol for the reservation of remote resources. This protocol prevents the overload of remote servers by limiting the amount of load each server can redirect to the others. We describe a middleware that supports this protocol by managing the trade of resources among a set of servers, allowing them to share their spare capacity in a transparent way. We also present the results of a large set of simulations that encompass an exhaustive set of workload scenarios based on realistic internet traffic models. © 2014, Springer Science+Business Media New York."
+  },
+  {
+    "article_id": "CS_0345",
+    "title": "Load Balancing in the Presence of Services in Named-Data Networking",
+    "journal": "Journal of Network and Systems Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10922-019-09507-x",
+    "abstract": "Load balancing is a mechanism to distribute client requests among several service instances. It enables resource utilization, lowers response time, and increases user satisfaction. In Named-Data Networking (NDN) and NDN-like architectures, load balancing becomes crucial when dynamic services are present, where relying solely on forwarding strategies can overload certain service instances while others are underutilized especially with the limited benefit of on-path caching when it comes to services. To understand the challenges and opportunities of load balancing in NDN, we analyze conventional load balancing in IP networks, and three closely related fields in NDN: congestion control, forwarding strategies, and data center management. We identify three possible scenarios for load balancing in NDN: facade load balancer, controller for Interest queues, and router-based load balancing. These different solutions use different metrics to identify the load on replicas, have different compliance levels with NDN, and place the load balancing functionality in different network components. From our findings, we propose and implement a new lightweight router-based load balancing approach called the communicating vessels and experimentally show how it reduces service response time and senses server capabilities without probing. © 2019, The Author(s)."
+  },
+  {
+    "article_id": "CS_0346",
+    "title": "ConfExp: Root-Cause Analysis of Service Misconfigurations in Enterprise Systems",
+    "journal": "Journal of Network and Systems Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10922-024-09886-w",
+    "abstract": "Misconfiguration is a known and increasingly serious problem in enterprise systems due to frequent code updates and retuning of the configuration parameters. Diagnosing complex, residual misconfiguration problems that lead to inaccessible services or failed transactions often starts with either a user complaint or observation by administrators, followed by a largely manual process of deciding what tests to run and how to proceed with further testing based on the test results. The goal of this paper is to automate this process and thereby make root-cause analysis of accessibility related misconfigurations much speedier and much more effective. We explore a domain-knowledge-driven methodology, called ConfExp using a network emulator that runs real enterprise networking protocols. Thus, by using commonly used tests, we show that the root-cause can be determined in all cases where discriminative tests exist. The methodology also highlights areas where more discriminative tests are needed to pinpoint the precise configuration variables at fault. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0347",
+    "title": "A Novel Framework for Integrating Blockchain-Driven Federated Learning with Neural Networks in E-Commerce",
+    "journal": "Journal of Network and Systems Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10922-025-09928-x",
+    "abstract": "Federated learning (FL) enables collaborative model training without raw data sharing; however, its decentralized architecture remains vulnerable to inference attacks, malicious updates, and opaque governance. To address these challenges, we introduce an end-to-end framework integrating FL with permissioned blockchain technology, systematically guided by TRIZ innovation principles, ensuring verifiable, privacy-preserving, and ethically accountable machine learning collaborations. Our framework integrates multi-layered security measures, including encrypted local model updates, blockchain-based smart-contract consensus mechanisms for secure global aggregation, and an immutable complaint-redress system that transparently records grievances, initiates forensic audits, and documents remedial actions. Employing iterative ARIZ cycles, we effectively resolve the contradiction between strict data locality and collective model intelligence. The proposed pipeline comprises eight structured phases: cryptographic initialization, heterogeneous data preparation, dual-model instantiation, client-side optimization, weighted model aggregation, ledger anchoring, proactive dispute resolution, and comprehensive performance evaluation. Experimental evaluations on textual datasets with deliberately designed non-IID distributions demonstrate stable convergence, reduced communication overhead, and robust predictive accuracy across diverse client scenarios. Validation using recurrent neural networks and linear models for e-commerce sentiment analysis, clinical note triage, and vehicular telemetry illustrates the framework’s domain-agnostic versatility. Privacy analyses using gradient-inversion attacks and efficiency benchmarks under varied bandwidth and participation levels confirm robustness. Comparative analysis reveals our approach offers enhanced adaptability, richer analytical capabilities, and explicit ethical integration compared to existing blockchain-enhanced FL solutions. Ultimately, this research proposes a pathway towards transparent, human-centered artificial intelligence systems, harmonizing regulatory compliance, organizational objectives, and societal trust without compromising technical performance. Future studies will explore alternative blockchain consensus mechanisms, formal fairness assessments, and pilot deployments in healthcare and financial sectors. © The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature 2025."
+  },
+  {
+    "article_id": "CS_0348",
+    "title": "Management customer complaints and performance: banks, be careful!",
+    "journal": "Journal of Management and Governance",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s10997-021-09616-3",
+    "abstract": "Based on stakeholders’ theory, our paper investigates the relationship between customer complaints and bank performance. We use a unique hand-collected database of customer complaints published by the banking and financial ombudsman and the financial data of the universe of Italian banks during the 2010–2017 period and employ a fixed effect panel data model and two-step system GMM estimation. We first confirm that higher complaints scaled by bank size reduce profitability and increase bank risk. Then, we show that bank institutional form affects this outcome. In contrast to cooperative banks, the performance of commercial banks is negatively influenced by customer complaints. Moreover, in contrast to medium and large banks, small banks’ profitability is not affected by customer complaints. We also found that a bank’s decision to settle customer complaints has a positive impact in the long run. The results are consistent when using normalized variables for size and different robustness checks. Consequently, managerial and policy implications related to customer complaints are proposed. Indeed, commercial banks must protect relational capital with customers by strengthening dialogue among the compliance function, complaints office and commercial areas to proactively manage the risk of complaints and improve performance. Policy makers should enhance banking transparency and simultaneously promote greater financial education of clients, which can foster trust in banks and their stability. © 2021, The Author(s), under exclusive licence to Springer Science+Business Media, LLC, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0349",
+    "title": "The relative impact of gratitude and transactional satisfaction on post-complaint consumer response",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-013-9271-0",
+    "abstract": "Consumer research has shown that satisfaction with complaint handling strongly favours word-of-mouth but affects repurchasing to a lesser extent. To better understand post-complaint consumer response, we propose and test a model in which both gratitude and transactional satisfaction are assumed to be critical mediators of the effects of recovery investments on performance outcomes. Our results show a contrasting pattern of results for each mediator. Whereas gratitude strongly influences repurchase intent but does not explain word-of-mouth intent, transactional satisfaction, with its effect on repurchase intent being fully mediated by the latter construct, strongly contributes to word-of-mouth intent. Drawing on the analysis of pre-existing brand attitude as a moderator, our findings also suggests that the mediating roles of gratitude and satisfaction rely on different psychological mechanisms. The implications of these findings are significant for service recovery researchers and managers. © 2013, Springer Science+Business Media New York."
+  },
+  {
+    "article_id": "CS_0350",
+    "title": "Powerlessness following service failure and its implications for service recovery",
+    "journal": "Marketing Letters",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11002-014-9303-4",
+    "abstract": "This research examines whether service failure in hospitality settings reduces situational power and whether feelings of powerlessness have implications for service recovery efforts. Three studies demonstrated that service failure reduced consumers’ situational power, but only among those with high dispositional power motivation (studies 1 and 2). Moreover, those with high dispositional power motivation evinced greater satisfaction with service recovery efforts that involved status-enhancing compensation as opposed to utility-enhancing compensation (study 2), and when status-enhancing compensation was presented in public as opposed to in private (study 3). These findings suggest that consumers with high dispositional power motivation prefer service recovery attempts that counteract the feelings of powerlessness they experience from service failure. Service managers can benefit from these findings by understanding how feelings of power interact with service recovery efforts. © 2014, Springer Science+Business Media New York."
+  }
+]

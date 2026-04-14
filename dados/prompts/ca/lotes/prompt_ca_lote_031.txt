@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1501",
+    "title": "Health Messages on Social Media Platforms in the Age of Artificial Intelligence",
+    "journal": "Intelligent Data Analytics in Media Communication to Improve Public Health Care",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781779643537-16",
+    "abstract": "We are living in the age of artificial intelligence (AI). AI tools have the potential to monitor and affect our lives in many ways. It can observe our social media behaviors, patterns, habits, likes, and dislikes. AI tools can monitor each and everything related to our browsing history. In the age of ChatGPT, an AI chatbot, we can find the answers to our questions easily. An automated tool called a chatbot is made to mimic a thoughtful dialog with users. There are chatbots for healthcare available in the ChatGPT universe. The future of virtual customer service and planning management for healthcare organizations lies with these chatbots. Chatbots can help patients get genuine information related to health issues which can help them avoid unnecessary lab tests and his money as well as time. The World Health Organization disseminated a great deal of health-related material on its website and social media platforms to reach the largest possible number of people in a short amount of time. Journalists and Indian citizens alike have viewed the Health Minister’s social media accounts as a reliable source of information. In the last few years, verified Twitter accounts of ministers, government officials, and renowned health practitioners have been used to circulate health messages. In this pandemic situation, Twitter and other social media platforms were used to circulate authentic information regarding the coronavirus. © 2026 by Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_1502",
+    "title": "Financial Services Employing Artificial Intelligence and Machine Learning",
+    "journal": "Transforming Business Finance in the Digital Era",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781998511235-8",
+    "abstract": "This chapter explores the transformative role of Artificial Intelligence (AI) and Machine Learning (ML) in revolutionizing financial services, particularly in the context of post-pandemic risk assessment and investment strategies. It delves into how AI-driven tools, such as robo-advisors and intelligent financial applications, have redefined decision-making processes, risk management, fraud detection, and customer interaction in the financial sector. The study highlights the application of supervised ML algorithms in analyzing financial behavior, predicting cryptocurrency trends, and managing the complexities of unbalanced data in financial modeling. Emphasis is placed on AI’s capacity for real-time data processing, personalized financial guidance, and improved forecasting capabilities. Furthermore, the chapter introduces the concept of Explainable AI (XAI) as a pivotal advancement toward financial transparency and accountability. Drawing on empirical data and machine learning methodologies, the chapter provides theoretical and practical insights into AI/ML’s expanding influence on household investment behavior, regulatory frameworks, and digital financial literacy. The findings underscore the need for ethical AI integration and intelligent regulatory strategies to enhance financial stability and investor trust in an increasingly data-driven economic landscape. © 2026 by Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_1503",
+    "title": "The Fourth Industrial Revolution (IR4) and Its Implications on the 7Ps of Marketing",
+    "journal": "The Growing Business Intelligence: AI and Related Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781998511457-10",
+    "abstract": "This chapter explores the significant impact of the fourth industrial revolution (IR4) on the traditional marketing mix, widely recognized as the 7Ps framework encompassing product, price, place, promotion, people, process, and physical evidence. In light of the current global convergence of digital technologies, including artificial intelligence, big data, Internet of Things (IoT), and automation, it is imperative for businesses to modify their marketing strategies in order to remain pertinent and competitive within this swiftly evolving environment. This chapter explores the profound impacts of the IR4 on all components of the 7Ps framework. It emphasizes the methods and recommended approaches that marketers may utilize to capitalize on the opportunities and effectively manage the challenges arising from this technological revolution. © 2026 by Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_1504",
+    "title": "AI-Enabled Customer Relationship Management: Enhancing Customer Engagement and Business Performance",
+    "journal": "Transforming Business Education through Artificial Intelligence",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781998511471-9",
+    "abstract": "In the contemporary business landscape, organizations are increasingly turning to artificial intelligence (AI) to revolutionize traditional Customer Relationship Management (CRM) processes. This study explores the integration of AI technologies into CRM systems and its profound impact on enhancing customer engagement and overall business performance. The research delves into key AI applications within CRM, including data analysis, predictive analytics, customer segmentation, and personalized marketing. The study emphasizes the role of AI in transforming raw customer data into actionable insights. Through advanced data analysis and predictive analytics, businesses gain the ability to anticipate customer needs, preferences, and behaviors. AI-driven customer segmentation facilitates the development of targeted and personalized marketing strategies, fostering more meaningful and relevant interactions. Moreover, this research also investigates the challenges and opportunities associated with the implementation of AI in CRM. It addresses concerns related to data privacy, ethical considerations, and the need for effective change management. It also explores the evolving landscape of AI technologies and their potential to shape the future of customer relationships. It discusses emerging trends, such as natural language processing (NLP), chatbots, and machine learning, and their implications for the evolution of CRM practices. © 2026 by Apple Academic Press, Inc."
+  },
+  {
+    "article_id": "CA_1505",
+    "title": "Development of web-based intelligent living system based on ZigBee technology",
+    "journal": "Applied System Innovation - Proceedings of the International Conference on Applied System Innovation, ICASI 2015",
+    "journal_impact_factor": null,
+    "doi": "10.1201/b21811-109",
+    "abstract": "In recent years, owing to the rapid development of wireless sensor networks and mobile computing advances in technology based on the Internet of Things and smart phones with the support of ZigBee and sensor technology has been applied extensively, and ubiquitous control has come true. This study presents ZigBee technology into a proposed ubiquitous intelligent living system, with the use of the routing ZigBee gateway and external network, making all sorts of living appliances to connect to a web-based intelligent system based on wireless technology. With the usage of wireless technology, this proposed system can reduce the difficulties of the connections between the living appliances, and it is convenient for users to access or remove these appliances freely under a wireless or ubiquitous environment that is helpful to improve our life’s comfort level. © 2016 Taylor & Francis Group, London."
+  },
+  {
+    "article_id": "CA_1506",
+    "title": "Static analysis of malware in android-based platforms: A progress study",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/100132",
+    "abstract": "Android-based platforms enable various applications to request and gain permissions when they need to access the resources of our mobile-phones. This keeps users’ data and credentials on hazards and makes them vulnerable to attackers. Several research works have been conducted on this issue and numerous techniques have been developed for detecting malware. Some of these techniques focus on static analysis by inspecting the application package to discover any suspicious hidden code. Such static analysis based schemes are commonly utilized in anti-virus software, including the signature-based and the permission-based mechanisms. In this context, this paper provides a progress study for static analysis of malware in Android-based platforms. We initially investigate common types of malware and present the main categories of malware analysis methods. We, then, provides a literature review on some research works that have been introduced in the last few years on static analysis of Android malware, for both signature-based and the permission-based approaches. However, it is encouraged to provide novel ideas that can help in developing innovative solutions and intelligent systems for detecting various malware in our digital world. © 2021 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1507",
+    "title": "A Fuzzy Logic IoT- Based Temperature and Humidity Control System for Smart Buildings",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/13011",
+    "abstract": "Cooling systems are becoming an important part of everyday life with the exponential increase in cooling devices. Consequently, the power consumption is also increasing simultaneously. This paper aims to design an intelligent system to analyze the automation of cooling systems for smart buildings by applying fuzzy logic rules for different temperature and relative humidity parameters to control the surrounding air and power consumption. In such systems, the temperature and the relative humidity are considered input parameters, and the Ac mode is an output parameter. The system obtains the input data from the Temperature and humidity (DHT11) sensor by the Arduino microcontroller, the obtained data are then analyzed by the fuzzy logic control system. This system automatically controls the cooling devices when the temperature varies between 0 oC to 50 oC, and the relative humidity value varies between 0% to 90%. The analyzed data then is sent to ESP8266-12E Node MCU Wi-Fi microcontroller to monitor and control the real-time parameters online using the IoT through ThingSpeak. This system can provide an early warning indication to the user to acknowledge that the real-time remote parameters are changed and at the same time it triggers the cooling system to adapt the temperature condition to a desirable one. The obtained results show the proposed system can be applied practically in smart buildings. © 2023 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1508",
+    "title": "A Fuzzy Logic IoT-Based Temperature and Humidity Control System for Smart Buildings",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/130111",
+    "abstract": "Cooling systems are becoming an important part of everyday life with the exponential increase in cooling devices. Consequently, the power consumption is also increasing simultaneously. This paper aims to design an intelligent system to analyze the automation of cooling systems for smart buildings by applying fuzzy logic rules for different temperature and relative humidity parameters to control the surrounding air and power consumption. In such systems, the temperature and the relative humidity are considered input parameters, and the Ac mode is an output parameter. The system obtains the input data from the Temperature and humidity (DHT11) sensor by the Arduino microcontroller, the obtained data are then analyzed by the fuzzy logic control system. This system automatically controls the cooling devices when the temperature varies between 0 oC to 50 oC, and the relative humidity value varies between 0% to 90%. The analyzed data then is sent to ESP8266-12E Node MCU Wi-Fi microcontroller to monitor and control the real-time parameters online using the IoT through ThingSpeak. This system can provide an early warning indication to the user to acknowledge that the real-time remote parameters are changed and at the same time it triggers the cooling system to adapt the temperature condition to a desirable one. The obtained results show the proposed system can be applied practically in smart buildings. © 2023 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1509",
+    "title": "Utility and Acceptability of AI-Enabled Chatbots on the Online Customer Journey in E-Retailing",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/150125",
+    "abstract": "Retailers use artificial intelligence (AI) to serve customers better. This study examines the role of chatbots in shaping attitudes of customers relating to usefulness, usability, and trust when shopping for groceries online. Automated conversational agents, or chatbots, not only understand customers, but also provide them product knowledge, and promote behavioral change. Chatbots, automated and cost-effective as they are, provide efficient first-level support because a human employee cannot answer the whole range of customer questions round the clock. For Analysis, Structural Equation Modeling (SEM) with the AMOS analysis programme version 23 is used in this investigation. The online questionnaire was circulated via Google forms (N-375) promoted on social media to respondents who are at least 18 years of age and have completed online transactions, selecting them using a sampling quota in the survey procedure. A novel model will be tested and compared to prior research. According to the study’s findings, attitudes are significantly influenced by usefulness, usability, and trust, whereas attitudes have a major impact on decisions. However, it appears that trust has little impact on consumers’ views about online purchasing. This conclusion could be yet more support for previous research that consistently claims that trust affects customer purchases. In the case of online purchasing, not only is the trust element important for customers to make a choice, but it also matters more than the attitude factor because attitude is a product of many different aspects. Significantly consumer confidence in internet retailers is the factor that most affects attitude. The quantitative investigation revealed that a deep majority of respondents were apprehensive about employing AI and online-retail (e-retail) chatbots, primarily due to concerns about their accuracy and security, but would like to seek the advice of chatbots for informative purposes. © 2024 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1510",
+    "title": "A Hybrid Smartphone Recommendation Model Using Different Machine Learning Algorithms",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/1571040849",
+    "abstract": "In today’s world, mobile phones are an essential part of many people’s daily lives. With several smartphones to choose from, people are often confused about which smartphone will be best for their use. This study aims to present an accurate and usable prediction model for real-life mobile phone reviews by individual users to improve the prediction accuracy of the model. A review-based prediction model is built on the behavior and choice of individual users using machine learning. This data has been collected using web scraping tools like UiPath and the Python Beautiful Soup library from different websites, followed by data preprocessing. In this study, different Collaborative Filtering-based machine learning algorithms have been used and compared. The algorithms used include KNN based on individual items or individual users and an unsupervised SVD-based model. This has been demonstrated using UiPath Studio and the Druid AI chatbot. The Druid chatbot provides smartphone recommendations and data based on user input. Upon entering a smartphone name, a UiPath process is triggered, sending the results back to the chatbot. This UiPath-based chatbot provides specifications and recommendations. Future enhancements include broader product recommendations, improved user understanding through advanced NLP training, and a better user experience overall. Additionally, there will be a focus on incorporating user feedback to continuously refine and enhance the prediction model, ensuring it remains relevant and highly accurate. © 2025 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1511",
+    "title": "Intent Classification in Artificial Intelligence-Based Customer Service Chatbot for E-Wallet Service Providers",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/1571046212",
+    "abstract": "The rapid expansion of e-wallet services in Indonesia necessitates robust customer service to maintain competitiveness and user satisfaction. Current customer service chatbots in Indonesian e-wallet services primarily rely on rule-based approaches, limiting their adaptability to user needs and resulting in communication issues and negative feedback. The transition to AI-based chatbots is challenging, particularly in accurately classifying user intents in Indonesian-language due to the language’s complexities and the absence of specialized models and datasets. This research proposes a customized intent classification model for AI-based customer service chatbots in e-wallet services, employing transformer-based embedding methods, specifically IndoBERT and Sentence-BERT (SBERT), with TextConvoNet classification model. Comparative analysis is conducted against conventional transformer models and the original TextConvoNet framework. The findings consistently showcase the superiority of the proposed models across various metrics, demonstrating significant advancements compared to baseline approaches. Notably, SBERT embeddings with TextConvoNet classification achieved the highest accuracy (86.90%), precision (84.81%), recall (86.90%), and F1-score (85.11%) with a learning rate of 0.001, indicating its potential to enhance customer service chatbots in e-wallet platforms. These findings not only advance AI-driven customer service within the financial sector but also offer valuable insights into the broader application of natural language processing technologies for addressing real-world challenges. © 2025 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1512",
+    "title": "Bridging AI and Emotion: Enhanced Models for Personal Finance Manager Applications",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/1571107231",
+    "abstract": "paper focuses on creating and deploying an innovative Financial Advisor Application that would revolutionize conventional financial planning methods with the help of state-of-the-art artificial intelligence tools and effective financial services. Indeed, the essence of this application is user-oriented and focuses on creating more ways to engage the user and help make the right decisions by redesigning the interface and providing individualized financial guidance. The application combines different aspects of financial management, including budgeting, transaction tracking, and goal setting, but also sees novelties as an artificial intelligence function that detects anomalies in transactions and the merchant offers explicitly created for clients. The technical structure involves access to data, the description of each module, and the use of AI that provides anticipatory analysis and tools for advanced financial planning. Business testing and vulnerability assessments were performed proving the business value and reliability of the application; thus, avoiding data leakage and modularity viruses. The work assesses the effects on the users’ satisfaction when provided with such technologies and their ability to change their financial management behaviour; therefore, providing an exhaustive scenario of the credentials of AI for improving the efficacy of financial advisory. The conclusions released in the paper should advance knowledge of financial technology as it demonstrates how the intelligent systems used in a presented application can lead to noteworthy improvements for both users and financial companies. © 2025 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1513",
+    "title": "Lib-Bot: A Smart Librarian-Chatbot Assistant",
+    "journal": "International Journal of Computing and Digital Systems",
+    "journal_impact_factor": 2.956,
+    "doi": "10.12785/ijcds/160101",
+    "abstract": "Library is a knowledge warehouse and various long past references can be found in it. Students, professors, kids, and adults are regularly encouraged to visit the library as it provides a conducive environment for building the habit of reading books and improving individual critical-thinking skills. As technology is getting more and more advanced nowadays, some common problems faced by the librarians can be replaced by machines. For instance, the librarians may not be available all the time at the counter; reduction of physical contact due to Covid19 infection et cetera, machines can take over the librarians' roles to handle the tasks. In this paper, an Artificial Intelligence (AI) chatbot is proposed and implemented on mobile application to answer library-related questions. Bidirectional Encoder Representations from Transformers (BERT) algorithm is employed to classify the intent of the user's messages. Besides, many existing chatbot applications support only the text input. This paper proposes a speech-to-text recognition feature to enable both text and voice input. If there are any queries that cannot be solved by the chatbot system, it will store the queries in the database and the library admins can filter the queries and upload new training data for the AI model to cover a wider range of questions. © 2024 University of Bahrain. All rights reserved."
+  },
+  {
+    "article_id": "CA_1514",
+    "title": "Estimating the impact of “humanizing” customer service chatbots",
+    "journal": "Information Systems Research",
+    "journal_impact_factor": 4.605,
+    "doi": "10.1287/ISRE.2021.1015",
+    "abstract": "We study the impacts of “humanizing” artificial intelligence (AI)-enabled autonomous customer service agents (chatbots). Implementing a field experiment in collaboration with a dual channel clothing retailer based in the United States, we automate a used clothing buy-back process, such that individuals engage with the retailer's autonomous chatbot to describe the used clothes they wish to sell, obtain a cash offer, and (if they accept the offer) print a shipping label to finalize the transaction. We causally estimate the impact of chatbot anthropomorphism on transaction conversion by randomly exposing consumers to exogenously varied levels of chatbot anthropomorphism, operationalized by incorporating a random draw from a set of three anthropomorphic features: humor, communication delays, and social presence. We provide evidence that, in this retail setting, anthropomorphism is beneficial for transaction outcomes, but that it also leads to significant increases in offer sensitivity. We argue that the latter effect occurs because, as a chatbot becomes more human-like, consumers shift to a fairness evaluation or negotiating mindset. We also provide descriptive evidence suggesting that the benefits of anthropomorphism for transaction conversion may derive, at least in part, from consumers' increased willingness to disclose personal information necessary to complete the transaction. Copyright: © 2021 INFORMS"
+  },
+  {
+    "article_id": "CA_1515",
+    "title": "More Than a Bot? The Impact of Disclosing Human Involvement on Customer Interactions with Hybrid Service Agents",
+    "journal": "Information Systems Research",
+    "journal_impact_factor": 4.605,
+    "doi": "10.1287/isre.2022.0152",
+    "abstract": "The proliferation of hybrid service agents—combinations of artificial intelligence (AI) and human employees behind a single interface—further blurs the line between humans and technology in online service encounters. While much of the current debate focuses on disclosing the nonhuman identity of AI-based technologies (e.g., chatbots), the question of whether to also disclose the involvement of human employees working behind the scenes has received little attention. We address this gap by examining how such a disclosure affects customer interactions with a hybrid service agent consisting of an AI-based chatbot and human employees. Results from a randomized field experiment and a controlled online experiment show that disclosing human involvement before or during an interaction with the hybrid service agent leads customers to adopt a more human-oriented communication style. This effect is driven by impression management concerns that are activated when customers become aware of humans working in tandem with the chatbot. The more human-oriented communication style ultimately increases employee workload because fewer customer requests can be handled automatically by the chatbot and must be delegated to a human. These findings provide novel insights into how and why disclosing human involvement affects customer communication behavior, shed light on its negative consequences for employees working in tandem with a chatbot, and help managers understand the potential costs and benefits of providing transparency in customer–hybrid service agent interactions. © 2023 The Author(s)"
+  },
+  {
+    "article_id": "CA_1516",
+    "title": "Less Artificial, More Intelligent: Understanding Affinity, Trustworthiness, and Preference for Digital Humans",
+    "journal": "Information Systems Research",
+    "journal_impact_factor": 4.605,
+    "doi": "10.1287/isre.2022.0203",
+    "abstract": "Companies are beginning to deploy highly realistic-looking digital human agents (DHAs) controlled by increasingly realistic artificial intelligence (AI) for online customer service tasks often performed by chatbots. We conducted four major experiments to examine users’ perceptions (trustworthiness, affinity, and willingness to work with) and behaviors while using DHA via a mixed-method approach with data from quantitative surveys, qualitative interviews, direct observations, and neurophysiological measurements. Four different DHAs were used in our experiments, which included commercial products from two different vendors (which proved to be immature) and two future-focused ones (where participants were successfully led to believe that the human-controlled digital human was controlled by AI). The first study compared user perceptions of a DHA, a chatbot, and a human agent from a written description and found few differences between the DHA and the chatbot. The second study compared perceptions after using a commercially available DHA and a chatbot. Most participants reported problems using a current production implementation of DHA, either finding it uncanny or robotic or having trouble conversing with it. The third and fourth studies used a plausible future-focused “Wizard of Oz” design by informing users that the DHA was controlled by AI when it was actually controlled by a human. Participants still preferred a human agent using video conferencing to the DHA, but after controlling for visual fidelity, we did not find evidence of differences between the human and the DHA. Current DHAs that have communication problems trigger greater affinity than chatbots but are otherwise similar to them. When the DHAs’ representation and communication ability match human ability, we failed to find differences between DHAs and human agents for simple customer service tasks. Our results also add to research on algorithm aversion and suggest that the anthropomorphic computer interfaces of DHA might alleviate algorithm aversion. © 2024 INFORMS."
+  },
+  {
+    "article_id": "CA_1517",
+    "title": "Bots with Feelings: Should AI Agents Express Positive Emotion in Customer Service?",
+    "journal": "Information Systems Research",
+    "journal_impact_factor": 4.605,
+    "doi": "10.1287/ISRE.2022.1179",
+    "abstract": "Customer service employees are generally advised to express positive emotion during their interactions with customers. The rise and maturity of artificial intelligence (AI)-powered conversational agents, also known as chatbots, beg the question: should AI agents be equipped with the ability to express positive emotion during customer service interactions? This research explores how, when, and why an AI agent's expression of positive emotion affects customers' service evaluations. We argue that AI-expressed positive emotion can influence customers via dual pathways: an affective pathway of emotional contagion and a cognitive pathway of expectation-disconfirmation. We propose that positive emotion expressed by an AI agent (versus a human employee) is less effective in facilitating service evaluations because of a heightened level of expectation-disconfirmation. We further introduce a novel individual difference variable, customers' relationship norm orientation, which affects their expectations toward the AI agent and moderates the cognitive pathway. Results from three laboratory experiments substantiate our claims. By revealing a distinctive impact of positive emotion expressed by an AI agent compared with a human employee, these findings deepen our understanding of customers' reactions to emotional AIs, and they offer valuable insights for the deployment of AIs in customer service. Copyright: © 2022 INFORMS."
+  },
+  {
+    "article_id": "CA_1518",
+    "title": "Frontiers: Machines vs. humans: The impact of artificial intelligence chatbot disclosure on customer purchases",
+    "journal": "Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1287/mksc.2019.1192",
+    "abstract": "Empowered by artificial intelligence (AI), chatbots are surging as new technologies with both business potential and customer pushback. This study exploits field experiment data on more than 6,200 customers who are randomized to receive highly structured outbound sales calls from chatbots or human workers. Results suggest that undisclosed chatbots are as effective as proficient workers and four times more effective than inexperienced workers in engendering customer purchases. However, a disclosure of chatbot identity before the machine–customer conversation reduces purchase rates by more than 79.7%. Additional analyses find that these results are robust to nonresponse bias and hang-ups, and the chatbot disclosure substantially decreases call length. Exploration of the mechanisms reveals that when customers know the conversational partner is not a human, they are curt and purchase less because they perceive the disclosed bot as less knowledgeable and less empathetic. The negative disclosure effect seems to be driven by a subjective human perception against machines, despite the objective competence of AI chatbots. Fortunately, such negative impact can be mitigated by a late disclosure timing strategy and customer prior AI experience. These findings offer useful implications for chatbot applications, customer targeting, and advertising in conversational commerce. © 2019 INFORMS."
+  },
+  {
+    "article_id": "CA_1519",
+    "title": "Segmentation of spatially dependent geographical units: Model and application",
+    "journal": "Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1287/mnsc.2016.2699",
+    "abstract": "We develop and test a new methodology that assigns geographical units (such as ZIP codes) to market segments by simultaneously considering bases of segmentation, such as customer attitudes and needs, such that the resulting segments display a high level of spatial concentration. Such concentrated segments are managerially desirable because of the logistical and administrative efficiencies created by implementing spatially concentrated segment-level strategies. The suggested approach captures spatial dependence flexibly while allowing us to identify managerially actionable segments that effectively balance homogeneity and spatial concentration. An illustrative empirical application demonstrates how the results can be utilized to derive consumer insights for actionable segmentation strategies. A Monte Carlo simulation and an assessment of the quality of the segments obtained from the empirical application support the value of the proposed spatially dependent segmentation method. © 2017 INFORMS."
+  },
+  {
+    "article_id": "CA_1520",
+    "title": "Digital Lyrebirds: Experimental Evidence That Voice-Based Deep Fakes Influence Trust",
+    "journal": "Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1287/mnsc.2022.03316",
+    "abstract": "We consider the pairing of audio chatbot technologies with voice-based deep fakes, that is, voice clones, examining the potential of this combination to induce consumer trust. We report on a set of controlled experiments based on the investment game, evaluating how voice cloning and chatbot disclosure jointly affect participants’ trust, reflected by their willingness to play with an autonomous, AI-enabled partner. We observe evidence that voice-based agents garner significantly greater trust from subjects when imbued with a clone of the subject’s voice. Recognizing that these technologies present not only opportunities but also the potential for misuse, we further consider the moderating impact of AI disclosure, a recent regulatory proposal advocated by some policymakers. We find no evidence that AI disclosure attenuates the trust-inducing effect of voice clones. Finally, we explore underlying mechanisms and contextual moderators for the trust-inducing effects, with an eye toward informing future efforts to manage and regulate voice-cloning applications. We find that a voice clone’s effects operate, at least in part, by inducing a perception of homophily and that the effects are increasing in the clarity and quality of generated audio. Implications of these results for consumers, policymakers, and society are discussed. Copyright: © 2024 INFORMS"
+  },
+  {
+    "article_id": "CA_1521",
+    "title": "Deep Reinforcement Learning for Sequential Targeting",
+    "journal": "Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1287/mnsc.2022.4621",
+    "abstract": "Deep reinforcement learning (DRL) has opened up many unprecedented opportunities in revolutionizing the digital marketing field. In this study, we designed a DRL-based personalized targeting strategy in a sequential setting. We show that the strategy is able to address three important challenges of sequential targeting: (1) forward looking (balancing between a firm's current revenue and future revenues), (2) earning while learning (maximizing profits while continuously learning through exploration-exploitation), and (3) scalability (coping with a high-dimensional state and policy space). We illustrate this through a novel design of a DRL-based artificial intelligence (AI) agent. To better adapt DRL to complex consumer behavior dimensions, we proposed a quantization-based uncertainty learning heuristic for efficient exploration-exploitation. Our policy evaluation results through simulation suggest that the proposed DRL agent generates 26.75% more long-term revenues than can the non-DRL approaches on average and learns 76.92% faster than the second fastest model among all benchmarks. Further, in order to better understand the potential underlying mechanisms, we conducted multiple interpretability analyses to explain the patterns of learned optimal policy at both the individual and population levels. Our findings provide important managerialrelevant and theory-consistent insights. For instance, consecutive price promotions at the beginning can capture price-sensitive consumers' immediate attention, whereas carefully spaced nonpromotional \"cooldown\"periods between price promotions can allow consumers to adjust their reference points. Additionally, consideration of future revenues is necessary from a longterm horizon, but weighing the future too much can also dampen revenues. In addition, analyses of heterogeneous treatment effects suggest that the optimal promotion sequence pattern highly varies across the consumer engagement stages. Overall, our study results demonstrate DRL's potential to optimize these strategies' combination to maximize long-term revenues. © 2022 INFORMS."
+  },
+  {
+    "article_id": "CA_1522",
+    "title": "AI and Procurement",
+    "journal": "Manufacturing and Service Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1287/msom.2021.0989",
+    "abstract": "Problem definition: In this research, we study how buyers’ use of artificial intelligence (AI) affects suppliers’ price quoting strategies. Specifically, we study the impact of automation—that is, the buyer uses a chatbot to automatically inquire about prices instead of asking in person—and the impact of smartness—that is, the buyer signals the use of a smart AI algorithm in selecting the supplier. Academic/practical relevance: In a world advancing toward AI, we explore how AI creates and delivers value in procurement. AI has two unique abilities: automation and smartness, which are associated with physical machines or software that enable us to operate more efficiently and effectively. Methodology: We collaborate with a trading company to run a field experiment on an online platform in which we compare suppliers’ wholesale price quotes across female, male, and chatbot buyer types under AI and no recommendation conditions. Results: We find that, when not equipped with a smart control, there is price discrimination against chatbot buyers who receive a higher wholesale price quote than human buyers. In fact, without smartness, automation alone receives the highest quoted wholesale price. However, signaling the use of a smart recommendation system can effectively reduce suppliers’ price quote for chatbot buyers. We also show that AI delivers the most value when buyers adopt automation and smartness simultaneously in procurement. Managerial implications: Our results imply that automation is not very valuable when implemented without smartness, which in turn suggests that building smartness is necessary before considering high levels of autonomy. Our study unlocks the optimal steps that buyers could adopt to develop AI in procurement processes. © 2021 INFORMS"
+  },
+  {
+    "article_id": "CA_1523",
+    "title": "Routing and Staffing in Customer Service Chat Systems with Generally Distributed Service and Patience Times",
+    "journal": "Manufacturing and Service Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1287/msom.2022.0114",
+    "abstract": "Problem definition: We study customer service chat (CSC) systems, in which agents can serve multiple customers simultaneously, with generally distributed service and patience times. The multitasking capability of agents introduces idiosyncratic challenges when making routing and staffing decisions. Methodology/results: To determine the dynamic matching of arriving customers with available agents, we first formulate a routing linear program (LP) based on system primitives. Inspired by the optimal solution of the routing LP, we design a parsimonious dynamic routing policy that is independent of arrival rate and service capacity information. We also use the optimal solution to develop closed-form approximations for crucial performance metrics and show that a similar LP can be utilized to make staffing decisions. Through extensive simulation experiments, we showcase the efficacy of our approximations and staffing decisions. Furthermore, under our proposed policy, the CSC system exhibits a unique stationary fluid model in which the steady-state performance measures align with our approximations. Managerial implications: The extant literature primarily focuses on Markovian systems with exponential distributions. In this paper, customers’ service and patience times are allowed to be generally distributed to agree with practical settings. Our findings indicate that the distributions have a significant impact on routing policies, staffing decisions, and system performance. © 2024 INFORMS."
+  },
+  {
+    "article_id": "CA_1524",
+    "title": "Estimating Personalized Demand with Unobserved No-Purchases Using a Mixture Model: An Application in the Hotel Industry",
+    "journal": "Manufacturing and Service Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1287/msom.2022.1094",
+    "abstract": "Problem definition: Estimating customer demand for revenue management solutions faces two main hurdles: unobservable no-purchases and nonhomogenous customer populations with varying preferences. We propose a novel and practical estimation and segmentation methodology that overcomes both challenges simultaneously. Academic/practical relevance: We combine the estimation of discrete choice modeling under unobservable no-purchases with a data-driven identification of customer segments. In collaboration with our industry partner, Oracle Hospitality Global Business Unit, we demonstrate our methodology in the hotel industry setting where increased competition has driven hoteliers to look for more innovative revenue management practices, such as personalized offers for their guests. Methodology: Our methodology predicts demand for multiple types of hotel rooms based on guest characteristics, travel attributes, and room features. Our framework combines clustering techniques with choice modeling to develop a mixture of multinomial logit discrete choice models and uses Bayesian inference to estimate model parameters. In addition to predicting the probability of an individual guest's room type choice, our model delivers additional insights on segmentation with its capability to classify each guest into segments (or a mixture of segments) based on their characteristics. Results: We first show using Monte Carlo simulations that our method outperforms several benchmark methods in prediction accuracy, with nearly unbiased estimates of the choice model parameters and the size of the no-purchase incidents. We then demonstrate our method on a real hotel data set and illustrate how the model results can be used to drive insights for personalized offers and pricing. Managerial implications: Our proposed framework provides a practical approach for a complicated demand estimation problem and can help hoteliers segment their guests based on their preferences, which can serve as a valuable input for personalized offer selection and pricing decisions. Copyright: © 2022 INFORMS."
+  },
+  {
+    "article_id": "CA_1525",
+    "title": "Sentence Similarity Techniques for Short vs Variable Length Text using Word Embeddings",
+    "journal": "Computación y Sistemas",
+    "journal_impact_factor": 0.601,
+    "doi": "10.13053/cys-23-3-3273",
+    "abstract": "In goal-oriented conversational agents like Chatbots, finding the similarity between user input and representative text result is a big challenge. Generally, the conversational agent developers tend to provide a minimal number of utterances per intent, which makes the classification task difficult. The problem becomes more complex when the length of the representative text per action is short and the length of the user input is long. We propose a methodology that derives Sentence Similarity score based on N-gram and Sliding Window and uses the FastText Word Embeddings technique which outperforms the current state-of-the-art Sentence Similarity results. We are also publishing a dataset on the shopping domain, to build conversational agents. And the extensive experiments done on the dataset fetched better results in accuracy, precision and recall by 6%, 2% and 80% respectively. It also evinces that our solution generalizes well on the low corpus and requires no training."
+  },
+  {
+    "article_id": "CA_1526",
+    "title": "Chatbot basado en el aprendizaje profundo para recomendar productos relevantes",
+    "journal": "Computación y Sistemas",
+    "journal_impact_factor": 0.601,
+    "doi": "10.13053/cys-27-2-4119",
+    "abstract": "Online shopping platforms are growing at an unprecedented rate around the world. These platforms are mostly based on search engines, which are still mostly knowledge base based and use matching keywords to find similar products. However, customers want a more interactive approach that is convenient and reliable for viewing related products. In this article, we propose a novel idea of searching for products in an online shopping system using a chatbot model that uses Deep Learning which processes images and text to generate responses to the customer. A user can provide a picture or give a description of the product they are looking for, and they will be presented with similar products based on the images. The system of proposed recommendations is based on the recovery of images based on the content provided. The evaluation of the proposed model is divided into two parts: if it is done through images it generates 80.6% accuracy and if it is done through text it has 75% accuracy."
+  },
+  {
+    "article_id": "CA_1527",
+    "title": "Semantic Textual Similarity: Overview and Comparative Study between Arabic and English",
+    "journal": "Computación y Sistemas",
+    "journal_impact_factor": 0.601,
+    "doi": "10.13053/cys-28-3-5035",
+    "abstract": "Semantic Textual Similarity is crucial for various end-user applications of Natural Language Processing, including Search Engines, Chatbots, Machine Translation Systems, Plagiarism Detection, and Text Summarization. While substantial research has been conducted on this topic for widely spoken languages such as English, there exists a need for comprehensive surveys focusing on less-studied languages, such as Arabic. This work is a comprehensive resource for researchers working on Semantic Textual Similarity especially for the Arabic language. Our survey synthesizes the current state of research in Semantic Textual Similarity in Arabic, providing valuable insights into this field's unique challenges and opportunities. We review state-of-the-art approaches, datasets, and methodologies proposed for Arabic Semantic Textual Similarity. The paper highlights the differences between Arabic and English, which necessitate tailored approaches to Semantic Textual Similarity. Moreover, we discuss the recent advancements in Arabic Semantic Textual Similarity and identify the existing gaps and challenges that researchers face. In addition, we propose potential future research directions to further improve the Arabic Semantic Textual Similarity models. By addressing these areas, our work aims to foster a deeper understanding and more robust development of Semantic Textual Similarity for the Arabic language, ultimately expanding the scope and effectiveness of Semantic Textual Similarity applications."
+  },
+  {
+    "article_id": "CA_1528",
+    "title": "Architecture of a Socio-Emotional Conversational Agent Capable of Identifying Intentions within a Socratic Dialogue",
+    "journal": "Computación y Sistemas",
+    "journal_impact_factor": 0.601,
+    "doi": "10.13053/cys-28-3-5167",
+    "abstract": "This article presents an architecture for developing a socio-emotional conversational agent to identify intentions within Socratic dialogues, using a combination of speech act theory and sentiment analysis. This proposal seeks to create a socio-emotional conversational agent capable of addressing the issue of how emotions associated with personality affect the recognition of intentions of expressions within the educational environment. To identify the appropriate intention, this approach considers the influence of personality, the polarity of the words used by the user, and the context in which the dialogue is situated. With this, it is expected to accurately identify communicative intentions, facilitating a natural and empathetic interaction between intelligent virtual agents and users, contributing to the field of artificial intelligence applied to education."
+  },
+  {
+    "article_id": "CA_1529",
+    "title": "How can working conditions for online crowdworkers be improved? Institutional experiments for cross-jurisdictional polycentric work",
+    "journal": "Work in the Global Economy",
+    "journal_impact_factor": null,
+    "doi": "10.1332/27324176Y2025D000000037",
+    "abstract": "This article articulates the theory and design of the Crowdsourcing Wage Pledge, an action research initiative exploring how academic users of paid crowdsourcing can contribute to improving the working conditions of online crowdworkers. ‘Crowdwork’ describes remote information work comprising short tasks – for example, surveys, transcription, translation, data cleaning – organized through online platforms (for example, Amazon Mechanical Turk, Clickworker, Scale API) and typically remunerated under a self-employed piecework model. The digital labour platforms mediating this work are important in a growing range of sectors, having become, for example, key nodes in the global supply chains for artificial intelligence products, including self-driving cars and chatbots (for example, ChatGPT). Academics also use crowdsourcing – social scientists, for example, to recruit study participants, and computer scientists to outsource data-cleaning work. While crowdwork creates new income opportunities with, sometimes, greater time flexibility and lower barriers to entry than traditional employment, crowdworkers typically earn less than traditional employees doing similar work, often below minimum wage, and face other decent work deficits, including arbitrary nonpayment and termination and misclassification. While some jurisdictions are developing laws to address these challenges, these typically focus on in-person platform work (for example, delivery). Crowdwork, however, is often cross-jurisdictional and therefore presents challenges for national regulation. The Crowdsourcing Wage Pledge is a voluntary regulatory initiative aiming to recruit academic users of crowdsourcing into adopting best practices identified by previous research. It is informed both by past practical efforts to improve crowdwork working conditions and by theory from political science, human-computer interaction, and industrial relations. © Authors 2025."
+  },
+  {
+    "article_id": "CA_1530",
+    "title": "Intelligent systems from a perspective of cognitive decision-making: Opportunities and challenges; [认知决策视角下的智能系统:机遇与挑战]",
+    "journal": "Journal of Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.13587/j.cnki.jieem.2025.02.001",
+    "abstract": "Cognition represents the psychological process through which people perceive the objective world and the mind′ s understanding of objective entities and phenomena. The intelligent decision-making system from the cognitive perspective aims to harness the core advantages of human cognition and machine intelligence and bring them into to play, thus realizing the new ecology of intelligent decision-making. The rapid development of emerging technologies and the gradual maturation of intelligent system products have promoted the development of cognitive learning, significantly improved the efficiency of economic services and the transparency of the decision-making process, improved the understanding of the logic behind the system behavior, increased the trust of users, and tapped the potential value of decision-making models, making intelligent decision-making systems an indispensable part of modern life. In the decision-making process, the important components of the intelligent decision-making system include the processing of multimodal information, the construction of algorithms and the explanation of the reasoning process, as well as the interaction that occurs in the system adjustment and upgrade stage. These components are not only the focus of the intelligent decision-making system but also the key factors for promoting the transformation of the intelligent industry. Therefore, it is of great significance to study information fusion, cognitive computing and human-machine collaborative learning from a cognitive perspective. This paper conducts a systematic literature review combining quantitative bibliometric research and qualitative bibliometric research methods. Using the Web of Science Core Collection and the CNKI database as data sources, we collect the literature on topics related to intelligent systems and cognitive decision-making and define the research trends and frontiers in the field of intelligent decision-making. A comprehensive cognitive decision-making analysis is presented, focusing on the research progress of intelligent systems from three aspects: information fusion, cognitive computing, and human-computer interaction. From the perspective of cognition, this paper reviews the main cognitive representations in the intelligent decision-making process, analyzes the recent literature on intelligent decision-making systems, and discusses the challenges faced by cognitive decision-making in complex and uncertain environments, including information fusion technology, opacity, the human-computer interaction experience effect, and decision quality. Specifically, information fusion is one of the key steps in intelligent decision systems. The accuracy and reliability directly depend on the correct information fusion process. Although information fusion technology has been widely used in real life, it still faces challenges such as fault tolerance, robustness, functional models, system design and performance evaluation. Based on the characterization of information in open, dynamic, real-world environments and the modeling of human reasoning and interpretation mechanisms, big data aggregation from sources offers greater possibilities for understanding how cognitive computing works. In spite of this, cognitive computing still faces bottlenecks such as poor interpretability, difficulty in ethical alignment and weak cognitive reasoning ability. One of the goals of human-computer interaction technology is to be able to develop processes that promote harmonious cognition between people and systems. Cognitive mechanisms, such as planning, decision-making, and learning, are important components of the human-computer interaction process. At present, there are still challenges in the development of human-computer interaction, such as user experience, device support and technological advances, and intelligent decision-making. From the perspective that the sensing subject is either human or sensor technology, the concept of intelligent cognitive decision-making is proposed. In other words, the wide application of intelligent decision-making systems not only facilitates people′ s everyday life and productivity but also stimulates the rapid development of the economy and effectively addresses a number of urgent risks and challenges. The contributions of this paper include discussing the challenges and prospects of information fusion, algorithm interpretation and human-computer interaction in intelligent decision-making systems, providing theoretical support for the cognitive development of intelligent decision-making systems, and providing specific or general decision-making systems according to the heterogeneity and commonality of decision-making processes. The paper provides important implications for researchers, business managers and policymakers in the fields of information systems, computer science, and management science. © (2025), (Zhejiang University). All rights reserved."
+  },
+  {
+    "article_id": "CA_1531",
+    "title": "The Power of Chat: Intentions Toward AI E-Retail Agents",
+    "journal": "Micro and Macro Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1431/114638",
+    "abstract": "The development of AI-driven technologies offers unique opportunities for retailers to meet evolving customer needs and gain a competitive edge by providing personalized services to customers, but it also demands a radical evolution of company-customer interaction. AI in online retail includes the use of conversational technologies to improve customer engagement in one-to-one interaction with consumers. Despite empirical research on conversational technologies has seen substantial growth in recent years, there is a need to understand how user experience and online interaction habits influence AI agents’ usage and word-of-mouth intentions. To address this gap, based on the Technology Acceptance Model, this study investigates whether perceived ease of use, perceived usefulness, and perceived enjoyment impact the intentions toward AI e-retail agents in terms of electronic Word of Mouth (e-WOM) and usage intentions, and the moderating role of chat interaction frequency with human employees. Results from a sample of 208 users, analyzed with Structural Equation Modeling, indicate that ease of use impacts e-WOM rather than usage intentions. Perceived usefulness and perceived enjoyment influence both usage intentions and e-WOM. Interestingly, the relationship between perceived enjoyment and e-WOM is moderated by the chat interaction frequency with employees. The findings shed light on the complex interplay between user experience, human-agent interactions, and their impact on online retail dynamics, offering valuable insights for businesses aiming to optimize AI-driven retailing strategies to enhance system usage and encourage positive referrals. © 2025 Societa Editrice Il Mulino. All rights reserved."
+  },
+  {
+    "article_id": "CA_1532",
+    "title": "Emergence of Intelligent Systems in Consumer Products: Strategic Impacts and Opportunities in India",
+    "journal": "International Journal of Accounting and Economics Studies",
+    "journal_impact_factor": 0.113,
+    "doi": "10.14419/59bxn151",
+    "abstract": "Artificial Intelligence (AI) is transforming consumer technology by embedding smart features into everyday products, revolutionizing markets and enhancing user experiences. This paper explores the adoption trends of three prominent AI-enabled product categories— smart locks, washing machines, and home assistants—within the Indian market. The study examines regional adoption patterns across urban, semi-urban, and rural areas, analyzing factors such as product pro-motion, customer demand, price affordability, infrastructure readiness, and after-sales service. Advanced classification algorithms, including Random Forest and Decision Trees, are used to pinpoint the key drivers behind market segmentation and regional preferences. The findings reveal that urban areas lead in adoption rates due to well-established infrastructure, aggressive promotional strategies, and high customer demand. Semi-urban areas, while exhibiting moderate adoption, show promise as emerging markets, whereas rural regions lag behind due to limited infrastructure and lower awareness levels. These insights highlight the need for businesses to develop region-specific strategies, such as customizing promotional efforts and improving accessibility and affordability, to maximize market penetration. Further-more, the research emphasizes the importance of after-sales service in building trust and sustaining growth. The study provides a roadmap for businesses to effectively target diverse regional markets, leveraging AI technologies to meet evolving consumer needs. © Madhumita Addy et al."
+  },
+  {
+    "article_id": "CA_1533",
+    "title": "Analyzing The Effectiveness of New Emerging Trends in Social Media Marketing in Reshaping The E-Commerce Business",
+    "journal": "International Journal of Accounting and Economics Studies",
+    "journal_impact_factor": 0.113,
+    "doi": "10.14419/th15e564",
+    "abstract": "In the dynamic field of e-commerce, social media marketing serves as a crucial tool for enhancing consumer engagement, brand awareness, and sales conversions. Businesses are redefining digital strategies to enhance engagement with online consumers through the incorporation of emerging trends, including influencer marketing, short-form video content, AI-driven chatbots, live shopping, and personalized advertisements. This study evaluates the effectiveness of emerging trends in social media marketing and their impact on the evolution of e-commerce businesses. A standardized questionnaire was distributed to 165 e-commerce consumers to gather quantitative data. The findings indicate that video content and influencer endorsements significantly affect consumer behavior, while AI-driven customization and interactive features improve user satisfaction and shape purchasing decisions. This study outlines effective strategies and offers recommendations for businesses aiming to improve their social media marketing efforts. © Dr. Nilesh Anute et al."
+  },
+  {
+    "article_id": "CA_1534",
+    "title": "Role of Artificial Intelligence in Banking for Leveraging Customer Experience",
+    "journal": "Australasian Accounting, Business and Finance Journal",
+    "journal_impact_factor": 1.554,
+    "doi": "10.14453/aabfj.v16i5.07",
+    "abstract": "Purpose: In light of digital advancements, banks need to create customer experiences that strengthen loyalty and trust. For establishing a strong digital banking base, it is crucial for banks to make their processes efficient and fast. The purpose of the paper is to analyze the efficacy of banking functions on implementing Artificial Intelligence for enhancing customer engagement and improving customer satisfaction. It targets banks in metropolitan cities of India having tech-savvy customers, leading a fast-paced life who desire personalization and expect faultless and seamless services. Methodology: The study focusses on front, middle and back-office banking processes. The data for middle and back-office processes is collected through 10 interviews of senior officials and head of IT team in major banks. Literature review and theoretical research is carried out for various international and Indian banks with respect to the integration of AI to improve customer interactions and internal banking processes. For understanding the front-office user experience with AI-Banking, data has been gathered through a survey regarding usage of Chatbots on online banking platforms. A quantitative analysis using the Relative Importance Index reveals major use-cases ranked by customers. Spearman correlation is applied to find the relationship between the two most popular use-cases. Findings: The research paper reveals banking features integrated with AI. Chatbot use-cases on banking platforms are ranked based on customer experience. It is proved that there is a positive correlation (0.247) between the two most popular use-cases. The paper proposes IT Architecture and best practices for the digital banking sector. Practical/Theoretical implications: Based on the complete picture of AI integration with banking operations, evolving Indian banks could focus on the most popular use-cases to attract customers. A comparison with the features developed for various banks may provide a way for growth in the digital banking sector. The correlation between Chatbot use-cases may benefit the established Indian banks to further expand business. Originality/value: Implementation of AI in banking is identified for Indian Banks. It is proved that if a person uses Chatbot for assistance in customer service, they are likely to use Chatbot for recommendation regarding offers and discounts. © 2022, University of Wollongong. All rights reserved."
+  },
+  {
+    "article_id": "CA_1535",
+    "title": "Desarrollo de un sistema para el monitoreo de recursos hídricos en el hogar",
+    "journal": "Revista científica",
+    "journal_impact_factor": null,
+    "doi": "10.14483/23448350.21594",
+    "abstract": "The efficient management of natural resources such as water is necessary to ensure an optimized use. Water is an indispensable resource for life, and it is at risk of becoming scarce. Although public utility companies provide information about a household’s consumption, it is insufficient to identify and prevent each person’s excessive consumption. Therefore, the main objective of this article is to propose a household water consumption monitoring system using flow sensors and to present it to the user in a friendly and efficient manner by means of an app based on the advances of the Internet of Things. The collected information, presented in a format that is easy to understand, is a clarifying resource for users and allows them to make informed decisions and take measures aimed at reducing their environmental footprint."
+  },
+  {
+    "article_id": "CA_1536",
+    "title": "Cloud Gaming: An Antipandemic Case for Restaurants",
+    "journal": "Journal of Environmental Management and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.14505/jemt.v13.6(62).18",
+    "abstract": "The study covers a review and testing of solutions for gamification of the restaurant business, which in a pandemic lockdown makes information services attractive to consumers. An architectural composition of gaming client environment of the restaurant was built. A priori probabilities of increasing consumer loyalty to the restaurant entity, which attracts its own server platform, complementing it with cloud gaming, have been determined. © 2022, ASERS Publishing House. All rights reserved."
+  },
+  {
+    "article_id": "CA_1537",
+    "title": "When technology learns to speak. Artificial communication as a cultural challenge for mediatized societies; [Wenn die Technik sprechen lernt Künstliche Kommunikation als kulturelle Herausforderung mediatisierter Gesellschaften]",
+    "journal": "Zeitschrift fur Technikfolgenabschatzung in Theorie und Praxis / Journal for Technology Assessment in Theory and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.14512/tatup.30.3.23",
+    "abstract": "We are at the dawn of an era of communicating technology. Amazon’s Alexa voice assistant system has entered millions of private households, chatbots have become a standard application in customer service, and the use of algorithms to generate texts has been integrated into the practice of professional publishing. Communicating machines reveal controversial interpretations of autonomy, creativity, complexity, and opacity of humans and machines. The article argues that artificial communication represents a cultural challenge for mediatized societies that reflexive technology assessment should address hermeneutically. © 2021, Oekom Verlag. All rights reserved."
+  },
+  {
+    "article_id": "CA_1538",
+    "title": "Optimal ways for companies to use facebook messenger chatbot as a marketing communication channel",
+    "journal": "Asian Journal of Business Research",
+    "journal_impact_factor": 1.589,
+    "doi": "10.14707/ajbr.180046",
+    "abstract": "Customer demands a real-time reply to their queries around the clock without delay and they expect a personalized recommendation from the companies. To address these demands, some of the companies such as HDFC, Mercedes Benz SA, Videotron, Philips, StubHub and UTI Mutual Funds are turning their focus towards Chatbots on their social media pages and websites. For instance, Starbucks uses Chatbots for taking order and delivery of service (Sarah Perez, 2018). Here, the researchers have chosen Facebook Messenger Chatbot for the study. The most effective methods to use Facebook Messenger have not yet been clarified. The unique nature of Facebook Messenger Chatbot presents challenges for companies since its new to the market with just above one year of launch. The purpose of this paper is to uncover how brands can optimize their use of Chatbot in Facebook Messenger as a marketing communication channel. A survey was conducted amongst 323 Facebook Messenger users in India. In a series of specific questions, the respondents were asked to rate 11 different functions. Also, the researchers considered their preference on Facebook Messenger over E-mail marketing and Website individually for the better understanding of its future scope. As a result, Daily Updates, Pictures, Smart talks and Emoji were found to be the most important Chatbot elements. Further to this, Chatbot Messenger holds high support over Email Marketing. © 2019, Asia Business Research Corporation. All rights reserved."
+  },
+  {
+    "article_id": "CA_1539",
+    "title": "Usability, Humanization, and Perceived Service are Predictors of Customer Satisfaction in Chatbot Interactions",
+    "journal": "International Journal of Technology",
+    "journal_impact_factor": null,
+    "doi": "10.14716/ijtech.v17i1.8087",
+    "abstract": "Companies’ online presence has driven the use of chatbots in digital channels as a solution to expand customer service. These systems make it possible to offer satisfying experiences and handle requests on a large scale. Even when adopting this technology, companies must regularly assess whether these solutions increase or maintain customer satisfaction levels. This study analyzed the factors of humanization H, usability US, and perceived service quality QS in customer satisfaction when interacting with chatbots. Causal research is used to evaluate the relationships between the aforementioned factors and customer satisfaction using structural equation modeling (SEM). To this end, 423 people aged between 25 and 40 years were surveyed. The results confirm the five study hypotheses, establishing that H, US, and QS strongly, positively, and significantly influence user satisfaction when interacting with AI-driven chatbots. The study concludes that these factors are important in predicting customer satisfaction with online chatbots and that chatbot systems must be designed to generate satisfaction in terms of service quality and interaction. This study contributes a new understanding of the combined effect of the three factors by integrating them into a single model to explain satisfaction with online chatbot services. © 2026 Faculty of Engineering, Universitas Indonesia. All rights reserved."
+  },
+  {
+    "article_id": "CA_1540",
+    "title": "AI in marketing: strengthening business continuity by navigating security, privacy, and trust amid behavioural, ethical, and technological challenges",
+    "journal": "International Journal of Business Continuity and Risk Management",
+    "journal_impact_factor": 0.393,
+    "doi": "10.1504/IJBCRM.2025.150165",
+    "abstract": "The aim of this study is to address the artificial intelligence (AI) issues in marketing research. This study conducted a comprehensive analysis of this issue using AI tools. AI can address ethical concerns, lack of regulation, and fear of duplication. It can connect marketing, customers, and the organisation's ecosystem, promoting transparent communication and a positive organisational environment. Advanced tools like ChatGPT, chatbots, power BI, and excel can provide more accurate and efficient data collection, analysis, and prediction. However, issues like data theft, compromised accuracy, and lack of awareness about AI tools in marketing research remain continue. The study identified several challenges related to security, trust, privacy, etc. The study highlights the potential of using AI tools in marketing research in the future. The study recommended effective tools to address these issues. AI-driven marketing algorithms can improve effectiveness of behavioural and culture dilemmas and potentially changing society. The study examined the background of AI in marketing research as well as issues related to security, privacy, trust, and ethics. The study delves into how AI can be more effective in marketing research. Copyright © 2025 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1541",
+    "title": "The role of AI-powered chatbots on improving customer experience in e-commerce: a case study of pharmaceutical organisations in Shanghai",
+    "journal": "International Journal of Business Innovation and Research",
+    "journal_impact_factor": 0.341,
+    "doi": "10.1504/IJBIR.2025.148940",
+    "abstract": "This research investigated the influence of AI chatbots on customer experience and satisfaction in Shanghai’s e-commerce pharmacies. Using a quantitative survey research design, data was collected from a sample of 400 respondents, drawn from the internet-using population in Shanghai. The Chinese customers in Shanghai with prior experience using AI chatbots in e-commerce pharmacies. The sample size was determined by the Taro Yamane formula and participants were selected through simple random sampling. An online survey questionnaire with high reliability (Cronbach’s alpha > 0.80) was used as the data collection instrument. Data analysis was performed using SPSS, including descriptive, inferential statistics, and structural equation modelling. The findings indicated that AI chatbots positively influenced customer experience, which in turn enhanced customer satisfaction through personalised and interactive experiences. These results also aligned with the customer relationship management theory, emphasising how AI chatbots can strengthen customer relationships by meeting real-time needs and fostering trust. Copyright © The Author(s) 2025."
+  },
+  {
+    "article_id": "CA_1542",
+    "title": "A fuzzy expert system for response determining diagnosis and management movement impairments syndrome",
+    "journal": "International Journal of Business Information Systems",
+    "journal_impact_factor": 0.669,
+    "doi": "10.1504/IJBIS.2017.080944",
+    "abstract": "Diagnosis is a very important aspect of medical care. Expert systems are developed to make the skills of specialists available for non-specialists. These systems simulate human thinking and performance and approach the performance of expert systems to the performance of a human expert. The purpose of this study is to develop a fuzzy expert system for diagnosis and treatment of musculoskeletal disorders in elbow and shoulder. A fuzzy Delphi method is used to gather data related to symptoms and treatments. By knowledge acquisition, an expert system is developed. Components of the proposed system consist of a knowledge base, fuzzy inference engine, working memory, user interface and knowledge acquisition utilities. The developed system is able to diagnose 18 disorders of the elbow and the shoulder. To compare systemic diagnosis and expert diagnosis, SPSS software is used for statistical analysis. Because 26 out of 30 patients had a systemic diagnosis similar to the expert diagnosis, it can be concluded that 86.7% of systemic diagnoses are similar to expert diagnosis. In the absence of experts, this intelligent application can provide reliable diagnosis and treatment. Application of intelligent and semi-intelligent systems such as expert systems can aid the users to make decisions. Copyright © 2017 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1543",
+    "title": "Intelligent systems and artificial intelligence to enhance customer segmentation",
+    "journal": "International Journal of Business Information Systems",
+    "journal_impact_factor": 0.669,
+    "doi": "10.1504/IJBIS.2025.145959",
+    "abstract": "This study investigates how artificial intelligence, its characteristics, features and limitations enhance customer segmentation. All these aspects were analysed through literature review and were further developed by two methodologies: online questionnaire and interviews. The online questionnaire concluded that, while artificial intelligence’s characteristics and impacts positively influence its implementation in customer segmentation, this type of technology still has limitations that could constitute an obstacle. Regarding the interviews, the main insight was that artificial intelligence is still only perceived as a support in decision making, thus, dependent on humans. However, many employees still look at these technologies as a threat to their workplace, which can lead to resistance in their implementation and incur on unnecessary costs for organisations. Copyright © 2025 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1544",
+    "title": "AI driven digital transformation in sustainable green banking: a study on the impact of AI-powered FinTech innovations on banking efficiency and customer satisfaction",
+    "journal": "International Journal of Business Process Integration and Management",
+    "journal_impact_factor": 0.207,
+    "doi": "10.1504/IJBPIM.2025.151619",
+    "abstract": "Artificial intelligence (AI) in the banking sector transforms conventional financial services by enhancing operational efficiency, improving customer experience. This study examines how AI enhances sustainable green banking in Indian commercial banks by improving efficiency, customer satisfaction, and environmental responsibility. Using primary data from 385 customers across SBI, HDFC, ICICI, PNB, and Axis Bank, the research employed SPSS-based analyses including regression, ANOVA, and factor analysis and model fit. Results show 65% of respondents reported faster, more secure services due to AI tools such as chatbots, automated credit systems, and fraud detection. A strong positive relationship was found between AI adoption and customer satisfaction (adjusted R2 = 0.819). Demographic factors like gender, income, education, and region influenced AI perceptions. Five key factors emerged: personal finance management, trust, investment advice, security, and efficiency. The study recommends transparent, personalised AI strategies, stronger privacy safeguards, and algorithmic fairness to build customer trust and promote sustainability in banking. Copyright © 2025 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1545",
+    "title": "Exploring the impact of electronic marketing on firm e-sales performance: empirical evidence from B2C vs. B2B perspectives and future challenges",
+    "journal": "International Journal of Electronic Business",
+    "journal_impact_factor": 0.231,
+    "doi": "10.1504/IJEB.2025.142987",
+    "abstract": "Electronic marketing (eM) is a vital component of a successful sales strategy having the ability to reach a global audience, offer targeted marketing, provide data-driven insights, and foster customer engagement makes it a more powerful tool for driving sales performance and achieving business growth. This study attempts to examine the nexus among electronic marketing tools, i.e., mobile marketing, search engine optimisation, chatbot, email marketing, and social media marketing on organisational e-sales performance (ESP) from the perspectives business to consumer (B2C) and business-to-business (B2B). A total of 648 questionnaires for B2C and a total of 625 for B2B perspective were eventually considered for data analysis using SEM and SmartPLS. First, the study affirmed a positive connection between eM on e-sales performance from a B2C perspective. Second, the study confirmed a positive connection between eM on e-sales performance from the B2B domain. This study endows with insights into electronic marketing on how they may optimise the e-sales performance of the companies by utilising various technologies both B2C and B2B. Copyright © 2025 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1546",
+    "title": "Modelling the determinants of attitude and intention to use AI-enabled chatbots: a study of Indian banking industry",
+    "journal": "International Journal of Electronic Business",
+    "journal_impact_factor": 0.231,
+    "doi": "10.1504/IJEB.2025.145400",
+    "abstract": "The purpose of the study is to determine and examine the factors of attitude and intention to use AI-enabled chatbots in the Indian banking sector by extending the technology acceptance model (TAM). Chatbots are relatively new offering that different industries like travel and tourism, insurance, hotels, retail sector, healthcare, and education sector are adopting. To understand the customers’ attitude and intention to use chatbots, the quantitative technique has been used. A total of 220 customers’ responses were analysed and gathered from distributed questionnaires using partial least square equation modelling. As per results, antecedents of attitude towards chatbots are perceived ease of use and personal innovativeness. Perceived ease of use and attitude are significant predictors to intention to use chatbots. The study adds a significant contribution to the existing literature by extending TAM and identifying the factors which affect customers’ attitude and intention to use chatbots in the banking sector, especially in India. Copyright © 2025 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1547",
+    "title": "Banking on bots: examining user satisfaction and continuance intention of chatbots using multi-group analysis and necessary condition analysis",
+    "journal": "International Journal of Electronic Business",
+    "journal_impact_factor": 0.231,
+    "doi": "10.1504/IJEB.2026.150467",
+    "abstract": "This study investigates factors influencing user satisfaction in banking chatbot interactions and their impact on users’ intention to continue using chatbots. Employing a TAM-ISSM integrated model, data from 401 Indian banking chatbot users were analysed using PLS-SEM. Multi-group analysis (MGA) and necessary conditions analysis (NCA) were utilised to explore generational differences and identify must-have determinants of user satisfaction with chatbots. The findings indicate that information quality, service quality, perceived ease of use, and perceived usefulness positively affect user satisfaction. However, system quality and perceived enjoyment showed no significant impact on satisfaction. MGA results underscore significant differences in perceived ease of use between Gen Z and Gen Y users. NCA identifies service quality as a critical determinant for user satisfaction. This research integrates TAM-ISSM perspectives with PLS-SEM, MGA, and NCA methodologies, contributing valuable insights for banks and chatbot developers aiming to enhance user satisfaction and retention in emerging markets. Copyright © 2026 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1548",
+    "title": "The chatbot artificial intelligence as the alternative customer services strategic to improve the customer relationship management in real-time responses",
+    "journal": "International Journal of Economics and Business Research",
+    "journal_impact_factor": 0.605,
+    "doi": "10.1504/IJEBR.2024.139810",
+    "abstract": "One of the primary problems in managing customer relationships is the limited comprehension of the client, requiring a comprehensive awareness of their traits and demands. Increasing the quality of customer service necessitates the implementation of transformative and innovative measures. The implementation of a WhatsApp-based artificial intelligence chatbot in academic services has the potential to increase efficiency and service quality. This is primarily attributed to the user-friendly nature of the platform and its integration with customer management systems. The study surveyed 400 students from various Universitas Sumatera Utara, representing eight different academic programs. The study employed a mixed-method approach to assess customer satisfaction resulting from the implementation of chatbots in academic file management. The analysis involved the use of partial questionnaire analysis using Smart PLS 4.0. The offering of consistent and accurate responses to inquiries and requests from clients and internal users will be ensured through the consistent delivery of services in implementing the AI chatbot. The findings indicated an 83.8% likelihood of customer pleasure, accompanied by a 75.3% likelihood of customer loyalty. The findings of the study provided empirical evidence that the chatbot’s capacity to reduce service time significantly influenced the level of customer satisfaction. Copyright © The Author(s) 2024. Published by Inderscience Publishers Ltd."
+  },
+  {
+    "article_id": "CA_1549",
+    "title": "Nutritional application software for restaurants: The tool of customer satisfaction and behaviour",
+    "journal": "International Journal of Electronic Customer Relationship Management",
+    "journal_impact_factor": 0.278,
+    "doi": "10.1504/IJECRM.2016.082197",
+    "abstract": "Technological solutions provided to customers with the aim of nutritional information, could be a major challenge of interaction amongst caterers and customers. The purpose of this paper is to evaluate an electronic intelligent system of personalised dietary advice (called 'DISYS') for tablets and smartphones. This application provides nutritional analysis of menu items and personalised suggestions according to the nutritional demands of each customer. The DISYS application was characterised as an easy-to-use, comprehensive and useful tool. Volunteers consider that this application contributes to overall health by enabling the modulation of body weight throughout healthier choices, reduction of calorie intake and self-monitoring. Application of mHealth as such, designed to provide nutritional information, seems to be useful for customers as they recommend appropriate nutritional options. They seem also to be an effective tool for caterers and nutritionists, who can provide value-added services. © Copyright 2016 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CA_1550",
+    "title": "Artificial intelligence in the digital customer journey",
+    "journal": "International Journal of Electronic Customer Relationship Management",
+    "journal_impact_factor": 0.278,
+    "doi": "10.1504/IJECRM.2022.124098",
+    "abstract": "Artificial intelligence (AI) is present in many business areas, the marketing of the fashion industry being one of them. In this sense, AI becomes relevant for firms, helping to acquire better consumer data and to stand out from the competition by offering personalised, rich, and unique experiences. This study seeks to understand the current state of interaction that consumers have with AI during the digital customer journey (CJ), in the fashion industry. This research focused on the fashion industry and addresses the following AI technologies: recommendation systems, chatbots and virtual testers. These variables were deepened through an online questionnaire and an evaluation of the offerings that various brands have on their websites and apps. The data shows that people who interact with AI are younger and have self-confidence, they are mainly looking for a quick response to their requests, mainly through recommendation systems, chatbots and virtual testers. Copyright © 2022 Inderscience Enterprises Ltd."
+  }
+]

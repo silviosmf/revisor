@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_2201",
+    "title": "Adoption of AI chatbots by South African university students",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/1_iis_102",
+    "abstract": "AI Chatbots hold considerable promise for transforming teaching and learning in higher education, particularly in supporting academic writing. However, their adoption by students is shaped by various perceptual and contextual factors. This study investigates the adoption of AI Chatbots by South African university students, guided by the Innovation Diffusion Theory (IDT). It specifically examines four constructs: Perceived Compatibility, Perceived Relative Advantage, Technology Self-Efficacy, and Perceived Complexity. Using a quantitative research design, data were collected via a structured questionnaire from 224 students across all academic levels at the University of Fort Hare. The sample was purposively selected to reflect a range of experiences with AI technologies. The instrument was grounded in IDT and included validated Likert-scale items measuring each construct. The findings reveal that Perceived Compatibility, Relative Advantage, and Technology Self-Efficacy significantly and positively influence chatbot adoption. Students who viewed chatbots as compatible with academic writing tasks and beneficial in improving writing quality were more likely to use them. Higher levels of technology self-efficacy further strengthened adoption. Conversely, Perceived Complexity was negatively associated with adoption, though this effect was moderate. These results offer practical implications. To support AI integration in higher education, chatbot systems must be user-friendly, contextually relevant, and embedded in digital literacy development. The study contributes empirical evidence from a Global South context, highlighting the intersection of psychological, technological, and contextual factors. It also offers actionable guidance for educators, developers, and policymakers seeking to leverage AI to enhance student engagement and academic performance. © 2025 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2202",
+    "title": "From prototype to persona: AI agents for decision support and cognitive extension",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/1_iis_125",
+    "abstract": "Despite advances in generative AI, most systems prioritize transactional responses over reflective reasoning. This paper presents a human-centered framework for AI persona design aimed at extending cognition, surfacing internal conflict, and aligning digital agents with user values. Originating from early experiments in emotional tone modeling and agentic voice differentiation, the project evolved into two complementary architectures: the AI Cabinet Method, which simulates deliberative, multi-perspective debate through ensembles of purpose-built personas; and DigitalEgo, a modular digital co-pilot aligned to individual user values and tone. In contrast to most generative AI interfaces, this framework emphasizes structured trait modeling, value-driven alignment, and guided interaction protocols to enable context-aware decision support. Through a pipeline combining qualitative intake workflows with modular persona encoding, the framework enables decision support, creative ideation, leadership reflection, and organizational alignment. Simulated friction among personas supports structured evaluation of blind spots, prioritization trade-offs, and perspective alignment. Methodologically, this work blends insights from human-computer interaction, cognitive extension theory, and AI ethics, anchored in a design philosophy that favors augmentation over automation. Applications demonstrated include decision support, creative ideation, organizational strategy, and personal development. By embedding dissent, memory, and value structures, this approach enables more intentional, ethically grounded AI interactions. Future research priorities include systematic empirical validation, cross-cultural testing, and organizational implementation studies. © 2025 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2203",
+    "title": "A systematic literature review on AI chatbots in automating customer support for e-commerce",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/1_iis_130",
+    "abstract": "The rapid advancement of artificial intelligence (AI) has significantly transformed the e-commerce sector, particularly through the integration of AI-powered chatbots. This study conducts a systematic literature review to examine how chatbots align with the eight foundational features of e-commerce technology: ubiquity, global reach, universal standards, interactivity, information richness, information density, personalization/customization, and social technology. Guided by the PRISMA framework, the review addresses two primary research questions: (1) How do AI-driven chatbots support the unique features of e-commerce technology? and (2) What technological advancements enhance their functionality in this context? Relevant literature was retrieved from five major academic databases: ACM Digital Library, ABI/INFORM Collection, Elsevier ScienceDirect, IEEE/IET Electronic Library, and Web of Science. The findings indicate that chatbots predominantly enhance interactivity, information richness, and personalization by employing advanced technologies such as natural language processing (NLP), transfer learning, knowledge graphs, domain ontologies, and prompting strategies. This study highlights gaps in existing research and provides recommendations for future investigations. Linking theoretical frameworks with emerging technological capabilities offers valuable insights for scholars and industry practitioners aiming to optimize chatbot deployment in digital commerce environments. © 2025 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2204",
+    "title": "From human teller to virtual assistant: A study on chatbot adoption in leading banks",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/1_iis_133",
+    "abstract": "Artificial Intelligence has developed steadily over recent decades. Because of the swift adoption across various applications, particularly generative AI, AI techniques have been adopted in many industries. One prominent application is the AI-powered chatbot which is commonly used to improve operational efficiency, enhance customer service, personalize and tailor responses, improve cost effectiveness, and so on. This study aims to evaluate AI chatbots implemented by top banks in the United States. Systematic and comprehensive analyses are conducted on these AI chatbots using the same pre-designed tasks. The chatbots are evaluated based on their precision, accuracy, and failure. Advantages and disadvantages of these AI chatbots are identified. Suggestions for the future improvements of these chatbots are provided. Overall findings suggest that the integration of AI into bank chatbots should not be seen as a binary shift from human to machine, but rather as a complementary tool that enhances, yet does not replace human capital. © 2025 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2205",
+    "title": "AN EVALUATION OF A MULTILINGUAL CHATBOT",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/1_iis_2019_134-143",
+    "abstract": "Chatbots are computer programs that seek to emulate human dialogue, and thus, provide a more natural user interface. Although some support other languages, most converse only in English, and only a few can communicate in multiple languages. Here, we describe a new computer application that links the Rose English-speaking chatbot with Google Translate, thus providing conversational capability in 103 languages. To evaluate this new system, a group of undergraduate students reviewed responses from either it or a human, without knowing which was which in a modified version of the Turing Test. Input text to the application was automatically translated from German to English for the Web-based Rose chatbot to process. Results show that the students often were able to ascertain which responses came from the chatbot, showing that it has not quite reached human quality. Regardless, people can communicate with a chatbot effectively in a different language with this hybrid application. © 2022 American Academy of Pediatrics. All rights reserved."
+  },
+  {
+    "article_id": "CA_2206",
+    "title": "The convergence of AI, cybersecurity, e-commerce, and supply chain management: A study on intelligent systems for digital risk mitigation and operational efficiency",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/2_iis_113",
+    "abstract": "This study presents a comprehensive literature review examining the convergence of cybersecurity, e-commerce, supply chain management, and consumer engagement in the digital economy. Drawing on ten scholarly sources, this study explores key themes such as fraud detection using machine learning, cost behavior in e-commerce firms, the impact of Internet of Things (IoT) technologies in retail, and data science applications in cybersecurity. A central focus is the role of artificial intelligence (AI) and Genetic Algorithms (GA) in enhancing the accuracy of fraud detection systems, as well as the application of collaborative algorithms to identify fake reviews in online platforms. The research also analyzes how digital transformation influences cost structures, consumer trust, and cybersecurity resilience. Findings reveal that AI and machine learning are crucial in enhancing operational efficiency and safeguarding against emerging cyber threats. However, challenges such as data quality, model interpretability, and standardization persist. The study emphasizes the importance of adopting strategic, data-driven approaches and fostering interdisciplinary collaboration to address these issues. Implications for future research include the development of real-time fraud detection models, the ethical deployment of AI, and the enhancement of public-private cybersecurity partnerships. Ultimately, the research highlights the importance of intelligent systems and adaptive strategies in developing secure, efficient, and consumer-centric digital infrastructures in an increasingly interconnected world. © 2025 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2207",
+    "title": "USING A MULTILINGUAL CHATBOT FOR FOREIGN LANGUAGE PRACTICE",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/2_iis_2020_85-92",
+    "abstract": "Chatbots, or conversational agents, are computer programs that emulate the way people talk to each other, providing a more natural user interface. Students learning a foreign language might benefit from using the systems to practice their skills. In this study, we asked 49 students to evaluate transcripts of conversations with a multilingual chatbot to assess the accuracy of translations and appropriateness of replies. Results show that translations and responses were generally very good. Students gave poor ratings for only four of 24 responses, and the vast majority thought the system would help with acquiring a new language. © 2020 Issues in Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2208",
+    "title": "Examining generative artificial intelligence adoption in academia: a UTAUT perspective",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/3_iis_2024_119",
+    "abstract": "Artificial Intelligence (AI) technology has seen rapid growth in higher education institutions over the past few years, prompting questions into the usage and underlying acceptance factors of these computer systems. This study investigates characteristics of student adoption within generative AI tools, also known as chatbots, utilizing the previously established Unified Theory of Acceptance and Use of Technology (UTAUT) model. A partial least squares regression (PLSR) model is deployed using data collected from a survey of 74 respondents to examine which UTAUT constructs are influencing undergraduate usage behavior of generative AI tools. Understanding factors of AI acceptance is of value to educators as they can design classroom interventions for adoption to enhance academic and professional potential within student populations, especially delayed users. In addition, insights developed into attributes of adoption may be of use to understand generative AI acceptance under the UTAUT framework. Results indicate that productivity gains, mentor perspective, peer usage, and broadness of tasks performed drive generative AI adoption in academic settings. Additionally, empirical results found that demographics, such as gender and age, are not factors influencing generative AI use. Future research is suggested to compare results found in this study with the Value-based Adoption Model (VAM) to corroborate characteristics of student adoption in a marginal benefit vs marginal cost trade-off setting. © 2024 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2209",
+    "title": "Designing curiosity-driven AI chatbots for non-technical fields: A design science approach to supporting school counselors",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/3_iis_2025_2025_101",
+    "abstract": "Artificially intelligent chatbots are becoming increasingly relevant in non-technical domains like school counseling, where professionals face growing demands and often hesitate to use data and available technology. This research employs a design science research methodology to create and evaluate an AI chatbot designed to support school counselors and explore the various design principles influencing satisfaction and continuance intention in a non-technical field. The artifact is grounded in principles of the Information Gap Theory and demonstrated through a single case study. The research contributes to the field of Information Systems by examining how AI chatbots can enhance decision-making and automate tasks in a non-technical field. The qualitative analysis results indicate that school counselors are likely to adopt an AI chatbot if it helps optimize their workload, establishes clear expectations, encourages ongoing interaction, and utilizes social comparison to foster support and engagement among users. © 2025 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2210",
+    "title": "A PLS-SEM mediation analysis of factors influencing the adoption intention of banking chatbots",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/3_iis_2025_2025_116",
+    "abstract": "An important area in the field of digital financial services is the use of AI-driven banking chatbots. The growing integration of AI-driven chatbots in banking has transformed customer interaction, yet the factors influencing users’ adoption intention remain underexplored, specifically understanding how post-adoption beliefs and user experiences shape behavioural intention. This study proposes a comprehensive research model which is grounded in the Unified Theory of Acceptance and Use of Technology (UTAUT) and the Expectation-Confirmation Model (ECM), and which is uniquely extended with the constructs of trust and perceived security, both crucial in high-risk, technology-mediated financial environments. The research examines the role of the mediating variables of perceived usefulness, satisfaction and trust with respect to each influencing adoption intention by utilizing the Partial Least Squares Structural Equation Modeling (PLS-SEM). Findings include that perceived usefulness mediates the effects of confirmation of expectations and perceived ease of use on adoption intention, while trust mediates the influence of confirmation of expectations, perceived usefulness, perceived security and facilitating conditions. By providing a nuanced understanding of chatbot adoption dynamics, the study advances both theory and practice. Financial institutions can successfully implement intelligent banking technologies by using the actionable insights it offers to increase user acceptance of conversational AI tools. © 2025 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2211",
+    "title": "CAN CHATBOTS WORK WELL WITH KNOWLEDGE MANAGEMENT SYSTEMS?",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/4_iis_2020_53-58",
+    "abstract": "Knowledge management systems (KMS) and conversational agents, or chatbots, can increasingly be used to help deliver on-time data to a variety of end users. Chatbot front-ends can be used by remote employees, call center representatives, and even library patrons and students to connect to a KMS back-end for real time delivery of information. Earlier iterations of chatbots relied solely upon user requests, but more advanced interactive agents are improving to include learned responses to a set of searches, or even to a range of movements on a computer screen. In this literature review, examples of studies done in libraries, educational settings, and within the workplace are looked at, as well as studies related to natural language processing. We conclude with recommendations for future research topics suggesting the need to integrate chatbots with KMS. © 2020 Issues in Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2212",
+    "title": "VIRTBot: exploring chatbot design for promoting scientific initiatives",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/4_iis_2021_74-87",
+    "abstract": "Chatbots have proven to be effective tools in the fields of marketing, sales, customer relationship management and many other applications. This research explores the opportunities for chatbots to contribute to the promotion of scientific research and initiatives. The Etelman Observatory Research Center of the University of the Virgin Islands (UVI) houses the Virgin Islands Robotic Telescope (VIRT), a fully-automated, robotically controlled, and queue-driven 0.5 meter research grade telescope. The Etelman Observatory's mission is to be a world-class research and education center that engages with the local community through various outreach activities in all its initiatives. Given the challenges of physical presence during the COVID-19 crisis, Observatory personnel decided to adopt chatbot technology to engage interested parties over the Internet in its key scientific instrument for astrophysics - VIRT. VIRTBot is a chatbot designed to provide VIRT with a voice that interested community members can engage with directly. The team implemented VIRTBot with Amazon Web Services (AWS) technologies in the cloud and deployed the solution online. Volunteers were surveyed about their knowledge of the Observatory's activities after reviewing either an FAQ or engaging with VIRTBot. The study demonstrated that the FAQ outperformed VIRTBot in terms of knowledge dissemination, but VIRTBot outperformed the FAQ in measures of interest and engagement. Our research suggests that, under the right conditions, chatbots improve engagement over traditional web resources in promoting STEM educational initiatives to the public. © 2021 International Association for Computer Information Systems. All Rights Reserved."
+  },
+  {
+    "article_id": "CA_2213",
+    "title": "Analysis of barriers to AI banking chatbot adoption in India: An ISM and MICMAC approach",
+    "journal": "Issues in Information Systems",
+    "journal_impact_factor": 0.5,
+    "doi": "10.48009/4_iis_2024_133",
+    "abstract": "Chatbots are becoming popular in the rapidly developing field of Artificial Intelligence (AI) to facilitate more effective communication between businesses and customers. AI-powered banking chatbots are gaining popularity and present novel opportunities to provide 24/7 front-line support and customised banking assistance. Despite these advantages, banking chatbots are not widely used and have not been adopted as customer service in Indian banks. This research paper explores the obstacles associated with the widespread adoption of banking chatbots in the financial landscape. As disruptive technologies like Artificial Intelligence and Natural Language Processing (NLP) continue to reshape the banking industry globally, understanding the specific barriers to chatbot integration becomes imperative. The current research contributes to the AI discipline by holistically examining the barriers to banking chatbot adoption in India using the Interpretive Structural Modelling (ISM) methodology. The study employs a three-step approach by identifying key barriers to adopting banking chatbots through an extensive literature review and experts' opinions. Then, the Interpretive Structural Modelling (ISM) methodology creates a hierarchical model. For this, data is collected from subject matter experts to develop the interpretive model. Thirdly, MICMAC analysis is conducted to classify and sort the corresponding variables based on their driving and dependence power. The analysis reveals that the absence of AI guidelines, lack of human touch and lack of audibility and transparency of AI systems are some of the critical barriers to the deployment of AI banking chatbots, requiring special focus to streamline the regulatory framework and anthropomorphic features of AI chatbot for successful implementation and deployment. Recommendations for practitioners and other stakeholders and research limitations are also discussed. © 2024 International Association for Computer Information Systems. All rights reserved."
+  },
+  {
+    "article_id": "CA_2214",
+    "title": "Review on Deep Learning and Neural Network Implementation for Emotions Recognition",
+    "journal": "Qubahan Academic Journal",
+    "journal_impact_factor": null,
+    "doi": "10.48161/qaj.v1n1a25",
+    "abstract": "Recently, we humans integrate into the world of our smart phones and our portable electronic devices to the point that that world can numb us in one way or another and separate us from the real world, so that we and the generations that come after us are fully adapted to dealing with huge amounts of digital information, so they are ready to be absorbed faster And ready to deal with it more efficiently than previous generations, but during this process of rapid adaptation and adapting to the digital age gradually begins to lose one thing, this thing is what the machine has not given it yet and it is human emotions. A key step in the humanization of robotics is the ability to classify the emotion of the human operator. In this paper we present the design of an artificially intelligent system capable of emotion recognition trough facial expressions. Three Promising neural network architectures are customized, trained. and subjected to various classification tasks, after which the best performing network is further optimized. The applicability of the final model is portrayed in a live video application that can instantaneously return the emotion of the user. Technology experts have found that we can create empathy through technology as well, which will consequently lead to what is known as “emotional intelligence.” Instead of seeking about digital communication that is losing us to real communication, experts have found that we can employ technology in favor of that type of communication to restore Soul for social and emotional relationships that technology has lost its advantages for many years. © 2021, Qubahan Organization for Development. All rights reserved."
+  },
+  {
+    "article_id": "CA_2215",
+    "title": "Boundary objects: A bridge between information science and data science; [Objetos de fronteira: Um diálogo entre a ciência da informação e a ciência de dados]",
+    "journal": "Encontros Bibli",
+    "journal_impact_factor": null,
+    "doi": "10.5007/1518-2924.2021.e77247",
+    "abstract": "Objective: The mediating technology involved in communications has enabled a significant increase in the amount of interactions between producers and consumers of information, products or services. In this article, a proposal will be presented for the organization of the necessary information in the development of mediating elements known as virtual assistants (Chatbots). These integrating communication channels will be conceptualized as boundary objects and their prototyping as an activity suggested to Information Science professionals in search of an ever-greater synergy with Data Science. Method: The article is based on a methodology of an exploratory nature and applied with the use of a “Case Study” guided by a thorough bibliographic review of the theory of boundary objects and the study of artificial intelligence platforms used for the development of chatbots, investigating the actions, methods and tools for organizing information. Results: A proposal for a method for the organization of information based on a specific taxonomy for the domain of interactions established between the government and citizens is presented. In this context, a set of intentions, entities and informational dialogues are established that can precisely provide the necessary skills for prototyping the virtual assistant . Conclusions: Boundary Objects are an appropriate alternative for mediating social practices used by different types of communities that need to exchange information in a structured way. Through a knowledge base previously modeled in the form of intentions, entities and dialogues, the informational needs of different communiti es are now met, with the consequent opening of an exceptional field for the work of the Information Science professional. © 2021, Universidade Federal de Santa Catarina. All rights reserved."
+  },
+  {
+    "article_id": "CA_2216",
+    "title": "The Personalization of Reference Services in University Libraries with the Use of Generative Artificial Intelligence; [A PERSONALIZAÇÃO DO SERVIÇO DE REFERÊNCIA EM BIBLIOTECAS UNIVERSITÁRIAS COM O USO DA INTELIGÊNCIA ARTIFICIAL GENERATIVA]",
+    "journal": "Encontros Bibli",
+    "journal_impact_factor": null,
+    "doi": "10.5007/1518-2924.2025.e103494",
+    "abstract": "Objetivo: Verify through the literature how university libraries are using Generative Artificial Intelligence to enhance user service by making it personalized. Methods: This is a bibliographic, exploratory-descriptive research, with a qualitative-quantitative approach, the corpus of the research was taken from the Web of Science and Scopus, through a narrative literature review. Data was collected between 2019 and 2024. Bardin’s (2011) categorical content analysis was carried out. VOSviewer software was also used to analyze the frequency of keywords in the papers. Results: It was observed that the use of generative artificial intelligence has the potential to translate the user’s preferred languages, provide cohesive and authentic responses, recommend relevant content to users based on their profile, and can speed up interactions between services and people. Generative AI is thus emerging as a potential tool for offering more personalized services. However, there are challenges, such as the production of incorrect answers, the inability to understand human emotions/expressions, privacy and the quality of sources. Conclusions: Generative technologies have enormous potential to enhance the quality of reference responses, meet the needs of virtual reference services, and personalize content for users. © (2025), (Universidade Federal de Santa Catarina). All rights reserved."
+  },
+  {
+    "article_id": "CA_2217",
+    "title": "Design for safety: Theoretical framework of the safety aspect of BIM system to determine the safety index",
+    "journal": "Construction Economics and Building",
+    "journal_impact_factor": 1.013,
+    "doi": "10.5130/AJCEB.v16i4.4873",
+    "abstract": "Despite the safety improvement drive that has been implemented in the construction industry in Singapore for many years, the industry continues to report the highest number of workplace fatalities, compared to other industries. The purpose of this paper is to discuss the theoretical framework of the safety aspect of a proposed BIM System to determine a Safety Index. An online questionnaire survey was conducted to ascertain the current workplace safety and health situation in the construction industry and explore how BIM can be used to improve safety performance in the industry. A safety hazard library was developed based on the main contributors to fatal accidents in the construction industry, determined from the formal records and existing literature, and a series of discussions with representatives from the Workplace Safety and Health Institute (WSH Institute) in Singapore. The results from the survey suggested that the majority of the firms have implemented the necessary policies, programmes and procedures on Workplace Safety and Health (WSH) practices. However, BIM is still not widely applied or explored beyond the mandatory requirement that building plans should be submitted to the authorities for approval in BIM format. This paper presents a discussion of the safety aspect of the Intelligent Productivity and Safety System (IPASS) developed in the study. IPASS is an intelligent system incorporating the buildable design concept, theory on the detection, prevention and control of hazards, and the Construction Safety Audit Scoring System (ConSASS). The system is based on the premise that safety should be considered at the design stage, and BIM can be an effective tool to facilitate the efforts to enhance safety performance. IPASS allows users to analyse and monitor key aspects of the safety performance of the project before the project starts and as the project progresses. © Construction Economics and Building 2016. Ai Lin Evelyn Teo, George Ofori, Imelda Krisiani Tjandra and Hanjoon Kim."
+  },
+  {
+    "article_id": "CA_2218",
+    "title": "User Loyalty through Technological Means in the Financial Sector: A Systematic Review",
+    "journal": "IBIMA Business Review",
+    "journal_impact_factor": 0.515,
+    "doi": "10.5171/2024.955925",
+    "abstract": "Technology has been the best ally for the financial sector because it allows the development of new processes to build user loyalty. The objective of this systematic review was to determine what has been written in the scientific literature on user loyalty through technological means in the financial sector within the years 2018 - 2023. On the other hand, this review was conducted under the PRISMA method strategy, the databases used were: Scopus, Science Direct, ProQuest and Dialnet, from which 25 scientific articles were systematized; and it was obtained as a result that the banking sector has greater adaptability in technological functions to build user loyalty, unlike cooperatives and savings banks that use the same method but at a slower pace; it was also identified that technological tools facilitate the task of knowing the customer and thus achieve satisfaction, such as advertising in social networks, the incorporation of easily accessible applications, chatbots and mainly the registration of their data in the cloud; finally, it is evident that digitalization has positioned itself positively in the financial sector. It is concluded, by confirming the influence of technological strategies on customer loyalty in the banking sector, technological tools are being modernized according to the characteristics of the markets. Copyright © 2024. Sofia Mateo-La Rosa, Odaliz Ferreyra-Mejia, Elizabeth Mayuri-Ramos and Franklin Cordova-Buiza."
+  },
+  {
+    "article_id": "CA_2219",
+    "title": "Large scale intent detection in turkish short sentences with contextual word embeddings",
+    "journal": "IC3K 2020 - Proceedings of the 12th International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0010108301870192",
+    "abstract": "We have developed a large-scale intent detection method for our Turkish conversation system in banking domain to understand the problems of our customers. Recent advancements in natural language processing(NLP) have allowed machines to understand the words in a context by using their low dimensional vector representations a.k.a. contextual word embeddings. Thus, we have decided to use two language model architectures that provide contextual embeddings: ELMo and BERT.We trained ELMo on Turkish corpora while we used a pretrained Turkish BERT model. To evaluate these models on an intent classification task, we have collected and annotated 6453 customer messages in 148 intents. Furthermore, another Turkish document classification dataset named Kemik News are used for comparing our method with the state-of-the-art models. Experimental results have shown that using contextual word embeddings boost Turkish document classification performance on various tasks. Moreover, converting Turkish characters to English counterparts results in a slightly better performance. Lastly, an experiment is conducted to find out which BERT layer is more effective to use for intent classification task. Copyright © 2020 by SCITEPRESS - Science and Technology Publications, Lda. All rights reserved."
+  },
+  {
+    "article_id": "CA_2220",
+    "title": "Design a Recommendation System in Real Estate Investment Based on Context Approach",
+    "journal": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management, IC3K - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0012210800003598",
+    "abstract": "The real estate investment industry has experienced a significant increase in user participation over the years, with individuals keen on registering concurrent interests in both recent and prior projects. This growing trend necessitates the development of an approach that can recommend real estate items in a simultaneous manner. However, the presence of unrequired memberships and stop-by behaviors has introduced several challenges, resulting in numerous cold-start scenarios for new users. This study proposes a recommendation system tailored specifically for real estate, designed to offer warm-start item recommendations of cold-start users using a content-based approach and a session-based recommendation system. Herein, a system for real estate recommendation with acceptable warm-start item recommendations is proposed in the many-cold-start-users scenario. The session-based recommendation system is adapted and made use of pre-existing methods to effectively handle sequential and contextual data for the encoded attribute prediction of the next-interacted item. Then, the nearest-neighbors method is employed weighted cosine similarity to identify conforming candidates. The results demonstrate the effectiveness of efficiently integrating the information and the difficulty in performing well in item recommendations simultaneously. Copyright © 2023 by SCITEPRESS – Science and Technology Publications, Lda. Under CC license (CC BY-NC-ND 4.0)."
+  },
+  {
+    "article_id": "CA_2221",
+    "title": "UpKG: A Framework to Insert New Domains in Knowledge Graphs",
+    "journal": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management, IC3K - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0012237600003598",
+    "abstract": "In recent years, the creation of Knowledge Graphs (KGs) has advanced significantly. They have become essential in several domains, such as e-commerce. E-commerce applications apply them in the search and recommendation of products and virtual chatbots, among other tasks. However, e-commerce must constantly cover new domains/categories to respond to new user needs. This process requires rigorous analysis to cover new domains, adding novel knowledge not stored in the KG. This study proposes, builds, and evaluates a framework we named UpKG to insert new domains in existing KGs within an e-commerce context. Our approach relies on questions and answers collected in the real-world context of the GoBots company to facilitate the new domain insertion process. Our framework was applied in GoBots company, specialized in e-commerce solutions in Latin America. The conducted case was on an existing KG, whose triples were dominated by the Automobile domain. Our work covered and inserted novel triples concerning the Appliances domain. The conducted evaluation shows that we can verify the feasibility and applicability of the UpKG framework. Copyright © 2023 by SCITEPRESS – Science and Technology Publications, Lda. Under CC license (CC BY-NC-ND 4.0)."
+  },
+  {
+    "article_id": "CA_2222",
+    "title": "Interdependencies and Cascading Effects of Disasters on Critical Infrastructures: An Analysis of Base Station Communication Networks",
+    "journal": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management, IC3K - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0012239600003598",
+    "abstract": "There are sixteen critical infrastructure (CI) sectors whose assets, systems, and networks, whether physical or virtual, are considered so vital to the United States that their incapacitation or destruction would have a debilitating effect on military readiness, economic security, public health, or safety. The communications sector is unique as a critical infrastructure sector due to its central role in facilitating the flow of information, enabling communication, and supporting all other CIs as well as other components of the economy and society. Within the communications sector, the cellular base station (cell tower) network serves as its foundational backbone. During a crisis, if towers in the network stop functioning or are damaged, the service load of associated users/businesses will have to be transferred to other towers, potentially causing congestion and cascading effects of overload service outages and vulnerabilities. In this paper, we investigate cellular base station network vulnerability by uncovering the most critical nodes in the network whose collapse would trigger extreme cascading effects. We model the cellular base station network via a linear-threshold influence network, with the objective of maximizing the spread of influence. A two-stage approach is proposed to determine the set of critical nodes. The first stage clusters the nodes geographically to form a set of sub-networks. The second stage simulates congestion propagation by solving an influence maximization problem on each sub-network via a greedy Monte Carlo simulation and a heuristic Simpath algorithm. We also identify the cascading nodes that could run into failure if critical nodes fail. The results offer policymakers insight into allocating resources for maximum protection and resiliency against natural disasters or attacks by terrorists or foreign adversaries. We extend the model to the weighted LT influence network (WLT-IN) and prove that the associated influence function is monotone and submodular. We also demonstrate an adaptable usage of WLT-IN for airport risk assessment and biological intelligence of COVID 19 disease spread and its scope of impact to air transportation, economy, and population health. Copyright © 2023 by SCITEPRESS - Science and Technology Publications, Lda. Under CC license (CC BY-NC-ND 4.0)"
+  },
+  {
+    "article_id": "CA_2223",
+    "title": "Speech Recognition for Inventory Management in Small Businesses",
+    "journal": "ICSBT International Conference on Smart Business Technologies",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0012813600003764",
+    "abstract": "In recent years, we have seen an increase in independent businesses working primarily focused on online sales, where they offer products through ads and manage the business with electronic tools. This could leave behind some traditional businesses, especially those that are managed by a single family, where the adaption of new technologies is slower than new business. That's why we want to give them a tool that it's easy to control, a virtual assistant where they can manage the inventory even if they don't know about databases. For this work, we propose to create a speech-to-text platform with machine learning so those users who have difficulties adapting to these new tools can use their voice to command the database and have first contact with these new technologies. Through a fine-tuning process to a pre-trained speech-to-text model in Spanish, we managed to obtain a percentage error result lower than the model used, this being 14.3%, this means that our model has a better accuracy in the context of a Peruvian convenience store. Copyright © 2024 by SCITEPRESS - Science and Technology Publications, Lda."
+  },
+  {
+    "article_id": "CA_2224",
+    "title": "An End-to-End Generative System for Smart Travel Assistant",
+    "journal": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management, IC3K - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0013064200003838",
+    "abstract": "Planning a travel with a customer assistant is a multi-stage process that involves information collecting, and usage of search and reservation services. In this paper, we present an end-to-end system of a voice-enabled virtual assistant specifically designed for travel planning in Turkish. This system involves fine-tuned state-of-the-art models of Speech-to-text (STT) and Text-to-speech (TTS) models for increased success in the tourism domain for Turkish language as well as improvements to chatbot experience that can handle complex, multifaceted conversations that are required for planning a travel thoroughly. We detail the architecture of our voice-based chatbot, focusing on integrating STT and TTS engines with a Natural Language Understanding (NLU) module tailored for travel domain queries. Furthermore, we present a comparative evaluation of speech modules, considering factors such as parameter size and accuracy. Our findings demonstrate the feasibility of voice-based interfaces for streamlining travel planning and booking processes in Turkish language which lacks high-quality corpora of speech and text pairs. © 2024 by SCITEPRESS – Science and Technology Publications, Lda."
+  },
+  {
+    "article_id": "CA_2225",
+    "title": "Digital Transformation and Automation: Application and Effectiveness of Chatbots in Bulgarian Entrepreneurship",
+    "journal": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management, IC3K - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0013684600004000",
+    "abstract": "In view of the growing importance of digitalisation, this study examines the adoption and use of chatbot solutions based on artificial intelligence among Bulgarian entrepreneurs. The aim is to identify the main reasons for their implementation, the perceived benefits and challenges encountered, and the main areas of application. A survey was conducted among 401 business owners in Bulgaria. The results show that 38% (154) of the surveyed entrepreneurs use chatbots and the analysis focuses on their data. The main factors driving implementation are increased efficiency, improved customer service and reduced costs. Improved operational efficiency and customer satisfaction were identified as the leading benefits. However, entrepreneurs face significant challenges, mainly related to the ability of chatbots to handle complex queries, the need for staff training and customer acceptance. Chatbots are most often used in marketing and sales, but they also have applications in customer service, internal processes and data analysis. In conclusion, despite the still relatively low adoption rate among all respondents, Bulgarian entrepreneurs with experience using chatbots see clear benefits related to efficiency and customer service. Successful expansion of this technology requires addressing current challenges, especially in terms of functionality and the human factor. Copyright © 2025 by SCITEPRESS – Science and Technology Publications, Lda."
+  },
+  {
+    "article_id": "CA_2226",
+    "title": "Integrating Information Retrieval and Large Language Models for Vietnamese Legal Document Query Systems",
+    "journal": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management, IC3K - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0013751200004000",
+    "abstract": "The complexity of Vietnamese legal documents poses significant challenges in accessing legal information for both professionals and the general public. Traditional legal information retrieval methods are time-consuming and require specialized expertise to navigate the intricate hierarchy of laws, decrees, and regulations. This paper introduces a Vietnamese legal document query system that integrates Information Retrieval (IR) techniques with Large Language Models (LLMs) to automate legal document access and provide accurate, context-aware responses to legal queries. The proposed system employs a Retrieval-Augmented Generation (RAG) architecture, combining vector-based document retrieval with LLMs to generate precise, context-informed answers. Key components include a document indexing module processing 45,000 Vietnamese legal documents, a vector database for semantic search, and an LLM-powered response generation interface. The system leverages 350,000 legal Q&A pairs from authoritative sources to understand complex legal terminology and provide contextually relevant responses. In a comprehensive evaluation, the system was assessed using both performance metrics (via RAGAs framework, including context recall and ROUGE scores) and user studies involving legal professionals and law students. The results indicate that integrating IR with LLMs substantially improves the relevance and accuracy of legal responses, reducing response time by 58%. Users reported high satisfaction levels (average 4.23/5) with the system's ability to answer complex legal queries, achieving 89% accuracy across 12 legal categories. Overall, our findings demonstrate that IR-augmented LLM systems can effectively automate legal information access, alleviating professional workloads and democratizing legal knowledge access in Vietnamese legal contexts. Copyright © 2025 by SCITEPRESS - Science and Technology Publications, Lda."
+  },
+  {
+    "article_id": "CA_2227",
+    "title": "Sentiment Analysis of Social Media Use in Public Transportation in Sweden",
+    "journal": "International Joint Conference on Knowledge Discovery, Knowledge Engineering and Knowledge Management, IC3K - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5220/0013821100004000",
+    "abstract": "The increasing impact of social media on public transportation is transforming communication strategies and user engagement. These platforms offer real-time service updates while allowing users to voice their concerns and suggestions, fostering trust and enhancing customer satisfaction. This research investigates public perceptions of the communication methods used by public transportation services in Sweden, highlighting user preferences for different social media platforms and content types. The study employs a four-step methodology. First, a literature review examines the advantages and challenges of integrating social media into public transportation systems. Next, a survey assesses Swedish users' interactions with social media in this context. The third phase involves sentiment analysis and text mining of the survey responses to evaluate public opinion. Finally, the research proposes potential steps for collecting and analyzing social media data. The findings contribute to a better understanding of effective communication strategies, ultimately improving the responsiveness of public transportation systems. Copyright © 2025 by SCITEPRESS - Science and Technology Publications, Lda."
+  },
+  {
+    "article_id": "CA_2228",
+    "title": "Research on Application of Traffic Intelligent System Based on Virtual Reality Technology",
+    "journal": "Conference Proceedings of the 10th International Symposium on Project Management, China, ISPM 2022",
+    "journal_impact_factor": null,
+    "doi": "10.52202/065147-0117",
+    "abstract": "With the rapid development of multimedia technology, new virtual reality technology (VR technology) has matured gradually. In view of multimedia technology, virtual technology has more advantages than multimedia technology in immersion, man-machine interaction and so on. According to this kind of characteristics, the application of virtual reality technology in traffic field can realize the research of various experiments in real environment, which can make users feel only authenticity and accuracy, and realize intelligent transportation. Such technologies can not be implemented through multimedia. At present, the application of virtual reality technology in the field of traffic intelligence is still in its infancy, so it has a broad application prospect. This paper analyzes the application of virtual reality technology in the experimental research center of traffic field from the angle of intelligence, and further studies it. © Conference Proceedings of the 10th International Symposium on Project Management, China, ISPM 2022."
+  },
+  {
+    "article_id": "CA_2229",
+    "title": "Design and Implementation of Tourism Customization Platform Based on Collaborative Filtering Algorithm",
+    "journal": "Conference Proceedings of the 13th International Symposium on Project Management, ISPM 2025",
+    "journal_impact_factor": null,
+    "doi": "10.52202/081497-0100",
+    "abstract": "In the current context of the rapid development and digital transformation of the tourism industry, tourists' demand for personalized and intelligent tourism services is growing day by day. As an important tourist destination in the central region, Hubei Province boasts rich natural scenery and cultural landscapes. However, it is faced with the dilemma that the traditional tourism model can hardly meet the personalized needs of tourists. This study designs the \"E xing Tian xia · Huguang Journey\" platform and resorts to information technology and big - data analysis to solve the problems. Through multi - platform questionnaires (N = 553) and reliability and validity tests (Cronbach's α = 0.82), a six - dimensional user demand model is constructed. It is found that tourists have prominent demands for aspects such as scenic spot culture, itinerary planning, local cuisine, and safety information. The platform builds an intelligent system with core functions. The front - end and back - end adopt corresponding architectures, and the system is tested to ensure its stability. Taking the areas around Wuhan as a pilot, the platform's personalized recommendations meet the different needs of tourists, thus promoting the upgrading and innovation of Hubei's tourism industry. © 2025 by Aussino Academic Publishing House. All Rights Reserved."
+  },
+  {
+    "article_id": "CA_2230",
+    "title": "Intelligent information systems of the banking sector: General characteristics and information environment",
+    "journal": "Scientific Bulletin of Mukachevo State University. Series Economics",
+    "journal_impact_factor": null,
+    "doi": "10.52566/msu-econ4.2023.43",
+    "abstract": "Due to the rapid development of digitalization and information technology, the study of intelligent information systems (IIS) in the banking sector is becoming an urgent task. Intelligent information systems are able to optimize banking processes, increase security, improve the quality of customer service, mitigate risks, and optimize internal processes of financial stability management. The purpose of this study is to reveal the potential and impact of IIS on banking management processes; to study their capabilities. To achieve this goal, this study used an analytical approach, in particular, methods of information and morphological data analysis, as well as the method of generalization, which allowed the identification of key aspects, features, and properties of intelligent information systems of the banking sector, and to provide a generalized structure of their functioning by the relevant processes. This article generalizes a group of intelligent information systems of the banking sector (IISBS), their general features and properties, proposes an innovative architecture of financial management support, and identifies their advantages in comparison with existing intelligent systems. The study proves that intelligent information systems of the banking sector are endowed with hybrid data analytics provided by deep learning methods using self-learning algorithms; are able to assess possible risks and plan strategies for their resolution; recognize unauthorized entries and suspicious transactions; thanks to virtual assistants, are suitable for robotizing management processes; and visually present the results of analysing large amounts of data in real time. The research conducted in this paper shows that the introduction of intelligent information systems in the banking sector is of high practical value, as it provides interactivity and personalization for customers, online interaction, and support in solving problems through various communication channels. © The Author(s)."
+  },
+  {
+    "article_id": "CA_2231",
+    "title": "The analysis of customer satisfaction factors which influence chatbot acceptance in Indonesia",
+    "journal": "Management Science Letters",
+    "journal_impact_factor": null,
+    "doi": "10.5267/j.msl.2019.11.036",
+    "abstract": "Chatbot program has evolved in the Indonesian market as the representative of online service customer that provides immediate response and it is able to interact with customers by using Natural Language Processing. This study aims to determine the extent of the customer satisfaction factors that successfully influence chatbot acceptance in Indonesia. A sample of 119 respondents is chosen using Exploratory Factor Analysis method. The findings deliver valuable insight of four factors in satisfying Indonesian customers when using Chatbot. The research conclusion not only gives a new perspective to identify important factors influencing customer satisfaction for chatbot acceptance in Indonesia but also helps Indonesian organizations look up at those factors when planning to develop chatbot for their businesses. © 2020 by the authors."
+  },
+  {
+    "article_id": "CA_2232",
+    "title": "A conceptual model for the adoption of autonomous robots in supply chain and logistics industry",
+    "journal": "Uncertain Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.5267/j.uscm.2021.11.006",
+    "abstract": "The arrival of the era of robots and autonomous machines is undisputable. It is anticipated that the future business environment will be characterized by a variety of intelligent systems and autonomous robots. In 2017, the International Federation of Robotics reported that momentum gained by robotic technologies is strong and that the sales volumes of both service and industrial robots is expected to grow. Building on this projection, the present study proposes a set of prerequisites or key determinants for the adoption of autonomous robots in the supply chain and logistics industry: technological context (i.e., relative advantage, complexity, and cost), organizational context (i.e., management support, financial support and employee competence) and environmental context (i.e., competitive pressure, customer pressure and vendor support). The study adapts a quantitative research design and uses an online survey to collect the needed data to test the conceptual framework and hypotheses proposed. Part of the study results confirms the association between the cost of digital technologies and the adoption of autonomous robots. However, the study found no evidence that the perceived relative advantage positively impacts supply chain and logistics firms’ adoption of autonomous robots. The study offers some managerial advices to supply chain mangers and marketers of the digital technologies and tools that can be applied in the supply chain setting. © 2022 Growing Science Ltd. All rights reserved."
+  },
+  {
+    "article_id": "CA_2233",
+    "title": "Understanding the Continuance Intention to Use Chatbot Services",
+    "journal": "Asia Marketing Journal",
+    "journal_impact_factor": 0.825,
+    "doi": "10.53728/2765-6500.1613",
+    "abstract": "Chatbot services have become an essential communication tool for interacting with consumers in e-commerce. To understand consumer behavior in the context of chatbot services, we apply the Theory of Planned Behavior (TPB) to analyze continuance intention to use and additional predictors to explain behavioral intention. An analysis of data collected from 300 digital shopping users who had experienced chatbot services revealed that an extended TPB model holds for the continuous use of chatbot services, driven by both interaction and information quality. Accordingly, these findings provide a better understanding of consumer behavior toward chatbot services and valuable insights into digital customer relationship management. © 2023 Korean Marketing Association (KMA)."
+  },
+  {
+    "article_id": "CA_2234",
+    "title": "Creation of a chatbot for the systemic support of a supermarkets chain from a knowledge base registered in the MantisR○; [Criação de um chatbot para atendimento de suporte sistêmico de uma rede de supermercados a partir de uma base de conhecimento registrada no MantisR○]",
+    "journal": "AtoZ",
+    "journal_impact_factor": null,
+    "doi": "10.5380/atoz.v8i2.65170",
+    "abstract": "Introduction: technology is present in the various branches of activity and cannot be the only differential in companies. It is necessary to have mastery of the business and have knowledge about the evaluated area. Knowledge can be in different formats, whether intangible or properly registered. When this knowledge is recorded, searching for this information can be performed easily and allows agility and efficiency for decision-making. However, retrieving information accurately is not a simple task. Method: The present work deals with the generation of a collection of documents (corpus in a format suitable for chatbots) created from a historical base of calls from the Mantis R○ system (free software that allows bug registration and improvements) from a supermarket chain. The database was submitted to a question and answer service that has information retrieval, bot and natural conversation techniques, in order to perform analysis of the recovered returns. Results:: The result of the work is the conversion of several records of solutions previously reviewed, in a single and objective direction, than the reading of several possibilities of solutions dispersed in several services. The services are considered as a knowledge base for information retrieval and the answer for the user. Conclusions: thus, the research concluded that the chatbot finds answers and consolidates possible solutions used in previous visits and that might be the solution to the problem currently reported. Chatbots can be an alternative in view of the need to assist users in providing support services. © 2019, Programa de Pos-Graduacao em Gestao da Informacao, Universidade Federal do Parana. All rights reserved."
+  },
+  {
+    "article_id": "CA_2235",
+    "title": "What motivates chatbot use among tourists? A mixed-methods comparison of expert and user opinion",
+    "journal": "European Journal of Tourism Research",
+    "journal_impact_factor": 1.574,
+    "doi": "10.54055/ejtr.v40i.3904",
+    "abstract": "The aim of this study is to identify the most suitable type of chatbot for use in the hotel industry: Task-oriented vs. hedonic. To fulfil this aim, the motivations that are likely to generate more widespread use of chatbots in tourism services are analysed from the dual viewpoint of potential users and chatbot experts, to yield a complete picture of the preferences of the different agents in the sector. The former public helps identify those motivations that relate to current chatbot use, while the latter also enables motivations relating to possible future use to be anticipated. First, in-depth interviews are conducted with (i) potential users of hotel chatbots and (ii) chatbot experts (both academic and professional) to validate a series of motivations for chatbot use. An fs/QCA analysis is then conducted to identify the necessary conditions that a chatbot must fulfil, from the perspective of 29 potential users and 21 experts. The results suggest that there is a clear preference for task-oriented chatbots among users (short-term perspective), while the experts adopt a longer-term outlook focusing more on the entertainment and novelty value that chatbots can deliver. From the results, it can be concluded that, while experts regard many of the recurring problems of chatbots in tourism as having been overcome, tourists still demand that chatbots meet requirements such as productivity and convenience, pointing to areas that require further attention from the industry. © 2025 The Author(s)."
+  },
+  {
+    "article_id": "CA_2236",
+    "title": "ARTIFICIAL INTELLIGENCE AND IMPRESSION MANAGEMENT: CONSEQUENCES OF AUTONOMOUS CONVERSATIONAL AGENTS COMMUNICATING ON ONE’S BEHALF",
+    "journal": "Academy of Management Annual Meeting Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.5465/AMBPP.2022.129",
+    "abstract": "Artificially intelligent communication technologies (AICTs) that can operate autonomously with high degrees of conversational fluency can make communication decisions on behalf of their principal users and communicate with those principals’ audiences on their behalf. In this study, I explore how the involvement of AICTs in communication activities shapes how principals engage in impression management and how their communication partners form impressions of them. Through an inductive, comparative field study of users of two AI scheduling technologies, I uncover three communicative practices through which principals engaged in impression management when AICTs communicate on their behalf: interpretation, diplomacy, and staging politeness. I also uncover three processes through which communication partners formed impressions of principals when communicating with them via AICTs: confirmation, transference, and compartmentalization. I show that communication partners can transfer impressions of AICTs to principals themselves and outline the conditions under which such transference is and is not likely. I discuss the implications of these findings for the study of technological mediation of impression management in the age of artificial intelligence and present propositions to guide future empirical research. © 2022, Academy of Management. All rights reserved."
+  },
+  {
+    "article_id": "CA_2237",
+    "title": "Fast Hybrid Approach for Thai News Summarization",
+    "journal": "Engineering and Technology Horizons",
+    "journal_impact_factor": 0.087,
+    "doi": "10.55003/ETH.410307",
+    "abstract": "News summarization presents a significant challenge in Natural Language Processing (NLP). Lengthy news articles not only consume valuable time but also lead to confusion regarding key points. The ideal news summarization should swiftly produce a succinct summary while retaining the essence of the information conveyed by the news writer. While intelligent chatbots like ChatGPT and Gemini offer user-friendly text summarization, their embedded Large Language Model (LLM) cannot be downloaded for private use. Moreover, implementing them in a business process can be expensive, both in terms of pay-per-use costs and response time. The objective of this research is to develop a private Thai news summarization that effectively extracts sentences encapsulating the main idea and abstractly summarizes them. The proposed model consists of two components. The first extracts a contiguous region containing important sentences using the TextRank algorithm, while the second employs the finetuned mBART as an LLM to generate the abstractive summary from the previously extracted sentences. In other words, the proposed model extracts an important news region before passing it to mBART. This approach produces a news summary with key information and a syntactic style akin to the natural Thai language. We evaluate the summarization quality by ROUGE scores and BERTScore (precision, recall, and F1-score). The evaluation metrics Experimental results on the ThaiSum dataset show relatively high ROUGE scores and BERTScore for the proposed model compared to most of the other approaches. Furthermore, it significantly reduces the runtime, keeping it within a reasonable limit. © 2024, King Mongkut's Institute of Technology Ladkrabang. All rights reserved."
+  },
+  {
+    "article_id": "CA_2238",
+    "title": "The intelligent finance ecosystem: AI applications in banking and fintech for enhanced decision-making",
+    "journal": "Asian Economic and Financial Review",
+    "journal_impact_factor": 0.964,
+    "doi": "10.55493/5002.v15i11.5660",
+    "abstract": "The financial services sector is undergoing a significant transformation driven by artificial intelligence (AI), which is reshaping operational agility, real-time analytics, and intelligent decision-making. AI is being rapidly adopted across both traditional banks and fintech systems, offering substantial potential but also raising challenges related to equity, transparency, and regulatory compliance. This study evaluates the strategic role of AI across six major use cases: credit scoring, fraud detection, chatbot services, portfolio advisory, regulatory compliance, and decentralized finance (DeFi) smart contracts. A mixed-method approach, including literature review and simulated benchmarking with synthesized industry and academic data, was used. Key performance indicators such as accuracy, cost efficiency, and customer satisfaction were compared through weighted indices to analyze risk mitigation and operational impact. Results reveal that fraud detection achieves the highest AUROC (96.5%) and cost savings (23.5%), while chatbot services lead in customer satisfaction (89.6%). Regulatory compliance shows steady but moderate results, making it a suitable domain for automation and inclusion. DeFi smart contracts, however, perform poorly due to immature governance and integration. Overall, findings emphasize aligning AI potential with institutional readiness and domain needs. The paper proposes a framework for responsible AI adoption, stressing transparency, security, and ethical governance for future scalability. © 2025 AESS Publications. All Rights Reserved."
+  },
+  {
+    "article_id": "CA_2239",
+    "title": "The Design and Development of LINE Chatbots for Dental Services Booking",
+    "journal": "Suranaree Journal of Social Science",
+    "journal_impact_factor": null,
+    "doi": "10.55766/sjss265985",
+    "abstract": "Background and Objectives: The Oral Health Center at the Suranaree University of Technology Hospital is limited in terms of personnel and can only serve a limited number of patients daily. Notwithstanding, many patients remain interested in receiving services at the center. Therefore, when the patient queue on a given day has reached capacity, patients seeking services must return the following day. As a result, patients who are in need of services become acutely aware of both the cost and time expended. Currently, the center operates offline, allowing only walk-in scheduling and inquiries for service users. This research aims to design and develop a chatbot for booking appointments for dental services. The chatbot has been developed on the LINE application to make access more convenient for service recipients. Methodology: The design and development of this chatbot focuses on using natural language processing techniques for the process of booking dental services. After developing the chatbot, designed with various functions, a target group of 15 people who received services at the Suranaree University of Technology Hospital's oral health center was used to assess satisfaction levels with its use. The statistics used to analyze assessment data were percentage, mean, and standard deviation. Main Results: An analysis of user needs resulted in the creation of a form to develop the chatbot. This appointment booking chatbot for dental services booking operates through the LINE application. Users can either access it through the chat menu or the rich menu. The rich menu facilitates users without manually typing messages. It includes a queue reservation function, a queue remaining check function, a queue check function, and an inquiry function. As for the evaluation of the usability of this chatbot, all aspects considered were rated at high levels, with an average of 4.20 on a scale of 5 (S.D. = 0.37). When considering each aspect, it was found that users were satisfied most with the ease of use, followed by user interface design, and chatbot performance. Discussions: According to the results of the chatbot usability assessment, it was found that its efficiency in quickly finding and displaying information was the lowest when compared to other areas. This effect may be due to the Botnoi tool within the LINE application used in the development of this chatbot. Data retrieval and display speed are limited by the capabilities of the Botnoi tool. Ease of use and convenience received the highest scores, which can be attributed to the design and development of the chatbot. An analysis of users' needs was incorporated, which resulted in the feeling that the chatbots were easy to use and convenient. Conclusions: The purpose of this research was to develop a chatbot on the LINE application that utilized natural language processing techniques for booking dental appointments. The chatbot that was developed allowed users to access services more conveniently without traveling to or calling to inquire at the Oral Health Center. The chatbot can be used on any device using the LINE application without installing additional programs. Chatbots such as this can also be applied to other hospital departments and businesses as well. © 2025, Suranaree University of Technology. All rights reserved."
+  },
+  {
+    "article_id": "CA_2240",
+    "title": "Acceptance of intelligent ticketing systems in developing countries",
+    "journal": "Engineering Economics",
+    "journal_impact_factor": 1.614,
+    "doi": "10.5755/j01.ee.30.4.20941",
+    "abstract": "Information communication technologies bring the revolution into all business sectors, and transportation sector is not an exception. Ticketing system has changed from traditional to intelligent, which provides information and service to the consumer. In developed countries such systems are implemented and operate successfully, while in the developing countries electronic ticketing and other similar innovative solutions face specific challenges. These challenges are related to information era and changes in consumer behaviour, caused by the development of information and communication technologies. In these new conditions the motives of consumers to choose electronic ticketing has become an extremely important factor of success. Lack of integrity of consumer behaviour and technology acceptance (electronic ticketing in particular) was identified in previous scientific research, especially taking into consideration recent conditions of developing countries. The aim of this article is to evaluate the consumers’ behaviour and acceptance of intelligent systems, such as electronic ticketing, in order to identify factors, influencing and encouraging the customers to use electronic ticketing systems. In this study extended technology acceptance model with trust element was used to measure the consumer behaviour. The sample for this research has been taken from China and Pakistan populations and consists of 432 participants from both countries. © 2019, Kauno Technologijos Universitetas. All rights reserved."
+  },
+  {
+    "article_id": "CA_2241",
+    "title": "Training an AI-based Writing Assistant for Spanish Learners: The Usefulness of Chatbots and the Indispensability of Human-assisted Intelligence",
+    "journal": "Lexikos",
+    "journal_impact_factor": null,
+    "doi": "10.5788/34-1-1862",
+    "abstract": "This article deals with the relationship between human and artificial intelligence in the context of an ongoing Spanish Writing Assistant project, where ChatGPT is used to assist in four key tasks related to either training the underlying language model or preparing future user communication. The project is an interdisciplinary collaboration between lexicographers with experience in language teaching and IT experts from a high-tech company. The article first describes the methodology of the overall project and the specific role of the lexicographers. It then discusses the three tasks in which the latter are directly involved: the construction of a set of two parallel Spanish corpora, one correct and the other with induced errors, the generation of validation material, and the writing of extended grammatical explanations for Spanish learners. Based on a large amount of empirical data, including 35,000 carefully reviewed sentences, the article details the different steps of the interaction between human and chatbot, as well as the experiences and reflections drawn from this process. It concludes that the two parts engage in very different types of relationships depending on the concrete task, and that human knowledge, culture, skills and language intuition are crucial for the chatbot to work properly."
+  },
+  {
+    "article_id": "CA_2242",
+    "title": "A Comparative Study on the Effectiveness of AI Chatbots and Dictionary Apps for Lexical Tasks and Retention",
+    "journal": "Lexikos",
+    "journal_impact_factor": null,
+    "doi": "10.5788/35-1-2027",
+    "abstract": "This study compared an AI chatbot (Kimi) and a bilingual dictionary app (NCD) in supporting vocabulary tasks among Chinese junior English majors. Sixty-six participants used either Kimi or NCD to complete both receptive and productive lexical tasks. Questionnaires gathered user feedback on tool use, and a surprise retention test assessed long-term vocabulary retention one week later. Results showed that Kimi significantly outperformed NCD in vocabulary comprehension, collocation production, and productive knowledge retention. Additionally, Kimi demonstrated more consistent performance than NCD across all test items, highlighting its reliability. The study underscores the potential of AI chatbots to address language-related queries and enhance vocabulary acquisition. It also advocates for aligning technological advancements with pedagogical goals to optimize language learning tools and create a sustainable learning environment."
+  },
+  {
+    "article_id": "CA_2243",
+    "title": "Mapping the Research Landscape of Chatbots, Conversational Agents, and Virtual Assistants in Business, Management, and Accounting: A Bibliometric Review",
+    "journal": "Qubahan Academic Journal",
+    "journal_impact_factor": null,
+    "doi": "10.58429/qaj.v3n4a252",
+    "abstract": "This bibliometric review aims to map the research landscape of chatbots, conversational agents, and virtual assistants in the business, management, and accounting of the subject area. The review begins by examining the growth of research in this area over time, revealing an increasing interest in the application of chatbots, conversational agents, and virtual assistants in business, management, and accounting contexts. This study aims to contribute to the field of chatbot research by conducting a bibliometric analysis of chatbot, conversational agent and virtual assistant papers available in the Scopus databases. A comprehensive analysis of 378 articles was performed utilizing the Bibliometrix software package. The keywords \"Chatbot\", \"conversational agent\" and “virtual assistant” emerged as the most frequently employed terms in the majority of publications. It explores the various domains within which these technologies have been studied, including customer service, marketing, human resources, and financial management. © 2023, Qubahan. All rights reserved."
+  },
+  {
+    "article_id": "CA_2244",
+    "title": "Shared storytelling with a virtual learning companion: prospects in child-AI collaboration",
+    "journal": "Research and Practice in Technology Enhanced Learning",
+    "journal_impact_factor": null,
+    "doi": "10.58459/rptel.2025.20031",
+    "abstract": "Advances in natural language processing techniques enhance the capabilities of conversational agents to process input text and generate fluent responses in various genre. In the educational setting, these conversational agents can function as learning companions to promote peer learning, enhance social interaction, and motivate collaborative behavior. In this paper, we investigate how children collaborate with conversational agents in the context of story construction. We conducted user studies and administered survey forms to collect children’s evaluation of their experience, captured the child-agent conversation logs, and used an observation checklist to monitor the interaction. We analyzed the logs to determine how children respond to varying roles portrayed by the agent and the dialogue moves that motivate collaborative behavior during storytelling. We correlated these with the children’s reported perception and our own observation of the interaction based on performance, collaboration and humanity attributes. Drawing on these results, we identified the roles of conversational agents that align with children’s traits and abilities as storytellers and propose dialogue strategies to facilitate collaborative storytelling. Findings from our study can inform future educational technology designers on the roles of conversational agents as collaborative learning companions who can adapt to the individual needs and preferences of the children. © The Author(s). 2024."
+  },
+  {
+    "article_id": "CA_2245",
+    "title": "What's more important when developing math recommender systems: accuracy, explainability, or both?",
+    "journal": "Research and Practice in Technology Enhanced Learning",
+    "journal_impact_factor": null,
+    "doi": "10.58459/rptel.2026.21004",
+    "abstract": "To make accurate predictions, complex artificial intelligence techniques are being adopted in intelligent systems. It leads to the need for explanations, helping users understand how the model works. Beyond this original purpose, explanations in educational intelligent systems have been found to increase students' awareness, perceived usefulness, and acceptance of the recommendations. Can we ensure a model makes accurate predictions and has effects of explanations at the same time? Though it is commonly considered that complex models are accurate but difficult to interpret, it remains debatable whether there is a trade-off between the accuracy and explainability of such models. In this study, we explore the relationships between accuracy and explainability of different models for recommending math quizzes in the context of formative assessment. Focusing on three recommender models-an inherently explainable model (Naïve CE), a black-box model (MF), and an integrated model (CE+MF), we compared the accuracy using a large-scale real-world dataset and evaluated the explanations in a semi-interactive questionnaire survey. We found that: 1) There was a trade-off between accuracy and explainability given the specific context. 2) The explainability did not demonstrate consistent trends among different aspects. Especially, perceived understandability did not indicate the perceived usefulness in math learning and the behavioral intention to use the system. 3) The integrated model displayed a balanced level of accuracy and explainability, which implies the feasibility to develop an explainable educational recommender system by improving the accuracy of an inherently explainable model. © The Author(s). 2025."
+  },
+  {
+    "article_id": "CA_2246",
+    "title": "ChatGPT AND STRESS",
+    "journal": "ABAC Journal",
+    "journal_impact_factor": 1.024,
+    "doi": "10.59865/abacj.2023.39",
+    "abstract": "ChatGPT is an artificial-intelligence chatbot. In addition to comprehending an image like a text prompt, it can understand complex prompts and exhibit human-level performance. It became the fastest-growing application in history, acquiring one million users within five days of release. However, despite its potential to improve productivity, job satisfaction, self-efficacy, and wages, it causes stress to individuals. This study examines the relationship between stress and ChatGPT in Thailand. Although stress is a severe health problem in the country, ChatGPT cannot be avoided as this application helps support the country’s targeted digital technology industry. The study uses a proxy for unobserved stress levels and ChatGPT concerns using Google’s search volume indexes. Based on daily samples from December 10, 2015, to May 31, 2023, regression analysis revealed that ChatGPT significantly increased stress levels. However, during the development sub-sample, the stress level decreased. Stress escalated in the early-and viral-use sub-samples, where the effect for the viral-use sub-sample was significantly higher. In the COVID-19 pandemic sub-sample, the effect was non-significant. The causality of ChatGPT in stress was confirmed by the contemporaneous-causality test. © (), (). All Rights Reserved."
+  },
+  {
+    "article_id": "CA_2247",
+    "title": "THE DEVELOPMENT OF CHATBOT PROVIDED REGISTRATION INFORMATION SERVICES FOR STUDENTS IN DISTANCE LEARNING",
+    "journal": "ABAC Journal",
+    "journal_impact_factor": 1.024,
+    "doi": "10.59865/ABACJ.2023.55",
+    "abstract": "In recent years, chatbots have become crucial, particularly for assisting students with real-time registration information. This research focused on 1) synthesizing registry works related to information provided for students, 2) designing chatbots and conversation structures in the form of interactive conversations between students and robots for answering questions and providing information tailored to their needs, and 3) examining and evaluating the use of chatbots in providing information services to students, while analyzing the accuracy and suitability of the developed chatbot. This study, based on research and development, utilized a sample consisting of 16 staff directly involved in the provision of registration information to students and 255 undergraduate students from Sukhothai Thammathirat Open University, with respondents being selected through a simple random sampling technique. The synthesis of the research results revealed the following findings: 1) A qualitative study revealed that the registration information related to students, called STOU Journey, consisted of 10 issues, and was required for the whole learning period. 2) The result of the design and development of the chatbot revealed that the developer chatbot could be used on both the website and the LINE application. It was also found that the chatbot could answer most questions correctly and completely. The chatbot responded quickly and was easy to use. The chatbot used language that was easy to understand and natural, while 3) satisfactory evaluation results from 255 undergraduate students showed that overall, students who had used the completed version of the chatbot were satisfied with the use of the chatbot at a high level (Mean = 4.19, SD = 0.98) while they also felt that the chatbot was easy to use (Mean = 4.33, SD = 0.95) and the using the chatbot felt like a natural conversation (Mean = 4.22, SD = 0.99). © (2023) All Rights reserved."
+  },
+  {
+    "article_id": "CA_2248",
+    "title": "AI Chatbots in E-Commerce: Enhancing Customer Engagement, Satisfaction and Loyalty",
+    "journal": "Paper Asia",
+    "journal_impact_factor": null,
+    "doi": "10.59953/paperasia.v41i2b.445",
+    "abstract": "The rapid advancement of Artificial Intelligence (AI) has led to the widespread adoption of chatbots in customer service, particularly in e-commerce. As part of digital marketing strategies, chatbots serve as an automated yet interactive tool to enhance customer satisfaction and foster long-term customer loyalty. This study aims to analyze the combined impact of response time, information quality, perceived usefulness (PU), and perceived ease of use (PEOU) on customer satisfaction and loyalty in the e-commerce sector. Although research on chatbot effectiveness continues to grow, most previous studies have examined these factors separately. However, no study has explored how these four variables work together not only to improve customer service efficiency but also to build long-term customer loyalty and strengthen the digital relationship between customers and brands. By employing a quantitative approach with an explanatory research design, this study surveyed 400 respondents with experience using chatbots as customer service in e-commerce companies. Structural Equation Modeling SEM was utilized to analyze the relationships between chatbot service attributes, customer satisfaction, and customer loyalty. The findings reveal that all four chatbot service attributes significantly enhance customer satisfaction, strengthening customer loyalty. These results highlight the importance of integrating chatbot effectiveness into customer relationship management CRM and digital engagement strategies. By contributing to the development of CRM concepts in AI-driven customer service, this study provides insights for businesses seeking to optimize chatbot technology to enhance customer experience and build long-term relationships, as well as an addition to the literature for further research. © 2025, SHPMedia Sdn Bhd. All rights reserved."
+  },
+  {
+    "article_id": "CA_2249",
+    "title": "Smart Tech, Happy Customers: The AI Impact on Satisfaction",
+    "journal": "Paper Asia",
+    "journal_impact_factor": null,
+    "doi": "10.59953/paperasia.v41i5b.756",
+    "abstract": "In customer service, artificial intelligence (AI) has emerged as a disruptive force that is transforming how companies interact with customers and address their needs. This study aims to explore how AI-driven solutions such as chatbots, engine-based recommendations, and sentiment analysis affect customer satisfaction levels. Quantitative method, including a questionnaire, was utilized in this study. The questionnaire was divided into three sections: Section A (demographics), Section B (organization and customer agility, customer experience, and customer relationship quality), and Section C (customer satisfaction). Primary data was collected from a sample of 128 respondents, all of whom are students at Universiti Tun Hussein Onn Malaysia (UTHM). To analyze the data, SPSS 29 was employed. The findings indicate a positive and significant relationship between organizational and customer agility, customer experience, and the quality of customer relationships on customer satisfaction in AI. Although the study achieved important insights, it also acknowledges limitations such as time constraints and a relatively small sample size. This investigation contributes to a deeper understanding of the key drivers of customer satisfaction, highlighting how AI supports agility, relationship quality, and experience enhancement. © 2025, IPMEDIA SDN BHD. All rights reserved."
+  },
+  {
+    "article_id": "CA_2250",
+    "title": "Unveiling the Impact of AI-Chatbot Attributes and Anthropomorphic Cues in E-Commerce",
+    "journal": "Pakistan Journal of Commerce and Social Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.64534/Commer.2025.512",
+    "abstract": "The rise of AI chatbots in e-commerce has revolutionized digital customer service, yet understanding the factors influencing customer adoption remains a challenge. Drawing on the Technology Acceptance Model 2 and anthropomorphism theory, the study aims to examine how human-like interaction elements can enhance trust and usability, leading to greater customer engagement with AI chatbots in e-commerce. A quantitative approach was employed, involving a sample of 432 respondents from Malaysia who interacted with AI chatbots on e-commerce platforms. Data were analyzed using partial least square structural equation modeling (PLS-SEM). Findings revealed that perceived usefulness (PU) and perceived ease of use (PEOU) have a significant direct influence on customer adoption, where PU became the strongest predictor, followed by PEOU. Perceived trust (PT) showed no direct influence, but strongly predicted anthropomorphic cues which in turn had a direct positive influence on customer adoption and indirect positive influence as a mediator between trust and adoption. The variable PT showed no direct influence on adoption; instead, anthropomorphic cues and a strong mediating effect by anthropomorphic features such as emotional expressions and human-like communication enhance user experience, build trust, and drive adoption. This research highlights the originality of the study, which clearly explains that functional attributes (PU and PEOU) are not solely determined by adoption but are carefully designed by the mediating variable of anthropomorphic features. These insights are critical for e-commerce businesses and AI developers in designing chatbots that foster customer trust, usability, and satisfaction. The study contributes to the academic discourse on AI adoption and offers practical strategies for optimizing chatbot-human interaction in digital commerce. © 2025, Johar Education Society Pakistan. All rights reserved."
+  }
+]

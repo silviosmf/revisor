@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_2001",
+    "title": "Service Recovery on Stage: Effects of Social Media Recovery on Virtually Present Others",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670519851871",
+    "abstract": "Increasingly, customers use social media to voice complaints, making those comments visible to a wide range of uninvolved, virtually present others (VPOs). Many companies seek to shift their complaint-handling efforts away from public online platforms and toward private interactions. However, this approach might not be optimal due to the importance of transparency in social media recovery and its impact on VPOs. Using multiple experiments and building on signaling theory, vicarious learning, and trust repair mechanisms, this study reveals that service recovery transparency acts as an important signal of quality, eliciting trust, and improving VPOs’ word-of-mouth (WOM) and purchase intentions. However, service recovery transparency forms a signal of poor quality when the service recovery is unsuccessful, resulting in negative implications for VPOs’ WOM and purchase intentions. Conditional transparency provides transparency about selected aspects of the service recovery (i.e., the process or result), enabling companies to exploit the positive aspects of transparency and evoke more favorable VPO intentions than would arise with complete opaqueness. Such efforts are necessary because even high brand equity firms suffer when failing to provide recovery transparency. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2002",
+    "title": "Impact of Proactive Postsales Service and Cross-Selling Activities on Customer Churn and Service Calls",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670519883347",
+    "abstract": "In recent years, service providers have identified the proactive postsales service (PPS) as a viable measure for preempting service failures and their negative consequences. Due to the high costs associated with PPSs, companies are looking for ways to increase their efficiency. To understand how companies can increase their revenues and lower their costs, this study investigates how cross-selling activities and different media types affect the impact of a PPS on inbound service calls and customer churn. Based on a large-scale field experiment in the telecommunications industry, as well as a controlled lab experiment, the results demonstrate the overall effectiveness of the PPS and indicate two mediating effects. While the effect of cross-selling on customer churn and service calls is mediated by the customers’ uncertainty regarding the company’s motives, it is the customers’ perception of privacy invasion that mediates the influence of the contact medium on the effectiveness of the PPS. Our finding that PPS contacts have to be clear in their message and should not be perceived as invasive is an indication of the importance of service-(post)sales ambidexterity. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2003",
+    "title": "Mix&Match: A Resource-Based Complaint Recovery Framework for Tangible Compensation",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670519898521",
+    "abstract": "Resource exchange theory suggests service recovery compensation is optimal when it is commensurate with what was lost (e.g., refund for overcharging). However, in practice, companies cannot always follow the theory-driven prescriptions, and the complaint recovery literature remains silent on how to best recover in such suboptimal situations. This study takes a resource-based theory stance to propose Mix&Match, a complaint recovery framework for tangible compensation offers (refunds, redeliveries, or credits) to optimize customer retention and lifetime value in both optimal and suboptimal complaint recovery scenarios. We find that matching tangible compensation with the complaint cause (e.g., redelivery for expired products) is the most effective recovery response for improving customer retention and lifetime value. However, in suboptimal nonmatching scenarios, monetary compensation in the form of store credit proves to be the most effective response. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2004",
+    "title": "Consumers Complain More Fiercely Through Small-Screen Devices: The Role of Spatial Crowding Perception",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670520904408",
+    "abstract": "Previous research has mainly focused on the determinants of consumers’ complaint channel choices. Little attention has been paid to the behavioral consequences of different complaint channels, particularly different complaint devices. Drawing on spatial crowding perception theory, this study finds that in an online complaint context, consumers’ complaint intensity is shaped by complaint devices that differ in screen size. Crowding perception produced by visually restrictive tension mediates the relationship between the screen size of the complaint device and the complaint intensity. The results of secondary data confirm that consumers’ complaint intensity is higher while complaining through a small-screen device (as opposed to a large-screen one). Three scenario-based experiments are conducted to examine the role of perceived spatial crowding in producing a more intense complaint behavior when complaints are submitted through smaller screen devices (as opposed to larger screen devices). The fourth experiment reveals that crowding perception can be lessened by adjusting certain design elements of the interface, ultimately mitigating the intensity of the complaint submitted through a small-screen device. Our research identifies the specific causality and underlying mechanism of the influence of device type on consumers’ postconsumption behavior, thus contributing to clarify some ambiguities in the literature. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2005",
+    "title": "Proactive Handling of Flight Overbooking: How to Reduce Negative eWOM and the Costs of Bumping Customers",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670520933683",
+    "abstract": "This research examines the extent to which proactivity in handling flight overbooking reduces negative electronic word-of-mouth (NeWOM) and the required costs of compensation, thus increasing firm profitability. It answers recent calls to use a multimethod approach (i.e., we include archival data, qualitative interviews, seven experiments, and a Monte Carlo simulation for a total of 10 studies) and to adapt recovery to specific contexts (i.e., airlines) and heterogeneous customers (i.e., voluntary/involuntary bumping or offloading). The preliminary studies indicate that overbooking and offloading are pervasive and that a proactive approach is both feasible and desirable. The experiments show that, compared to the default reactive approach (informing passengers at the gate), a proactive approach (informing them before they leave for the airport) substantially reduces NeWOM and the sought compensation. Further, a very reactive approach (informing them in the plane) significantly increases NeWOM and the sought compensation, especially when offloading occurs involuntarily. We also unveil the mechanism explaining the effects of proactivity on NeWOM, through the serial mediation of justice and betrayal. Finally, the results of a Monte Carlo simulation show that offering reduced compensation through a proactive approach allows more aggressive overbooking, higher capacity utilization, and increased net revenue of up to 1.3%. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2006",
+    "title": "Service Failure and Recovery at the Crossroads: Recommendations to Revitalize the Field and its Influence",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670520958073",
+    "abstract": "In this editorial, we offer a critical assessment of the service failure and recovery (SFR) literature and suggest that the field is at a crossroads in terms of growth and relevance. Specifically, we address two key questions: (1) What is the current state of the field? (2) What avenues should SFR researchers pursue to promote a new stage of success? To answer the first question, we tracked the evolution of SFR articles over the last 15 years by using Web of Science. Our analysis suggests that the recent growth of SFR research is mainly attributable to articles published in specialized journals; the number of articles published in leading journals remains stable and relatively low for the last 10 years. This situation reflects the poor integration of two core SFR domains: Behavioral-subjective research tends to be published in specialized journals, whereas quantitative-objective articles have been in high demand in leading journals. To answer the second question, we propose a dozen research avenues to help the integration of the two domains, so that the whole field can regain prominence. These research avenues are organized in four categories: (1) expanding the static “customer-firm” dyad, (2) studying new contexts that challenge the assumption of recovery, (3) collecting better data and using stronger analytics, and (4) building on the synthetic knowledge base already created. By making such changes, the SFR domain will reclaim its rightful place as an important subfield of service science. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2007",
+    "title": "Mapping of Journal of Service Research Themes: A 22-Year Review",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670520977672",
+    "abstract": "The Journal of Service Research (JSR) is one of the leading outlets in service research. It is international in scope and widely recognized among scholars, academicians, and practitioners for its original and well-executed research. In its 22 years of publishing, the journal has produced literary content considered classics in the service domain. With the application of bibliometric techniques, we examine articles published in JSR between 1998 and 2019. Our study explicates JSR’s prominent topics and tracks the evolution of research themes in the journal. “Customer satisfaction,” “service recovery,” and “service quality” are some of the prolific themes trending in JSR, while “big data,” “value cocreation,” “customer resource integration,” “service design,” and “customer participation” are its hottest topics. This study contributes primarily by providing a rich retrospective of JSR’s 22 years of publishing and proposes future research topics for the journal. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2008",
+    "title": "To Err Is Human(-oid): How Do Consumers React to Robot Service Failure and Recovery?",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670520978798",
+    "abstract": "Robots are the next wave in service technology; however, this advanced technology is not perfect. This research examines how social perceptions regarding the warmth and competence of service robots influence consumer reactions to service failures and recovery efforts by robots. We argue that humanoid (vs. nonhumanoid) service robots are more strongly associated with warmth (whereas competence does not differ). This tendency to expect greater warmth from humanoid robots has important consequences for service firms: (i) consumers are more dissatisfied due to lack of warmth following a process failure caused by a humanoid (vs. nonhumanoid; Study 1); (ii) humanoids (but not nonhumanoids) can recover a service failure by themselves via sincere apology, restoring perceptions of warmth (Study 2A); (iii) humanoids (but not nonhumanoids) can also effectively provide explanations as a recovery tactic (Study 2B); and, importantly, (iv) human intervention can be used to mitigate dissatisfaction following inadequate recovery by a nonhumanoid robot (Study 3), supporting the notion of human-robot collaboration. Taken together, this research offers theoretical implications for robot anthropomorphism and practical implications for firms employing service robots. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2009",
+    "title": "How Do Observers React to Companies’ Humorous Responses to Online Public Complaints?",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1094670521989448",
+    "abstract": "The current research examines the way that observing consumers react when companies use humor to address online public complaints on social media. Drawing on, first, a field study using companies’ humorous responses on social media and, second, on two main scenario-based experiments, we use benign violation theory to capture simultaneously the unfavorable effect (i.e., inferred negative motives) and the favorable effect (i.e., humor appreciation) of employing humor in a public complaining context. The results reveal that online observers respond more favorably (in terms of likes, retweets, and purchase intentions) when firms use affiliative humor (e.g., laughing with the complainer) rather than aggressive humor (e.g., laughing at the complainer). Also, affiliative humor and an accommodative recovery (e.g., apologies and compensation) provide equal results in terms of observers’ purchase intentions. Because observers infer more negative motives of companies, affiliative humor compensates over an accommodative recovery by being funnier. Finally, our last study presents a reversal effect depending on brand personality; while sincere brands should always favor affiliative humor, aggressive humor elicits higher purchase intentions when performed by exciting brands. This research gives managerial insights about observers’ reactions to humorous responses to online complaints and the importance for humor to fit with brand personality. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_2010",
+    "title": "Service Provider to the Rescue: How Firm Recovery of Do-It-Yourself Service Failure Turns Consumers from Competitors to Satisfied Customers",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705221111347",
+    "abstract": "While consumers frequently attempt to resolve their own consumption problems (i.e., do-it-yourself (DIY)), they are often unsuccessful and subsequently turn to a professional. In the present research, we consider DIY failure as a form of service failure (SF) and demonstrate that experiencing DIY service failure (DIY SF) influences consumer evaluations of subsequent firm recovery. This occurs because consumers who experience DIY SF gain greater understanding of the task (i.e., learning) through their failed attempt. This learning promotes increased appreciation of the recovering service provider’s ability, ultimately resulting in greater satisfaction with the recovery offering. We further identify mindset as a moderator of this effect, wherein those with a growth mindset are more likely to learn from failure and appreciate the abilities of the recovering service provider. By highlighting DIY SF as a novel form of SF, we demonstrate the importance of understanding customers’ prior experiences with the focal consumption problem and its solution, and of training front-line employees to better manage these customers. We test our theory across four studies using lab and field data, and close by discussing theoretical and managerial implications. © The Author(s) 2022."
+  },
+  {
+    "article_id": "CS_2011",
+    "title": "Stopping the Spread: How Blame Attributions Drive Customer-to-Customer Misbehavior Contagion and What Frontline Employees Can Do to Curb It",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705221150441",
+    "abstract": "Service encounters nowadays are increasingly characterized by customer-to-customer (C2C) interactions where customers regularly become targets of other customers’ misbehavior. Although previous research provides initial evidence of the contagiousness of such C2C misbehavior, it remains unclear whether, how, and why C2C misbehavior spreads when frontline employees (FLEs) are involved and what FLEs can do to curb it. Two online and one field experiment in the context of co-working and transportation services reveal that FLE-directed blame attributions drive the spread of C2C misbehavior while perpetrator-directed blame attributions reverse it. These blame attributions are greater the more severely customers judge other customers’ misbehavior. Findings further rule out alternative contagion mechanisms (social norms and emotional contagion) and show that contagion spills over to C2C misbehavior unrelated to the initial transgression. By specifying how contagion unfolds and by explicating the central role blame attributions play in C2C misbehavior contagion, this research uncovers its social dynamics, thus extending existing theory on customer misbehavior and attribution theory in multi-actor settings. Managerially, this research provides FLEs with explicit guidance on what they should do (personalized FLE interventions delivered either in person or remotely) and avoid doing (disapproving looks, FLE service recovery) when faced with C2C misbehavior. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2012",
+    "title": "Coalitions and Their Negative Consequences: An Examination in Service Failure-Recovery Situations",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705231163884",
+    "abstract": "The social nature of customer experiences creates complex and potentially detrimental dynamics in failure situations, such as when other customers side with the complainer or the firm. The present research is the first to analyze such coalitions and their consequences. We conceptualize a triad composed of a complainer, a service employee, and one or multiple others as a third actor. A field study of consumer complaints on social media shows that coalitions occur in 32% of cases, negatively shifting the affective tone of an online conversation from approximately neutral to negative. Both third actor–complainer and third actor–service employee coalitions independently deteriorate the affective tone, their individual effects are not additive, and the third actor–complainer coalition exerts the larger impact of both coalitions. Two experiments reveal that complainers feel betrayed by the third actor when this actor sides with the service employee (vs. the complainer), which strengthens complainers’ satisfaction with taking steps as a recovery effort by the firm and weakens satisfaction with an offered apology. This research provides managerial insights into the practical significance of coalition effects, how coalitions impair firm response effectiveness, and under which conditions different responses sustain their effectiveness. It also presents several avenues for future research. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2013",
+    "title": "Thirty Years of Service Failure and Recovery Research: Thematic Development and Future Research Opportunities From a Social Network Perspective",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705231194006",
+    "abstract": "Service failure and recovery (SFR) is a well-established area of research that has made considerable progress over the past 30 years. In this study, we used a combination of text mining, co-word analysis, and social network analysis (SNA) to explore the relationships among keywords in SFR research. We analyzed a dataset of 533 SFR articles published between 1990 and 2020, extracting the most frequently used keywords using text-mining techniques. These keywords were then subjected to co-word analysis and SNA to understand the development of themes and topics in SFR research. By examining changes in network centrality measures, we gained insights into the evolution of research in this field. Furthermore, by identifying gaps or disconnections in the keyword networks, we identified future research opportunities related to the impact of service recovery strategies on customer reactions, employee reactions, and firm outcomes, as well as the relationship between customer and employee responses. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2014",
+    "title": "Affect-as-Information: Customer and Employee Affective Displays as Expeditious Predictors of Customer Satisfaction",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705231194076",
+    "abstract": "This study introduces affect-as-information theory to the service encounter, integrates it with the peak and end model of affect, and thereby shows that these dynamic customer and employee affective displays can be used to estimate post-encounter customer satisfaction. A large-scale dataset of 23,645 real-life text-based (i.e., chat) service encounters with a total of 301,280 genuine messages written by customers and employees were used to test our hypotheses. Automatic sentiment analysis was deployed to assess the affective displays of customers and employees in every individual text message as a service encounter unfolded. Our findings confirm that in addition to customers’ overall (mean) affective display, peak (i.e., highest positive or least negative), and end (final) affective displays explain customer satisfaction. Further, as customer displays may not fully capture their satisfaction process and employees understand the service quality they deliver, we propose and confirm that employee displayed affect explains further variance in customer satisfaction. We also find that the predictive power of affective displays is more pronounced in service failure than non-failure encounters. Together, these findings show that automatic monitoring beyond customer overall affect (i.e., adding customer peak and end, and employee affective displays) can expedite the evaluation of customer satisfaction. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2015",
+    "title": "The Role of Customer Relationship Vulnerability in Service Recovery",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705231195008",
+    "abstract": "The effectiveness of service recovery initiatives has primarily been explained by exchange theories implicitly assuming that the customer desires beneficial relationships. The present research extends studies in this tradition by emphasizing the crucial role of the customer’s vulnerability. Drawing on crisis theory, we argue that the effectiveness of service recovery initiatives is contingent on customer relationship vulnerability (CRV), which is defined as a customer predisposition to psychological harm in relationships with service firms. The findings show that a full-service recovery is not always possible among vulnerable customers. We discuss the implications for theory and service management practice. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2016",
+    "title": "The Effect of Delivery Time on Repurchase Behavior in Quick Commerce",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241236961",
+    "abstract": "“Quick commerce” refers to meeting consumers’ instant needs by delivering products ordered online within minutes. Although speed is thus inherently important, little is known about how deviations from communicated delivery times (whether late or early) might affect repurchase behavior. The authors study the effects of delivery time deviations on repurchase behavior using a large, customer-level, transaction data set from a Western European food delivery service and a controlled online experiment. The results show that late (early) deliveries increase (decrease) interpurchase times; these effects diminish with larger deviations. The results also show that late deliveries have a stronger effect on repurchase behavior than early deliveries of the same magnitude. The controlled online experiment establishes customer satisfaction as the underlying psychological mechanism that mediates the effect of delivery time deviations on repurchase behavior. These findings advance understanding of delivery time deviations and repurchase behavior by complementing prior research on disconfirmed waiting times and quick commerce. Practitioners can use the results to optimize their delivery algorithms, operations, and service recovery efforts. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_2017",
+    "title": "Countering Virtual Brand Sabotage: The Power of Informative Responses",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241254176",
+    "abstract": "Many disgruntled consumers who experience service failures turn to brand sabotage, by posting vindictive posts on social media platforms. Such aggressive revenge behavior has the goal of influencing others and causing harm to a firm. Vindictive posts require a response from the firm, to limit their potential negative influence on other consumers who read the posts. Three large-scale field studies and five lab experiments, including an incentive-compatible study, demonstrate that firm responses to such sabotage should focus on information (rather than empathy) because informative responses help reduce readers’ risk perceptions, prompting them to exhibit more positive behaviors toward the firm. Service guarantees can mitigate the impact of these responses. Importantly, the type of firm response only matters if the post is vindictive. For non-vindictive posts both informative and empathic firm responses working equally well. Our findings help firms to detect vindictive posts, suggest appropriate response strategies, and reveal how the risk perceptions evoked by vindictive posts can be mitigated. © The Author(s) 2024"
+  },
+  {
+    "article_id": "CS_2018",
+    "title": "Profiling as a Service Failure",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241300668",
+    "abstract": "Profiling occurs when negative stereotype assumptions based on personal characteristics (e.g., gender, age, race, or sexual orientation, among others) are applied to individuals, resulting in discrimination. Using a mixed-methods approach, this work explores how customers experience or anticipate profiling in a service setting, which constitutes a special type of service failure. Using a critical incident technique, study 1 establishes that customers feel stereotyped in retail service settings and that these profiling experiences constitute service failures that generate various emotions and coping behaviors, which are exacerbated when customers anticipate profiling will occur. Study 2 uses in-depth interviews to (1) advance a process framework for profiling as a service failure (PaSF), including pre-and post-coping behaviors as well as related emotions and proposed recovery solutions, (2) further develop and probe a typology of PaSF, and (3) develop characterizations of customer approach styles and responses to profiling. Finally, study 3 empirically tests our framework and appropriate service recovery strategies. Utilizing a stereotype threat theory lens, we broaden our understanding of and contribute to the literature on service failure and recovery, profiling, discrimination, and customer emotions, attributions, and vulnerability. Along with theoretical and managerial implications, we provide an extensive future research agenda to serve as a catalyst for further exploration. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2019",
+    "title": "A Rejection-Based Model of Partial Service Termination and its Impact on Unprofitable Customers",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241304191",
+    "abstract": "This research examines partial service termination (PST) as a strategy that allows companies to deliberately cease providing unprofitable customers with certain services while maintaining relationships with those customers. Through a preliminary qualitative study, a quasi-experiment, and two scenario-based experiments, this research contributes to the intentional service failures literature by demonstrating negative customer reactions to PST. First, the results showed that PST increases the probability of customers terminating their other contracts by 2.14 times while increasing their propensity to spread negative word-of-mouth (nWOM). Second, using belongingness theory, we identify the key underlying psychological process behind PST: customers interpret PST as a threat to their need to belong in relationships with companies, which is reflected in their feelings of rejection and anger. Third, relationship breadth and three recovery tactics (i.e., monetary compensation, explanations, and support in finding alternatives) were identified as contingent variables that buffer the negative consequences of PST. Customers with high relationship breadth are less likely to terminate other contracts and bad-mouth following PST. This is likely because high relationship breadth reduces perceived rejection following PST. Furthermore, a combination of monetary compensation, explanations, and support in finding alternatives represents the most efficient recovery approach to reduce anger. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2020",
+    "title": "Enhancing Service Recovery Performance Through Ethical Leadership: A Multilevel Curvilinear Investigation",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241304221",
+    "abstract": "Understanding how to enhance service recovery performance is crucial for service-oriented organizations, as it contributes to resolving service failures and addressing customer complaints. This study aims to develop a multilevel curvilinear model that explores the relationship between ethical leadership and service recovery performance, as well as the mediating and moderating effects underlying this relationship. Results from both Study 1 (dyadic and two-waved data from hotels) and Study 2 (triadic data from IT service organizations) revealed that ethical leadership had a curvilinear (inverted U-shaped) effect on service recovery performance. There was a curvilinear mediating effect of ethical self-efficacy between ethical leadership and service recovery performance, such that ethical leadership enhanced ethical self-efficacy, and an intermediate degree of ethical self-efficacy predicted the highest degree of service recovery performance (Studies 1 and 2). Results from Study 1 showed that internal knowledge transfer moderated the curvilinear relationship between ethical leadership and service recovery performance. Both internal knowledge transfer and task interdependence moderate the curvilinear relationship between ethical self-efficacy and service recovery performance (Study 1). Results from Study 2 showed that both internal knowledge transfer and task interdependence moderate the curvilinear relationship between ethical leadership and service recovery performance. © The Author(s) 2025. This article is distributed under the terms of the Creative Commons Attribution-NonCommercial 4.0 License (https://creativecommons.org/licenses/by-nc/4.0/) which permits non-commercial use, reproduction and distribution of the work without further permission provided the original work is attributed as specified on the SAGE and Open Access pages (https://us.sagepub.com/en-us/nam/open-access-at-sage)."
+  },
+  {
+    "article_id": "CS_2021",
+    "title": "Exposure to Structured Service Environments as a Proactive Strategy for Handling Service Failures",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241307676",
+    "abstract": "This research investigates how structured service environments can mitigate negative customer responses to service failures. We propose a proactive strategy that aims to preemptively manage customer expectations. Drawing on the meaning maintenance model, we theorize and find that heightened perceptions of predictability inherent in structured environments reduce customers’ need to make sense of discrepancies between actual and expected outcomes. In turn, customers are less likely to blame the firm and more likely to repurchase from it. Our research includes a field experiment and three online and lab experiments across various contexts. We identify key boundary conditions: structured environments are less effective when failures appear predictable due to recurring causes (stability attribution) or when the firm could have prevented them (controllability attribution). Furthermore, if the firm is merely associated with the failure but not directly involved, the mitigating effect of structured environments does also not occur. These insights offer managers a novel proactive strategy to buffer customer responses to service failures. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2022",
+    "title": "Using Traditional Text Analysis and Large Language Models in Service Failure and Recovery",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241307678",
+    "abstract": "Service failure and recovery (SFR) typically involves one or more people (or machines) talking or writing to each other in a goal-directed conversation. While SFR represents a prime context to understand how language reflects and shapes the service experience, this subfield has only begun to apply text analysis methods and language theories to this context. This tutorial offers a methodological guide for traditional text analysis methods and large language models and suggests some future research paths in SFR. We also provide user-friendly workflow repositories, in Python and KNIME Analytics, that researchers with (and without) coding experience can use. In doing so, we hope to encourage the next wave of text analysis in SFR research. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2023",
+    "title": "Spinning the Wheel: The Effectiveness of Gamification in Service Recovery",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705241307681",
+    "abstract": "This research offers insights into the efficacy of gamification in a failure-recovery context, that is, providing recovery through a gamified experience. Using one field study and three online experiments across different contexts (i.e., retail, restaurant, gym, and hotel), we show that a gamified recovery (i.e., compensation offered through a spin-the-wheel game) can have a positive effect on recovery satisfaction. This effect is mediated by the perceived enjoyment of the game and is moderated by customer choice, failure severity, compensation level, and time pressure. Specifically, we find that gamification has a positive recovery effect when customers are offered a choice, when the failure is mild, when customers receive full compensation or overcompensation (i.e., when they experience a sense of winning), and when they do not face time pressure. However, gamification can backfire and have a negative effect when a failure is severe, when customers receive only partial compensation (i.e., when they experience a sense of loss), and when they face time pressure. Finally, a single-paper meta-analysis provides aggregated evidence of these effects. For managers, our findings provide initial evidence of the usefulness of this recovery strategy and explain how it should be implemented. © The Author(s) 2025. This article is distributed under the terms of the Creative Commons Attribution 4.0 License (https://creativecommons.org/licenses/by/4.0/) which permits any use, reproduction and distribution of the work without further permission provided the original work is attributed as specified on the SAGE and Open Access pages (https://us.sagepub.com/en-us/nam/open-access-at-sage)."
+  },
+  {
+    "article_id": "CS_2024",
+    "title": "Why Platforms Become Scapegoats: Extending Attribution Theory in Multi-Actor Service Contexts",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705251324611",
+    "abstract": "Multi-actor exchange relationships involving platforms and individual service providers have become increasingly common in the online service sector. Drawing on attribution theory, this study identifies a phenomenon called the “locus-responsibility shift,” a form of scapegoating in which consumers transfer responsibility for service failures to a platform, even after recognizing the individual provider as the source of the problem. By uncovering this phenomenon, we challenge the traditional understanding of attribution and highlight the unique challenges platforms face in dealing with service failures. A text analysis of 24,183 consumer complaints and 4 experimental studies reveals that consumers on high (vs. low) intermediation platforms, those who experience severe (vs. mild) service failures, and those dealing with encounter (vs. core) service issues are more likely to attribute responsibility to the platform. These findings have important managerial implications for platform managers and offer guidance for developing effective platform strategies and service recovery practices to enhance customer satisfaction and safeguard platform’s reputation. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2025",
+    "title": "Customers’ Attitudes Toward Frontline Employees with Intellectual Disabilities: Scale Development and Validation",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705251391145",
+    "abstract": "Employees with intellectual disabilities remain markedly underrepresented in frontline service roles, despite the social and economic benefits of inclusion. A key barrier is firms’ uncertainty about consumer reactions. To address this gap, we develop and validate the CAFID scale (Consumer Attitudes toward Frontline Employees with Intellectual Disabilities), designed specifically for the service sector—unlike existing, general disability attitude measures. Across multiple studies, we demonstrate the scale’s reliability, dimensionality, and validity. Results show that more favorable consumer attitudes not only support inclusive hiring but also buffer negative responses to service failures, improving repatronage and word-of-mouth intentions. With this practical tool, firms can assess customers’ readiness and support for inclusive hiring practices; policy makers can develop data-driven incentives to promote workplace equity; and researchers can explore dynamic consumer–employee interactions involving people with intellectual disabilities. Ultimately, the CAFID scale contributes to building more equitable, socially responsible service environments. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2026",
+    "title": "Witnessing Consumer Incivility Toward Service Employees: Pity, Support, and Tipping Behavior",
+    "journal": "Journal of Service Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10946705251406567",
+    "abstract": "While organizational scholars have established a strong base of research on workplace incivility, one understudied aspect is how witnessing incivility directed toward employees affects the witness’ actions. This research seeks to close this gap by examining how consumer incivility targeting a service employee impacts emotions, intentions, and financial compensation provided by the witness. Drawing from social exchange theory, we propose witnessing incivility leads to feelings of pity, followed by increased emotional support and, ultimately, an increased tip for the target employee. We find support for our proposed relationships across four studies. Additionally, we demonstrate that this process is robust to influences from bystander effects but is conditional on service quality and group membership of the uncivil consumer in relation to the witnessing consumer. The findings provide theoretical advancement to the growing literature on behavioral responses of witnesses of incivility. © The Author(s) 2026"
+  },
+  {
+    "article_id": "CS_2027",
+    "title": "Let's Laugh About It! Using Humor to Address Complainers’ Online Incivility",
+    "journal": "Journal of Interactive Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10949968221129268",
+    "abstract": "This research investigates whether companies’ use of humor is an effective strategy to address complainers’ incivility on social media. Using three main experiments, the authors examine observers’ evaluation of companies’ humorous responses on social media in relation to the degree of incivility of the complaints. The authors find, first, that observers develop greater purchase intentions toward companies that use humor to respond to uncivil complaints. Drawing on benign violation theory, they explain that observers are less committed to uncivil complainers, which makes the use of humor more benign and thus more amusing. Second, they compare the effectiveness of humor with an accommodative recovery (e.g., apologies). When the complaint is civil, an accommodative recovery is a more effective strategy than affiliative humor. However, when the complaint is uncivil, affiliative humor is more interesting than an accommodative recovery because of greater engagement with the post (i.e., likes and shares) and similar purchase intentions. Theoretical and managerial implications of these results are then discussed. © American Marketing Association 2022."
+  },
+  {
+    "article_id": "CS_2028",
+    "title": "Schadenfreude and Sympathy: Observer Reactions to Malicious Joy During Social Media Service Recovery",
+    "journal": "Journal of Interactive Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10949968241246252",
+    "abstract": "Complex social dynamics occur when complaints are voiced on firms’ social media channels. In combination, a complainer criticizes a firm, which may be responded to uncivilly by different online personas (i.e., internet trolls or loyal customers), with virtually present observers watching how a firm responds. This research examines customer-to-customer (C2C) uncivil commentary from troll and loyal customer personas perceived by observers to elicit schadenfreude (malicious joy due to another's adverse event). Three studies show how C2C schadenfreude targeting a complainer elicits sympathy from observers, which influences observers’ future purchase intent. Study 1's online content analysis using field data shows the frequency of C2C schadenfreude during social media service recovery. Study 2 uncovers moderated mediation of C2C schadenfreude–sympathy–purchase intent, with loyal customer persona comments producing more observer sympathy than troll persona comments. Study 3 finds the harmful effect of observer sympathy on purchase intent varies based on how or if a firm addresses the C2C dialogue. This research uses a novel cognition (perceived schadenfreude from another's comment), examines a lesser-studied emotion in marketing (sympathy), and is the first marketing-related work to incorporate backlash theory from organizational management to exemplify how loyal customer comments produce a backlash effect in observers. © American Marketing Association 2024."
+  },
+  {
+    "article_id": "CS_2029",
+    "title": "Corporate Social Responsibility: The Effect Of Green Practices In A Service Recovery",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348013515915",
+    "abstract": "This research builds on the halo effect of corporate social responsibility (CSR) literature in marketing to provide insight into the positive effect of CSR in a service encounter. Using a company’s green practices as CSR, this research examines how customers’ perceptions of CSR might spill over into their evaluations of the company and behavioral intentions in a service recovery context. The results, from 418 participants of the scenario-based role-playing experiment, indicate that CSR and service recovery have a significant effect on customer satisfaction, trust, word-of-mouth recommendations, and repeat patronage intentions in a casual-dining restaurant setting. Also, an interaction effect suggests that the CSR effect is more pronounced in a positive service recovery compared to a negative service recovery. The findings of this research provide researchers and practitioners with a better understanding of CSR and the positive influence it has on customer responses in a service encounter. © 2013, © 2013 International Council on Hotel, Restaurant and Institutional Education."
+  },
+  {
+    "article_id": "CS_2030",
+    "title": "A “Triple A” Typology of Responding to Negative Consumer-Generated Online Reviews",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348014538052",
+    "abstract": "Increasingly, consumers are posting online reviews about hotels, restaurants, and other tourism and hospitality providers. While some managers are responding to these reviews, little is known about how to respond and how to do so effectively. Drawing on the service recovery, justice, and electronic word-of-mouth literatures, we developed a typology of management responses to negative online reviews of hotel accommodation. An initial version of the typology was verified through interviews with eight industry experts. The final “Triple A” typology comprised 19 specific forms of managerial responses subsumed within the three higher-level categories of acknowledgements, accounts, and actions. The typology was tested on a sample of 150 conversations drawn from the website, TripAdvisor. Most responses included an acknowledgement of the dissatisfying event, an account (explanation) for its occurrence, and a reference to action taken. Responses differed between top- and bottom-ranked hotels. Propositions for extending this area of research are provided. © 2014, © The Author(s) 2014."
+  },
+  {
+    "article_id": "CS_2031",
+    "title": "How We Complain: The Effect of Personality on Consumer Complaint Channels",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348014550921",
+    "abstract": "The purpose of this study was to investigate the effect of personality types on consumer complaint channels. Respondents completed a survey that depicted four service failure scenarios, each with 11 possible courses of action. The three personality factors measured against the complaint behavior were locus of control, the California Psychological Inventory measure of sociability and Cattell’s 16 personality factors of relaxed versus tense. Factor analysis revealed three complaint channel dimensions: active, passive, and delayed. Sociability produced more active and less passive complaint behavior. Locus of control interacted with relaxed versus tense on the use of passive and delayed complaints. The findings have implications for recognizing and resolving customer complaints for different personality types. © 2014, © 2014 International Council on Hotel, Restaurant and Institutional Education."
+  },
+  {
+    "article_id": "CS_2032",
+    "title": "Developing a Consumer Complaining and Recovery Effort Scale",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348015597033",
+    "abstract": "The main purpose of this study is to identify the underlying dimensions of consumer complaining and recovery effort and to develop a multidimensional scale to measure this construct. Literature suggests that the consumer complaining and recovery effort is a four-dimensional construct consisting of procedural, cognitive, time-related, and affective components. Using data collected from hotel guests, a measurement scale is developed to assess this four-dimensional construct. First, a factor analysis is conducted on one set of data. Afterward, the underlying dimensions identified by the exploratory factor analysis are confirmed by conducting a confirmatory factor analysis on a separate set of data. Findings suggest that the scale developed in this study presents substantial convergent validity, discriminant validity, predictive validity, and reliability. © 2015, © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_2033",
+    "title": "Other Customer Service Failures: Emotions, Impacts, and Attributions",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348016671394",
+    "abstract": "While customer-to-customer interactions are frequent in hospitality and tourism settings, very little research investigates the effects of other customers and other customer-generated service failures. Using the critical incident technique, this research builds on theory and provides important managerial implications in the areas of other customers, attributions, and service failure. Results find that customers experience emotions, including anger, frustration, and sympathy. In addition, even though customers attribute that the other customers are responsible for the failure, they still formed negative perceptions and behaviors toward the firm. Third, results find that management often did nothing to recover from the failure, which further exacerbated negative perceptions and behaviors. © The Author(s) 2016."
+  },
+  {
+    "article_id": "CS_2034",
+    "title": "It’s Raining Complaints! How Weather Factors Drive Consumer Comments and Word-of-Mouth",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348019835600",
+    "abstract": "Limited attention has been given to the drivers of customer behavior that originate from less direct factors, such as weather. Weather is known to significantly alter consumers’ moods and consequently their behavior. Building on the theoretical alignment between weather, mood, and consumer behavior, this research examined how specific weather factors drive the valence of consumer comments. Furthermore, we explore the relationship between perceived weather, consumers’ moods and affective experience, and word-of-mouth. By analyzing secondary data from 32 restaurants belonging to a national fast-casual chain, this research demonstrates that weather factors such as rain, temperature, and barometric pressure drive consumers’ complaint behavior in restaurants. Additionally, the findings of a survey study and an experimental study indicate that mood and affective experience mediate the relationship between perceived weather and word-of-mouth. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2035",
+    "title": "The Influence of Childhood Engagement in the Context of Hospitality Service Failure Evaluation",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348019896086",
+    "abstract": "Marketing research shows that customer relationship management can reduce consequences of service failures. The question is how long a former customer engagement can still have an effect on a current critical incident. In extreme cases, this means whether and how interactions between company and customer during childhood can still influence the effects of a service failure. This article proposes that engagement with a company during childhood (childhood engagement) can affect later perceptions of the relationship. An experiment with 152 participants showed that perceived controllability and childhood engagement moderated the effect of disappointment on repurchase intention. Customers with childhood engagement evaluate a service failure more favorably than customers without childhood experiences. Furthermore, customers are likely to react negatively if the responsibility for the failure is attributed to the company. Accordingly, from a managerial perspective, childhood engagement and credible communication can prevent the ending of a customer relationship after a failure. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2036",
+    "title": "The Effects of Intragroup Guanxi Interaction on Customers’ Intentions to Complain",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1096348020987279",
+    "abstract": "This study examined the impacts of intragroup guanxi interaction on customers’ complaint behavior following service failure on a group tour. Based on the guanxi literature and social support theory, two dimensions of intragroup guanxi interaction were identified, and their effects on customers’ intentions to complain were examined. The moderating effects of group size and relational distance were also assessed. Three experimental studies were conducted to test the proposed hypotheses. Findings revealed that instrumental guanxi interaction and emotional guanxi interaction among tour group members both positively influenced travelers’ intentions to complain, and the impact of emotional guanxi interaction was greater than that of instrumental guanxi interaction. Moreover, the effects of intragroup guanxi interaction on group customers’ intentions to complain were stronger for larger groups and for groups with closer relational distance. This study contributes to the literature on group service failure and customers’ complaint behavior from an Eastern cultural perspective. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_2037",
+    "title": "How Sincere is an Apology? Recovery Satisfaction in A Robot Service Failure Context",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10963480211011533",
+    "abstract": "This study examined the effects of service recovery entities (i.e., robot-generated text, robot-generated voice, and human service employee) on recovery satisfaction through the mediation of perceived sincerity. This study also tested the moderating role of the need for human interaction. The results of this study suggest that people perceive service recovery provided by a human to be more sincere than that provided by a service robot, thereby leading to higher levels of satisfaction. Moreover, this effect is stronger for those with a stronger need for human interaction. However, differences in perceived sincerity and recovery satisfaction were not identified between the use of service robots generating either text or a voice to express an apology. This study contributes to the theoretical discussion on ways to enhance customer experiences in robot service environments and provides insights that can guide service management in the hospitality and tourism industry. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_2038",
+    "title": "Electronic Consumer-to-Consumer Interaction (eCCI) Post a Service Failure: The Psychological Power of Need for Approval",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10963480221141649",
+    "abstract": "The prevalence of eCCI (electronic customer-to-customer interaction) is rapidly growing as customers increasingly employ online tools to reach fellow customers and voice their opinions, especially after service failures. Adopting a quasi-experimental design, this research examines the impact of eCCI on restaurant customers, considering their need for approval. A total of 201 responses were obtained for the main experiment (Study 1). Results indicated that people with a lower need for approval reported greater social media engagement, customer-customer interaction justice, and empathy quality in the condition of positive eCCI. People with a higher need for approval exhibited similar responses on all dependent variables, regardless of the eCCI condition. The results remained stable across different restaurants’ response strategies (Study 2). This paper examines the novel eCCI phenomenon and adds a new twist to the literature on CCI and customer reviews. It further offers valuable guidelines for managerial involvement in digital customer service encounters. © The Author(s) 2022."
+  },
+  {
+    "article_id": "CS_2039",
+    "title": "Consumers’ Ethical Perceptions of Autonomous Service Robots in Hotels",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10963480231194693",
+    "abstract": "This study empirically and comprehensively explores consumers’ ethical perceptions of autonomous service robots (ASRs) in hotels. Under the triangulation approach, this study has identified eight themes of consumer perceived ethical issues (privacy, security, safety, transparency, fairness, socialization, autonomy, and responsibility). Each theme can be explained from two dimensions: ethical issues arise during the interaction (i.e., ubiquitous surveillance, excessive data, unidentified risks, service disclosure, inaccessibility, dehumanization, selection of services, and service recovery), and ethical issues can be raised by the characteristics of ASRs (i.e., privacy infringement, malicious use, malfunctions, untrustworthiness, biased features, job replacement, inflexibility, and self-identified solutions). This study is the first to propose ethical issues of ASRs from two dimensions with different intelligence levels, and to highlight ethical issues during hotel service interactions. The findings contribute to ethics studies of service robots from consumers’ perspectives and offer managerial insights to reduce ethical concerns and enhance ASRs usage in hotels. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2040",
+    "title": "Consumers’ Brand Experiences With Robotic Service Failures: Modeling Appraisal, Attribution, and Psychological Reactance",
+    "journal": "Journal of Hospitality and Tourism Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/10963480241231469",
+    "abstract": "Due to the stretched capacities of human staff, consumers are increasingly placed in situations where they are “required” to use technology amidst their travel experiences, despite potential service failures in robotic technologies. Yet, research into how robotic service failures could potentially spill over to consumers’ brand experiences, robot experiences, and adoption intention remains unexplored. Drawing on appraisal, attribution, and psychological reactance theories, an interconnected research model of service failure, attribution, and (in)voluntary robot adoption was tested via two experiments. A mixed-design quasi-experiment (Study 1) found a significant interaction effect of service failure and attribution on brand experience in the hotel concierge context. Study 2 provided further evidence for the causal effects in Study 1 by employing a between-subject quasi-experiment in the hotel front desk context with additional measures. Collectively, this research contributes to the literature by highlighting how temporal, situational, and contextual factors in HRI may impact evaluations of brand and robot experiences. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_2041",
+    "title": "Customer satisfaction with co-created hospitality services: Regulatory focus orientation and positive disconfirmation",
+    "journal": "Journal of Vacation Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1177/13567667221095591",
+    "abstract": "New enhancements that foster more customer-focused services, such as the co-creation of hotel service offerings with hotel guests, have changed the conventional thinking in the hospitality industry. In this regard, the current study contributes to the understanding of the effect of co-creation on customer satisfaction in the hospitality industry, focusing on customers’ idiosyncratic characteristics. Particularly, the study investigates the moderating role of customers’ regulatory focus orientation (promotion vs. prevention) and the mediating role of customers’ positive disconfirmation on the relationship between value co-creation (VCC) level of hotel services and customer satisfaction. The model is tested using an experimental design with 328 responses. The results show that a high level of VCC in hotel services leads promotion-focused (prevention-focused) customers to experience lower (higher) levels of positive disconfirmation compared to a low level of VCC, as promotion-focused (prevention-focused) customers have higher (lower) performance expectations from a high VCC service offering due to the regulatory fit (non-fit) they have with the service design. The findings also indicate that service failure generates less dissatisfaction in a high VCC level in hotel services than a low VCC level since customers take more responsibility for the unfavorable outcome when they participate more in the VCC process. These results indicate that when hotels design co-created services, they need to generate coherence between customers’ regulatory focus orientation and the service's VCC level. © The Author(s) 2022."
+  },
+  {
+    "article_id": "CS_2042",
+    "title": "Return on Investment of Complaint Management: A Review and Research Agenda",
+    "journal": "Australasian Marketing Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1177/14413582221104854",
+    "abstract": "This article presents a systematic literature review which synthesises current knowledge to advance a more sophisticated conceptual framework to measure the return on investment (ROI) in complaints management. Literature is examined from searches of ProQuest, EBSCO, Emerald Plus and Google Scholar to create a road map of extant knowledge published from 1987 to 2021 in marketing and consumer related fields. Five themes associated with ROI measurement research are identified across four time periods: Cost reduction, Organisational learning, Reputational effect, Current customer focus and Social benefits. Few studies develop a comprehensive conceptual framework for the calculation of the ROI. The current literature is then extended, with the development of a framework to assist complaint management researchers and practitioners to evaluate Customer Complaint Management practices. The framework also informs the necessary data collection. Finally, new research directions are outlined to guide scholarly enquiry. © 2022 Australian and New Zealand Marketing Academy."
+  },
+  {
+    "article_id": "CS_2043",
+    "title": "Why do Consumers Forgive Online Travel Agencies? A Multi-study Approach",
+    "journal": "Australasian Marketing Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1177/14413582231194071",
+    "abstract": "This paper investigates how consumers respond to online recovery strategies in response to a service failure in the online travel agencies (OTA) context. The study also examines the role of justice and forgiveness in the online service recovery process. Firstly, a qualitative study was employed to explore the predominant strategies exercised by the service providers. Further, we collect the data from a survey (n = 335) using an online questionnaire about service failure in the OTA context to examine the proposed relationship based on Stimulus–Organism–Response (S-O-R) framework and Justice theory. The data was analysed using CB-SEM and fsQCA. Results show that response speed, explanation, courtesy and problem-solving are crucial online recovery strategies. Results also highlighted that consumers’ perceived justice and forgiveness play a crucial role in the online recovery process. The fsQCA results showed that five solutions (i.e. various combinations of causal antecedents) could facilitate the formation of repatronage intention. Our study enriches service failure literature. Our findings may help online travel agents design suitable strategies to reduce the negative effect of service failure on their customers. © 2023 Australian and New Zealand Marketing Academy."
+  },
+  {
+    "article_id": "CS_2044",
+    "title": "Compensating Service Failures: The Moderating Role of Customers’ Political Ideology",
+    "journal": "Australasian Marketing Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1177/14413582241252915",
+    "abstract": "When service failure occurs, the service provide often dispenses compensation to manage customer relations. However, little research has studied who accepts larger or smaller compensation amounts. Presently, we use political ideology as a basis to segment customers. Drawing on prior work on System Justification Theory, we hypothesize that politically conservative customers accept a lower amount of compensation than liberals as conservative customers more likely believe that whatever amount the service provider offers is just and fair. Importantly, we propose that the effects are specific to economic conservatives, not social conservatives. The findings are consistent with our predictions, with (economic) conservatives’ customers’ system justification beliefs serving as a mechanism. Theoretically, our work is the first to examine who accepts different levels of compensation while also broadly suggesting that political ideology is an important customer segmentation basis in the tourism and hospitality sectors. Our work also contributes to the literature on political ideology by being one of the first to empirically tease apart the distinct effects of economic and social conservatism. © 2024 Australian and New Zealand Marketing Academy."
+  },
+  {
+    "article_id": "CS_2045",
+    "title": "Complaint management in hospitality organizations: The role of empowerment and other service recovery attributes impacting loyalty and satisfaction",
+    "journal": "Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1467358415613409",
+    "abstract": "The purpose of this study was to analyze the relationship among employee empowerment and other complaint management procedures concerning guest satisfaction, intention to return, and intention to recommend the firm to others. The results indicated the importance of empowering frontline employees to properly accept, process, and react to complaints for an efficient complaint management strategy. In addition, the results showed that the three critical attributes for overall firm satisfaction, customer loyalty, and intention to recommend the firm to others included welcoming and understanding guest complaints, providing fair compensation, and promptness of complaint handling process. This study will enable hospitality and other service- oriented organizations to identify aspects of their operations that require more investment in order to ensure service improvements that would ultimately lead to better performance. © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_2046",
+    "title": "Role of the perceived justice of service recovery: A comparison of first-time and repeat visitors",
+    "journal": "Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1467358417704885",
+    "abstract": "The objectives of this study are to determine the effects of perceived justice on customers’ emotional response, which influences customer behavior, and to identify any distinction between first-time and repeat visitors’ perspectives of service recovery. After 550 self-administered questionnaires were distributed, 477 usable questionnaires were obtained. The relationships among seven constructs (distributive justice, procedural justice, interactional justice, positive emotion, negative emotion, overall satisfaction, and word-of-mouth intention) were measured using structural equation modeling, and the moderating role of first-time and repeat visitors in the relationships among constructs was determined. Although there are no significant relationships between procedural justice or interactional justice and negative emotion, other paths were significant. In addition, the moderating function of first-time and repeat visitors had significant impact on the relationships of positive emotion and negative emotion with overall satisfaction. © The Author(s) 2017."
+  },
+  {
+    "article_id": "CS_2047",
+    "title": "The impact of service recovery output/process on customer satisfaction and loyalty: The case of the airline industry",
+    "journal": "Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1467358417743080",
+    "abstract": "The purpose of this research is to identify the impact of airline passengers’ perception of service recovery output/process on their satisfaction and loyalty. We want to identify the direct and indirect effects of service recovery on airline passenger loyalty by distinguishing the output and the process of the service recovery. A questionnaire was distributed to airline passengers who had a problem during their last airline flight. As we had several latent variables, we used partial least squares, a variance-based structural equation modeling method. As findings, we observed that in general, clients were not satisfied with the way that the service has been recovered. The most frequent reason for complaining was a problem due to flight delay, followed by a problem with the baggage, overbooking, and flight cancellation. Nevertheless, the findings reveal the positive impact of service recovery’s output/process qualities on customer satisfaction and customer loyalty. The output quality of service recovery is the most relevant. © The Author(s) 2017."
+  },
+  {
+    "article_id": "CS_2048",
+    "title": "Gender roles and the commodification of beauty and physical attractiveness in restaurants: Perspectives of female servers",
+    "journal": "Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/14673584211000086",
+    "abstract": "This study examines the perspectives of female servers on their own gender roles and the commodification of their beauty and physical attractiveness during service encounters in restaurants. Previous studies on this subject have been solely focused on the recipient end, that is, consumers. This study gathers insights from the experiences and opinions of servers themselves. The data for this study were collected using semi-structured interviews with twenty female servers working as food and beverage attendants in various restaurants in Macao, China. The findings show that the ways female servers construct their own perceived gender roles are highly influenced by a continuous process of reinforcing stereotypes associated with the traditional gender roles of women. This study also details the measures and practices restaurants in Macao employ to commodify beauty and physical attractiveness of female servers. Of particular note is the finding that, despite recognizing how they were being stereotyped, servers showed no objection to such practices. Nonetheless, the study discusses how such practices devalue contributions women make in the tourism and hospitality industry in general and the restaurant sector in particular whilst suggesting measures that help redress this issue. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_2049",
+    "title": "Influence of individual and social values on customer engagement in luxury thermal spa hotels: The mediating roles of perceived justice and brand experience",
+    "journal": "Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/14673584231188847",
+    "abstract": "This study aims to examine how values (i.e., individual and social values) influence customer engagement after managing a service failure in the thermal spa hotel context, and the mediating roles of perceived justice and brand experience. The data was collected from a survey of guests of luxury thermal spa hotels in Portugal, and the research model was assessed using partial least squares structural equation modeling. The results show that individual values affect perceived justice and brand experience, which in turn contribute to a higher level of customer engagement. Brand experience is a better mediator of the relationship between individual values and customer engagement than perceived justice. The novelty of this study is highlighted by the mediating effects of perceived justice and brand experience on the relationship between individual values and customer engagement. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2050",
+    "title": "Demystifying brand-disidentification in wellness tourism: A service-based value co-destruction perspective",
+    "journal": "Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/14673584251348818",
+    "abstract": "Embracing co-creation and addressing value co-destruction are essential components for creating a strong brand identity in the wellness tourism industry. The present research employs a cross-sectional research methodology (N = 286) to evaluate service-related stressors that promote affective fatigue and consumer brand disidentification in select wellness hotels in Northern India. The findings indicate that the stressors, namely, service behaviour redundancy and service failure are significant predictors of affective fatigue and brand disidentification. Furthermore, we discover that extraversion acts as a negative moderator between service failure and affective fatigue. The study has pertinent theoretical and practical implications. © The Author(s) 2025."
+  }
+]

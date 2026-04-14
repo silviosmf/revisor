@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1151",
+    "title": "Peer-to-Peer Electricity Energy Trading Using Monte Carlo Simulation",
+    "journal": "2021 International Conference on Power, Energy and Innovations, ICPEI 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICPEI52436.2021.9690683",
+    "abstract": "Currently, solar power generation has significantly increased in the electricity energy markets. The cost of Solar PV panels has continually declined. More consumers turn into prosumers. Many countries have energy trading policies and are developing energy trading infrastructure, especially electricity trading, which can be traded directly between two parties (peer-to-peer). Understanding the electricity market and trading behaviors is the key to make peer-to-peer electricity trading feasible. This paper presents a simulation framework for peer-to-peer electricity trading and price determination mechanism. The simulation has three main steps, including biding quantity and price, matching, and settlement. The Monte Carlo model was applied to determine trading quantity and price in the first step. The price matching and settlement in the second and third steps are based on the double auction method. The simulation yields daily trading quantity and equilibrium price. The proposed framework provides insight and understanding in peer-to-peer energy trading in various scenarios. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1152",
+    "title": "Expeditious Diagnosis of Breast Cancer from Magnetic Resonance Images Using Grey Wolf Optimization based Improved K-means Algorithm",
+    "journal": "2024 International Conference on Recent Innovation in Smart and Sustainable Technology, ICRISST 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICRISST59181.2024.10921962",
+    "abstract": "Considering early recognition can improve patient survival rates, it is one of the most crucial concerns that ought to be addressed globally. Promptly identifying any malignant cell or cells has the potential to prevent millions of deaths. Early detection of breast cancer has been achieved by the use of MRIs and mammograms; if the disease is found early, the cost of therapy can be significantly lowered. Methods for segmentation are necessary for the identification of breast cancers. In analyzing images, segmentation - which comprises identification, extraction of features, categorization, and treatment - plays a crucial role. In order to plan treatments, segmentation assists doctors in measuring the amount of tissue in the breast. Utilizing image classification techniques, one may determine the degree of cancer by analyzing the form of the malignant cells. The application of unsupervised K-Means clustering is employed to distinguish the region of interest from the background. By utilizing K-centroids, the data is segmented into K-clusters. To enhance segmentation outcomes, the Grey Wolf Optimization (GWO) is integrated with K-means. GWO is a contemporary metaheuristic swarm intelligence technique known for its notable advantages over traditional methods. Notably, it excels in the absence of derivative information during the initial search and involves minimal parameters. As a result, GWO is widely utilized for optimizing various problems.Additionally, it is straightforward, user-friendly, adaptable, scalable, and has the unique ability to manage exploration and exploitation throughout the search in a way that promotes optimal convergence. When tested on the MIAS breast cancer dataset, the hybrid GWO based enhanced K-means (GWO_iK-means) algorithm scored 93% dice score value on segmenting the infected region. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1153",
+    "title": "Deep Learning Based Voice Assisted Traffic Sign Detection Using RCNN",
+    "journal": "2024 International Conference on Recent Innovation in Smart and Sustainable Technology, ICRISST 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICRISST59181.2024.10922024",
+    "abstract": "This paper unravels a groundbreaking system dedicated to detect road traffic symbols within the realm of Advanced Driver Assistance Systems (ADAS). Imagine it was like a technological waltz, where YOLOV5, RCNN, and R-MASK gracefully converge, not merely to improve performance, but to redefine how to perceive and interact with road signs. This combination of deep learning architectures enables real-time object detection, region proposal generation, and instance segmentation, respectively. Additionally, the system integrates voice-based indications for enhanced user interaction, providing real-time alerts and information about the detected signs. The implementation has undergone thorough testing on related datasets, demonstrating successful classification and voice assistance. This comprehensive system aims at enhancing measures for road safety effectively identifying and communicating information about traffic signs within the ADAS framework. The envisioned system performs object detection, sign detection, classification and provides satisfactory results. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1154",
+    "title": "Leveraging LLM-Powered Chatbot for Learning and Optimization in Databases and Information Systems Education",
+    "journal": "4th International Conference on Sentiment Analysis and Deep Learning, ICSADL 2025 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSADL65848.2025.10933129",
+    "abstract": "This research work proposes a LLM-powered chatbot aimed at supporting students and educators in databases and information systems in higher education. The chatbot leverages the capabilities of LLM to facilitate interactive learning, offering real-time assistance on various database-related topics, including query formulation, data modeling, and system design. The chatbot incorporates advanced pre-processing techniques such as text cleaning, tokenization, stop words removal, and stemming/lemmatization to prepare user inputs for effective analysis. Feature extraction methods such as Bag-of-Words (BOW), n-grams, and Improved Term Frequency-Inverse Document Frequency (ITF-IDF) convert textual data into numerical forms, enhancing model understanding and accuracy. Additionally, deep learning algorithms, Hybrid Convolutional Long Short-Term Memory (HCLSTM) networks, are integrated to enhance the chatbot's ability to generate contextually relevant responses. Optimization is achieved through the Improved Artificial Bee Colony (IABC) algorithm, which fine-tunes the chatbot's parameters for superior performance. Through an interactive user interface, the chatbot provides personalized learning experiences, helping students grasp complex concepts in databases and information systems. Initial testing indicates the system's effectiveness in delivering insightful, tailored responses, making it a valuable tool for enhancing the learning process in higher education. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1155",
+    "title": "Personalised Travel Ratings using AI and Enhancing User Experience Through Multi-Dimensional Analytics",
+    "journal": "4th International Conference on Sentiment Analysis and Deep Learning, ICSADL 2025 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSADL65848.2025.10933152",
+    "abstract": "The rapid advancements in Artificial Intelligence (AI) have enabled the development of intelligent systems for personalized travel recommendations. This study proposes a novel framework, Generative Adversarial Networks with Real-Time Analytics for Travel Experience (GAN-RATE), designed to enhance user satisfaction by integrating synthetic data generation and real-time feedback mechanisms. The GAN component addresses the challenge of sparsely rated travel attributes by generating high-quality synthetic data, while the Real- Time Analytics module evaluates user interactions and feedback to refine the recommendation process dynamically. The proposed framework considers multiple dimensions, including comfort, cleanliness, timeliness, entertainment amenities, and customer feedback, ensuring a holistic approach to travel rating prediction. Simulation analysis is conducted to compare the performance of GAN-RATE with existing algorithms. Metrics such as accuracy, mean absolute error (MAE), precision, recall, and computational efficiency are employed to evaluate system performance. Results indicate that GAN-RATE outperforms baseline models in prediction accuracy and adaptability to sparse datasets while demonstrating superior real-time response capabilities. The findings highlight the potential of GAN-RATE in improving user experience through personalized, data-driven recommendations, setting a new benchmark for AI-based travel recommendation systems. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1156",
+    "title": "Hybrid Machine Learning Methodologies for Using NLP Based Recognition of False Bulletin",
+    "journal": "Proceedings of 2024 International Conference on Science, Technology, Engineering and Management, ICSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSTEM61137.2024.10560712",
+    "abstract": "Recently, because of the upward thrust of social media, faux news has seemed at the Internet in massive numbers and largely for diverse business and political motives. With false beliefs, social media customers can without difficulty fall prey to this on-line faux news, which has already had a large impact on the offline community. A massive motive for growing the speed with which fake information can be detected is what makes online social networks trustworthy. Theories, approaches, and tactics for identifying fake news, creators, and online social network content are examined in this article. Accuracy of statistics is important at the Internet, in particular on social media, but Internet information hinders the capability to discover, evaluate, appropriately, or in any other case become aware of \"fake information\" on these sites. In this article we advise strategies for the detection of \"faux news\" on Facebook, one of the maximum famous on-line social networks. This approach makes use of a hard version of subject type to be expecting whether or not a Facebook submit is assessed as genuine or fake. The results may be stepped forward by using the numerous strategies proposed inside the article. The effects obtained indicate that the hassle of identifying fox records may be solved the use of user-friendly techniques. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1157",
+    "title": "Navigate the route in complex web spaces in Textual Nav with NLP-Powered precision",
+    "journal": "Proceedings of 2024 International Conference on Science, Technology, Engineering and Management, ICSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSTEM61137.2024.10561067",
+    "abstract": "This paper conducts a thorough investigation of the construction of chatbots using state-of-the-art web technologies. Fundamentally, this chatbot manifests as a conduit for enhanced communication, creating a more meaningful link between companies and their esteemed clientele. Our attempts to achieve this technological advance have resulted in the revolutionary addition of voice-responsive functionality to an already-existing chatbot architecture. This transforming feature welcomes users into an improved efficiency, when there is an exceptional level of streamlining in identifying the paths throughout websites. The results documented in this project's history provide witness to the outstanding work that the chatbot has produced. It is noteworthy that it achieves a remarkable level of precision when responding to consumer inquiries, highlighting its potential as a priceless tool for promoting smooth interactions. This technical marvel serves as a temporary concierge, responding quickly to consumer requests and maximizing the making use of time, a resource that is extremely valuable. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1158",
+    "title": "AI Enhanced Customer Service Chatbot",
+    "journal": "Proceedings of 2024 International Conference on Science, Technology, Engineering and Management, ICSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICSTEM61137.2024.10561155",
+    "abstract": "Chat bots for customer service that are powered by artificial intelligence (AI) are revolutionizing customer assistance and engagement. As intelligent virtual assistants, these chat bots use cutting-edge technology like machine learning and natural language processing (NLP) to communicate with clients, handle problems, and deliver information to various businesses. The advantages of these AI- driven chat bots—such as their round-the-clock accessibility, rapid response times, and scalability—are covered in this abstract. These features enable organizations to lower expenses, expedite customer assistance, and deliver dependable, individualized service . It also highlights how AI chat bots may enhance user experiences by being proactive and providing insights based on data. These chat bots help organizations effectively customize their goods and services by analyzing user interactions, extracting insightful data, and anticipating client wants. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1159",
+    "title": "MedPlantBot: AI Chatbot Architectural Design Framework for Responsible Use of Medicinal Plants",
+    "journal": "3rd IEEE International Conference on ICT in Business Industry and Government, ICTBIG 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG59752.2023.10456018",
+    "abstract": "Medicinal plants become a viable substitute goto treatment for common ailments when overburdened with hospitalization expenses and low accessibility to the government's health care system. As support and advancement with Catanduanes' alternative healing, this paper presented an approach to integrating Artificial Intelligence (AI) with Chatbot technology to address queries on treatment forms and usage of various medicinal plants. Employing documentary analysis and AI Chatbot framework design for its mixed-methods approach, the MedPlantBot prototype was built using conversational AI Chatbot architecture, Google's DialogFlow platform, and Kommunicate, a web chat interactive platform for bot and human interaction (Bot + Human hybrid). User acceptance, consisting of experts, traditional healers, and users of medicinal plants, for the prototype, averaged as 'Strongly Agreed' in terms of its usability. Significantly, this study can serve as an educational platform for the community to learn how to use medicinal plants available in their area to treat ailments. Ultimately, this study brings potential in providing local folks with a cost-effective alternative as an initial healing practice to improve their health and wellness, thereby contributing to the attainment of the third Sustainable Development Goal of the United Nations - Good Health and Well-being. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1160",
+    "title": "The Deciding Divide: A Comparative Study on Exploring the Parallels and Contrasts in Decision-Making between Humans and Artificial Intelligence",
+    "journal": "3rd IEEE International Conference on ICT in Business Industry and Government, ICTBIG 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG59752.2023.10456325",
+    "abstract": "In this study we delve into a analysis of decision making processes, between humans and artificial intelligence (AI) systems. Our main objective is to explore and understand the similarities and differences in how humans and AI approach decision making. Through our research we shed light on the abilities possessed by humans, such as reasoning, emotional intelligence and adaptability as well as the reliance of AI systems, on programmed algorithms and data analysis techniques. We thoroughly investigate factors that influence decision making, such as information processing and reasoning methods employed by both humans and AI. To evaluate decision making patterns and reasoning capabilities we conduct experiments involving user responses alongside an AI chatbots performance. Our findings strongly emphasize that while AI systems excel in data processing abilities and making decisions they still lag behind humans in terms of skills, emotional intelligence and adaptability. By comprehending the strengths and limitations of each approach our study underscores the significance of harnessing the combined potential of both expertise and AI systems to enhance decision making across domains. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1161",
+    "title": "A Critical Study of ICT Oriented Innovations based on Artificial Intelligence (AI) Applications towards BFSI Sector",
+    "journal": "3rd IEEE International Conference on ICT in Business Industry and Government, ICTBIG 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG59752.2023.10456332",
+    "abstract": "The Financial Service and Insurers (BFSI) sector refers to firms who provide a wide variety of accounting products and assistance across the world. This work adds to the technical innovation of services in processing administration, a topic that has yet to be settled in the available research. AI is an interdisciplinary field of study that has distinguished itself for the technical dynamism it brings to an organization products and processes. Artificial Intelligence (AI) is one of the developing technologies driving the continued expansion of ICT-enabled applications. This study investigates the application of the use of AI and machine learning (ML), respectively, in the field of banking, as well as the policy ramifications. It grants a nontechnical foundation to understand the growth and possibilities of AI/ML systems. Artificial intelligence, or the emulation of human brain in machines, is gaining popularity and will play an important role in the new financial century. The current study aims to examine consumers' perspectives on the widespread implementation of intelligent systems with artificial intelligence in Asian countries. The banking industry also prioritizes novel AI technology to boost customer service and overall growth by making greater revenue. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1162",
+    "title": "Exploring the Potential of NOMA in 6G Through Comparative Analysis with OMA Techniques",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323270",
+    "abstract": "As wireless communication shifts to 6G, it faces the problem of handling ultra-low delays, handling an increased number of users, and improving how much data is sent through the network. Compared to conventional OMA techniques, NOMA provides a different and much more efficient way of using the radio spectrum. The study investigates why NOMA is better than OMA when designing networks for 6G. By letting various users share waves and frequencies, NOMA makes the use of these resources more efficient and provides a better-quality service for multiple users. By means of analytical modelling and Monte Carlo simulation, the performance of both schemes is found, and it is observed that NOMA does better in throughput, fairness, and energy efficiency. Adding mechanisms for QoS and cancelling interference helps further enhance the way NOMA is set up. NOMA seems to give major improvements in network efficiency and dependability for scenarios with lots of users. The results of this research are crucial for planning new networks and moving from old OMA ideas to modern technologies that are ideal for a world where everyone is connected. The proposed system works better than other methods out there and managed to have a fairness index of 91.0% and a good balance in how resources are distributed at 89.7%. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1163",
+    "title": "Enhancing Tourist Experience Through Machine Learning Based Destination Prediction",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323594",
+    "abstract": "The conceived Context-Aware Multi-Modal Traveler Preference Network (CMTN) is an intelligent system of improving the personal travel suggestions with the blending of multiple data types and context variables. Conventional destination recommendation systems have been known to be based on the use of fixed user profiles and historical information and thus cannot respond to the dynamic changing needs of the traveler and changes in the situation. The CMTN method will overcome this shortcoming by using behavioral, semantic, and environmental data in a single model of prediction. It is based on a two-channel architecture in which textual data, including reviews and social media, are fed through a semantic encoder based on transformers, whereas geospatial and temporal also have temporal convolutional networks. Such features representations are combined via cross-attention mechanism which gives less emphasis on irrelevant factors. Moreover, a reinforcement learning layer corrects predictions based on the feedback of the iterative nature to provide adaptability and continuous enhancements in the suggested accuracy. Besides suggesting the appropriate destinations, the proposed system is also able to match destinations with the changing interests and real-life situations that travelers have e.g., weather, events, and time limitations. It is anticipated that through experimental validation, CMTN will surpass the traditional machine learning models mainly due to its overwhelming precision, relevance and flexibility, thus providing a comprehensive and capable solution to the intelligent travel experience personalization. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1164",
+    "title": "Adaptive Prompt Intelligence: Towards Self-Evolving Conversational Agents",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323663",
+    "abstract": "Human-machine communication is becoming more and more complicated, which requires conversational agents that will be able to constantly improve themselves and be aware of the situation. The conventional models of dialogue are based on fine-tuning that is not dynamic and they do not have any means of long-term adaptation in the process of real-life communication. This paper attempts to overcome this drawback by presenting a novel dynamic meta learning network named Cognitive Gradient Modulation Network (CGMN) - which enables the autonomous learning of conversational behavior. CGMN encompasses a Meta-Cognition Engine to trace linguistic consistency, a Gradient Modulation Layer to do localized parameter change-offs and an Evolutionary Memory Bank that maintains the history of context adaptation. The model uses user sentiment, coherence pattern, and task performance metrics through a Cognitive Feedback Reinforcement loop to improve the model dialogue strategies as a running record. CGMN uses lightweight gradient gating, opposed to the use of traditional retraining-based techniques, to allow efficient real-time fine tuning. The proposed model is tested experimentally to illustrate that the model has a high adaptability, long-term consistency, and the entropy of responses is less than in baseline transformer-based agents. All in all, CGMN provides a platform to build some self-regulating conversational systems that develop with the interaction of the user, forming the transition between a fixed large language model and a fully autonomous cognitive dialogue system. The suggested CGMN attained an overall accuracy of 95.6 percent, exhibiting enhanced flexibility and precision relative to current conversations models. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1165",
+    "title": "AI-Driven Digital Resurrection: Emerging Ethical Challenges",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323676",
+    "abstract": "The growing rate of AI-driven digital resurrection, whereby the deceased are recreated as chatbots via generative models, is highly morally problematic. In the paper, the author looks at the ethics of such technology, such as the consent issue, identity and social pressure. Qualitative review of interdisciplinary literature, including ethical philosophy, development and culture of AI, and case studies, as well as stakeholder opinion, is conducted. The key results suggest the tension of both technological innovation and moral boundaries, particularly in relation to posthumous consent, identitycommercialisation, and the psychological effect on users. The analysis identifies the dangers that digital resurrection poses as harmful through misrepresentation and exploitation, as well as the possibilities that digital resurrection may offer memorialization and closure. The conclusion that AI-powered resurrection is able to weaken human dignity and aggravate inequalities in society unless there are sound ethical regulations. The paper brings out the need to have interdisciplinary sharing of ideas in search of solutions to these dilemmas, by justifying good stewardship with technology development, so that technological opportunities weigh against the individual and the cultural sensitivities. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1166",
+    "title": "Bridging Legal Gaps with a Bilingual AI Legal Assistant",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323698",
+    "abstract": "Legal awareness in India continues to face significant challenges due to complex legal terminology, limited access, and high consultation costs. To overcome these barriers, this study presents a Digital Legal Assistant-a bilingual (Hindi-English) AI-based chatbot designed to enhance legal literacy and accessibility. The system integrates the Google Gemini API for natural language generation with a structured JSON-based legal knowledge base, ensuring factual accuracy and contextual relevance. Developed using Django, HTML, CSS, and JavaScript, the assistant offers a secure and userfriendly interface supporting both text and voice interaction. It provides accurate and accessible information related to women's rights, child protection, and senior citizen welfare, thereby democratizing legal access across linguistic and social boundaries. Unlike traditional rule-based or purely generative systems, this hybrid model merges verified legal templates with AI-driven conversational reasoning to minimize misinformation. Testing demonstrated high reliability in bilingual query handling, authentication, and response accuracy. Beyond its technical innovation, the system holds strong socio-legal impact by contributing to the Digital India initiative and promoting legal empowerment for citizens with limited legal literacy. This work highlights how combining large language models with structured legal data can create a costeffective, adaptable, and trustworthy framework for public legal education. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1167",
+    "title": "Integrating Behavioural Science using the Psycho-Intelligence Framework in Connected Systems",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323725",
+    "abstract": "The fast-growing convergence of neuroscience, behaviour computing, and adaptive artificial intelligence (AI) offers the possibility to transform human, machine interaction. This work presents Psycho-Intelligence, a new, closed-loop system that merges electroencephalography (EEG) and inertial motion unit (IMU) signals to adaptively recognise and react to users' cognitive and affective states. Levying low-cost wearable sensors (Muse EEG and MPU-6050), the system has real-time signal acquisition, sophisticated preprocessing, spectral and statistical feature extraction, as well as multimodal fusion features. Dimensionality reduction and feature selection techniques, including Principal Component Analysis and XGBoost gain metrics, enhance learning optimally. Multiple machine learning algorithms like Random Forest, SVM and XGBoost are trained to identify engagement states with high accuracy, warranted by extensive testing through cross-validation, ROC AUC, and F1-scores. The pipeline is incorporated into an adaptive feedback system that can regulate chatbot tone, learning material, or interactive graphics based on detected user states. Statistical validation with linear mixed models confirms the robustness of EEG-derived measurements in engagement prediction. The research establishes a new paradigm for emotionally intelligent AI systems and provides a technical foundation for ethical, real-time psycho-behavioural intelligence for communication networks, education systems, and cognitive health monitoring. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1168",
+    "title": "Privacy-Preserving Reinforcement Learning Framework for V2x Resource Management",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323764",
+    "abstract": "One of the pillars of the intelligent transportation systems can be defined as vehicle-to-Everything (V2X) communication, since this enables a real-time communication of information among vehicles, roadside units (RSUs), and the infrastructure. However, the efficient and secure resource distribution of the V2X network is not a simple task, which is conditioned by the highly dynamic nature of the automotive environment, spectrum deficiency, and further privacy issues. Traditional centralized approaches to education, though effective in terms of performance, cannot be applied to large-scale V2X applications in terms of overhead of communication and single point of weakness and the threat of data leakage. The article proposes a safe federated reinforcement learning (SecAgg-FRL) framework of privacy-guaranteed and scalable allocation of resources in V2X systems. Within the provided system, each V2X node becomes informed of a local reinforcement learning agent depending on the traffic, mobility, and channel state of the particular node. Raw data are not exchanged but instead, only masked model updates are sent to a federated server where secure aggregation is enforced to get the global model without revealing any single contribution. The framework can collectively maximize usage of spectrum, latency and interference reduction, and it can withstand inference and model inversion attacks. The simulation findings suggest that the designed SecAgg-FRL framework can achieve spectrum utilization that is close to that of centralized RL, with low latency, and scales well as the number of clients increases, as well as provides reasonably high level of privacy protection with little overhead. These results illustrate why the SecAgg-FRL is a potentially useful solution to resource management in next generation V2X networks in real-time, securely and scalably. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1169",
+    "title": "Study of Intelligent File Search Systems Using Natural Language Processing and Machine Learning Techniques",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323862",
+    "abstract": "Traditional file search mechanisms in popular operating systems struggle with basic retrieval tasks, often failing to recognize user intent after minor misspellings, despite relying on index-based approaches. Additionally, the growing integration of unnecessary features, such as web-based search results and telemetry have further degraded the quality of local search tools. There is a growing need for file search systems that are accessible to everyday users yet robust enough to meet the demands of power users who perform frequent, complex file operations. This paper presents the study and development of a natural language-based file search system designed to enhance local file search capabilities. Our approach integrates fuzzy matching, metadata extraction, and contextual ranking into a lightweight, efficient framework. The proposed system employs fuzzy tokenization, query-aware scoring, and SQLite-optimized caching strategies to improve retrieval accuracy. Experimental evaluations demonstrate an improvement (roughly 35 percent) in top-5 retrieval accuracy over traditional keyword-based search systems, such as Spotlight (MacOS) and Windows Explorer, highlighting the effectiveness of our approach compared to existing search engines. Although not all results have been positive, especially when latency is involved, these findings suggest that combining lightweight natural language processing models with smart caching can significantly improve file search experiences for both novice and advanced users. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1170",
+    "title": "SmartHealth Grid: A GIS-Based System for Mapping and Allocating Medical Resources during Emergencies",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323891",
+    "abstract": "SmartHealth Grid aims to address the critical issue of time-taking processes delaying proper care during a medical emergency by integrating an online platform. In a time crucial emergency, patients can save time by not tediously contacting each hospital facility to ask for the availability of a certain equipment/doctor, instead they can directly access all the nearby hospitals along with relevant information like their distance, equipment etc. In case of an emergency where no time can be spared for searching, an SOS alert feature automatically calculates and calls the ambulance which will reach the fastest. While waiting for the ambulance, the patient can receive guided first- aid recommendations through a chatbot. Additionally, a blood donation portal is also provided where users can volunteer to donate or request a donation. This multifunctional system provides timely, informed and accessible information and ensures that it's never too late for proper care. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1171",
+    "title": "Guardian Glance: An AI Powered Browser Extension for Proactive Mental Health Intervention and Suicide Prevention",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323951",
+    "abstract": "Suicide is a leading cause of death worldwide, with over 800,000 lives lost each year according to the World Health Organization. Conventional support systems are largely reactive and require individuals to actively seek help - a significant barrier during acute crises. This paper presents Guardian Glance, an AI-powered browser extension that proactively monitors user search queries for indicators of suicidal ideation or severe distress. By leveraging Natural Language Processing (NLP) and Machine Learning (ML), the extension performs on-device sentiment analysis and, upon detecting high-risk indicators, redirects the user to a confidential Therapy Chatbot for empathetic support. A privacy-first design ensures sensitive data remains local to the user unless explicit consent is granted for data sharing. An optional Guardian Notification System enables a verified trusted contact to be alerted in predefined circumstances while preserving the user's dignity and privacy. Guardian Glance aims to provide an immediate, compassionate intervention that reduces harm and connects individuals to resources before crisis escalation. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1172",
+    "title": "An Integrated AI-ML System for Email Management: Improving Productivity and Security through Classification and Multi-Layered Detection",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323961",
+    "abstract": "Email continues to be a crucial means of communication both in professional and personal lives, yet poor inbox management as well as security threats are major factors that continue to reduce productivity and compromise data safety. The paper outlines an innovative email management system that is based on a zero-shot learning method and makes use of Natural Language Processing (NLP) to classify emails, identify phishing attempts, and prioritize important communication automatically. The system works with the Gmail API and the BART-large-MNLI model that categorizes the messages into six predefined classes-Personal, Academic, Work, Promotions, Spam, and Urgent-while at the same time conducting safety classification to find out if the content might be harmful. The whole process is user-friendly and real-time; thus, it leads to workflow automation by providing an interface that is not only smart but also offers filtering, threat detection, and urgent email responses done automatically. The unrestricted accurate inbox categorization of 78 %, detection of effective phishing, and substantial improvements in email organization have been confirmed through the experiments thus making the users not only more productive but also more secure during communication, especially in corporate settings. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1173",
+    "title": "Impact of Generative AI on E-Commerce: Systematic Review",
+    "journal": "2025 IEEE 5th International Conference on ICT in Business Industry and Government, ICTBIG 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTBIG68706.2025.11323974",
+    "abstract": "Generative AI, also in the recent development in the LLMS (Large Language Models), they impacted the ecommerce domain significantly. This review process analyzes findings from 50 reviewed research papers to provide an overall overview of the applications, challenges, and future predictions of these models in the e-commerce sector. Our analysis provides that generative AI is primarily currently leveraged for customized content making, the development of sophisticated conversational agents or chat applications, and the generation of artificial images for marketing and product designing. The key applications include automatically generated product descriptions, virtual try-on solutions, and intelligent shopping assistants. However, the adoption of this technology is not without its challenges. Issues like 'hallucinations', data privacy issues, algorithmic bias, and uncompleted copyright questions show significant hurdles. So, this review discusses the real-world applications of these findings to the e-commerce developers and finds the critical areas for the next research so that, it makes the responsible and effective implementation of these generative models in the e-commerce ecosystems. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1174",
+    "title": "Automatic Template-style Social Magazine Generation Service and Video Content Synthesis",
+    "journal": "ICTC 2019 - 10th International Conference on ICT Convergence: ICT Convergence Leading the Autonomous Future",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTC46691.2019.8939691",
+    "abstract": "This paper deals with the social magazine creation service using chatbot and video creation based on the contents of the social magazine. The social magazine service is to provide a story-formatted magazine from particular topic with a variety of articles, through a series of processes such as collecting and analyzing user conversations, extracting keywords appropriate to the situation, eliminating duplicated contents, and summarizing text. Reprocessing the social magazine in the form of video is also provided using speech synthesis, subtitle generation, and some effects with images and text information. The proposed system is tested in the real environment and found that it works well. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1175",
+    "title": "Feature-Representation Transfer Learning for Human Activity Recognition",
+    "journal": "ICTC 2019 - 10th International Conference on ICT Convergence: ICT Convergence Leading the Autonomous Future",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTC46691.2019.8939979",
+    "abstract": "Many human-centered intelligent systems require information about the activities being performed by the user for the systems to function optimally. Human activity recognition (HAR) is at the core of such systems. Activity recognition requires vast amounts of labeled training data to perform adequately under a variety of circumstances. The lack of enough labeled training data led to transfer learning (TL), a phenomenon that uses knowledge learned from one task's dataset to easily perform a different task. In this paper, we show how TL can be used to improve the recognition of human activities with a small number of data samples. Using a convolutional neural network - long short-term memory (CNN - LSTM) deep learning ensemble classifier, we show how features learned from activities with motion enable us to easily learn features of stationery activities, even with a small dataset. TL improved model generalizability and reduced overfitting. To evaluate the performance, we used the UCI HAR dataset that contains 6 activities which was split into two sub tasks. The accuracy increased by over 4% whereas the loss decreased by 30% between a base model and the TL model. We also present the opportunities that using TL presents to the field of human activity recognition where new activities that have very small amounts of training data can be learned using data from already existing datasets. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1176",
+    "title": "A maximum-minimum eigenvalue detection simpler method based on secondary users locations for cooperative spectrum sensing",
+    "journal": "2014 International Congress on Technology, Communication and Knowledge, ICTCK 2014",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTCK.2014.7033503",
+    "abstract": "Eigenvalue-based cooperative spectrum sensing, because of its robustness, has attracted a lot of attention. Computational complexity is a major drawback of this method. In this paper, to improve the detection probability and to reduce the number of affective secondary users, we investigate the effect of secondary users different distances from primary user base station with a partial clustering of secondary users. Monte-Carlo simulation results show the effectiveness of proposed method specially in low SNR values compared to other methods. © 2014 IEEE."
+  },
+  {
+    "article_id": "CA_1177",
+    "title": "Analysis and Modelling of Salatiga City's Public Transportation Service Performance",
+    "journal": "1st International Conference on Technology, Engineering, and Computing Applications: Trends in Technology Development in the Era of Society 5.0, ICTECA 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTECA60133.2023.10490509",
+    "abstract": "Salatiga City is one of the development cities in Central Java Province with the population more than 190,000 people. With this amount, the movement of commodities or persons from one location to another will cause the roads to be quite congested, especially when using private vehicles. The Salatiga City has good quality level for public transportation but it still faces many problems such as no provision for fare per kilometer, no bus stops to facilitate and increase the comfortable of the users and no rules regarding the time for drivers to pick up passengers. With the long-term goal of aiding Salatiga City's government implement smart transportation, an examination of the city's passenger public transportation will be conducted using a case study on the Tamansari-Blotongan Route. From the results of the analysis will be followed by modelling real time information. With the long-term goal of assisting Salatiga City's government in implementing smart transportation, A case study on the Tamansari-Blotongan Route will be used to analyze the city of Salatiga's public transportation system. transportation pertaining to the minimum service requirements for mass transit on roads. The findings revealed that the majority of 90 of the transportations on the Tamansari - Blotongan route had good physical condition and were appropriate to use. Based on a number of factors, The level of the route complied with the standards specified by the Directorate General of Land Transportation. The load factor research revealed a value of 0.73, which is included in category A, and most indications show it has satisfied passenger satisfaction, although waiting times still need to be improved. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1178",
+    "title": "Useful Application of Machine learning Methods in Smart Grids: A Mini Review",
+    "journal": "2024 9th International Conference on Technology and Energy Management, ICTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTEM60690.2024.10631993",
+    "abstract": "Smart grids are necessary because the traditional electricity grids are outdated, inefficient, and vulnerable to failures. Smart grids enable better monitoring, control, and management of the electricity grid, ensuring a more reliable and stable power supply. They can integrate renewable energy sources into the grid, reduce energy consumption during peak hours, and improve resilience to natural disasters and cyber threats. On the other hand, machine learning techniques are necessary in modern power systems to improve the performance, efficiency, and sustainability of the electricity grid. They enable real-time monitoring and control of the grid, predicting energy consumption patterns, optimizing grid performance, and detecting anomalies. By integrating machine learning algorithms, power systems can adjust their outputs to match changes in energy demand, improve renewable penetration and reduce carbon emissions. They also provide insights that can guide decision-making, improve asset management, and reduce maintenance costs. With the integration of machine learning techniques, power systems can promote a more sustainable and reliable power supply, enhances grid security, and improves the experience for both energy providers and end-users. Thus, this paper aims to summarize the benefits and useful application of machine learning methods within the smart grids. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1179",
+    "title": "Hybrid Model to Predict the Arrival Time at Tollgate of Vehicles on Expressway",
+    "journal": "2022 10th International Conference on Traffic and Logistic Engineering, ICTLE 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTLE55577.2022.9901808",
+    "abstract": "Traffic congestion at toll booths is a pressing problem for service providers and highway users due to increased urbanization and car ownership. On expressways, the Electronic Toll Collection (ETC) significantly helps to reduce congestion. However, how regions/countries that do not have the conditions to apply ETC deal with this situation is still a big problem. The arrival time prediction of vehicles is one of the solutions. Researches on vehicles' arrival time on the expressways are minuscule, especially for heterogeneous vehicle flow. To the author's knowledge, they compare the effectiveness of traditional statistical models and modern machine learning methods. This trend leads to infrequent research focusing on combining models to take full advantage of them. Besides, the time to arrival of vehicles contains much volatility amongst different times of the day. Therefore, this study approaches the GARCH model to deal with periods of significant fluctuations in arrival time and proceeds to build a hybrid model of GARCH, LSTM. The hybrid model plays on the advantages of traditional statistical models and machine learning. The proposed model is analyzed on the E20 expressway, Japan's ETC2.0 traffic data set for one week transmitted by all types of vehicles. The results show that applying the proposed model can yield better predictive output. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1180",
+    "title": "Investigating the potential of artificial intelligence for the employee from the perspective of AI-experts",
+    "journal": "2023 IEEE International Conference on Technology Management, Operations and Decisions, ICTMOD 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTMOD59086.2023.10438118",
+    "abstract": "Artificial intelligence (AI) has developed rapidly in recent months. In the form of chatbots, texting is becoming easier in our everyday lives. The potential for using this technology in industry is also growing. Small and medium-sized companies, in particular, are still underutilizing the opportunity to use AI in production and development as a competitive advantage or for sustainability goals. People are also often neglected in the introduction of new technologies. From a socio-technical perspective, employees must be explicitly considered as active co-creators and users of AI, whose knowledge of work processes and interactions with technology enriches the design of the human-technology interface and, in the long run, the development of the technology itself. This paper examines how employees have used AI in the past, what their requirements are for their work and collaboration processes, and how they view the possibilities of technologies such as AI. Using a predominantly qualitative approach, this paper describes the socio-technical aspects that companies need to consider. The findings are consistent with previous literature and have been validated in expert workshops. This forms the basis for helping companies to develop this technology for themselves. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1181",
+    "title": "Artificial Intelligence and Customer Experience: A Bibliometric Review of Strategic Research Trends (2015-2025)",
+    "journal": "2025 IEEE International Conference on Technology Management, Operations and Decisions, ICTMOD 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTMOD66732.2025.11372016",
+    "abstract": "Over the past decade, the convergence of artificial intelligence (AI) and customer experience (CX) has reshaped business strategy, customer engagement, and digital transformation. This study presents a comprehensive bibliometric analysis aimed at mapping the scientific landscape of AI and CX studies published between 2015 and 2025. Using data extracted from the main Web of Science collection and analyzed via VOSviewer and Biblioshiny (R), the study applies performance analysis, co-citation, keyword co-occurrence, and thematic mapping to highlight publication trends, key contributors, influential journals, and emerging research themes. The results show a considerable increase in academic output since 2018, with a compound annual growth rate of 78.62%, driven by growing interest in AI applications in customer-centric strategies. Thematic analyses highlight the relevance of concepts such as personalization, chatbots, and predictive analytics, while revealing conceptual fragmentation and geographical imbalances in research contributions. Furthermore, the study highlights significant gaps in ethics, contextual diversity, and interdisciplinary integration. These insights provide a structured foundation for future research and guide academics, professionals, and policymakers who wish to leverage AI for groundbreaking CX strategies. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1182",
+    "title": "Artificial Intelligence and Customer Experience: A Systematic Review Across Industries 2021 - 2025",
+    "journal": "2025 IEEE International Conference on Technology Management, Operations and Decisions, ICTMOD 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICTMOD66732.2025.11372032",
+    "abstract": "This systematic review synthesizes empirical evidence on how Artificial Intelligence (AI) shapes corporate customer experience (CX) across industries between 2021 and 2025. Following PRISMA procedures, we screened peer-reviewed studies indexed primarily in Scopus and complemented with reference chasing. Forty-one articles met the inclusion criteria. The synthesis indicates that AI augments CX through hyper-personalization, conversational interfaces chatbots and voice assistants, recommendation and prediction engines, and real-time analytics that orchestrate omnichannel journeys. Benefits cluster around higher satisfaction, trust, convenience, conversion, loyalty, and lower churn; yet outcomes depend on transparency, explainability, data quality, ethical safeguards, and cultural fit. Boundary conditions include sector banking, retail, hospitality, public services, task complexity, customer digital literacy, and perceived risk. We propose an integrative framework in which AI capability with perceived usefulness, personalization, effort reduction and CX outcomes, moderated by trust, privacy control, and service context. Managerial and policy implications and an agenda for future research are discussed. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1183",
+    "title": "ProductGuard: Empowering Informed Choices for Safe Living",
+    "journal": "3rd International Conference on Intelligent Data Communication Technologies and Internet of Things, IDCIoT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDCIOT64235.2025.10914817",
+    "abstract": "In a landscape where consumer decisions significantly influence personal health and well being, the necessity for informed choices regarding product safety is paramount. This project introduces ProductGuard, a mobile application designed to empower users in making conscientious and informed decisions about skincare and personal care products. The project integrates four core components aimed at assisting users in evaluating product safety, comparing ingredients, providing personalized recommendations based on skin type, and offering expert guidance through a chatbot interface. The first component employs advanced image analysis technology utilizing a dataset extracted from the Environmental Working Group (EWG) website, enabling users to capture product ingredient images and receive detailed safety analyses. The second component allows comparative analysis by uploading images of two product ingredient lists, swiftly determining the safer option. Leveraging deep learning models and MobileNetV2, the third component performs skin type classification based on facial images, ensuring accurate categorization into dry, oily, normal, or sensitive skin, further providing tailored product recommendations. Lastly, a chatbot powered by ChatGPT serves as the fourth component, furnishing users with real-time guidance on skincare, ingredient queries, and safe living practices. Developed using React Native, Flask integration, and Python backend, this application amalgamates cutting-edge technology with user-centric design for seamless navigation and accessibility across various devices. ProductGuard surpasses existing systems by offering a holistic approach to skincare analysis, integrating advanced image recognition, personalized recommendations, and real-time expert assistance, thereby empowering users to make informed and safer skincare choices. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1184",
+    "title": "A Multi-Model Approach to Oral Pathology Classification and Dental X-Ray Analysis",
+    "journal": "3rd International Conference on Intelligent Data Communication Technologies and Internet of Things, IDCIoT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDCIOT64235.2025.10914936",
+    "abstract": "The timely detection and accurate localization of oral diseases, such as oral cavity cancer and dental anomalies, is critical for improving preventive dental care and patient outcomes. This paper presents an AI-based system that employs a dual-architecture approach for analyzing oral and dental X-ray images. An ensemble of ResNet-50, EfficientNet-B1, and InceptionResNetV2 is used for oral disease classification, leveraging their complementary strengths to ensure accurate predictions across various conditions. For dental X-ray analysis, the Detection Transformer (DETR) model is utilized to detect and localize abnormalities in complex radiographic structures. This integrated system enhances diagnostic accuracy and provides early detection, treatment suggestions, and clinical decision support through a user-friendly interface and chatbot. The proposed approach improves accessibility and efficiency in oral health diagnosis, contributing to better patient outcomes and facilitating early intervention in dental care. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1185",
+    "title": "MediHealth: An AI-Driven Mobile Solution for Enhanced Health Care Decision-Making and Accessibility",
+    "journal": "3rd International Conference on Intelligent Data Communication Technologies and Internet of Things, IDCIoT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDCIOT64235.2025.10915087",
+    "abstract": "Mobile health (mHealth) applications have revolutionized healthcare by enhancing patient engagement, providing tools for self-management, and supporting better health outcomes. This paper explores the development of an innovative mHealth application designed to empower patients in making informed healthcare decisions. The application leverages advanced features such as AI powered chatbots, personalized healthcare recommendations, and a report and prescription summarizer to simplify complex medical information. By allowing users to easily find appropriate healthcare professionals, access detailed prescription data, and receive symptom-based specialist recommendations, the app facilitates effective self-management of chronic conditions. Furthermore, it offers proactive care prompts, personalized advice, and health behavior reminders to promote better overall health outcomes. Despite challenges in data security, privacy, and equitable access, the study emphasizes the importance of a user-centered design approach in ensuring the widespread adoption and success of mHealth applications. Ultimately, the goal is to enhance healthcare delivery by improving patient engagement, facilitating seamless access to healthcare resources, and enabling well-informed decision-making. This application presents a holistic solution for advancing patient care across diverse healthcare settings. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1186",
+    "title": "Chatbot and its Impact on the Retail Industry",
+    "journal": "3rd International Conference on Intelligent Data Communication Technologies and Internet of Things, IDCIoT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDCIOT64235.2025.10915098",
+    "abstract": "This study explores the transformative potential of chatbots in the retail industry, highlighting their role in enhancing customer engagement, optimizing business processes, and revolutionizing the nature of retail interactions. Through a comprehensive review of existing literature and case studies, the paper delves into the cognitive processes underlying human-chatbot interactions and examines their impact on customer experience, satisfaction, and loyalty. Chatbots serve a wide array of operational functions, including inventory management, automated order processing, data-driven analytics, and employee training. These functionalities streamline workflows, improve efficiency, and maximize resource utilization. The paper further explores the innovative applications of chatbots, including AI-driven personalization, conversational commerce, and seamless integration with emerging technologies. By analyzing both the current applications and challenges of chatbot technology in retail, the study uncovers the exciting opportunities they present for shaping the future of retail by fostering more personalized, efficient, and interactive customer experiences. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1187",
+    "title": "Secure AI based Chatbot Web Application with IBM Watson",
+    "journal": "3rd International Conference on Intelligent Data Communication Technologies and Internet of Things, IDCIoT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDCIOT64235.2025.10915109",
+    "abstract": "This project focuses on developing a secure, AI-powered chatbot for retail chains, integrated within a web application to efficiently handle Frequently Asked Questions (FAQs). Utilizing IBM Watson’s advanced Natural Language Processing (NLP), the chatbot delivers precise, context-aware responses, enhancing the customer experience across retail environments. The platform offers a user-friendly interface for seamless interactions, a robust backend powered by IBM Watson’s AI model, and a database optimized for managing customer queries. A dedicated security module ensures data protection through encryption, authentication, and access control. This chatbot manages high volumes of inquiries with real-time responses, boosting customer engagement and operational efficiency while generating valuable insights for retail decision-making. Designed to be scalable and secure, the system upholds high standards of accessibility and data integrity, meeting the specific demands of the retail sector. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1188",
+    "title": "Implementing HR Management System with an AI Powered ChatBot",
+    "journal": "3rd International Conference on Intelligent Data Communication Technologies and Internet of Things, IDCIoT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDCIOT64235.2025.10915116",
+    "abstract": "Human Resource (HR) management is one important section that increases the success of an organization to handle some important functions like employee data manipulation, attendance tracking, payroll processing, and performance evaluation. With the management of these processes becoming key to the success of small-scale startups, it poses a very big challenge for many of them to be able to manage these processes efficiently and cost efficient. By contrast, the old era of traditional HR systems was based on database driven architectures that are expensive in terms of operational cost, require storage space and complex infrastructural needs. These limitations often make traditional HR systems impossible for a startup that would prefer lightweight, affordable, and scalable solutions. Startups need robust platforms to streamline HR work streams, but often lack with financial resources for building complex database driven systems. In this paper, an AI powered HR management system is developed to simplify employee management processes for small scale startups. In this system. cache memory is used instead of traditional databases, thereby the operational cost of the system will be reduced for storage and retrieval of employee details. Automated Attendance Management enhanced with Face Recognition technology, Payroll Management, Leave Management, Feedback Submission modules are included. It is integrated with an AI powered chatbot, which facilitates a smooth interaction by the employees with query for information, submit leave requests and pull up all payroll information etc. A user-friendly dashboard for a consolidated view of employee profiles, attendance records, leave approvals, and payroll data can be served over an optimized and time efficient HR workflow. This system addresses the needs of the startups such as flexible usage, cost effective operations and improved resource management. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1189",
+    "title": "Detection and Classification of Monkeypox Disease with Chatbot",
+    "journal": "3rd International Conference on Intelligent Data Communication Technologies and Internet of Things, IDCIoT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDCIOT64235.2025.10915158",
+    "abstract": "Monkeypox detection is essential for effective public health management and controlling its spread. Timely detection enables early intervention in outbreaks, reducing transmission risk. This project presents an innovative framework that enhances monkeypox detection and classification using deep learning and an interactive chatbot. It employs the VGG16 convolutional neural network (CNN) for accurate classification of monkeypox from medical images, utilizing performance metrics like precision, recall, and F1 score for reliability. Additionally, the system includes a neural network-based chatbot that provides interactive assistance, answers user questions, offers symptom information, and guides users through the diagnostic process. This chatbot improves user engagement and accessibility, linking clinical diagnostics with patient interaction. Built on the Flask framework, the system ensures a smooth, user-friendly interface for both image classification and chatbot functionalities. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1190",
+    "title": "Career Navigator: Your AI Career Counselor",
+    "journal": "2024 2nd DMIHER International Conference on Artificial Intelligence in Healthcare, Education and Industry, IDICAIEI 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDICAIEI61867.2024.10842724",
+    "abstract": "Career planning for college students is significantly influenced by career choices, which can be a daunting decision in today's society. Many students are uncertain about their future paths despite having various talents and skills. Our innovative approach to student career advising integrates machine learning (ML) for job prediction with a user-friendly chatbot interface, aiming to provide a comprehensive solution to this issue. The ML-based career prediction model analyzes several factors, including students' talents, educational backgrounds, and interests. We compared three ML algorithms - KNN, Random Forest, and Decision Tree - finding KNN to be the most accurate with a 97% success rate. The application, developed using Flutter and Google API, features a chatbot that answers career-related queries, allows appointment bookings, and includes a FAQ page. The website, designed with Flask, HTML, Jinja2, and Scikit-learn, offers a login system and a career prediction tool that assesses users' proficiency in various fields through a series of questions. It then suggests appropriate job fields, necessary skills, job locations, salary information, and relevant courses, enhancing the overall career counseling experience. This dual strategy ensures students receive dynamic and personalized guidance, helping them make informed decisions about their professional futures. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1191",
+    "title": "VTherapy: Deep Learning-based Hand Rehabilitation System",
+    "journal": "2024 2nd DMIHER International Conference on Artificial Intelligence in Healthcare, Education and Industry, IDICAIEI 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDICAIEI61867.2024.10842730",
+    "abstract": "In this research, we introduce a virtual hand rehabilitation system, VTherapy, that amalgamates a deep learning model with a Flask web application, aimed at enhancing post-injury hand therapy at home. Our system leverages a deep learning architecture combining ResNeXt50's feature extraction with LSTM's sequential data analysis for precise hand gesture recognition. This methodology is augmented by the Dynamic Time Warping algorithm to accurately assess the similarity between the patient's exercise video sequences and the reference exercise video. This approach not only democratizes access to effective hand rehabilitation by offering a cost-efficient, home-based solution but also promotes patient autonomy and engagement through interactive feedback mechanisms. The salient features of this system include an exercise performance tracker with goal setting, a real-time interactive rule-based chatbot trained using a neural network, and appointment scheduler to connect patients with physiotherapists. A dedicated SQLite database underpins the system by recording every exercise instance, facilitating feedback-driven progress tracking. The confluence of cutting-edge deep learning with user-friendly web technology presents a paradigm shift in rehabilitative care, potentially transforming the landscape of home-based physiotherapy for patients recovering from hand injuries. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1192",
+    "title": "Chatbots in Customer Service: A Comparative Analysis of Performance and Customer Satisfaction",
+    "journal": "2024 2nd DMIHER International Conference on Artificial Intelligence in Healthcare, Education and Industry, IDICAIEI 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDICAIEI61867.2024.10842848",
+    "abstract": "Chatbots have become an important part of customer service in recent years, giving companies flexible ways to handle and improve relationships with customers. This paper looks at how well chatbots work and how they affect customer happiness in different types of businesses. The study discuss about looks at different parts of robot capacities, such as reply precision, reaction time, dialect handling aptitudes, and how the client encounter is outlined. A exhaustive consider of current writing, real case considers, and survey information from both companies and clients are all parts of the investigate approach. Putting together data from a few diverse sources, this paper gives a full picture of how well robots work at replying client questions and rapidly settling issues. To figure out how valuable chatbots are for progressing working proficiency and client joy, key execution measures like chatbot precision rates, normal response times, and client fulfillment scores are looked at. The ponder moreover looks at how robot plan highlights like characteristic dialect understanding (NLU) and temperament investigation can make strides the quality of intuitive and how clients feel almost them. The consider moreover looks at case considers from diverse businesses to appear how robots have been utilized effectively in regions like e-commerce, managing an account, healthcare, and telecoms. These case thinks about appear how robots can offer assistance move forward commerce productivity by replying common questions, cutting down on hold up times, and liberating up individuals to work on more troublesome errands. The ponder too talks almost issues that can come up when utilizing chatbots, like how to associate them to other frameworks, how to protect client information, and how they got to be continually made strides to stay useful and pertinent. It looks into ways to bargain with these issues by utilizing AI to form robot frameworks way better and client interfacing superior. The comes about appear how vital robots are for changing how client benefit is given, cutting costs, and building client believe through personalized and provoke trades. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1193",
+    "title": "A Comprehensive Approach To Healthcare Chatbots Using SpaCy NLP And Naive Bayes Algorithm",
+    "journal": "2024 2nd DMIHER International Conference on Artificial Intelligence in Healthcare, Education and Industry, IDICAIEI 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDICAIEI61867.2024.10842876",
+    "abstract": "Imagine a world where medical assistance is just a conversation away, where artificial intelligence helps navigate your health concerns with precision, by the intersection of machine learning and healthcare, our chatbot emerges as a powerful ally for patients everywhere. This research work focuses on developing a healthcare chatbot which provides diagnosis of patients by taking user-input symptoms, suggesting medications and also hospitals in a particular region. Both speech and text options are introduced to interact with the user. Firstly, the user is prompted to enter the symptoms faced by them, the symptoms are extracted from user input sentences using SpaCy NLP. These extracted symptoms are fed to a Multinomial Naïve Bayes Classifier for disease prediction. Additionally, chatbot also provides the required medications and the hospitals in the region from the data stored in the CSV and PDF files. The user interface of the chatbot is built using Flask. SQL is leveraged for user account management and to store the diagnosis history of the user. The dataset used for training is a CSV file consisting of 132 unique symptoms, 42 unique diseases and a total of 4,920 combinations of symptoms and associated diseases. The dataset is pre-processed in the form of 1s and 0s to make it suitable for our Multinomial Naive Bayes model which achieved a test accuracy of 95% which is better than the existing models having an accuracy of around 93%. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1194",
+    "title": "Assessing the adoption and impact of AI chatbots in customer service: A survey-based study in Indian service industries",
+    "journal": "2024 2nd DMIHER International Conference on Artificial Intelligence in Healthcare, Education and Industry, IDICAIEI 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IDICAIEI61867.2024.10842925",
+    "abstract": "This research paper tries to fill a major gap in the available literature by discussing the adoption and impact of chatbots in the service industry in India. Present research is aimed at mapping the level of integration of chatbots into customer service processes in Indian service industries and its impact on customer service quality. The design of research is cross-sectional survey-based. Data have been collected from 200 organizations representing different industries: retail, banking, healthcare, telecommunications, and e-commerce. It undertakes data analysis on IBM SPSS Statistics to analyse the adoption level, challenges, customer satisfaction, and variations within sectors. The key findings of the study are that the adoption rate is high in Indian service industries, with 39.0% of organizations showing complete adoption and 45.0% partial adoption. As many as 60.0% of organizations reported a positive impact of chatbots on customer service quality. Several challenges, like the issue of linguistic diversity and how to handle complex queries, were identified, and upon consideration, made the organizations adopt multilingual chatbots and enhancements in the algorithm for natural language processing. It ranges from variations in the level of chatbot adoption to sectoral level: the highest full adoption rates among the banking organizations and the highest partial adoptions occurred among the healthcare organizations. The higher the level of its adoption, the more satisfied customers are with chatbots. These results, therefore, have practical implications for guiding Indian service industries on the adoption and challenges of chatbots, as well as customer-centric strategies for the same. Further, this study helps plug the gap in the literature by bringing specific insights from the Indian context to the global discussion relating to chatbots and their role in customer service. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1195",
+    "title": "A design of automated parking system for shopping centers in Metro Manila",
+    "journal": "2018 5th International Conference on Industrial Engineering and Applications, ICIEA 2018",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEA.2018.8387136",
+    "abstract": "Parking plays a vital role in a customers' shopping experience. It greatly affects the quality of service of shopping facilities due to long queues, long waiting time and difficulties of customers in finding parking spaces. Investing in an excellent parking system can give shopping malls the edge that will keep their customers retention and loyalty. The primary goal of this study is to design an intelligent parking guidance system for shopping centers in Metro Manila that will enhance the customers' experience in parking facility. 5 shopping centers were selected for the study. Structured questionnaires like ServQual tool, gap analysis, process mapping and time study were used in order to identify weaknesses and problems in the present parking facilities of shopping centers. In addition, regression analysis was also employed to determine significant factors affecting the service quality satisfaction of customers. With this, the researchers were able to design an intelligent parking guidance system that will quickly direct drivers to the closest available parking slot. The proposed parking system was validated through Monte Carlo simulation and failure mode and effects analysis. It was concluded that the new system will significantly improve the queuing time and searching time of drivers and thus improve the overall service quality of parking facilities in Metro Manila. © 2018 IEEE."
+  },
+  {
+    "article_id": "CA_1196",
+    "title": "Coimbatore Destination Chatbot: A Study on Customer Preference",
+    "journal": "2021 IoT Vertical and Topical Summit for Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEECONF49204.2021.9604846",
+    "abstract": "Numerous technologies are being integrated to enhance the services and tourist experiences in the field of tourism in which a digital support is provided to travelers before during and after the travel activity. Artificial Intelligence is the human intelligence technology to perform particular tasks. Artificial Intelligence offers travel services that are automated, customized and insightful to make tourism as Digital Tourism. The application of artificial intelligence in people's life have a significant role and so this article focuses on how AI technology can lead to the next mile stone in the tourism industry. Here we studied on Chatbot a revolution that has emerged in Artificial Intelligence which can solve our queries easily. This study is structured into two phases, first Identifying the customer preferences on the destination Coimbatore, second phase is developing a chatbot on Coimbatore as a destination Ask me WHW(What, How, Where). Bot covers 3 A's of Coimbatore-Access, Attraction and Accommodation The rapid digitalization and vast potential of technologies will help in tourism development which make travel ease and feasible. It also interacts with customers and function as a virtual tour guide. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1197",
+    "title": "Improving the user engagement in a fully immersive experience by the means of a conversational non-playable character used as a tourist guide",
+    "journal": "2021 IoT Vertical and Topical Summit for Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEECONF49204.2021.9604871",
+    "abstract": "Virtual reality (VR) is a promising tool for the tourism industry as it allows an amazing replica of locations in the real world offering the opportunity to provide prospective customers with a virtual travel experience. Especially with VR headsets that allow fully immersive travel experiences where the users are essentially placed within a virtual world, which they can move around and, in some cases, interact with. However, even if vision alone is often perceptually dominant, interaction between users and virtual content is a crucial element of any immersive visualization environment in both virtual reality and 360-degree content (photos and videos). In this article we describe a way to improve the interaction between users and virtual content by the means of non-playable (NPC) characters which have the ability to provide a natural language conversation during an immersive experience. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1198",
+    "title": "Chatbots and conversational agents: A bibliometric analysis",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM.2017.8289883",
+    "abstract": "Chatbots are replacing some of the jobs that are traditionally performed by human workers, such as online customer service agents and educators. From the initial stage of rule-based chatbots to the era of rapid development in artificial intelligence (AI), the performance of chatbots keeps improving. Chatbots can nowadays 'chat' like a human being and they can learn from experience. The purpose of this research is to examine the past research on chatbots (also known as conversational agents) using the quantitative bibliometric analysis. The contribution of this research is to help researchers to identify research gaps for the future research agenda in chatbots. The results of the analysis found a potential research opportunity in chatbots due to the emergence of the deep learning technology. This new technology may change the direction of future research in chatbots. Several recommendations for future research are provided based on the results obtained from our analysis. © 2017 IEEE."
+  },
+  {
+    "article_id": "CA_1199",
+    "title": "Systems Analysis and Design of a Smart Traffic Service System for Predictive and Smarter Mobility and Safety in Roadway Work Zones",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM.2018.8607310",
+    "abstract": "Smart traffic service systems entail intelligent traffic analysis applications that enable highly functioning relationships between a range of users, including service consumers and service producers. This review paper envisions a systems architecture to empower a connected vehicle-to-X environment by integrating smart sensing and crowd sourcing technologies, large-scale cloud data analytics and computation, and predictive decision making and optimization into a coherent socio-technical configuration of people, operations and information through multimodal, real-time traffic monitoring, planning and control. Key technical challenges and research issues are discussed with respect to an illustrative case of roadway work zones. © 2018 IEEE."
+  },
+  {
+    "article_id": "CA_1200",
+    "title": "A Chatbot-supported Smart Wireless Interactive Healthcare System for Weight Control and Health Promotion",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM.2018.8607399",
+    "abstract": "People who are overweight and obese have a greater risk of developing serious diseases and health conditions. A steadily increasing trend of obesity is not only limited to developed countries, but to developing nations as well. As smartphones have rapidly gained mainstream popularity, mobile applications (apps) are used in public health as intervention to keep track of diets, activity as well as weight, which is deemed more accurate than relying on user's self-report measure, for the sake of weight management. A solution called 'Smart Wireless Interactive Healthcare System' (SWITCHes) is developed to facilitate objective data reception and transmission in a real-time manner. Based on the user data acquired from SWITCHes app and the auxiliary data from medical instruments, not only SWITCHes app can engage user with tailored feedback in an interactive way, in terms of artificial intelligence-powered health chatbot, but the healthcare professional can provide the more accurate medical advice to user also. This paper presents an overview of development and implementation of SWITCHes. © 2018 IEEE."
+  }
+]

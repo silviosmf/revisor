@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1901",
+    "title": "The design of a cloud-based clinical decision support system prototype: Management of drugs intoxications in childhood",
+    "journal": "Research Anthology on Decision Support Systems and Decision Management in Healthcare, Business, and Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-9023-2.ch018",
+    "abstract": "The authors developed a mobile cloud-based clinical decision support system for drug poisoning in children. The system has a Client/Server architecture and provides a mobile application and a web service to be deployed on the Amazon Cloud infrastructure. Physicians benefit from a user interface to input patient data and to receive diagnosis and treatment protocol. The objective of this article is to help doctors, and particularly the beginners to manage and to treat children suffering from drug poisoning when toxicity is known or unknown. To do this, an intelligent system is developed. It is composed of an expert system, used when the toxic drug is known, and a case-based reasoning system applied when the toxic being ingested is unknown. © 2021, IGI Global."
+  },
+  {
+    "article_id": "CA_1902",
+    "title": "Implementation of an intelligent model for decision making based on cbr for supply chain solution in retail for a cluster of supermarkets",
+    "journal": "Research Anthology on Decision Support Systems and Decision Management in Healthcare, Business, and Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.4018/978-1-7998-9023-2.ch058",
+    "abstract": "The latter includes customizing the user interface, as well as the way the system retrieves and processes cases afterward. The resulting cases may be shown to the user in different ways, and/or the retrieved cases may be adapted. This chapter is about an intelligent model for decision making based on case-based reasoning to solve the existing problem in the planning of distribution in the supply chain between a distribution center and a chain of supermarkets. First, the authors mentioned the need for intelligent systems in the decision-making processes, where they are necessary due to the limitations associated with conventional human decision-making processes. Among them, human experience is very scarce, and humans get tired of the burden of physical or mental work. In addition, human beings forget the crucial details of a problem, and many of the times are inconsistent in their daily decisions. © 2021, IGI Global."
+  },
+  {
+    "article_id": "CA_1903",
+    "title": "Revolutionizing Voice Search: Interaction Through Chatbots and Conversational AI",
+    "journal": "Strategic Workforce Reskilling in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0164-8.ch004",
+    "abstract": "As the digital landscape continues to evolve, voice search has emerged as a transformative technology reshaping how users interact with information systems. This paper explores the integration of chatbots and conversational AI into voice search interfaces, emphasizing their potential to enhance user experience and streamline information retrieval. By leveraging natural language processing and machine learning algorithms, conversational AI can provide more personalized and context- aware responses, thereby improving the accuracy and relevance of voice search outcomes. This study examines the current state of voice search technology, identifies key challenges, and proposes innovative strategies for the seamless incorporation of chatbots into voice- driven interactions. Ultimately, the findings highlight the significant role of conversational AI in revolutionizing voice search, offering insights into future developments and applications in various industries."
+  },
+  {
+    "article_id": "CA_1904",
+    "title": "The Future of AI in Services Marketing: Trends, Challenges, and Opportunities",
+    "journal": "Strategic Workforce Reskilling in Service Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0164-8.ch007",
+    "abstract": "Artificial Intelligence has changed the way organizations market their services to businesses and consumers. The use of AI- powered technologies, such as chatbots, predictive analytics, and machine learning algorithms, is enabling organizations to deliver hyper- personalized customer experiences. AI has already started to create huge opportunities for innovation, particularly in new business models, green marketing practice and emerging markets — as the industry grows significantly over the years. This article elucidates how several prominent industries, including retail, hospitality and healthcare, and financial services can adopt artificial intelligence in marketing their services."
+  },
+  {
+    "article_id": "CA_1905",
+    "title": "AI-Driven Customer Engagement Strategies for Small Businesses",
+    "journal": "AI, Corporate Social Responsibility, and Marketing in Modern Organizations",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0219-5.ch012",
+    "abstract": "AI-driven customer engagement strategies have become pivotal for small businesses seeking to enhance their competitive edge and foster customer loyalty. This research explores how AI technologies, such as chatbots, personalized marketing, and customer analytics, transform customer interactions. By leveraging AI, small businesses can deliver tailored experiences, predict customer behavior, and optimize engagement across multiple channels. The study examines the implementation of AI tools to automate customer service, segment audiences, and create dynamic marketing campaigns. It also addresses potential challenges, including data privacy concerns and the need for technological adoption. Through case studies and empirical analysis, this research highlights the benefits and limitations of AI-driven engagement, providing insights into best practices for integrating AI into small business operations. Ultimately, the study aims to offer a comprehensive understanding of how AI can be effectively utilized to build stronger customer relationships, growth in the competitive market landscape. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1906",
+    "title": "Chatbots in Banking: Transforming Customer Interaction and Service Efficiency Through AI",
+    "journal": "Cultural Sensitivity, Cross-Border Logistics, and E-Commerce in Global Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0528-8.ch018",
+    "abstract": "The advent of Artificial Intelligence (AI) and chatbot technologies has brought drastic transformative changes to the banking sector which has reshaped customer engagement, enhanced efficiency and provided 24/7 assistance to the customers. The paper investigates the usage and impact of AI-powered chatbots on the customer experience and overall performance of the banking institutions through thorough analysis of recent advancements in technology, the study explores how chatbots which are leveraging machine learning (ML) and natural language processing (NLP) are used to address customer enquiries, facilitate transactions and offer customized financial guidance. Additionally, the current study also examines the influence of chatbots on customer satisfaction, regulatory compliance and measures of security highlighting both the advantages and challenges of such systems. Hence, the aim is to contribute to a comprehensive understanding of chatbots' role in banking providing insights into their effectiveness and potential for the future refinement to meet evolving customer expectations. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1907",
+    "title": "Exploring the impact of artificial intelligence-based marketing practices on consumer experience and loyalty of millennials: Towards online shopping in the sultanate of Oman",
+    "journal": "Transforming Business Through Digital Sustainability Models",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0608-7.ch005",
+    "abstract": "This study explores how AI-based marketing practices impact millennial consumers' online shopping behavior in Oman. AI-driven marketing tools, which include personalized recommendations, chatbot interaction, and predictive analytics, are essential for online business. This study is based on a review that merges literature and case studies to understand AI's role in consumer experience and loyalty with online businesses in Oman. The findings suggest that AI-based tools can significantly enhance customer satisfaction by providing appropriate support. This study also identifies potential challenges which may affect customer loyalty. Future research directions are recommended to assess the long-term impact and ethical issues surrounding AI in marketing. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1908",
+    "title": "The features of AI in modern business",
+    "journal": "Transforming Business Through Digital Sustainability Models",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0608-7.ch013",
+    "abstract": "Artificial intelligence (AI) is transforming the technology industry, reshaping business operations, competition, and growth. This chapter explores AI's diverse applications, from enhancing operational efficiency to revolutionizing customer service, decision-making, and innovation. AI processes vast amounts of data, uncovering patterns and generating actionable insights. Predictive analytics helps businesses anticipate customer behavior, market trends, and operational challenges. AI-driven automation reduces costs and frees human resources for creative roles, boosting productivity. Customer engagement has evolved with AI tools like chatbots, virtual assistants, and recommendation engines, enabling personalized interactions and marketing. However, challenges such as ethics, data privacy, and workforce upskilling remain. Businesses must balance AI adoption with transparency and accountability to drive sustainable growth and competitiveness. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1909",
+    "title": "AI innovations for customer experience optimization in the service sector",
+    "journal": "AI Innovations for Customer Experience Optimization in the Service Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0918-7",
+    "abstract": "The rise of digital technology and the proliferation of customer data have created fertile ground for the application of AI in the services sector. Customers expect personalized, fluid, and proactive experiences in the current era. From chatbots and virtual assistants to predictive personalization and sentiment analysis, AI allows companies to gain deeper insight into their customers' needs and preferences, enabling them to deliver more tailored and effective customer experiences. AI Innovations for Customer Experience Optimization in the Service Sector addresses the theoretical, methodological, and empirical gaps in the academic and professional literature on using AI innovation solutions to optimize marketing processes and customer experiences. It encourages more rigorous and in-depth research to catalyze innovation and excellence in AI-based customer experience management, particularly in the services sector. Covering topics such as value creation, customer journey mapping effect, and telecommunications, this book is an excellent resource for marketing specialists, customer service managers, strategy manager, consultants, technology specialists, professionals, researchers, scholars, academicians, and more. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1910",
+    "title": "Smart solutions for the service sector: Exploring AI's role in enhancing customer experience",
+    "journal": "AI Innovations for Customer Experience Optimization in the Service Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0918-7.ch010",
+    "abstract": "Artificial Intelligence is revolutionizing the service sector with intelligent solutions that optimize customer experience and reimagine service delivery. The article captures the ability of AI technologies such as machine learning, natural language processing etc., in developing faultless, tailored, and seamless customer experiences. Pilgrim applications like AI-based chatbots, recommender systems, and customer behavior analysis are claimed to refer to its potential towards business success and customer satisfaction. It is used to demarcate problems in embracing AI like moral issues, privacy, and integration problems, also mentioned in the research study, depicting an integrated concept regarding its extent and magnitude. From retailing, hospitality, and healthcare industries case studies, the paper presents lessons of practical applications based on real practices regarding how to employ AI innovation in constructing customer engagement and creating competitive advantage. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1911",
+    "title": "The Role of Artificial Intelligence in Transforming Supply Chain Management",
+    "journal": "Transformative Impact of AI in Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-0923-1.ch011",
+    "abstract": "Artificial Intelligence (AI) is transforming Supply Chain Management (SCM) through intelligent, data- driven decision- making and process optimization. This chapter explores AI's impact on key SCM areas such as demand forecasting, inventory control, logistics, and risk management. Technologies like Machine Learning, NLP, and Computer Vision enhance efficiency and responsiveness, while integration with IoT and Big Data enables real- time insights. Applications include predictive ana-lytics for inventory, route optimization in logistics, and fraud detection. Innovations like autonomous vehicles and AI- powered chatbots are reshaping operations and customer service. Despite notable benefits cost reduction, improved accuracy, and customer satisfaction challenges remain, including data privacy, integration issues, and skill gaps. The chapter also highlights emerging trends such as generative AI and reinforcement learning in SCM, emphasizing their potential to drive future advancements and operational excellence. © 2026, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1912",
+    "title": "The Impact of AI Technologies in Transforming Financial Systems and Driving Innovation",
+    "journal": "Promoting Inclusivity and Accessibility With FinTech",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1112-8.ch006",
+    "abstract": "Artificial intelligence (AI) is becoming more deeply embedded in financial institutions, and it has the potential to impact their performance on a global scale. The study explores the evolution of AI and its transformative impact on reshaping the global financial landscape, which is driven by innovation and accessibility. The AI comprises several technologies which allow financial institutions to transition from conventional, manual processes to automated, data-driven operation approaches. The role of AI in financial systems extends beyond automation, making a paradigm shift in how financial products and services are delivered. Machine learning (ML) analysis large transaction data to determine trends, predict market movements, and improve financial decision-making. NPL-powered chatbots and virtual assistants have revolutionized customer service, offering seamless interactions and real-time support. The study recommended that regulator bodies and financial institutions should ensure the ethical deployment of AI and enhance consumer literacy. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1913",
+    "title": "Mind Games: Decoding the Subconscious Triggers of Manipulation Using Consumer Neuroscience and AI",
+    "journal": "Neuromarketing in the Age of AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1152-4.ch012",
+    "abstract": "The rapid proliferation of artificial intelligence (AI) in online communication is reshaping how information is created, disseminated, and consumed. From personalized chatbots to AI- generated content and deepfake videos, these technologies are not only transforming engagement but also challenging our ability to discern truth from fabrication. This chapter explores the intersection of AI and consumer neuroscience in the context of manipulation, examining how AI leverages subconscious human processes to influence perceptions and decisions. The chapter delves into the psychological mechanisms that make individuals susceptible to manipulative messages, such as trust, fear, and cognitive biases. By integrating insights from neuroscience, it uncovers the subconscious drivers of behavior, providing a deeper understanding of how AI technologies can either empower or exploit individuals. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1914",
+    "title": "Navigating the self-service revolution with smart machines",
+    "journal": "Navigating the Self-Service Revolution With Smart Machines",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1295-8",
+    "abstract": "The rise of smart machines transforms service interactions in various sectors, ushering in the self-service revolution. From AI-powered kiosks in airports to automated checkouts in retail and intelligent virtual assistants in banking, these technologies redefine convenience, efficiency, and customer expectations. As businesses adopt self-service solutions, the challenge lies in implementing the right technologies and ensuring they enhance the user experience. Navigating this revolution requires a careful balance between automation and human-centered design, where smart machines serve as tools to empower human interaction. Navigating the Self-Service Revolution With Smart Machines explores self-service technology as a transformative force in the retail landscape, scrutinizing its complexities, dualities, and far-reaching implications across diverse environments. It delves into the multifaceted nature of self-service technology, examining how its rise reshapes customer experiences, operational efficiencies, and business models in urban centers while contrasting these developments with the challenges in rural areas. This book covers topics such as machine learning, automation, consumer behavior, and is a useful resource for business owners, computer engineers, academicians, researchers, and data scientists. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1915",
+    "title": "Artificial intelligence and customer-centric marketing in driving sustainable business in the digital age",
+    "journal": "Digital Technologies and Transformations in Public Administration, Engineering, and Sustainable Business",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1534-8.ch001",
+    "abstract": "This paper focuses on the role of Artificial Intelligence (AI) in revolutionizing digital marketing practices, particularly in creating customer-centric strategies that support sustainable business practices. It examines how AI tools, such as machine learning, chatbots, and data analytics, are used to personalize marketing efforts, improve customer engagement, and drive sustainable business growth. The study also analyzes the ethical considerations and challenges of using AI in digital marketing, particularly regarding data privacy and customer trust, and explores how businesses can maintain transparency while benefiting from AI technologies. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1916",
+    "title": "Artificial intelligence in public cultural institutions: Shaping the value creation process with chatbots",
+    "journal": "Digital Technologies and Transformations in Public Administration, Engineering, and Sustainable Business",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1534-8.ch014",
+    "abstract": "This study investigates the integration of chatbot technology within public cultural institutions, to evaluate its impact on the value creation process. Theoretically based on the Public Service Logic, the research employs a qualitative methodology on a single case study, analyzing data collected from over 3,400 users during a 25-day pilot phase. The results indicate a high level of user acceptance, with 97.4% of visitors opting not to seek human assistance, and an average engagement time of 3 minutes and 9 seconds, reflecting significant interaction and interest. These findings underscore the potential of AI-driven solutions to improve service delivery and value creation process in public cultural settings. The implications suggest that the adoption of digital technologies can play a crucial role in shaping the value creation process and the way public institutions engage with their audiences, ultimately fostering greater accessibility and satisfaction across various sectors. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1917",
+    "title": "Impact of artificial intelligence on consumer online purchase intention",
+    "journal": "Multi-Industry Digitalization and Technological Governance in the AI Era",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1681-9.ch014",
+    "abstract": "Artificial intelligence (AI) is rapidly weaving itself into the fabric of online shopping as the digital landscape evolves, having a significant impact on consumer online purchase intention (COPI). This influence manifests itself in a variety of ways, ranging from personalized product recommendations curated by AI algorithms to seamless user experiences (UX) crafted through AI-driven optimization. Recommendation engines anticipate our desires by analyzing previous purchases and browsing behavior, relieving decision fatigue, and potentially nudging us towards that coveted purchase. Chatbots and virtual assistants, tireless digital companions, provide 24-hour support, increasing convenience and accessibility and thus increasing COPI. This AI-infused journey, however, is not without its challenges. Concerns about data privacy, algorithmic bias, and the ambiguity of AI decision-making can erode consumer trust, potentially impeding COPI. Ethical concerns about data manipulation, discrimination, and unfair data practices raise red flags, calling for transparency and responsible AI implementation. The key to unlocking a sustainable future for e-commerce is striking the right balance between harnessing the power of AI and mitigating its potential pitfalls. E-commerce companies must prioritize trust by being transparent, ensuring responsible AI practices, and confronting ethical concerns head on. Only then will they be able to harness AI's transformative power to foster a thriving online shopping environment in which COPI thrives alongside consumer trust and well-being. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1918",
+    "title": "Artificial intelligence and operational risk management: A qualitative analysis in the Moroccan banking sector",
+    "journal": "Transparency in AI-Assisted Management Decisions",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1737-3.ch011",
+    "abstract": "This paper explores the impact of artificial intelligence (AI) on operational risk management in the Moroccan banking sector through a qualitative case study conducted at Banque Populaire. The objective is to understand how AI, particularly in front-office operations, contributes to risk reduction, improved operational efficiency, and process automation. The results reveal a growing integration of AI, particularly through chatbots and automated services, helping to limit human error and reduce workload. However, challenges remain, related to both technical aspects (outages, cybersecurity, system interoperability) and human aspects (resistance to change, uneven adoption across customer segments). The study also highlights that the post-Covid context and accelerated digital transformation require banks to continually adapt their governance, information systems, and training practices. AI thus appears to be a major strategic lever for strengthening banks' operational resilience, provided it is accompanied by appropriate organizational preparation. © 2026, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1919",
+    "title": "Use of artificial intelligence chatbots in the hospitality industry: Preliminary insights on value co-creation",
+    "journal": "Empowering Value Co-Creation in the Digital Era",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1742-7.ch006",
+    "abstract": "Artificial Intelligence (AI) has become a daily technology in various sectors and services. This chapter presents a preliminary reflection on the use of AI chatbots in the hotel sector. The existing literature on AI is quite extensive, but when it comes to its technologies individually, it is scarce, therefore the present work aims to present information on this topic in a simple and complete way, the benefits and impacts of using AI chatbots in the hotel sector. The results of this manuscript demonstrate the difficulty that users have in accepting the use of AI chatbots, and their fears about this new technology. The conclusions point to predominantly empirical articles, which is in line with the most widely used analytical approach, the quantitative one. The organization of the micro subtopics derived from the vast content found on the topic, reflecting the focus of the existing literature mostly on AI in general, and not on its individual technologies. © 2025, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1920",
+    "title": "Unstrapping role of emotion AI and robotics: AI in customer relationship management",
+    "journal": "Demystifying Emotion AI, Robotics AI, and Sentiment Analysis in Customer Relationship Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1867-7.ch002",
+    "abstract": "Artificial Intelligence of Emotion and Robotics AI just don't seem to be playing revolution in Customer Relationship Management (CRM), instead of helping business to know the feelings opt by people and their actions. Easily accomplished by satiating subtleties Emotion AI reads in interactions with clients through consumption of some technology (recognition of faces, speech analysis, and sentiment analysis) while setting a personal involvement of the business in return of interaction-c ourteously responding to it, making the customer happier and undoubtedly loyal. These are all made better by Robotics AI towards improved customer-attached treatment through the use of chatbots whose intelligence is based on AI, digital-personal assistants, and almost equally rudimentary robots for giving immediate help even managing trivial inquiries and for automation of works and assurances across several different channels. With this advancement of the innovations, it will further strengthen customer relationships, increase loyalty, and promote growth. © 2025, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1921",
+    "title": "AI-driven robotic marketing: Transforming customer engagement and boosting conversions",
+    "journal": "Demystifying Emotion AI, Robotics AI, and Sentiment Analysis in Customer Relationship Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-1867-7.ch005",
+    "abstract": "AI is one of the robotic marketing integrations that helps to change how a company interacts with its clients in order to create customer journeys that are efficient and drive conversions. The function of automation powered by AI in optimizing customer engagement is covered in this paper through intelligent content delivery, predictive analytics and tailored interaction. AI empower marketers that can now process vast amounts of data, forecast consumer behavior and provide experiences that are tailored to a particular person's preferences. AI-based chatbots and virtual assistants speed up response times and increase customer satisfaction. Effectiveness and hyper-personalized experiences play a multifaceted role in AI-driven robotic marketing to increase customer conversions and enduring loyalty. The evaluation also considers the obstacles like worries about data privacy and the need for human supervision creating a generally fair assessment of AIs potential in the marketing industry. © 2025, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1922",
+    "title": "Artificial intelligence in chatbots and conversational marketing",
+    "journal": "Practical Strategies and Case Studies for Online Marketing 6.0",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2058-8.ch004",
+    "abstract": "AI is changing chatbots and conversational marketing by providing brands with the ability to deliver personalized, efficient, at-scale, and real-time customer interactions. AI-based chatbots utilize NLP, ML and predictive analytics to improve customer engagement, automatically respond to queries, and facilitate smooth and engaging conversational experiences. These tools, powered by AI, enhance 24/7 customer support, lead generation and personalized recommendations, thereby optimising the overall marketing process. It] integrates with a number of social media websites, messaging apps and websites, provide a single customer experience and benefit. Yet obstacles still exist to developing trust, such as ethics, pricing, data privacy, and AI bias, all of which need to be resolved before the concept of AI-based interactions becomes reliable and responsible. AI in conversational marketing is evolving toward adaptive learning, hyper-personalization, and improved contextual understanding, ensuring chatbots remain a significant part of contemporary digital marketing strategies. © 2025, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1923",
+    "title": "Social media marketing and management with Artificial Intelligence (AI) in online marketing 6.0",
+    "journal": "Practical Strategies and Case Studies for Online Marketing 6.0",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2058-8.ch005",
+    "abstract": "Artificial Intelligence (AI) is transforming social media marketing and management, for example, allowing businesses to get more out of content, audience engagement and data-based decisions. AI can also improve user experience through chatbots, sentiment analysis or predictive analytics that personalize experiences, automating responses. Social listening powered by artificial intelligence also helps brands identify customer preferences and market trends in real time. By harnessing the power of AI, businesses can easily run campaigns across multiple platforms, automate scheduling, and gain insights from advanced analytics to measure performance. But responsible deployment of AI will require ethical considerations, like data privacy and algorithmic biases, to be acknowledged. With AI rapidly evolving, its role in social media marketing will continue to emerge, increasing efficiency, creativity and customer satisfaction, ensuring a key aspect of the digital age. © 2025, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1924",
+    "title": "The digital renaissance of hospitality: Workforce mastery in the smart revolution",
+    "journal": "Smart Operations and Enhancing Guest Experience in the Hospitality Industry",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2145-5.ch005",
+    "abstract": "This study examines the impact of Industry 4.0 (I4.0) technologies on the hospitality industry, focusing on their role in improving efficiency, supply chain management, and personalized customer experiences. It also explores the challenges of integrating automation, artificial intelligence (AI), big data analytics, and the Internet of Things (IoT), emphasizing workforce adaptation and leadership evolution for sustainable digital transformation. A comprehensive review of academic literature and industry case studies is conducted to assess the adoption of I4.0 technologies inhospitality. The study evaluates AI-powered chatbots, smart automation, and data-driven decisionmaking, along with the role of virtual reality (VR) and augmented reality (AR) in vocational training. This research provides insights into workforce transformation, leadership restructuring, and AI-driven training in hospitality. © 2026, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1925",
+    "title": "The role of AI in transforming hospitality operations-enhancing efficiency and guest experience",
+    "journal": "Smart Operations and Enhancing Guest Experience in the Hospitality Industry",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2145-5.ch016",
+    "abstract": "Integrating artificial intelligence (AI) into hospitality operations has revolutionized the industry by increasing efficiency, optimizing resource management, and improving guest experience. AI-driven solutions like chatbots, virtual concierges, and intelligent spatial technology have automated customer service to provide seamless interaction and personalized experiences. Advanced data analytics and machine learning enable dynamic pricing, forecast forecasts, and demand forecasts. It allows you to maximize your hotel, maximize sales, and streamline operations. AI-controlled security measures, including biometric authentication and fraud detection, ensure a safer environment for guests and employees. Furthermore, AI is key to sustainability by optimizing energy consumption and reducing waste. Adopting AI presents challenges, such as implementation costs and labor adaptation, but the benefits outweigh the disadvantages. © 2026, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1926",
+    "title": "Literature Review of AI Agents for Enterprise Teams",
+    "journal": "Navigating Complexity, AI, and Legal Challenges in Organizations",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2419-7.ch001",
+    "abstract": "AI agents may soon revolutionize coworking spaces, from taking on routine tasks, to boosting efficiency like never before. Unlike earlier automation systems, these agents don't just follow rules, but instead make decisions based on goals, context, and input from other agents or systems. In this chapter, the author analyzes the new trend of introducing AI agents to empower corporate teams, focusing on opportunities, limitations, impact and potential evolution. Through a comprehensive literature review, the chapter synthesizes current research on AI agent deployment in enterprise environments, highlighting use cases such as product management, customer relationship management, software development, manufacturing, biomedical research and creative services. The review identifies key technological enablers and organizational factors influencing adoption, and outlines emerging directions in multi-agent systems and autonomous enterprise ecosystems. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1927",
+    "title": "The Paradox of Choice in the Age of AI: How Infinite Options and Intelligent Systems Shape Consumer Decisions",
+    "journal": "Insights on Consumer Psychology in the Digital Landscape",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2424-1.ch009",
+    "abstract": "This chapter explores how choice overload and information overload-amplified by algorithmic personalization, persuasive user experience (UX) design, and digital abundance-reshape consumer behavior in online environments. Drawing on theories of cognitive load, mental shortcuts (heuristics), and Dual System Thinking, it examines how emotional triggers such as fear of missing out (FoMO), scarcity, and urgency interact with digital design to influence impulsive decision-making. The chapter also considers coping strategies adopted by consumers, including filtering tools and digital self-regulation, and reflects on the ethical and psychological challenges posed by artificial intelligence (AI)-driven personalization. It concludes by outlining future research directions, particularly on how these dynamics impact decision quality and digital well-being across diverse user profiles. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1928",
+    "title": "Revolutionizing Marketing Strategies: The Role of AI in Value Creation and Consumer Engagement",
+    "journal": "AI Technology Management and Value Creation",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2497-5.ch009",
+    "abstract": "This paper discusses how AI is enabling companies to mainstream innovations for beat-your-competitor strategies in value creation and enhancing consumer engagement in the context of India. It illustrates the use of AI in playbooks for both segmentation and targeting in value theme creation. Interpretability is also discussed to rekindle the heterogeneity mass-market buyer-seller mismatch in product personalization. The paper provides insights for India-specific behavioral consumer engagement application challenges. Predicting behavior, unbiased features for prescient customization, telecom chatbots, identifying social media influencers, branding biases in foods and groceries, and curing e-commerce affordably can be value-generated ideas by companies to beat competitors that are being mainstreamed. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1929",
+    "title": "Building Digital Relationships: Social Relationship Marketing Strategies to Generative AI",
+    "journal": "Adapting Global Communication and Marketing Strategies to Generative AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2502-6.ch001",
+    "abstract": "Artificial intelligence (AI) is redefining business process optimization to make business efficient, cheaper, and innovative. AI streamlines operations, automates processes, and enhances decision- making to enable business to serve customers better and remain competitive. AI solutions vary from customer services, supply chain management, finance, and human resource. AI chatbots provide 24/7 customer support, and predictive analytics enable optimized sales forecasting and inventory management. AI allows savings and creation of innovations by means of customized services. Challenges that do arise include the necessity of having quality data. AI has to be trained on huge volumes of data for it to be able to make sound predictions, and poor data quality will bring about the destruction of decision- making. Last but not least, investing in AI technology and experienced personnel can be exorbitant. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1930",
+    "title": "The Impact of AI on Digital Marketing Across Various Industries: Unveiling New Possibilities Across Industries",
+    "journal": "Adapting Global Communication and Marketing Strategies to Generative AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2502-6.ch003",
+    "abstract": "Artificial Intelligence (AI) is revolutionizing digital marketing by enhancing the effectiveness of strategies through automation, data- driven insights, and personalized customer engagement. This paper presents a cross- industry analysis to understand the impact of AI on digital marketing effectiveness across various sectors. The primary objective of this research is to examine how AI-powered tools and techniques are reshaping marketing practices and optimizing consumer interactions. Industries such as retail, healthcare, finance, and entertainment are leveraging AI for customer segmentation, personalized recommendations, chatbots, predictive analytics, and automated content creation. By evaluating case studies and industry reports, this study aims to identify key trends and best practices adopted by successful organizations. This research also investigates the challenges faced by companies when implementing AI in digital marketing, such as data privacy concerns, ethical implications, and the integration of AI with existing marketing strategies. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1931",
+    "title": "Communication Transformed by Generative Artificial Intelligence: The Future of Language, Media, and Expression",
+    "journal": "Adapting Global Communication and Marketing Strategies to Generative AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2502-6.ch006",
+    "abstract": "Generative Artificial Intelligence is revolutionizing communication by enhancing personalization, automating content creation, and transforming human- machine interactions. From AI-driven chatbots and virtual assistants to real-time language translation and sentiment analysis, these technologies are reshaping global communication across industries. Businesses leverage AI to improve customer engagement, educators use it to enhance learning experiences, and media professionals apply it for content generation. As AI evolves, it enables more natural conversations, bridges language barriers, and fosters inclusivity. However, ethical concerns, misinformation, and data privacy remain challenges. Therefore, understanding AI's role in communication is crucial for harnessing its benefits while mitigating risks in the digital age. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1932",
+    "title": "NextGen digital marketing in the age of AI",
+    "journal": "NextGen Digital Marketing in the Age of AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2518-7",
+    "abstract": "In the evolving landscape of technology, NextGen digital marketing is reshaped by the transformative power of artificial intelligence (AI). As traditional strategies give way to data-driven automation, personalized experiences, and predictive analytics, businesses harness AI to reach audiences more efficiently and effectively. From chatbots and content generation to customer insights and targeted campaigns, AI enhances digital marketing. This demands that marketers embrace innovation, adapt to emerging tools, and rethink connections with modern consumers. NextGen Digital Marketing in the Age of AI outlines the transformative impact of AI on the digital marketing landscape. It contrasts the historical utility of traditional AI for optimizing processes like audience segmentation and predictive analytics with the revolutionary creative capabilities of generative intelligent technologies. This book covers topics such as consumer science, generated content, and marketing campaigns, and is a useful resource for business owners, marketers, academicians, researchers, and data scientists. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1933",
+    "title": "Deep Learning-Driven Smart Fashion Recommender for Modern Shoppers",
+    "journal": "Achieving Sustainability in Multi-Industry Settings With AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2530-9.ch015",
+    "abstract": "In today’s world, everyone is busy with daily routines, making it hard to focus on attire. Busy schedules make shopping in stores increasingly outdated, and technology has rapidly advanced online shopping. Artificial intelligence creates virtual shopping experiences on e-commerce websites, allowing everything to be done with a single click. The proposed system can understand user input, whether an image or text, and recommend related products. Users have individual logins with a personalized wardrobe feature to track styles they’ve tried. A new “Recommendation” feature helps users quickly choose from available options, with an added comment feature for feedback. Users can also edit and delete their wardrobe collection. A chatbot is available to guide users and answer queries anytime, enhancing convenience and user experience. © 2025 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1934",
+    "title": "Chatbots in Action: Factors Influencing the Customer Experience",
+    "journal": "Modern Consumer Behavior at the Intersection of AI and Social Media",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2747-1.ch002",
+    "abstract": "Grounded in technology acceptance theories, this chapter investigates key determinants of customer experience within telecommunication services. Specifically, it examines the influence of perceived ease of use, performance expectancy, compatibility, and social influence on customer experience with chatbots. Data were collected through an online survey administered to 379 Tunisian higher education students, and the hypotheses were tested using structural equation modeling (SEM) with AMOS23. The findings indicate that perceived ease of use, social influence, and compatibility positively affect customer experience. These results provide valuable implications to marketers in the telecommunications sector, helping them better understand consumer adoption and upgrade chatbot-based customer interactions. By emphasizing the role of social and contextual factors in technology adoption, this chapter contributes to the growing scope of literature on AI-powered customer service. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1935",
+    "title": "Role of AI in Consumer Decision-Making Processes",
+    "journal": "Modern Consumer Behavior at the Intersection of AI and Social Media",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2747-1.ch005",
+    "abstract": "The integration of Artificial Intelligence (AI) and social media has significantly transformed consumer behavior and digital marketing strategies. This paper explores how AI enhances personalization through data-driven product recommendations, targeted advertising, and real-time customer service via chatbots. Simultaneously, social media serves as a dynamic platform for consumer-brand interaction, shaping brand image through user-generated content, influencer marketing, and community engagement. These technologies collectively improve customer experience, foster loyalty, and influence purchasing decisions. However, their implementation also presents challenges, including data privacy concerns, over-personalization, and the risk of inauthentic content damaging brand trust. The study highlights the importance of ethical and strategic use of AI and social media to maximize their potential in building strong, lasting relationships with consumers in the increasingly competitive digital marketplace. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1936",
+    "title": "Anthropomorphism and Familiarity in AI Adoption: A TAM-Based Perspective on Human-Machine Interaction",
+    "journal": "Modern Consumer Behavior at the Intersection of AI and Social Media",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2747-1.ch015",
+    "abstract": "Artificial intelligence (AI) based chatbots have significantly transformed the landscape of AI-driven services. This chapter examines the fundamental determinants influencing the intention to adopt chatbots in the telecommunication services context. Specifically, it investigates the influence of familiarity, anthropomorphism, perceived ease of use, and perceived usefulness on chatbot usage intention. Data were collected via an online survey administrated to 321 Tunisian higher education students. The hypotheses were tested with Smart PLS4. The findings indicate that anthropomorphism and perceived usefulness positively influence chatbot adoption, whereas ease of use has no effect, and familiarity exerts a negative impact. Additionally, anthropomorphism enhances both usefulness and ease of use, while familiarity does not. These results offer valuable insights for marketers, particularly in the telecommunications sector, by enhancing the understanding of factors driving user adoption. This chapter contributes to the growing body of literature on the Technology Acceptance Model (TAM). © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1937",
+    "title": "Digital Transformation in Banking: Enhancing Customer Experience Through Technological Innovation",
+    "journal": "Data-Driven Monetization Strategies for Economic Insights",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2772-3.ch007",
+    "abstract": "The integration of digital technology in banking is examined in this study with an emphasis on improving client experiences and associated services. Adoption of cutting- edge technology like chatbots powered by AI, blockchain for safe transactions, and mobile banking apps is a prerequisite for the digital revolution in banking. Customers can access a variety of banking services anytime, anyplace with digital platforms, negating the necessity for in- person branch visits. Digitalization has also completely changed the way that banks provide customer support. Stronger client relationships and loyalty are fostered by personalized recommendations that are based on customer data and improve the entire banking experience. In addition, the digital revolution has sparked the creation of new financial services and products that are suited to changing consumer demands. This study not only contributes to understanding the theoretical knowledge but also provides the practical implications of digital technology in the banking sector. © 2026 by IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1938",
+    "title": "AI-Driven Innovations in the Insurance Sector",
+    "journal": "AI-Driven Innovations in the Insurance Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2822-5",
+    "abstract": "Artificial intelligence (AI) revolutionizes the insurance sector, driving innovations that reshape how insurers assess risks, process claims, detect fraud, and communicate with customers. From advanced data analytics and machine learning algorithms to chatbots and predictive modeling, AI technologies enhance operational efficiency and enabling more personalized, proactive services. As insurers leverage these tools to gain competitive advantages and streamline decision-making, they navigate challenges related to data privacy and regulatory compliance. This shift reveals a new era in insurance, where digital intelligence plays a role in strategy and service delivery. AI-Driven Innovations in the Insurance Sector delves into the transformative role of AI in reshaping the insurance industry. It examines how these innovations enhance operational workflows, improve risk assessment, streamline claims processing, and elevate customer experiences. This book covers topics such as human resources, chatbots, and risk management, and is a useful resource for business owners, computer engineers, academicians, researchers, and data scientists. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1939",
+    "title": "Emerging AI Trends Shaping the Insurance Industry: Evidences From India",
+    "journal": "AI-Driven Innovations in the Insurance Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2822-5.ch005",
+    "abstract": "Artificial Intelligence infuses its essence into Indian Insurance. The Exhaustive Analysis of AI Adoption in 61 Articles from 2015 to 2025 from Scopus, IEEE Xplore, Google Scholar, and Web of Science for Assessments of Innovations in Insurance by AI. Innovations in underwriting, claims management, fraud detection, and customer engagement were identified in the study, all of which illustrated how AI improved operational efficiency and risk assessment. InsurTech startups and legacy firms are, hence, increasingly caught up in predictive analytics, chatbot interaction, and smart contracts based on blockchain for automating policy-fraud contracts and deterrents. The emphasis of this study would be on the ethical use of AI and governance mechanisms for adopting it to ensure the sustainability of growth. Such Treatment Will Make Possible the Use of AI by Indian Insurers to Plug the Protection Gap, Build Customer Trust, and Fit Within the Emerging Regulatory Dynamics of the Indian Environment to Ensure Responsible and Effective AI. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1940",
+    "title": "AI as the New Watchdog: Intelligent Systems Revolutionizing Insurance Fraud Prevention",
+    "journal": "AI-Driven Innovations in the Insurance Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2822-5.ch010",
+    "abstract": "Fraudulent measures are a growing issue in the insurance industry, costing billions annually and eroding consumer trust. This chapter explores how artificial intelligence (AI), with unparalleled accuracy, speed, and scalability, transforms fraud detection, prevention, and mitigation. Traditional rule-based systems struggle against complex fraud schemes like staged accidents and synthetic identity theft. AI-driven techniques, leveraging machine learning (ML), natural language processing (NLP), and graph analytics, analyze vast datasets in real time to detect patterns and uncover hidden fraud networks. Case studies highlight AI's impact, including Lemonade's AI reducing false claims by 75% and European insurers integrating blockchain for transparency. Challenges such as algorithmic bias and GDPR compliance require interpretable AI frameworks. Future advancements, including generative AI and blockchain-IoT integration, will enhance fraud resilience. Ethical governance and cross-sector collaboration are essential to ensure fairness, accountability, and inclusivity. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1941",
+    "title": "AI-Powered Marketing in Insurance: Revolutionizing Customer Acquisition and Retention",
+    "journal": "AI-Driven Innovations in the Insurance Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2822-5.ch011",
+    "abstract": "The insurance industry is shifting their sales mode from offline to online for the sake of reaching potential customers efficiently. Online insurance sales are usually arranged in a customer-initiated way. To solicit a group of potential insurance customers, a notification displayed in a pop-up window can be automatically generated when a customer is browsing the insurance sales platform. Then a chatbot AI proceeds to have a conversation with the raised attention customer to accomplish predefined sales campaigns to pursue the interests or product recommendation formulated in the customer notification. During conversation, the interests of the customer are sent to human agents. Based on this interest, human agents are responsible for continuing the conversation with the raised customer's interests to sell insurance products. It is important that the chatbot can have a conversation effectively with the customer, which is started by initiating a conversation with personalized opening sentences. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1942",
+    "title": "AI-Powered Innovation: Redefining the Insurance Industry",
+    "journal": "AI-Driven Innovations in the Insurance Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2822-5.ch012",
+    "abstract": "Artificial Intelligence (AI) is revolutionizing the insurance industry by enhancing operational efficiency, risk management, and customer engagement. AI - powered innovations, including machine learning, natural language processing, and robotic process automation, are transforming underwriting, claims processing, fraud detection, and personalized customer service. Insurers leverage AI-driven predictive analytics for more accurate risk assessment, leading to cost optimization and better decision-making. AI-enabled chatbots improve customer experience. However, concerns regarding data privacy, algorithmic bias, regulatory compliance, and cybersecurity remain critical challenges. Case studies from Lemonade, Zurich Insurance, and HDFC ERGO highlights AI's impact on claims automation, fraud prevention, and real-time risk analysis. As AI integration deepens, future of insurance will be defined by hyper-personalization, real-time analytics, and responsible AI governance. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1943",
+    "title": "AI Chatbots in Financial Services: The Game Changer for Personalized Policy Solutions",
+    "journal": "AI-Driven Innovations in the Insurance Sector",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2822-5.ch013",
+    "abstract": "The rapid evolution of artificial intelligence (AI) has transformed customer interactions in financial services, with AI-driven chatbots emerging as a pivotal tool for enhancing personalized policy recommendations. These intelligent systems leverage machine learning algorithms, natural language processing (NLP), and real-time data analytics to understand customer preferences and provide tailored financial solutions. By automating policy advisory and customer support, AI chatbots improve service efficiency, reduce response times, and enhance user satisfaction. This article explores the role of AI chatbots in delivering personalized policy solutions, their impact on customer experience, and the challenges associated with their adoption in financial institutions. Additionally, it highlights emerging trends and future possibilities in AI-driven financial advisory services. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1944",
+    "title": "AI- Driven Media Influence on Consumer Behavior: Algorithmic Personalization, Trust, and Attention",
+    "journal": "Reshaping Journalism and Communications With AI",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-2960-4.ch004",
+    "abstract": "The present chapter considers how artificial intelligence (AI) uses algorithmic personalisation, trust mechanisms, and attention capture to influence consumer behaviour. It outlines the development of recommendation systems using AI such as deep learning and reinforcement learning, explaining how they personalise content and predict preferences to influence decisions. One of the observed changes in the AI approach occurs through rise of “thinking” with predict preferences and “feeling” with simulating empathy for uninterrupted conversations. It also defines “filter bubbles” for another impact of recommendation engines, search filters, and chatbots with their personalised experiences by predicted preferences, so that users could only face with similar and “relevant” options during their journey. Higher engagement could manipulate a user's preference through the given predictions and direct the user to complete a purchase even at higher prices. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1945",
+    "title": "AI-Driven Green Marketing: Personalization, Automation, and Sustainable Consumer Engagement",
+    "journal": "Transforming Business Practices With AI-Powered Green Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-3017-4.ch002",
+    "abstract": "The application of AI in green marketing is transforming the conventional marketing practices through introducing novel eco-conscious, technical and ethical applications. The paper examines the use of AI technologies in green marketing due to personalization, automation and sustainable consumer interaction. Automation enables personalization with the help of AI to match environmental concerns with campaigns and human-like chatbots to enhance efficiency. The AI can also promote the building of sustainable consumer behavior by promoting the habit formation strategies and incentives on the community level. Along with these benefits, the issues of data privacy, over-targeting and greenwashing are still serious. The research takes into account not only the future of marketing as to technological development, but also as to environmental, user-oriented and ethical transformation. © 2026, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1946",
+    "title": "A Roadmap to a Sustainable Future: Empowering Businesses and Consumers Through AI-Driven Green Marketing",
+    "journal": "Transforming Business Practices With AI-Powered Green Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-3017-4.ch010",
+    "abstract": "AI is transforming green marketing by enhancing sustainable business practices and driving consumer engagement toward eco-friendliness. AI-powered tools analyze consumer behavior, predict market trends, and create personalized green campaigns to attract eco-conscious buyers. Machine learning and predictive analytics optimize supply chains, reduce waste, and improve energy efficiency while ensuring profitability. AI-driven recommendation engines help consumers make informed sustainable choices by providing insights into product origins, carbon footprints, and ethical sourcing. Chatbots and virtual assistants foster trust by answering sustainabilityrelated queries in real time. This chapter explores AI's role in sustainability, including AI-driven climate modeling, blockchain-based green verification, and circular economy solutions. By adopting AI-driven green marketing, businesses can enhance their competitive edge while contributing to a more sustainable future. © 2026, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1947",
+    "title": "Enhancing Customer Experience With AI-Powered Marketing",
+    "journal": "Enhancing Customer Experience With AI-Powered Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-3221-5",
+    "abstract": "Delivering a personalized customer experience is critical for modern marketers, with AI tools pivotal to this transformation. By harnessing AI technologies, businesses gain deeper insights into customer behavior, anticipate needs, and tailor interactions. From chatbots that provide instant support to recommendation engines that drive engagement, AI-powered marketing enables brands to connect with consumers in relevant, timely, and meaningful ways. As expectations for personalization rise, integrating AI into marketing strategies may create lasting customer relationships and help organizations stay competitive in a digital world. Enhancing Customer Experience With AI-Powered Marketing explores how AI technologies like machine learning and chatbots transform marketing approaches. It examines the challenges faced while presenting AI solutions and customer experience transformations. This book covers topics such as personalized content, social media, and virtual technology, and is a useful resource for marketers, business owners, computer engineers, academicians, researchers, and scientists. © 2026 by IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1948",
+    "title": "The Internet of Things and Real-Time Process Monitoring",
+    "journal": "Navigating Digital Transformation Through Business Process Management",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-3336-6.ch011",
+    "abstract": "Businesses, industries, and consumers' physical enabling interconnectivity allow for greater automation, efficiency, and real- time monitoring, which is most important applications offering businesses track, analyze, optimize operations instantaneously. By embedding sensors and intelligent systems into processes, IoT facilitates continuous data collection and analysis, providing operational help. This combination process is reshaping logistics and agriculture by providing unprecedented status and systems. Understanding the Internet of Things (IoT): a broad concept encompassing physical sensors, actuators, other objects through objects, and smart highly used in manufacturing or healthcare. The key IoT gathers exchange, then processes and analyzes to improve the functionality of the connected objects. One primary is the sensor, which collects data from the pressure and motion. Then, through networks (often wireless) to central processing units or cloud platforms, IoT systems typically rely on several key elements of the ecosystem, smarter environments, and more efficient operations. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  },
+  {
+    "article_id": "CA_1949",
+    "title": "Consumer digital privacy in the age of smart virtual assistants",
+    "journal": "Exploring AI Implications on Law, Governance, and Industry",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-3384-7.ch011",
+    "abstract": "The proliferation of Virtual Voice Assistants (VVAs) in the lives of consumers has ushered in an era of unparalleled convenience and technological sophistication. However, the ever-present risk of unauthorized data sharing and exploitation of Personal Identifiable Information (PII) calls for urgent regulatory intervention to protect consumer digital privacy. This chapter offers a comprehensive examination of VVAs, dissecting the integrated technologies that power them and debunking common misconceptions. It navigates through the complex web of user agreements and the existing patchwork of privacy laws, revealing the gaping regulatory void surrounding VVAs. © 2025, IGI Global Scientific Publishing."
+  },
+  {
+    "article_id": "CA_1950",
+    "title": "Applications of emotion AI in customer interactions and support",
+    "journal": "Harnessing Emotion AI for Customer Support and Employee Wellbeing",
+    "journal_impact_factor": null,
+    "doi": "10.4018/979-8-3373-3658-9.ch001",
+    "abstract": "By leveraging technologies such as facial expression recognition, speech analysis, and text sentiment analysis, Emotion AI enables machines to understand and react to the emotional states of individuals in a more personalized and empathetic manner. This chapter explores the various applications of Emotion AI in customer service and support, emphasizing how it can significantly improve both customer satisfaction and operational efficiency. Emotion AI is widely utilized in automated customer support systems, including chatbots, call centers, and virtual assistants, where it detects and analyzes emotional cues to provide contextually appropriate responses. Despite its benefits, the application of Emotion AI raises several ethical concerns. These include issues surrounding privacy, the potential for emotional manipulation and biases in emotion recognition, which may lead to unequal treatment across different demographics. Consequently, the ethical deployment of Emotion AI requires businesses to establish clear guidelines and adhere to ethical principles to avoid misuse. © 2026, IGI Global Scientific Publishing. All rights reserved."
+  }
+]

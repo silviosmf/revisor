@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_2051",
+    "title": "Mastering the digital dialogue: How restaurant managers tackle positive and negative eWOM in the UAE restaurant industry",
+    "journal": "Tourism and Hospitality Research",
+    "journal_impact_factor": null,
+    "doi": "10.1177/14673584251376635",
+    "abstract": "This study examines how restaurant managers strategically respond to online reviews through electronic word-of-mouth (eWOM), distinguishing between approaches for positive and negative feedback. Using a multi-method research design, the study first conducted a content analysis of 671 eWOM responses, categorizing key strategies. This was followed by in-depth interviews with 11 managers actively engaging in eWOM to validate the findings. Results indicate that managers use rapport-building and marketing strategies for positive reviews, leveraging them to enhance customer relationships and attract new patrons. Engaging with both positive and negative reviews is crucial for customer loyalty and brand perception. While responses to positive reviews reinforce strengths, addressing negative feedback helps mitigate reputational risks. This research contributes to eWOM strategy literature by highlighting managers’ objectives for response strategies, filling a critical gap in the restaurant industry, and providing practical insights for optimizing online engagement. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2052",
+    "title": "A psycho-social approach to consumer ethics",
+    "journal": "Journal of Consumer Culture",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1469540518773815",
+    "abstract": "Research into consumer ethics has grown considerably over the last two decades. However, most studies adopt either a psychological or a socio-cultural approach and there has been little in the way of bridging the two together. Accordingly, we draw on Kleinian psychoanalysis as a means of advancing an explicitly psycho-social understanding of consumer ethics. Following an emerging tradition that conceptualizes moral dilemmas as questions of care, rather than abstract principles of moral and environmental justice, we conceptualize consumer care as a capacity that for its extension across difference and distance is subject to a variety of biographical, inter-subjective and institutional-level processes. Subsequently, we attempt to redress forms of theoretical reductionism noted in both psychological and socio-cultural accounts of everyday morality in consumption. We corroborate a more nuanced, mid-ground conceptualization that neither precludes nor overstates the possibility of consumer agency while also locating agency in inanimate objects. Finally, we offer a methodological contribution by introducing a psychoanalytic (Kleinian) approach to analyzing textual and visual data. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_2053",
+    "title": "Beyond consumer responsibilization: Slow Food’s actually existing neoliberalism",
+    "journal": "Journal of Consumer Culture",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1469540518818632",
+    "abstract": "Critics of political consumerism argue that it perpetuates a neoliberal belief that complex societal problems are best redressed through the market-coordinated choices and actions of socially responsible consumers. However, such critiques overlook how neoliberalism is actually enacted in particular socio-cultural contexts and the variegated ideological effects that result. To redress this gap, we analyze the “actually existing neoliberalism” manifest in a Slow Food network. This discursive system presents an intersection between a neoliberal discourse of passionate entrepreneurialism and a politicized therapeutic ethos that traces to the organization’s historical roots in Italian leftist politics. Through this actually existing neoliberalism, Slow Food enthusiasts constitute themselves as ethical agents who are sharing their passion and helping others gain autonomy from the corporate controlled, industrialized food system. This ideological framing buttresses the ethical authority of the Slow Food movement by countering the cultural condemnation that its politicized taste practices are elitist affectations. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_2054",
+    "title": "Mutuality: Critique and substitute for Belk’s “sharing”",
+    "journal": "Marketing Theory",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1470593115572669",
+    "abstract": "The recently introduced construct of consumer sharing is represented as a nonreciprocal, pro-social distribution of resources given without expectation of reciprocity (Belk, 2010, ‘Sharing’, Journal of Consumer Research 36: 715–34). The approach adopted rests on shaky ontological and epistemological grounds and reproduces an array of problematic modernist dichotomies (e.g., agency/structure, nurturing family/instrumental public, gift/market, and altruism/self-interest) that significantly constrain the analytical enterprise. This work redresses some of the conceptual problems in the current formulation. The critique highlights a focus on resource distribution based on a more holistic, socially grounded perspective on circulation. We offer the alternative concept of mutuality or generalized exchange and the metaphor of inclusion rather than exchange as central to this perspective. We argue this may provide a more sound basis for understanding alternative modes of circulation. © 2015, © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_2055",
+    "title": "Reconsumption reconsidered: Redressing nostalgia with neo-burlesque",
+    "journal": "Marketing Theory",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1470593118777892",
+    "abstract": "Reconsumption refers to the act of rereading books, rewatching movies, revisiting places and re-experiencing hedonic experiences more generally. In a retrospective consumer culture, replete with prequels, sequels, reboots and rereleases, there is considerable scope for expansion. This article reconsiders the reconsumption concept. Based on an in-depth, 3-year study of neo-burlesquers in France, it reveals that reconsumption is evident in a communal context; that the concept is applicable to sequels not just re-experienced originals; that it holds good when ‘post-phenomenological’ research methods are employed; and that nostalgia is its driving force. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_2056",
+    "title": "Failure: Perspectives and prospects in marketing and consumption theory",
+    "journal": "Marketing Theory",
+    "journal_impact_factor": null,
+    "doi": "10.1177/1470593121992539",
+    "abstract": "Failure is ubiquitous in popular and consumer culture. In this commentary, we interrogate discourses around failure and outline potential avenues of inquiry for the marketing and consumption theory disciplines. We begin by synthesizing how failure has hitherto been conceptualized in marketing theory. Then, we discuss how recent rethinking of failure in other disciplines can be meaningful for marketing thought, and propose a new agenda for marketing scholars for studying failure, that moves beyond studying failure as a primarily destructive phenomenon that arises predominantly in service encounters. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_2057",
+    "title": "The marketing research curriculum: Closing the practitioner–academic gaps",
+    "journal": "International Journal of Market Research",
+    "journal_impact_factor": 1.565,
+    "doi": "10.1177/1470785319843775",
+    "abstract": "As an industry, marketing research has enjoyed decades of systemic growth. Unfortunately, dissatisfaction with the return on marketing research investments has also been consistently voiced. Part of this complaint may be due to the inadequate way marketing research is being taught. In this article, we review what practitioner–academic gaps have been found in the literature and also present the results of a survey among alumni of a US university. We identify several key gaps including (1) understanding of business issues, (2) ability to define a marketing research problem, (3) ability to design marketing research, (4) ability to analyze data, (5) ability to interpret the results, (6) ability to translate results into actions, (7) ability to effectively interact with clients, and (8) expertise on specific research studies such as customer satisfaction research, branding, and new product development research. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2058",
+    "title": "Theoretical Advances in Service Breakdown Prevention and Recovery: Rich Service Enactment to Improve Server-Client Interactions and Outcomes",
+    "journal": "Australasian Marketing Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1177/18393349221075693",
+    "abstract": "This study investigates service breakdowns and describes interventions, including simulations of learner-created service interactions. Constructing and enacting these interactions help in enabling agile, effective server responses. The research investigated the effectiveness of training using live role-playing in dealing with negative turns and solving ad hoc dilemmas in real client-server encounters, thus advancing service excellence and service recovery theory and practice. Seven tertiary institutions cross five nations engaged in training students in client-service performance in simulated contexts. Findings support the positive impact of the proposed iterative competency development plan on impromptu responses, higher-order thinking and situational memory in trainees/servers. The development of Rich Service Enactment Theory (RiSET) extends three perspectives. First, most service training focuses restrictively on what-to-do, excluding necessary training on what-not-to-do. Second, practicing in stimulating contexts with peer feedback helps to prevent repeated mistakes and disastrous service failures. Third, the RiSET model provides a new framework for educators/trainers to develop models that prepare trainees for dealing with unknown, possibly high-risk encounters. The study focuses on surfacing server knowledge and implementing server training to prevent or reduce dramatic turns during client-server encounters, rather than empirically testing a well-formed theory. The study offers empirical researchers’ configurations of conditions for contextual experimentation. © 2022 Australian and New Zealand Marketing Academy."
+  },
+  {
+    "article_id": "CS_2059",
+    "title": "Factors Affecting Customer Satisfaction in Responses to Negative Online Hotel Reviews: The Impact of Empathy, Paraphrasing, and Speed",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965514560014",
+    "abstract": "An analysis of three types of responses to negative hotel reviews finds that the response generally should follow the same principles as answering a customer complaint in person. Based on a series of hypothetical responses to a negative review, this study finds that inserting an empathy statement in response to the negative review improved the ratings of the response among a sample of university students. Likewise, this group of 176 potential customers rated the response more favorably when the response included a paraphrase of the complaint, thus making the response more personal and less generic. Interestingly, contrary to popular belief, our results indicate that the speed with which the hotel responds to an online complaint did not influence the survey participants’ rating of the response. The theoretical implications of these findings are that the online response should include same theoretical anchorings based on interactional justice and active listening that apply to face-to-face customer complaints. The major difference between an in-person complaint and an online review is that, in the review, the guest is not on premises waiting for a response, which changes the importance of the timing of a response and alters the perception of procedural justice, which supports the idea of a prompt response. This study further implies that hotel managers should include empathy or paraphrasing statements in their responses to online reviews. © The Author(s) 2014."
+  },
+  {
+    "article_id": "CS_2060",
+    "title": "Communication Richness: Why Some Guest Complaints Go Right to the Top—and Others Do Not",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965514560161",
+    "abstract": "Despite everyone’s best efforts, restaurant service falls short at times. In those situations, guests perceive a service failure, and many complain. This study of 513 guests in three U.S. markets examines the guest characteristics that seem to drive the channel used for those complaints. Using a framework of media richness theory, the study found that guests who are more educated, more likely to complain, more frustrated, and in need of greater information about the service failure will typically take their complaint directly to management, either face-to-face or via written communication. On the other hand, those who are less educated or less frustrated will instead complain to line staff or use corporate guest-comment cards. Some of these findings appear not to support media richness theory, as face-to-face complaints are the richest channel (whether to line staff or management). However, it appears that for this sample of restaurant guests, the idea of taking it to the top (both in person or in writing) is important, particularly for frustrated, educated guests. © 2014, © The Author(s) 2014."
+  },
+  {
+    "article_id": "CS_2061",
+    "title": "When Customers Complain: The Value of Customer Orientation in Service Recovery",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965514566070",
+    "abstract": "Frontline hospitality employees inevitably face customer complaints and verbal aggression from time to time. Some employees seem to be able to shake off this negative energy and offer service recovery, while others collapse under such onslaughts. This study of 243 frontline employees of casual dining restaurants in Korea found that customer orientation is an important factor in employees’ ability to avoid emotional exhaustion and provide service recovery. The study first establishes the harmful relationships among customer verbal aggression, emotional exhaustion, and (successful or failed) service recovery performance. By incorporating customer orientation into the model, the study documents its buffering role as a personal coping resource. In summary, (1) customer verbal aggression intensifies emotional exhaustion, (2) emotional exhaustion mitigates service recovery performance, (3) customer verbal aggression does not mitigate service recovery performance, (4) emotional exhaustion fully mediates the harmful relationship between customer verbal aggression and service recovery performance, and (5) the detrimental effects of customer verbal aggression are greater among employees with low customer orientation than high orientation employees with regard to the effect of emotional exhaustion on service recovery performance. © 2015, © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_2062",
+    "title": "“I Want to Help” versus “I Am Just Mad”: How Affective Commitment Influences Customer Feedback Decisions",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965515570939",
+    "abstract": "This study investigates the joint effects of affective commitment, feedback valence, and feedback use on customers’ willingness to give feedback following a service failure. Our findings reveal that customers who have high levels of affective commitment to a service firm exhibit both a strong motivation to help a firm improve its business and a great need to maintain positive relationships with the firm’s frontline employees. Therefore, affectively committed customers are more willing to help the firm by lodging complaints when such feedback is not used for employee evaluation purposes. In addition, driven by their strong motivation to help the firm, affectively committed customers are more willing to offer constructive suggestions than their counterparts with low levels of emotional attachment. © The Author(s) 2015."
+  },
+  {
+    "article_id": "CS_2063",
+    "title": "The Long-Term Impact of Service Failure and Recovery",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965518762835",
+    "abstract": "This article examines customers’ short-term attitudinal and long-term behavioral responses to service failures and recovery efforts. Our data from a tracking study of casual dining restaurants customers indicate that those who did not experience any failure were more satisfied than those who experienced successful recovery following a failure. The satisfactory recovery group, in turn, was more satisfied than customers who either did not complain or were not successfully recovered following their complaints. Importantly, the pattern of brand patronage over the medium and long run differed substantially from the short-term variation in satisfaction levels across the four customer groups. In the medium term, the brand visitation frequency for those who never experienced failure was similar to those of customers who were successfully recovered. The visitation frequencies of customers who did not complain or were not successfully recovered were lower. However, over the long run, the visitation pattern changed substantially, and those who never experienced failure had higher brand patronage frequency than all the three remaining groups that behaved relatively similarly. These results suggest that customers make a distinction between the qualities of the core service and the recovery effort. Although successful recovery temporarily compensates for core failure, its positive influence dissipates over time. In the longer term, customers’ complaining behavior and the firm’s recovery efforts matters less and customers’ brand patronage depends largely on whether or not they experienced core service failure. Nevertheless, firms can recover their investments in service recovery because of increased brand patronage in the medium term. © The Author(s) 2018."
+  },
+  {
+    "article_id": "CS_2064",
+    "title": "Customer Service Evaluations of Employees With Disabilities: The Roles of Perceived Competence and Service Failure",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965519882315",
+    "abstract": "Although employees with disabilities represent a significant percentage of the American hospitality labor force, they often face workplace discrimination. Despite this reality, no research has examined whether customer service evaluations are affected by employees with visible disabilities and the mechanisms behind why and when customer service evaluations can be negatively impacted by employee disability status. This is a significant gap in the literature focusing on disability discrimination because customers—through their customer service evaluations—play a significant role in the evaluation of hospitality employees. Therefore, the current article examined if employee disability status (i.e., does or does not have a disability) influences customer service evaluations using experimental methods in which a hotel service experience is performed by an employee who does or does not have a disability. The current research found that (a) customers do evaluate hospitality employees with disabilities lower than employees without disabilities, (b) customer service evaluations are negatively impacted by employee disability status because they are perceived as less competent than employees without disabilities, and (c) customers are more likely to do so in the presence of a service failure. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2065",
+    "title": "The Customer Isn’t Always Right: The Implications of Illegitimate Complaints",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965519889288",
+    "abstract": "Due to the common business practice of the “customer is always right,” many companies have a risk of dealing with illegitimate complaints. Although illegitimate complaints are a major issue in the hospitality industry, no study has yet examined the impact of illegitimate customer complaining behavior on customers who can witness the complaining and recovery process of others. To fill this gap, this research examines the effects of service recovery aimed at illegitimate customers on customers who witness the complaints’ behavioral reactions (revisit intention, tipping behavior, intention to complain) and the role of emotional expression. A 2 (Service recovery aimed at other customer; good vs. poor) × 2 (Legitimacy of complaining behavior of other customers: legitimate vs. illegitimate) × 2 (Emotional expression: aggressive vs. calm) scenario-based between-subjects factorial experiment is utilized. This research provides evidence that witnessing illegitimate complaints of other customers and the subsequent service recovery aimed at those complainers impacts the behavioral reactions of customers who witness that situation. This study broadens the service recovery literature by incorporating third-party justice theory with illegitimate customer behavior by specifically examining the unique case where the firm is not responsible for the service recovery. In addition, the findings address the benefit to service firms by understanding the impact of witnessing other customers’ service recovery treatment on observers’ subsequent behavioral intentions. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2066",
+    "title": "Company Response to Negative Online Reviews: The Effects of Procedural Justice, Interactional Justice, and Social Presence",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965519892902",
+    "abstract": "This research investigates how potential customers evaluate a company response to negative online reviews. Integrating the literature on perceived justice in service recovery, social presence in online communications, and signaling in trust formation process, this research examines the effects of procedural justice, interactional justice, and social presence in the company’s response to negative online reviews on potential customers’ trust and purchase intentions toward a company. A 2 × 2 × 2 between-subject experimental design is utilized, and 410 participants are recruited through a consumer panels firm. Main results include the three-way interaction effect of procedural justice, interactional justice, and social presence on trust and the mediating effect of trust. Social presence exacerbates the negative effects on trust when both interactional justice and procedural justice are low in the company response. However, the social presence effect becomes small in increasing trust when both interactional justice and procedural justice are high in the company response. Trust mediates the relationship between customer perceptions of company response and purchase intentions. This research provides practical implications for hospitality companies on how to effectively respond to negative online reviews. © The Author(s) 2019."
+  },
+  {
+    "article_id": "CS_2067",
+    "title": "Why Service Recovery Fails? Examining the Roles of Restaurant Type and Failure Severity in Double Deviation With Justice Theory",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/1938965520967921",
+    "abstract": "Due to the increasingly competitive nature of the industry, the prevalence of service failure in restaurants has made a satisfactory service recovery critical for retaining customers. However, the success rate of service recovery is far from satisfactory. Informed by Rawls’s justice theory, this study explored service recovery failures (double service failure) in a restaurant setting. Results from our experiment indicate that the effects of different types of service recovery failure on postrecovery evaluations vary across two situational factors: restaurant type and failure severity. Specifically, procedural injustice (low-resolution speed) was found to exert more influence on word-of-mouth intentions in a quick-service restaurant than a full-service restaurant. For failures of high severity (vs. low severity), distributive injustice (no compensation offered) is found to be more impactful. Theoretical and managerial implications are discussed. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2068",
+    "title": "When Going Above and Beyond Meets Diversity: Are Service Recoveries Evaluated Based on Inference or Recognition?",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/19389655231214708",
+    "abstract": "Not all recoveries are successful. Previous research mostly focuses on employee service-recovery actions, while limited research examines how customers evaluate the interactions of employees’ diverse appearance features and their performance in service recoveries. To build upon the research gaps, this study examines the two processes of evaluation: inference-based and recognition-based evaluations. To do so, this research examines how service employees’ diversity features (e.g., gender and race) and their organizational citizenship behavior (OCB) performance influence customer evaluations of service recovery. Using a between-subjects experimental research design, the findings contribute to the diversity, service recovery, and OCB literature by adding new evidence on how recognition-based evaluations of employees’ appearances (gender and race) and inference-based evaluations of behaviors (OCB to customers) can affect customer perceptions of employee competence, trustworthiness, and dignity in service recoveries. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2069",
+    "title": "The Role of Ambivalent Identification on Service Recovery: A Study of the Hotel Industry",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/19389655241255004",
+    "abstract": "Service failure is common and inevitable due to the unique characteristics of services. It is essential for service organizations to carefully handle service failure and employ effective recovery strategies to maintain and improve customer satisfaction, especially when consumers experience mixed emotions towards the organization. However, most service failure and recovery literature focuses on how ambivalent identification works at the organizational level. Thus, this study extends the application of the social identity theory beyond organizational perception and focuses specifically on the consumer context, shedding light on its role in recovery justice and satisfaction. It explores the impact of failure severity and degree of correction on recovery justice, with ambivalent identification serving as the moderator in the hotel industry context. Findings from an intercept survey method indicate that the negative relationship between severity of failure and recovery justice weakens as ambivalent identification increases, while ambivalent identification strengthens the positive relationship between degree of correction and recovery justice. Moreover, ambivalent identification diminishes the positive impact of recovery justice on post-recovery satisfaction. This study provides the theoretical and practical implications related to service recovery for hotel management. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_2070",
+    "title": "Guest Voice Behavior for Hotels: The Role of Experience, Emotional Attachment, and Perceived Value",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/19389655251367401",
+    "abstract": "Hotel firms can learn valuable insights from guests who voice their thoughts about the services. This study distinguishes voice behavior from complaint behavior, elevating it to a more supportive and constructive level, based on approaches to employee promotive and prohibitive voice behaviors. Guests can take an extra role in their communicative behaviors with hotels and voice innovative ideas and potential shortcomings related to the services they receive. Based on the theory of social exchange, we aim to explain the impact of guest experience, emotional attachment, and perceived value on voice behavior for hotels. The model was tested on the data collected from 628 adults about their last hotel stays. The findings show that emotional attachment mediates the relationship between customer experience and voice behavior and is positively influenced by experience. Perceived value strengthens the impact of experience on emotional attachment, moderating their relationship. Theoretical and managerial practices are discussed. © The Author(s) 2025"
+  },
+  {
+    "article_id": "CS_2071",
+    "title": "Service Robot Failures’ Effect on Employees and Customers in Hospitality",
+    "journal": "Cornell Hospitality Quarterly",
+    "journal_impact_factor": 2.564,
+    "doi": "10.1177/19389655261426343",
+    "abstract": "This study investigates how service robot failures influence employee attitudes and behaviors, and how these employee responses subsequently affect customer satisfaction in the hospitality industry. Drawing on the Job Demands-Resources (JD-R) model, the research also examines the moderating role of employee autonomy in these relationships. Data were collected from 268 matched employee–customer pairs in restaurants employing service robots in South Korea. Using structured questionnaires, the study assessed perceptions of robot service failures, employee autonomy, and associated attitudinal and behavioral outcomes. The results indicate that negative attitudes toward robots and subsequent employee resistance mediate the relationship between robot failures and customer satisfaction. Conversely, adaptive coping and problem-solving skills also mediate this relationship through a positive pathway. Employee autonomy moderates both processes, mitigating the negative effects of robot failures and strengthening positive employee behaviors that support service recovery. This study contributes to the literature on human–robot interaction by providing empirical evidence on the dual pathways through which service robot failures affect frontline service dynamics and customer outcomes in hospitality settings. © The Author(s) 2026"
+  },
+  {
+    "article_id": "CS_2072",
+    "title": "Service Recovery to L.A.S.T.: The Case of Disgruntled Customers",
+    "journal": "Journal of Hospitality and Tourism Cases",
+    "journal_impact_factor": null,
+    "doi": "10.1177/216499871700600304",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_2073",
+    "title": "A Dining Experience Case Study for Hospitality Management Teaching and Learning",
+    "journal": "Journal of Hospitality and Tourism Cases",
+    "journal_impact_factor": null,
+    "doi": "10.1177/21649987241241927",
+    "abstract": "Case study as a teaching method has proven to be a mind stimulating technique that allows students to test different scenarios and to critically analyze practical incidents widening their knowledge perspective. Instructors achieve many goals through the application of such method where they enhance students learning by linking theory to practice in a cooperative environment based on team work, opinion sharing, and discussion. The aim of the current study is to demonstrate, analyze, and interpret a real dining experience case in order to be used in teaching by hospitality management instructors. This case as simple as it seems is a possible outcome of any service encounter. Its implications are profound on the organization image and guest loyalty. An experience that deviates away from its optimum scenario or ends with an unrecovered faulty service can render damages beyond just losing customers, to compensations, and even to law suits. It is an opportunity for hospitality management students to learn how to evade service failures, create successful memorable guest experiences, and to apply critical thinking techniques. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_2074",
+    "title": "Green Kitchen Family Restaurant: Managing the New Age Customer",
+    "journal": "South Asian Journal of Business and Management Cases",
+    "journal_impact_factor": null,
+    "doi": "10.1177/2277977919833768",
+    "abstract": "This case study presents a stormy incident at Green Kitchen Family Restaurant (GKFR) about a service delay. A group of customers came to the restaurant after a tiresome journey and the hunger was visible on their faces. After taking the order, the steward usually briefs the customer about the delivery time. As the steward who handled that table was a newcomer and he missed informing them the delivery time. The peak hour rush on that day was just that they had to wait for a little extra than usual. This aggravated the anger of the customer which resulted in a poor feedback and a complaint posted on Google+ about the service delay at GKFR. Now the task before the founder is, how to deal with such complaints from a tech-savvy customer and the need to understand the nature and implications of the social media network posts to devise optimal service recovery mechanisms for better customer relationship management. © 2019 SAGE Publications."
+  },
+  {
+    "article_id": "CS_2075",
+    "title": "Application of Ensemble Models in Credit Scoring Models",
+    "journal": "Business Perspectives and Research",
+    "journal_impact_factor": 1.0,
+    "doi": "10.1177/2278533718765531",
+    "abstract": "Loan default is a serious problem in banking industries. Banking systems have strong processes in place for identification of customers with poor credit risk scores; however, most of the credit scoring models need to be constantly updated with newer variables and statistical techniques for improved accuracy. While totally eliminating default is almost impossible, loan risk teams, however, minimize the rate of default, thereby protecting banks from the adverse effects of loan default. Credit scoring models have used logistic regression and linear discriminant analysis for identification of potential defaulters. Newer and contemporary machine learning techniques have the ability to outperform classic old age techniques. This article aims to conduct empirical analysis on publically available bank loan dataset to study banking loan default using decision tree as the base learner and comparing it with ensemble tree learning techniques such as bagging, boosting, and random forests. The results of the empirical analysis suggest that the gradient boosting model outperforms the base decision tree learner, indicating that ensemble model works better than individual models. The study recommends that the risk team should adopt newer contemporary techniques to achieve better accuracy resulting in effective loan recovery strategies. © 2018, K.J. Somaiya Institute of Management Studies and Research."
+  },
+  {
+    "article_id": "CS_2076",
+    "title": "Capitalizing on Service Failures: Implications for Customer Engagement and Loyalty",
+    "journal": "Business Perspectives and Research",
+    "journal_impact_factor": 1.0,
+    "doi": "10.1177/22785337211070377",
+    "abstract": "This study examines the driver influence of service recovery performance (SRP) on customer engagement (CE) and customer loyalty (CL) in the Indian retail banking setting. Data collected from a sample of 457 customers who had recent experiences of service failure formed the basis of the empirical investigation. All constructs under examination were measured through structured questionnaires developed in previous research work in this area of study. However, the validity and reliability of the scales were reassessed before the final data analysis. Empirical results indicate that SRP positively influences CE and, concomitantly, CL. Further, CE fully mediates the relationship between service recovery and CL. In addition, it was observed that the structural linkages among SRP, CE and CL are significantly moderated by the gender of the customer. Banking companies are, therefore, advised to consider service failures as an opportunity, rather than a threat, to nurture CE and loyalty. Also, the gender of the customer (male/female) must be considered in deciding the recovery approach. © 2022 K.J. Somaiya Institute of Management Studies and Research."
+  },
+  {
+    "article_id": "CS_2077",
+    "title": "Barriers for Entering the Digital World: Exploring Customer Value Co-destruction in Self-Service Technologies",
+    "journal": "FIIB Business Review",
+    "journal_impact_factor": 2.89,
+    "doi": "10.1177/23197145211022016",
+    "abstract": "The value co-creation scholarly work has been criticized for neglecting the possible failures in the collaborative value creation process, which is termed as ‘value co-destruction’. Additionally, both the value co-creation and available limited research work in value co-destruction have overly attended on actor-to-actor interactions taking place in traditional service encounters, disregarding the practical movement towards the provision of services via technological platforms. Though there are ample studies that recognize factors influencing customer acceptance or rejections of technologies, a very limited number of studies have focused on exploring how and why customer collaboration with self-service technologies (SSTs) goes wrong due to the failures in the co-creation process. Therefore, this study attempts to understand how ‘value co-destruction’ takes place in the SSTs. Following a qualitative inquiry, using semi-structured interviews with 25 individuals, 15 reasons for co-destruction that vary among different customer demographics were found and classified into four integrative themes as ‘inabilities in co-learning’, ‘poor co-operation’, ‘problems with connecting’ and ‘poor corrective actions’. The findings fill the gap in the literature by addressing value co-destruction in technological interfaces, particularly in the SST context. Further, it will help practitioners to design and deliver value-enhancing self-service technological interfaces, resulting in none or minimum difficulties for customers. © 2021 Fortune Institute of International Business."
+  },
+  {
+    "article_id": "CS_2078",
+    "title": "What Do We Know About Customer Churn Behaviour in the Telecommunication Industry? A Bibliometric Analysis of Research Trends, 1985–2019",
+    "journal": "FIIB Business Review",
+    "journal_impact_factor": 2.89,
+    "doi": "10.1177/23197145211062687",
+    "abstract": "The literature on telecommunications customer churn behaviour has grown in importance and volume since the early 2000s. This study performed a quantitative bibliometric retrospection of selected journals that qualified for the ABDC journal quality list to examine relevant studies published by them on customer churn research in telecommunication. Using bibliometric data from 175 research articles available in the Scopus database, this review sheds light on the publication trends, articles, stakeholders, prevalent research techniques, and topics of interest over three decades (1985–2019). According to the findings of this review, the current level of contributions are manifested through ten overarching groups of scholarship—namely churn prediction and modelling, feature selection techniques and comparison, customer retention strategy and relationship management, service recovery, pricing and switching cost, legislation, legal, and policy, word-of-mouth and post-switching behaviour, new service adoption, brand credibility, and loyalty. The existing literature has predominantly utilized quantitative methods to their full potential. For far too long, scholars, according tothe study’s central thesis, have ignored the metatheoretical consequences of relying solely on a logical positivism paradigm. In addition, we highlight research directions and the need for customer churn research to go beyond feature selection and modelling. © 2022 Fortune Institute of International Business."
+  },
+  {
+    "article_id": "CS_2079",
+    "title": "Understanding the Factors Influencing Actual Usage of Payments Banks: An Empirical Investigation Using the Extended Information Systems Success Model",
+    "journal": "FIIB Business Review",
+    "journal_impact_factor": 2.89,
+    "doi": "10.1177/23197145221099095",
+    "abstract": "This study aims to elucidate the factors that affect users’ intention to use payments bank services in India. The research model focuses on closing the gap between the intention to use and the actual usage of payments banks by integrating various quality dimensions with the trust and reputation of service provider. The research model was tested and validated using the partial least squares, which was performed on the data of 393 Indian users. SmartPLS software version 3.2.8 has been used in the current study. The results revealed that satisfaction and intentions to use have a significant effect on actual usage. The reputation of service provider, service quality and trust are the major constructs that significantly affect satisfaction and users’ intention to use payments banks. To make the consumers adopt the payments banks, they need to be satisfied, which can further lead to the actual usage. As payments banks are at a nascent stage, the reputation of service provider and trust are the most influential antecedents to the satisfaction and intention of users. Additionally, it is very pertinent for the service providers to use modern and safe technology to enhance their trust. Furthermore, personalized services for grievances redressal should be used to ensure the proper service and information being delivered to the user. © 2022 Fortune Institute of International Business."
+  },
+  {
+    "article_id": "CS_2080",
+    "title": "Enhancing Customer Service Experience: A Case of WBL (India)",
+    "journal": "FIIB Business Review",
+    "journal_impact_factor": 2.89,
+    "doi": "10.1177/23197145221105715",
+    "abstract": "Sitting at his office, Mr Gangwani was anxiously flipping through the reports scattered on the desk. The continuously growing customer complaints and substandard service delivery ratings were not only disturbing him but affecting the company’s business also, at large. Despite several measures such as organizational restructuring, conduction of employees’ motivation and training sessions, implementation of a state-of-the-art enterprise resource planning (ERP) solution taken by him to streamline organizational processes, etc., the bank’s customers were not satisfied with the service delivery and overall experience. This case presents the deteriorating customer service experience situation at Wealthworth Bank Limited (WBL) and put forward a framework (HEART parameters) as a possible solution to enhance customers’ service experience. It also questions the interoperability of the ‘HEART’ approach across WBL’s various foreign centres. © 2022 Fortune Institute of International Business."
+  },
+  {
+    "article_id": "CS_2081",
+    "title": "Nonprofits’ Marketing Challenges and Opportunities After the COVID-19 Era",
+    "journal": "FIIB Business Review",
+    "journal_impact_factor": 2.89,
+    "doi": "10.1177/23197145221125339",
+    "abstract": "We aim to highlight the challenges for nonprofits marketing considering the economic slowdown and service failure due the COVID-19 pandemic. This conceptual study addresses how the lack of understanding of digital technologies among nonprofit organizations (NPOs) has further aggravated the situation, raising concerns about their survival. At the same time, the crisis always provides an opportunity to innovate, and the same is debated in this article. The NPOs that have shown reluctance towards digital technologies upgraded themselves to utilize such technologies for their survival. Further, they have the opportunity to rework their organizational model to attract funds for restoring their operations in the post-pandemic era. But the NPOs have a complex environment as they have two different sets of market segments to cater to—donors and clients. The significance of the article is that it provides marketing strategies for NPOs to advertise their past work to attract donors or funders, thereby ensuring financial viability along with social commitments towards society. © 2022 Fortune Institute of International Business."
+  },
+  {
+    "article_id": "CS_2082",
+    "title": "The Influence of Service Recovery Strategies on Resilience to Switching Intentions Among Customers of Commercial Banks in Tanzania: The Mediating Effect of Customer Loyalty",
+    "journal": "FIIB Business Review",
+    "journal_impact_factor": 2.89,
+    "doi": "10.1177/23197145221145761",
+    "abstract": "This study’s primary objective is to investigate how customer loyalty can mediate the relationship between service recovery strategies and customer switching intentions. The logic behind it is that, in today’s uncertain business environments, measuring organizational success by emphasizing customer satisfaction alone is insufficient for creating customer resilience to switching intentions. This is because satisfied customers can switch to other brands, while dissatisfied customers can repurchase. This calls for other studies to look into other factors that can be considered for successfully managing customers. Given that service failure is inevitable, it is important to look at how service recovery strategies can be used to influence resilience to switching intentions through developing customer loyalty. The study adopted a cross-sectional design in which 502 customers from commercial banks were involved, and structural equation modelling (SEM) was used to analyse the data. The SEM results show that all dimensions of service recovery, including procedural justice, distributive justice and interactional justice, are significant determinants of customer loyalty. As well, customer loyalty was a significant predictor of switching intentions. Furthermore, customer loyalty is a significant mediator of the relationship between service recovery strategy and the resilience to switching intention among customers. Finally, this study has managerial and theoretical implications for the body of literature. © 2023 Fortune Institute of International Business."
+  },
+  {
+    "article_id": "CS_2083",
+    "title": "The Price of Good Friendships: Examining the Roles of Relationship Norms and Perceived Controllability in Service Failure Encounters",
+    "journal": "International Journal of Business Communication",
+    "journal_impact_factor": 2.048,
+    "doi": "10.1177/2329488420907119",
+    "abstract": "Despite companies’ efforts to cultivate positive relationships with their consumers, negative relational episodes such as customer service failures are inevitable. This study examines how perceived controllability of a service failure determines responses from consumers who have previously formed quality relationships with the company. Specifically, it distinguishes two types of quality relationships: communal and exchange relationships. It investigates how these two types of relationships interact with different levels of perceived service failure controllability, and collectively influence consumers’ emotional, cognitive, and behavioral responses (i.e., anger, perceived betrayal, and negative WOM intention) to the failure encounters. Results of an online experiment (N = 140) show that consumers experience a greater level of anger and perceived betrayal when they consider the service failure as highly controllable (vs. uncontrollable) by the company. More important, this effect pattern only occurs when prior company-consumer relationships are communal rather than exchange. The results of this study enrich our body of knowledge on the role of company-consumer relationships in service failure encounters and provide useful guidelines for company-consumer relationship development and service failure management and recovery. © The Author(s) 2020."
+  },
+  {
+    "article_id": "CS_2084",
+    "title": "The Impact of Employee Empathy on Brand Trust in Organizational Complaint Response Emails: A Closer Look at Linguistic Realization",
+    "journal": "International Journal of Business Communication",
+    "journal_impact_factor": 2.048,
+    "doi": "10.1177/23294884211032316",
+    "abstract": "This study investigates the effect of linguistic realizations of employee empathy (LREE) on brand trust in email responses to customer complaints. We explore possible mediating effects of perceived empathy and perceived complaint handling quality and we look into moderation effects of compensation (Study 1) or customer’s acceptance of blame (Study 2). Our aim is to find out if LREE have a negative or positive impact on the customer in cases of partial refunds, either because LREE are being perceived as insincere or as genuine expressions of concern. The results of two experiments show that LREE positively influence brand trust through higher perceived empathy and perceived complaint handling quality. However, the expected negative effect is not found, as LREE are more effective in a low versus high compensation condition. The effectiveness itself is not influenced by the acceptance of blame when a partial refund is offered. © The Author(s) 2021."
+  },
+  {
+    "article_id": "CS_2085",
+    "title": "Expressing and Responding to Customer (Dis)satisfaction Online: New Insights From Discourse and Linguistic Approaches",
+    "journal": "International Journal of Business Communication",
+    "journal_impact_factor": 2.048,
+    "doi": "10.1177/23294884231199740",
+    "abstract": "In the current era of digitalization, customers are routinely invited to express their (dis)satisfaction with a product or a service and to provide recommendations for other prospective customers by writing reviews on a variety of online social media platforms. Such forms of electronic word-of-mouth have been found to strongly influence other consumers’ purchase decisions. In the case of negative reviews, the negativity expressed in a particular comment can spread to the whole community, which can damage a company’s reputation and profits. In an attempt to take consumer feedback into account, companies engage in “webcare.” This type of online service encounter has been defined by van Noort and Willemsen as “the act of engaging in online interactions with (complaining) consumers, by actively searching the web to address consumer feedback (e.g., questions, concerns, and complaints).” Following-up on these developments, scholars have started to research the communicative strategies used by companies to address consumer feedback and those used by (dis)satisfied customers to voice their (dis)satisfaction from the perspective of discourse analysis and linguistic pragmatics, paying attention to their linguistic realizations and their interactional dynamics. The aim of this Special Issue is to further expand our knowledge on the discourse-pragmatic strategies used in the interaction of (dis)satisfied customers and companies online, and on how these different strategies influence other prospective customers’ perceptions, ultimately impacting their purchase decisions. In doing so, it positions itself at the crossroads of linguistics, communication, and business studies. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2086",
+    "title": "“Doesn’t Really Answer My Question..”: Exploring Customer Service Interactions on Twitter",
+    "journal": "International Journal of Business Communication",
+    "journal_impact_factor": 2.048,
+    "doi": "10.1177/23294884231200247",
+    "abstract": "This article explores customer service interactions between the Irish airline Ryanair and its passengers on the social networking platform Twitter. Using a corpus linguistic methodology, it investigates a 1-million-word corpus of Twitter threads comprising tweets addressed to and posted by Ryanair between August 2018 and July 2019. Studying the communicative strategies used in the corpus reveals customers’ main concerns and causes for complaint, and how the airline addresses these in their response tweets offering assistance to passengers. In addition, the analysis of customer response tweets to these corporate replies allows insights into customers’ reactions to and perception of the (often generic) answers they receive. The aim of this case study is to gain further understanding of the linguistic and communicative features that characterize customer service interactions online, and the attitudes customers voice toward them, with a view to streamlining customer communication and improving levels of customer satisfaction. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2087",
+    "title": "“We’re Not Proud of the Cases We’ve Been Involved in”: Crisis Resolution on Facebook Using Conversational Human Voice",
+    "journal": "International Journal of Business Communication",
+    "journal_impact_factor": 2.048,
+    "doi": "10.1177/23294884231200861",
+    "abstract": "The article discusses the use of conversational human voice (CHV) to address negative eWOM on brand-generated social media platforms. Using the case of a crisis-ridden Danish bank, the article investigates the use of CHV outside service failures and its effects on critical publics in the context of intentional crises. The data consist of posts and comments from the bank’s Facebook page, following allegations of money laundering. The analysis reveals that CHV is used extensively by the bank to counter criticism; however, the degree to which the strategy is standardized or tailored seems to depend on whether users appear once, have a regular presence, engage in dialog, and are known to the bank’s employees. These findings suggest that while CHV is intended for more personalized communication to make users more sympathetic to the organization, its use will have to be contextualized to be effective. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2088",
+    "title": "Unpacking the Art of Customer Complaint Handling in Spanish and British Telecom Emails: A Cross-Cultural Webcare Study With a Human Touch",
+    "journal": "International Journal of Business Communication",
+    "journal_impact_factor": 2.048,
+    "doi": "10.1177/23294884231201142",
+    "abstract": "In spite of the rise of new media in a B2C context, companies still prefer to handle complaints privately. As such, many complaints are handled via email resulting in a professional communication genre of its own. In this study we performed a cross-cultural genre analysis to understand the specific discourse structure of the moves within response mails to complaints, on the one hand, and the importance of the communicative function of Conversational Human Voice within this genre, on the other. With this aim, we collected authentic organizational email replies to complaints from telecom companies active in the UK and Spain (36 and 44 emails respectively). The results indicate that the British and Spanish data sets show a similar discourse structure in terms of move frequency. The submoves that are prototypical for all data sets are Greeting, Explanation, Conclusion, and the closing submoves Sign-off and Signature. The data sets differ mainly in their frequency for the interpersonal submoves Empathy, Gratitude, and Apology, which are more prevalent in the English corpus, and the more business-oriented moves, such as Contact reason, Marketing, and Future contact, which are mainly present in the Spanish corpus. This suggests that organizational email replies to complaints are a rather conventionalized genre, with some linguacultures putting more effort in company-customer interactions by using more interpersonal submoves. Regarding the cross-cultural analysis of the expression of Conversational Human Voice we observed an influence of the respective linguacultures in the sense that the Spanish data are less personal and less invitational than the English mails, although they present more empathetic intensifiers. Furthermore, both data sets show only a limited extent of informal language. We evaluate these findings in the light of previous work. © The Author(s) 2023."
+  },
+  {
+    "article_id": "CS_2089",
+    "title": "How Emoji in Company Responses to Online Consumer Complaints Affect Observers: Emoji as Visual Signalling Cues in Webcare",
+    "journal": "International Journal of Business Communication",
+    "journal_impact_factor": 2.048,
+    "doi": "10.1177/23294884251372546",
+    "abstract": "When companies respond to consumer complaints on social media, many others can observe this online complaint handling (‘webcare’). Therefore, public service recovery messages not just affect the initial consumer’s satisfaction, but also observers’ perceptions, and companies’ webcare responses need to be carefully crafted. In online business communication, emoji are increasingly used. To explore how different kinds of emoji – in interaction with tone of voice – affect observers’ evaluations of companies as visual signalling cues, two experiments (N = 1,202) were conducted. Findings reveal that emoji expressing emotions can make companies come across as more human and personal, but emoji have an overall negative impact in webcare, mostly via lower perceptions of professionalism. Yet an informal or personal language style (‘conversational human voice’) turns these negative effects around. Companies should thus be cautious with using emoji when responding to online complaints and should rather focus on using the appropriate tone of voice. © The Author(s) 2025. This article is distributed under the terms of the Creative Commons Attribution 4.0 Lficense (https://creativecommons.org/licenses/by/4.0/) which permits any use, reproduction and distribution of the work without further permission provided the original work is attributed as specified on the SAGE and Open Access pages (https://us.sagepub.com/en-us/nam/open-access-at-sage)."
+  },
+  {
+    "article_id": "CS_2090",
+    "title": "Unheard Complaints: Integrating Captioning Into Business and Professional Communication Presentations",
+    "journal": "Business and Professional Communication Quarterly",
+    "journal_impact_factor": 1.818,
+    "doi": "10.1177/2329490617748710",
+    "abstract": "This article explores pedagogical frameworks closely associated with d/Deaf and hard-of-hearing persons from the perspective of a disabled instructor to increase student awareness of the needs of diverse audiences they will encounter in the workforce. The author argues that students and instructors can use captioning theory to strategize one of the harder business communication genres, the presentation, for d/Deaf audiences to make communication more accessible. By raising critical awareness of the limits of technology, current trends in pedagogy, and disability, this article seeks to further the conversation about providing accessibility for disabled users in the classroom. © 2018, © 2018 by the Association for Business Communication."
+  },
+  {
+    "article_id": "CS_2091",
+    "title": "Just Follow the Yellow Brick Road: A Manager's Guide to Implementing Value Creation in Your Organization",
+    "journal": "Journal of Creating Value",
+    "journal_impact_factor": null,
+    "doi": "10.1177/2394964315569634",
+    "abstract": "The topic of value creation has become of utmost importance over the last few years; however, most managers have still not implemented it in their organizations. One reason for the delay is the lack of a blueprint as to how to do it, and what it entails. This article seeks to remedy that problem by laying out the steps for the creation of the Chief Customer Feedback Officer (CCFO), the nine different functions his office is entrusted with, and how they create value for the organization by providing a customer compass for the strategic direction of the organization. Some of the nine functions currently exist in the organization but are out of place and cannot influence the strategic direction of the organization. It is only by implementing all nine functions with the backing of top management that an organization can successfully become customer-centric, creating value for all of its stakeholders. © 2015 SAGE."
+  },
+  {
+    "article_id": "CS_2092",
+    "title": "Value Creation and Efficiency: Incompatible or Inseparable?",
+    "journal": "Journal of Creating Value",
+    "journal_impact_factor": null,
+    "doi": "10.1177/2394964318768904",
+    "abstract": "The efficiency/value creation (effectiveness) debate has been mostly one sided through the years in favor of efficiency. However, a new way of looking at things has started to even out the balance. In this article, we will discuss both sides of the debate, state the underlying problem at the base of the debate, and give examples of how this debate actually destroys value. In most cases, this failure is not really a failure, but was designed into the system by misguided managerial choices. We then present our solution based on thinking holistically about productivity and efficiency in a world of co-creation, and discuss ways for managers to implement it in their organizations. This implementation is based on current examples from the literature, as well as a discussion as to why these ways are so effective. In a sense, in a world of co-creation, efficiency becomes less important, as the customer is willing to pay more money for a higher value product, thus covering the cost of a slightly less efficient process. © 2018 SAGE Publications."
+  },
+  {
+    "article_id": "CS_2093",
+    "title": "Counteracting Value Destruction",
+    "journal": "Journal of Creating Value",
+    "journal_impact_factor": null,
+    "doi": "10.1177/2394964320925260",
+    "abstract": "Early research focused on complaint handling as a profit centre for organizations, but recently this approach has been shown to destroy value if not done correctly, due to the organization-centric rationale behind it. A new customer-centric approach, called complaint management, is shown to overcome the pitfalls of complaint handling and to act as a customer-centric compass for the organization leading to increased trust, profits and customer satisfaction. This approach not only creates value, but also helps integrate between the various departments in the organization. Finally, this article includes clear steps for implementation in any organization. © 2020 SAGE Publications."
+  },
+  {
+    "article_id": "CS_2094",
+    "title": "Cultivating Value Creation",
+    "journal": "Journal of Creating Value",
+    "journal_impact_factor": null,
+    "doi": "10.1177/23949643221096927",
+    "abstract": "This article takes a critical look at what is holding organizations back from implementing value creation. It highlights some of the current misguided thinking of the past 20 years and suggests ways to change the thinking. The financial benefit of these changes is discussed, and ideas for the implementation of a new value creation culture based on complaint management are suggested. It is now up to the managers to implement. © 2022 SAGE Publications."
+  },
+  {
+    "article_id": "CS_2095",
+    "title": "Definition of innovation problems in organizations using data analysis tasks from hybrid sources: social networks and organizational databases",
+    "journal": "Journal of Innovation and Entrepreneurship",
+    "journal_impact_factor": null,
+    "doi": "10.1186/s13731-025-00536-2",
+    "abstract": "Nowadays, we can express the experience we have lived with the products we use. Most of the time, we interact with brands and let our likes and dislikes be seen on digital platforms, either by interacting with social networks, filling out satisfaction surveys, or registering requests, complaints, and claims. To get the value of all available customer data of the companies, in this article, we propose to study the data from different sources using an autonomic cycle of data analysis tasks to define innovation problems in an organization. The tasks of the autonomic cycle are filter the customer comments from different sources (e.g., from social networks, PCCS (petitions, complaints, claims, suggestions) systems of organizations, etc.), obtain their keywords, and analyze the patterns of the users to answer the questions of the 5W methodology (what, who, where, when and why?), to define innovation problems. Finally, this article analyzes a case study of a fashion company using its PCCS system and comments of Twitter, to identify useful information. Part of the information discovered was the reasons for customer returns, merchandise delivery problems, shipment failures, failure to respond timely to customers, among other things. With this information, the autonomic cycle is able to define customer and organization-oriented innovation problems, to respond to these identified problems. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_2096",
+    "title": "Structural modeling of dissatisfaction, complaint behavior, and revisiting intentions in hairdressing services",
+    "journal": "Fashion and Textiles",
+    "journal_impact_factor": 3.941,
+    "doi": "10.1186/s40691-019-0191-3",
+    "abstract": "This study aims to present a comprehensive model that effectively explains dissatisfaction, complaint behavior, and revisiting intentions of hair service consumers through an empirical analysis. In order to empirically verify the conceptual model, a questionnaire was developed based on previous studies and responses that were collected through an online survey agency. Subjects were Korean female consumers in their 20s to 50s who experienced dissatisfaction with hair services in the salons they visited during the past year. The conceptual model suggested in the theoretical research was analyzed empirically through the structural equation modeling (SEM) test and finally suggested after ordering, eliminating unnecessary paths. According to the results, dissatisfaction with the hair service significantly affects the complaint behavior and the revisiting intentions while the complaint behavior has a mediating effect between dissatisfaction and the revisiting intentions. Analysis showed that dissatisfaction with human response services and private complaint behaviors are the factors that most negatively influence revisiting intentions. It was confirmed that businesses should focus on the management of the customer service delivered by the employees and on word of mouth. Public complaint behavior was proven to increase revisiting intentions of consumers, needing more attention. This study aims to provide plausible reasons and objective materials to the establishment of a solid theoretical base for the research on dissatisfaction, complaint behavior, and revisiting intentions of hair service consumers. It is expected that the results of this study will help create differentiated marketing strategies for unsatisfied and complaining consumers. © 2020, The Author(s)."
+  },
+  {
+    "article_id": "CS_2097",
+    "title": "LinkedIn Data Hack",
+    "journal": "Information Technology Security and Risk Management: Inductive Cases for Information Security",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781003264415-7",
+    "abstract": "Within the social context of transnational cybersecurity-related crimes, this case examines the 2012 and 2016 hacks on LinkedIn and 600 to 117 million of its users, LinkedIn’s swift and apologetic responses, and users’ complaints. Access to the data was posted on an online password forum and sold by the hacker, named ‘Peace’. Although LinkedIn attempted to remedy the situation by prompting users to reset passwords, their password storage prior to the attack was weak and of improper design. LinkedIn would later adopt ‘hashing’ and ‘salting’, two data security measures. This case points to the importance of training company employees in legal and ethical practices to mitigate users’ concerns confidently and proactively after a disruption or cyber-attack. Dealing with past data breaches and managing password security is also addressed. © 2024 selection and editorial matter, Stephen C. Wingreen and Amelia Samandari; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2098",
+    "title": "Demand forecasting to optimize supply chain management",
+    "journal": "Supply Chain Management: Strategic Implementation in Manufacturing",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781003509561-1",
+    "abstract": "Demand forecasting is generally related to the market demand for goods and services. Failure to predict customer demands of products, intent to purchase, preferences, and needs may lead to potential loss in revenues. The role of demand forecasting in the supply chain is more significant as it must take care of both customer-driven demand and material requirement planning. Therefore, demand forecasting is a crucial tool for the supply chain as it provides information for inbound and outbound logistics, manufacturing, financial planning, risk assessments, and meeting customer demand. The chapter deals with demand forecasting and its role in supply chain management. This is an exploratory study in which we are using secondary data to formulate the objectives of the study. A systematic narration will be done to compare various information regarding demand forecasting in supply chain management. Existing literature, databases, cases, and web pages are explored to drive conclusions for the stated objectives. Demand forecasting is in a state of transition to achieve optimal results in the supply chain. Although traditional methods of demand forecasting still exist, an impetuous has been given by the latest technologies involving advanced analytics, powerful databases, and the use of artificial intelligence (AI) and machine learning. By predictive analysis, the supply chain has increased accuracy, reduced inventory cost, and increased inventory control (Bam et al. 2017). The latest techniques have made the data updating process faster, and it is linked to the forward and reverse logistics helping in accessing demands. Different industries have different demand and supply patterns. Henceforth, each industry type has its way of meeting the demand for the products. It includes both the procurement of raw materials and the prediction of customer demand. © 2025 selection and editorial matter, Bharti, Shikha Singh, Anand Pandey and Amit Sachan; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2099",
+    "title": "New role of value for customer 5.0 in augmented era",
+    "journal": "Aspects of Quality Management in Value Creating in the Industry 5.0 Way",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781032677040-1",
+    "abstract": "The fields of sophisticated manufacturing, mass customization, and technology are rapidly changing. The ability to communicate with the human mind via brain-machine interface and advancements in artificial intelligence has made robots even more significant. The global economy is facing harsh obstacles as a result of the pressing need to boost productivity without eliminating jobs for human beings in the industrial sector. The aim of the chapter is to present the new role of value for customer 5.0 in the era of augmented era (Industry 5.0). The authors analyzed what the Industry 5.0 revolution looked like and how the customer requirements of the twenty-first century have changed. The research was conducted using the computer-assisted web interviewing (CAWi) survey on a group of 404 respondents in Poland in 2021. Selected quality management tools were used: the Ishikawa diagram and the Pareto-Lorenz diagram. The research results allow us to conclude that in the era of Industry 5.0, customer value is determined by personalization and complaint handling. Moreover, the majority of industries are heading toward the smart social factory by implementing Industry 5.0. © 2025 selection and editorial matter, Mohamed Abouhawwash, Joanna Rosak-Szyrocka, and Shashi Kant Gupta; individual chapters, the contributors."
+  },
+  {
+    "article_id": "CS_2100",
+    "title": "The human resource",
+    "journal": "Involving People in Healthcare Policy and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1201/9781315377186-11",
+    "abstract": "Nothing is more important in healthcare than the people who are providing the service. Correction: the only thing more important than the people providing the service is that they never lose sight of who they are there for. This may sound like a truism, irritatingly obvious to people who give their all, working for the NHS. Sadly, the continuing witness of service users and carers belies this assumption. © 2007 Susie Green."
+  }
+]

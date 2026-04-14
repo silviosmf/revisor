@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_0451",
+    "title": "A valued agent: How ECAs affect website customers' satisfaction and behaviors",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2015.05.008",
+    "abstract": "Building on literature related to selling and embodied conversational agents (ECA), this research seeks to determine how the use of an ECA might improve users' perceptions of shopping value (hedonic and utilitarian) and the consequences for their purchase intentions and satisfaction with the website. This analysis focuses specifically on three ECA usage consequences: playfulness, decision quality, and social presence. Hedonic value mediates the effects of playfulness and social presence on satisfaction and behavioral intentions; utilitarian shopping value mediates the effects of decision quality. The results highlight the importance of accounting for both utilitarian and hedonic features to understand ECA outputs in e-commerce sites. © 2015 Elsevier Ltd."
+  },
+  {
+    "article_id": "CA_0452",
+    "title": "Forecasting artificial intelligence on online customer assistance: Evidence from chatbot patents analysis",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2020.102096",
+    "abstract": "The main goal of this research is to provide a comprehensive understanding of the actual progresses in artificial intelligence, with emphasis on chatbots as emerging forms of customer assistance in online retailing. Drawing upon an analysis of the chatbot patents in the past 20 years, our findings show the increasing technology push towards the adoption of new conversational agents based on natural language. Findings also highlight the extent to which the research and development efforts are attempting to improve artificial intelligence systems that characterize chatbots. To this end, technology advancements are mainly focusing on: (i) improving chatbot ability to automatically draw inferences on users starting from multiple data sources, and (ii) using consumers’ knowledge adaptively to provide more customized solutions. Finally, results show the tight relationship between the digital assistants’ analytical skills and their ability to automatically interact with the users. © 2020"
+  },
+  {
+    "article_id": "CA_0453",
+    "title": "Chatbots in retailers’ customer communication: How to measure their acceptance?",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2020.102176",
+    "abstract": "Currently, online retailers evaluate whether chatbots—software programs that interact with users using natural languages—could improve their customers' satisfaction. In a retail context, chatbots allow humans to pose shopping-related questions and receive answers in natural language without waiting for a salesperson or using other automated communication forms. However, until now, it has been unclear which customers accept this new communication form and which factors determine their acceptance. In this paper, we contrast the well-known technology acceptance model (TAM) with the lesser known uses and gratifications (U&G) theory, applying both approaches to measure the acceptance of the text-based “Emma” chatbot by its target segment. “Emma” was developed for the prepurchase phase of online fashion retailing and integrated into Facebook Messenger by the major German online retailer Zalando. Data were collected from 205 German Millennial respondents in a usability study. The results show that both utilitarian factors such as “authenticity of conversation” and “perceived usefulness,” as well as hedonic factors such as “perceived enjoyment”, positively influence the acceptance of “Emma”. However, privacy concerns and the immaturity of the technology had a negative effect on usage intention and frequency. The predictive power of both models was similar, showing little deviation, but U&G gives alternative insights into the customers’ motivation to use “Emma” compared to the TAM. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0454",
+    "title": "“Alexafying” shoppers: The examination of Amazon's captive relationship strategy",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2021.102610",
+    "abstract": "The virtual assistants' market is drastically growing and is expected to reach $2.1 billion by 2020. Nonetheless, the quick expansion and high penetration of e-retailers’ AI ecosystem into the shopper's journey is still under-researched in the extant literature. Amazon's Alexa in particular has been fast proliferating into the customer's journey, favoring the development of captive audiences given this new ambient environment. Through a mixed methodology using both qualitative and quantitative approaches, this study examines Amazon's captive relationship strategy on shoppers, brands and competing retailers. The research findings show that Amazon's AI relationship strategy with its customers is based on forming a multi-faceted identity for the AI that would later on facilitate a captive situation that would lead to an addictive relationship. This study is amongst the first to examine the rapid development of e-retailers’ AI ecosystem into the shopper's journey. Taking the pioneering case of Amazon's Alexa powered devices, this research presents a working framework upon which scholars and practitioners alike could base their future studies and strategies on in the fast-growing field of interactive voice assistants and AI led conversations. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0455",
+    "title": "Exploring the impact of chatbots on consumer sentiment and expectations in retail",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2021.102718",
+    "abstract": "Retailers are increasingly using conversational AI (chatbots) for customer service due to the perceived benefits and reduced operational costs of this emerging technology. Yet our understanding of how consumers perceive interactions with chatbots, and how these interactions may influence other consumer service programs, remains limited. This paper investigates the differences in consumers' sentiments towards chatbots across retail sectors, and the influence chatbots have on consumers’ sentiments and expectations towards other service interactions with online human agents. Using a hybrid automated sentiment analysis approach, we identify that (1) overall sentiment towards bots are less negative than sentiment towards online human agents; (2) these sentiments differ across fashion and telecommunications sectors, and finally (3) sentiments towards online human agents in both sectors become more negative after a retailer implements a chatbot. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0456",
+    "title": "AI-chatbots on the services frontline addressing the challenges and opportunities of agency",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2021.102735",
+    "abstract": "AI-chatbots as frontline agents promise innovative opportunities for shaping service offerings that benefit customers and retailers. Examining current practice through the lens of agency, as defined by Social Cognitive Theory, we present a 3-level classification of AI-chatbot design (anthropomorphic role, appearance and interactivity) and examine how the combination of these three aspects of chatbot design impacts on the complementarities of agency. Recognizing current implementation challenges, we advance that the complementarities of agency at each level are the lynchpin mechanism that translates AI-chatbot design into service relevant outcomes. We develop a research agenda focused on the emotion interface, resolution of the proxy agency dilemma and development of collective agency to support the implementation of AI-chatbots as frontline service agents. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0457",
+    "title": "Will artificial intelligence replace human customer service? The impact of communication quality and privacy risks on adoption intention",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2021.102900",
+    "abstract": "In the digital environment, chatbots as customer service agents assist consumers in decision making. Based on the computers-are-social-actors paradigm, this study examines the perceived differences in communication quality and privacy risks between different service agents and their impact on consumers' adoption intention, and investigates whether these perceived differences might depend on differences in the user's human interaction need. A series of five scenario-based experiments were carried out to collect data and test hypotheses. It was discovered that: different types of service agents directly affect consumers' adoption intention; perceived communication quality and privacy risk mediate the effect of service agent type on adoption intention; the effects of service agent type on perceived accuracy, communicative competence, and privacy risk are moderated by the need for human interaction. The findings of this study provide important insights into the rational use of human−computer interacation in e-commerce. © 2021 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0458",
+    "title": "(Im)Balanced customer-oriented behaviors and AI chatbots' Efficiency–Flexibility performance: The moderating role of customers’ rational choices",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2022.102937",
+    "abstract": "Artificial intelligence (AI) based chatbots are increasingly deployed in frontline encounters, because they combine frontline service efficiency and flexibility. Using a large-scale data set with more than 130,000 man–machine dialogues from an e-bike sharing platform, Study 1 reveals a complex relationship between chatbots' customer-oriented behaviors and their efficiency–flexibility ambidexterity. Chatbots' level of efficiency–flexibility ambidexterity is higher when their functional and relational customer-oriented behaviors are balanced rather than imbalanced (i.e., a negative imbalance effect) and when they are balanced at a higher rather than a lower level (i.e., a positive balance effect). A follow-up experiment, Study 2, and online survey, Study 3, consistently show that the negative imbalance effect is stronger as customers' perceptions of non-personalization costs decrease and privacy concerns increase, while opportunity cost has no significant influence on the negative imbalance effect. However, consistent with rational choice theory, the positive balance effect is stronger as non-personalization costs increase, privacy concerns decrease, and opportunity cost decreases. In addition, Study 1 and 3 consistently show that in alignment with the stimulus–organism–response framework, efficiency–flexibility ambidexterity partially mediates the relationship between chatbots’ (im)balanced customer-oriented behaviors and customer patronage. This study contributes to the literature on frontline ambidexterity by introducing an AI application context and a more nuanced nonlinear view of the antecedents and consequences of frontline ambidexterity. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0459",
+    "title": "When do AI chatbots lead to higher customer satisfaction than human frontline employees in online shopping assistance? Considering product attribute type",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2022.103059",
+    "abstract": "The increasing adoption of AI chatbots in online shopping assistance, as a complement or substitute for human frontline employees (HFLEs), leads to the question whether HFLEs perform better than AI service robots and why. From the perspective of product attribute type (experiential/functional) and focusing on customer satisfaction, this study explores how the impact of service agent on customer satisfaction varies along with product attribute type. A scenario-based experiment was designed and completed by 567 participants. Although HFLEs lead to higher customer satisfaction when the product attribute is experiential, AI chatbots perform better than HFLEs when the product attribute is functional. We make use of perceived information quality, perceived waiting time, and positive emotions, three determinants of customer satisfaction, to explain the variation of the role of different service agent types. The findings offer useful implications for companies when selecting service agent types in online shopping assistance. © 2022 The Authors"
+  },
+  {
+    "article_id": "CA_0460",
+    "title": "Chatbots in e-commerce: The effect of chatbot language style on customers’ continuance usage intention and attitude toward brand",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2022.103209",
+    "abstract": "The utilization of chatbots has grown in popularity in recent years, leading to an increasing interest among academics and practitioners. This study investigates the effect of chatbot language style on customers' continuance usage intention and attitude toward brand. Two scenario-based experiments were conducted to examine the underlying mechanism. The results show that when chatbots adopt an informal (vs. formal) language style, customers’ continuance usage intention and brand attitude increase through the mediating role of parasocial interaction. Further, this study identifies brand affiliation as a pertinent moderator, such that the effect of chatbot language style is attenuated for people who have no prior relationship with the brand. The findings contribute to the existing chatbot literature and offer practical implications for brand managers to develop optimal language strategies when deploying chatbots in e-commerce. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0461",
+    "title": "Curb your enthusiasm: Examining the customer experience with Alexa and its marketing outcomes",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2022.103220",
+    "abstract": "Interactive Voice Assistants (IVAs) are intelligent conversational agents capable of communicating with users using natural language. Although IVAs are more frequent in our lives, customer experience research with these agents is still in its infancy. This article aims to identify the factors that form the customer experience (CX) with Alexa and assesses its impact on traditional marketing outcomes: satisfaction and recommendation. This research presents a conceptual model of CX with IVAs and an empirical validation of the model using Structural Equation Modelling based on a sample of 580 IVA users. The results confirm that CX is a multidimensional higher-order construct composed of six factors (usefulness, ease of use, trust, privacy concerns, communication skills, and enjoyment). We also highlight the positive impact of experience on satisfaction and recommendation. Finally, we test the enthusiasm moderating role, showing its negative influence on the investigated relationships. Theoretical and practical implications are discussed. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0462",
+    "title": "Hi, May AI help you? An analysis of the barriers impeding the implementation and use of artificial intelligence-enabled virtual assistants in retail",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103258",
+    "abstract": "Artificial Intelligence enabled Virtual Assistants (VAs) are evolving rapidly, offering promising opportunities to provide personalized shopping assistance and 24/7 frontline service. They can reduce the workload of human employees while delivering a seamless customer experience. Despite these benefits, the adoption of AI VAs as a retail marketing channel is patchy. The objective of this study is to reveal the multidisciplinary factors impeding the adoption of AI VAs in retail using the Fuzzy AHP method. Seven main barriers and thirty-seven sub-barriers are identified, classified, and ranked. Findings reveal that customer-related barriers are the most significant. These are followed by technical and financial barriers that retailers face in implementing AI chatbots. © 2023"
+  },
+  {
+    "article_id": "CA_0463",
+    "title": "Chatbots or me? Consumers’ switching between human agents and conversational agents",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103264",
+    "abstract": "With the application of artificial intelligence (AI) technology in organizational frontlines, customers' service experiences have begun to shift from interactions with service personnel to those with technology. However, only a few studies have explored customers' behavioral switch from human-mediated services to technology-mediated ones with regard to the application of AI in frontline services. Based on the push–pull mooring framework, this study explored the determinants that affect consumers’ behavioral switch from using human agents to using AI-based conversational agents. Data collected from 441 users of banking services were analyzed using structural equation modeling. The findings reveal that both push effects—namely, low empathy and low adaptability—and pull effects, including anytime/anywhere connectivity, association, visibility, and personalization, have positive influences on switching behavior. Finally, in addition to having a direct influence on switching behavior, frequency of service use positively moderated the relationship between pull effects and switching behavior. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0464",
+    "title": "Whether to trust chatbots: Applying the event-related approach to understand consumers’ emotional experiences in interactions with chatbots in e-commerce",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103325",
+    "abstract": "Chatbots can be used in marketing services to substantially improve the consumer experience. Based on cognitive appraisal theory, this study applied an event-related potential (ERP) approach to investigate consumers’ emotional experiences and consumer trust in passive interaction with chatbots versus humans, taking into account objective or subjective tasks in e-commerce. The results showed that chatbot (vs. human) service interactions automatically drew more consumer attention at the subconscious stage (i.e., a larger P2); consumers purposefully allocated more resources to regulate the negative emotions elicited by chatbots at the conscious stage (i.e., a larger LPP); and there was a lower trust in chatbots than in humans. Moreover, under subjective tasks, the differences between chatbots and human agents in emotional experience (as reflected by LPP) and trust were amplified. The findings will encourage e-retailers to improve the emotional service experience of their chatbots and prioritize the application of chatbots for objective tasks in customer service. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0465",
+    "title": "Understanding the usability of retail fashion brand chatbots: Evidence from customer expectations and experiences",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103377",
+    "abstract": "The existing literature suggests that chatbots tend to provide automated and generic responses that may not fully address complex customer inquiries, particularly when additional guidance is required. To improve the usability of retail fashion brands, this study examines how socially constructed experiences and expectations influence customer interactions. Data was collected from various sources, including online reviews, semi-structured interviews, and focus group discussions, to enhance the credibility of the results. The research reveals that individuals in the retail industry demand a broader variety of fashion products and more sophisticated capabilities to bolster the reminiscence of their shopping experiences. Retail fashion chatbots hold potential in recommending items that align with customers' preferences and goals, yet it is crucial for developers and brand managers to address numerous usability challenges and provide multilingual assistance to boost user engagement. Moreover, optimizing fashion retail chatbots is vital to reduce battery consumption, curtail instances of conversation window freezing, and hasten response times. This study provides a novel research framework that offers valuable insights on how to enhance the retail customer experience by improving interactivity, compatibility, credibility, and other factors that promote the use and adoption of retail fashion chatbots. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0466",
+    "title": "Dissecting the mixed effects of human-customer service chatbot interaction on customer satisfaction: An explanation from temporal and conversational cues",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103417",
+    "abstract": "Human-customer service chatbot interaction has had mixed effects on customer satisfaction in sales-related services. To dissect these conflicting results, three 2 (temporal cues: instant versus anthropomorphic delayed response) × 2 (conversational cues: task- versus social-oriented) between-group experiments were conducted. The results revealed the complex effects of temporal cues, conversational cues, and their interactions on perceived warmth, perceived competence, and satisfaction. And, perceived warmth and competence mediated the effects of temporal and conversational cues on satisfaction. Furthermore, the product attribute type (functional versus experiential) affected the relationships between these variables. These findings provide two explanatory perspectives (temporal and conversational cues) for dissecting the mixed effects of human-customer service chatbot interaction on customer satisfaction, and provide practical insights for improving customer service chatbots and enhancing customer satisfaction. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0467",
+    "title": "What (de) motivates customers to use AI-powered conversational agents for shopping? The extended behavioral reasoning perspective",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103440",
+    "abstract": "Artificial Intelligence (AI)-powered conversational agents have become ubiquitous tools in the digital transformation of conventional customer-company interactions. Despite the widespread implementation of Artificial Intelligence (AI)-powered conversational agents, there is still a limited understanding of how customers use and resist these technologies for shopping. To address this gap, this study investigates factors that influence the usage and resistance of AI-based conversational agents for shopping using the extended behavioral reasoning theory (BRT) and partial least squares-based structural equation modeling (PLS-SEM). To test the proposed framework, this study conducted two empirical studies in South Korea. Study 1 focused on text-based chatbots with a sample of 232 participants, while Study 2 examined voice-based chatbots with a sample of 234 participants. The results of the both studies mainly supported the hypotheses driven by the extended BRT. Theoretically, this study contributes by offering a comprehensive understanding of customer motivation, attitudes, and behavioral intentions toward the use of AI-powered conversational agents in shopping. Managerially, this study provides important insights for retail managers and developers of AI-powered conversational agents for shopping. By understanding the factors that drive customer usage and resistance, managers, and developers can better design and deploy these innovative technologies to enhance the customer experience and improve business outcomes. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0468",
+    "title": "It is not merely a chat: Transforming chatbot affordances into dual identification and loyalty",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103447",
+    "abstract": "Artificial intelligence (AI)-powered service chatbot functionality is changing to more effectively connect with customers in the era of digital marketing. As such, an understanding of how to enhance user perceptions and behaviors through interface design has become crucial. Using affordance actualization theory and social identity theory as a theoretical lens, this study explored how chatbot affordances affect consumer brand loyalty. Data were collected from 369 respondents who had at least one conversation with AI chatbots from a predetermined list of banks in Taiwan; the collected data were then analyzed using structural equation modeling. The results revealed that anytime–anyplace connectivity, information association, visibility, and interactivity affordances provided by chatbots positively influenced chatbot exploitation, which in turn affected perceived brand competence and perceived brand warmth. Furthermore, perceived brand competence influenced customer–chatbot identification and customer–brand identification, whereas brand warmth influenced customer–brand identification. Customer–chatbot identification also influenced brand loyalty both indirectly—through customer–brand identification—and directly. These findings are useful for assisting managers in various industries in the application of AI technologies to implement digital transformation strategies and improve customer services. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0469",
+    "title": "Deposit AI as the “invisible hand” to make the resale easier: A moderated mediation model",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103480",
+    "abstract": "While existing works pay little attention to price setters and the application of artificial intelligence (AI) agents in second-hand trading, the current research examines whether, and how, price setter (AI VS. seller)affects buyers' willingness to pay (WTP)in the case of second-hand trading on P2P platform. 25 interviews and 3 online studies have been conducted to demonstrate the results: (i) compared with goods priced by sellers, buyers are more willing to pay for goods priced by platform AI (Studies 1&2), (ii) buyers' perceived objectivity mediates the relationship between price setter and buyers' WTP (Study 2), (iii) perceived reductionistic of AI eliminates the effect of price setter on WTP (Study 3), and (iv) augmented intelligence (vs. AI)can have equal effect on buyers’ WTP (Study 4). These findings offer considerable implications for practitioners on how to build an AI pricing agent that is superior to humans on P2P second-hand trading platforms while ensuring the well-being of platform traders. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0470",
+    "title": "Decisions with ChatGPT: Reexamining choice overload in ChatGPT recommendations",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103494",
+    "abstract": "This research examines how individuals respond differently to recommendation options generated by ChatGPT, an AI-powered language model, in five studies. In contrast to previous research on choice overload, Studies 1 and 2 demonstrate that people tend to respond positively to a large number of recommendation options (60 options), revealing diverse consumer perceptions of AI-generated recommendations. Studies 3 and 4 further illustrate the moderating effect of recommendation agents and indicate that choice overload elicits distinct patterns of consumer reactions depending on whether the recommendations are from a human or AI agent. Lastly, Study 5 directly measures consumer preferences for recommendation agents, revealing a general preference for ChatGPT, particularly when a large number of options are available. These findings have significant implications for recommendation system design and user preferences regarding AI-powered recommendations. © 2023 The Authors"
+  },
+  {
+    "article_id": "CA_0471",
+    "title": "I Am ChatGPT, the ultimate AI Chatbot! Investigating the determinants of users' loyalty and ethical usage concerns of ChatGPT",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103562",
+    "abstract": "This research aims to explore the determinants of users' satisfaction and loyalty towards ChatGPT while also investigating ethical concerns related to the usage of the artificial intelligence (AI) chatbot. For this purpose, the study develops a framework based on five models and theories (information system success, technology acceptance model, affinity theory, coolness theory, and posthumanism) as well as other important constructs (user ethical perceptions and user ethical beliefs). Analysis of data collected from 456 actual ChatGPT users in the US reveals several key findings. First, information quality significantly and positively affects users' satisfaction, perceived usefulness, and coolness. Second, perceived usefulness, coolness, technology affinity, and posthuman ability also have a positive impact on users' satisfaction, which subsequently influences their loyalty to the AI chatbot. Furthermore, the findings demonstrate that user ethical perceptions and beliefs negatively moderate the relationship between satisfaction and loyalty. The main implication of this research is that brand managers and programmers should regularly assess the chatbot's performance to ensure that the information provided is relevant, reliable, concise, and delivered promptly. This is because users highly value the quality of information delivered by the AI chatbot. Additionally, they should prioritize the ethical aspect, as it directly influences users' satisfaction and loyalty towards the chatbot services. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0472",
+    "title": "Exploring the influence mechanism of chatbot-expressed humor on service satisfaction in online customer service",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103599",
+    "abstract": "As chatbots gain widespread adoption in online customer service, optimizing their inherent value and enhancing customer satisfaction emerges as an indispensable concern necessitating attention. Therefore, this study focuses on the effect of chatbot-expressed humor on customer service satisfaction from the perspective of emotional expression and constructs three mediating pathways (cognitive, emotional, and social). The results of two online and one laboratory-based experiment show that chatbot-expressed humor can significantly enhance customer service satisfaction. The impact of humor on service satisfaction was mediated by competence, entertainment, and social presence. Moreover, identity disclosure exerts a negative moderating influence on the association between chatbot-expressed humor and both service satisfaction and competence. Through this study, we hope to provide ideas for online service providers to adopt AI strategies and for product designers to improve the design of chatbots. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0473",
+    "title": "Can chatbot customer service match human service agents on customer satisfaction? An investigation in the role of trust",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103600",
+    "abstract": "Consumers prefer human service over chatbots in some contexts. We draw on treatments of trust in information systems research to propose a three-tiered model of trust which posits that customer outcomes following chatbot service are influenced by dispositional trust in service technologies, generalized learned trust in chatbots, and particularized situational trust in one's chatbot service-giver. Our empirical tests, based on 643 participants in 3 studies, show that dispositional trust partially mediates the effect of learned trust. We also evaluate two alternative chatbot service configurations to help improve customer acceptance. The approach which combined chatbot service with a light touch human intervention matched the human service condition on most customer outcomes. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0474",
+    "title": "The impact of AI identity disclosure on consumer unethical behavior: A social judgment perspective",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103606",
+    "abstract": "Implementing artificial intelligence (AI) technology has resulted in various advantages but also the emergence of unethical conduct among consumers. This article examines the impact of the disclosure of AI identities on consumer unethical behavior through pilot experiments and three formal experiments. The results indicate that the disclosure of AI agents leads to a higher propensity of consumers, demonstrating unethical behavior compared to when AI agents are undisclosed. Perceived social judgment plays a crucial role in mediating this effect. Additionally, this research ruled out other potential explanatory mechanisms, such as warmth, empathy, and competence. Furthermore, consumers' motive for impression management acts as a moderator. These findings provide valuable insights into the impact of AI identity disclosure on consumer behavior and offer guidance for businesses to mitigate unethical consumer behavior. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0475",
+    "title": "Rapport with a chatbot? The underlying role of anthropomorphism in socio-cognitive perceptions of rapport and e-word of mouth",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2023.103666",
+    "abstract": "This study examines the impact of rapport with chatbots on electronic word of mouth (e-WOM), in the first phase, by considering several antecedents including anthropomorphism. In the second phase, deeper insights are provided into the moderated mediation role of rapport and the moderated moderation effect of value creation and hedonic motivation on e-WOM engagement. With tourism services as the research context, a survey was conducted among 257 visitors from three countries (China, India and New Zealand), selected due to their diverse cultural backgrounds and higher number of inbound visitors to Australia. The partial least squares method was used for data analysis along with multi-group analysis. Findings report the positive role of anthropomorphism in developing rapport with chatbots in digital interactions. Interestingly, rapport had the highest moderated mediation impact in the data from China followed by the data from India. The moderated moderation impact of hedonic motivation was only significant in the data from China, whereas value creation was a significant moderator in the data from both China and New Zealand. The study extends social exchange theory in a human–chatbot or artificial intelligence (AI) interaction context with cultural implications. The findings are useful for organizations relying on customer rapport with AI-based chatbots to ensure long-term customer service through digital interactions. © 2023 The Author(s)"
+  },
+  {
+    "article_id": "CA_0476",
+    "title": "Consumer engagement in chatbots and voicebots. A multiple-experiment approach in online retailing context",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.103728",
+    "abstract": "The significant advancements in virtual assistant (VA) technology have fundamentally transformed customer interactions in online retail. Using the underpinnings of Media Richness Theory (MRT), the study investigates the nuanced impacts of VA interfaces on consumer engagement in online retailing. Employing a between-subject experimental design with 477 V A users, the research examines the influence of voicebots versus chatbots, diverse product types, and localization levels on cognitive, affective, and activation engagement dimensions. The study's findings suggest that voice assistants are more effective in enhancing cognitive and affective engagement in the case of experiential products. Furthermore, the study highlights that localization significantly moderates the relationship between VA type and user engagement, emphasizing the need for tailored VA interfaces to linguistic and cultural preferences for diverse markets. These insights underscore the importance of strategic VA selection aligned with product characteristics and localization for optimizing user engagement in online retail. The study offers actionable insights for retailers to enhance customer interactions and engagement through tailored VA strategies, potentially leading to improved conversion rates and customer satisfaction. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0477",
+    "title": "The positive effect of artificial intelligence technology transparency on digital endorsers: Based on the theory of mind perception",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.103777",
+    "abstract": "Digital endorsers, blending AI technology and endorsers attributes, are increasingly replacing traditional human endorsers in marketing. Unlike the trend where users show less engagement with AI services like chatbots upon realizing their technological nature, our research indicates that transparency in the AI technology of digital endorsers positively influences their effectiveness. Drawing from the theory of mind perception, five studies were conducted to demonstrate the positive impact of AI technology transparency in digital endorsers on consumer engagement and purchase intentions. Study 1 utilized data from social platforms to explore the correlation between transparency and engagement. Study 2 confirmed the positive effect of transparency on purchase intention through an experimental approach. Study 3 identified perceived agency and experience as parallel mediators in this relationship. Study 4 and 5 showed that positive prior AI knowledge and artistic product endorsements enhance these effects. Overall, this research, focusing on digital endorsers, not only provides practical insights for marketing and advertising professionals but also contributes to the theoretical understanding of how the integration of AI and endorsers attributes in technology disclosure can yield positive effects. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0478",
+    "title": "Informational or emotional? Exploring the relative effects of chatbots’ self-recovery strategies on consumer satisfaction",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.103779",
+    "abstract": "The rapid development of artificial intelligence technology has enabled chatbots to perform human-like service work. Chatbots commonly fail in service due to their limitations. However, previous research has simply focused on the difference between self-recovery and human recovery, and the details of self-recovery have largely been overlooked. This study attempts to classify chatbots' self-recovery strategies and elucidate their relative impact on consumer satisfaction. Drawing on social support theory, this study proposes two types of self-recovery strategies, informational self-recovery and emotional self-recovery. Meanwhile, this study further details consumer satisfaction from quality and attitude. The results of three scenario-based experiments reveal that informational self-recovery has a more substantial effect on consumer quality satisfaction than emotional self-recovery, while emotional self-recovery has a greater effect on consumer attitude satisfaction than informational self-recovery. Further, the anthropomorphic level of chatbots' self-recovery also positively moderates the relative relationship. The underlying mechanisms suggest that perceived competence partially mediates the relationship between informational self-recovery and consumer quality satisfaction and that perceived warmth partially mediates the relationship between emotional self-recovery and consumer attitude satisfaction. In addition, this study implies that an informational self-recovery strategy is well-suited to the context of service process failure, whereas an emotional self-recovery strategy is better adopted in the service outcome failure context. This study provides new insights into chatbots’ self-recovery strategies in response to service failure and offers implications to service providers of chatbots to leverage different self-recovery strategies to improve consumer satisfaction. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0479",
+    "title": "Consumer reactions to chatbot versus human service: An investigation in the role of outcome valence and perceived empathy",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.103847",
+    "abstract": "Service outcome valence is a prominent contextual factor that has been under-researched in studies of consumer response to automated service-givers. We investigate whether consumers respond differently to chatbot and human customer service when faced with positive versus negative service outcomes. We also explore the role of perceived empathy as a potential mediator in the focal relationship. 714 individuals participated in three studies based on the vignette method. Study participants reported significantly lower satisfaction, repatronage intentions, recommendation acceptance, and recommending the provider to others following interactions with a chatbot compared with a human agent in both positive and negative service outcome conditions. The effect was fully mediated by the service-giver's perceived empathy. Increasing a chatbot's perceived empathy via more empathetic communication (but not human-like appearance) improved consumer evaluations of chatbot service relative to a less empathetic chatbot configuration and matched evaluations of the human agent. A fourth study involved a quasi-experiment in which 100 individuals interacted with ChatGPT to obtain medical advice. This study corroborated our conclusions about the impact of perceived empathy on consumers' service experience and provider ratings. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0480",
+    "title": "Assessing the impact of AI-chatbot service quality on user e-brand loyalty through chatbot user trust, experience and electronic word of mouth",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.103867",
+    "abstract": "Based on the stimulus organism theory (S-O-R), the current study examines how the chatbot service quality influences e-brand loyalty among luxury fashion brand users and their adoption of it. In the current study, stimuli represent the chatbot service quality and chatbot awareness, prompting positive and negative emotional responses among Chinese users. However, these responses are influenced by the user's experience with chatbot usage, and trust is considered the organism in the S-O-R framework. In response to the user's ultimate trust, experience, electronic word of mouth (eWOM) and e-brand loyalty are enhanced. Similarly, our study framework is supported by the S-O-R theory. Data was gathered by convenience sampling and a cross-sectional research approach from 301 Chinese consumers of luxury fashion brands. The proposed relationships were tested using PLS-SEM through PLS-Smart software. The findings showed that AI-chatbot service quality significantly influences customer e-brand loyalty. Furthermore, chatbot user trust, experience, and electronic word of mouth significantly mediate the relationship between AI-chatbot service quality and customer e-brand loyalty. In a nutshell, applying S-O-R theory, our proposed model results provide valuable insights into the dynamics of AI-chatbot-driven interactions among Chinese luxury fashion brand consumers. Further, it explains the pivotal role of AI-chatbot service quality in fostering customer trust and e-brand loyalty. Moreover, the current study contributes to theoretical and practical knowledge. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0481",
+    "title": "The human touch vs. AI efficiency: How perceived status, effort, and loyalty shape consumer satisfaction with preferential treatment",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.103969",
+    "abstract": "This research investigates the impact of service agent type, human versus artificial intelligence (AI), on consumer satisfaction with preferential treatment. Through four studies conducted in both online and field settings, we demonstrate that consumers experience greater satisfaction when preferential treatment comes from a human agent compared to an AI agent. This effect is driven by two underlying mechanisms: the perception of elevated status and the perception of greater effort exerted by the supplier. Additionally, the difference in consumer satisfaction between agent types diminishes when consumers have strong prior loyalty to the company. These findings offer theoretical implications and managerial insights. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0482",
+    "title": "Leveraging digital technology in retailing business: Unboxing synergy between omnichannel retail adoption and sustainable retail performance",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.104047",
+    "abstract": "The retail industry is undergoing a significant transformation driven by digital technology. Among the key challenges retailers face are the rise of e-commerce, changing customer behaviour, and growing supply chain complexity. These shifts have intensified the pressure on retailers’ margins, necessitating bold action to reverse the negative trajectory. By leveraging digital technology in retail, this study unboxes the synergy between omnichannel retail adoption and sustainable retail performance and explores the intersection of omnichannel retail adoption and sustainable performance. By embracing omnichannel strategies and harnessing data at scale, retailers can enhance customer experiences, optimize operations, and drive growth. Utilizing Structural Equation Modelling (SEM) on data from 485 employees of Indian retail respondents. Findings reveal that digital technology has a significant moderation effect that boosts omnichannel activities' financial, environmental, and social aspects. Specifically, Generative Artificial Intelligence (Gen-AI) tools such as chatbots, visual search, and personalized retail experiences play a pivotal role. The study underscores combining data-driven, process, and Gen-AI technologies with omnichannel strategies to elevate performance. These insights contribute to understanding how retailers can leverage digital innovation within omnichannel frameworks for sustainable success. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0483",
+    "title": "Consumer segmentation with large language models",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.104078",
+    "abstract": "Consumer segmentation is vital for companies to customize their offerings effectively. Our study explores the application of Large Language Models (LLMs) in marketing research for consumer segmentation. We developed a workflow leveraging LLMs to perform clustering analysis based on consumer survey data, with a focus on text-based multiple-choice and open-ended questions. Firstly, we employed a LLMs model to embed text for clustering, demonstrating that LLMs enhance clustering accuracy over traditional models. Secondly, we created persona chatbots using LLMs, which achieved over 89% accuracy in simulating consumer preferences. Our findings underscore the potential of our LLMs framework in marketing research. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0484",
+    "title": "Impact of Gen-AI chatbots on consumer services experiences and behaviors: Focusing on the sensation of awe and usage intentions through a cybernetic lens",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.104120",
+    "abstract": "Generative AI-based chatbots have surfaced as a magical tool, revolutionizing the service industry. Equipped with superior conversational traits and the ability to attune with the conversant, chatbots have forged a coherent bond with the conversant. The untapped potential of chatbots deserves a better understanding of how consumers interact with them. This study recruits the theory of cybernetics to shed light upon the mechanism of chatbot consumer interaction. The theory helps to explain the psychological perspectives of chatbot users and answers the all-important question as to how to craft a coherent communication by enhancing the antecedents to chatbot efficiency. A mixed-method approach is used to identify factors that add to the dynamics of chatbot efficiency, a sensation of awe, and usage intentions. In method 1, the grounded theory approach is used to identify themes and factors to develop a conceptual model. In method 2, the conceptual model devised is subjected to empirical testing through Partial Least Square Structural Equation Modeling. The theory of cybernetics highlights the importance of information exchange and attunement which leads to higher usage intention in chatbots. The results disseminate the indispensability of AI-enabled chatbots for retailing businesses to attain commercial competency. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0485",
+    "title": "Retail consumers' conundrum: An in-depth qualitative study navigating the motivations and aversion of chatbots",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.104147",
+    "abstract": "This study addresses prevailing gaps in retail marketing literature encompassing the (chatbot) adoption behavior by delving into the motivators and inhibitors influencing consumer decisions to adopt chatbots. Employing a qualitative approach, we gathered consumer insights through open-ended essays that explored consumer adoption and aversion of chatbots, intending to contrive an inductive understanding of this behavior jacked up by the grounded theory approach. The study involved 55 US-based chatbot users recruited through the Prolific Academic platform. Participants responded to open-ended essay questions exploring the motivators and barriers to consumer adoption of chatbots. The Gioia method was employed to develop theoretical notions from empirical data inductively. The study's findings lead to categorizing motivators into functional motives, design attributes, and relational motives. At the same time, inhibitors/barriers were classified as technological and/or functional and personal and/or perceptual. The study significantly contributes to the existing body of knowledge by addressing a critical deficiency in prior literature, explicitly identifying the factors that truncate chatbot adoption. Explaining demotivators for chatbot adoption significantly enriches the behavioral reasoning theory argument, which bases itself upon the reasons for and against a particular (adoption/aversion) behavior. The study's findings can be helpful for practitioners by highlighting the necessity of prioritizing user-centric features as well as addressing both technological and perception barriers to truncate chatbot aversion or improve the adoption rates of chatbots. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0486",
+    "title": "How do sales promotions, communication agents, and psychological contracts determine purchase hesitation? Evidence from live stream influencers’ fan groups",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.104193",
+    "abstract": "Drawing on social exchange theory within the context of live-stream influencer (LSI) fan groups, we conducted two 2 x 2 between-subjects experiments to examine the impact of different sales promotion strategies (price discount vs. free product) on consumer purchase hesitation, influenced by different communication agents (chatbot vs. human agent). The results show that, in the case of free product promotion, human agents are more effective at reducing consumer purchase hesitation. However, there is no significant difference in the impact of human agents and chatbots on purchase hesitation in the context of price discount promotions. Our findings indicate that psychological contracts mediate the impacts of sales promotions and communication agents on consumer purchase hesitation. This study solidifies the theoretical foundations regarding the impact of traditional and AI-assisted sales promotions on consumer psychology, ultimately leading to purchase hesitation. Moreover, it offers LSIs strategic insights for implementing commercial business models to monetize fan engagement. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0487",
+    "title": "Balancing identity diversity and product contexts: Understanding consumer trust in AI-enhanced chatbot services",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2024.104205",
+    "abstract": "As chatbots are increasingly integrated into customer service, businesses are rapidly expanding their use. However, a significant gap has emerged between the rapid adoption of these systems and consumers’ reluctance to trust them fully. This trust deficit weakens the effectiveness of these systems and poses a critical challenge to companies aiming to improve customer experience and optimize service quality. This study examines how AI-enhanced customer service chatbots’ identity design―spanning gender, race, name, and job title―affects consumer trust and preferences while also addressing broader societal questions about diversity and inclusion in AI design. Across seven experiments, results reveal that consumers generally trust female and non-Caucasian AI chatbots more and that chatbots with nicknames are perceived as more trustworthy than those with formal names. Moreover, chatbots with higher-ranking job titles consistently garnered greater preference. Trust was a key mediator linking identity design to consumer preferences, moderated by product attributes (utilitarian vs. hedonic) and psychological distance (proximal vs. distal). Beyond advancing theoretical understanding, the findings provide actionable insights for businesses seeking to balance commercial objectives with ethical considerations in AI design, thereby promoting social diversity and inclusivity while fostering trust chatbot services. © 2024 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0488",
+    "title": "From familiarity to acceptance: The impact of Generative Artificial Intelligence on consumer adoption of retail chatbots",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104234",
+    "abstract": "This study investigates the influence of Generative Artificial Intelligence (GenAI) on consumer adoption of retail chatbots, focusing on how GenAI impacts key adoption determinants, the role of familiarity and assessing its effects across different stages of the customer journey. We conducted two waves of surveys, one pre- and one post-GenAI integration, to compare consumer perceptions across three customer service tasks. Using the Service Robot Acceptance Model (SRAM) as a framework, we found that GenAI enhances consumer perceptions of chatbot usefulness, human-likeness, and familiarity, thereby increasing adoption intentions. However, trust remains largely unchanged, and privacy concerns have risen post-GenAI. Additionally, the relationships remain stable across customer journey stages, with familiarity playing a key role. Our findings extend SRAM to the retail context with GenAI, offering new insights into the temporal stability of chatbot adoption factors. It underscores familiarity's dual role (direct and indirect) in fostering adoption, while highlighting that GenAI impacts specific aspects of consumer interaction. These findings provide insights for retailers to leverage GenAI-powered chatbots to enhance customer engagement and satisfaction. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0489",
+    "title": "Consumers' questions as nudges: Comparing the effect of linguistic cues on LLM chatbot and human responses",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104250",
+    "abstract": "Large Language Models (LLMs) enable natural language interactions, offering much potential for personalized consumer engagement in e-commerce. While prior studies have explored how chatbot expressions influence consumers, they often overlook the role of consumers as communicators who shape interactions through strategic language use. Additionally, evidence suggests that question cues can nudge humans to respond differently, but whether LLM chatbots adapt similarly to these cues remains underexplored. Informed by nudging theory, this study proposes that consumers can strategically use question cues to nudge LLM chatbots in response generation. Through a semantic analysis of 5676 responses to 1419 consumers' questions, we investigate the effects of cognitive and socio-emotional question cues on the informational and socio-emotional responses from humans and three LLM chatbots: ChatGPT, Claude and GLM. Findings suggest that, despite differing processing mechanisms, the nudging effect of question cues on LLM chatbots is similar as that on SNS users. Unlike humans, LLM chatbots exhibit a more pronounced tendency to focus exclusively on either informational or socio-emotional responses, rarely combining both aspects as seamlessly as humans do. This research underscores the importance of question formation in shaping consumer-chatbot interactions, suggesting that chatbots outperform humans in providing consistent informational responses regardless of question specificity and emotionality, while SNS users handle complex emotional queries more adeptly, showing their complementary roles in e-commerce. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0490",
+    "title": "Measuring technology acceptance over time using transfer models based on online customer reviews",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104278",
+    "abstract": "Online customer reviews (OCRs) are user-generated, semi-formal evaluations of products, services, or technologies. They usually consist of a timestamp, a star rating, and, in many cases, a comment that reflects perceived strengths and weaknesses. OCRs are easily accessible in large numbers on the Internet – for example, through app stores, electronic marketplaces, online shops, and review websites. This paper presents new transfer models to predict technology acceptance and its determinants from OCRs. We train, test, and validate these prediction models using large OCR samples and corresponding observed construct ratings by human experts and generative artificial intelligence chatbots as well as estimated ratings from a traditional customer survey. From a management perspective, the new approach enhances former technology acceptance measurement since we use OCRs as a basis for prediction and discuss the evolution of acceptance over time. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0491",
+    "title": "AI service may backfire: Reduced service warmth due to service provider transformation",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104282",
+    "abstract": "Perceived service warmth, arising from interactions between customers and employees, is a fundamental component of the hospitality industry. However, as artificial intelligence (AI) facilities such as service robots and chatbots gradually replace the role of human staff, the inherent warmth of the hospitality industry may be under threat. Therefore, the current research aims to investigate how such service provider transformations might influence customer warmth perceptions, the underlying mechanism, and practical solutions for firms that plan to deploy AI facilities in the future. Using five studies (and a supplemental study), we demonstrate that AI (vs. human) service significantly reduces customers’ perceived service warmth due to the diminished mind perceptions (i.e., experience and agency) of AI staff as service providers. Such a warmth loss effect further leads to lower customers’ continuous usage intention of AI service. However, the effect is attenuated when AI staff interacts with customers using an informal (vs. formal) language style or for customers with a utilitarian (vs. hedonic) motivation. The findings of this research contribute to the literature on AI service and provide valuable insights for marketers into effective AI deployment in the hospitality industry. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0492",
+    "title": "Fun or warm: How conversational style boosts customer engagement",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104293",
+    "abstract": "This research proposes and shows that a fun conversational style fosters greater tourist engagement than chatbots' traditional warm conversational style in a hotel room booking context. Furthermore, successful technology adoption requires businesses to understand the influence of cultural factors. Specifically, comprehending how individualism, a key cultural factor, shapes the effectiveness of chatbot conversation styles is important to enhance tourist engagement. Our findings, across two studies employing a combination of online surveys (Study 1, n = 241) and a randomised between-subject experiment (Study 2, n = 113), demonstrate that tourists' individualism serves as a boundary condition for the relationship between chatbot conversation styles and engagement. Additionally, results show that a fun chatbot conversation style increases customer engagement through underlying mechanisms of consumer's sense of liberation and hedonic involvement. Our research contributes to the psychological theory of fun and literature related to customer engagement. From a practical standpoint, this research offers valuable insights into the effectiveness of chatbot conversations that resonate with the needs of tourists while booking a hotel room. Marketing firms should deploy fun chatbots that stimulate customers' attention, interest, arousal, and curiosity through enjoyable experiences to foster customer engagement. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0493",
+    "title": "When algorithms meet emotions: Understanding consumer satisfaction in AI companion applications",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104298",
+    "abstract": "AI companion applications are transforming how people form and maintain relationships in the digital world, with millions of users now engaging in emotional and social interactions with AI agents. Understanding what drives user satisfaction becomes crucial as these applications become increasingly integrated into users' daily lives. Drawing on Orlikowski's practice lens theory and employing text mining and hierarchical clustering methodologies on user reviews enhanced with focus group discussions, this study identifies two key determinants of user satisfaction: Functional Capability Perception and Affective Social Attunement. The analysis of 156,637 user reviews and insights from diverse participants reveals that satisfaction emerges through users' simultaneous negotiation of technical proficiency and emotional boundaries in their AI interactions. Functional capabilities positively influence satisfaction, while deeper emotional engagement creates a paradoxical effect where users become more sensitive to AI limitations. The study demonstrates how societal conditions shape these dynamics, with evaluation criteria evolving from simple acceptance to deeper interpersonal connections, reflecting changing attitudes toward human-AI relationships. Our mixed methods approach uncovers the contextual factors and usage patterns that shape how users integrate these technologies into their daily routines and emotional ecosystems. These insights advance our understanding of human-AI relationships while providing practical guidance for developers on creating adaptive systems that respond to evolving user needs. By understanding these complex dynamics, stakeholders can develop AI companions that enhance human relationships rather than attempting to replace them. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0494",
+    "title": "The impact of service agent type on satisfaction in green purchasing: A comparative study of AI and human agents",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104355",
+    "abstract": "As artificial intelligence (AI) becomes increasingly integrated across industries, its application in green marketing is garnering growing interest—particularly in light of rising consumer demand for environmentally friendly products. However, research exploring consumer responses to AI-powered service interfaces in the context of green consumption remains limited. This study addresses that gap by examining how the type of service agent (AI vs. human) influences consumer satisfaction with green product purchases. Across three studies involving a total of 766 participants, data were collected via structured questionnaires using random sampling. Results show that consumers interacting with AI agents report higher satisfaction with their green purchases than those served by human agents. This effect is mediated by the perceived level of self-effort invested in the transaction. Furthermore, environmental consciousness moderates this relationship: the satisfaction advantage of AI agents diminishes among consumers with high environmental consciousness. These findings provide new theoretical insights into consumer–AI dynamics in green marketing and offer actionable guidance for both researchers and practitioners aiming to enhance green consumption experiences. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0495",
+    "title": "The power of emojis: Enhancing the willingness to adopt chatbot recommendations",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104388",
+    "abstract": "Chatbots have become an integral component of online services in the tourism industry. Emojis, which act as crucial nonverbal cues, have gained widespread attention because of their unique role in enhancing the emotional expression of chatbots. However, the impact of emoji use by chatbots on consumers’ willingness to adopt recommendations has yet to receive sufficient scholarly attention. On the basis of the emotion as social information (EASI) model, this study conducts three online experiments to explore the mechanisms by which emoji use by chatbots influences the willingness to adopt recommendations within the context of tourism services. The findings from the three studies indicate that (1) compared with chatbots that do not use emojis, those that incorporate emojis significantly enhance consumers’ willingness to adopt recommendations; (2) empathy and trust serve as mediators in this relationship; and (3) relationship norm orientation and identity disclosure moderate both the main effect and the mediating effects. This study contributes to the literature on emoji use in chatbots and provides practical insights for tourism companies in the design and deployment of chatbots. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0496",
+    "title": "Asking fintech voice Chatbots: Explaining consumer switching intention by status quo bias theory",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104457",
+    "abstract": "As FinTech voice chatbots gradually emerge as successors to traditional text-based FinTech interfaces, understanding the behavioral mechanisms that drive users to switch to voice-based systems has become a critical concern for the banking industry. Despite their growing prevalence, research on FinTech voice chatbots remains fragmented and underdeveloped. To address this gap, the present study draws upon the three core dimensions of Status Quo Bias Theory—psychological commitment, cognitive misperception, and relationship evaluation—to explain how resistance to FinTech voice chatbots can be mitigated and how users’ willingness to adopt these technologies can be enhanced. A longitudinal survey was conducted with 330 consumers in Taiwan who had experience using FinTech voice chatbot services. Using Latent Growth Curve Modeling (LGCM), this study investigates how initial levels of sunk cost for human customer service, social norms, loss aversion toward voice chatbots, perceived system defects, prior user experience with human customer service, and performance risk perceptions shape the evolution of resistance attitudes and, ultimately, willingness to switch to FinTech voice chatbots. These findings highlight key psychological and behavioral factors that hinder FinTech voice chatbot adoption, offering actionable insights for banks. With limited resources, by prioritizing alleviating sunk costs for physical customer service, loss aversion for FinTech voice chatbots, and user experience for human customers of consumers, banks can not only effectively foster adoption but also reduce paper-based service reliance, advancing environmental sustainability and financial inclusion in line with the Sustainable Development Goals (SDGs). © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0497",
+    "title": "Toward agentic AI: User acceptance of a deeply personalized AI super assistant (AISA)",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104620",
+    "abstract": "Recent scholarship underscores the transformative potential of generative AI in shaping consumer decision-making, preferences, and overall brand satisfaction. Among these technologies, chatbots and AI voice assistants are increasingly deployed in marketing to influence consumer behavior. A critical question, however, is whether consumers are willing to accept a new generation of such technologies. In July 2025, OpenAI introduced the agent mode of ChatGPT, which represents a shift toward highly personalized, multimodal, and autonomous systems. This study defines these systems as AI super assistants (AISA). Informed by the broader literature on AI adoption and consumer behavior, an adapted AIDUA model with perceived risk is proposed. Survey data from the Philippines (N = 407) was analyzed using combined PLS-SEM and NCA methods. The results show that users appear increasingly confident in their ability to engage with new AI technologies, indicating that they do not feel overwhelmed but instead perceive AISA's new features as manageable. Hedonic motivation, novelty value, performance expectancy, and effort expectancy were identified as necessary conditions for user acceptance, while perceived risk is a necessary condition for objection. These findings offer new insights into user perception toward AISA, with implications for responsible AI design and deployment. © 2025 The Authors"
+  },
+  {
+    "article_id": "CA_0498",
+    "title": "AI or human: How the type of information to be disclosed alters customer service agent preferences",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104621",
+    "abstract": "While prior research has largely examined service providers' recommendation strategies and consumer responses, less is known about how consumers form preferences in the initial stages of interactive recommendation—when disclosing personal information to service agents. This research examines how the type of information disclosed (subjective vs. objective) influences consumers’ preferences for AI versus human customer service agents. Across four studies, we find a systematic matching effect: consumers prefer AI agents when disclosing objective information but human agents when disclosing subjective information. Study 3 identifies trust in recommendation capability as the underlying mechanism, while Study 4 shows that AI anthropomorphism moderates this effect. Beyond advancing theory, our findings reveal that aligning information type with agent type enhances both consumer satisfaction and purchase intentions. Together, this work contributes to the literature on information disclosure, human–AI interaction, and service design. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0499",
+    "title": "Emojis as catalysts: How AI agents leverage emojis to enhance customer engagement across the pre-core and core service stages",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104635",
+    "abstract": "Emojis, crucial nonverbal emotional cues, have gained scholarly attention in AI service marketing. However, existing research lacks a holistic investigation into the impact of emoji usage by AI from cross-stage perspectives. This study employs Emotions as Social Information (EASI) theory as the theoretical framework. We conducted three online experiments set in an OTA (Online Travel Agency) context. Study 1 (n = 264) adopted a 2 (Emoji usage by AI: yes vs. no) × 2 (Service stage: pre-core vs. core) between-subjects design. The results revealed that the use of emojis by AI service agents attracted customers' interest during the pre-core stage and enhanced customers' continuous usage intention in the core stage. Study 2A (n = 133) and Study 2B (n = 136) separate the pre-core stage and core stage to validate the mediating pathways of emoji effects. The results revealed that emoji usage by AI primarily functions through the affective pathway in the pre-core stage (i.e., evoking customers' pleasure emotions). In contrast, in the core stage, it primarily functions through the inferential process (i.e., triggering customers' social presence inferences about AI). These insights advance research on the benefits of emojis in AI services, offering implications for optimizing human-AI interaction experiences during the customer journey. © 2025 Elsevier Ltd"
+  },
+  {
+    "article_id": "CA_0500",
+    "title": "Human versus non-human agents who make predictions of service delivery: An examination of user responses to agents’ view of the future",
+    "journal": "Journal of Retailing and Consumer Services",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.jretconser.2025.104638",
+    "abstract": "Consumers often ask service providers for predictions about future events in service processes, and the current study examines reactions to service agents' predictions about when an event will happen. More specifically, since it has been argued that non-human service agents (such as chatbots) will be increasingly common, the study assesses if service agent identity (human vs. AI-powered chatbot) influences receivers' reactions to the agent's when-predictions. This identity aspect has so far not been addressed in the service literature on reducing uncertainty about future events. Two between-subjects experiments, in which agent identity was manipulated in a flight delay context, were conducted for this assessment. The main result was that a human service agent generated a more positive evaluation of a when-prediction than a non-human agent. The study also provides explanations for this result in terms of underlying mechanisms: the impact of agent identity on the evaluation of a prediction was found to be (serially) mediated by attribution of mind to the agent and the agent's perceived prediction skills. Conceptually, attribution of theory of mind (the capability to understand other’ minds) is a highly needed capability when it comes to predicting future events – particularly in a service systems in which several human minds are involved. The main result implies that firms' responses to customers' requests for when-predictions would benefit if the predictions are delivered by a human service agent rather than a non-human service agent. © 2025 The Author"
+  }
+]

@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1751",
+    "title": "Trust in smart personal assistants: A systematic literature review and development of a research agenda",
+    "journal": "Proceedings of the 15th International Conference on Business Information Systems 2020 \"Developments, Opportunities and Challenges of Digitization\", WIRTSCHAFTSINFORMATIK 2020",
+    "journal_impact_factor": null,
+    "doi": "10.30844/wi_2020_a7",
+    "abstract": "Smart Personal Assistants (SPA) fundamentally influence the way individuals perform tasks, use services and interact with organizations. They thus bear an immense economic and societal potential. However, a lack of trust - rooted in perceptions of uncertainty and risk - when interacting with intelligent computer agents can inhibit their adoption. In this paper, we conduct a systematic literature review to investigate the state of knowledge on trust in SPAs. Based on a concept-centric analysis of 50 papers, we derive three distinct research perspectives that constitute this nascent field: user interface-driven, interaction-driven, and explanation-driven trust in SPAs. Building on the results of our analysis, we develop a research agenda to spark and guide future research surrounding trust in SPAs. Ultimately, this paper intends to contribute to the body of knowledge of trust in artificial intelligence-based systems, specifically SPAs. It does so by proposing a novel framework mapping out their relationship. © Proceedings of the 15th International Conference on Business Information Systems 2020 \"Developments, Opportunities and Challenges of Digitization\", WIRTSCHAFTSINFORMATIK 2020."
+  },
+  {
+    "article_id": "CA_1752",
+    "title": "ANTECEDENTS INFLUENCING THE SUSTAINED INTENTION TO UTILIZE GENERATIVE ARTIFICIAL INTELLIGENCE CHATBOTS WITHIN THE DOMAINS OF HOSPITALITY AND TOURISM",
+    "journal": "Geojournal of Tourism and Geosites",
+    "journal_impact_factor": 1.242,
+    "doi": "10.30892/gtg.61310-1520",
+    "abstract": "Generative artificial intelligence (GenAI) has evolved as a distinct aspect of artificial intelligence technology, with the lofty goal of imbuing robots with human-like reasoning and behavior. Although artificial intelligence and its applications, such as chatbots, have only recently been introduced, these technologies will soon become indispensable in the hospitality and tourism industries. It is imperative to understand the factors influencing tourists' intentions to persist in utilizing GenAI chatbots for hotel bookings and travel-related activities. Utilizing the framework of social cognitive theory, the present research examines the relationships among the strengths of GenAI chatbots, perceived advantage, technical self-efficacy, perceived personalization, and the intention to continue using chatbots. A survey was administered through the Prolific platform to gather data from a sample of 450 tourists residing in the United States of America. The collected data were subjected to analysis through partial least squares–based structural equation modeling utilizing SmartPLS 4 software. Our findings revealed that perceived advantage did not serve as the predominant catalyst for tourists' continued intention to engage with chatbots. Rather, our results suggest a nuanced understanding of user perceptions, wherein intrinsic factors (e.g., technical self-efficacy) and experiential benefits (e.g., perceived personalization) surpass traditional perceptions of technological superiority. Designers and developers ought to enhance chatbots that offer tourists tailored suggestions, complemented by visual elements such as images, videos, and virtual tours of recommended locations. Hospitality and tourism authorities should provide financial and information support for designers of GenAI technologies such as chatbots because chatbots could offer recommendations for booking inquiries, making reservations for accommodation and other facilities, and providing advices for travel places and tourism sites together with immediate and tailored information. © 2025, Editura Universitatii din Oradea. All rights reserved."
+  },
+  {
+    "article_id": "CA_1753",
+    "title": "INVESTIGATING THE IMPACT OF ONLINE REVIEWS, VIRTUAL REALITY, AND AI CHATBOTS ON FIRST-TIME HOTEL BOOKINGS IN RURAL DESTINATIONS: THE ROLE OF SENSE OF PRESENCE AND TRUST",
+    "journal": "Geojournal of Tourism and Geosites",
+    "journal_impact_factor": 1.242,
+    "doi": "10.30892/gtg.61343-1553",
+    "abstract": "This study investigates how modern technologies, specifically online reviews, virtual reality (VR), and AI-powered chatbots, influence tourists’ intentions to book rural accommodations and their willingness to pay a deposit in Vietnam, where over 60% of the population resides in rural areas. Despite growing interest in rural tourism, destinations often face challenges related to low digital engagement, information asymmetry, and limited trust from potential visitors. Addressing these barriers, the study applies the Stimulus-Organism-Response (SOR) theoretical framework to examine how these technologies act as external stimuli that enhance internal psychological states, namely tourists’ sense of presence and trust, which in turn drive behavioral outcomes. A quantitative survey was conducted with 425 first-time Vietnamese tourists who had considered rural tourism in their future destinations. Using SPSS and AMOS for data analysis, the study tested a structural model to investigate individual technology use in booking behaviors. The findings confirm that sense of presence and trust significantly mediate the relationship between technological stimuli and tourists’ behavioral intentions. Online reviews emerged as the strongest drive r of trust, underlining the importance of user-generated content in reducing perceived risk. VR technology was found to be particularly effective in generating a strong sense of presence, allowing tourists to visualize and emotionally connect with rural destinations before visiting. AI chatbots supported both presence and trust by offering real-time assistance, personalized information, and interactive engagement, enhancing users' overall experience. The study contributes to tourism literature by validating the SOR model in a rural context and demonstrating the differentiated effects of digital tools on psychological and behavioral responses. From a managerial perspective, the findings provide actionable insights for rural accommodation providers and tourism marketers. Strategic implementation of immersive and interactive technologies can not only increase tourists' trust and emotional engagement but also improve reservation rates and revenue predictability through deposit commitments. For emerging economies like Vietnam, embracing digital transformation in rural tourism offers a viable pathway to enhance destination appeal, attract first-time visitors, and foster sustainable tourism development. © 2025, Editura Universitatii din Oradea. All rights reserved."
+  },
+  {
+    "article_id": "CA_1754",
+    "title": "Robo academic advisor: Can chatbots and artificial intelligence replace human interaction?",
+    "journal": "Contemporary Educational Technology",
+    "journal_impact_factor": 5.39,
+    "doi": "10.30935/cedtech/13498",
+    "abstract": "Purpose: Chatbots and artificial intelligence (AI) have the potential to alleviate some of the challenges faced by humans. Faculties frequently swamped with teaching and research may find it difficult to act in a parental role for students by offering them individualized advice. Hence, the primary purpose of this study is to review the literature on chatbots and AI in light of their role in auto-advising systems. The authors aimed to gain insights into the most pertinent topics and concerns related to robo academic advisor and identify any gaps in the literature that could serve as potential avenues for further research. Design/methodology/approach: The research employs a systematic literature review and bibliometric techniques to find 67 primary papers that have been published between 1984 and 2023. Using the Scopus database, the researchers built a summary of the literature on chatbots and AI in academic advice. Findings: Chatbot applications can be a promising approach to address the challenges of balancing personalized student advising with automation. More empirical research is required, especially on chatbots and other AI-based advising systems, to understand their effectiveness and how they can be integrated into educational settings. Research limitations/implications: This research’s sample size may restrict its findings’ generalizability. Furthermore, the study’s focus on chatbots may overlook the potential benefits of other AI technologies in enhancing robo academic advising systems. Future research could explore the impact of robo academic advisors in diverse societal backgrounds to gain a more comprehensive understanding of their implications. Practical implications: Higher educational institutions (HEIs) should establish a robo academic advising system that serves various stakeholders. The system’s chatbots and AI features must be user-friendly, considering the customers’ familiarity with robots. Originality/value: This study contributes to a better understanding of HEIs’ perceptions of the adoption of chatbots and AI in academic advising by providing insightful information about the main forces behind robo academic advising, illuminating the most frequently studied uses of chatbots and AI in academic advising. © 2024 by authors; licensee CEDTECH by Bastas."
+  },
+  {
+    "article_id": "CA_1755",
+    "title": "Analyzing the role of ChatGPT as a writing assistant at higher education level: A systematic review of the literature",
+    "journal": "Contemporary Educational Technology",
+    "journal_impact_factor": 5.39,
+    "doi": "10.30935/cedtech/13605",
+    "abstract": "This study examines the role of ChatGPT as a writing assistant in academia through a systematic literature review of the 30 most relevant articles. Since its release in November 2022, ChatGPT has become the most debated topic among scholars and is also being used by many users from different fields. Many articles, reviews, blogs, and opinion essays have been published in which the potential role of ChatGPT as a writing assistant is discussed. For this systematic review, 550 articles published six months after ChatGPT’s release (December 2022 to May 2023) were collected based on specific keywords, and the final 30 most relevant articles were finalized through PRISMA flowchart. The analyzed literature identifies different opinions and scenarios associated with using ChatGPT as a writing assistant and how to interact with it. Findings show that artificial intelligence (AI) in education is a part of the ongoing development process, and its latest chatbot, ChatGPT is a part of it. Therefore, the education process, particularly academic writing, has both opportunities and challenges in adopting ChatGPT as a writing assistant. The need is to understand its role as an aid and facilitator for both the learners and instructors, as chatbots are relatively beneficial devices to facilitate, create ease and support the academic process. However, academia should revisit and update students’ and teachers’ training, policies, and assessment ways in writing courses for academic integrity and originality, like plagiarism issues, AI-generated assignments, online/home-based exams, and auto-correction challenges. © 2023 by authors; licensee CEDTECH by Bastas."
+  },
+  {
+    "article_id": "CA_1756",
+    "title": "Higher education students’ ChatGPT use behavior: Structural equation modelling of contributing factors through a modified UTAUT model",
+    "journal": "Contemporary Educational Technology",
+    "journal_impact_factor": 5.39,
+    "doi": "10.30935/cedtech/17243",
+    "abstract": "Despite the increasing interest in artificial intelligence technologies in education, there is a gap in understanding the factors influencing the adoption of ChatGPT among Nigerian higher education students. Research has not comprehensively explored these factors in the Nigerian context, leaving a significant gap in understanding technology adoption in this setting. This study addressed this gap by investigating the predictors of students’ behavioral intentions (BIs) and actual use behavior of ChatGPT through the lens of the unified theory of acceptance and use of technology 2 (UTAUT2) framework. A cross-sectional correlational research design was used to examine the relationships between extended UTAUT variables, BIs, and ChatGPT use behavior. A sample of 8,496 higher education students from diverse institutions in Nigeria participated in the study. The data were collected using the higher education students’ ChatGPT utilization questionnaire, which assessed various factors, such as performance expectancy (PE), effort expectancy (EE), social influence (SI), facilitating conditions (FCs), hedonic motivation (HM), habit (HB), BI, and ChatGPT use behavior. The findings reveal several significant predictors of students’ BIs and actual usage of ChatGPT. PE, SI, HM, and HB were found to be significant positive predictors of BI, while EE and FCs were significant negative predictors. For ChatGPT use behavior, FCs, HM, HB, and BI were significant positive predictors, whereas PE and SI were significant negative predictors. BI mediated the relationships between several factors and ChatGPT usage behavior: positively for some (PE, SI, HM, and HB) and negatively for others (EE and FC). This study contributes to understanding the adoption of ChatGPT in higher education contexts. The findings highlight the importance of addressing usability issues, providing adequate support and resources, promoting a positive user experience, fostering habitual usage, and leveraging social networks to encourage adoption. © 2025 by authors; licensee CEDTECH by Bastas."
+  },
+  {
+    "article_id": "CA_1757",
+    "title": "Adoption and use of ChatGPT among university IT students: An exploratory study",
+    "journal": "Contemporary Educational Technology",
+    "journal_impact_factor": 5.39,
+    "doi": "10.30935/cedtech/17864",
+    "abstract": "Technological advancements, particularly those associated with artificial intelligence (AI), have significantly transformed the educational landscape. The ChatGPT tool, developed by OpenAI and launched in 2022, has garnered considerable interest from users globally. This study aims to characterize the perceptions of IT students regarding ChatGPT, exploring variations based on gender and employment status, while also examining the relationships between these perceptions, age, completed semesters, and usage intensity. A comprehensive literature review on AI, with a focus on the ChatGPT tool, was conducted. A questionnaire was distributed to 72 undergraduate IT students to assess their perceptions of ChatGPT usage. The questionnaire encompasses three key areas: confidence, intention to use, and current utilization of the tool. Findings indicate a weak to moderate correlation between the intensity of ChatGPT usage and the statement, “I am willing to make decisions based on ChatGPT recommendations.” Additionally, a weak relationship was observed between usage intensity and the perception that “ChatGPT is trustworthy in terms of reliability and credibility,” as well as between usage intensity and the willingness to use ChatGPT in the future. © 2026 by authors;."
+  },
+  {
+    "article_id": "CA_1758",
+    "title": "(Why) Do We Trust AI?: A Case of AI-based Health Chatbots",
+    "journal": "Australasian Journal of Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.3127/ajis.v28.4235",
+    "abstract": "Automated chatbots powered by artificial intelligence (AI) can act as a ubiquitous point of contact, improving access to healthcare and empowering users to make effective decisions. However, despite the potential benefits, emerging literature suggests that apprehensions linked to the distinctive features of AI technology and the specific context of use (healthcare) could undermine consumer trust and hinder widespread adoption. Although the role of trust is considered pivotal to the acceptance of healthcare technologies, a dearth of research exists that focuses on the contextual factors that drive trust in such AI-based Chatbots for Self-Diagnosis (AICSD). Accordingly, a contextual model based on the trust-in-technology framework was developed to understand the determinants of consumers’ trust in AICSD and its behavioral consequences. It was validated using a free simulation experiment study in India (N = 202). Perceived anthropomorphism, perceived information quality, perceived explainability, disposition to trust technology, and perceived service quality influence consumers’ trust in AICSD. In turn, trust, privacy risk, health risk, and gender determine the intention to use. The research contributes by developing and validating a context-specific model for explaining trust in AICSD that could aid developers and marketers in enhancing consumers’ trust in and adoption of AICSD. © (2024), (Australasian Association for Information Systems). All Rights Reserved."
+  },
+  {
+    "article_id": "CA_1759",
+    "title": "Are Chatbots the Key to Success in Customer Service for Logistics Companies? A Statistical Study of 10 of the Most Important Companies in South America",
+    "journal": "Operations and Supply Chain Management",
+    "journal_impact_factor": null,
+    "doi": "10.31387/oscm0560413",
+    "abstract": "This article aims to investigate the effectiveness of chatbots in improving customer service for logistics companies, focusing on ten of the most important companies in South America. Data was collected from 1250 chatbot users across these companies and analyzed to determine the relationship between chatbot usage and customer satisfaction. The results indicate that chatbots can effectively improve customer service in the logistics industry, with a significant positive correlation between chatbot usage and customer satisfaction. The study employed multiple regression analysis to identify the most important factors influencing customer satisfaction with chatbots, including the chatbot’s capacity to address customer concerns, its familiarity with the company’s products and services, its capability to manage issues without requiring human intervention, its usage of correct grammar in its responses, and its general reputation for customer satisfaction. The results of this study have important implications for the logistics industry, as they provide insight into the potential benefits of chatbot technology for enhancing customer service. © 2024 Operations and Supply Chain Management Forum. All rights reserved."
+  },
+  {
+    "article_id": "CA_1760",
+    "title": "Intelligent anomaly detection of machine tools based on machine learning methods; [Intelligente Störungserkennung einer Werkzeugmaschine Basierend auf Methoden des Maschinellen Lernens]",
+    "journal": "ZWF Zeitschrift fuer Wirtschaftlichen Fabrikbetrieb",
+    "journal_impact_factor": null,
+    "doi": "10.3139/104.112158",
+    "abstract": "Applications for artificial intelligence in production science are on the brink of industrial implementation. For an anomaly detection in machine tools, fixed threshold limits in signal data are necessary. To develop an autonomous anomaly detection without fixed limits, recurring segments have to be detected. In this article a procedure for online pattern recognition in NC code is described, where the recognized segments will be matched with drive signals. The intelligent system independently learns individual threshold limits. This enables an anomaly detection in online drive signals. The user can classify these faults and receives recommendations for action. © 2019 Carl Hanser Verlag. All rights reserved."
+  },
+  {
+    "article_id": "CA_1761",
+    "title": "Strategies for Digital Transformation in Banking",
+    "journal": "International Scientific-Business Conference LIMEN Leadership, Innovation, Management and Economics: Integrated Politics of Research",
+    "journal_impact_factor": null,
+    "doi": "10.31410/LIMEN.2024.535",
+    "abstract": "Modern banking is facing challenges in business practices, service delivery, and client interactions due to the rise of digital technologies and artificial intelligence. In recent years, technologies such as artificial intelligence, mobile banking, and blockchain have not only been a source of support to human resources in banks but have also increasingly replaced them, enabling more efficient real-time banking services available 24/7. Digital innovations enhance the efficiency of banking operations through automation of routine tasks and archival of banking documentation and drive exponential growth in the volume of banking product and service sales, development of customized offerings, establishment of new communication forms, and, consequently, transformation of the customer experience. It is noted that the implementation of an innovative banking business model often encounters resistance from employees, which requires establishing a clear vision and strategy, continuous employee communication and training, analysis of leadership roles in change management, and fostering a culture of innovation within the bank. The focus of this paper is on presenting strategies that banks can implement using artificial intelligence, chatbots, and big data analytics to enhance client relations, improve competitiveness, increase brand recognition, and drive more profitable operations. Additionally, attention is drawn to the potential risks banks may face, including data privacy issues and regulatory compliance in order to underscore the advantages of digital banking while ensuring ethical, sustainable, and successful functioning of the banking sector. The aim of this research is to demonstrate a holistic approach to digital transformation in banking, based on the integration of digital technology, change management, and marketing strategies-essential prerequisites for competitiveness and longterm sustainability of banking operations in a dynamic business environment. © Creative Commons Non Commercial CC BY-NC: This article is distributed under the terms of the Creative Commons Attribution-NonCommercial 4.0 License (https://creativecommons. org/licenses/by-nc/4.0/) which permits non-commercial use, reproduction and distribution of the work without further permission."
+  },
+  {
+    "article_id": "CA_1762",
+    "title": "Chatbots at Work-A Qualitative Case Study to Analyse the Service Quality of Chatbots in the Public Sector in Austria",
+    "journal": "International Scientific-Business Conference LIMEN Leadership, Innovation, Management and Economics: Integrated Politics of Research",
+    "journal_impact_factor": null,
+    "doi": "10.31410/LIMEN.2024.89",
+    "abstract": "Recent developments in the field of information technology and the rapid rise in artificial intelligence-based applications are increasingly leading to the implementation of chatbots. In addition to the private sector, chatbots are also being more and more used in the public sector. If public administrations ensure the characteristics of service, system, and information quality with their chatbots, the interaction between citizens and government can be improved, and thus the customer experience can be turned for the better. The study at hand provides insights into the status-quo of implemented chat-bots in selected Austrian public administration websites. Methodologically Yin’s embedded multiple case study approach is used, and is carried out on four cases from public administration and five cases from the energy sector. Based on the classic SERVQAL approach a 10-layer structure has been designed to make the performed tests with the chatbots transparent and comparable. The results show for the analysed cases that the application of chatbot technology is still in its infancy, and is not yet being used: neither across the whole public sector nor at its potential functional capacity. Furthermore, the analysis revealed that there are major qualitative differences between the analysed chatbots. It was found that the currently implemented administration chat-bots have potential for improvement in terms of their problem-solving ability, reliability, adaptability, user-friendliness, and information quality. The results of the study are in line with previous findings in the literature that cast doubt on the ability of chatbots to replace traditional administrative services. In addition, the results are of interest to public authorities and administrations because they can help to improve their digital services through measures that were proposed as concluding recommendations. © 2024, Association of Economists and Managers of the Balkans. All rights reserved."
+  },
+  {
+    "article_id": "CA_1763",
+    "title": "Developing a Location-Based Recommender System Using Collaborative Filtering Technique in the Tourism Industry",
+    "journal": "Tehnicki Glasnik",
+    "journal_impact_factor": null,
+    "doi": "10.31803/tg-20210706082307",
+    "abstract": "The rapid growth of new information and products in the virtual environment has made it time consuming to acquire relevant information and knowledge amidst a vast amount of information. Therefore, an intelligent system that can offer the most appropriate and desirable among the large amount of information and products by following the conditions and features selected by each user should be essentially efficient. Systems that perform this task are called recommendation systems. Given the volume of social network data, challenges such as short-term processing and increased accuracy of recommendations are discussed in this type of system. Hence, it can perform processes faster with less error and can be effective in improving the performance of social recommending systems in improving the classification and clustering of information with the help of collaboration filtering methods. This study first develops an innovative conceptual model of a social network-based tourism recommendation system using Flicker network data. This model is based on 9 key components. The comparison show that the proposed method has an accuracy of 0.3% and a lower error rate. © 2022 Tehnicki Glasnik. All rights reserved."
+  },
+  {
+    "article_id": "CA_1764",
+    "title": "Manufacturing resource servitization based on SOOA",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/978-1-61499-544-9-308",
+    "abstract": "Cloud manufacturing is a new service-oriented networked manufacturing model in which manufacturing resources can be shared in the cloud for customers to utilize as needed. Traditional resource servitization methods are mostly based on SPOA (Service Protocol-Oriented Architecture), which lacks the flexibility to cope with the dynamic nature of the network and the manufacturing resources. In this paper, based on the characteristics of manufacturing resources and the network, the SOOA (Service Object-Oriented Architecture) is adopted as the underling service architecture for resource servitization, and an SOOA-based resource servitization method is proposed, in which three stages are involved-service interface definition, manufacturing resource encapsulation and dynamic provisioning of manufacturing services. Through the three stages, different kinds of manufacturing resources from different perspectives, including software and hardware resources, static and dynamic resources, or unique and replaceable resources, can all be provisioned and accessed as manufacturing services on the dynamic network with standardized interfaces and SOOA characteristics. This approach can provide support for connect-in of manufacturing resources from resource providers and can adapt to the dynamic nature of manufacturing resources and the network very well. © 2015 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1765",
+    "title": "An empirical study of the social e-commerce services model in Taiwan",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/978-1-61499-779-5-807",
+    "abstract": "In recent years, the rise of social media has driven business opportunities. This study explored the economy of closed social media fan groups, which represent a type of customer-to-customer (C2C) model. On the basis of the analysis of the current situation, we propose a three-step process that sets up the integration models for (1) the channel and stock, (2) supplier orders, and (3) consumers; compare As-Is and To-Be logistics on the one hand and cash flows and information flows on the other; and offer corresponding plans and suggestions. © 2017 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1766",
+    "title": "A proposal on an electricity trading platform using blockchain",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/978-1-61499-898-3-976",
+    "abstract": "This paper proposes a platform that transfers electric power among consumers individually using digital grid technology that can digitally control power and blockchain technology. In this platform, each individual estimates excess or shortage of electric power based on each amount of their electricity consumption and generation, then the consumers conduct power trading at the electric power market made with blockchain. Finally, the consumers conduct power interchange based on the trading result. © 2018 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1767",
+    "title": "Smart product-service systems: A novel transdisciplinary sociotechnical paradigm",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE190128",
+    "abstract": "The third-wave of IT competition have embraced a promising market of low cost, high performance smart, connected products (SCP). Owing to their unique capabilities, SCPs together with their generated smart services, as a solution bundle can fulfil the everchanging individual user’s needs. Meanwhile, manufacturers/service providers leverage massive user generated data and product sensed data via the Internet-of-Things (IoT) for evergreen design innovation. This emerging IT-driven transdisciplinary engineering paradigm is named Smart Product-Service Systems (Smart PSS), which is an ecosystem consisting of various stakeholders as the key players for open innovation (social aspect), intelligent systems as the infrastructure to enable smartness and connectedness (technical aspect), and digital servitization as the value proposition to make higher profits (business aspect). Though similar terminologies have been utilized to describe such paradigm, none of them emphasizes its transdisciplinary essence, as a sociotechnical system. Moreover, scarcely any work addresses its lifecycle perspectives for sustainability concerns. Aiming to fill these gaps, this research provides a fundamental basis of Smart PSS by summarizing typical works from technical, social, and business aspects, respectively. Furthermore, its lifecycle perspectives in a circular economy is depited to motivate more in-depth research in the near future. © 2019 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1768",
+    "title": "VR-enabled chatbot system supporting transformer mass-customization services",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE200088",
+    "abstract": "Chatbot is a conversational question answering (Q&A) system capable of natural language communication between a computer system and a person. The use of chatbots for 24-hour customer service provides quick responses that solve problems online. This approach is quickly becoming a convenient way for companies to enhance their customer services without location or knowledgeable staff limitations. This research proposes a system framework and develops a prototype virtual reality (VR) enabled transformer mass-customization consultation chatbot. The chatbot technique is a retrieval-based intelligent system. First, thousands of transformer specific frequently asked questions (FAQs) are collected as a Q&A dataset for technical supports retrieval. More than 1.2 million engineering Wikipedia pages and engineering technical papers are used to train a word embedding model used for natural language processing and question-answer retrieval. The chatbot is integrated into a virtual reality (VR) immersive user interface (UI) environment enabling users to make transformer design changes while querying the system about specifications and standards while interacting with 3D models from the company's knowledge base archive. The system provides two unique UIs for personal computer (PC) and a helmet-based immersive interface. The system supports real-time consultation of mass-customized transformers and their bills of materials (BOM) for design review, analysis and cost estimation. © 2020 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1769",
+    "title": "Technology mining for intelligent chatbot development",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE210090",
+    "abstract": "Natural language processing (NLP) is an indispensable part of advancing the AI era, especially in the realm of the human-computer interface/interaction (HCI) for all state-of-the-art software applications. NLP enables interfaces between machines and humans allowing machines/computers/systems to understand human languages and engaging in dialogues. An intelligent chatbot development must incorporate NLP technologies to allow the understanding of users' utterance and responding in understandable sentences in versatile scenarios. This research investigates the emerging technological trend of intelligent chatbot development. The systematic trend analysis is described in the research. First, patents related to intelligent chatbot domain are retrieved using a well-defined search query. The queries are derived from the knowledge ontology, which is extracted using text-mining algorithms - key term frequency analysis, clustering for sub-domain identification, and Latent Dirichlet Allocation (LDA) for topic modelling. Afterwards, the management and technology maps of a patent portfolio, such as patenting trends and technology function matrix, are extracted and drawn. The technology trend analysis also investigated the distributions of the relevant patent claims for specific industries. © 2021 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1770",
+    "title": "Challenges and Issues of Load Balancing Algorithms in Cloud System",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE220734",
+    "abstract": "In this paper study for users have unquestionably profited from the rapidly changing paradigm of cloud computing. It employs virtual machines instead of actual equipment to host, store, and network multiple components, and it charges per use. As the amount of data being stored grows, so does the importance of load balancing as a research area. One of the most difficult problems in cloud computing is distributing the ever-changing burden among the nodes in an efficient manner known as load balancing. There are numerous load balancing methods in use today that considerably improve the efficiency and management of resources. We use cloud analyst as a simulator in this article to compare techniques with a single broker policy that helped boost cloud and related application performance. © 2022 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1771",
+    "title": "Research on Intelligent Customer Service Q & A Model Based on Deep Neural Network",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE221118",
+    "abstract": "Logistics industry is one of the important infrastructures for national economic development, and an intelligent question and answer system is the core of all kinds of intelligent robots in the market.In this paper, we propose a dialogue model in the field of logistics to replace human customer service with intelligent customer service to provide users with 24-hour online consultation. In this paper, we propose a dialogue model in the field of logistics to replace human customer service with intelligent customer service to provide users with 24-hour online consultation service. This model first performs data pre-processing by Bert-BiLSTM, uses the Sigmoid function to determine the scenario asked by the user, and then completes named entity recognition by Bert-BiLSTM-CRF. From the experimental results, we can see that the proposed model performs better,and the F1-score evaluation index is improved by 0.96% 3.22% compared with the benchmark model. © 2022 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1772",
+    "title": "Malaysia Traffic Signs Classification and Recognition Using CNN Method",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE221120",
+    "abstract": "Automatic Traffic Sign Detection and Recognition (ATDR) system has been expanded and implemented partly in Intelligent Transportation System (ITS) that is actively used today. As traffic congestion increases, the manufacturing industry may have made and installed the ATDR systems in various types of vehicles, including cars, light commercial vehicles, and heavy trucks that act as driver assistance systems. ATDR system not only helps to minimize the number of traffic accidents but also supports road users through legal and compliant guidance and providing all traffic information, so that road users can be more attentive and solve them immediately in a short duration of time. On the point of the safety of the road users and others will be protected throughout a critical situation with identify the driving scene. In this paper, a deep-architectural neural networks, which is the convolutional neural network (CNN/ConvNet) model are chosen to expand in the ATDR system. With its excellent ability to train, research, and organize data, CNN is becoming one of the most widely used machine learning algorithms in key tasks such as prediction and classification. First, various open source of deep learning libraries will be studied. The library has been tested using the Malaysian Traffic Sign (MTS) dataset, which contains 32891 labelled images with real-world signs. Then the combination of both designed detection model and the CNN classification model will be trained under some parameter settings. Finally, the proposed system will detect and recognize the different types of traffic sign images in real-time display and Graphical User Interface (GUI). The achievable test accuracy is exceeded by 98% on a total of 43 different classes of MTS data that is obtained and for all study cases. © 2022 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1773",
+    "title": "Building a“Blockchain+”Short Video Push System",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE221127",
+    "abstract": "The 'blockchain+' short video push system is an important field worthy of study in the current short video platforms. Blockchain technology is used to effectively promote the processing speed of short video platforms for user portraits and strengthen the intelligent audit of short video contents according to its unique characteristics, such as decentralized and multi-node. In this paper, we will discuss the data processing, calculation management and application methods of short video push system based on blockchain technology, to elicit the new development of short video push system. © 2022 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1774",
+    "title": "Query Recommendation for Search Engine Results Using Machine Learning",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE221229",
+    "abstract": "Now a days, web content over the World Wide Web is growing fast, it has become tougher to satisfy the necessities of the client's queries results. This paper provides a technique for advising a sequence of queries that are similar with the client's input search. The related searches are based on past given searches by the clients itself. This method tells about the clustering process where syntactical or semantically similar searches in groups are found. This also proposes some queries which are similar or related to the queries submitted by the client to get the required information which is relevant and efficient. This method does not only detect the similar and related searches and queries but can also rank them considering the similarity measure. And this technique is executed using real data sets from search engine query log. It gives queries in websites like Google, yahoo, Bing etc. © 2023 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1775",
+    "title": "Prevention of SQL Injection Using a Comprehensive Input Sanitization Methodology",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE221269",
+    "abstract": "Databases are essential to modern-day web applications. Structured Query Language (SQL) used to retrieve information from relational database is prone to injection attack by a malicious user. Losing access to application database destroys all credibility for the organization. Mitigating against SQL injection attacks is a critical concern. This paper proposes a methodology for the safe flow of SQL query from the user layer to the database layer. The proposed methodology uses the process of client-side input sanitization to validate user input before a dynamic SQL query is constructed. On the server-side, another process provides server-side query sanitization to ensure a full-proof validation of the SQL query before it is run on the database. The client-side input sanitization process is presented in the paper. On comparison with related methodologies, the proposed methodology is robust, lightweight, and fast. © 2023 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1776",
+    "title": "User Acceptance Factors of Usage-Based Insurance",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE230018",
+    "abstract": "Intelligent Transportation Systems (ITS) are utilized in car insurance policies known as Usage-Based Insurance (UBI), where driving data is collected using a telematics device to determine driving behavior. This enables offering personalized car insurance fees based on driving performance. Current research focuses on advantages, disadvantages, and privacy aspects of UBI, paying less attention to its user acceptance. In this work, we propose a UBI acceptance model based on an adaptation of the Unified Theory of Acceptance and Use of Technology 2 (UTAUT2) and test it with 585 participants by means of structural equation modeling. We find that social influence and hedonic motivation are the most important predictors of the intention to use UBI, and perceived privacy influences it indirectly. Furthermore, we refine the model with new connections, improving model fit. © 2023 The authors and IOS Press."
+  },
+  {
+    "article_id": "CA_1777",
+    "title": "A Flexible and Intelligent Production System for Process Planning and Enterprise Performance Optimization",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE230642",
+    "abstract": "Many companies have been expending considerable efforts to continuously improve manufacturing processes to ensure their competitiveness and remain in the market. Value Stream Mapping is a strategic tool that makes it possible to visualize the macro of production to assist in planning and decision-making. It is a process mapping that considers the workflow of a product from the arrival of the raw material to the result that is delivered to the customer. Despite the benefits this tool has provided to organizations, the time for its development is still very high, as its data is still filled manually, allowing its analysis to be error-prone. Digital technologies have brought several improvements to the methods and tools of organizations. With the goal of obtaining contributions to engineering through transdisciplinary approaches to decision support tools and methods, therefore, this study will present the development of a dynamic web application using data analytics and machine learning to visualize, identify bottlenecks, predict, and update data in current and future state mappings. Intelligent systems tend to eliminate the routine activities of engineering, so this application will allow engineers and technicians to dedicate more time to dedicate themselves exclusively to activities that require a more challenging level of managerial decision-making. © 2023 The Authors."
+  },
+  {
+    "article_id": "CA_1778",
+    "title": "Electric Vehicle Charging Demand Prediction and Site Selection Based on Monte Carlo Simulation",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE240331",
+    "abstract": "In this paper, a data-driven charging demand forecasting and charging station location method for electric vehicles is proposed. Firstly, the daily driving trajectory data of electric vehicles are obtained and analyzed. The user travel characteristic parameters and vehicle charging characteristic parameters are extracted from the data. Then, the user travel activity chain and the charging model of single electric vehicle are built, and the charging demand grid of electric vehicle is built. Using Monte Carlo method to simulate users' daily travel activities. Finally, the time and space distribution of electric vehicle charging load is analyzed through an example, which provides decision-making reference for the new location of charging station. © 2024 The Authors."
+  },
+  {
+    "article_id": "CA_1779",
+    "title": "Design and Application of Traffic Risk Warning System for Highway Reconstruction and Expansion",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE250466",
+    "abstract": "The construction and opening of expressways during renovation and expansion have caused a complex traffic environment, resulting in low traffic rates and high accident rates. In order to improve the level of traffic safety in the scenario of opening to traffic and construction at the same time, the paper first fully considers the different user needs of management departments, construction workers, drivers, and the actual situation of the renovation and expansion project, and designs a traffic risk warning system scheme for the renovation and expansion of highways. Based on the 'end edge cloud' system architecture, the design ideas and construction content of the traffic risk warning system for the renovation and expansion of highways are introduced. Then, the paper provides a detailed introduction to the design scheme and functions of intelligent roadside devices, smart wristbands, and risk warning system software platforms. Finally, the results were deployed for practical application in the reconstruction and expansion project of the Huihe Expressway, which improved the traffic efficiency and safety level during the construction period of the reconstruction and expansion expressway, and also enhanced the emergency response ability for traffic incidents during the continuous construction period of the reconstruction and expansion expressway, achieving good application results. © 2025 The Authors."
+  },
+  {
+    "article_id": "CA_1780",
+    "title": "Intelligent Management System of Traditional Cultural Resources Based on Knowledge Graph",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE250615",
+    "abstract": "The purpose of this study is to design and implement an intelligent management system for traditional cultural resources based on knowledge graphs. By improving the efficiency and accuracy of traditional cultural resource management, it can promote the protection and utilization of cultural heritage. The system architecture is built using modular design measures, integrating multiple modules such as knowledge modeling, storage, extraction, fusion, calculation and application, and also relying on graph database technology for data integration and query processing. The performance of the system is evaluated by testing query accuracy, response time, data processing capability and concurrent processing capability. The test results show that the system exhibits a query accuracy of up to 98%, an average query response time of 1.5 seconds, and can effectively support high-concurrency user operations. The conclusions of the study show that the intelligent management system can greatly improve the efficiency and accuracy of traditional cultural resource management, and provide strong technical support for the digital management of cultural heritage. Future work will focus on improving the system's entity disambiguation capabilities and user interaction experience. © 2025 The Authors."
+  },
+  {
+    "article_id": "CA_1781",
+    "title": "Application of Deep Learning in Visual Communication Content Optimization and User Perception Analysis",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE250640",
+    "abstract": "The evolution of visual communication relies increasingly on the integration of advanced technologies to enhance content design and optimize user experiences. This study explores the application of deep learning in visual communication, focusing on content optimization and user perception analysis. By leveraging convolutional neural networks (CNNs) and transformer-based architectures, this research introduces an intelligent system capable of generating visually compelling content tailored to user preferences. Additionally, user perception is analyzed through sentiment detection and attention mapping, enabling adaptive content adjustments in real time. Experiments conducted on multimedia datasets reveal significant improvements in user engagement, aesthetic quality, and perceived relevance compared to traditional approaches. The findings demonstrate the potential of deep learning to revolutionize the field of visual communication by bridging the gap between creative design and user-centric analysis, paving the way for intelligent, data-driven visual content strategies. © 2025 The Authors."
+  },
+  {
+    "article_id": "CA_1782",
+    "title": "Multi-Modal Emotion Recognition System Based on Deep Learning",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE250641",
+    "abstract": "This paper introduces the design and implementation of a multi-modal emotion recognition system based on deep learning. The system comprises three core modules: modality processing module, feature fusion module, and emotion recognition module. The modality processing module extracts feature representations from three modalities: speech, text, and vision. The fusion module integrates multi-modal features, and the emotion recognition module judges and predicts emotion categories based on the fused features. Experiments on the CMU-MOSEI dataset demonstrate that compared to single modalities, fusing multi-modal information significantly improves emotion recognition accuracy. Moreover, incorporating attention mechanisms enables the model to adaptively allocate weights to each modality, further enhancing performance. The system has been applied in practical scenarios such as customer service and online education, effectively improving key metrics such as service quality and learning efficiency, demonstrating broad application prospects. © 2025 The Authors."
+  },
+  {
+    "article_id": "CA_1783",
+    "title": "Enhancing Recommendation Systems with Skip Lists: A Machine Learning Approach",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE250680",
+    "abstract": "Recommendation systems have become indispensable in modern information services, yet they often face efficiency bottlenecks when processing large-scale user-item interactions. Traditional approaches struggle to balance real-time responsiveness with recommendation accuracy, particularly as datasets grow in size and complexity. This paper addresses these challenges by introducing an innovative approach that enhances recommendation systems through the integration of skip lists with machine learning techniques. The study proposes a novel framework that leverages skip lists to optimize the retrieval efficiency of candidate items, while employing machine learning models to ensure recommendation quality. The skip list structure enables logarithmic time complexity for item retrieval, significantly improving system responsiveness. Concurrently, a carefully designed feature engineering process captures both user preferences and item characteristics, feeding into a ranking model that refines the final recommendations. Experimental evaluations on benchmark datasets demonstrate the effectiveness of this hybrid approach. The proposed system achieves a 23% reduction in response time compared to traditional matrix factorization methods while maintaining comparable recommendation accuracy measured by precision and recall metrics. Particularly noteworthy is its performance on large-scale datasets, where the efficiency advantages become more pronounced. These results suggest that combining skip lists with machine learning (ML) can provide a practical solution for building scalable, high-performance recommendation systems. This interdisciplinary approach bridges computer science fundamentals with machine learning applications, demonstrating how algorithmic innovations can enhance intelligent systems across domains. © 2025 The Authors."
+  },
+  {
+    "article_id": "CA_1784",
+    "title": "Predictive generation of digital product passport as decision support in circular networks",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE251099",
+    "abstract": "In order to guarantee the development of sustainable solutions in the framework of a circular economy, there is a continuous need for data traceability and access to the relevant stakeholders in modern product engineering. Digital product passports (DPPs), which are digital identities linked to physical products and can track their lifecycles using information like technical specifications, user manuals, and repair and maintenance guides, are one of the innovative technological solutions that can facilitate the shift toward a circular economy. DPP aims to help consumers make better (more sustainable) purchase decisions based on the available product information. The technical needs of DPPs remain unclear, although the relevant academic community has begun to provide a full review of their potential to form an enabler for the circular economy DPP shall support the repair, remanufacturing, and recycling activities of a product. DPP becomes complex for products with variants or configured products. For this purpose, an integrated DPP framework is developed, including a chatbot, with the potential of being adapted in different sector stages for the generation and distribution of DPPs both for stakeholders and consumers. This solution demonstrates the usage of DPP in different configurations along the product lifecycle. This study elaborates the concept of DPP as a strategic capability by contributing a framework for developing new DPP services that strengthen companies' relationships with their customers, sustain and accentuate the collaboration among companies in the supply chain, and generate new competitive advantage in the market. © 2025 The Authors."
+  },
+  {
+    "article_id": "CA_1785",
+    "title": "Emergency Strategy Selection Based on Self-Awareness in Autonomous Vehicles",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE251430",
+    "abstract": "While internal fault and anomaly detection systems in autonomous vehicles have advanced significantly, emergency handling mechanisms remain notably limited. Current implementations, especially those corresponding to SAE levels 2 and 3, often prioritize the return of control to the human driver, overlooking the potential for autonomous resolution. This dependency on user intervention can lead safety risks, particularly when the driver is disengaged or unprepared to respond effectively. To address this situation, this paper proposes an emergency strategy decision system based on self-awareness, capable of assessing the vehicle's internal state and selecting context-appropriate mitigation actions from a set of predefined methodologies. This approach reduces reliance on human intervention and improves the ability of the autonomous platform to respond safety. The suggested framework builds upon previous work by introducing a new internal state representation and by standardizing the deployment of emergency plans, facilitating the creation of new strategies. The system has been validated by implementing a new contingency plan, designed to react to the loss of localization. The results obtained in a simulated environment, using CARLA and ROS2, suggest that the proposed architecture is a promising alternative for autonomous fault management. © 2025 The Authors."
+  },
+  {
+    "article_id": "CA_1786",
+    "title": "A Quantitative-Qualitative Comparative Evaluation of Traffic Simulators",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE251519",
+    "abstract": "Traffic simulation plays an essential role in the planning, evaluation, and optimization of urban mobility systems. There are many traffic simulators with diverse features, which makes it challenging to select the most suitable one for broader applications. This paper presents a comparative evaluation of 25 prominent traffic simulators, among which SUMO, VISSIM, Aimsun, TransModeler, MATSim, AnyLogic, Paramics, CORSIM, MovSim, UrbanSim, GAMA-Platform, TRANSIMS, Polaris, OMNET++, and CityFlow were filtered according to their popularity in academic and practical applications. This study qualitatively evaluated these simulators using performance measures such as API support, map integration, agent types, visualization quality, user accessibility, simulation scale, and operating system compatibility. These qualitative attributes were quantified using a multi-criteria spider plot approach. The results indicate that SUMO, GAMAPlatform, UrbanSim, and Polaris achieved the highest overall scores. Commercial tools like VISSIM, Aimsun, and TransModeler stand out for their advanced 3D visualization capabilities, making them valuable for industrial use. This study provides practical guidance for researchers and practitioners in selecting appropriate traffic simulation tools. © 2026 The Authors."
+  },
+  {
+    "article_id": "CA_1787",
+    "title": "DA-ROI: A Multimodal Environment Perception Approach with Depth Adaptive ROI Scaling for Safe Autonomous Driving",
+    "journal": "Advances in Transdisciplinary Engineering",
+    "journal_impact_factor": null,
+    "doi": "10.3233/ATDE251539",
+    "abstract": "Accurate 3D perception is crucial for intelligent transportation systems, enabling applications from autonomous driving to vehicle cooperation. However, LiDAR-camera fusion suffers from projection uncertainty caused by calibration errors and depth noise, leading to misalignment that compromises perception reliability. This results in incomplete coverage of distant vulnerable road users and noise contamination for nearby vehicles, increasing false negatives and false positives and posing safety risks. To address this, we propose DA-ROI, a depth-aware adaptive ROI scaling method that reframes ROI adjustment as data-driven uncertainty compensation. It employs robust depth estimation and a lightweight coupling function to dynamically determine scaling ratios based on target depth and size, balancing feature coverage and noise suppression. Evaluations on KITTI and DAIR-V2X demonstrate that DA-ROI consistently improves detection accuracy across various fusion models, with significant gains in vulnerable road user recognition. The method provides an efficient solution for enhancing perception robustness in intelligent transportation systems. © 2026 The Authors."
+  },
+  {
+    "article_id": "CA_1788",
+    "title": "Marketing in Social Networks: Key Trends and Development Forecasts",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.32479/irmm.19195",
+    "abstract": "The article studies key trends and develops a methodology for forecasting the prospects for the development of social media marketing (SMM), which is relevant in the context of accelerated digitalization and globalization of world markets. The purpose of the study was to create tools that allow modern companies to adapt their marketing strategies to the changing conditions of the digital environment and effectively manage brand promotion in social networks. As a result of the work, the main trends in SMM were identified, such as the growing influence of video content, the use of augmented reality and chatbots to increase user engagement, as well as the use of artificial intelligence technologies to personalize interaction with the audience. Particular attention is paid to the impact of social networks on retail sales and e-commerce, which actualizes the task of forecasting future changes in consumer preferences. The developed short-term forecasting methodology is based on the analysis of the identified trends and helps businesses assess the impact of social media on marketing and sales volumes. The results of the study can become the basis for further development of strategies for promoting and maintaining the competitive positions of brands in a dynamically changing digital environment. © 2025, Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CA_1789",
+    "title": "Conversational AI in E-Commerce: Strategic Implications of Voice-Based Chatbots for Consumer Engagement and Trust",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.32479/irmm.19352",
+    "abstract": "AI-powered chatbots are disruptive innovations with great potential for easing online business communication. This study aims to empirically investigate the influence of the voice mode of chatbot technology on consumer continuance intention toward e-commerce websites by examining the role of perceived technological optimism (PTO), cognition-based trust (CBT), and perceived customer care (PCC). A 2X2 factorial design is employed for a between-subjects laboratory experiment. ANOVA was used to test the treatments’ comparative effects, and the final analyses were done using Hayes PROCESS Macro in SPSS. The results reveal consumer preference for the voice mode of chatbots over the text mode when seeking service assistance. It empowers consumers by giving them greater control over their interaction with technology and the problem-solving process. With a seamless interaction with a virtual assistant, consumers develop CBT in the technology, leading to positive PCC and, eventually, continuance intention toward the website. The study offers recommendations on how to save a firm’s resources by retaining its customers rather than spending on new acquisitions. Firms need to implement a competent technology that allows customers to express themselves using autonomy, thereby building trust and continued engagement. © 2025 Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CA_1790",
+    "title": "Effects of AI Chatbots on Customer Satisfaction: Understanding the Mediating Role of Customer Satisfaction on Customer Loyalty",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.32479/irmm.21405",
+    "abstract": "Advanced chatbots are powered by artificial intelligence, capable of solving complex queries, communicating with customers, and providing instant services through messaging. Advanced chatbots are not limited to customer support services, consumer research and recommendations. AI chatbots are used across industries like banking, financial services, hotel, tourism, media and entertainment and education. This is the need of the hour to assess the impact of AI chatbots on customer satisfaction and customer loyalty. The primary objective of this study is to determine the impact of AI chatbots on customer satisfaction and loyalty. This topic is considered for the research since artificial intelligence is influencing each business and individual. The current study considered one dependent variable (customer loyalty), and one mediating variable (customer satisfaction) and four independent variables (usability, responsiveness, trust and perceived risk). The sampling technique used for data collection was convenience sampling and the sample size was 413. Statistical techniques like exploratory factor analysis (EFA), structural equation modeling (SEM), and mediation analysis were used for data analysis. All construct of this study meets the threshold with average variance extracted exceeding 0.50 and composite reliability exceeding 0.70. All indices of the model fit were found statistically significant on several parameters. Among all variables, only perceived risk affects the customer satisfaction. © 2026 Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CA_1791",
+    "title": "How Artificial Intelligence Brought a Paradigm Shift in the Digital Marketing Landscape: A Scientometric Mapping and Future Research Directions",
+    "journal": "International Review of Management and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.32479/irmm.21571",
+    "abstract": "This bibliometric and scientometric research aims to comprehensively analyze the application of Artificial Intelligence (AI) in digital marketing. The study uses the Scopus database to identify 355 research papers published between 2000 and 2025. This research intends to provide an overview of the research landscape, including the most cited articles, authors, and journals, to identify the trending topics of the research, and to determine the thematic development in this domain. The findings reveal that research in this field depicts exponential growth after 2017 and will continue to grow in the future and the Journal of Marketing is the most contributing journal. The most commonly used AI technologies in digital marketing include machine learning (ML), natural language processing (NLP), predictive modeling, and chatbots with tools such as ChatGPT, OptiMonkAI, Jasper, Midjourney, Manychat, Zapier, ElevenLabs, and OpusClip. The findings further synthesize that these AI tools and technologies enable marketers to collect and analyze large amounts of real-time data (structured, unstructured, and semi-structured) and are applied to achieve multifold strategic and tactical marketing objectives: To make improved customer segmentation, behavior prediction, and targeting, to enhance customer service, experience, and satisfaction, to ensure marketing efficiency through automation, to create and personalize content, and to efficiently manage social media and personalized email marketing and e-commerce website. However, there are concerns about the potential for the sustainable implication of AI considering data privacy and security and ethical issues. Future research should focus on the application of AI to ensure and enhance sustainable societal well-being (society 5.0) through marketing 5.0. © 2026 Econjournals. All rights reserved."
+  },
+  {
+    "article_id": "CA_1792",
+    "title": "Mediated Communication and Customer Service Experiences Psychological and Demographic Predictors of User Evaluations in the United States",
+    "journal": "Periodica Polytechnica Social and Management Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.3311/PPso.16882",
+    "abstract": "People around the world who seek to interact with large organisations increasingly find they must do so via mediated and automated communication. Organisations often deploy both mediated and automated platforms, such as instant messaging and interactive voice response systems (IVRs), for efficiency and cost-savings. Customer and client responses to these systems range from delight to frustration. To better understand the factors affecting people's satisfaction with these systems, we conducted a representative U.S. national survey (N = 1321). We found that people overwhelmingly like and trust in-person customer service compared to mediated and automated modalities. As to demographic attitude predictors, age was important (older respondents liked mediated systems less), but income and education were not strong attitude predictors. For personality variables, innovativeness was positively associated with mediated system satisfaction. However, communication apprehensiveness, which we expected to be related to satisfaction, was not. We conclude by discussing implications for the burgeoning field of human-machine communication, as well as social policy, equity, and the pullulating digital services divide. © 2022 Budapest University of Technology and Economics. All rights reserved."
+  },
+  {
+    "article_id": "CA_1793",
+    "title": "An Assessment for Knowledge Sharing and Collaborative Learning in the Era of ChatGpt-4.0",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2024.0211",
+    "abstract": "In the generation of fast improvements in artificial intelligence (AI), the importance of Intelligence-driven models like ChatGPT-4 can not be overstated, mainly in the geographical regions of schooling and expertise sharing. This looks at employs an in-intensity literature evaluation approach to evaluate the effect of ChatGPT-4 on knowledge sharing and collaborative mastering. The primary goal of this research changed into to research current literature to identify key insights, emerging tendencies, demanding situations, and areas requiring in addition research inside the realm of AI-facilitated information transfer and collaborative training. By utilising a literature overview methodology, we explored the blessings and drawbacks of ChatGPT for mastering and knowledge sharing. Notably, ChatGPT has revolutionized the manner of know-how switch by using imparting on the spot get admission to to a vast repository of facts and facilitating seamless interplay between users and the system, allowing customers to pose questions and receive comprehensive responses effects. This superior retention of facts and personalised mastering reports. We can use AI to convert learning and understanding sharing; developing a greater linked and educated society. © 2024, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CA_1794",
+    "title": "Factors Influencing the Adoption of AI-Powered Chatbots in the Moroccan Banking Sector: An Extended UTAUT Model",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2024.0730",
+    "abstract": "This study investigates the factors influencing the adoption of chatbots by Moroccan bank customers using an adapted version of the Unified Theory of Acceptance and Use of Technology (UTAUT) model. The model incorporates additional variables such as perceived playfulness and perceived usefulness, which are considered relevant to the context of chatbot adoption in the banking sector. A quantitative survey was conducted among 390 Moroccan bank customers, and the data were analyzed using Partial Least Squares Structural Equation Modeling (PLS-SEM). The results indicate that social influence, expected effort, and perceived playfulness have significant positive effects on customers' intention to use chatbots, while perceived usefulness does not. The findings also reveal that intention to use has a significant positive impact on the actual use of chatbots. Moreover, the study highlights the moderating effects of age and gender on the relationship between social influence and intention to use. The study contributes to the growing literature on chatbot adoption in the banking sector and provides valuable insights for Moroccan banks looking to enhance customer engagement through artificial intelligence. However, the study also acknowledges the limitations of the convenience sampling approach and the need for further research incorporating a broader range of variables and customer segments. © 2024, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CA_1795",
+    "title": "The Impact of Artificial Intelligence Dimensions on Digital Marketing Outcomes: Perspectives of Marketing Managers in Jordanian Manufacturing Companies",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2024.0909",
+    "abstract": "This study examines the impact of artificial intelligence (AI) dimensions (data analysis and insights, predictive analytics, marketing automation, content creation, and ad targeting) on digital marketing outcomes (targeting and segmentation, personalization and customer experience, customer service and chatbots) from the perspective of marketing managers in Jordanian manufacturing companies. A quantitative methodology was employed, using a questionnaire to collect data from 333 marketing managers. The findings confirm that AI dimensions have a significant positive influence on digital marketing outcomes, with content creation being the most influential dimension. The study contributes to the understanding of how AI can enhance digital marketing strategies and provides practical insights for marketing managers. The authors recommend increasing employees' awareness and comprehension of AI in marketing and prioritizing the use of natural language processing techniques in content creation. Current study may have a role in increasing awareness of organizations regarding the positive influence of AI in the marketing industry, which my lead to more creative and innovative usage of AI in digital marketing. © 2024, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CA_1796",
+    "title": "The Impact of Chatbots on Customer Experience in e-commerce: Examining Responsiveness, Ease of Use, and Personalization",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2025.0709",
+    "abstract": "Modern technology tools play an important role in enhancing customer service and providing customers with prompt responses to their inquiries. Among these technologies, AI-based chatbots are becoming a key tool in improving customer experience. This study employed a quantitative approach to examine the impact of chatbots on customer service experience in e-commerce, focusing on three dimensions of the chatbot performance: responsiveness, perceived Ease of Use, and personalization. A total of 206 responses were collected from customers of Jordanian telecommunication companies engaged in e-commerce, and the data were analyzed using structural equation modeling, which revealed that all three antecedents positively predicted CX: responsiveness → CX (β = 0.522, p <.001; f² = 0.366, large), personalization → CX (β = 0.214, p =.002; f² = 0.036, small), and Ease of Use → CX (β = 0.158, p =.008; f² = 0.027, small). The model demonstrated substantial explanatory power and explained 63.6% of the variance in customer experience. Additional analysis highlighted the importance of demographic factors in shaping the chatbot interactions, as it revealed differences in perceptions of responsiveness between genders. The study provides practical implications for managers for enhancing AI-powered chatbots to improve service efficiency, thereby improving customer satisfaction and loyalty. It also advances the literature by presenting the central role of responsiveness in customer experience, and the importance of understanding the demographic differences. © 2025, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CA_1797",
+    "title": "A Hybrid RAG-Based Chatbot for University Customer Service: Combining Local LLM with Semantic Retrieval for Privacy and Real-Time Performance",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2025.0804",
+    "abstract": "The improvement of digital transformation in higher education institutions has resulted in a significant increase in the volume and complexity of student inquiries, which consistently overwhelm traditional customer service systems. This challenge creates a critical vulnerability in the university service value chain, leading to delays and inconsistent responses. While Retrieval-Augmented Generation (RAG) architectures effectively address issues of hallucination and relevance, common cloud-based RAG solutions introduce substantial risks related to data privacy, security, and institutional governance, particularly concerning sensitive student data governed by regulations such as PDPA, FERPA and GDPR. This study addresses this gap by introducing a robust, locally deployable hybrid RAG framework. The system integrates Ollama’s local Large Language Model (LLM) inference (Qwen-7B) with ChromaDB’s semantic vector search to provide accurate, real-time, and inherently privacy-conscious responses to domain-specific inquiries. Evaluation on a carefully curated, albeit constrained, dataset of 30 university inquiries demonstrates the hybrid system's effectiveness. The system significantly outperforms a generative-only baseline across key metrics, achieving a 25.0% higher BLEU score (0.75) and a 16.7% reduction in average response latency (150 ms) compared to the baseline (180 ms). The deployment of this architecture validates the feasibility of achieving high-performance AI integration while maintaining strict institutional control over sensitive data assets. © 2025, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CA_1798",
+    "title": "Intention to Use and Adoption of Artificial Intelligence Chatbots: A Visual Analysis Based on Literature Data",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2025.1101",
+    "abstract": "In recent years, the burgeoning popularity of artificial intelligence chatbots has sparked a surge in research on users' intentions and usage. In order to explore the research hotspots and future research directions in this field, this study used bibliometric analysis to investigate users' intention to use and adoption of AI chatbots (IUAAIC). On 12 January 2025, this study collected and screened 287 articles in this field included in the web of science core collection database. Using tools such as online bibliometric analysis platform (Bibliometric), VOSviewer, CiteSpace, and Bibliometrix based on R language, the information on publications, countries, journals, and keywords related to the field was systematically evaluated and visualized, revealing the current status of applications in the field and analyzing in detail the latest research hotspots and research trends. This study lie in its ability to delineate the underlying patterns and determinants of AI chatbot usage, offering valuable insights for developers, policymakers, and marketers. By synthesizing and visualizing the available literature, this research facilitates a deeper understanding of users' behaviors and preferences, thereby enhancing the design and implementation of future AI chatbots applications. © 2025, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CA_1799",
+    "title": "AI Chatbots as Informatics-Enabled Marketing Service Systems: Trust, Transparency, and Youth User Responses",
+    "journal": "Journal of Logistics, Informatics and Service Science",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JLISS.2026.0305",
+    "abstract": "This manuscript examines how young consumers respond to AI chatbots in social commerce by conceptualizing chatbots as informatics-enabled front-line service systems. Building on a unified model that assigns Stimulus-Organism-Response (SOR) as the system structure, the Persuasion Knowledge Model (PKM) as the ethical-cognition mechanism, and Trust Theory as the service-outcome logic, we test how two service-design choices-identity disclosure (transparency) and conversational tone (personalized vs. generic)-shape trust and perceived manipulation, and ultimately purchase intention. Using a 2x2 between-subjects experiment with UAE youth (18-25), standardized chatbot dialogues were generated and pretested using a large-language-model workflow to ensure consistent stimuli; this design enables controlled comparison but does not fully capture the adaptivity of live chatbots. PLS-SEM results show that transparent AI disclosure and empathetic personalization increase trust and reduce perceived manipulation; trust is the dominant mediator linking design cues to purchase intention, while perceived manipulation imposes a significant negative effect. Digital literacy attenuates the negative influence of manipulation on intention, highlighting a boundary condition relevant for service governance. The results can also be used to inform guidelines for the development and delivery of service systems, which involve the provision of transparency by default, personalization that is explainable, the adaptation of tone to the needs of the user, and the development of an escalation process. © 2026, Success Culture Press. All rights reserved."
+  },
+  {
+    "article_id": "CA_1800",
+    "title": "The Efficiency of Elderly Community Product Using Digital Marketing through Unfolding of Practice during COVID19 Pandemic",
+    "journal": "Journal of System and Management Sciences",
+    "journal_impact_factor": null,
+    "doi": "10.33168/JSMS.2021.0404",
+    "abstract": "The development of the trade sector of elderly community enterprise in Thailand during the COVID-19 pandemic triggers the need to study the processes of formation and evaluation of digital marketing through the unfolding of local practice. This research has developed the Digital Marketing for Elderly Community Enterprises (DMeCE) model to increase online trade capability and customer relationship management for elderly entrepreneurs who do not have sufficient digital skills in Thailand community enterprises. DMeCE model includes social media CRM, storytelling for branding, gamification CRM, augmented reality for branding using the hybrid marker QR code, and Thai ontology Thai chatbot services for both customers and elderly entrepreneurs via the voice command function. The evaluation results based on the classification of the model performance measurement indicated that the developed model could help the elderly entrepreneurs reach the infrastructure, process, customers, and organizational performance. Furthermore, it was found that both the effectiveness and satisfaction of the developed DMeCE model were rated at the highest level. Moreover, it provided an accuracy rate of more than 98%, giving the elderly community enterprises more income-making opportunities. © 2021, Success Culture Press. All rights reserved."
+  }
+]

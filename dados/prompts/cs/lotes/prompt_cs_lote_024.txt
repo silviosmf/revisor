@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1151",
+    "title": "You did what with my donation?! betrayal of moral mandates increases negative responses to redirected donations to donor-to-recipient charities",
+    "journal": "Journal of the Association for Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1086/706504",
+    "abstract": "While research identifies predictors of charitable giving, little is known about what happens after the donation takes place. Accordingly, the present work examines how consumers respond when they learn their donation to a donor-to-recipient (traditional) charity such as donorschoose.org (unitedway.org) has been used for a project that the donor did not select (prefer). Highlighting the dark side of charitable giving, the present work conceptualizes redirected donations as a service failure within a betrayal-based framework. Consistent with the proposed framework, three studies demonstrate that redirected donations increase perceived betrayal, which leads to lower future donation intentions and volunteering, and heightened negative word of mouth intentions and switching charities. Results also indicate that the sense of betrayal is magnified when the charity has a moral mandate to carry out the advertised project (i.e., the charity is a donor-to-recipient vs. a traditional charity, and the project is seen as morally imperative). © 2019 the Association for Consumer Research. All rights reserved."
+  },
+  {
+    "article_id": "CS_1152",
+    "title": "Confidentiality and privacy of arbitration in the digital era: pies in the sky?",
+    "journal": "Arbitration International",
+    "journal_impact_factor": 0.403,
+    "doi": "10.1093/arbint/aiae017",
+    "abstract": "Confidentiality and privacy are essential components of arbitration, preceding the digital data era. This article discusses how arbitration stakeholders—arbitration institutions and associations, arbitrators, attorneys, and commercial users—have increasingly lost control over confidentiality and privacy in international commercial arbitration by adopting digital technologies provided by Internet giants, such as Microsoft, Google, Dropbox, and Zoom. Arbitration institutions and users have, often unconsciously, defined confidentiality and privacy expansively to promote the wider use of email, cloud storage, and video conferencing platforms in conducting arbitration proceedings. However, they have overlooked the extent to which the use of digital technologies exposes private and confidential information to third parties, including but not limited to Big Data. They have also placed undue faith in the capacity of Internet giants that dominate the Internet to protect highly sensitive arbitration proceedings which those giants commercialize to garner public attention including in arbitration disputes. In responding to this troubling reality, the article examines how to better protect confidentiality and privacy in arbitration, by refining existing protections embodied in international rules and guidelines and choosing domestic forums that favour such protections. It also encourages arbitration stakeholders to update the rules and their application to arbitral proceedings to respond to both intended and unintended violations of commercial and personal data. That strategy includes redressing the downstream disclosure of injurious data, including by choosing legal forums that protect against the use of intelligence to violate private and confidential data. © The Author(s) 2024. Published by Oxford University Press on behalf of the London Court of International Arbitration."
+  },
+  {
+    "article_id": "CS_1153",
+    "title": "Retail Karma: How Our Shopping Sins Influence Evaluation of Service Failures",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucae027",
+    "abstract": "Consumers have an intuitive belief in \"karma\"which dictates that bad (good) actions lead to bad (good) outcomes. Consequently, consumers perceive a causal connection between their own wrongdoing toward a company and a subsequent service failure that they experience in their interactions with another company. Eight experiments employing different contexts consistently show that consumers who have previously wronged a company (compared to those in a control group) evaluate another unrelated company more positively in response to a service failure by this company. We argue that this more positive evaluation is due to the greater blame consumers assign to themselves as dictated by the \"karmic beliefs\"held by consumers whereby the subsequent poor service by a different firm is seen as a karmic payback for their own prior transgression. The proposed effect is mitigated when a person's karmic belief is reduced. We also examine a number of alternative explanations (e.g., negative experiences, moral balancing, and immanent justice reasoning) and find that our observed effect is more consistent with a karma-based account. © 2024 The Author(s)."
+  },
+  {
+    "article_id": "CS_1154",
+    "title": "Women skating on the edge: Marketplace performances as ideological edgework",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucv013",
+    "abstract": "This study analyzes the marketplace performances that are enacted in the field of women’s flat track roller derby using the theoretical lens of gender performativity. Rather than treating the roller derby field as an autonomous enclave of gender resistance, this study focuses on the interrelationships between derby grrrls’ resignifying performances of femininity and the gender constraints that have been naturalized in their everyday lives. The market-mediated nature of derby grrrls’ ideological edgework enables them to challenge orthodox gender boundaries, without losing sociocultural legitimacy. This analysis casts new theoretical light on the gendered habitus and reveals key differences to the outcomes that would follow from Bourdieusian assumptions about the deployment of cultural capital in zero-sum status competitions. The concept of ideological edgework also presents a theoretical alternative to critical arguments, such as the commodity feminism thesis, that assume an inherently paradoxical and, ultimately co-opting, relation- ship exists between practices of countercultural resistance and marketplace performances. We further argue that ideological edgework redresses some of the conceptual ambiguities that can lead gender researchers to conflate gender performativity with social performances. © The Author 2015. Published by Oxford University Press on behalf of Journal of Consumer Research, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_1155",
+    "title": "Blue and red voices: Effects of political ideology on consumers' complaining and disputing behavior",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucx037",
+    "abstract": "Political ideology plays a pivotal role in shaping individuals' attitudes, opinions, and behaviors. However, apart from a handful of studies, little is known about how consumers' political ideology affects their marketplace behavior. The authors used three large consumer complaint databases from the Consumer Financial Protection Bureau, National Highway Traffic Safety Administration, and Federal Communications Commission in conjunction with a county-level indicator of political ideology (the 2012US presidential election results) to demonstrate that conservative consumers are not only less likely than liberal consumers to report complaints but also less likely to dispute complaint resolutions. A survey also sheds light on the relationship between political ideology and complaint/dispute behavior. Due to stronger motivations to engage in \"system justification,\" conservative (as opposed to liberal) consumers are less likely to complain or dispute. The present research offers a useful means of identifying those consumers most and least likely to complain and dispute, given that political ideology is more observable than most psychological factors and more stable than most situational factors. Furthermore, this research and its theoretical framework open opportunities for future research examining the influence of political ideology on other marketplace behaviors. © The Author 2017. Published by Oxford University Press on behalf of Journal of Consumer Research, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_1156",
+    "title": "A research agenda on political ideology in consumer research: A commentary on Jung et al.'s \"blue and red voices\"",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucx083",
+    "abstract": "Jung, Garbarino, Briley, and Wynhausen's (this issue) findings, though intriguing, leave critical unanswered questions that warrant further inquiry into the role of political ideology on consumption. We posit three research questions that constitute a sociocultural research agenda on the role of political ideology on marketplace redress. © The Author 2017. Published by Oxford University Press on behalf of Journal of Consumer Research, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_1157",
+    "title": "The politics of buying, boycotting, complaining, and disputing: An extension of the research program by Jung, Garbarino, Briley, And Wynhausen",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucx084",
+    "abstract": "Research in political psychology indicates that liberals are less motivated than conservatives by epistemic, existential, and relational needs to reduce uncertainty, threat, and social discord, and are therefore more prone to challenge the status quo. In a compelling extension of this work into the field of consumer behavior, Jung, Garbarino, Briley, and Wynhausen (this issue) demonstrate that people residing in more liberal (vs. conservative) areas register more complaints with the US Consumer Financial Protection Bureau, Federal Communications Commission, and National Highway Traffic Safety Administration, and dispute more resolutions offered in response to their complaints. Furthermore, liberals were found to object more strongly to the hypothetical imposition of an unanticipated banking fee, and this effect was mediated by system justification. Inspired by Jung and colleagues, we investigated the hypothesis that liberals would also be more likely to buy and boycott consumer products for political reasons. We analyzed data from the American National Election Studies and European Social Surveys and discovered that, even after we adjusted for demographic factors, liberals in the United States and leftists in all 15 European countries were more likely than conservatives and rightists to report having bought a product-or refrained from buying a product-for political reasons. © The Author 2017. Published by Oxford University Press on behalf of Journal of Consumer Research, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_1158",
+    "title": "Creating a consumable past: How memory making shapes marketization",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucx100",
+    "abstract": "Consumer researchers tend to equate successful marketization-the transition from a socialist to a capitalist economy-with the consensual acquiescence to an idealized definition of the socialist past. For this reason, little research has examined how memories about socialism influence marketization over time. To redress this gap, we bring prior consumer research on commercial mythmaking and popular memory to bear on an in-depth analysis of the marketization of the former German Democratic Republic. We find that, owing to a progressive sequence of conflicts between commercialized memories of socialism promoted by marketing agents and countermemories advocating socialism as a political alternative, definitions of the past, and by extension, capitalism's hegemony are subject to ongoing contestation and change. Our theoretical framework of hegemonic memory making explains relationships among consumption, memory making, and market systems that have not been recognized by prior research on consumption and nostalgia. © The Author 2017. Published by Oxford University Press on behalf of Journal of Consumer Research, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_1159",
+    "title": "The Influence of Incidental Similarity on Observers' Causal Attributions and Reactions to a Service Failure",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucy050",
+    "abstract": "Observers' reactions to a service failure and their attributions of responsibility for its occurrence can depend on fortuitous characteristics of the protagonists that happen to draw their attention. Four field and laboratory experiments show that when observers have an incidental similarity to one of the persons involved in a service failure (the customer or the service provider), their attention is drawn to this protagonist, often leading them to construe the situation from this person's perspective and consequently to blame the protagonist less for the negative event they observe. However, when an incidentally similar protagonist is rude or has an undesirable personal characteristic (i.e., obesity), observers' greater attention to that person increases their attributions of responsibility to him or her rather than decreasing it. These opposing effects of incidental similarity on attributions influence not only observers' evaluations of the persons involved in the situation they observe, but also their willingness to patronize the establishment. These effects occur both when observers actually witness a conflict offline and when they consider it online on the basis of reviews. © 2018 The Author(s). Published by Oxford University Press on behalf of Journal of Consumer Research, Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_1160",
+    "title": "Ignored or Rejected: Retail Exclusion Effects on Construal Levels and Consumer Responses to Compensation",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucz021",
+    "abstract": "Among the top customer complaints regarding retailers are experiences of exclusionary treatment in the form of explicit condescension or implicit disregard. However, little is known about how consumers respond to different instances of exclusion in retail or service settings. This research focuses on how customers respond cognitively and emotionally when frontline staff reject or ignore them and on how retailers can recover from such service failures. Findings from six studies using exclusion as a hypothetical scenario or a real experience demonstrate that direct negative feedback leads customers to feel rejected and to form concrete low-level mental construals, while a lack of attention leads customers to feel ignored and to form abstract high-level construals. Explicit rejection (implicit ignoring) causes consumers to form more (less) vivid mental imagery of the exclusionary experience and to activate a concrete (abstract) mindset, resulting in preferences for tangible (intangible) and visual (textual) compensation options. Retailers are advised to align their compensation with construal levels to increase post-recovery customer satisfaction, customer reviews, intended loyalty, and brand referral behavior. © 2019 The Author(s)."
+  },
+  {
+    "article_id": "CS_1161",
+    "title": "I Am, Therefore i Buy: Low Self-Esteem and the Pursuit of Self-Verifying Consumption",
+    "journal": "Journal of Consumer Research",
+    "journal_impact_factor": null,
+    "doi": "10.1093/jcr/ucz029",
+    "abstract": "The idea that consumers use products to feel good about themselves is a basic tenet of marketing. Yet, in addition to the motive to self-enhance, consumers also strive to confirm their self-views (i.e., self-verification). Although self-verification provides self-related benefits, its role in consumer behavior is poorly understood. To redress that gap, we examine a dispositional variable - trait self-esteem - that predicts whether consumers self-verify in the marketplace. We propose that low (vs. high) self-esteem consumers gravitate toward inferior products because those products confirm their pessimistic self-views. Five studies supported our theorizing: low (vs. high) self-esteem participants gravitated toward inferior products (study 1) because of the motivation to self-verify (study 2). Low self-esteem consumers preferred inferior products only when those products signaled pessimistic (vs. positive) self-views and could therefore be self-verifying (study 3). Even more telling, low self-esteem consumers' propensity to choose inferior products disappeared after they were induced to view themselves as consumers of superior products (study 4), but remained in the wake of negative feedback (study 5). Our investigation thus highlights self-esteem as a boundary condition for compensatory consumption. By pinpointing factors that predict when self-verification guides consumer behavior, this work enriches the field's understanding of how products serve self-motives. © 2019 The Author(s) 2019. Published by Oxford University Press on behalf of Journal of Consumer Research, Inc."
+  },
+  {
+    "article_id": "CS_1162",
+    "title": "The prosperity paradox: Fewer and more vulnerable farm workers",
+    "journal": "The Prosperity Paradox: Fewer and More Vulnerable Farm Workers",
+    "journal_impact_factor": null,
+    "doi": "10.1093/oso/9780198867845.001.0001",
+    "abstract": "Why do farm workers become more vulnerable as countries get richer? As countries get richer, the share of workers employed in agriculture falls. In richer countries, hired farm workers do ever more of the work on the fewer and larger farms that produce most farm commodities. These hired workers include local workers who lack the skills and contacts needed to get nonfarm jobs that usually offer higher wages and more opportunities as well as legal and unauthorized migrants from poorer countries who may not know or exercise their labor-related rights. Government enforcement of labor laws depends on complaints, and vulnerable workers rarely complain. The Prosperity Paradox explains why farm-worker problems often worsen as the agricultural sector shrinks and lays out options to help vulnerable workers. Analysis of farm labor markets in the US, Mexico, and other countries shows that unions and fair trade efforts to protect farm workers cover a very small share of all workers and are unlikely to expand quickly. Most labor-intensive fruits and vegetables are eaten fresh. Unsafe food that sickened consumers led to voluntary industry and later government-mandated food-safety programs to ensure that food is safe when it leaves the farm, with protocols enforced by both government inspectors and buyers who refused to buy from noncompliant farms. This food-safety model offers the most promise for a new era in protective labor policies. © Philip Martin 2021."
+  },
+  {
+    "article_id": "CS_1163",
+    "title": "The Unforgettable Advantage: How to Deliver Service They Remember",
+    "journal": "The Unforgettable Advantage: How to Deliver Service They Remember",
+    "journal_impact_factor": null,
+    "doi": "10.1093/oso/9780198887133.001.0001",
+    "abstract": "In The Unforgettable Advantage: How to Deliver Service They Remember, businesses in both B2B and B2C sectors will discover how to turn everyday customer interactions into extraordinary experiences that build loyalty, boost retention, and grow lasting brand value.This isn’t a book of theory or success stories—it’s the missing manual on execution. With practical, step-by-step guidance, it empowers frontline teams, managers, and leaders to deliver consistently exceptional service in the real world.From emotional intelligence and meaningful customer connection to service recovery and culture-building, The Unforgettable Advantage serves as both a leadership playbook and a frontline training tool. It equips your team to create service that not only delights but stays with people. Whether you’re in retail, hospitality, healthcare, education, or professional services, this book gives you the tools to build a service culture that customers remember and recommend. © Business Expert Press, LLC, 2026."
+  },
+  {
+    "article_id": "CS_1164",
+    "title": "Financial performance, employee well-being, and client well-being in for-profit and not-for-profit nursing homes: A systematic review",
+    "journal": "Health Care Management Review",
+    "journal_impact_factor": 1.333,
+    "doi": "10.1097/HMR.0000000000000121",
+    "abstract": "Background: Expanding the opportunities for for-profit nursing home care is a central theme in the debate on the sustainable organization of the growing nursing home sector in Western countries. Purposes: We conducted a systematic review of the literature over the last 10 years in order to determine the broad impact of nursing home ownership in the United States. Our review has two main goals: (a) to find out which topics have been studied with regard to financial performance, employee well-being, and client well-being in relation to nursing home ownership and (b) to assess the conclusions related to these topics. The review results in two propositions on the interactions between financial performance, employee well-being, and client well-being as they relate to nursing home ownership. Methodology/Approach: Five search strategies plus inclusion and quality assessment criteria were applied to identify and select eligible studies. As a result, 50 studies were included in the review. Relevant findings were categorized as related to financial performance (profit margins, efficiency), employee well-being (staffing levels, turnover rates, job satisfaction, job benefits), or client well-being (care quality, hospitalization rates, lawsuits/complaints) and then analyzed based on common characteristics. Findings: For-profit nursing homes tend to have better financial performance, but worse results with regard to employee well-being and client well-being, compared to not-for-profit sector homes. We argue that the better financial performance of for-profit nursing homes seems to be associated with worse employee and client well-being. Practical Implications: For policy makers considering the expansion of the for-profit sector in the nursing home industry, our findings suggest the need for a broad perspective, simultaneously weighing the potential benefits and drawbacks for the organization, its employees, and its clients. © 2017 The Authors. Published by Wolters Kluwer Health, Inc."
+  },
+  {
+    "article_id": "CS_1165",
+    "title": "“No Plastic Bag” Campaign of Malaysia",
+    "journal": "Green Behavior and Corporate Social Responsibility in Asia",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-78756-683-520191013",
+    "abstract": "Subject Area Marketing Management, Consumer Behavior. Study Level This case is suitable to be used in advanced undergraduate and MBA/MSc level. Case Overview This case highlights the initiative taken by Malaysian government in order to launch and implement “No Plastic Bag” campaign. The objective of this campaign is to discourage consumers from using plastic bags since plastic is not biodegradable and thus a big threat to the environment. As a result of this campaign, all supermarkets, hypermarkets, or department stores stopped providing plastic bags to the customers while shopping which was a usual practice before to carry the purchased stuffs. Consumers left with two options: either carrying their own bag during purchase or purchasing the plastic bag from the cashier for 20 sen. Azmir, the managing director of ForU hypermarket, was receiving several complaints from his customers since they need to pay for the plastic bag which made him ponder about how to make customers accept the “No Plastic Bag” policy wholeheartedly. Expected Learning Outcomes This case illustrates: • The challenges faced by the Malaysian government in implementing “No Plastic Bag” campaign. • The need for considering heavy promotional effort in creating awareness among citizens about green issues. • The necessity to understand different mentality and behavioral pattern of consumers in embracing green consumption behavior. © 2019 by Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1166",
+    "title": "Service Recovery Strategies in Cases of AI Malfunction",
+    "journal": "Toward Responsible Service Management: AI and Digital Transformation in Action",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-80262-963-720251010",
+    "abstract": "As AI technologies become increasingly integral to diverse service industries, understanding how to effectively address and recover from AI failures is paramount. Drawing upon an extensive review of the literature and empirical evidence, this chapter elucidates the multifaceted challenges inherent in service recovery when AI malfunctions. It explores various dimensions of AI malfunction scenarios, encompassing technical failures and misinterpretation of data. Moreover, a 2×2 matrix is provided for plotting service malfunctions in terms of severity and impact as well as providing practical strategies for orchestrating robust service recovery processes in such circumstances. By integrating insights from AI ethics, crisis management and service management literature, this scholarly inquiry offers valuable guidance to practitioners, managers, and policymakers in formulating proactive and responsible approaches to mitigate the adverse impacts of AI failures on service quality, customer satisfaction, and organisational reputation. © 2025 by Brad Eskridge and Patrick van Esch."
+  },
+  {
+    "article_id": "CS_1167",
+    "title": "Life insurance industry in India: The inside story",
+    "journal": "Modeling Economic Growth in Contemporary India",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-80382-751-320241006",
+    "abstract": "The present study aims to provide an overview of the life insurance industry in India and scrutinise various dimensions impacting life insurance uptake in accordance with the views of the management representatives. An exploratory study was assumed by conducting in-depth face-to-face/telephonic interviews with six employees and one agent affiliated to the most prominent life insurance companies operating in India. The interviews focused on operation of life insurance companies in general, their work culture, approach towards individuals/customers, steps taken to attract and retain their human capital (agents), the overall impact of reforms on the life insurance industry and their tactics which make them unique in the market. The study observed that life insurance uptake in India is discernibly affected by an individual's financial knowledge, needs and the level of trust they have on the company apart from brand of the life insurance company and grievance redressal system. It was also found that reforms (Foreign Direct Investment (FDI) Policy, entry of private players) did bring about a difference in work culture, improved employment opportunities and increased the reach of the insurance industry in the country. The study highlights dimensions that life insurance companies constantly work/need to work upon to remain at the zenith of success, broadens the horizons of the life insurance industry in an emerging nation like India as it is one of the few studies to have probed the management's outlook of the Indian life insurance industry and holds scope for future theoretical investigation and development of a comprehensive model as well. © 2024 Srishti Nagarajan and Ekta Duggal. All rights reserved."
+  },
+  {
+    "article_id": "CS_1168",
+    "title": "Digital payments transformation in India: Trends, issues, and opportunities",
+    "journal": "Fostering Sustainable Businesses in Emerging Economies: The Impact of Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-80455-640-520231015",
+    "abstract": "The purpose of this chapter is to examine the integration of technology-based solutions in the Indian banking industry, driven by the need for contactless services and addressing operational issues and customer complaints post-Covid-19. The study utilizes archival and observational research, drawing data from the internet to understand the changes in the acceptance and use of digital payments in India. The findings suggest that digital payments are poised for growth due to the increasing acceptance and popularity of personal device-based banking services. However, the limitations of the study restrict its applicability to the Indian context. The practical implications highlight the importance of technology in improving banking operations and efficiency, while the social implications emphasize the shift in people's mindset toward accepting and utilizing technology for everyday banking activities. This chapter also discusses government initiatives aimed at resolving issues and customer complaints arising from the increased use of technology in the banking industry. This chapter contributes to the understanding of the evolving digital payment scenario, technology-based banking services, and the payment infrastructure in India. © 2024 Anupkumar Dhore, Vijay D. Joshi, Amir Hafizullah Khan and Sukanta Kumar Baral. Published under exclusive licence by Emerald Publishing Limited. All rights reserved."
+  },
+  {
+    "article_id": "CS_1169",
+    "title": "Does effective handling of negative e-word of mouth on social media influence customers' behavioral intentions in the context of online travel agencies",
+    "journal": "Navigating the Digital Landscape: Understanding Customer Behaviour in the Online World",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-83549-272-720241003",
+    "abstract": "In the present study, we examined how effectively online travel agencies (OTAs) handle negative e-word-of-mouth on social media platforms like Facebook, Twitter, and Instagram. We collected data from 497 participants using survey method. To test the hypotheses formulated from the existing literature, structural equation modeling was adopted in this study. The results from structural equation modeling indicate effective handling of the negative e-word of mouth (e-WOM) on social media websites significantly affects customer satisfaction and repurchase intention. The current research work provides insight into social media recovery efforts and service fairness when handling negative e-WOM. The study recommends that customers can distinguish the differences between general efforts and adaptive complaint-handling efforts, and dissimilarities may influence satisfaction, repurchase intentions, etc. Although empathy, apology, responsiveness, and paraphrasing are considered pioneer strategies in complaint handling, customers' negative e-WOM, and firms' recovery management, but the current study is among a few to categorize OTAs' handling of negative e-WOM and complaint handling efforts in the social media environment. © 2024 Durgesh Agnihotri, Pallavi Chaturvedi and Vikas Tripathi. Published under exclusive licence by Emerald Publishing Limited. All rights reserved."
+  },
+  {
+    "article_id": "CS_1170",
+    "title": "Leveraging data sharing for enhanced experiences in service industries: Role of experience orientation and privacy calculus",
+    "journal": "Marketing Intelligence, Part A: Understanding Customers in the Era of Digitalization",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-83549-418-920251003",
+    "abstract": "In the context of customer experience, the acquisition of personal and behavioural data plays an integral role, yet it raises significant privacy concerns. This study suggests employing the privacy calculus framework to craft a meaningful customer experience while addressing these privacy apprehensions. Drawing from an extensive review of literature, the study formulates propositions, subsequently validated through case studies. Beyond existing literature, this research introduces novel factors pertinent to the service industry, expanding the understanding of privacy-tradeoff dynamics. Factors such as brand reputation, transaction frequency, campaign design, grievance redressal mechanisms, ethical conduct, and marketer behaviour emerge as pivotal triggers influencing privacy-tradeoff decisions. However, empirical validation is required to consolidate these propositions. The study highlights the imperative of bridging the privacy calculus concept with customer experience, particularly within the service sector, shedding light on factors that can effectively navigate this terrain. By clarifying the relationships between privacy considerations and customer experience, this chapter contributes to a deeper comprehension of the intricacies involved. It not only identifies key factors but also underlines their potential to shape and optimize the customer journey amidst privacy concerns. The proposed framework offers a better understanding of how businesses can navigate the delicate balance between data privacy and delivering exceptional service. The study recommends further empirical scrutiny to validate and refine the proposed framework, ultimately fostering a more robust understanding of privacy dynamics in the service industry. © 2025 Elangovan N., Aishwarya Nagarathinam, Sundaravel Elangovan, Aarthy Chellasamy and Sangeetha Rangasamy. Published under exclusive licence by Emerald Publishing Limited. All rights reserved."
+  },
+  {
+    "article_id": "CS_1171",
+    "title": "Measuring Quality",
+    "journal": "Operations Management in the Hospitality Industry",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-83867-541-720211009",
+    "abstract": "This chapter covers four main concepts: service quality, quality assurance for measurement, quality assurance for management, and service failure and recovery. The first section mainly discusses the fundamentals of service quality. The service quality gap model is also highlighted to identify the gaps between customer expectations and the actual perceptions of service at different stages of service delivery. In the second section, different measurement methods for quality assurance are demonstrated. Examples of qualitative and quantitative methods are included. In the third section, the important management objectives of quality assurance, improvement, and control are covered. By using a combination of the quality assurance methods from the second section, hospitality operators can accomplish internal accountability, external accountability, performance improvement, and innovation. In the fourth and final section, causes and consequences of service failures are covered together with the service recovery paradox to express the implications of poor quality. © 2021 Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1172",
+    "title": "The Impact of Online Marketing in Travel Agency",
+    "journal": "The Emerald Handbook of ICT in Tourism and Hospitality",
+    "journal_impact_factor": null,
+    "doi": "10.1108/978-1-83982-688-720201006",
+    "abstract": "Online marketing become a trend in recent years focussed on online social networks, such social networks have rapidly grown in popularity; providing platforms to the marketing of products and services for the hospitality industry. Online marketing offers media technologies that can facilitate online functionality and monitoring perspectives wherein the data gathered can be used to develop their services for customer satisfaction. The purpose of this study is to study the impact of online marketing in travel agency. The data collected using google online survey and analysed using SPSS. The findings stressed that online marketing in travel agency has a positive relationship in increasing the sale of packages in travel agency. Travel agencies who use online marketing more frequently receive more correspondence. Therefore, travel agencies should use online marketing to generate more income. The value of time has also changed, making communication a process that has to be instant and simplified. Hence, travel agencies have to use online marketing and taking into account travellers feedbacks and complaints as well as delivering information about products and services in real time. Travel agencies have no chance to face their competitors if they don’t adopt online marketing strategies. © 2021 Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1173",
+    "title": "Service recovery satisfaction and customer commitment in the airline business: An emerging African market perspective",
+    "journal": "African Journal of Economic and Management Studies",
+    "journal_impact_factor": 1.703,
+    "doi": "10.1108/AJEMS-01-2019-0005",
+    "abstract": "Purpose: The purpose of this paper is to examine the precursors and outcomes of service recovery satisfaction and customer commitment among airline business customers. Design/methodology/approach: Data were collected from airline travellers in South Africa using a structured questionnaire. Structural equation modelling was used to analyse the proposed hypotheses. Findings: The results revealed that recovery expectations and perceived equity exert significant influence on levels of recovery satisfaction, which in turn influence overall satisfaction, trust and commitment. The study also revealed that trust and overall satisfaction are antecedents of customer commitment and that customer commitment has a significant positive relationship with positive word of mouth. It was also established that the quality of past service performance moderates the relationship between recovery satisfaction and commitment. Practical implications: Airlines are advised to stimulate customer trust in the service delivery process through transparency in the procedures by which they resolve service failures and to remain committed to their service recovery promises to customers. It is also proposed that airlines should secure increased positive word of mouth through offering satisfactory service recovery. Originality/value: Very little research in the South African context exists which focusses on the influence of customers satisfaction and commitment in the airline industry. This paper helps in establishing the antecedents of customer commitment after service failure in the airline industry. © 2019, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1174",
+    "title": "The determinants of service recovery in the retail industry: A study of micro and small enterprises in Ghana",
+    "journal": "African Journal of Economic and Management Studies",
+    "journal_impact_factor": 1.703,
+    "doi": "10.1108/AJEMS-10-2014-0072",
+    "abstract": "Purpose – Service recovery strategies are efforts used by organizations to bring back dissatisfied customers to a state of satisfaction with the organization. It has been argued that successful service recovery by organizations is dependent on the effectiveness of front line employees. The purpose of this paper is to examine a model of service recovery performance (SRP) of front line employees in the retail industry in Ghana. Design/methodology/approach – The study uses personally administered survey data collected from 136 employees in 20 micro and small retail enterprises in Ghana. Hierarchical multiple regression analysis is used to test the direct and interactive effects of organizational variables such as perceived managerial attitudes and work environment factors on the SRP of front line employees. Findings – The findings indicate that the SRP is influenced by employee empowerment, interaction between customer service orientation and empowerment, interaction between customer service orientation and training for customer service excellence, and the interaction between empowerment and training for customer service excellence. Research limitations/implications – Focussing only on the antecedents of SRP, and using cross-sectional data based on the self-assessments of the front line employees from one country. Practical implications – Empowering front line employees to deal with service failures should be combined with training them in job related and behavioral skills to attend to the needs of customers. Moreover, it is critical to combine perceived customer service orientation with training front line employees in job related and behavioral skills. Originality/value – First study to examine the antecedents of SRP of front line employees in a sub-Saharan African environment. Moreover, study examines the interactive effects of organizational and work environment variables on SRP. © 2016, © Emerald Group Publishing Limited."
+  },
+  {
+    "article_id": "CS_1175",
+    "title": "“Actions speak louder than words”: an impact of service recovery antecedents on customer delight in quick-service restaurants",
+    "journal": "Asia-Pacific Journal of Business Administration",
+    "journal_impact_factor": 5.175,
+    "doi": "10.1108/APJBA-04-2021-0133",
+    "abstract": "Purpose: The purpose of this study is to conceptualize and analyze a framework that provides greater understanding toward the impact of service recovery antecedents such as role clarity, customer service orientation, employee empowerment and employee relational behavior on customer satisfaction and customer delight in the context of quick-service restaurants (QSRs). Design/methodology/approach: A self-administered questionnaire was distributed to 408 participants who had experienced service recovery efforts by leading QSRs on social media. The current paper draws upon the prevailing literature to test a series of research hypotheses through structural equation modeling. Findings: The findings of the study have confirmed that antecedents of service recovery are good to describe customer satisfaction and customer delight in the setting of QSRs. Besides, the study provides an understanding on how monetary compensation moderates the relationship between customer delight and customer satisfaction. Practical implications: This study carries an understanding on how frontline employees must operate in a non-conventional and innovative way to resolve customers' issues and show commitment with truthfulness to provide excellent services to make customers feel delightful. Originality/value: This is a unique study to understand the role of service recovery antecedents to describe customer satisfaction and customer delight in the social media environment. In addition, the results support the possibilities of implementing prompt service recovery efforts using social media. © 2021, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1176",
+    "title": "The moderating role of complaint handling on brand hate in the cancel culture",
+    "journal": "Asia-Pacific Journal of Business Administration",
+    "journal_impact_factor": 5.175,
+    "doi": "10.1108/APJBA-06-2021-0246",
+    "abstract": "Purpose: This study investigates the moderating role of complaint handling between ideological incompatibility, symbolic incongruity, negative past experience and corporate social irresponsibility on brand hate. Design/methodology/approach: The study employs the Duplex Hate theory which assumes that hate is the manifestation of multiple factors. A survey-based self-administered questionnaire was used to collect data from 400 smartphone users at Rawalpindi and Islamabad, Pakistan. Findings: The findings suggest that ideological incompatibility, symbolic incongruity, negative past experience and corporate social irresponsibility contributes to brand hate. The complaint handling (moderator) weakens the effects of ideological incompatibility and symbolic incongruity on brand hate. Practical implications: The research provides insights into the cancel culture and clarifies how brand hate can be controlled. Originality/value: Empirical study on the antecedents of brand hate remains insufficient. The current study contributes to the brand hate literature by providing an understanding of the phenomenon of brand hate and by empirically examining the different antecedents responsible for causing the behavior. The study has also provided an additional determinant of brand hate, which is corporate social irresponsibility. The role of moderators for controlling brand hate is greatly ignored in the existing literature. The current work also extends previous studies by investigating a moderating factor for reducing brand hate, which is complaint handling. © 2022, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1177",
+    "title": "Service guarantees in an e-commerce platform: proposition of a framework based on customers' expectations, negative experiences and behavioural responses",
+    "journal": "Asia-Pacific Journal of Business Administration",
+    "journal_impact_factor": 5.175,
+    "doi": "10.1108/APJBA-06-2021-0249",
+    "abstract": "Purpose: Companies' relationship with their customers through e-commerce platforms has increased considerably in the past few years, bringing new challenges concerning service guarantees (SG). This study aims to propose a framework of the relations between customers' expectations on SG, their negative experiences and their attitudes and behavioural intentions towards an e-commerce platform. Design/methodology/approach: The research had a qualitative and descriptive approach. Testimonials from clients of an online e-commerce platform were obtained through interviews via videoconference and non-participant observation on a complaints website in Brazil. The testimonies were analysed through content analysis. Findings: The customer expectations regarding the SG offered by the e-commerce platform are congruent with the five categories of the theory that support this research. Customer testimonials on the complaints site show that their negative experiences with the e-commerce platform generated negative emotional, cognitive and behavioural responses towards the company. A framework was proposed, including customers' expectations regarding SG, their negative experiences and their repercussions on clients' attitudes and behavioural intentions. Originality/value: This article is the only that contemplates customers' expectations about SG in an e-commerce platform, relating them to attitudes and behavioural intentions. Thus, its framework demonstrates the relationships between customer expectations about SGs, their negative experiences and attitudinal and behavioural repercussions. This article brings academic and managerial contributions for companies and managers of e-commerce platforms. It contributes to clients and consumer protection associations by revealing problems they face with SG on e-commerce platforms. This research can be used by those responsible for elaborating laws and public policies to regulate and inspect the relationships between e-commerce platforms and their customers. © 2022, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1178",
+    "title": "Other customers' service failure and recovery encounters: a qualitative exploration",
+    "journal": "Asia-Pacific Journal of Business Administration",
+    "journal_impact_factor": 5.175,
+    "doi": "10.1108/APJBA-09-2021-0462",
+    "abstract": "Purpose: Service failure and recovery encounters are often witnessed by other customers, but little is known about how these encounters impacts other customers. With an aim to bridge this gap, the purpose of the paper is to explore why and how service recovery directed at a focal customer impacts other customers who are present in the same service environment. Design/methodology/approach: The paper follows a qualitative research methodology. Purposive sampling was used to collect data from 30 customers through semi-structured face-to-face interviews. The data was analysed using thematic analysis. Findings: Findings of the study show that service recovery directed at a focal customer has an impact on other customers' fairness judgments, emotions, service quality perceptions and behaviour. Other customers' behavioural reactions in response to observed service recovery are driven by two different motives: self-interest and moral obligation. Observing customers' cautious behaviour and (re)purchase behaviour are found to be primarily driven by self-interest, whereas their helping behaviour, punishment behaviour and word-of-mouth behaviour are found to be driven by moral obligation. Research limitations/implications: This study findings contribute to theory development on “other-oriented” effects of service recovery and provides valuable insights for effective management of service failures in the shared service environment. Originality/value: This is the first study, which qualitatively explores the “other customers” perspective of service recovery in the context of shared servicescape. © 2022, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1179",
+    "title": "How co-creation uplift Suggestion systems' performance: Experimental studies in customer and employee sections",
+    "journal": "Asia-Pacific Journal of Business Administration",
+    "journal_impact_factor": 5.175,
+    "doi": "10.1108/APJBA-11-2015-0095",
+    "abstract": "Purpose: Suggestion systems have always been used as the means of continuous development and co-creating values among the employees of organizations. On the other hand, the co-creation has been introduced as a solution to co-create values between companies and customers. Since a simultaneous study on setting up suggestion systems and co-creation among employees and customers have been ignored so far, the purpose of this paper, focussing on the combination of two strategies of suggestion systems (generally more effective among the employees of organizations) and co-creation (studied so far merely the scope of customers), is to evaluate variables leading to intention to use, improvement in understanding the concept of justice, and positive word-of-mouth. Design/methodology/approach: Two between-subjects experiments were carried out to explore the interactional role of co-creation, reward, and time in efficiency of suggestion systems. The first study which was carried out among customers analyzed the effect of setting up suggestion systems along with co-creation on the amount of their intention to use this system in the future and positive word-of-mouth. The second study discussed the effect of setting up suggestion systems along with co-creation on the level of understanding organizational justice and commitment. Findings: The results indicate that the effectiveness of co-creation and tangible factors, such as offered reward, on improving the evaluation of suggestion system. In the other word, when firm's encourage customers to participate in value co-creation program in suggestion system, they perceive more justice and intend to participate more in such program in future. Originality/value: Most of the previous studies carried out on co-creation considered its effectiveness on occasions when a service failure occurs to consumers and the service provider urgently needs service recovery, but this paper aimed to provide a collaborative perspective toward co-creation through suggestion system that puts emphasis on service experience, innovation, and intention to future participation in such programs. © Emerald Group Publishing Limited 1757-4323."
+  },
+  {
+    "article_id": "CS_1180",
+    "title": "How does frugality influence customer complaints through the mediation of the zone of tolerance? Empirical evidence from Chinese consumers purchasing Shanzhai products",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-03-2023-0202",
+    "abstract": "Purpose: This study aims to investigate whether frugality increases customer complaints via the mediating role of the zone of tolerance (ZOT) of quality for Shanzhai products. Additionally, the study seeks to explore how customer empathy as a boundary condition affects the relationship between the ZOT of quality and customer complaints. Design/methodology/approach: Based on the purchasing data of 241 low-income customers from business-to-consumer (B2C) e-commerce and social platforms in China, hierarchical analysis was conducted in the study. Moreover, “PROCESS SPSS Macro” was used to test the mediation effect of the ZOT of quality and the moderated mediation effect with customer empathy as a moderator. Findings: The results indicate a positive impact of frugality on customer complaints, which is mediated by the ZOT of quality. Moreover, with an increase in customer empathy, the negative effect of the ZOT of quality on customer complaints increases, and the positive influence of frugality on customer complaints, through the mediation of the ZOT of quality, also becomes stronger. Originality/value: Drawing upon the principle of cognitive consistency, this study not only extends the stream of research on frugality by exploring how frugality influences customer complaints via the mediation of the ZOT of quality but also sheds new light on the research on customer empathy by exploring its moderating role in the relationship between the ZOT of quality and customer complaints. © 2023, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1181",
+    "title": "Omnichannel word-of-mouth genesis: the confluence of online-offline experiences, social influence and skepticism",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-03-2024-0259",
+    "abstract": "Purpose: This research aims to examine the integral elements of omnichannel retailing, an evolving approach that blends online and offline shopping experiences. It focuses on how various factors – merchandise variety, monetary saving, personal interaction, complaint handling, social influence, perceived crowd and skepticism – affect relative advantage, consumer satisfaction and word-of-mouth (WOM) advocacy in an omnichannel context. Design/methodology/approach: A comprehensive survey was conducted with 258 participants, and the data were analyzed using partial least squares structural equation modeling (PLS-SEM). This methodology provided insights into the complex relationships between different omnichannel retailing factors and their impact on customer satisfaction and WOM. Findings: The study found that monetary saving influences both relative advantage and satisfaction. Personal interaction was observed to affect complaint handling and relative advantage. Importantly, relative advantage was found to impact both satisfaction and WOM. Additionally, the study highlighted the roles of social influence and satisfaction in enhancing WOM. Originality/value: This research adds to the existing literature by providing a nuanced understanding of the dynamics of consumer engagement in omnichannel retailing. It bridges a gap in existing research by concurrently examining the impact of online and offline retail factors on consumer satisfaction and WOM in an omnichannel setting. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1182",
+    "title": "Navigating negative events: the role of online destination brand experience in tourists' travel decisions",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-03-2024-0348",
+    "abstract": "Purpose: This study addresses tourists' post-consumption perspectives on the impact of online destination experiences and animosity on travel decisions. Developing a framework based on the stimulus-organism-response (SOR) theory, we examine the previously unexplored relationship between post-negative events, online destination brand experience (ODBE), tourists' animosity and destination boycott intentions within the domestic tourism context. Design/methodology/approach: Data from 355 actively engaged domestic travelers in Pakistan who follow destination social media pages (i.e. Instagram and Facebook) was analyzed using structural equation modeling. Findings: The findings reveal that post-negative events ODBE significantly stimulate tourists' animosity, which in turn drives destination boycott intentions. The ODBE indirectly affects boycott intentions through animosity, acting as a partial mediator. The analysis highlights the significance of the users' prior experience levels (novice vs experienced). Multigroup analysis shows that novice visitors are more sensitive to negative online experiences, resulting in stronger animosity than experienced visitors. Animosity significantly drives boycott intentions, particularly among experienced visitors. Originality/value: This study’s novelty lies in its comprehensive examination of post-negative events, focusing on how the ODBE influences tourists' negative emotions and boycott intentions. These findings offer valuable insights for tourism researchers and destination marketers, underscoring the importance of optimizing post-service failure ODBE strategies for brand repair, online reputation management, digital marketing innovation and customized service recovery to mitigate the impact of negative events. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1183",
+    "title": "An explanatory mixed method study of outdoor food delivery robots: technology affordance approach",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-03-2025-0457",
+    "abstract": "Purpose The current trend of human delivery services has gradually been replaced by robots in indoor delivery services. As the outdoor food delivery robot (OFDR) services have debuted recently, understanding the differences between indoor and outdoor food delivery robot services regarding factors influencing individual adoption is critical, as it determines whether OFDRs can replace human delivery jobs. Design/methodology/approach Previous studies focused on examining antecedents of indoor delivery robot adoption, so conducting a quantitative analysis (PLS-SEM and fsQCA) to examine those antecedents influencing OFDR adoption is essential. A following qualitative study (semi-structured interviews) can provide a deeper understanding of customers’ perceptions of OFDRs and generate new insights. Findings Following the technology affordance theory, study one identifies the positive impacts of affordances (cost-saving, accessibility, attractiveness, and sustainability) and the negative effects of perceived risk on OFDR adoption. The further results of fsQCA present five combinations, suggesting an offsetting relationship between affordances and perceived risks. The insights from the qualitative study explain the results from study one and identify the valuable new insights that guide future research, including tipping, social anxiety, and service recovery. Originality/value This study empirically tests an integrated framework that combines the technology affordance perspective with perceived risk theory. It provides vital theoretical implications regarding the technology adoption literature and promotes explanatory mixed methods. The findings argue the possibility of OFDRs replacing human food delivery jobs shortly, guiding the future multi-stakeholder collaborations. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CS_1184",
+    "title": "Dissatisfaction toward O2O websites: expectation disconfirmation and justice perspective",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-05-2020-0374",
+    "abstract": "Purpose: The online-to-offline (O2O) business is developing rapidly and is highly popular in many countries. Nevertheless, O2O suffers from a large number of customer complaints that result in consumer loss. Focusing on the O2O context, this study integrates expectation disconfirmation theory (EDT) and justice theory to investigate consumers' dissatisfaction toward O2O websites. Design/methodology/approach: A research model was proposed and tested using 329 survey responses. Findings: Results show that the identified website disconfirmation and offline service disconfirmation could lead to consumer dissatisfaction. Importantly, the impacts of disconfirmation factors are contingent upon the justice perception of consumers. When a transaction is perceived as unfair, website disconfirmation arouses a higher level of dissatisfaction, and the negative emotions could transfer from O2O and damage the website's reputation. Originality/value: This study explores the continuance intentions of customers toward O2O websites from a dissatisfaction perspective, with insights for future service studies and O2O service managers. © 2021, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1185",
+    "title": "Language constraints in hotel attributes and consumers' offendedness associated with behavioral intentions",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-05-2020-0375",
+    "abstract": "Purpose: To address critical research gaps in the extant literature, the present study develops a model that links language constraints in hotel attributes—core and facilitating––with consumers' offendedness (CO) and examines the consequent behavioral intentions of an offended consumer. For this purpose, it investigates (1) the role of language constraints in core and facilitating attributes in shaping CO, (2) how CO relates to adverse behavioral outcomes and (3) the moderating role of attribution of service failure (ASF) between language constraints and CO. Design/methodology/approach: The present research used convenience sampling and collected data from 398 inbound tourists in Beijing through a survey questionnaire. The study performs measurement and structural evaluation by employing Amos Graphics 24.0 and moderation analysis through IBM SPSS 25.0. Findings: The study examines language constraints in China's hospitality context, which restricts its generalizability. However, it serves as a better approach to examine the tourists who visit other Western hotels in China and unveils the factors contributing to CO. Research limitations/implications: The study examines language constraints in Chinese hotels, which restrict its generalizability. It serves as a better approach to examine the tourists who visit other Western hotels in China and unveils the factors contributing to CO. Originality/value: Few studies validate communication barriers in service encounters in hotel services and apprehend related outcomes. The present study takes a unique initiative in the context of China and examines the role of language constraints in core and facilitating hotel attributes in service encounters at Chinese hotels. This study informs the Chinese hotel industry and international destination firms to understand the language constraints in service encounters to further their strategies to overcome threats and tap potential opportunities. © 2021, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1186",
+    "title": "Electronic word-of-mouth generation and regulatory focus",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-06-2018-0220",
+    "abstract": "Purpose: The purpose of this paper is to investigate the electronic word-of-mouth (eWOM) motivations of regulatory-focused customers with positive and negative consumption experiences. Design/methodology/approach: An online survey is conducted in Beijing and Shanghai. A random sampling technique is used to collect data from 854 respondents. Two scenarios of eWOM communication – positive and negative consumption experiences – are randomly assigned to each respondent. This study employs the structural equation modeling and confirmatory factor analysis techniques. However, it uses ordinary least squares and logistic regression to analyze 137 participants in the experimental study. Findings: Promotion-focused customers that aim for self-enhancement and obtaining social benefits are motivated to spread positive eWOM on social networking sites. However, prevention-focused customers are driven by vengeance and anxiety, revealing higher intentions to post negative eWOM on review sites. eWOM generation is subject to gender, as promotion-focused male customers spread it more than both prevention-focused and promotion-focused female customers. Moreover, platform assistance (PA) has a significant positive impact upon regulatory-focused customers and eWOM (positive vs negative) relationships. Practical implications: This study provides a deeper understanding of motivational factors of eWOM communication. Specifically, in case of product or service failure, negative consumption experiences drive prevention-focused customers to generate negative eWOM. Thus, using various tactics, marketers need to shift customers from focusing on prevention to focusing on promotion. For example, redeemable free coupons can shift customer attention and generate positive eWOM. Originality/value: This study provides unique insights about eWOM motivation across genders. It examines regulatory focus, positive vs negative consumption experiences and moderation of PA. © 2019, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1187",
+    "title": "The aftermath of greenwashing in the fashion industry: Chinese consumer responses to different types of greenwashing",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-06-2024-0858",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_1188",
+    "title": "Impact of service failure severity and agreeableness on consumer switchover intention: Mediating role of consumer forgiveness",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-07-2015-0106",
+    "abstract": "Purpose – The purpose of this paper is to examine the asymmetric impact of service failure severity and agreeableness on consumer switchover intention with the mediating role of consumer forgiveness in the aftermath of service failure. Design/methodology/approach – In total, 364 university students were given a hypothetical service failure situation and their response was collected through a standardized questionnaire. Multiple regression and Preacher and Hayes (2004) mediation analysis tests were conducted to analyze data. Findings – The findings reveal that service failure severity has a direct positive impact on switchover intention and it also has an indirect impact on switchover intention through consumer forgiveness which it tends to weaken. On the other side, agreeableness has a direct negative impact on switchover intention, and it inhibits switchover intention indirectly too by stimulating forgiveness. Research limitations/implications – A cross-sectional study involving convenience sampling has been conducted through self-report measures. Generalization of the research findings shall therefore be done with caution. Practical implications – Severity of failure hampers forgiveness and therefore service managers should check factors that may challenge the tolerance level of consumers. While gauging satisfaction in post failure scenario, it is equally important to gauge consumer forgiveness. Originality/value – This study is among the initial endeavors to explore forgiveness in service failures context. Also it is the first validation of a direct positive relationship between agreeableness and forgiveness in a South Asian country. © 2016, © Emerald Group Publishing Limited."
+  },
+  {
+    "article_id": "CS_1189",
+    "title": "Does polychronicity among sales employees develop B2B service recovery? A dual assessment through ambidextrous leadership",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-07-2022-0607",
+    "abstract": "Purpose: This research explores the determinants and consequences of salesperson polychronicity in a business-to-business (B2B) sales environment. Additionally, the study examined the link between the antecedents and consequences of salesperson polychronicity using resistance to change (RC) and manager trust in salesperson (MT) as moderators. Design/methodology/approach: A conceptual framework was developed by testing eight hypotheses based on data collected from 378 salesperson-manager dyads. Findings: The authors find that opening leader behavior is positively associated with salesperson polychronicity, while closing leader behavior negatively influences salesperson polychronicity. In addition, salesperson polychronicity positively affects service recovery performance and customer-directed organizational citizen behaviors (OCB). Finally, the RC and MT significantly and positively moderate the linkage between the antecedents and consequences of salesperson polychronicity. Originality/value: This study is original because this is the first study to address polychronicity as an individual trait in a B2B environment where multitasking behavior is of paramount importance. © 2023, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1190",
+    "title": "Revisiting the service recovery paradox in the restaurant industry",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-08-2020-0569",
+    "abstract": "Purpose: The service recovery paradox (SRP) refers to a particular effect whereby an excellent recovery can turn angry and frustrated customers into loyal ones. Researchers who have studied the SRP have reported mixed findings, with some providing evidence in its support and others not finding any such evidence. To address this discrepancy, this study aims to investigate the SRP. Design/methodology/approach: This study re-examined the phenomenon of the SRP with a field study and provided further evidence in a subsequent experimental study in which the failure and recovery conditions were carefully manipulated. Findings: The results of this study suggest that the SRP was observed in neither the field study nor the scenario experiment. Practical implications: This study can influence the current service management of restaurants with regard to service failures in several ways. Originality/value: This research is a pioneering effort to examine the SRP by conducting both a field study and a scenario experiment. © 2021, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1191",
+    "title": "Switching and repurchase after negative experience: the role of recovery satisfaction, brand hate, brand forgiveness and brand love",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-08-2025-1533",
+    "abstract": "Purpose – This study investigates (1) how recovery satisfaction impacts brand switching and repurchase intention and (2) how brand love moderates these relationships. Design/methodology/approach – This study surveyed participants who had experienced a negative encounter with a brand and subsequently received recovery efforts. Mixed-method approach has been employed by integrating partial least squares structural equation modeling (PLS-SEM) and fuzzy-set qualitative comparative analysis (fsQCA) to test both linear and configurational effects. Findings – The findings demonstrated the relationship between recovery satisfaction on brand switching, along with revealing brand hate and brand forgiveness as mediators. Furthermore, findings found the moderating effect of brand love on recovery satisfaction mechanisms. Originality/value – The current study contributes to the post-failure literature by integrating positive and negative emotional mechanisms of recovery satisfaction. It highlights the importance of emotional ambivalence and demonstrates the value of combining SEM and fsQCA to uncover multiple causal pathways. The findings offer actionable insights for brands seeking to manage consumer emotions, reduce switching behavior and promote repurchase after service failures. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CS_1192",
+    "title": "Nonlinear antecedents of customer satisfaction and loyalty in third-party logistics services (3PL)",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-09-2016-0173",
+    "abstract": "Purpose: The purpose of this paper is to study the nonlinear impact of quality dimensions of third-party logistics (3PL) services on customer satisfaction and loyalty. Design/methodology/approach: By interviewing 167 small-size companies, and using penalty and reward contrast analysis, the paper explores the nonlinear impact of seven dimensions of 3PL services (safety, fault’s recovery, reliability, speed, flexibility, communication, and friendliness) on customer satisfaction and loyalty. Findings: The results confirm the existence of the dimensions’ nonlinear impact on customer satisfaction. It also shows that some quality dimensions have a direct and nonlinear impact on loyalty. The dimension “friendliness” has a direct impact on loyalty if the company has a below market average performance, which may lead customers to switch service providers. “Flexibility on collection and delivery” has a direct impact if the company has a higher performance, contributing to customers’ intention to continue using the service. Another finding is that, if the company delivers good service recovery after the customer found faults in the service, and if customers trust the company service, they say they intend to continue to work with the company. Research limitations/implications: The present research focused only on small companies in one country (Brazil). Further studies should be carried out to explore different countries, with different realities, and different size of companies. Practical implications: 3PL companies should not only deal with customers’ satisfaction, but also with other quality aspects that directly affect customer intention to continue doing business with the 3PL service provider. These are friendliness, flexibility regarding time and frequency of collection and delivery and faults’ recovery. Originality/value: The present research confirms that the personal relationship is a crucial aspect to be managed in order to keep customers in the long term. In addition, as opposed to most research looking for the antecedents of satisfaction and loyalty of 3PL customers, the present research shows that there is a direct nonlinear impact of the dimensions’ performance on customers’ loyalty, what should be taken in consideration by 3PL managers. It also shows how penalty-reward contrast analysis may reveal nonlinear antecedents that could be used for better understandings companies’ success in the long term. © 2017, © Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1193",
+    "title": "Do service firm employee and customer relations matter for customer forgiveness in service recovery?",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-09-2018-0355",
+    "abstract": "Purpose: Customer forgiveness is gaining importance in service recovery. This study debates that service firm employees and the customers’ relations are supportive resources for the customer while deciding for forgiveness. Accordingly, the purpose of this paper is to test the effects of structural, relational and cognitive social capital on customer forgiveness and thereof the effects of customer forgiveness on negative word of mouth and repatronage intentions. Design/methodology/approach: Partial least squares–structural equation modeling was employed to test the hypothesized relations on usable data from 428 banking customers who registered their complaint recently. Findings: Results show that structural, relational and cognitive social capital explained a unique variance in customer forgiveness with significant positive influence, whereas customer forgiveness has a significant positive effect on repatronage intentions and a significant negative influence on negative word of mouth. Originality/value: Customer forgiveness is a convincing idea in service recovery. This study proposed and empirically verified that social capital in relations of service firm employee and customer relations is important for customer forgiveness to minimize negative word of mouth and enhance repatronage intentions. © 2019, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1194",
+    "title": "Guarantee or inoculate? Ex ante messages against service failures",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-09-2023-0846",
+    "abstract": "Purpose: While many studies have focused on the effectiveness of service recovery after encountering service failure, few have considered for pre-recovery opportunities. Drawing on service guarantee research and the inoculation theory, this study examines the effect of pre-recovery strategy on customer’s satisfaction when faced with possible service failure. This study takes into consideration the uncertainty of service failure, including specific or unpredicted failures. Design/methodology/approach: Three experimental studies were conducted to examine our research hypotheses, which include a total of 1203 subjects recruited from online and offline platforms. Findings: The findings reveal that service guarantees and inoculation messages both effectively mitigate the negative consequences of a service failure. Specifically, the pre-recovery strategy is particularly effective for specific service failures. In addition, we thoroughly examined the mediating role of customer attribution. Originality/value: This research significantly contributes to the existing literature on service research by delving into the potential positive impact of proactive measures undertaken by service enterprises. Furthermore, the findings of this research offer valuable insights for practitioners. © 2024, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1195",
+    "title": "Talking the talk: how AI voice assistants’ apology styles shape consumer satisfaction in service recovery",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-09-2024-1335",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_1196",
+    "title": "Who is to blame? How order dispatch information shapes consumer responses to worker-caused service failures",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-09-2025-1986",
+    "abstract": "Purpose – Online service platforms (e.g. Meituan and UberEats) rely on order dispatch systems – either algorithm-directed (orders automatically assigned to workers) or worker-directed (workers self-select orders from an order pool) – to coordinate daily transactions. While prior work has examined consumer reactions to service failures based on agent or failure type, little is known about how order dispatch cues shape consumer responses to failures caused by human workers. To fill this gap, the current research investigates how framing the order dispatch process as algorithm-directed versus worker-directed shapes consumer responses to worker-caused failures. Design/methodology/approach – Four experimental studies were conducted with 839 participants from China and the US. Participants imagined placing an order on a platform which either assigns orders to workers via an algorithm or allows workers to select orders from a pool, and indicated their platform reuse intention (Studies 1A, 1B, 2 and 3), intention to engage in negative word-of-mouth and to demand compensation (Study 2) following a worker-caused failure. They also indicated responsibility attribution to the platform in the failure incidents (Studies 2 and 3) and their power distance belief (Study 3). Findings – First, consumers respond more negatively to a platform (e.g. lower intention to reuse the platform, higher intention to engage in negative word-of-mouth and to demand compensation) after a worker-caused service failure when the order dispatch is framed as algorithm-directed rather than worker-directed. Second, this effect is mediated by responsibility attribution to the platform. Third, the effect of order dispatch information on consumer responses to service failures is moderated by power distance belief (PDB): it is stronger among low-PDB consumers and attenuates among high-PDB consumers. Originality/value – The findings enrich the service failure literature in both the AI-enabled service contexts and the on-demand service contexts by illuminating the nuanced role of algorithmic mediation in shaping responsibility attribution for human-caused failures. It also contributes to power distance belief research by revealing its moderating effect on consumer responses to service failures in the context of online service platforms. © 2025 Emerald Publishing Limited"
+  },
+  {
+    "article_id": "CS_1197",
+    "title": "Influence of social capital on customer’s relationship satisfaction in the Pakistani banking industry",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-10-2016-0193",
+    "abstract": "Purpose: The purpose of this paper is to investigate the effects of structural social capital, relational social capital and cognitive social on relationship satisfaction, and also to investigate how relationship satisfaction is associated with negative word-of-mouth and re-patronage intentions, in service recovery. Design/methodology/approach: A sample of 478 Pakistani banking industry clients, who registered a complaint to their bank recently, answered the survey. Variance-based partial least squares structural equation modeling was employed for data analysis. Findings: Results demonstrate that all three facets of social capital have a significant positive impact on relationship satisfaction. However, relationship satisfaction enhances customer re-patronage intentions and restrains negative word-of-mouth intentions. Practical implications: Findings are important for service firms, particularly for banks to adjust their service recovery strategies. Originality/value: The paper verified the influence of structural social capital, cognitive social capital and relational social capital on relationship satisfaction and tested the influence of relationship satisfaction on negative word-of-mouth and re-patronage intentions. © 2017, © Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1198",
+    "title": "The factors of consumer confidence recovery after scandals in food supply chain safety",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-10-2017-0232",
+    "abstract": "Purpose: Viewing consumer confidence as a set of static factors has informed previous research and underpinned strategies used in recovering from food safety quality failures, but this approach has not delivered reliable and quick recovery from large-scale food safety scandals. The purpose of this paper is to examine extant models and the factors they are composed of, and suggest an extended model that has a better potential for consumer confidence. The paper focuses on food products where supply chains are visible, and use these features to group the findings. Design/methodology/approach: In this study principal components and logit analyses are used to assess the role of 30 variables operating in a consumer confidence model constructed from several existing in the literature. This combined model considers emotional, cognitive, trust and sociodemographic factors. In total, 14 independent factors are identified. The authors examine the factors, and from these, the decision-making mechanisms before and after the Sanlu Infant Milk Formula (IMF) scandal of 2008. Findings: The authors find that the factors considered by consumers are different for different IMF supply chains, and different again before and after the scandal. The authors develop the argument for an extension to the existing models, incorporating a dynamic consumer confidence system. Research limitations/implications: The paper uses a single survey after the focus event to establish “before” and “after” decision-making factors. Since the IMF scandal is recent and of very high profile, this is likely valid even if it carries memory bias effects. The study is directly applicable to food safety scandals in a Chinese context. Deductive reasoning extends our assertions to a wider context. They are logically validated but have not been formally tested. Practical implications: Using this system as a framework a checklist for recovery from a similar food safety scandal is suggested. The authors also suggest more general use for use where supply chains features are visible to consumers. Originality/value: Models for food safety consumer confidence recovery have previously focused on identifying models and the static factors they consist of. These do represent a reflection of how this phenomenon operates, but using the principals of this model nevertheless does not result in good recovery from extreme food safety failures. This paper contributes by extending these models to one that can be applied for better recovery. © 2018, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1199",
+    "title": "Regret type matters: Risk aversion and complaining in a multidimensional post-purchase regret framework",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-10-2018-0452",
+    "abstract": "Purpose: The purpose of this paper is to investigate post-purchase regret and its relationships with complaint and risk aversion in a four-dimensional framework. Design/methodology/approach: Using 548 effective samples, this study employed structural equation modeling to test proposed hypotheses. Findings: Based on levels of perceived self-responsibility, post-purchase regret due to forgone alternatives, under consideration and over consideration was positively associated with customer complaining, whereas post-purchase regret due to significance change exhibited no such correlation. Moreover, a higher level of risk aversion increased the effect of utilitarian motivation on post-purchase regret due to over consideration but decreased this effect on post-purchase regret due to under consideration. Research limitations/implications: First, regret can positively influence consumer complaints. Next, consumers are unlikely to complain to third parties unless they experience strong action regret. Finally, risk aversion can alleviate or reinforce the effect of utilitarian motivation on regret. Future research could examine the customer group who feel less or no regret of their purchases to contribute to regret theory. Practical implications: To reduce regret among such consumers, marketers are advised to apply precision marketing techniques to reach their target consumers. Second, to forestall customer regret due to forgone alternatives, sellers should proactively provide target buyers with information regarding their products and those of competing brands. Third, another method of minimizing regret is to ensure that consumers’ risk-aversion activities are effective. Originality/value: This study empirically demonstrated a multidimensional scale of regret to illuminate the multicausal role of regret in relation to consumers’ complaining and risk-aversion behaviors. © 2019, Emerald Publishing Limited."
+  },
+  {
+    "article_id": "CS_1200",
+    "title": "The effect of robot anthropomorphism on revisit intentions after service failure: a moderated serial mediation model",
+    "journal": "Asia Pacific Journal of Marketing and Logistics",
+    "journal_impact_factor": 3.858,
+    "doi": "10.1108/APJML-10-2022-0862",
+    "abstract": "Purpose: The purpose of this study is to examine how robotic anthropomorphism and personalized design may affect consumers' reactions to brands after service failure. Design/methodology/approach: This study conducted two studies based on cognitive appraisal theory and artificial intelligence device acceptance theory. Study 1 explored the mechanisms by which the type of anthropomorphic design of the service robot (humanoid robot/nonhumanoid robot) influenced revisit intention after service failure through a one-factor between-subjects design based on a restaurant dining scenario. Study 2 was based on a hotel check-in scenario and explored the moderating effect of robot personalization design on the above mechanisms through a 2 (anthropomorphic design: humanoid robot/nonhumanoid robot) × 2 (personalized design: self-name/no name) between-subjects design. Findings: Study 1 shows that consumers have higher performance expectations for nonhumanoid robots, leading to a higher tolerance for service failure, which in turn generates higher revisit intentions. Study 2 shows that consumers' performance expectations are significantly enhanced after custom naming of humanoid robots, so the serial mediation mechanism for the effect of robot anthropomorphic design on revisit intention does not hold. Originality/value: This study extends the research of artificial intelligence device acceptance theory in the field of service failure and exploratively proposes an intervention mechanism for the negative effects of the anthropomorphic design of service robots. © 2023, Emerald Publishing Limited."
+  }
+]

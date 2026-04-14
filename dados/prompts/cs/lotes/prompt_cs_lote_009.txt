@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0401",
+    "title": "Brand transgressions: How, when, and why home country bias backfires",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-024-01018-9",
+    "abstract": "Despite heightened interest in brand transgressions among academics and practitioners, the literature remains silent about the influence of a brand’s origin on consumer responses to brand misconduct. This leaves managers unaware of how to adapt post-transgression recovery strategies at home and abroad. Contrary to the in-group country bias literature, we theorize an “origin-backfire” effect: consumers forgive domestic brand transgressions less. Analyzing experimental, social media, and secondary-longitudinal data, we find that consumers treat domestic brand transgressors as home-country traitors deserving punishment. Social identity threats mediate this effect and consumer ethnocentrism attenuates it. Transgressions’ damage on brand reputation and value is larger and takes longer to recover from in domestic markets. Managers can alleviate post-transgression backlash through communication framing that construes the transgression as a response to intergroup threats (in foreign markets) and through collective compensation strategies (in domestic markets). The findings reveal cross-national variability in transgressions’ experience, impact, and recovery and inform post-transgression repair strategies. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_0402",
+    "title": "The attenuation effects of time and “sensemaking” surveys on customer revenge",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-024-01046-5",
+    "abstract": "The attenuation of revenge-related responses after a major service failure is not simply caused by the passage of time—as is assumed in prior work. Instead, we propose that the effect of time is enhanced by the completion of multiple surveys that allow customers to constructively make sense of their service failures. We document this sensemaking-based attenuation effect by conducting four longitudinal experiments; each of them includes a series of three to four surveys completed over four to eight weeks. Doing so, we make three key contributions. First, all studies show that customers having the opportunities to complete a series of sensemaking-inducing surveys report fewer revenge-related responses than participants completing a single survey (i.e., a control group) for the same period. Second, we document the process at play by manipulating the contents of surveys (i.e., “cognitions and emotions” vs. “only cognitions” vs. “only emotions”) and by showing the mediation roles played by sensemaking and benevolent trusting beliefs. Third, we identify quality of pre-failure relationship as a boundary condition whereby the attenuation is stronger when relationship quality is weaker. Finally, we explain how sensemaking can be prompted by marketers to appease their customers. © Academy of Marketing Science 2024."
+  },
+  {
+    "article_id": "CS_0403",
+    "title": "Expressions of customer rumination in online posts and firm responses",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-024-01061-6",
+    "abstract": "When faced with service failures, customers tend to ruminate, i.e., engage in repetitive negative thoughts about service failures and their causes/consequences. Some customers express these ruminative thoughts in online posts, making the internal cognitive process of rumination publicly visible to prospective customers who read the posts. This research proposes a novel conceptualization and operationalization of customer expressions of rumination as the repetitive use of words related to (a) service failure aspects and (b) service failure causes/consequences. Across two field studies, one survey, and two experiments, this research demonstrates that rumination expressions in online posts about service failures are linked to lower sales, weaker prospective customers’ purchase intention, and more “likes” of the post. Responses expressing empathetic apologies are more effective in handling rumination expressions about service failure aspects, whereas responses mentioning compensation are more effective in handling rumination expressions about service failure causes/consequences. We urge managers to recognize the visibility and harmfulness of rumination expressions in digital outlets and provide solutions to minimize their damage. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_0404",
+    "title": "Breaking bad news: How frontline employees cope with bad news disclosure to customers",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-024-01079-w",
+    "abstract": "Disclosing bad news to customers during service encounters is an unavoidable, demanding task that can generate significant stress for frontline employees (FLEs). Despite the pervasiveness of bad news disclosure in service contexts, prior research has not explicitly examined how FLEs prepare for or optimize the delivery of bad news, whether to reduce their own work stress or to mitigate its negative impact on customers. Using multidisciplinary literature and depth interviews pertaining to 192 bad news disclosures, this research (1) delineates the concept of bad news disclosure and the types of bad news disclosed in service settings; (2) draws on coping theory to develop an integrative framework of how bad news disclosure unfolds in service encounters and how it affects customer-, employee-, and organization-related outcomes; (3) offers a protocol that FLEs can use to prepare for bad news disclosure and soften the blow for customers; and (4) proposes a research agenda to clarify how service organizations and FLEs should manage bad news disclosure. © Academy of Marketing Science 2025."
+  },
+  {
+    "article_id": "CS_0405",
+    "title": "The role of empathy in providers’ online customer complaints management",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-025-01114-4",
+    "abstract": "Customers share negative service experiences to complain and warn prospective customers. Our research uses semi-supervised machine learning to fine-tune a BERT (Bidirectional Encoder Representations from Transformers) model, which examines the effects of affective empathy (acknowledging and responding to the complainer’s emotions) versus cognitive empathy (demonstrating perspective-taking to understand the complainer’s situation) in provider responses to complaints. Specifically, we examine the effects of these responses on prospective customers’ reactions. Our two field studies, which cover 12,638 negative reviews on TripAdvisor and 36,478 complaints on Facebook, reveal that cognitive empathy is generally more effective than affective empathy in increasing prospective customers’ likes and purchases, particularly when a complaint is formulated concretely. However, affective empathy is more suitable when a complaint is intensely affective. Four experiments confirm that cognitive empathy (vs. affective empathy) leads prospective customers to view providers as more competent, ultimately enhancing their purchase intentions. These insights offer guidelines to providers on how to respond to online customer complaints. © Academy of Marketing Science 2025."
+  },
+  {
+    "article_id": "CS_0406",
+    "title": "Freedom or control? Liberals’ versus conservatives’ responses to frontline employee behavioral control policies",
+    "journal": "Journal of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11747-025-01119-z",
+    "abstract": "Frontline employee behavioral control policies have traditionally been viewed solely as operational tools, hidden from public view. In today’s digital and social media era, however, these policies are increasingly transparent to consumers. We investigate how consumers respond to employee control policies and propose that consumer responses are contingent on political ideology. Using different industries, employing various manipulations of behavioral control, and capturing diverse consumer responses, we test this proposition across seven studies. The results show that liberal consumers respond more positively to loose rather than strict behavioral control policies, whereas conservative consumers are largely indifferent. Social dominance orientation drives the difference in consumer responses by influencing the extent to which consumers oppose or accept dominance-based hierarchies signaled by strict behavioral control. The effect of political ideology is mitigated when the power asymmetry between the firm and employees is smaller (i.e., when the control is applied to higher-status employees or in firms with lower power). Finally, both liberal and conservative consumers prefer strict control policies when the likelihood of service failure is high. Our findings offer actionable guidance for managers on how to communicate employee behavioral control policies across different consumer segments, organizational settings, and service industry conditions. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0407",
+    "title": "Towards a formal study of automatic failure recovery in protocol-based web service composition",
+    "journal": "Service Oriented Computing and Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11761-015-0176-z",
+    "abstract": "In the protocol-based Web service composition, the runtime unavailability of component services may result in a failed execution of the composite. In literature, multiple recovery heuristics have been proposed. This work provides a formal study and focuses on the complexity issues of the recovery problem in the protocol-based Web service composition. A recovery is a process responsible of migrating the failed execution into an alternative execution of the composite that still has the ability to reach a final state. The alternative execution is called a recovery execution. Following failure occurrence, several recovery executions may be available. The problem of finding the best recovery execution(s) is called the recovery problem. Several criteria may be used to determine the best recovery execution(s). In this work, we define the best recovery execution as the one which is attainable from the failed execution with a maximal number of invisible compensations with respect to the client. We assume that all transitions are compensatable. For a given recovery execution, we prove that the decision problem associated with computing the number of invisibly compensated transitions is NP-complete, and thus, we conclude that deciding of the best recovery execution is in ΣP 2. © 2015, Springer-Verlag London."
+  },
+  {
+    "article_id": "CS_0408",
+    "title": "FRWSC: a framework for robust Web service composition",
+    "journal": "Service Oriented Computing and Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11761-016-0193-6",
+    "abstract": "The deployment of Web services in a highly dynamic environment brings about a number of research challenges. In dynamic Web services composition, failures and changes to atomic services cannot be detected before invocation. Hence, the failure or even the change in an atomic service may lead to the overall failure of the composite service. In addition, SOAP error code is not sufficient for the client to analyze the failure reason and handle it. In this work, we introduce a framework to deal with unexpected failures during runtime composition. The proposed framework is built on top of composite services stack as an interface between the composite service and its external service partners. The evaluation results show that by using the proposed framework, it is possible to avoid composite service failures that are caused by changes or failures in atomic services. © 2016, Springer-Verlag London."
+  },
+  {
+    "article_id": "CS_0409",
+    "title": "An adaptive and scalable framework for automated service discovery",
+    "journal": "Service Oriented Computing and Applications",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11761-019-00255-z",
+    "abstract": "A large number of redundant Web services, offering similar functionality with different quality of service (QoS), can truly benefit an organization, if offered an adaptive discovery framework. State-of-the-art approaches cannot meet these requirements for enterprise setups that offer a managed infrastructure. This paper proposes a self-healing and self-managed open-source adaptive QoS-aware discovery framework. An optimal global optimization approach is developed as part of the framework. It yields the shortest route to the best service. Simulation results demonstrate the suitability of the proposed framework to run-time QoS changes and service failures. The run-time adaptation of the system during service downtime is analyzed using graphs. These graphs illustrate the change in client QoS constraints against time. The results indicate the least impact on the client during service failure using the proposed framework. © 2019, Springer-Verlag London Ltd., part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0410",
+    "title": "An empirical study of the role of failure severity in service recovery evaluation in the context of the airline industry",
+    "journal": "Review of Managerial Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11846-014-0135-7",
+    "abstract": "Previous studies have found that perceived justice with service recovery dimensions (distributive, procedural, and interactional) are crucial factors influencing customers’ emotions after a service recovery effort. According to the service recovery literature, these post-recovery emotions represent an important determinant of satisfaction with service recovery and thus behavioral intentions. This study extends the literature by investigating the role of service failure severity within the existing framework of service recovery research. Data were collected through a survey of airline passengers who experienced a service failure and thus a service recovery effort in the past year. The results indicate that procedural justice and interactional justice had significant effects on post-recovery emotions, which in turn were significantly related to recovery satisfaction. In addition, the results provide partial support for the moderating effect of service failure severity. These results have important implications and suggest some interesting avenues for future research. © 2014, Springer-Verlag Berlin Heidelberg."
+  },
+  {
+    "article_id": "CS_0411",
+    "title": "E-service failure and recovery strategy in times of crisis: effect on peer attitudes, expectation and future intention",
+    "journal": "Review of Managerial Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11846-024-00762-0",
+    "abstract": "This study analyses the impact of the critical issues on Travel and Tourism e-service failure and explores specifically how peer-to-peer accommodation business can cope with the potential collapse in demand caused by global crises. The purpose is to examine the impact of peer-to-peer accommodation’s recovery offer on revisiting intentions and relationships termination in light of justice-, fairness-, and attribution theory. In this vein, the main aim is to develop a theoretical model which is underpinned by an understanding of the consequences of e-service failure and the effectiveness of recovery strategies for business competitiveness. To gauge peer perceptions of peer-to-peer accommodations, we employed a mixed-method approach. Alongside 17 interviews with peers and industry experts, a survey involving 404 peer-to-peer accommodation users was conducted. Structural equation modelling was applied to unravel the intricate relationships and influences at play. The findings suggest that managers and service providers need to focus on timely recovery and building stronger relationships with peers, to increase repurchase intention and post-recovery satisfaction and to better front the crises times. This could be implemented efficiently via the platform of social media. This study offers specific theoretical and practical implications by providing a fair recovery strategy to result in the satisfaction of both parties. © The Author(s) 2024."
+  },
+  {
+    "article_id": "CS_0412",
+    "title": "Ending the Energy-Poverty Nexus: An Ethical Imperative for Just Transitions",
+    "journal": "Science and Engineering Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s11948-022-00383-4",
+    "abstract": "Arguments for a just transition are integral to debates about climate change and the drive to create a carbon-neutral economy. There are currently two broad approaches rooted in ethics and justice for framing just energy transitions. The first can be described as internal to the transition and emphasizes the anticipation, assessment, and redressing of harms created by the transition itself and the inclusion in transition governance of groups or communities potentially harmed by its disruptions. In this article, we propose a second approach to ethics and justice in an energy transition, which we describe as systemic or societal in scope. This approach complements attention to the proximate dynamics and impacts of the transition process with a focus on the distant societal and economic outcomes the transition brings into being and how they compare to conditions prior to the transition. It poses the question: do the transformative social, economic, and technological changes wrought by energy systems create more just societies and economies, or do they instead reinforce or recreate long-standing injustices and inequalities? We illustrate this approach with an assessment of one of the most significant existing forms of energy injustice: the energy-poverty nexus. We argue that the energy-poverty nexus reflects configurations of socio-energy systems that create complex, extractive feedbacks between energy insecurity and economic insecurity and, over time, reinforce or exacerbate poverty. We further argue that just energy transitions should work to disentangle these configurations and re-design them so as to create generative rather than extractive feedbacks, thus ending the energy-poverty nexus and creating long-term outcomes that are more just, equitable, and fair. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CS_0413",
+    "title": "Compensation policy for delivery delay in online retailing",
+    "journal": "Operational Research",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s12351-021-00687-6",
+    "abstract": "Financial compensation is an effective marketing tool to deal with delivery delay issues in online retailing. In this paper, we develop an analytical model to study two different compensation policies prevalent in practice: uniform compensation and discriminated compensation. By endogenizing the customers’ choice behavior, we first characterize the optimal retail price and compensation level for these different compensation cases. Then, we conduct a sensitivity analysis of the optimal solutions with respect to driving factors. The results show how the retailer’s delivery quality, as well as the product characteristics, affect the optimal compensation and pricing policies, leading to interesting insights. For example, we show that the retailer optimally adopts a more generous compensation policy when the relative delay time becomes longer under the uniform compensation policy, but a lower retail price with a constrictive compensation policy can be a good choice for the retailer under discriminated compensation case. Through comparison to the benchmark case, we identify the impacts of the delay compensation policies from three aspects: the profit margin effect, total demand effect, and return rate effect. Then, the aggregate effect analysis verifies the profit implications of the compensation policies. The results show that the retailer is worse off due to deploying a compensation policy when both the cost-value rate and delay probability are sufficiently large. Furthermore, we also compare the optimal solutions, customer choice behavior, and retailer performance for these two compensation cases. The analytical and numerical insights can serve as a reference for internet retailers facing delivery delay problems. © 2022, The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature."
+  },
+  {
+    "article_id": "CS_0414",
+    "title": "The dark sides of AI personal assistant: effects of service failure on user continuance intention",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-021-00483-2",
+    "abstract": "With the popularization of smart devices and the rapid development of smart voice technology, AI personal assistants (AIPAs) have penetrated deeply into users' lives. Compared with previous years, the accuracy, semantic understanding ability, and wake-up ability of AIPAs have been improved, but the lack of service maturity and the insufficient degree of scene integration have brought users a poor human–computer interaction experience. However, studies have scarcely uncovered the underlying mechanism through which those dark sides of AIPAs exert impacts on users' continuance intention. From the perspective of technostress, the current study proposes a theoretical model for consumers to cope with service failure pressure sources. This article collected 413 questionnaires and conducted an empirical analysis. Results show that negative technical characteristics will affect consumers’ psychological responses and ultimately affect consumers’ technical exhaustion, satisfaction, and two kinds of continuance intentions (general and partial continuance intentions) through cognitive load. Findings open up new avenues for research by exploring the mechanism of how the service failures of these AIPAs affect consumers' continuance intention through the perspective of technostress. © 2021, Institute of Applied Informatics at University of Leipzig."
+  },
+  {
+    "article_id": "CS_0415",
+    "title": "What to do after a data breach? Examining apology and compensation as response strategies for health service providers",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-021-00490-3",
+    "abstract": "Innovative IT-enabled health services promise tremendous benefits for customers and service providers alike. Simultaneously, health services by nature process sensitive customer information, and data breaches have become an everyday phenomenon. The challenge that health service providers face is to find effective recovery strategies after data breaches to retain customer trust and loyalty. We theorize and investigate how two widely applied recovery actions (namely apology and compensation) affect customer reactions after a data breach in the specific context of fitness trackers. Drawing on expectation confirmation theory, we argue that the recovery actions derived from practice, apology, and compensation address the assimilation-contrast model’s tolerance range and, thus, always lead to satisfaction with the recovery strategy, which positively influences customers’ behavior. We employ an experimental investigation and collect data from fitness tracker users during a running event. In the end, we found substantial support for our research model. Health service providers should determine specific customer expectations and align their data breach recovery strategies accordingly. © 2021, The Author(s)."
+  },
+  {
+    "article_id": "CS_0416",
+    "title": "Users taking the blame? How service failure, recovery, and robot design affect user attributions and retention",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-022-00613-4",
+    "abstract": "Firms use robots to deliver an ever-expanding range of services. However, as service failures are common, service recovery actions are necessary to prevent user churn. This research further suggests that firms need to know how to design service robots that avoid alienating users in case of service failures. Robust evidence across two experiments demonstrates that users attribute successful service outcomes internally, while robot-induced service failures are blamed on the firm (and not the robot), confirming the well-known self-serving bias. While this external attributional shift occurs regardless of the robot design (i.e., it is the same for warm vs. competent robots), the findings imply that service recovery minimizes the undesirable external shift and that this effect is particularly pronounced for warm robots. For practitioners, this implies prioritizing service robots with a warm design for maximizing user retention for either type of service outcome (i.e., success, failure, and failure with recovery). For theory, this work demonstrates that attribution represents a meaningful mechanism to explain the proposed relationships. © 2023, The Author(s)."
+  },
+  {
+    "article_id": "CS_0417",
+    "title": "Regulation strategy for behavioral integrity of live streamers: From the perspective of the platform based on evolutionary game in China",
+    "journal": "Electronic Markets",
+    "journal_impact_factor": 5.714,
+    "doi": "10.1007/s12525-024-00698-z",
+    "abstract": "This paper examines the Chinese live streaming industry, highlighting issues such as counterfeit advertisements and fraudulent activities due to inadequate managerial oversight. It proposes a behavior evolution game process involving platforms, consumers, and live streamers, using prospect theory and rank-dependent expected utility theory. The findings underscore a pivotal revelation: the platform can establish a system to monitor commodity quality and live broadcast content compliance using blockchain technology and big data. A live streamer credibility assessment system is envisioned and established, acting as a sentinel to ensure compliance with integrity. Additionally, the platform is equipped with a customer complaint handling system and an emotion monitoring system to capture sensitive information. These mechanisms quickly address customer complaints and anticipate consumer actions and enhance consumer regulation and prevent conflicts. © The Author(s), under exclusive licence to Institute of Applied Informatics at University of Leipzig 2024."
+  },
+  {
+    "article_id": "CS_0418",
+    "title": "Multi-channel data flow software fault detection for social internet of things with system assurance concerns",
+    "journal": "International Journal of System Assurance Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s13198-023-01878-4",
+    "abstract": "During application development, various unknown factors can affect the application and cause failures. According to the traditional software engineering techniques, software testing is usually performed later in software development, and it is difficult to find and correct these failures at this time. More and more distributed software systems are deployed on public cloud computing platforms and use the Internet to provide services outward. The complexity, dynamics, and openness of cloud computing environments make distributed software systems more prone to failure, which can result in service failures that can affect the normal use of large numbers of users. Therefore, in this paper, we study the fault detection algorithm of multi-channel parallel data flow software based on cloud computing. The data fusion and clustering models are integrated to detect the data features with the numerical verification, and the theoretical framework is also assigned to a better robustness for the theoretical framework implementation. The final results are also validated through the systematic overview. Future research directions are also included in the conclusion. © 2023, The Author(s) under exclusive licence to The Society for Reliability Engineering, Quality and Operations Management (SREQOM), India and The Division of Operation and Maintenance, Lulea University of Technology, Sweden."
+  },
+  {
+    "article_id": "CS_0419",
+    "title": "From sentiment to spoilage: predictive and qualitative insights into food wastage due to faulty packaging in delivery apps",
+    "journal": "International Journal of System Assurance Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s13198-025-03098-4",
+    "abstract": "In the rapidly evolving food delivery ecosystem, faulty packaging has significantly contributed to food wastage and customer dissatisfaction. This study investigates the multi-dimensional impact of packaging failures in last-mile meal delivery through a combination of qualitative, emotional, and predictive analyses. Leveraging a dataset of customer reviews extracted from food delivery apps, the research applies open AI source for thematic coding, sentiment scoring, and emotional categorization to extract patterns of consumer complaints across food types and packaging formats. The research also builds a predictive model, and from the comments used, the model's classifier was determined to be ‘Naïve Bayes’, which achieved an F1-score of 0.99 in finding negative sentiments about wastage of food because of poor packaging. The analysis reveals that spillage, structural damage, and poor insulation are recurring issues, especially for cakes and Indian curries. Packaging types such as paper bags and plastic containers were often linked to high anger, frustration, and disappointment levels. Embracing consumer voice in packaging evaluation provides insights on where food delivery platforms and packaging manufacturers should focus their attention to help resolve strategic issues and gaps that need to be met. It complements existing knowledge of why strong food packaging serves as a necessity and a brand element for customer experience and why customer satisfaction drives the need to avoid wasteful food disposal. © The Author(s) under exclusive licence to The Society for Reliability Engineering, Quality and Operations Management (SREQOM), India and The Division of Operation and Maintenance, Lulea University of Technology, Sweden 2025."
+  },
+  {
+    "article_id": "CS_0420",
+    "title": "Analysis of improving E-commerce customer satisfaction through network data security: based on intelligent sensors and artificial intelligence simulation",
+    "journal": "International Journal of System Assurance Engineering and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s13198-026-03185-0",
+    "abstract": "Digital shopping requires a large amount of collection, transmission and analysis of customer behavior data to understand customer needs and enhance the shopping experience. However, the frequent data leakage incidents and cyber attacks in recent years have seriously threatened customers’ privacy and trust, leading to a decline in customer satisfaction. The research has constructed a data acquisition system based on intelligent tag sensors, ensuring the security and integrity of data during the acquisition and transmission process through encryption algorithms and identity verification mechanisms. Optimize the anti-interference ability of sensors by applying electromagnetic field theory to reduce the risk of data tampering. The research utilizes behavioral data analysis and modeling techniques to deeply explore customer purchasing behavior, loyalty and churn patterns, and construct an accurate customer behavior model. Through this model, enterprises can promptly perceive changes in customer demands, adjust product strategies and service plans, and thereby enhance customer satisfaction. The research results show that the combination of intelligent tag sensors and behavioral modeling technology can significantly enhance customer satisfaction while ensuring the security of network data. Experimental data shows that the intelligent tag sensor system with encrypted transmission reduces the risk of data leakage, enhances customers’ satisfaction with privacy protection, and the customer behavior model based on this system has a high prediction accuracy rate, which helps enterprises precisely formulate personalized marketing strategies. The repeat purchase rate of customers increases and the complaint rate decreases. The effectiveness of this research method in ensuring data security and enhancing customer satisfaction has been fully verified. © The Author(s) under exclusive licence to The Society for Reliability Engineering, Quality and Operations Management (SREQOM), India and The Division of Operation and Maintenance, Lulea University of Technology, Sweden 2026."
+  },
+  {
+    "article_id": "CS_0421",
+    "title": "Examining the effects of values and risks on outdoor food delivery robot adoption using mixed methods: different stakeholders’ perspectives",
+    "journal": "Information Technology and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s40558-025-00313-7",
+    "abstract": "Piloted outdoor food delivery robots have been attracting attention from different stakeholders. This study investigates the difference between customers’ and operators’ value and risk propositions and examines their distinctive impacts on the first trial and regular use intention. This study adopts an exploratory sequential mixed approach. The qualitative phase uses Starship as a case study to comprehensively understand the perceptions of customers, employees, and managers through 14 semi-structured interviews. Codes are identified, selected, and grouped into functional value (monetary value, efficiency, convenience, food quality), emotional value (enjoyment and attractiveness), conditional value (sustainability and promotion), and performance risk (use process and service failure). Owing to the theory of consumption value and perceived risk theory, the quantitative phase builds the model and tests the relationships between customers (N = 265) and operators (N = 284). The results show that all values and risks could affect regular use intention. However, functional value has no impact on the first trial intention for customers, and performance risk has no effect on the first trial intention for both customers and operators. Our study is the first to target both the values and risks of the particular type of robots for food delivery services from different stakeholders’ perceptions, dividing the impact on the first trial and regular use intention, a crucial step for effective implementation strategies within outdoor food delivery services. © The Author(s), under exclusive licence to Springer-Verlag GmbH Germany, part of Springer Nature 2025."
+  },
+  {
+    "article_id": "CS_0422",
+    "title": "Human vs. robot service provider agents in service failures: comparing customer dissatisfaction and the mediating role of forgiveness and service recovery expectation",
+    "journal": "Information Technology and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s40558-025-00314-6",
+    "abstract": "This study employs a 3 × 2 between-subject experimental design to investigate customer responses to hotel service failures attributed to different service provider agents (SPAs) [humans, humanoid robots, non-humanoid robots] in two types of service failure contexts [process and outcome]. It focuses on customers’ initial psychological response [forgiveness], subsequent action-seeking behavior [service recovery expectation (SRE)], and overall outcome evaluation [dissatisfaction]. Hypotheses are grounded in Mind Perception Theory, Attribution Theory, and Expectancy Disconfirmation Theory. A two-way ANCOVA was used to compare mean scores across the dependent variables. The findings reveal that increased SPA humanness diminishes customers’ forgiveness, elevates SRE, and intensifies dissatisfaction, with these differences occurring only in process failures and not in outcome failures. Subsequently, a serial mediation analysis for process failures indicated that forgiveness and SRE serially mediate the positive relationship between SPAs’ humanness and customer dissatisfaction. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0423",
+    "title": "Semiparametric Latent Topic Modeling on Consumer-Generated Corpora",
+    "journal": "Annals of Data Science",
+    "journal_impact_factor": 1.909,
+    "doi": "10.1007/s40745-025-00587-y",
+    "abstract": "Common methods used for topic modeling have generally suffered problems of overfitting, leading to diminished predictive performance, as well as a weakness towards reconstructing sparse topic structures that involve only a few critical words to aid in interpretation. Considering the text typically contained in customer feedback, this paper proposes a semiparametric topic model utilizing a two-step approach: (1) makes use of nonnegative matrix factorization to recover topic distributions based on word co-occurrences and; (2) use semiparametric regression to identify factors driving the expression of particular topics in the documents given additional auxiliary information such as location, time of writing, and other features of the author. This approach provides a generative model that can be useful for predicting topics in new documents based on these auxiliary variables, and is demonstrated to accurately identify topics even for documents limited in length or size of vocabulary. In an application to real customer feedback, the topics provided by our model are shown to be as interpretable and useful for downstream analysis tasks as with those produced by current legacy methods. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0424",
+    "title": "Consumer Collective Redress in Belgium: Class Actions to the Rescue?",
+    "journal": "European Business Organization Law Review",
+    "journal_impact_factor": 2.536,
+    "doi": "10.1007/s40804-015-0003-1",
+    "abstract": "This paper analyses Belgium's new consumer class action act (Act of 28 March 2014 introducing a consumer collective redress action in the Code of Economic Law), which entered into force on 1 September 2014. First, attention is paid to the three class action prerequisites: the violation of a Belgian or European consumer regulation or act, an adequate class representative (i.e., a consumer association or the Consumer Ombudsman Service) and the superiority of the class action mechanism. Subsequently, the exclusive competence of the Brussels courts and the opt-in or opt-out system are discussed. The procedure consists of four phases, which are analysed in detail: a certification phase, a mandatory negotiation phase, a possible phase on the merits of the case, and an enforcement phase under the supervision of a collective claims settler. The paper concludes that a holistic approach to tackle mass harms in Belgium is missing. The new consumer class action contains some procedural bottlenecks that could undermine its efficiency. Its biggest shortcoming is the lack of appropriate rules on funding and financing. © 2015 T.M.C. Asser Press."
+  },
+  {
+    "article_id": "CS_0425",
+    "title": "Consumer Collective Redress in Bosnia and Herzegovina: A Mechanism (Still) Waiting to Be Triggered",
+    "journal": "European Business Organization Law Review",
+    "journal_impact_factor": 2.536,
+    "doi": "10.1007/s40804-022-00248-0",
+    "abstract": "Bosnia and Herzegovina has been one of the first European states to introduce a generous consumer collective redress mechanism. It was established under the influence of the EU, the United States and former Yugoslav law. The legislation of Bosnia and Herzegovina provides an excellent opportunity to examine to which extent the collective redress remedies emanating from different legal traditions may co-exist and function together. The number and variety of collective consumer remedies in Bosnia and Herzegovina is quite impressive. But the mechanism has still not been used because of the weaknesses of those who are supposed to trigger it. The very generous solutions for consumer associations and a specialized Ombudsman for Consumer Protection, both with wide powers to initiate collective proceedings, have not proved to be sufficient. The lack of appropriate funding has so far been an obstacle that is too great for any collective initiative. It also does not help that legislation allows traders to file for compensation in the case of unfounded collective claims when the reputation and business of the trader have been seriously harmed. The new EU Directive on consumer representative actions will certainly require further reforms in Bosnia and Herzegovina, especially with regard to collective claims for damages. This will provide the legislator with the opportunity not only to introduce more options for collective redress, but also to add the missing pieces of the jigsaw so that the mechanism finally fulfils its purpose of providing legal protection for consumers. © 2022, The Author(s)."
+  },
+  {
+    "article_id": "CS_0426",
+    "title": "Consumer Collective Redress in Turkey: The Need for Reform in Light of the EU Regime",
+    "journal": "European Business Organization Law Review",
+    "journal_impact_factor": 2.536,
+    "doi": "10.1007/s40804-023-00299-x",
+    "abstract": "Over the past 25 years, since the beginning of the process of Turkey’s accession to the European Union (EU), the Turkish Republic has expanded its consumer protection strategy and adopted legislation in compliance with EU law. Still, full harmonisation has not been attained yet, particularly in the field of consumer disputes. One example is EU Collective Redress Directive 2020/1828 with which Turkish domestic law is still incompatible. The underlying objective of the introduction of the Collective Redress Directive is to establish effective and efficient collective action for consumers in order to provide injunctive relief and compensation to those harmed by the same or a similar infringement. The regime of collective actions in Turkey is, however, fragmented and in need of reform in order to protect the collective interests of consumers. The relevant legislation not only lacks the necessary elements required for the well-functioning of a collective action mechanism, but also does not allow the filing of a collective action for certain infringements of consumer law and for claiming damages for any infringement. This article therefore evaluates the EU collective redress regime to seek lessons to be learnt by Turkey, and, in light of this evaluation, aims to design a new legal framework for consumer collective redress in Turkey. © T.M.C. Asser Press 2023."
+  },
+  {
+    "article_id": "CS_0427",
+    "title": "Consumer Complaining Behavior: a Paradigmatic Review",
+    "journal": "Philosophy of Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s40926-020-00148-8",
+    "abstract": "Consumer complaining behavior (CCB) is an important stream of research and practice, as it links the domains of service failure and service recovery. CCB research, although extensive and temporally wide, exhibits a lack of concern for the underlying assumptions of scholarly inquiry. Researchers neither explicitly mention, nor consciously indicate their ontological, epistemological, and methodological assumptions. We systematically identify the extant CCB literature and map it to two well-accepted paradigmatic classifications (Burrell and Morgan 1979; Deetz Organization Science 7(2): 191–207, 1996). Normative or functionalist paradigm with the assumptions of an objective external reality, a positivist epistemology, a determinist view of human nature, and nomothetic methodology emerges as the dominant CCB research paradigm. The implications of this dominance are discussed as a barometer of the future of CCB research and practice. © 2020, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CS_0428",
+    "title": "Collecting and Analyzing User-Generated Content for Decision Support in Marketing Management: An Overview of Methods and Use Cases",
+    "journal": "Schmalenbach Journal of Business Research",
+    "journal_impact_factor": null,
+    "doi": "10.1007/s41471-025-00208-7",
+    "abstract": "User-generated content (UGC) is generally understood as an expression of opinion in many forms (e.g., complaints, online customer reviews, posts, testimonials) and data types (e.g., text, image, audio, video, or a combination thereof) that has been created and made available by users of websites, platforms, and apps on the Internet. In the digital age, huge amounts of UGC are available. Since UGC often reflects evaluations of brands, products, services, and technologies, many consumers rely on UGC to support and secure their purchasing and/or usage decisions. But UGC also has significant value for marketing managers. UGC allows them to easily gain insights into consumer attitudes, preferences, and behaviors. In this article, we review the literature on UGC-based decision support from this managerial perspective and look closely at relevant methods. In particular, we discuss how to collect and analyze various types of UGC from websites, platforms, and apps. Traditional data analysis and machine learning based on feature extraction methods as well as discriminative and generative deep learning methods are discussed. Selected use cases across various marketing management decision areas (such as customer/market selection, brand management, product/service quality management, new product/service development) are summarized. We provide researchers and practitioners with a comprehensive understanding of the current state of UGC data collection and analysis and help them to leverage this powerful resource effectively. Moreover, we shed light on potential applications in managerial decision support and identify research questions for further exploration. © The Author(s) 2025."
+  },
+  {
+    "article_id": "CS_0429",
+    "title": "Fairness management: China, Taiwan, Japan and South Korea",
+    "journal": "Ethical and Social Marketing in Asia: Incorporating Fairness Management",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-0-08-100097-7.00010-6",
+    "abstract": "This chapter discusses crucial theoretical underpinnings and critical contextual issues to be considered by successful managers to effectively manage fairness in the East Asian countries of China, Taiwan, Japan and South Korea. Relevant theories from social psychology, marketing and organisational behaviour are introduced to help readers better understand first the current status of fairness management in these countries and secondly how fairness in these countries must be managed in the future. A case study on a Chinese customer's complaint against Mercedes-Benz illustrates the lessons learned. © B Nguyen and C Rowley, 2015. All rights reserved."
+  },
+  {
+    "article_id": "CS_0430",
+    "title": "The Great Rebalancing: Rattling the Electricity Value Chain from Behind the Meter",
+    "journal": "Innovation and Disruption at the Grid's Edge: How Distributed Energy Resources are Disrupting the Utility Business Model",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-0-12-811758-3.00003-6",
+    "abstract": "This chapter aims to redress traditional conceptions of the electricity value chain which have focused heavily on costs on the grid side of the meter. DER is now driving a great rebalancing, rattling the value chain and refocusing the sector on costs and benefits behind the meter. Most assets are behind the meter and the consumer surplus from energy services is almost certainly the largest segment of the value chain. This raises questions about the relevance of the meter as the key dividing line in the industry value chain. The chapter then considers the implications of this great rebalancing for cost reflective pricing and regulation. © 2017 Elsevier Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_0431",
+    "title": "Global adverse event reporting regulations for nutraceuticals, functional foods, and dietary/food/health supplements",
+    "journal": "Nutraceutical and Functional Food Regulations in the United States and around the World",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-0-12-816467-9.00039-3",
+    "abstract": "Striking a balancing between consumer access and choice with risk and consumer protection should be a core policy aim of any regulated product category. Achieving this balance involves establishing and enforcing proper pre- and postmarket product requirements. This chapter describes the role and importance of postmarket surveillance (adverse event [AE] and complaint collection, analysis, and reporting) in helping to monitor and ensure product and ingredient quality and safety in the marketplace. Although mandatory in all markets for pharmaceuticals, only a handful of countries around the world have implemented mandatory AE collection and reporting for foods and supplements. Irrespective of the specific requirements in a given country, vigilant monitoring and management of consumer complaints and AEs is a prudent practice for all supplement manufacturers and marketers. This represents the single most important and valuable tool available to manufacturers to monitor product quality and safety. © 2019 Elsevier Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_0432",
+    "title": "Apprehension and detention procedures",
+    "journal": "The Professional Protection Officer: Practical Security Strategies and Emerging Trends",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-0-12-817748-8.00012-2",
+    "abstract": "There is probably no topic in the security profession that generates as much discussion and misunderstanding as apprehension and detention. It is not only the source of many complaints by the clients we serve, but it can also be the beginning of a very lengthy and costly legal action. For these two reasons alone, it is worth a long look by people in the business. But there are other, more critical reasons: we also have to look at the possibility of injury, and even death, that could result from a misunderstanding of just how much authority a security officer really has to control the movements of another person. For that reason, we have to start from the beginning. © 2020 Brad Spicer. Published by Elsevier Inc. All rights reserved."
+  },
+  {
+    "article_id": "CS_0433",
+    "title": "Care labelling of clothing",
+    "journal": "Garment Manufacturing Technology",
+    "journal_impact_factor": null,
+    "doi": "10.1016/B978-1-78242-232-7.00017-5",
+    "abstract": "A care label carries care instructions for cleaning a textile product. These are a series of directions describing procedures for refurbishing a product without adverse effects. Care labelling for garments is essential to identify the product, to assist the consumer in product selection and the retailer in selling the product and to help the consumer in effective care of the garment. The information on care labels is strongly emphasized, as most consumer complaints and claims against apparel products concern colour change, deformation and damage during laundering. This chapter describes the requirements of care labels, the terminologies used, the symbols used for various processes and their explanations. In addition, various care labelling systems used around the world are also discussed. © 2015 Elsevier Ltd All rights reserved."
+  },
+  {
+    "article_id": "CS_0434",
+    "title": "Exploring serial patterns in negative hotel reviews",
+    "journal": "Annals of Tourism Research Empirical Insights",
+    "journal_impact_factor": 4.49,
+    "doi": "10.1016/j.annale.2025.100199",
+    "abstract": "This study examines the dynamics of negative customer reviews in the hospitality industry. Drawing on a dataset of 80,521 negative hotel reviews from Booking.com, we identify eleven serially correlated aspects of customer experience where current customer complaints predict future ones. These patterns suggest the presence of emerging issues that impact multiple customers over time and show that the size of the time series effects in hospitality can be substantial and important in practice. We attribute these findings to capacity constraints and the relatively slow pace of managerial corrective actions. The empirical findings have implications for academic researchers, service organizations and online platforms, offering insights that can inform strategic decisions, enhance managerial performance evaluation and improve overall customer experience. © 2025"
+  },
+  {
+    "article_id": "CS_0435",
+    "title": "Benefits of authenticity: Post-failure loyalty in the sharing economy",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2019.06.008",
+    "abstract": "Across five studies, this research reveals that the nature of the accommodation provider influences customers' post-failure loyalty. We propose a conceptual model that integrates perceived authenticity, social interaction, and positive emotions as primary determinants of post-failure loyalty in the sharing economy context. This article extends previous research by contrasting the impact of perceived authenticity on post-failure loyalty towards Airbnb (host, platform) and hotels. Our findings suggest that customers' post-failure emotional and behavioral responses depend on the accommodation provider type. The finding that authenticity and social interaction drive post-failure loyalty has important implications for managers of Airbnb properties and hotels. Finally, our findings provide new insights into customer perceptions of various service recovery strategies (e.g., apology, compensation) based on the accommodation provider type. © 2019 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0436",
+    "title": "Does a cute artificial intelligence assistant soften the blow? The impact of cuteness on customer tolerance of assistant service failure",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2020.103114",
+    "abstract": "As artificial intelligent technologies have been increasingly applied in tourism and hospitality industry, the service failure caused by artificial intelligence assistant and how to recover them are worth empirical studying. Laboratory experiments were employed to test the impact of cuteness in service failure, with effective manipulation of cute appearance, cute voice and cute language style of artificial intelligence assistant. By utilizing three studies with seven experiments, this research demonstrated the positive effect of cuteness design of artificial intelligence assistant on customer tolerance of service failure and further revealed the two mediating paths (tenderness and performance expectancy) as well as the boundary (failure severity and time pressure) of the cuteness effect. These findings contribute to the knowledge on artificial intelligent assistant service and provide insight for cute design using in tourism and hospitality industry. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0437",
+    "title": "When customers like preferential recovery (and when not)?",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2020.103135",
+    "abstract": "Tourism managers have a long-held belief that preferential recovery helps mitigate customers' negative reactions following a service failure. This research investigates the joint effects of recovery type (preferential vs. non-preferential) and status (high vs. low) on customer responses. Five experiments provide converging evidence to demonstrate that low status customers are more satisfied with non-preferential (vs. preferential) recovery and show higher patronage intention, whereas their high-status counterparts tend to be indifferent. Moreover, such joint effects are moderated by interpersonal similarity and failure similarity. The mediation analyses reveal that fairness perceptions are the psychological mechanism underlying these effects. Together, these findings provide important implications for tourism firms' service recovery practices. © 2020 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0438",
+    "title": "Tourism recovery strategies during major crises: The role of proactivity",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2021.103144",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_0439",
+    "title": "Service failure in peer-to-peer accommodation",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2021.103156",
+    "abstract": "A two-stage study using text-mining and critical incident techniques was conducted to identify the service failure type in peer-to-peer accommodation and recovery strategies adopted to address them. Guests experience new types of service failure in peer-to-peer accommodation compared with traditional accommodations and online travel websites. Four service failure clusters have emerged from negative reviews sourced online: guest-host interaction, customer service, room and amenity, and payment. In-depth interviews further identified three dimensions of service failure, tangible, informational, and relational, with some incidents representing combinations of these dimensions. Service recovery strategies discussed in this study (compensation, substitution, apology, and no actions) are relatively similar to those adopted by hotels. Theoretical and practical implications are also provided. © 2021"
+  },
+  {
+    "article_id": "CS_0440",
+    "title": "Teddy-bear effect in service recovery",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2022.103400",
+    "abstract": "The extent of the widely demonstrated babyface effect in other disciplines remains understudied in hospitality-based service failure situations. By addressing this research gap, our pioneer study based on the Stereotype Content Model adopts four scenario-based experiments (text and video) with results revealing that a babyfaced (vs. mature faced) service provider has a more positive effect on consumer forgiveness and recovery satisfaction. However, the babyface effect diminishes while the mature face effect increases as service failure severity increases. Furthermore, warmth or competence inference is found to play a mediating role depending on service failure severity. This paper not only extends the well-documented babyface effect into tourism and hospitality but also provides cost-effective service recovery strategies by involving service providers' facial traits. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0441",
+    "title": "Exploring the effect of humor in robot failure",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2022.103425",
+    "abstract": "Service robots are playing an increasing role in tourism and hospitality. However, this advanced technology is not immune to mistakes. The current research focuses on whether humor could be an effective recovery method in robot failure. Drawing on benign violation theory and regulatory focus theory, two experiments are conducted to demonstrate that, in low-severity failure conditions, humorous responses lead to higher humor appreciation and more positive customer evaluations. However, in high-severity failure conditions, humorous responses lead to higher perceived insincerity and more negative customer evaluations. We also examine the moderating role of anthropomorphism. This paper identifies whether and when humor is appropriate in robot failure and elucidates the introduction and promotion of robot services for managers. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0442",
+    "title": "Emotional intelligence similarity in service recovery",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2022.103465",
+    "abstract": "Service failure and recovery research has primarily explored employees' emotional intelligence but has largely overlooked customers' emotional intelligence. This study considers both employees' and customers' emotional intelligence by investigating the recovery effect of perceived emotional intelligence similarity. We test why and how perceived emotional intelligence similarity promotes customer forgiveness through experiments. Findings reveal the positive effect of perceived emotional intelligence similarity on customer forgiveness and the sequentially mediating effects of psychological distance and customer trust. Additionally, results indicate that interdependent self-construal and indulgence moderate the perceived emotional intelligence similarity effect. Findings enrich theories on emotional intelligence in the service failure and recovery field. Additionally, this research offers tourism companies suggestions on addressing service failures based on perceived emotional intelligence similarity. © 2022 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0443",
+    "title": "Value propositions during service mega-disruptions: Exploring value co-creation and value co-destruction in service recovery",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2022.103501",
+    "abstract": "This paper explores value co-creation and co-destruction by focusing on the role of value propositions, practices, and institutions in the tourism ecosystem during COVID-19. Customers that had experienced travel cancellations were interviewed. The findings indicate that during service mega-disruptions, customers re-evaluate resources and value propositions by prioritizing eudemonic well-being, demonstrating at the same time sympathy for the tourism firms' well-being. However, consumers expect reciprocity, honesty, transparency, and flexibility from tourism firms. The service mega-disruption of COVID-19 provoked a misalignment of practices and routines that led to value co-destruction. This paper proposes that value co-creation can be achieved during a service mega-disruption when actors demonstrate more altruism, solidarity, and shared intentions to maximize or protect the well-being of the ecosystem's actors. © 2022 The Authors"
+  },
+  {
+    "article_id": "CS_0444",
+    "title": "Promotional games in service recovery: Luck works",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2023.103691",
+    "abstract": "This research proposes a proactive strategy for alleviating unfavorable post-failure consequences from a luck-based perspective—offering discounts through promotional games before service failures. Findings show that winning discounts through promotional games (vs. direct discounts) induces higher perceived luck, recovery expectancy, and customer forgiveness. Additionally, results indicate that in crowded environments, messages about the winning result framed as non-losses (vs. gains) are more effective in generating positive customer outcomes. However, in non-crowded environments, both types of message framing yield similar results. Findings bring new knowledge to an under-researched area—proactive service recovery and expand the literature on luck and promotional games in the tourism service recovery field. Results suggest hotels should proactively conduct promotional games to counteract negative post-failure influences. © 2023 Elsevier Ltd"
+  },
+  {
+    "article_id": "CS_0445",
+    "title": "Social mobility beliefs moderate customers' response to service failure",
+    "journal": "Annals of Tourism Research",
+    "journal_impact_factor": 5.482,
+    "doi": "10.1016/j.annals.2025.104055",
+    "abstract": "This research explores Social Mobility Beliefs in service failure responses within hospitality. Across three studies, findings show that high-Social Mobility Beliefs customers blame employees more, leading to harsher evaluations, while low-Social Mobility Beliefs customers are more forgiving. Study 1 establishes this link, Study 2 tests causality, and Study 3 examines attribution processes as a mediator. Extending Attribution Theory, this research identifies Social Mobility Beliefs as a key cultural and socioeconomic factor. Practically, it underscores the need for culturally adaptive service recovery strategies, suggesting that shifting blame away from employees can reduce negative evaluations. By integrating socioeconomic perceptions, this study fills a gap in hospitality research and enhances service management strategies. © 2025 The Author."
+  },
+  {
+    "article_id": "CS_0446",
+    "title": "Effects of service failure on consumer responses across failure types: A moderating role of intimacy",
+    "journal": "Australasian Marketing Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.ausmj.2015.12.004",
+    "abstract": "This paper investigates a moderating role of intimacy in two service failure types (outcome and process failure), considering two consumer responses: buffering and betrayal effect. Study 1 employs a 3 (failure type: no vs. outcome vs. process)×2 (intimacy level: high vs. low) experimental design. Findings show that in case involving outcome failure, a high intimacy group has higher service evaluations (satisfaction, re-patronage intention, and positive word-of-mouth intention) than a low intimacy group, substantiating the existence of buffering effect. In case involving process failure, however, service evaluations are not different depending on the level of intimacy, invalidating the existence of betrayal effect. Study 2 analyzes the effects of intimacy (high vs. low) on service evaluations in the setting of process failure and following failed recovery. The results reveal that betrayal effect is indeed present in times of double deviation, process failure and following failed recovery. Consequently, this research offers service providers practical insights on how to utilize intimacy based on the classification of service failure types. © 2016 Australian and New Zealand Marketing Academy."
+  },
+  {
+    "article_id": "CS_0447",
+    "title": "The role of regulation and financial compensation on trust recovery",
+    "journal": "Australasian Marketing Journal",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.ausmj.2018.01.002",
+    "abstract": "Although service recovery tactics have been extensively investigated, little is known about what firms should do when service recovery fails (i.e., double deviation). It is primordial to understand whether and how customer trust may be recovered after a double deviation. The results of an experimental study show that it is possible to recover customer trust through improvements in organizational processes (i.e., regulation) and discounts (i.e., financial compensation). Remarkably, regulation and financial compensation lead to similar trust levels, which means that these trust recovery tactics are equally successful. Moreover, attributions of benevolence explain why regulation and financial compensation can recover customer trust after a double deviation. © 2018 Australian and New Zealand Marketing Academy"
+  },
+  {
+    "article_id": "CS_0448",
+    "title": "How can regulators affect corporate social responsibility? Evidence from regulatory disclosures of consumer complaints in the U.S.",
+    "journal": "British Accounting Review",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.bar.2023.101280",
+    "abstract": "Regulators are increasingly seeking ways to incentivize firms to improve corporate social responsibility (CSR) while minimizing criticism of direct interventions in firm behavior. This study takes advantage of two exogenous regulatory shocks initiated by the Consumer Financial Protection Bureau (CFPB) in the US. In 2011, the CFPB enabled the private filing of consumer complaints against financial firms, and in 2013, these complaints were publicly disclosed. Our findings reveal a positive association between consumer complaints and subsequent CSR performance of the targeted financial firms (referred to as focal firms). Notably, this association becomes significant only after the public disclosure of complaints. Furthermore, we observe a spillover effect on the CSR performance of non-focal firms operating in the same area as the focal firms. Collectively, these findings suggest that mandatory disclosure of consumer complaints is one effective regulatory strategy to motivate both focal and non-focal firms to enhance their CSR performance. © 2023"
+  },
+  {
+    "article_id": "CS_0449",
+    "title": "Unsung guardians? Communal fraud susceptibility and complaints following mass financial adviser attrition",
+    "journal": "British Accounting Review",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.bar.2025.101615",
+    "abstract": "This paper illustrates lesser-known positive impacts of financial advisers on communal fraud susceptibility. The analysis focuses on the unprecedented scale of adviser departures triggered by heightened educational and ethics requirements recently introduced in the Australian financial planning industry. We exploit this quasi-experimental setting of mass exits from the wealth management industry to show the removal of professional financial advice increases fraud in affected localities. Areas having proportionately more advisers with membership in professional associations register fewer cases of fraud. Other adviser heterogeneities, including higher education qualifications, do not discernibly reduce fraud pervasiveness or consumer complaints. © 2025 The Author(s)"
+  },
+  {
+    "article_id": "CS_0450",
+    "title": "Mobile banking transaction volume and perceived service quality: A text analytics approach",
+    "journal": "British Accounting Review",
+    "journal_impact_factor": null,
+    "doi": "10.1016/j.bar.2025.101779",
+    "abstract": "This study investigates the impact of rising transaction volumes on mobile banking service quality from the user's perspective. Using LDA topic modelling, we analyse 1.01 million user reviews of 14 prominent Indian mobile banking applications collected between 2019 and 2023 and identify key user concerns, particularly related to login issues, post-update problems, poor customer care services, and account management issues. The LDA-based negative binomial regression model reveals that the surge in transaction volumes led to a deterioration in service quality, with this effect more pronounced for public banks. The findings highlight the importance of incorporating user feedback into application development to improve adoption and customer retention, ensuring appropriate service quality. This study contributes to the literature by providing a large-scale empirical analysis of m-banking service quality issues, offering actionable insights for banks to improve mobile banking experiences. © 2025 Elsevier Ltd"
+  }
+]

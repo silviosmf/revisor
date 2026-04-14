@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0001",
+    "title": "03-005-Indicators of perceived quality in urban services: qualitative analysisapplied to street cleaning and waste collection in Zaragoza; [Indicadores decalidad percibida en servicios urbanos: análisis cualitativo aplicado a la limpiezaviaria y recogida de residuos en Zaragoza]",
+    "journal": "Proceedings from the International Congress on Project Management and Engineering",
+    "journal_impact_factor": null,
+    "doi": null,
+    "abstract": "The management of street cleaning is an essential service in urban environments, and its rigorous evaluation is key to the continuous improvement of public administrations. This study proposes a conceptual framework for measuring the perceived quality of street cleaning and waste collection services in Zaragoza, placing the user experience at the center of the analysis. Based on a multi-technique qualitative design, key indicators were identified through a literature review, in-depth interviews, focus groups, citizen complaints and analysis of responses to an open citizen survey, key attributes were identified from different perspectives of service stakeholders. The results reveal critical dimensions of the citizen experience, allowing the construction of a preliminary framework of indicators. This framework not only serves as a tool for future quantitative validation but also offers practical guidance for improving urban cleanliness management. The systematic organization of the identified attributes facilitates the development of more accurate evaluation tools, contributing to the optimization of a service that is fundamental to quality of life and urban sustainability. This comprehensive approach reinforces the relevance of the study for both administrations and citizens. © 2025 by the authors."
+  },
+  {
+    "article_id": "CS_0002",
+    "title": "The name game",
+    "journal": "Insurance Fraud Casebook: Paying a Premium for Crime",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781118700990.ch26",
+    "abstract": "This chapter illustrates how insurance regulators in western states began receiving frequently a particular type of consumer complaint that their claim for a commercial liability policy has been denied and how they were all related to Eric Bell, the managing director of World Market. The chapter discusses how William Meader, a senior criminal investigator at a state's department of insurance, undertakes that task of solving the fraud. He reviews the work product of Dale Williams, a senior criminal investigator and Meader fails to find evidence that World Market had a license to engage in the insurance business. He interviews policyholders and insurance brokers and secures search warrants for 10 insurance offices throughout the state. He prepares an investigative summary report. The chapter concludes with why World Market files for bankruptcy in the United States and the Caribbean after the indictments are dismissed. © 2013 by Association of Certified Fraud Examiners."
+  },
+  {
+    "article_id": "CS_0003",
+    "title": "THE ULTIMATE GUIDE ONLINE CUSTOMAR SERVICE: How to Connect with Your Customers to Sell More!",
+    "journal": "The Ultimate Guide Online Customar Service: How to Connect with Your Customers to Sell More!",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781119200406",
+    "abstract": "Make your online customers happy—and create new ones—with this winning guide Social media gives you an unparalleled vehicle for connecting and engaging with an unlimited number of customers. Yet this vehicle is different than other, more impersonal forms. With social media, reps become part of their customers' lives. They follow back. They handle complaints immediately. They wish customers \"happy birthday.\" They grow their brands by involving themselves in communities. The Ultimate Online Customer Service Guide gives you the keys to authentic and engaged service to customers through social media. Using a blend of case studies, a primer on classic online customer service, and instructions on how to execute quality customer service, this book enables you to access the opportunities that social media presents as a means of serving customers. Authentically use social media to connect with customers to boost your bottom line Attract new customers through your online presence Achieve higher GMS (Gross Merchandise Sales) with quality customer service Social media gives you a new and growing realm to distinguish your business. Create a productive presence in this interactive space with The Ultimate Online Customer Service Guide. © 2011 by Collier Advertising and Promotion, Inc., and Marsha Collier. All rights reserved."
+  },
+  {
+    "article_id": "CS_0004",
+    "title": "Playing with Fire",
+    "journal": "Internet Fraud Casebook: The World Wide Web of Deceit",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781119200475.ch18",
+    "abstract": "PLAY Technology, Inc., was a bustling business opened by Tom Nakafe and Yohimbe Aglean, that offered the amenities of a first-class groceria, ranging from infant formula and diapers to a wide variety of sofritos. The original PLAY Technology location in Vinington was a true success story, in terms of an illegal enterprise. It had generated more than thirty seven fabricated Section 8 housing claims, eighteen fraudulent student loan applications and eleven false federal and state income tax refund filings, resulting in government payments of more than $811,000 to fictitious parties. Entering its third year, the illicit activities of PLAY Technology increased substantially. As the frequency of the scams increased, the number of consumer complaints of fraudulent charges for electronics on their credit card statements and new of lines of credit that they had not applied for rose. After nearly a year of surveillance operations, financial link analysis, confidential informant monitoring and victim queries the approval was received to execute search, seizure and arrest warrants for Nakafe, Aglean and rest of their associates. The lesson learned from this chapter is some businesses exist purely for engaging in fraud and other white-collar crimes, and one must be aware of them. © 2010 by Association of Certified Fraud Examiners. All rights reserved."
+  },
+  {
+    "article_id": "CS_0005",
+    "title": "The Solitaire Trader",
+    "journal": "Internet Fraud Casebook: The World Wide Web of Deceit",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781119200475.ch34",
+    "abstract": "This chapter discusses the case of Samuel Ghosh who was hired at Solitaire Bank. He later became an assistant branch manager and was a Relationship Manager (RM) as well. He wanted to learn the tricks of the brokerage trade and build up the start-up capital for his dream business. The bank’s branch in Bihta received a complaint from a high-net-worth customer that an unauthorized debit of $200,000 was transferred from his account through the Internet-banking system. Samuel knew that if he changed a customer’s contact number to his personal cell phone, a Solitaire employee would call him to confirm changes made to the Internet-banking password associated with that account. It allowed Samuel to change customers’ passwords, confirm the changes through his cell phone and then access online accounts using passwords of his choice. During investigation, Samuel broke down and confessed regarding his involvement in fraudulent activities. Lesson learned in this case is that there were critical internal control deficiencies in the bank’s Internet-banking processes and fraud can occur only when there is an opportunity. © 2010 by Association of Certified Fraud Examiners. All rights reserved."
+  },
+  {
+    "article_id": "CS_0006",
+    "title": "Wanted: Your Money",
+    "journal": "Internet Fraud Casebook: The World Wide Web of Deceit",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781119200475.ch36",
+    "abstract": "This chapter introduces the case of Blake Styles of Cape Coral, Florida, a clever con artist. Blake used several different Web sites to entice his victims. He would keep one active until the complaints from swindled customers rolled in and the Internet hosting company banned him. When that happened, he simply moved on to a new hosting Web site and targeted new victims. Blake Styles ran Theodore and Styles, Inc., based in North Fort Myers, Florida, just outside Cape Coral. The company’s mailing address was assigned a suite number that turned out to be a mailbox rental service offering PO boxes and other shipping and receiving services to individuals. The Web site claimed to have helped the companies locate their CFOs and CEOs. If any of the victims had done the most basic research into Blake Styles or Theodore and Styles, they would have clearly seen Blake for the fraud he was. Each victim was required to pay Blake for the merchandise or service with a money order, cashier’s check, or personal check. Once Blake received the payment, each victim reported that communication from Blake began to trail off. Blake Styles had reportedly defrauded several victims who tried to purchase different firearms and scopes through a Web site. Blake Styles will be arrested for his crimes; it is just a matter of time. Lesson learned is this case is that the consumers should ask background questions, request references or ask for verification from the seller. © 2010 by Association of Certified Fraud Examiners. All rights reserved."
+  },
+  {
+    "article_id": "CS_0007",
+    "title": "Failure to Deliver",
+    "journal": "Internet Fraud Casebook: The World Wide Web of Deceit",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781119200475.ch38",
+    "abstract": "This chapter discusses the case of Norfolk Keen, who started his own online retail store. Keen created his Web site, www.IntricateElectronics.com, and started listing items for sale. He specialized in small replacement parts that were inexpensive, hard to find and used in many different large electronic devices. He charged a high markup on the products because he knew customers would have a hard time finding them anywhere else. After Keen’s Web site had been up and running for a few months, he returned to his old drug habits and used the money he earned from Intricate Electronics to pay for his addictions. He stopped shipping products after collecting payment for them. The preliminary injunction was sought to ensure that Keen could not continue to commit his fraud. The case received much press in the local newspapers and radio programs. Keen entered into the agreement, made restitution to his consumers and paid a penalty. Keen was allowed to continue operations of Intricate Electronics and since the settlement, only a few complaints have been filed against him and he has promptly rectified them. Lessons learned in this case is that Internet retailers should maintain communication with consumers, be up-front and honest about the products they have in stock and clearly post on their Web sites a reasonable shipping time frame. © 2010 by Association of Certified Fraud Examiners. All rights reserved."
+  },
+  {
+    "article_id": "CS_0008",
+    "title": "The Public Relations Power of “big Data”",
+    "journal": "The Public Relations Power of “big Data”",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781119207993.ch33",
+    "abstract": "The chapter presents an overview of Big Data and how it presents PR practitioners with strategic and practical opportunities, using a case study of Big Data analysis within the Financial Ombudsman Service. For PR practitioners, being able to identify and track such trends, recognize their potential impact and adapt communication strategies accordingly is a daily challenge. With the inexorable rise of data available for analysis, PR practitioners must understand how it can be analyzed to find the vital insights that will yield competitive advantage. Data mining, or more specifically text mining, is a process that allows the analysis of a diverse range of public and proprietary information, such as tweets, product reviews and even individual purchase histories. The chapter refers to a case study involving the Financial Ombudsman Service, the UK ’ s independent organization set up in early 2012 to resolve complaints between consumers and financial businesses. It started the “We Are Social,” to undertake a strategic social media project. © 2013 John Wiley & Sons, Ltd. All rights reserved."
+  },
+  {
+    "article_id": "CS_0009",
+    "title": "Managing Service Quality",
+    "journal": "Managing Quality: An Essential Guide and Resource Gateway, Sixth Edition",
+    "journal_impact_factor": null,
+    "doi": "10.1002/9781119302735.ch6",
+    "abstract": "Managing service quality is concerned with understanding what is meant by service quality, what its determinants are and how they may be measured, and identifying the potential shortfalls in service quality and how they can be recovered. Responsibility for quality service lies with operations, marketing, human resources and other management. This chapter presents some comments on the changing business environment, which has implications for service quality. The focus then turn to defining service quality, measurement of service quality and the role of personnel in service delivery. The chapter concerns with the service delivery process, the need to monitor service quality, and the development of service recovery strategies. Today the business environment is characterized by changing customer expectations, technological and product advances, legislative and political developments, and economic and competitive conditions which contribute to an increasing emphasis on service quality for all organization. © 2016 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_0010",
+    "title": "Social perception of brands: Warmth and competence define images of both brands and social groups",
+    "journal": "Consumer Psychology Review",
+    "journal_impact_factor": 1.769,
+    "doi": "10.1002/ARCP.1074",
+    "abstract": "People form impressions about brands as they do about social groups. The Brands as Intentional Agents Framework (BIAF) a decade ago derived from the Stereotype Content Model (SCM) two dimensions of consumers’ brand perception: warmth (worthy intentions) and competence (ability). The BIAF dimensions and their predictive validity have replicated the general primacy of warmth (intentions) and developed the congruence principle of fit to context. BIAF domains include various brands, product design, and countries as origins of products and as travel destinations. Brand anthropomorphism plays a role in perceiving brands’ morality, personality, and humanity. Consumer–brand relations follow from anthropomorphism: perceived brand-self congruence, brand trust, and brand love. Corporate social (ir) responsibility and human relations, especially warm, worthy intent, interplay with BIAF dimensions, as do service marketing, service recovery, and digital marketing. Case studies describe customer loyalty, especially to warm brands, corresponds to profits, charitable donations, and healthcare usage. As the SCM and BIAF evolve, research potential regards the dimensions and beyond. BIAF has stood the tests of time, targets (brands, products, and services), and alternative theory (brand personality, brand relationships), all being compatible. Understanding how people view corporations as analogous to social groups advances theory and practice in consumer psychology. © 2021 Society for Consumer Psychology."
+  },
+  {
+    "article_id": "CS_0011",
+    "title": "Can a Rude Waiter Make Your Food Less Tasty? Social Class Differences in Thinking Style and Carryover in Consumer Judgments",
+    "journal": "Journal of Consumer Psychology",
+    "journal_impact_factor": null,
+    "doi": "10.1002/jcpy.1020",
+    "abstract": "Building on the notion that cognitive processes vary across social classes, we predict that social class shapes thinking style, which in turn affects consumer judgments. In doing so, we employ service failure domains as a way to understand social class effects. Across four studies, we show that, when faced with a failure incident occurring in one service dimension (e.g., rude employees), consumers in the low social class, relative to those in the high social class, carry over to influence their evaluations of the other service dimensions (e.g., food quality) that are unrelated to the failure incident. We further show that low-class consumers favor a holistic style of thinking, whereas high-class consumers favor an analytic style of thinking and that these differences in thinking style account for the carryover effects on evaluations. The pattern of the effects exists when the service failure is perceived to be severe rather than minor. © 2017 Society for Consumer Psychology"
+  },
+  {
+    "article_id": "CS_0012",
+    "title": "On the political right, the customer is always right: Political ideology, entitlement, and complaining",
+    "journal": "Journal of Consumer Psychology",
+    "journal_impact_factor": null,
+    "doi": "10.1002/jcpy.1366",
+    "abstract": "Across three preregistered studies and five supplementary datasets, we predicted and found that conservatives were more inclined to complain than liberals due to conservative consumers feeling a greater sense of entitlement. This research contributes to the literature by introducing consumer entitlement as a novel explanation for ideological differences in consumer behavior, and by building on previous work suggesting that conservative consumers complain less than liberals (Journal of Consumer Research, 2017, 44, 477). Evidence is provided across several service contexts and types of complaining behaviors. Study 1 and 4 supplementary datasets supported the basic process. Next, theory-relevant boundary conditions provided converging process evidence. In Study 2, complaining intentions decreased among conservatives when they felt less (vs. more) entitled than the target of social comparison. In Study 3, complaining intentions decreased among conservatives when a service recovery was framed as providing special treatment. Implications and future research directions are discussed. © 2023 Society for Consumer Psychology."
+  },
+  {
+    "article_id": "CS_0013",
+    "title": "PassivePy: A tool to automatically identify passive voice in big text data",
+    "journal": "Journal of Consumer Psychology",
+    "journal_impact_factor": null,
+    "doi": "10.1002/jcpy.1377",
+    "abstract": "The academic study of grammatical voice (e.g., active and passive voice) has a long history in the social sciences. It has been examined in relation to psychological distance, attribution, credibility, and deception. Most evaluations of passive voice are experimental or small-scale field studies, however, and perhaps one reason for its lack of adoption is the difficulty associated with obtaining valid, reliable, and replicable results through automated means. We introduce an automated tool to identify passive voice from large-scale text data, PassivePy, a Python package (readymade website: https://passivepy.streamlit.app/). This package achieves 98% agreement with human-coded data for grammatical voice as revealed in two large validation studies. In this paper, we discuss how PassivePy works, and present preliminary empirical evidence of how passive voice connects to various behavioral outcomes across three contexts relevant to consumer psychology: product complaints, online reviews, and charitable giving. Future research can build on this work and further explore the potential relevance of passive voice to consumer psychology and beyond. © 2023 The Authors. Journal of Consumer Psychology published by Wiley Periodicals LLC on behalf of Society for Consumer Psychology."
+  },
+  {
+    "article_id": "CS_0014",
+    "title": "Opportunistic innovation in the age of digital services",
+    "journal": "Journal of Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1002/joom.1181",
+    "abstract": "This study is about competitive dynamics surrounding opportunistic innovation in the digital supply chain (i.e., on-line gaming, multi-media broadcasting, etc.). When a digital service firm falls short of delivering required services, consumers look for alternative service offerings. For competing firms, potential demand is created suddenly, and they are compelled to innovate to capture this opportunity. This innovation response occurs in reaction to a service failure, and we call it opportunistic innovation. We characterize opportunistic innovation as being situational and temporal—the opportunity is created by the failure of another firm, and it is taken up by the fast-responding firms. The goal of this study is to develop a theory of opportunistic innovation and empirically examine its presence and associated constructs. We have compiled the daily usage-and-update history of 460 online gaming services between 2014 and 2017 and their 58 major service failure events. Our results confirm the temporal and situational characteristics of opportunistic innovation. Firms with alternative services quickly introduce innovation to the market shortly after a service failure when the readiness for convertibility at competing firms is high. In addition, results suggest that opportunistic innovation is constrained by the resource congestion on the supplier side in the digital supply chain. © 2022 Association for Supply Chain Management, Inc."
+  },
+  {
+    "article_id": "CS_0015",
+    "title": "On-Demand Schedules, Worker Absenteeism and Patient Dissatisfaction in Home Care Services",
+    "journal": "Journal of Operations Management",
+    "journal_impact_factor": null,
+    "doi": "10.1002/joom.70015",
+    "abstract": "Service companies often adopt on-demand scheduling to balance labor costs and fluctuating market demand. However, research shows that such practices can reduce worker productivity and retention. In this study, we examine how on-demand scheduling affects two critical outcomes: worker absenteeism and patient dissatisfaction. We extend the conceptualization of undesirable scheduling by introducing schedule discontinuity—the presence of unpaid interruptions within a worker's daily schedule—alongside the more commonly studied schedule inconsistency, or variability in work hours across weeks. Using data on 1.2 million home care visits in a Canadian healthcare provider, we find that both schedule inconsistency and discontinuity significantly increase absenteeism and patient dissatisfaction. Specifically, moving from the 25th to 75th percentile in discontinuity (inconsistency) raises absenteeism by 20.00% (19.29%), and customer complaints by 27.33% (40.27%). To assess the practical implications for employers, we formulate and solve a schedule optimization problem that minimizes schedule discontinuity (or inconsistency), while satisfying demand and supply constraints. Applying a machine learning predictive model to these optimized schedules, we estimate reductions in the probability of absenteeism by 9.5% (8.2%) and in the probability of patient complaints by 7.7% (2.3%), demonstrating that modest scheduling adjustments can substantially improve worker and service outcomes. © 2025 The Author(s). Journal of Operations Management published by Wiley Periodicals LLC on behalf of Association for Supply Chain Management, Inc."
+  },
+  {
+    "article_id": "CS_0016",
+    "title": "The effects of eWom triggered service recovery on customer citizenship behavior in the hospitality industry: The moderating role of failure severity",
+    "journal": "International Journal of Tourism Research",
+    "journal_impact_factor": 4.554,
+    "doi": "10.1002/jtr.2673",
+    "abstract": "This study examines service failures in the hospitality industry, amplified by the shift to online platforms, and highlights the need for effective online recovery methods. These methods are crucial for retaining existing customers and preventing potential customer loss. Despite its importance, customer citizenship behavior resulting from service recovery must be noticed. This study examines the impact of service failure severity and online recovery methods on customer citizenship behavior, employing six scenarios varying in severity and recovery strategies. Multi-group scanning electron microscope analysis reveals that justice types positively influence recovery satisfaction, enhancing customer citizenship behaviors. Failure severity moderates the relationship between recovery satisfaction and customer citizenship behavior, with recovery satisfaction being more effective in promoting advocacy and tolerance behaviors during low-severity failures. However, this effect diminishes in high-severity failures. Effective recovery strategies can transform negative service failures into positive outcomes for hospitality organizations. © 2024 The Author(s). International Journal of Tourism Research published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_0017",
+    "title": "The Effects of Service Recovery Actions on Customers' Post-Recovery Responses to Online Travel Agencies (OTAs): The Moderating Role of Price",
+    "journal": "International Journal of Tourism Research",
+    "journal_impact_factor": 4.554,
+    "doi": "10.1002/jtr.2742",
+    "abstract": "The main purpose of this study is to investigate the impacts of service recovery actions on customers' post-recovery responses to initial service failure and a double deviation and to investigate the moderating effect of price on the relationship between recovery actions and these responses. The findings show that active recovery actions led to more favorable post-recovery responses than passive actions in both initial and double deviation situations. No moderating effect of price was found between recovery actions and customers' post-recovery responses. From an academic perspective, this study helps researchers understand how customers positively perceive recovery actions that reflect procedural and interactional justice in service failure situations. The findings also suggest that practitioners of OTAs should engage in active recovery actions that include prompt communication on the progress of the incident (i.e., procedural justice) and a sincere apology (interactional justice) to alleviate customers' negative responses due to service failures. © 2024 The Author(s). International Journal of Tourism Research published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_0018",
+    "title": "Exploring Negative Restaurant Experiences Through an Extended Mehrabian-Russell Model: An Attributional Perspective",
+    "journal": "International Journal of Tourism Research",
+    "journal_impact_factor": 4.554,
+    "doi": "10.1002/jtr.2747",
+    "abstract": "The study aims to explore the relationships between service failure severity, negative emotions, level of dissatisfaction, switching intention, and the intention to spread negative word-of-mouth (nWOM) in the restaurant context. Additionally, it seeks to investigate how customers' perceptions of the controllability and stability of failures moderate these relationships. Employing a quantitative research approach, data collection was conducted through surveys using a convenience sampling method, resulting in 561 valid responses from Turkish customers. The collected data underwent multi-group structural equation modeling to examine the proposed relationships, revealing that the severity of failure positively impacts negative emotions and dissatisfaction levels, negative emotions influence the intention to spread nWOM, and dissatisfaction levels positively affect switching intention and the intention to spread nWOM. Furthermore, both controllability and stability perceptions play a moderating role between the severity of the failure and negative emotions, thereby confirming the stimulus, organism, and response model to a significant extent. © 2024 The Author(s). International Journal of Tourism Research published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_0019",
+    "title": "Consumer Forgiveness in Online Travel Agency Service Recovery: Consumer Empathy and Negative Emotional Contagion",
+    "journal": "International Journal of Tourism Research",
+    "journal_impact_factor": 4.554,
+    "doi": "10.1002/jtr.70154",
+    "abstract": "Online travel agencies (OTAs) have significantly enhanced the efficiency of online travel services. However, frequent service failures have adversely impacted the reputation and performance of OTAs. Consequently, there is an urgent need for further academic exploration of this issue. This study employed a scenario experimental method to collect data and conduct empirical analysis. The findings indicated that perceived fairness enhances consumer empathy, while perceived risk reduces consumer empathy. Enhanced consumer empathy, in turn, leads to a greater willingness to forgive. Furthermore, negative emotions contagion negatively moderates the relationship between consumer empathy and consumer forgiveness. The mediating effect of consumer empathy was also examined. This study contributed to a deeper understanding of service failure and recovery in the context of OTAs, offering theoretical insights for improving OTA failure management strategies, psychological interventions, risk prevention capabilities, and overall competitiveness. © 2025 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_0020",
+    "title": "How Do Coping Strategies Impact the Relationship Between Dysfunctional Customer Behaviors and Revenge Intention? An Explanatory Sequential Mixed Methods Study",
+    "journal": "International Journal of Tourism Research",
+    "journal_impact_factor": 4.554,
+    "doi": "10.1002/jtr.70298",
+    "abstract": "The study aimed to explore the impact of dysfunctional customer behaviors on revenge intention and the moderating role of coping strategies among hospitality and tourism industry employees. The study used an explanatory sequential mixed-methods design. In the first phase, a quantitative data collection technique was used to survey 802 employees, and hypothesis testing was conducted. Quantitative data were analyzed using Model 2 of Hayes' PROCESS macro for SPSS. In the second phase, the qualitative research method was used, and 12 lower- and middle-level managers were interviewed for a more in-depth examination of the initial quantitative results. The findings show that disproportionate demands and illegitimate complaints directly affect revenge intention. Furthermore, seeking support moderates the relationship between verbal abuse and revenge intention. Implications of the findings and suggestions for future research are discussed. © 2026 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_0021",
+    "title": "Consumer revenge using the internet and social media: An examination of the role of service failure types and cognitive appraisal processes",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21002",
+    "abstract": "Given the pervasive spread and use of the Internet and social media, consumer use of these new forums for expressing their revenge intentions has also increased. This research examines the impacts of service outcome and service process failures on consumer online revenge intentions. Using insights from cognitive appraisal theory, a comprehensive model is developed and tested to examine the impacts of service failure types on consumers’ primary and secondary appraisal processes that lead to online revenge intentions. The model was tested in the United Kingdom and Jordan. Results show that for the two countries, different service failure types lead to different cognitive appraisal processes, and to intentions to use different online revenge platforms. © 2017 Wiley Periodicals, Inc."
+  },
+  {
+    "article_id": "CS_0022",
+    "title": "The contrasting influences of incidental anger and fear on responses to a service failure",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21114",
+    "abstract": "Customers’ disposition to register a formal complaint about an inferior product or poor service is often mediated by attributions of responsibility. However, the anger or fear that people happen to be experiencing for totally irrelevant reasons can also influence this disposition. Two field studies and four laboratory experiments indicate that when people feel angry at the time they encounter a service failure, they are more likely to blame the service provider for the failure and more likely to register a complaint. When they experience fear, however, they are uncertain about the cause of their misfortune and decrease their negative reactions relative to conditions in which fear is not experienced. The effects of these incidental emotions are evident both when a service failure is personally experienced and when it is only observed. These effects are eliminated, however, when individuals do not have the cognitive resources available to assess the reasons for the service failure and the conditions surrounding it. © 2018 Wiley Periodicals, Inc."
+  },
+  {
+    "article_id": "CS_0023",
+    "title": "Personality traits and complaining behaviors: A focus on Japanese consumers",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21184",
+    "abstract": "Despite the fact that personality is thought to be one of the main factors that may explain unhappy consumers’ behavior, very little is known about how it affects their attitudes and complaining strategies. This is particularly true in the case of Japanese consumers where scant research has been conducted on their complaining behaviors. Hence, the main objective of this study is to investigate the roles of three personality traits (i.e., self-confidence, aggressiveness, and altruism) of Japanese consumers in explaining their attitudes toward complaining, perceived likelihood of successful complaints (PLSCs), and complaining behaviors. On a sample of 263 respondents, a univariate general linear model (GLM) analysis is performed to assess the moderating roles of personality traits on complaint-related variables. The results show that, on the one hand, in contrast to self-confidence, the levels (i.e., high vs. low) of aggressiveness and altruism have significant impacts on attitudes toward complaining and PLSCs. However, the level of self-confidence appears to have the most significant impacts on public complaining behaviors. On the other hand, altruism is found to be the only personality trait that may explain consumers’ private complaining behaviors. Additional analyses reveal interactive effects of the personality traits on complaining attitude and behaviors. © 2019 Wiley Periodicals, Inc."
+  },
+  {
+    "article_id": "CS_0024",
+    "title": "Consumer responses to corporate social irresponsibility: The role of moral emotions, evaluations, and social cognitions",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21197",
+    "abstract": "We investigate the mediating roles of moral emotions and attitudes between perceptions of corporate irresponsible actions, on the one hand, and consumer responses, on the other hand, and further examine their contingencies based on consumer social cognitions. Our findings show that, for corporate transgressions, multiple social cognitions (moral identity, relational and collective self-concepts, and affective empathy) moderate the elicitation of negative moral emotions (contempt and anger) and overall evaluations (attitudes), which, in turn, lead to negative responses toward the company (negative word of mouth, complaint behaviors, and boycotting). Our study adds to extant research on corporate social irresponsibility by examining three generic reactions people have toward corporate social irresponsibility and demonstrating important boundary conditions. In addition, hypotheses are tested on a sample of adult consumers. Implications for communication by firms are considered. © 2019 Wiley Periodicals, Inc."
+  },
+  {
+    "article_id": "CS_0025",
+    "title": "The effects of online negative word-of-mouth on dissatisfied customers: A frustration–aggression perspective",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21326",
+    "abstract": "Conceptualizing how customers construe online negative word-of-mouth (nWOM) following failure experiences remains unsettled, leaving providers with inconclusive recovery strategy programmes. This empirical study recognizes online nWOM as a co-created encounter between the complainant (i.e., the initiator of the online nWOM) and the recipient (i.e., the consumer who engages with the online nWOM), examining their idiosyncrasies to discern their understanding of the experience. It introduces frustration–aggression theory to online WOM literature, recognizing that it can support a higher-order understanding of phenomena. Through phenomenological hermeneutics, interviews and focus groups, data were collected from millennials in Albania and Kosovo that provided accounts of nuanced and distinctive online nWOM realities. The emerged insights extended extant theory to a three-fold online nWOM typology (i.e., lenient online nWOM, moderate online nWOM and severe online nWOM) recognizing the negative impact customers have on a provider, which is controlled by frustration–aggression tags. Frustration–aggression variations across online nWOM led to the construct of three types of customers that engage in online nWOM, namely tolerable online nWOM customers, rigorous online nWOM customers and confrontational online nWOM customers. Findings culminated with satisfactory recovery strategies aligned to customer inferences regardless of the nWOM context. © 2020 Wiley Periodicals, Inc."
+  },
+  {
+    "article_id": "CS_0026",
+    "title": "Consumer relationship fading",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21343",
+    "abstract": "This paper explores the phenomenon of consumer relationship fading with a series of three adjacent studies. Analyzing two longitudinal behavioral datasets, Study 1 shows that about one-third of the relationships could be described as fading. Drawing on prior work in the marriage disaffection literature, Study 2 defines relationship fading for the consumer marketing context as a process of gradual decline in consumers' intention to continue their relationship with a brand, generally manifested in negative feelings toward the brand, diminishing frequency and/or volume of transactions with it, and initiation of switching intentions. It further identifies disillusion, disaffection, and crossroads as three distinct fading stages, and outlines boundary conditions. Study 3 observes relationship fading through a diary study approach and finds attitude movement in both positive and negative directions between the stages. Further, while positive attitudes generally decline over the course of the fading trajectory, negative emotions peak at the penultimate fading stage and then level off at the final, crossroads stage. By defining and analyzing consumer relationship fading, we improve understanding of an under-researched, large segment of consumers. © 2020 Wiley Periodicals, Inc."
+  },
+  {
+    "article_id": "CS_0027",
+    "title": "The mitigating effect of matching regulatory focus with arousal-inducing stimuli in service failure situations",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21390",
+    "abstract": "Service failures are pivotal touchpoints that can reduce customer satisfaction, encourage negative word-of-mouth, and ultimately impact a firm's market share. We advance a novel perspective that after a service failure occurs, matching incidental arousal-inducing stimuli to one's regulatory orientation can make the negative experience stemming from the service failure less deleterious. In three experiments (two stock out scenarios and one involving a rude salesperson), after a service failure, promotion-focused and prevention-focused individuals were exposed to high versus low arousal-inducing stimuli. Three approaches available to retailers were used to manipulate arousal levels: background pictures (Study 1), colors (Study 2), and music (Study 3). When high (low) incidental arousal-inducing stimuli were presented to those with a promotion (prevention) focus, this raised satisfaction, loyalty, and referral for brands compared to when promotion (prevention)-focused individuals were exposed to low (high) arousal-inducing stimuli. Changes in self-rated arousal and affect valence levels (arousal and valence levels were measured after the service failure and then after exposure to the incidental arousal-inducing stimuli) mediated the effect on these consumer behaviors. These insights extend theory by considering the combined effect of regulatory focus and affect. They also have practical relevance. © 2020 Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_0028",
+    "title": "How online trust evolves over time: The role of social perception",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21400",
+    "abstract": "Using customer service scenarios in an online retail context, the current study examines how cognitive and affective trust develop over time and how service failure negatively impacts trust, along with the trust restoration opportunities provided by recovery. Study 1 findings reveal that the relationship between Web site social perception and affective trust is stronger for repeat visitors than for first-time visitors. Study 2 findings indicate that failure timing and recovery duration play important roles in service failure situations. Overall, the results demonstrate that consumer cognitive and affective trust develop through the number of interactions with a retail Web site over time and that increased Web site social perceptions facilitate the trust-building process. © 2020 Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_0029",
+    "title": "Don't be rude! The effect of content moderation on consumer-brand forgiveness",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21458",
+    "abstract": "While it is a popular belief that venting helps unload frustrations about negative (customer) experiences, its effects on consumers' emotional states and consumer-brand forgiveness (CBF) remain to be explored. Given that a lot of customer complaints are made online, brands seem ambivalent about managing these public complaints without violating consumers' right to free speech. In two experiments, we find that writing a customer complaint increases negative emotions regarding an incident. Moreover, brands can mitigate this negative effect by asking consumers to moderate their speech—for example, with the help of a content moderation policy. Specifically, if brands impose restrictions on consumers' freedom to express their frustrations, essentially asking them for self-censorship, anger levels in their language decrease and CBF increases. We demonstrate that this effect is stronger for consumers with strong self-brand connection. © 2021 Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_0030",
+    "title": "Exploring customers' responses to online service failure and recovery strategies during Covid-19 pandemic: An actor–network theory perspective",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21527",
+    "abstract": "While the debate on online service failure and recovery strategies has been given considerable attention in the marketing and information systems literature, the evolving Covid-19 pandemic has brought about new challenges both theoretically and empirically in the consumption landscape. To fully understand customers' responses to service failure during a crisis we asked 70 millennials from three European Countries—Italy, France, and the UK—to describe their responses to service failure during the Covid-19 pandemic (30 completed a 4-week diary and 40 completed a 4-week qualitative survey). Drawing on phenomenological, constructivist, and hermeneutical approaches, and utilizing an actor–network theory perspective, the current study proposes a new framework for understanding customers' responses to online service failure and recovery strategies during the Covid-19 pandemic. Conclusions highlight implications for theory, policy, and management practice through extending comprehensions of service failure recovery processes by examining how marketing policies generate different social impacts during a crisis situation which facilitate the achievement of customer satisfaction and positive outcomes. © 2021 The Authors. Psychology & Marketing Published by Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_0031",
+    "title": "The psychology of frustration: Appraisals, outcomes, and service recovery",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21528",
+    "abstract": "This study fills a gap in the consumer emotions literature regarding customer frustration in a customer service setting. Most research on customer emotions has examined anger, happiness or affect in general, largely ignoring the particularities of frustration. Consistent with appraisal theory, we use five experiments to explore the different appraisal dimensions that define frustration and its relation to customer loyalty and satisfaction. Contrary to common belief, we show that frustration is not simply the result of goal-blocking, but rather of a more complex combination of appraisals which differentiate it from anger and lead to distinct effects on satisfaction and loyalty. We also examine how the effects of frustration on loyalty and satisfaction are mitigated by service recovery in a further experiment and an event reconstructive method. Our results test appraisal theory, inform theory on customer emotions and have important implications for our understanding of customer satisfaction and loyalty following frustrating customer service encounters. © 2021 Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_0032",
+    "title": "When doing good will not save us: Revisiting the buffering effect of CSR following service failures",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21531",
+    "abstract": "Past research offers inconsistent evidence on whether CSR is an effective service recovery strategy. Current debates overlook the signals that service failures send about the company, and their interplay with CSR. We propose a moderated mediation model showing that CSR's effectiveness for service recovery depends upon failure type. For failures signaling a lack of skills and expertise, CSR enhances warmth which in turn lowers revenge. Warmth further increases perceived competence which influences conciliatory responses. CSR, however, does not help if the failure signals a lack of moral integrity. Both warmth and competence explain the CSR's buffering effect. Our study demonstrates that “doing good” helps only to the extent that service failures that do not raise doubts about the character of the company. Even in these circumstances, however, the buffering effect of CSR is observed only in case of customer–firm communal relationships. Consistent evidence from three experiments revisits more optimistic assessments of the ability of CSR to act as a recovery strategy and shows that CSR can help only under very circumscribed conditions. Managerially, we show how and when the CSR buffer applies in service contexts, offering insights on how managers can best reap the potential benefits of service brands' involvement in CSR. © 2021 Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_0033",
+    "title": "Consumer cynicism in service failures",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21599",
+    "abstract": "Despite growing corporate commitments to being customer-centric, many customers perceive firms as self-driven and caring only about their own business interests. This sentiment is projected in consumer cynicism, or negative consumer attitudes based on the disbelief in the sincerity of firms' motives and actions. We argue that consumer cynicism emerges in response to negative marketplace situations, such as service and product failures. Across four scenario-based experiments and one video-based experiment, our research examines cynicism as a key mediator, transmitting the effect of double deviation (i.e., a failure in delivery and in subsequent recovery) on negative electronic word-of-mouth and repurchase intention. We further demonstrate that consumer cynicism can be minimized when the provider uses cocreated recovery (i.e., engages consumers in recovery) even if the recovery fails and when the provider offers a strong empathetic apology (either before or after recovery failure). Our research contributes to consumer and service recovery research by highlighting an important but overlooked role of consumer cynicism in the context of double deviation. We also offer managerial insights into cocreation and empathetic apologies as cost-effective recovery strategies to minimize cynicism. © 2021 Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_0034",
+    "title": "Mitigating the negative effects of service failure through customer identification",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21615",
+    "abstract": "This study investigated the effect of numerical customer identification (i.e., assigning numbers to identify customers) in the service context on the numbered customers' reaction to service failures. We manipulated numerical identification in different ways (room number, customer number, table number, and order number) and measured customers' tolerance of services across various settings (in a restaurant, a spa, and a café) in four studies. The results demonstrated that after being identified by a number, customers tend to exhibit a higher tolerance of service failures (Studies 1 and 2), and this effect is mediated by a sense of self-dehumanization among the numerically identified customers (Study 3). Moreover, the investigated effect diminished when customers had heightened individuation (e.g., by disclosing personal information) to buffer against dehumanization (Study 4). Our findings contribute to the underexplored research area on customer identification, broaden the numerical research and dehumanization literature in marketing, and bring practical implications for firms to mitigate the negative effects of service failures and decrease customer dissatisfaction. © 2021 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0035",
+    "title": "Revisiting power messaging in service failures: Pitfalls and proposed solutions",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21712",
+    "abstract": "Past research shows that company messaging can inflate consumers' feelings of power, which in turn alleviate the negative effects of service failures. Extant research, however, has not examined how various types of power messaging can have a differential effect on consumers, with some leading to counterproductive consequences for companies. Across five experiments, we show that power messaging stressing that consumers have power over the company can backfire by increasing manipulative intent. Power messaging communicating that consumers will obtain a power boost from the service is more acceptable and less likely to be perceived as manipulative. Furthermore, we demonstrate that messaging eliciting power from the service is most effective when (1) targeted at consumers with low levels of skepticism, (2) delivered by an underdog brand, and (3) paired with co-created recovery. Following a service failure, messaging communicating how customers will gain a power boost from the service experience increases identification with underdog brands. Our examination of power messaging as an overt communication strategy contributes to the literature on service failure and recovery. The research advances knowledge of the potential pitfalls of power messaging while proposing strategies to overcome risks associated with this communication strategy. © 2022 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0036",
+    "title": "Buffer bots: The role of virtual service agents in mitigating negative effects when service fails",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21723",
+    "abstract": "In recent years, marketers have placed increased reliance upon artificial intelligence (AI) and, subsequently, the use of virtual agents in customer service contexts is on the rise. Despite such service digitalization, service can still fail. While there is an increasing literature on the effect of virtual agents in service settings, questions remain as to how customers react to service failure that results from interactions with virtual service agents. To this end, we deconstruct the effect of virtual agent service failure across two studies: one involving a process service failure and another involving an outcome service failure. We specifically manipulate the type of service agent that causes the service failure (human vs. virtual agent) and the magnitude of the failure (small vs. large). Results show that firms can leverage virtual service agents to mitigate or buffer the negative effects of service failure. From a managerial perspective, our findings suggest that firms could engage virtual service agents in situations where there may be a risk of outcome service failure—particularly in settings where relatively large magnitude failures may be experienced. In such a setting, we find that virtual service agents can mitigate the negative effects of service failure, more so than when the failure results from an interaction with a human service agent. © 2022 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0037",
+    "title": "Digital presence in service recovery: The interactive effect of customer salutations and employee photographs in email signatures",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21724",
+    "abstract": "Service firms can manage failure apology emails depending on how much digital presence or lack thereof they wish to maintain toward aggrieved customers. While nascent research indicates positive effects of higher levels of digital presence, the efficacy of this strategy in service recovery settings remains unclear. Drawing on the concept of digital presence and the unified theory of social relations, the authors investigate the potential detrimental effects of combining certain salutation forms with digital presence in the form of employee photographs in these emails. The data were gathered using one survey among service employees (Prestudy, N = 202), and two scenario-based experiments (Study 1, N = 418; Study 2, N = 449). Study 1 assesses customer reactions to different apology emails and shows that personalized salutations (i.e., addressing customers by first name) and digital presence in the form of employee photographs can negatively interact to affect recovery satisfaction and repatronage intentions, with customers' perceived rapport mediating these relationships. Moreover, the results of a second experiment (Study 2) show that compensation after a service failure can mitigate the negative interactive effects. This study thus suggests using digital presence (in the form of employee photographs) in conversations with aggrieved customers only when customer salutation personalization is absent. © 2022 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0038",
+    "title": "Less speed more haste: The effect of crisis response speed and information strategy on the consumer−brand relationship",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21726",
+    "abstract": "This paper investigates the relationship between firm crisis behavior and the resulting consumer–brand relationship (CBR) response. Drawing from theoretical traditions in brand transgressions, service failure, and crisis communications, we use longitudinal survey data combined with archival social media data to empirically test the effect of crisis response speed and crisis information strategy on the short-term consumer crisis response evaluations (1 month after crisis response), and the long-term CBR (1 year after crisis response). Results show that, contrary to intuitive expectations, a faster firm response is not always better, as a slower response was found to result in higher crisis response evaluations. We also show that this effect depends on the consistency of the communication strategy with the first active response. Specifically, when a firm prioritizes safety information (instructing strategy), a faster response is better. Whereas, when the firm prioritizes well-being information (adjusting strategy), a slower response is better. We argue the counterintuitive finding that a slower response is better implies that reacting too quickly may signal rashness and unpreparedness to the customer, leading to more negative evaluations. We term this distinction the difference between being responsive (fast but considered) and reactive (faster but rash). © 2022 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0039",
+    "title": "Perceived unfairness increases desire for unique products: The role of need for social status",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21751",
+    "abstract": "Consumers often receive unfair treatment during service encounters, such as receiving less monetary compensation than peers, thus inducing perceptions of unfairness. However, no research has yet shown how this perceived unfairness affects consumers' likelihood of choosing unique products. We propose that when consumers feel that they are being unfairly treated in comparison with their group peers, they are more likely to seek unique products. Need for social status is proposed to mediate the above process. Perceived economic mobility is suggested to moderate this effect so that consumers with high (vs. low) economic mobility perception are more (vs. less) likely to choose unique products after being treated unfairly. We demonstrate these effects with six studies. Studies 1a and 1b reveal a positive correlation between chronic fairness deprivation and desire for unique products. Study 2a demonstrates the causal relationship between primed unfairness and desire for unique products and study 2b tests the effects of a set of potential confounds. Study 3 examines need for social status as the underlying mechanism. Study 4 further explores perceived economic mobility as the boundary condition in the above relationship. Companies can benefit from our findings by providing unique products or services to restore consumers' status and buffer negative feelings during such service failures. © 2022 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0040",
+    "title": "The impact of product defect severity and product attachment on consumer negative emotions",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21778",
+    "abstract": "Consumers often experience negative emotions when confronted with a product defect. This is especially true when the product is integrated into many aspects of the consumer's life, such as the case with automotive vehicles. In this research, we draw on the consumer expectations and attachment literature to explore the impact of defect severity and product attachment, operationalized via both ownership length/usage (mileage) and the psychological construct of object attachment, on the negative emotions consumers experience. Using sentiment analysis of archived data of consumers' complaints from the Defective Product Administrative Center in China and a controlled experiment among US consumers, we find that defect severity and mileage/attachment interact in a novel curvilinear manner to influence the amount of negative emotion consumers experience. When defect severity is low, our results indicate a U-shape relationship between mileage/attachment and negative emotions. However, when defect severity is high, an inverted U-shaped relationship emerges. Furthermore, we link the specific emotion of anger to consumers' downstream perceptions (loyalty, quality, satisfaction, and more) of their vehicle, manufacturer, and retailer. © 2023 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0041",
+    "title": "The customer is often wrong: Investigating the influence of customer failures and apologies on frontline service employee well-being",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21789",
+    "abstract": "A well-established research area is service failure and recovery. Nevertheless, the considerable service failures generated by customers, or customer failures, surprisingly remain relatively underexplored. Specifically, customer failures have a detrimental effect on frontline service employee well-being, which has not been investigated. We advance that a customer apology can alleviate this by customers taking the blame for their failures. We present three studies that investigate this phenomenon. In Study 1, applying the critical incident technique, we develop a taxonomy of customer failures and find evidence of their negative influence on (frontline) service employee well-being, which can be offset by customer apologies and perceived supervisor support. In Studies 2 and 3, using a scenario-based experiment, we triangulate the Study 1 results by testing the relationship between customer apology (Study 2) and its interacting relationship with perceived supervisor support (Study 3) on service employee well-being following a customer failure. While customer apologies have a positive impact on well-being, interestingly, when perceived supervisor support is lacking, this washes out the positive effect of a customer apology and similarly, perceived supervisor support nullifies the negative effect of the customer not apologizing for their failure. Theoretical and managerial implications are discussed. © 2023 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0042",
+    "title": "An examination of frontline employee–customer incidental similarities in service failure and recovery contexts",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21809",
+    "abstract": "Developing rapport during the “moment of truth” when frontline employees (FLEs) interact with customers has long been an important topic for researchers and managers. We suggest incidental similarities—seemingly trivial shared points of comparison between customers and FLEs—can play a vital role during this juncture in service failure and recovery contexts. Across two experimental studies, we investigate several relationships impacted by the presence or absence of an incidental similarity between FLEs and customers for their effect on satisfaction and repatronage intentions. Results suggest incidental similarities can reduce failure attributions toward service providers and improve these important customer-related outcomes (study 1). Results of study 2 extend our findings, demonstrating that rapport can serve as a mediating mechanism explaining the relationship between incidental similarities and these key service outcomes. Study 2 also reveals that FLE authenticity acts as a boundary condition of this relationship, accentuating the indirect, conditional relationships between incidental similarities, and satisfaction and repatronage intentions. Critically, we demonstrate that an incidental similarity can be even more effective when there is no recovery. By pointing out the role of incidental similarities in service encounters, our research makes significant contributions to aiding understanding of how rapport can be developed during the relatively brief time customers interact with service employees. © 2023 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0043",
+    "title": "There's not much to tell: The impact of emotional resilience on negative word-of-mouth following service failure",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21856",
+    "abstract": "Consumers routinely experience service failures in their daily lives. Research regarding such service failures has primarily focused on characteristics of and actions taken by the service provider and has thus far overlooked the role that consumers' own cognitions might play in determining their behavioral responses to service failures. In particular, emotional resilience—or the ability to rebound from negative experiences (including even the most banal service failures)—has been neglected in prior research. Addressing this gap in the literature, we examine the mechanisms that highly resilient consumers use to manage the negative experience of service failures and gauge whether those mechanisms can effectively reduce negative word-of-mouth. Across three studies, we evince that high trait resilient individuals are less likely to engage in negative word-of-mouth following service failures because they spontaneously utilize cognitive reappraisal—a strategy for emotion regulation. Importantly, this research suggests that the emotion regulation strategies spontaneously adopted by high trait resilient individuals can be successfully utilized by all consumers after an external prompt. Managing consumers' emotional responses in the face of service failures is shown to have positive benefits for the firm by reducing negative word-of-mouth. Notably, such interventions may benefit firms even when the opportunity for a service recovery is not presented. © 2023 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0044",
+    "title": "Mapping the service recovery research landscape: A bibliometric-based systematic review",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21864",
+    "abstract": "With businesses under increasing pressure to provide excellent customer service, postfailure recovery strategies have become critical for long-term customer satisfaction and loyalty. The domain of service recovery has extensively been examined in academia; however, systematic studies that provide a consolidated overview remains scant. To this end, we provide a systematic review and synthesis of service recovery literature by conducting a bibliometric-based cocitation analysis of 24,741 cited references from 1020 articles from across disciplines. The study identifies 10 major research clusters that represent different research streams of service recovery and explores their intellectual foundations. In addition, the research presents a conceptual framework to serve as a parsimonious guide for both practitioners and researchers. Furthermore, the study reveals a number of gaps in the existing literature and suggests promising directions for further investigation, including but not limited to: expanding methodological horizons in service recovery research, understanding service recovery mechanisms in Metaverse and synthetic environments, globalizing service recovery research, revitalizing service recovery processes in the age of artificial intelligence and robotics, investigating service recovery as an investment, and exploring service recovery in shared economies. Notably, this study serves managers, firstly, by providing them with a parsimonious structure of service recovery field that could help identify areas of improvement in their own service recovery systems and, secondly, by highlighting areas where academic knowledge base could inform industry solutions. © 2023 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0045",
+    "title": "When and why signaling frontline employee inexperience can prove to be an asset: Effects on consumer forgiveness for service failure",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21897",
+    "abstract": "The extant literature on service failure focuses mainly on how to recover from such incidents. However, companies can act before a service failure occurs to mitigate its negative effects. Building on signaling theory, we adopt a mixed-method approach based on five studies using different types of analyses (textual and content analysis, and multivariate analysis) to investigate the effect of signaling frontline employee inexperience on customer responses to service failure due to an error committed by an employee. Five studies provide evidence that highlighting inexperience—either informally (through a conversation) or formally (through an in-training badge)—can act as a signal that prompts customers to be more forgiving toward frontline employees, and such consumer forgiveness then serves as an underlying mechanism to explain repatronage intention. This research also tests and explores the boundary conditions for the effectiveness of the inexperience signal. Our findings have various implications for professionals showing how useful it can be to signal the inexperience of a frontline employee who makes an error that leads to a service failure to be given a second chance, and how certain precautions should be taken to avoid the pitfalls of such a signaling strategy. © 2023 The Authors. Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0046",
+    "title": "Good morning, sunshine: How time-of-day of complaint submittal can affect customer satisfaction with company response time",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.21950",
+    "abstract": "Traditional models of consumer behavior assume that customers perceive factors, e.g., time, in a rational manner throughout the day. For example, the same time period of an hour should, fundamentally, be evaluated as the same as an hour in the afternoon. Yet, across three experimental studies, we find evidence counter to this belief. Under the theoretical framework of the categorization of time, we posit that the unconscious categorization of time influences our satisfaction with company response time due to perceptions of time and resource depletion. We empirically demonstrate that the time-of-day of complaint submission impacts satisfaction with company response time such that the same company response time will be perceived as more satisfying in the morning than when received in the afternoon. This previously overlooked relationship builds on a robust and growing literature examining timing strategies in service recovery. We provide both low/no-cost initiatives as well as strategic timing prioritization for marketing practitioners to maximize customer satisfaction with firm response time. © 2023 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0047",
+    "title": "Why did you delete my comment? Investigating observing consumers' reactions to comment-deletion-clues during a brand crisis",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.22065",
+    "abstract": "Many users criticize brands by posting negative comments on their social media pages when a brand crisis occurs. Brands often choose to delete negative comments when coping with brand crises. While deleting comments often goes unnoticed, complaints about comment deletion from users whose comments are deleted (e.g., “Why did you delete my comment?”) serve as clues for observers after a crisis. Drawing from Warranting Theory, this study examines comment-deletion-clues' impact on observers' forgiveness and negative word-of-mouth (NWOM) transmission and how two types of brand explanations (custom vs. general) alter this impact. Four studies show that the comment-deletion-clues reduce observers' intention to forgive the brand and increase the spread of NWOM. Furthermore, the results indicate that brands' custom explanations mitigate the adverse effects of comment-deletion-clues. This article is among the first to explore the role of content moderation during brand crises and extends the brand crisis literature and the emerging content moderation literature. © 2024 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0048",
+    "title": "They forgot me! The exclusionary effects among complaining consumers when others receive a response",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.22080",
+    "abstract": "Complaint management is often considered a significant cost center, and it may be difficult for companies to treat all complainers equally in physical settings where complainers can observe each other's treatment. How do complainers feel when other complainers receive a response from the company, but they do not? We introduce and conceptualize a complainer exclusion construct that incorporates the complainer's observation of theirs and other complainers' treatment. Drawing on the theory of ostracism, three studies employing varying industry and complaint settings, reveal that perceptions of exclusion underpin complainers' re-complaining intentions (Study 1). Moreover, this effect is intensified when earlier complainers witness the later complainers receive a response, suggesting temporal order of complaints as an important boundary condition (Study 2). Contrarily, shifting complainers' primary focus away from the unpleasant experience through a distraction weakens the re-complaining intentions among complainers feeling exclusion (Study 3). This research has significant implications for managing complaint management systems, avoiding perceived exclusion among complainers, and effectively reducing the likelihood of worse outcomes for all stakeholders. © The Author(s). Psychology & Marketing published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0049",
+    "title": "Consumer forgiveness: A literature review and research agenda",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.22138",
+    "abstract": "Consumer forgiveness represents a compelling phenomenon for marketers, as understanding and leveraging forgiveness allows repairing consumer brand relationships. Marketing scholars began to pay closer attention to consumer forgiveness in the last decade with attempts to better understand and analyze this construct. This literature review on consumer forgiveness seeks to enrich the discourse on this phenomenon through a comprehensive systematic review of 89 articles. Through this literature review, we synthesize the findings of 89 articles to (1) understand how involved agents (e.g., firms/brands, humans, and autonomous technologies) influence the consumer forgiveness process, (2) develop a theoretical integrative framework delineating salient psychological mechanisms of the consumer forgiveness process, and (3) propose a future research agenda on consumer forgiveness. © 2025 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_0050",
+    "title": "Artificial Intelligence or Human Service, Which Customer Service Failure Is More Unforgivable? A Counterfactual Thinking Perspective",
+    "journal": "Psychology and Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1002/mar.22215",
+    "abstract": "With the continuous development and progress of Artificial Intelligence (AI) technology, intelligent customer service stands on the tip of the wind and waves of AI. This rapid development of the customer service industry has made the comparison and collision between AI customer service and artificial customer service a hot topic. This paper proposes a model exploring how the customer service failure of AI and human personnel influences customer satisfaction differently, with the mediation variable of counterfactual thinking and the moderation variables of psychological distance and empathy. Four studies using experimental design were conducted. Study 1 (N = 80) investigates whether the service failure of AI and human personnel influences customer satisfaction differently, finding that AI customer service can lead to higher customer satisfaction than human service. Study 2 (N = 80) demonstrates the mediation effect of counterfactual thinking, finding that AI service failure produces lower counterfactual thinking and higher customer satisfaction than human service failure. Study 3 (N = 200) demonstrates the moderation effect of psychological distance in the process of AI and the human service failure influencing customer satisfaction. Study 4 (N = 200) illustrates the moderation effect of empathy from the perspective of the uncanny valley effect. These findings can provide evidence for research on AI service, and provide guidance for the improvement and development of AI and human service for the customer service industry. © 2025 Wiley Periodicals LLC."
+  }
+]

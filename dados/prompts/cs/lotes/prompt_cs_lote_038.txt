@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1851",
+    "title": "Predicting the Determinants of Consumer Complaint Behavior in E-Commerce Live-Streaming: A Two-Staged SEM-ANN Approach",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2025.3533921",
+    "abstract": "In recent years, the number of consumer complaints in the live-streaming e-commerce industry has sharply increased, seriously affecting the operation and management of platforms and the sustainable development of the live-streaming economy. However, the key influencing factors, underlying mechanisms, and theoretical models of consumer complaints have not been fully explored. Therefore, we innovatively propose a two-staged SEM-ANN technique to identify key influencing factors and explore their nonlinear relationships. Through experimental analysis of the collected data, we have found several interesting conclusions. The results show that consumer confusion positively influences the venting negative emotional motives and produces negative attitudes, and consumer confusion positively influences altruistic motives. Group complaints positively influence the venting negative emotional motives and altruistic motives. At the same time, it has been confirmed that altruistic motives have significant mediating effects. The findings contribute to the literature and guide to help managers, participants, and policymakers establish effective and innovative operational management measures. Managerial Relevance Statement—This study proposes a two-staged SEM-ANN method to predict the influencing factors of consumer complaint behavior. This study found that consumer confusion has a positive impact on venting negative emotions and altruistic motivations. In contrast, group complaints positively affect venting negative emotions and altruistic motivations. Most importantly, it was found that venting negative emotions and altruistic motivations significantly mediate. From a practical perspective, reducing consumer complaints is beneficial for promoting the high-quality development of the e-commerce live-streaming industry and providing effective strategies for participants and policymakers. This study not only further enriches the research perspective of exploring the “black box” of consumer behavior and complaints, but also proposes new ideas for peer research. © 1988-2012 IEEE All rights reserved."
+  },
+  {
+    "article_id": "CS_1852",
+    "title": "Block the Adblockers? Strategic Choices of Competing Platforms and Their Impacts",
+    "journal": "IEEE Transactions on Engineering Management",
+    "journal_impact_factor": 5.554,
+    "doi": "10.1109/TEM.2025.3608256",
+    "abstract": "In recent years, the widespread adoption of adblockers has created significant challenges for digital platforms (e.g., websites) by limiting their ability to monetize content through advertising. In response, platforms have adopted divergent ad-recovery strategies: some deploy gates (antiadblock walls) that block access to users with adblockers, while others allow unrestricted access. Motivated by these contrasting industry practices, this article investigates whether and under what conditions platforms adopt the gating strategy. We develop a game-theoretic model in a duopoly setting, incorporating user heterogeneity and same-side network effects, to analyze the strategic decisions of competing platforms. Our analysis yields several important insights. First, in equilibrium, platforms adopt symmetric ad-recovery strategies: either both use gating, or both use no-gating, driven by the interplay between gating costs and ad revenue. Second, regardless of the competitor’s strategy, a platform adopting gating sets a lower ad intensity than one that does not. Third, contrary to general intuition, we find that blocking adblockers does not always improve a platform’s profit. When the cost of deploying and maintaining gating technologies is sufficiently high, the net profitability of gating may fall below that of the no-gating alternative. Finally, although consumer surplus declines under gating, social welfare may increase when gating costs are low, as the gain in platform revenue offsets the consumer utility loss. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CS_1853",
+    "title": "Transjakarta Corridor I Service Improvement Design Using Customer Satisfaction Index (CSI) and Importance Performance Analysis (IPA) Methods",
+    "journal": "TEMSCON-ASPAC 2024 - IEEE Technology and Engineering Management Conference - Asia Pacific",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCON-ASPAC62480.2024.11024868",
+    "abstract": "This study focuses on Transjakarta Corridor I, aiming to measure customer satisfaction, identify factors that need improvement, and provide recommendations to enhance service quality. Passenger satisfaction is measured using the Customer Satisfaction Index (CSI) method, while the identification of improvement factors is conducted through the Importance Performance Analysis (IPA) method. Passenger satisfaction with Transjakarta Corridor I services is assessed through 24 variables. The study results show a CSI score of 82.712%, indicating that customers are satisfied with the provided services. Factors needing improvement, based on attributes in quadrants II and III of the IPA method, include waiting time, travel time, station comfort, and schedule adherence in quadrant II, as well as bus congestion, noise inside the bus, availability of seating at stations, cleanliness at stations, bus seats, and complaint/feedback handling in quadrant III. Recommended improvements include increasing the number of buses, adding seating at stations, expanding stations, implementing an effective queuing system, installing GPS on buses, providing adequate trash bins, implementing a regular cleaning schedule, reviewing ergonomic seat design, performing regular seat maintenance, and providing clear communication channels for complaints. © 2024 IEEE."
+  },
+  {
+    "article_id": "CS_1854",
+    "title": "Effect of Socioeconomic Level on Internet Home Complaints, Inquiries, and Payments",
+    "journal": "TEMSCON LATAM 2025 - Technology and Engineering Management Society Conference",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TEMSCONLATAM65810.2025.11238879",
+    "abstract": "In the context of Internet Service Provider (ISP) services, customers seek corrective action, explanations, repair, and apologies when making a complaint. There are indications about the influence of socioeconomic level on the behavior of Internet customers. This study measures the effect of the socioeconomic level on complaints, inquiries, and payments. For the analysis we used 3 5, 8 4 2 complaints and 5 2 1 inquiries made by 1, 9 9 8 customers of home Internet service are used. Nonparametric tests were used for hypothesis testing. The results indicate that the socioeconomic level influences the number of complaints, with the high level generating more complaints than the low and medium levels. Regarding inquiries, the socioeconomic level does influence the number of inquiries, with low socioeconomic levels doubling the number of inquiries compared to high levels. The socioeconomic level doesn't influence the number of annual payments or the value paid annually. © 2025 IEEE."
+  },
+  {
+    "article_id": "CS_1855",
+    "title": "Social CRM Analytics Model on Malaysian Institutes of Higher Learning (IHLs)",
+    "journal": "TIMES-iCON 2018 - 3rd Technology Innovation Management and Engineering Science International Conference",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TIMES-iCON.2018.8621834",
+    "abstract": "Institutions of Higher Learning in Malaysia have a very tight competition to obtain new customer and to retain existing customer due to many public and private institutions available in the market. Many private IHLs suffered from financial losses because of the declining number of students' enrolment. Social media has become a domain for investments to companies and it is recognized as a means of maintaining long-term relationships with their customers. Customers or students now have multi-modal relationships with businesses which are mostly digital and exist across social media platforms. Companies investing in resources to integrate social data into existing Customer Relationship Management (CRM) systems enable them to understand customers and at the same time fulfil their best interests. In addition, IHL strategic marketing needs to respond to the digital era by applying social media informed research. This paper will produce a Social CRM Analytic model for the IHLs to assist them in taking actions on the customers' problems or complaints. The model may also be suited to organizations with relationship-oriented characteristics of social media technologies. The previous study was used to support the model and selected IHLs are applied to this model. The results from this model shows issues that need to be resolved and actions to be taken immediately to ensure customer satisfaction, loyalties and good reputation of the IHLs. © 2018 IEEE."
+  },
+  {
+    "article_id": "CS_1856",
+    "title": "Plain Language to Minimize Cognitive Load: A Social Justice Perspective",
+    "journal": "IEEE Transactions on Professional Communication",
+    "journal_impact_factor": 0.736,
+    "doi": "10.1109/tpc.2017.2759639",
+    "abstract": "This tutorial explores ethical implications of cognitive load theory and intersectional theory on technical and professional communication, and proposes plain language as an ethical imperative to redress social inequities. Key concepts: When the cognitive load of a learning task is too high and overwhelms working memory, learning is impaired. The greater stress and mental burden that marginalized populations experience can leave less working memory available for reading and learning. Using plain language to reduce cognitive load can be considered a political act that increases marginalized populations' opportunities to understand. Key lessons: 1. Consider whether marginalized populations are part of your audience. 2. Using personas to represent those populations, audit their mental burden to exercise cognitive empathy. 3. Consider reducing cognitive load via plain language an ethical imperative. Implications for practice: Assessing the presence and absence of specific marginalized groups is iterative and takes practice, but developing plain-language communications that accommodate these audiences reduces cognitive load for all readers. And although personas are useful for developing cognitive empathy, nothing replaces user testing in determining your communication's effectiveness. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CS_1857",
+    "title": "Boycotting the Knowledge Makers: How Reddit Demonstrates the Rise of Media Blacklists and Source Rejection in Online Communities",
+    "journal": "IEEE Transactions on Professional Communication",
+    "journal_impact_factor": 0.736,
+    "doi": "10.1109/TPC.2019.2946942",
+    "abstract": "Background: In this article, we address the use of metatags as a form of community knowledge formation and gatekeeping within digital platforms. Situating the case: The subReddit KotakuInAction is a well-known hub of the GamerGate community on Reddit, but one that has avoided the bans common to other aggressive subReddits and GamerGate communities on platforms such as 4chan and GitHub. We contextualize the aggressive nature of the subReddit and the reasons why participants' uses of metatags are meaningful for understanding subReddit culture and moderation practices. Methodology: To better understand the destructive behavioral patterns of KotakuInAction, we coded for the frequency of certain behaviors, such as linking and tagging, as well as the shift in certain keywords and vocabularies between the front facing or predetermined tags and the user-customized or admin-Altered tags. We also examined how tags shifted over time and whether certain users dominated particular tags. About the case: What we found was a hybrid culture on KiA that applied Chan culture values and flaming, but increasingly localized the behavior to KiA rather than direct readers out of the site. We also found key shifts in topics away from gaming and activism toward broader complaints about social justice. In addition, we found that a tiny core group of nine influencers (out of tens of thousands of users) accounted for 20% of the top conversations. Conclusions: We suggest a closer examination of how communities self-organize around meta naming structures. Knowledge of this activity can help with predicting and engaging with aggressive and hostile communities by describing how topics shift over time, how they adapt to platform moderation, and who the influencers within a community might be. © 1988-2012 IEEE."
+  },
+  {
+    "article_id": "CS_1858",
+    "title": "Comparison of Naïve Bayes and Random Forest on Sentiment Analysis of Brand Reputation Provider Live. On",
+    "journal": "Proceeding of 2024 18th International Conference on Telecommunication Systems, Services, and Applications, TSSA 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/TSSA63730.2024.10863962",
+    "abstract": "Internet users in Indonesia continue to increase yearly, reaching 215.63 million people in 2022. However, many internet users in Indonesia complain about the services provided by internet service providers. This complaint arises because the service provider does not provide full control over the use of data services and the distribution of quotas that are not appropriate. To solve this problem, Live. On is here as a new digital service provider to improve the user experience. To evaluate the success of Live. On, a sentiment analysis was carried out through the Google Play platform to see user feedback regarding the services provided. In this study, data was collected through a data scraping process on Google Play. Furthermore, the data were analyzed using the Naïve Bayes and Random Forest classification methods. The Net Reputation Score (NRS) calculation is used to measure the level of user satisfaction. The comparison results show that when the SMOTE technique is not used, Random Forest performs better than Naïve Bayes. Random Forest has 80.37% accuracy, 61% precision, 58% recall, and 57% f1-score, while Naïve Bayes has 80% accuracy, 54% precision, 58% recall, and 56% f1-score. When the SMOTE technique is applied, Random Forest still performs better with 78% accuracy, 79% precision, 78% recall, and 78% f1-score, while Naïve Bayes has the same performance on all metrics with 73%. In addition, based on NRS calculations using Naïve Bayes prediction results, Live. On provider reputation has a value of -33.08%, while using Random Forest prediction results, its reputation reaches -41.08%. Both reputation scores are below average, so Live. On is considered to have a poor reputation. Therefore, Live. On needs to fix complaints felt by users to improve its reputation. © 2024 IEEE."
+  },
+  {
+    "article_id": "CS_1859",
+    "title": "Performance evaluation of cloud e-marketplaces using non preemptive queuing model",
+    "journal": "2014 World Congress on Sustainable Technologies, WCST 2014",
+    "journal_impact_factor": null,
+    "doi": "10.1109/WCST.2014.7030099",
+    "abstract": "With the drift of consumers to the Cloud e-marketplaces looking for affordable and cost effective services, waiting time is of interest to every consumer and also a key source of competitive advantage for any cloud e-market provider. Keeping consumers' waiting may incur high costs of consumer's dissatisfaction, such as loss of future business and actual processing costs of complaints. The evaluation of performance impact on consumers' waiting time has not been fully addressed in the context of differentiated service provisioning. In this research, we conducted a modelling and evaluation of a typical cloud e-marketplace using two classes of consumers under non preemptive priority discipline. We studied and compared the performance impact of these two classes in regard to the non-priority discipline. Our approach used the analytical and simulation model. Early results revealed that the average total waiting time is independent of the service discipline. Furthermore, unlike the Non-Priority where the service distribution of the two classes are almost equal when the server utilization increases, the class 1 consumers' waiting time approaches finite limit and that of class 2 consumers deviated slightly from the average total waiting time under the Non preemptive Priority. © 2014 Infonomics Society."
+  },
+  {
+    "article_id": "CS_1860",
+    "title": "Corporate Responses to the Coronavirus Crisis and their Impact on Electronic-Word-of-Mouth and Trust Recovery: Evidence from Social Media",
+    "journal": "British Journal of Management",
+    "journal_impact_factor": 6.059,
+    "doi": "10.1111/1467-8551.12497",
+    "abstract": "This study examines how corporate responses to service failure, caused by the coronavirus (COVID-19) crisis, influence electronic-word-of-mouth (E-WoM) and trust recovery around lockdown, using multiple data sources. A dataset of 398 valid COVID-19 announcements from 50 UK food retailers posted on the social media platform Twitter, and 21,960 consumer comments associated with these announcements, are analysed using content analysis and social media analytics, respectively. In Study 1, we test the effects of corporate crisis response strategy (defensive vs. offensive) and response framing (emotional vs. rational) on consumer E-WoM (measured as ‘consumer sentiment’). The results reveal that using a defensive corporate response strategy with emotionally framed announcements leads to more positive consumer E-WoM. In Study 2, we advance the findings of Study 1 using a vignette-based experimental design to examine how social media announcements made by food retailing brands influence consumers’ trust recovery. We find that consumer trust recovers significantly when corporate COVID-19 responses are framed in an emotional manner. By drawing upon signalling theory, this study makes an important contribution to public health crisis communication and service failure literature by demystifying consumers’ reactions towards corporate crisis responses amid a pandemic. © 2021 British Academy of Management and Wiley Periodicals LLC"
+  },
+  {
+    "article_id": "CS_1861",
+    "title": "Why and When Consumers Post Complaint Messages on Social Media? Conceptualizing Social Voice as a Distinct Complaining Behaviour",
+    "journal": "British Journal of Management",
+    "journal_impact_factor": 6.059,
+    "doi": "10.1111/1467-8551.12928",
+    "abstract": "Whereas extant literature treats social voice, that is, complaining via brand-managed social media pages, as a mere channel for existing consumer complaining behaviours (CCBs), like voice and negative word of mouth, this research aims to assess it as a distinct CCB. We draw from CCB theory and its associated taxonomies towards this goal. To identify the unique palette of motives and antecedents of social voice, we adopt a mixed-method research design by extracting archival social voice posts and interviewing social voicers across four sub-studies. Our analysis reveals the motives, CCB process stage, antecedents and other peculiarities associated with social voice, thereby demarcating it from other CCBs. Further, social voice is identified as a predominantly secondary-stage CCB, triggered by a blend of constructive and vindictive motivations. This work is among the few examining social voice from a consumer viewpoint and attempts to place it within the overall CCB framework as divergent from its standalone assessments. We thus pave a foundation for examining behavioural changes implied by the Internet and social media within the CCB landscape and provide managerial guidelines towards reducing primary social voice while optimizing its secondary-stage incidence. © 2025 British Academy of Management."
+  },
+  {
+    "article_id": "CS_1862",
+    "title": "Voices in the storm: Analyzing MakeMyTrip's crisis communication during COVID-19 through a multivocality lens",
+    "journal": "Journal of Contingencies and Crisis Management",
+    "journal_impact_factor": null,
+    "doi": "10.1111/1468-5973.12521",
+    "abstract": "The COVID-19 pandemic's travel restrictions have created significant difficulties for travellers and online travel agencies (OTAs), such as MakeMyTrip (MMT). This research examines MMT's crisis communication during the pandemic through multivocality, using Twitter data to analyze actors, topics, emotions and interaction patterns. The results show complex relationships among travellers, government, media, airlines and MMT, revealing who assigns blame and who takes it, and displaying dominant emotions like anger, fear, anticipation and trust. Initially, MMT used denial, minimization and scapegoating as crisis response strategies but later switched to corrective action and mortification. The study advances the understanding of crisis communication by considering multivocality and interaction patterns, and its results can help organizations, particularly OTAs, understand the importance of multivocal communication during a crisis and how to respond effectively to customer complaints and concerns. © 2023 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1863",
+    "title": "Financial Gatekeepers and Investor Protection: Evidence from Criminal Background Checks",
+    "journal": "Journal of Accounting Research",
+    "journal_impact_factor": 9.059,
+    "doi": "10.1111/1475-679X.12265",
+    "abstract": "We examine whether financial advisors with pre-advisor criminal records pose a greater risk to investors than those without. We find that financial advisors with pre-advisor criminal records are more likely to receive future customer complaints. Their complaints are more likely to receive arbitration awards or settlements and are more likely to involve large settlements exceeding $100,000. Finally, clients are more likely to suffer service disruptions from engaging advisors with pre-advisor criminal records, even incremental to the brokerage firm being high-risk. Although we do not have performance data of individual advisors, mutual funds of those firms that employ advisors with criminal records do not provide their clients with superior returns nor charge lower fees, suggesting that there are not compensating benefits to offset the investor harm. Overall, pre-advisor criminal record serves as an important ex ante characteristic available to regulators, investors, and employers for risk-assessment purposes. © University of Chicago on behalf of the Accounting Research Center, 2019"
+  },
+  {
+    "article_id": "CS_1864",
+    "title": "Voice of the Customers: Local Trust Culture and Consumer Complaints to the CFPB",
+    "journal": "Journal of Accounting Research",
+    "journal_impact_factor": 9.059,
+    "doi": "10.1111/1475-679X.12364",
+    "abstract": "We use complaints filed with the Consumer Financial Protection Bureau (CFPB) to study the interplay between social norms and the effectiveness of consumer protection laws. We find that a higher level of trust in a given location is associated with a lower number of complaints filed against financial institutions in that location. Employing a difference-in-differences approach, we further find that, after the establishment of the CFPB, banks in low-trust areas reduce fees charged to consumers more compared to banks in high-trust areas. Our results suggest that the threat of consumer complaints to a government agency affects how banks treat their customers, and they shed light on the interaction between informal culture and formal institutions, as well as on stakeholders’ influence in corporate policies. © 2021 The Chookaszian Accounting Research Center at the University of Chicago Booth School of Business"
+  },
+  {
+    "article_id": "CS_1865",
+    "title": "Racial Disparities in Financial Complaints and the Role of Corporate Social Attitudes",
+    "journal": "Journal of Accounting Research",
+    "journal_impact_factor": 9.059,
+    "doi": "10.1111/1475-679X.12612",
+    "abstract": "Using consumer complaints filed with the Consumer Financial Protection Bureau as a measure for the quality of financial products and services, we present evidence of racial disparities in the service quality received by consumers. Consumers in high-minority communities file more complaints than those in low-minority communities, and the racial gap in financial complaints increased by more than 60% during the COVID-19 pandemic. Using a triple-difference approach, we establish the role of corporate social attitudes, reflected in, for example, inclusive promotion practices and diversity in leadership, in mitigating the complaint racial gap and its pandemic-period increase. Our results shed light on how inclusive corporate culture filters through an organization to benefit minority communities and underscore the effect of corporate social attitudes on important stakeholder outcomes. © 2025 The Author(s). Journal of Accounting Research published by Wiley Periodicals LLC on behalf of The Chookaszian Accounting Research Center at the University of Chicago Booth School of Business."
+  },
+  {
+    "article_id": "CS_1866",
+    "title": "Misconduct complaints and agents’ incentives: Evidence from housing transactions",
+    "journal": "Real Estate Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1111/1540-6229.70032",
+    "abstract": "This article investigates the impact of misconduct complaints against agents on their self-interested incentives and examines how agents attempt to shield themselves from the associated adverse effects on their reputations and career prospects. Our analyses using the real estate brokerage market in Quebec (Canadian province) support the conjecture that misconduct complaints incentivize agents to be less self-interested, as reflected in a higher sale price. This helps to alleviate problems in principal–agent relationships if the agents believe their complaint records are likely to be known and considered unfavorable by future clients. The impacts are weakened by a decrease in such beliefs by agents, potential future losses, commissions retained, and complaint leniency. © 2026 American Real Estate and Urban Economics Association."
+  },
+  {
+    "article_id": "CS_1867",
+    "title": "Service Recovery via Twitter: An Exploration of Responses to Consumer Complaints*",
+    "journal": "Accounting Perspectives",
+    "journal_impact_factor": 0.511,
+    "doi": "10.1111/1911-3838.12339",
+    "abstract": "The online response to customer complaints (i.e., service recovery) is a central feature of modern organizations' customer-focused performance management systems. Motivated by the lack of descriptive information related to complaint handling that can be used in assessing managerial performance, we collect organizations' responses to consumer complaints via Twitter and apply Zemke and Schaaf's (1990) traditional service recovery model to explore these. We collected 10,305 tweets that describe the use of Twitter for service recovery by organizations across four industries: airlines, casual dining chain restaurants, hotels, and fast-food restaurants. The findings show that in our sample, the traditional service recovery model with five service recovery elements (apology, urgent reinstatement, empathy, symbolic atonement, and follow-up) is implemented to various degrees. Furthermore, we identify three additional service recovery elements not previously discussed by prior research: channel transfer, feedback acknowledgment, and information request. Our findings have research implications and highlight the importance of incorporating online customer complaints into managerial performance systems. © CAAA/ACPC."
+  },
+  {
+    "article_id": "CS_1868",
+    "title": "Anticompetitive Employment",
+    "journal": "American Business Law Journal",
+    "journal_impact_factor": 0.917,
+    "doi": "10.1111/ablj.12166",
+    "abstract": "Scholars, antitrust agencies, and policy makers have historically paid little attention to anticompetitive practices in labor markets. This was largely due a misconception that antitrust law is meant to govern conventional markets in which goods and services trade, rather than govern labor markets. Antitrust law may also offer a poor remedy to redress employers who enter no-poaching agreements or otherwise impair competition. The primary tension involves antitrust's purpose, which is to promote “consumer welfare.” To identify whether conduct eroded consumer welfare, courts tend to scrutinize whether prices increased. But here, lessening wages can enable firms to sell goods at cheaper prices, benefiting consumers. Another issue is that the typical restraint affects only a smattering of workers instead of lessening wages throughout the greater market. This article uses empirical analyses to show that antitrust should promote labor's welfare as it does consumer welfare, and it argues that enforcement must condemn labor cartels as per se illegal. The research demonstrates that labor cartels are more pernicious than restraints in product markets, as employers can lessen wages with less effort than in product markets. Antitrust should even proscribe no-poaching agreements formed for a legitimate purpose (e.g., to protect trade secrets) because employers could have achieved the same goals using less coercive means; the noncompete agreement, at least, provides labor with a semblance of notice and bargaining power without drawing antitrust scrutiny. The prohibition of labor cartels would thus promote competition and consumer welfare, especially in minimum wage labor markets. © 2020 The Authors. American Business Law Journal © 2020 Academy of Legal Studies in Business."
+  },
+  {
+    "article_id": "CS_1869",
+    "title": "How far can brands go to defend themselves? The extent of negative publicity impact on proactive consumer behaviors and brand equity",
+    "journal": "Business Ethics",
+    "journal_impact_factor": null,
+    "doi": "10.1111/beer.12246",
+    "abstract": "Negative publicity, defined as the public disclosure of a problematic incident associated with a brand, is a critical issue for fashion brands, as it vitiates the image of targeted brands and drives consumers’ voice and exit behaviors. Despite the impact of negative publicity, few studies have compared the impact of product-related versus personnel-related negative publicity, or explored the extent to which brands’ coping strategies can prevent consumers’ anti-brand behavioral intentions and recover brand equity. This study used multivariate analyses of variance to analyze responses from 594 American consumers, which revealed that when negative publicity is about a product-related issue, none of the brand's different recovery efforts are effective in decreasing consumers’ voice and exit intentions and protecting brand equity. However, for a personnel-related issue, functional and informational recovery strategies were effective in decreasing consumer voice and exit intentions, and affective, functional, and informational recovery strategies positively impacted most domains of brand equity (brand judgement, brand feelings, and brand resonance). The following analysis of variance and post hoc analyses revealed the comparative effectiveness of specific recovery types. Discussions and implications of the findings are provided. © 2019 John Wiley & Sons Ltd"
+  },
+  {
+    "article_id": "CS_1870",
+    "title": "Co-creation and co-design in pop-up stores: The intersection of marketing and design research?",
+    "journal": "Creativity and Innovation Management",
+    "journal_impact_factor": 3.32,
+    "doi": "10.1111/caim.12373",
+    "abstract": "Co-creation as a concept and process has been prominent in both marketing and design research over the past ten years. Referring respectively to the active collaboration of firms with their stakeholders in value creation, or to the participation of design users in the design research process, there has arguably been little common discourse between these academic disciplines. This article seeks to redress this deficiency by connecting marketing and design research together—and particularly the concepts of co-creation and co-design—to advance theory and broaden the scope of applied research into the topic. It does this by elaborating the notion of the pop-up store as temporary place of consumer/user engagement, to build common ground for theory and experimentation in terms of allowing marketers insight into what is meaningful to consumers and in terms of facilitating co-design. The article describes two case studies, which outline how this can occur and concludes by proposing principles and an agenda for future marketing/design pop-up research. © 2020 John Wiley & Sons Ltd"
+  },
+  {
+    "article_id": "CS_1871",
+    "title": "Stockout Recovery under Consignment: The Role of Inventory Ownership in Supply Chains",
+    "journal": "Decision Sciences",
+    "journal_impact_factor": 1.23,
+    "doi": "10.1111/deci.12198",
+    "abstract": "We examine how a supply chain firm may implement an incentive contract under inventory consignment to recover stockouts and to retain customers. Inventory consignment allows an upstream firm (e.g., a manufacturer) to own and control inventory at a downstream firm (e.g., a retailer), representing a structural change in supply chain governance. Motivated by cases in pet toy and electronics component industries, we formulate principal-agent models based on the newsvendor framework to capture the strategic interactions in a supply chain. We find that consignment can be effective in reducing stockouts because the ownership and control of the product by the manufacturer allows better prevention of stockouts, which complements stockout recovery and leads to fewer stockouts. However, the lower level of stockout under consignment does not necessarily translate into profitability-when the manufacturer is highly opportunistic, that is, readily exploring outside opportunities for its product, consignment may lead to lower profitability for both the manufacturer and the supply chain. On the other hand, consignment will improve profitability for the manufacturer and the supply chain, if both the manufacturer opportunism and the retailer opportunism are moderate. © 2016 Decision Sciences Institute."
+  },
+  {
+    "article_id": "CS_1872",
+    "title": "Consumer Inter-Product Showrooming and Information Service Provision in an Omni-Channel Supply Chain",
+    "journal": "Decision Sciences",
+    "journal_impact_factor": 1.23,
+    "doi": "10.1111/deci.12415",
+    "abstract": "Facilitated by physical showrooms, many online first retailers have embarked on the practice of omni-channel retailing. This offline to online mode (information delivery offline and product fulfillment online) empowers consumers’ showrooming behavior in two ways, namely, intra-product showrooming (intra-SR) and inter-product showrooming (inter-SR). As the physical showroom usually displays a partial assortment of the online products, consumer inter-SR, i.e., the behavior of inspecting one product offline but buying a different or related product online, is critical to firms’ decisions. Moreover, inter-SR facilitated by the retailer's omni-channel operations changes the nature of upstream competition between manufacturers. In this article, we develop a theoretical model to investigate consumer inter-SR behavior and the information service provision in an omni-channel supply chain. Our main findings are as follows. First, consumer inter-SR benefits the manufacturer whose product is displayed online exclusively but hurts the manufacturer whose product is dual-channel displayed; inter-SR is beneficial to the omni-channel retailer only when the inter-SR intensity is not too high. Second, under the service compensation contract, the dual-channel manufacturer and the retailer can be coordinated to provide enhanced information service; the online-exclusive manufacturer, however, may be either better off or worse off depending on the relative strengths of the utility-increasing effect and the service-differentiating effect of the information service enhancement. Third, the consumers located far from the showrooms are more likely to be hurt by the inter-SR behavior and the information service compensation, while the local consumers generally benefit from them. Finally, the in-store inventory that facilitates immediate product fulfillment has a positive impact on the retailer's information service provision. © 2019 Decision Sciences Institute"
+  },
+  {
+    "article_id": "CS_1873",
+    "title": "Combining Textual Cues with Social Clues: Utilizing Social Features to Improve Sentiment Analysis in Social Media",
+    "journal": "Decision Sciences",
+    "journal_impact_factor": 1.23,
+    "doi": "10.1111/deci.12490",
+    "abstract": "Traditional sentiment analysis methods do not perform well when applied to social media data. In this study, we propose an approach to improve sentiment analysis performance in the context of social media. Our approach utilizes three types of additional information that can be collected from social media platforms—personal preference, friend influence, and herding effect—to enrich the input features of a supervised sentiment classification model. We implement the approach on data sets collected from Twitter across two industries (airlines and wireless service providers) and present the performance improvement attained by combining social features with pure text-based features. To further investigate the operational implications of this improvement, we develop a stylized service recovery model for customer relationship management in social media. Our work has implications for automating social media monitoring and, more broadly, for improving customer relationship management in organizations. © 2020 Decision Sciences Institute."
+  },
+  {
+    "article_id": "CS_1874",
+    "title": "WHICH COMMUNITIES COMPLAIN TO POLICYMAKERS? EVIDENCE FROM CONSUMER SENTINEL",
+    "journal": "Economic Inquiry",
+    "journal_impact_factor": 2.076,
+    "doi": "10.1111/ecin.12838",
+    "abstract": "Consumer complaints provide a signal of the problems that different American communities face. I use a large database of millions of complaints to examine how per capita complaint rates vary across communities, as well as heterogeneity in who complains to different agencies and about different consumer protection issues. I find higher complaint rates in more heavily Black, more educated, higher income, older, and more urban communities and lower complaint rates in more heavily Hispanic and higher household size communities. The demographics of complaints are quite different for the Consumer Financial Protection Bureau, with much higher rates of complaints from Black and college educated areas compared to the Federal Trade Commission or Better Business Bureaus. I also find much higher rates of finance related complaints from Black communities across all reporting agencies. (JEL D18, H50, J10). Published 2019. This article is a U.S. Government work and is in the public domain in the USA."
+  },
+  {
+    "article_id": "CS_1875",
+    "title": "Are dominant platforms good for consumers?",
+    "journal": "Economic Inquiry",
+    "journal_impact_factor": 2.076,
+    "doi": "10.1111/ecin.12966",
+    "abstract": "We develop a two-sided market model where both platforms and sellers charge buyers for access. When network effects are moderate, a dominant platform that attracts more sellers and buyers is more likely to arise. Compared to when platforms split the market equally, a dominant platform always leads to higher consumer surplus and total welfare. Moreover, both of these measures improve as network effects increase. Our results suggest that competition authorities should be cautious regarding complaints related to dominant platforms in two-sided markets, as they may be good for consumers. © 2021 Western Economic Association International"
+  },
+  {
+    "article_id": "CS_1876",
+    "title": "Does the Co-Creation of Service Recovery Create Value for Customers? The Underlying Mechanism of Motivation and the Role of Operant Resources",
+    "journal": "European Management Review",
+    "journal_impact_factor": 1.86,
+    "doi": "10.1111/emre.12301",
+    "abstract": "This study focuses on the underlying mechanism that leads to co-recovery behaviour and favourable co-created value as response to a service failure. It argues that consumers’ ability to integrate their operant resources (e.g., knowledge and skills) to co-recover from a service failure motivates them to express higher value co-recovery in-role behaviour and hence enjoy higher hedonic and utilitarian values. To test this claim, our study investigates the impact of consumers’ ability to co-recover on value co-recovery in-role behaviour by taking into account extrinsic and intrinsic motivation as mediators. The results reveal that extrinsic motivation only partially mediates the relationship between ability to co-recover and value co-recovery in-role behaviour. Furthermore, the outcomes demonstrate that value co-recovery in-role behaviour increases utilitarian value but decreases hedonic value. © 2018 European Academy of Management"
+  },
+  {
+    "article_id": "CS_1877",
+    "title": "‘But It's Your Job To Be Friendly’: Employees Coping With and Contesting Sexual Harassment from Customers in the Service Sector",
+    "journal": "Gender, Work and Organization",
+    "journal_impact_factor": 1.637,
+    "doi": "10.1111/gwao.12117",
+    "abstract": "This article analyses how employees in the service sector respond to sexual harassment from customers and attempts to explain why this is so. There are only a small number of previous studies examining the issue of customer-perpetrated sexual harassment. Those that have been conducted have detailed the nature and prevalence of sexual harassment from customers, but this research lags behind employee experience and some emerging policy responses to this issue. The extant literature, whilst growing, remains largely limited to documenting the phenomenon. In this article, we attempt to create a deeper analysis of customer-perpetrated harassment by conducting a new review of the literature to develop propositions about how employees respond to it and the factors that influence their responses. These propositions are analysed in relation to a qualitative pilot study with 15 interviewees who had experienced sexual harassment from customers to understand how they reacted and why. The article shows how the social norms and precarious working conditions of the service sector constrain employees from seeking formal redress, leading to the enactment of informal coping strategies and temporary contestations of the situation. This research is important for building our understanding of the influence of workplace context for framing employee responses to customer sexual harassment. © 2016 John Wiley & Sons Ltd"
+  },
+  {
+    "article_id": "CS_1878",
+    "title": "Redressing the fundamental conflict of interest in public company audits",
+    "journal": "International Journal of Auditing",
+    "journal_impact_factor": 1.763,
+    "doi": "10.1111/ijau.12269",
+    "abstract": "The goal of various audit industry reforms is to better align the interests of the auditor with external stakeholders. These proposed reforms ignore the fundamental conflict of interest—‘the client’ hires, fires and determines the compensation for the auditor. This problem is fundamental in that ‘the client’ is normally the management or board of the firm who, on occasion, have reason to want to take advantage of the inherent imprecision in accounting for their benefit and subtlety pressure the auditor to achieve this. My evidence-based proposal takes advantage of the well-known aversion of managers and boards to government intervention. It incentivizes management and boards to demand rigorous audits by requiring regulatory bodies impose their choice of auditor on public companies that meet well-specified criteria that indicate poor-quality reporting (e.g., restatement of financial statements). This proposed reform retains the ‘on average’ benefits that extant research shows the current system of private sector auditing provides while stimulating greater managerial and director self-interest in high-quality financial reporting. © 2022 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1879",
+    "title": "Consumer trust relations with payment cards and banks: An exploratory study",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12154",
+    "abstract": "The article focuses on the ways in which consumer complaints reflect the trust relationship between consumers, payment cards and banks from the consumers' point of view. The empirical data consist of consumer complaints from Finland and are analysed with qualitative method. The data show that consumers use payment cards in various places for different purposes at home and abroad at least until something unexpected and problematic happens. According to the consumer complaints, in problem situations, the banks blame the consumers and categorically deny their responsibility. Negligence on the part of the consumers and questions concerning technology are the major reason for distrust concerning the reliability of payment cards. These findings provide bases for practical guidelines to increase trust in payment cards and, finally, implications for consumer education are discussed. © 2014 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1880",
+    "title": "What is going on when nothing is going on? Exploring the role of the consumer in shaping waiting situations",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12244",
+    "abstract": "Research on waiting in services focuses mainly on the role of companies in waiting situations. Much of the existing research envisages the consumer as a passive victim of the delays caused by companies. This article redresses the imbalance in research on waiting by exploring the role of consumers in waiting situations. A qualitative methodology is used, involving data collection through in-depth interviews and personal diaries, to facilitate an in-depth analysis of consumers' waiting experiences. Additionally, a holistic approach is employed with a view to examining the 'whole' waiting experience rather than individual or isolated aspects of waiting. The main finding of the study is that consumers play an active and deliberate role in waiting situations. This is the first study to empirically identify the behaviours and initiatives undertaken by consumers when forced to wait for services. The results suggest that consumers play an active role in organising and reducing the real or perceived waiting time. They actively seek information on the length and causes of the wait. And, on occasions, the consumer may also be the cause of the wait or may even increase the delay by their actions. In contrast to most of the existing research on the topic of waiting, this study adopt a qualitative, in-depth approach, with a multicultural sample, and a focus on the consumer whose role in waiting has previously been overlooked. © 2016 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1881",
+    "title": "Differences between Black and White South Africans in product failure attributions, anger and complaint behaviour",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12250",
+    "abstract": "The purpose of this research is to extend an understanding of how Black and White South African consumers' causal attributions for major household appliance performance failures impact on their anger and subsequent complaint behaviour. A survey was administered to Black and White South African consumers who were dissatisfied with the performance of a major household appliance item. Respondents resided in a major metropolitan area. The findings showed that, compared to Whites, the Black South Africans felt a low but significantly higher external locus of causality and lower control, and experienced a higher level of anger regarding product failure. The level of anger determined the decision to take complaint action, but racial group determined the type of action taken. Blacks complained more actively to retailers and engaged more in private complaint action than Whites. These findings may show that Black South Africans are developing a more individualistic orientation as consumers. Therefore, researchers should consider the effect of cultural swapping when researching consumer behaviour in multicultural countries. Implications for retailers in terms of complaint handling are indicated. © 2016 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1882",
+    "title": "Consumers’ subjective and objective consumerism knowledge and subsequent complaint behaviour concerning consumer electronics: a South African perspective",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12259",
+    "abstract": "Although there is immense international support for consumer protection, the notion exists that consumer protection can only exist in developed countries with ample fiscal resources and expertise to properly act in the interest of consumers. This conception leaves consumers in emerging and transitional economies in a difficult position as these economies indeed generally lack sufficient funding and the required capacity to educate consumers on their rights. With the South African Consumer Protection Act that came into effect in 2011, South African consumers can now claim to be among the best protected consumers in the world. However, many consumers are still not aware of their consumer rights, and do not have the necessary knowledge to pursue redress when they are dissatisfied. The objective of this research was therefore to explore and describe the relationship between consumers’ knowledge of consumerism (consumer protection) and their consumer complaint behaviour (CCB) concerning their dissatisfaction with a technologically advanced product, in this case, a consumer electronic product. This study attempts to differentiate between subjective consumerism knowledge and objective consumerism knowledge and by extension the measures used. In addition, we explored and described the relationship between demographic variables and levels of subjective and objective consumerism knowledge as well as the combined effect of the two types of knowledge on CCB. The findings revealed that the respondents had a reasonable level of subjective consumerism knowledge relative to a low level of objective consumerism knowledge. No significant relationship was found between subjective consumerism knowledge and demographic variables. However, the factors of race, gender and level of income were related to objective knowledge. A higher level of subjective knowledge could be associated with public action. Respondents with reasonable levels of objective knowledge were also better equipped to take private and public action. CHAID (Chi-Square Automatic Interaction Detection) analysis highlighted that a combination of subjective and objective knowledge was the best predictor of taking public action only and of taking both private and public complaint action. The study has implications for policy makers, consumer protection organisations, retailers and the individual consumer. Our approach to measuring knowledge of consumerism could possibly be applied in other emerging contexts where consumers generally lack awareness of consumer protection. © 2015 John Wiley & Sons Ltd"
+  },
+  {
+    "article_id": "CS_1883",
+    "title": "Consumer vulnerability and complaint handling: Challenges, opportunities and dispute system design",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12377",
+    "abstract": "Effectively designed complaint handling systems play a key role in enabling vulnerable consumers to complain and obtain redress. This article examines current research into consumer vulnerability, highlighting its multidimensional and expansive nature. Contemporary understandings of consumer vulnerability recognize that the interaction between a wide range of market and consumer characteristics can combine to place any individual at risk of vulnerability. While this broad definition of consumer vulnerability reflects the complex reality of consumers’ experiences, it poses a key challenge for designers of complaint handling systems: how can they identify and respond to an issue which can potentially affect everyone? Drawing on current research and practice in the United Kingdom and Australia, the article analyses the impact of consumer vulnerability on third party dispute resolution schemes and considers the role these complaint handling organizations can play in supporting their complainants. Third party complaint handling organizations, including a range of Alternative Dispute Resolution services such as ombudsman organizations, can play a key role in increasing access to justice for vulnerable consumer groups and provide specific assistance for individual complainants during the process. It is an opportune time to review whether the needs of consumers at risk of vulnerability are being met within complaint processes and the extent to which third party complaint handlers support those who are most vulnerable to seek redress. Empowering vulnerable consumers to complain presents specific challenges. The article discusses the application of a new model of consumer dispute system design to show how complaint handling organizations can meet the needs of the most vulnerable consumers throughout the process. © 2017 John Wiley & Sons Ltd"
+  },
+  {
+    "article_id": "CS_1884",
+    "title": "In-store shopping hassles: Conceptualization and classification",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12607",
+    "abstract": "A positive shopping experience provides retailers with a competitive advantage. However, retail environments pose numerous hassles that may negatively affect consumer experiences. Integrating perspectives from attribution theory and expectation theory, we examine the concept of shopping hassle and how it differs from that of retail service failure. Furthermore, we utilize qualitative approaches to explore what shopping episodes consumers perceive as hassles. Conducting semi-structured in-depth interviews in Study 1, we develop a classification framework of in-store shopping hassles. In Study 2, we use a critical incident technique approach to gain a further understanding of types of shopping hassle. © 2020 John Wiley & Sons Ltd"
+  },
+  {
+    "article_id": "CS_1885",
+    "title": "The Burden of Double Deviation in Services: A Systematic Review and Research Agenda",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12836",
+    "abstract": "Double deviation (failure to satisfactorily recover from a service failure) is a common phenomenon that has recently attracted significant research interest, but the academic literature lacks a study mapping and synthesizing the field. This article undertakes filling this gap by systematically reviewing the double deviation literature. The review classifies the literature into causes, consequences, moderators, and double service recovery and identifies research themes and future research directions within them. Key current research themes are ineffective recovery remedies and cognitive appraisal criteria as causes; emotivational goals, revengeful and reparative behaviours as consequences; firm–customer relationship-based variables as moderators; and unique tactics of double service recovery. Reassessing the scope of double deviation, uncovering customers' discrete emotions during double deviation and ascertaining the commercial viability of double service recovery are some recommendations for future research. © 2022 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1886",
+    "title": "Proposal and validation of a financial protection perception scale",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12860",
+    "abstract": "This article proposes and validates a financial protection perception scale (FPPS) from the perspective of the financial services consumer. The scale was applied to a sample of 1137 individuals residing in Brazil and validated using exploratory and confirmatory factor analysis and standard multivariate validation methods. The FPPS, composed of 14 items, allows the development of an indicator that defines the level of protection perceived by the consumer of financial services, evaluated along the dimensions of transparency, suitability, security, and complaints. The tests and fit indices indicated the reliability and validity of the FPPS. With this scale, researchers, managers, and policymakers can assess the extent to which consumers feel protected when using financial services. © 2022 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1887",
+    "title": "Correlates of responding to and becoming victimized by fraud: Examining risk factors by scam type",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12886",
+    "abstract": "Consumer fraud reports in North America have been increasing each year along with median fraud losses. Using survey data from 1375 American and Canadian consumers who previously reported a scam to a North American consumer complaint organization, this study examines the correlates of responding to and losing money to four categories of consumer fraud: opportunity-based scams, threat-based scams, consumer purchase scams, and phishing scams. Relative to opportunity-based scams that offer the promise of rewards, consumers were less likely to respond to and report losing money when solicited by threat-based scams and phishing scams. The odds of victimization were highest for consumer purchase scams. Risk factors, including gender, race, education, income, loneliness, financial fragility, and financial literacy, differed across scam categories, suggesting that victim profiles differ across fraud types. Some of the risk factors associated with responding to the scam solicitation (vs. ignoring it outright) were different from risk factors associated with victimization. Having advance knowledge of fraud prior to being exposed was protective across nearly all scam types. Results suggest that awareness about specific scams helps protect against financial loss. Additional research is needed on how to effectively deliver fraud awareness messages to those who are most susceptible. © 2022 The Authors. International Journal of Consumer Studies published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1888",
+    "title": "You ruined our love story, but I just cannot hate you—A moderation–mediation analysis of past experienced brand love and brand hate",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12892",
+    "abstract": "The development of the consumer–brand relationship is crucial for brands as it reflects how well a consumer is emotionally connected with the brand. However, due to unacceptable behaviour, brands have become susceptible to negative consumer–brand relationships. Given the recent importance of the negative consumer–brand relationship and its consequences, little is known about the role of previously experienced brand love. Studies support the link between strongly remembered events and experiences, customer knowledge, brand association, and consumer congruence with brands in creating long-lasting influence and deep emotion towards the brand. The study examines moderation–mediation analysis of past experienced brand love and brand hate. This research, anchored in consumer brand relationship literature, builds on an analysis of data from 207 respondents. We conducted a research survey in a South-Western European country and performed the SPSS Hayes Process macro 58 to analyse the moderating role of past experienced brand love alongside the mediating role of brand hate to test our hypotheses. The moderation results show that past experienced brand love significantly moderated the link between brand hate causes (corporate wrongdoings) and brand hate. However, there is no significant moderation influence of past experienced brand love on the consequences of brand hate causes. The study also demonstrates that brand hate mediates the link between corporate wrongdoings and violations of expectations with negative word of mouth, consumer complaints, and patronage reduction/cessation. The current study is unique in that it highlights new avenues in existing research by extending the domain in consumer–brand relationships. The findings of the study have theoretical and empirical implications for brand managers. © 2022 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1889",
+    "title": "What drives customer engagement after a service failure? The moderating role of customer trust",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12939",
+    "abstract": "This study investigated the relationships between complaint handling, customer experience, and customer engagement, as well as the moderating effect of customer trust prior to a service failure. The results were obtained from 320 Indonesian consumers of courier, express, and parcel services. Favourable employee behaviour was found to be the most effective complaint handling effort that influenced customer experience, followed by organizational procedures and then compensation, indicating that positive customer experience led to customer engagement. Additionally, this study revealed that higher levels of customer trust prior to a service failure reduced the positive effects of complaint handling efforts on customer experience. This finding suggests that customers with higher levels of trust in a firm are less sensitive to that firm's complaint handling and recovery efforts. This article contributes to the literature on customer engagement in the service failure and recovery contexts, especially in developing countries. It examines the most influential complaint handling dimensions for predicting customer engagement following service failures. Furthermore, this study is one of the first to explore the moderating role of customer trust in service failure and recovery literature. © 2023 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1890",
+    "title": "Four decades of negative word-of-mouth and negative electronic word-of-mouth: A morphological analysis",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12962",
+    "abstract": "Customers voice their negative brand experiences to their family and friends in the form of negative word-of-mouth (NWOM). Web 2.0 enables the sharing of NWOM in electronic format on various social media sites, online customer review forums, and blogs, which is known as negative electronic word-of-mouth (NeWOM). Researchers need to study the spread of NWOM/NeWOM to prevent adverse consequences for companies and suggest an optimal response for its redressal. Existing literature review studies have focused on word-of-mouth (WOM) and electronic WOM (eWOM) and have considered both positive and negative WOM and eWOM concurrently. Past literature reviews have captured the breadth of the WOM domain, ignoring the depth. This research article contains a review of 282 journal papers capturing the depth of the extant literature by focusing solely on ‘negative’ WOM and eWOM (NWOM and NeWOM), and presents a broad view of the NWOM and NeWOM domains using morphological analysis (MA). This will help to conceptualize and categorize the existing state-of-the-art literature into broad dimensions and identify future research opportunities. The MA framework helps to bifurcate this literature into the following four dimensions: (i) nomenclature of NWOM and NeWOM, (ii) antecedents of NWOM/NeWOM, (iii) impacts of NWOM/NeWOM, and (iv) prevention and recovery response to NeWOM. Further dissection of these four dimensions leads to 15 sub-dimensions and 217 variants. Combinations of the 217 variants enable the identification of 550 novel future research opportunities in the area of NWOM and NeWOM. © 2023 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1891",
+    "title": "Service failure and service recovery: A hybrid review and research agenda",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.12974",
+    "abstract": "It is an opportune time to reflect on the progress of service failure and service recovery in the field of service marketing, specifically with a focus on perceived justice. Over the past three decades, justice theory has played a pivotal role in explaining these phenomena, prompting the need to evaluate its current standing and contributions. The study reviews the literature on service failure and recovery (SFR) using the hybrid review approach through an integration of bibliometric analysis and a framework-based review (Theories–Characteristics–Contexts–Methods; Paul and Rosado-Serrano, 2019, International Marketing Review, 36(6), 830–858). In the bibliometric overview, the publication trend and citation structure of articles dealing with perceived justice in SFR between 1990 and March 2022, the most prolific authors/sources as well as the most active institutions that contribute the most to this field of scientific inquiry have been analysed in detail. Following the performance analysis, the authors carry out scientific mapping that underscores the intellectual corpus as well as the emergent themes of the field. Using network analysis in visualization of similarities viewer software, service failure, service recovery and perceived justice in service failure and service recovery have been grouped into clusters based on co-citation analysis and bibliographic coupling. The articles in the clusters are critically reviewed in terms of theories, contexts, characteristics and methods to not only synthesize the foundational knowledge in the field and propose avenues for future but also make recommendations for academia and industry. To add scientific rigour, the study uses Scientific Procedures and Rationales for Systematic Literature Reviews (Paul et al., 2021, International Journal of Consumer Studies, 45(4), O1–O16) protocol to guide review decisions in a bibliometric analysis. © 2023 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1892",
+    "title": "Is uniform pricing by competing retailers perceived as fair?",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.13043",
+    "abstract": "Despite the enormous negative economic influence on consumer well-being, price-fixing remains a largely unexplored area in consumer research. Previous research showed that consumers perceive different prices for the same product as unfair. However, our findings counterintuitively indicate that consumers may also perceive uniform prices as unfair. Two experimental studies examined the effect of price uniformity (uniform/nonuniform) and price patterns over time (increase/no change) on the perception of price unfairness and third-party complaint intention. The findings show that consumers perceive prices as unfair when retailers increase a uniform price simultaneously. This pricing strategy by retailers increases consumers' intention to report suspected price-fixing activities to authorities, that is, third-party reporting. Based on the findings, implications for marketing practices and tactics to enhance public policy are discussed. © 2024 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1893",
+    "title": "Customer Voice Behavior: A Systematic Review and Future Research Agenda",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.70142",
+    "abstract": "Customer voice behavior (CVB) is increasingly recognized as a means for consumers to influence firms by offering valuable insights for product and service improvements. Yet, knowledge of the concept remains fragmented, with limited integration between complaint-oriented and proactive perspectives. This study systematically reviews 80 peer-reviewed articles published between 1987 and 2024 to clarify how CVB has been defined, conceptualized, and examined. Using the Theories, Contexts, Characteristics, and Methods (TCCM) framework, the review identifies key theoretical lenses, research contexts, methodological trends, and conceptual inconsistencies. The analysis reveals a gradual shift from reactive complaint behavior to proactive, extra-role expressions of voice, while also noting definitional inconsistencies and limited research attention to the extra-role perspective. Building on these insights, the study proposes an integrated conceptual taxonomy that bridges complaint behavior and extra-role behavior, offering a clearer structure and sharper conceptual boundaries for CVB in the consumer behavior literature. Finally, practical implications are discussed, guiding firms seeking to harness customer voice not only for service recovery but also for innovation and long-term engagement. © 2025 John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1894",
+    "title": "“Don't Fail With Me. I Will Complain”! A Study on Consumer Negative Emotions and Behaviours",
+    "journal": "International Journal of Consumer Studies",
+    "journal_impact_factor": 6.515,
+    "doi": "10.1111/ijcs.70200",
+    "abstract": "This paper aims to understand the motivations of consumers in emerging countries to express negativity on social media, respect e-commerce service failures, and identify the most prevalent negative emotions revealed. In Study 1, 54 semi-structured interviews were conducted with individuals who had recently complained about online stores on the X platform, and the data were analysed using content analysis. Study 2 employed structural equation modelling (N = 520) and drew on consumers who had complained on the X social media platform. The results show personal, social and consumer-to-company-oriented motivations for negative eWOM on X. The most recurrent negative emotions were anger and dissatisfaction. The results also revealed that gender influences consumer emotions and behaviours. To the best of the authors' knowledge, this study demonstrates for the first time that, from the perspective of emerging countries, a low level of negativity, that is, dissatisfaction, is a sufficient motivation trigger for consumer complaints and even to avoid new purchases from the company. © 2026 The Author(s). International Journal of Consumer Studies published by John Wiley & Sons Ltd."
+  },
+  {
+    "article_id": "CS_1895",
+    "title": "Assessment of Service Quality of Online Fresh Food Service Platforms: Leveraging Large Language Model Information Extraction Technology and Trustworthy Knowledge Aggregation Algorithms",
+    "journal": "International Transactions in Operational Research",
+    "journal_impact_factor": 2.563,
+    "doi": "10.1111/itor.70122",
+    "abstract": "With the rapid development of e-commerce in the fresh agricultural products sector, while it has brought convenience to consumers, it has also led to quality-related issues such as spoilage and adulteration. Online complaint platforms, such as Black Complaint, offer consumers a public and real-time channel to report problems. This study aims to develop a systematic online service quality assessment model for e-commerce of fresh foods. To achieve this objective, the paper proposes an innovative multistep approach by integrating large language models (LLMs) technology with information theory. Specifically, the first step involves using LLM prompting techniques and the Chain of Thought method to classify the attributes of the complaint text and assess the levels of consumer satisfaction from user-generated complaint texts. This enables precise classification and multidimensional analysis of complaints. Subsequently, expert evaluation criteria—covering dimensions such as delivery timeliness, product quality, and category richness—are incorporated to ensure a comprehensive service quality assessment. To effectively integrate both expert evaluations and consumer feedback, the basic uncertain interval q-Rung orthopair fuzzy information and its aggregation operator are employed. A service quality attribute-based attitude characteristic target optimization model is then constructed to address uncertainties in expert assessments and consumer opinions. Finally, through a comparative analysis of four main fresh e-commerce platforms, the proposed model demonstrates superior performance in practical applications. This research not only overcomes the limitations of existing service quality evaluation methods but also provides a systematic and actionable framework to improve the service quality of fresh e-commerce platforms. © 2025 International Federation of Operational Research Societies."
+  },
+  {
+    "article_id": "CS_1896",
+    "title": "Retail \"Save the Sale\" tactics: Consumer perceptions of in-store logistics service recovery",
+    "journal": "Journal of Business Logistics",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jbl.12294",
+    "abstract": "To prevent customers from leaving stores empty-handed when encountering a stockout, retailers increasingly leverage their inventory visibility and order fulfillment capabilities to implement “save the sale” tactics. Retailers have several logistics service options available in designing “save the sale” stockout recovery initiatives: “buy at store—ship from (different) store” and the “buy at store—ship from DC,” leading to different order fulfillment speeds. In addition, there is the home delivery approach, which is generally more convenient to customers than the option of store delivery for customer pick-up. In this paper, we explore how customers evaluate and respond to varying elements of these “save the sale” stockout recovery services when experiencing an in-store stockout. Building on justice theory and literatures on service recovery and impression formation, we develop a series of four experiments. We explain and provide empirical evidence for (1) why and how customers assess specific stockout service recovery dimensions (i.e., order fulfillment speed and delivery location) as more just, (2) how customers appraise the justice of these bundled stockout recovery dimensions, (3) how purchase involvement and monetary offers impact these perceptions, and (4) how justice perceptions and stockout recoveries impact the likelihood of “saving the sale.”. © 2021 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_1897",
+    "title": "Do as You Say, or I Will: Retail signal congruency in buy-online-pickup-in-store and negative word-of-mouth",
+    "journal": "Journal of Business Logistics",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jbl.12322",
+    "abstract": "Buy-online-pickup-instore (BOPIS) services have become an increasingly important part of a retailer's omnichannel strategy. When service failures (e.g., stock-out) occur, consumers may resort to negative word-ofmouth (NWOM) to share their evaluation of the retailer's BOPIS service. While a retailer's service recovery policies (e.g., cross-channel substitution) may help to fulfill its service intent, the extent to which these two signals can improve consumer satisfaction and diminish their NWOM intent remains unknown. Drawing from both service recovery literature and signaling theory, we conducted a series of five experiments and find that the intradimensional congruity of the signal set communicated by the retailer during its BOPIS service process depends on both its operational capability and the consumer's own predilection regarding the product category. These insights collectively indicate that while a retailer's operations need to support service policies to provide a congruous BOPIS service process, substitution policies offered to consumers during the transaction need to consider the extent to which a consumer's purchase decision is hedonic or utilitarian. In turn, this finding suggests that a retailer's category management needs to consider BOPIS substitution in terms of both product assortment and inventory policies. © 2022 The Authors. Journal of Business Logistics published by Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_1898",
+    "title": "Are We Delivering What Customers Want? Charting Logistics Service Quality Research—A Process View",
+    "journal": "Journal of Business Logistics",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jbl.70050",
+    "abstract": "Logistics service quality reflects the gap between customers' expectations for logistics service and the actual service they receive, yet it is unclear whether academic research has kept pace with changes in logistics practice over the past 25 years. This article reviews 173 empirical studies on logistics service quality drawn from leading supply chain, logistics, and marketing journals. Using a process – oriented perspective, we develop a framework that categorizes prior work according to antecedents, mechanisms, and outcomes, and we map how different factors collectively shape logistics service quality in both business–to–business and business–to–consumer contexts. Our review shows that, while research has extensively examined firm capabilities, fulfillment performance, and customer attitudes, important gaps remain regarding logistics service quality in nontraditional settings (e.g., reverse and closed–loop supply chains, decentralized supply networks), consistency across channels and service settings, employee management and service failure prevention, interactions among logistics service quality dimensions, consumer participation and heterogeneity, and the social dimension of logistics service quality. We conclude by outlining a future research agenda to address these gaps. © 2025 Wiley Periodicals LLC."
+  },
+  {
+    "article_id": "CS_1899",
+    "title": "The Welfare Effects of Consumers' Reports of Bribery",
+    "journal": "Journal of Economics and Management Strategy",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jems.12149",
+    "abstract": "A primary means of bureaucratic oversight is consumer complaints. Yet this important control mechanism has received very little attention in the literature on corruption. I study a signaling game of corruption in which uninformed consumers require a government service from informed officials. A victim of corruption can report corrupt officials whose supervisors are negligent or conscientious but an official's type is his private information. I find that social welfare may be nonmonotonic in the proportion of conscientious supervisors. Several examples show that an increase in the proportion of conscientious supervisors decreases social welfare if the mass of conscientious supervisors is below a critical level. I find that this perverse result does not hold if (a) the bribe is very large, or (b) bribe-giving is legalized. I also find that there is an equilibrium in which no one reports corruption. © 2016 Wiley Periodicals, Inc."
+  },
+  {
+    "article_id": "CS_1900",
+    "title": "Can consumer complaints reduce product reliability? Should we worry?",
+    "journal": "Journal of Economics and Management Strategy",
+    "journal_impact_factor": null,
+    "doi": "10.1111/jems.12335",
+    "abstract": "We analyze a monopolist's pricing and product reliability decision in a model where consumers are entitled to product replacement if the product fails, but have heterogeneous costs of exercising this right. Our main result shows that, under some conditions, a decrease in consumers expected to claim cost leads to a decrease in product reliability but an increase in profit and welfare. This result is robust to a number of extensions. Our results are in line with anecdotal evidence suggesting that changes in consumers’ claiming cost can be induced by both third parties (governments, consumers’ organizations, private enterprises, etc.) and firms. More precisely, since, under some conditions, profit and welfare align, public initiatives oriented to lower consumers’ claiming cost will be ultimately joined by firms that benefit from further increases in complaints. © 2019 Wiley Periodicals, Inc."
+  }
+]

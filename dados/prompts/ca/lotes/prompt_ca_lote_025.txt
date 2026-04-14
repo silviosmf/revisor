@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1201",
+    "title": "Improving the Strategic Distribution Performance of the Supply Chain of a Leading FMCG Company: A Case Study",
+    "journal": "2021 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM50564.2021.9672609",
+    "abstract": "Fast moving consumable goods require good supply chain operation. In this paper, a leading Egyptian FMCG is considered. The company wants to optimize its distribution network design considering several supply chain strategic objectives. The company wants to determine the number of warehouses to build, their sizes, customers assigned to each warehouse, and their layout. The objective is to reduce the distribution cost taking into consideration the company's strategic decision such as giving higher priority to important customers and assigning the nearest warehouse to each customer, and also the real live applicability of the suggested solution. We first segment the customer according to different strategic factors. Then a non-linear model is proposed for solving the problem. A hybrid heuristic is proposed that solves the problem by iterating between the optimal suggested location and the possible locations available for business in the real life according to availability and other strategic factors. Different layouts for the selected locations are evaluated using Monte-Carlo Simulation. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1202",
+    "title": "TIKETAP: Designing a Smartphone App for Traffic Violation Tickets Through Design Thinking Process",
+    "journal": "2021 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM50564.2021.9672868",
+    "abstract": "The current process for issuing and clearing traffic violations in the Philippines is labor-intensive and time consuming. The aim of the study was to identify the underlying pain points of the users, that is, both traffic enforcer and driver, during the ticketing process and to apply a design thinking approach in creating a smartphone application that would help in creating a seamless way to issue violation tickets and pay for the violation fines. Identifying the problems and potential features for the solution was done through empathizing with the users with the aid of empathy maps and personas. Design criteria were then developed to guide in the design of the app's various functions and features. Results showed that the proposed smartphone application, TIKETAP, was easy to use and understand and was able to considerably reduce the time of the entire ticketing process as opposed to the existing method. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1203",
+    "title": "Developing an Implementation Framework for Automated Customer Support Service in Collaborative Customer Relationship Management Systems",
+    "journal": "2021 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM50564.2021.9672894",
+    "abstract": "Collaborative Customer Relationship Management (CCRM) has developed Automated Customer Support Services (ACSS), where it focuses on providing more efficient and immediate customer service. Through chatbots, virtual customers, internet routing, and automated responses, technology has evolved to aid the customer support sector through automations trained by Artificial Intelligence (AI), Machine Learning (ML), and other advancements in technology. However, ACSS is relatively new with various implementation frameworks in choosing ACSS platforms developed by CRM experts for organizations. The study aims to cover the research gaps of integrating the customer perspective in terms of behavioral trends, data security issues, engagement and responses, and proper maintenance and evaluation of the ACSS performance based on the customer relationships and experience, through the development of a new implementation framework for ACSS in an organization. Through a rating-questionnaire answered by CRM experts on three (3) different ACSS based on different frameworks and the developed one by the study, the findings show that the developed framework enhances customer relationships and experiences more than the existing frameworks, thereby validating the effectiveness of the implementation framework in the study. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1204",
+    "title": "Stylized Dialogue Generation",
+    "journal": "2021 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM50564.2021.9673021",
+    "abstract": "Dialogue systems such as intelligent online customer services, online chatbots or smart kiosks are becoming increasingly popular. Currently dialogue systems lack personality and ability to respond according to contexts. In this study, we propose an approach to transfer the text into multiple styles when generating dialogue responses. It is especially challenging to build a stylized dialogue system as it combines supervised and unsupervised tasks. In practice, the dialogue data are usually paired, i.e. query paired response while styled text is not. Therefore, we propose using lightweight deep neural network models to bridge the dialogue response generation model and the style transfer model. This structure allows the model to generate responses of different styles to the same query. Our approach will be evaluated against selected state-of-the-art dialogue generation and style transfer techniques. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1205",
+    "title": "Research on Dynamic Pricing of Shared Electric Vehicles Based on System Utility Maximization",
+    "journal": "2021 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM50564.2021.9673055",
+    "abstract": "Under the background of sharing economy, in order to improve the utilization rate of vehicle resources and the economic benefits of operators for urban governance, this paper studies the dynamic pricing strategy to maximize the system utility. Firstly, the space-time distribution law, time-varying law and influencing factors of shared cars leased by users are analyzed, and the demand characteristics of users' travel are obtained; then, considering various factors such as operation mode, user acceptance, demand price elasticity and operation cost, the supply and demand balance of single-way electric rental vehicle system based on fixed network points is explored and the pricing strategies of each site in different periods are formulated. Finally, the feasibility of the model is verified by taking the 'microbus' electric rental vehicle project in Hangzhou City as an example. The research results can provide theoretical guidance for subsequent promotion and market allocation of urban governance. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1206",
+    "title": "Feasibility Study of a BERT-based Question Answering Chatbot for Information Retrieval from Construction Specifications",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM55944.2022.9989625",
+    "abstract": "Checking construction specification in every construction phase is critical to ensure proper construction quality and to avoid contractual problems. However, manual review is inefficient, expensive, and error-prone. There have been efforts to automatically review specifications, but these studies are limited in their practical applicability. As a solution, the use of retrieval-based user interface (as known as a chatbot) can extract specific information from construction specifications as a user wants. For the development of an information retrieval chatbot for construction specifications, this paper tested the application feasibility of a question answering methodology using Bidirectional Encoder Representations from Transformers (BERT). By taking advantages of the pre-trained BERT, user-wanted information was successfully extracted from construction specifications. With this approach, variety of questions can be responded flexibly without time-consuming manual tasks such as labeling. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1207",
+    "title": "Are Consumers Ready for Flying Taxis? A Choice-based Conjoint Analysis of eVTOLs in Germany",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM55944.2022.9989956",
+    "abstract": "Increased urbanization leads to urban traffic challenges such as increased congestion, longer travel times and more transport emissions. Electric Vertical Take-Off and Landing (eVTOL) aircrafts may offer the answer to these challenges as they can act as flying taxis and transport passengers in a fast and eco-friendly way. However, it is still unclear under what conditions consumers will prefer flying taxis over traditional transport modes. Hence, the purpose of this paper is to compare consumer preferences for eVTOLs, public transport and taxis across different travel scenarios. Thus, we perform a choice-based conjoint analysis with travelers in Germany considering price, travel time and CO2 emissions. Conducting conditional logistic regressions, we show that consumers prefer eVTOLs over traditional taxis, and also over public transport for time-sensitive trips. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1208",
+    "title": "Method for Determining Material Demands by Combing Deterministic and Probabilistic Information in Flexible and Changeable Production Systems",
+    "journal": "2023 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM58616.2023.10406540",
+    "abstract": "In today's dynamic manufacturing environment, flexible and resilient production systems are crucial for coping with constantly changing internal product and production requirements coupled with external market and customer demands. Conventional production systems often lack the capability to adapt to changing requirements due to their fixed structures and technical limitations. To address these challenges, various flexible and changeable production system approaches have been developed in the last years. However, material provision becomes challenging due to increasing degrees of freedom and uncertainty due to arising turbulences, making it difficult to match demand and material provision in terms of time, location, and quantity. This paper presents a method to determine material demands that considers both deterministic and probabilistic information regarding material demand location, quantity, and time. An experimental research approach based on a minimal system was pursued, incorporating simulation experiments covering parameter variation using the Monte Carlo method. The results demonstrate that the developed method successfully determines material demands, enabling flexible and target-size-optimized material provision with potentially arising turbulences. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1209",
+    "title": "Uncovering Socioeconomic Factors Influencing Railway User Perception",
+    "journal": "2023 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM58616.2023.10406562",
+    "abstract": "Policy makers are increasingly aware of the need to promote and attract users towards sustainable mobility. The perception that users make of available alternatives, such as the railway system, is gaining relevance. The present work focuses on user perception regarding the need to promote investment to improve social performance of railway travel. This work is based on an open European level survey on railway user satisfaction, applied to Portugal, providing a unique perspective on user's perceptions, according to their socioeconomic background. Overall, we found strong influence of socioeconomic context towards universal access to railway services. Users from peri-urban areas tend to prevail, and younger age ranges use railway more frequently than older age ranges. The study also presents valuable insights into the need to consider vulnerable population segments in policies for railway use in Portugal. Further research is required on the perception of environmental and energy related issues for railway travel. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1210",
+    "title": "The Benefits of Willingness-to-Pay-Based Incentive-Driven Rider Repositioning in Ride-Hailing Systems",
+    "journal": "2023 IEEE International Conference on Industrial Engineering and Engineering Management, IEEM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM58616.2023.10406991",
+    "abstract": "Modern ride-hailing systems are facing great challenges in improving the rider-driver matching rate due to several essential reasons: i) supply and demand are highly mismatched both temporally and spatially during peak hours; ii) order cancellations caused by hard-to-meet dispatching are difficult to avoid because of the complicated topology of the road network; iii) pick up time are often inaccurately estimated, primarily due to the uncertain nature of traffic conditions, thereby elevating the risk of losing customers. In this work, we investigate the benefits of optimal rider repositioning in ride-hailing systems, which incorporates riders' willingness in response to monetary incentives. In particular, a nonlinear mixed-integer programming model is developed to address the joint optimization of the pickup location selection, discount setting, and rider-driver matching, where a Willingness-to-Pay (WTP) model is employed to capture riders' preferences. We show the NP-hardness of the studied problem and propose an efficient exact column generation algorithm to accelerate the solution. To test the performance of our method in real-world road networks under dynamic traffic conditions, we leverage Manhattan road map and taxi trip data to predict travel times in real-time for extensive numerical experiments and sensitivity analysis. The computational results exhibit an average of 7.59% increase in matched riders and a 5.56% improvement in total revenue, and a 2.35% reduction in pickup time for experiments over 10 days (120,000 trip requests in total). By embracing our proposed method in real ride-hailing systems, the mismatch between supply and demand can be accommodated effectively. Specifically, if riders are willing to walk a short distance and sensitive to monetary incentives, a win-win-win outcome for all stakeholders (riders, drivers and platforms) can be achieved: cheaper and easier-to-access mobility service for riders, less detours and pickup times for drivers and higher system-wide profit for platforms. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1211",
+    "title": "Enhancing Personalized Shopping in the Metaverse: A Fuzzy Multi-criteria Decision Model for Luxury Retail Layout Optimization",
+    "journal": "IEEE International Conference on Industrial Engineering and Engineering Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IEEM63636.2025.11357718",
+    "abstract": "Globalization and market competition has transformed luxury retail from a traditional to an ecommerce business model. However, providing customers with exclusive personalization and immersive experience through an e-commerce platform is a challenge. To provide a better shopping experience, luxury retailers have been developing virtual stores using the metaverse. Using real-time reconfigured product layouts, the retailer can dynamically change the display of a large number of products for customers. However, luxury retailers have difficulty changing the evaluation criteria for personalized and data-driven customer experiences because of the changing environment from two- to three-dimensional. Therefore, this study proposes a fuzzy-based metaverse retail layout optimization model to enhance dynamic product layouts in luxury retail environments by considering six real-time behavioral criteria. The results show that the proposed model can guide strategic product placement and improve the virtual shopping experience of customers. This study enhances metaverse commerce, luxury retail, and intelligent decision systems that offer a practical approach to digital transformation. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1212",
+    "title": "Production planning under demand uncertainty using Monte Carlo simulation approach: a case study in fertilizer industry",
+    "journal": "Proceedings of the 2019 International Conference on Industrial Engineering and Systems Management, IESM 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IESM45758.2019.8948112",
+    "abstract": "Production planning as a strategic decision involves the allocation of aggregate production resources for groups of aggregate products. Is performed in a manufacturing setting to provide efficient utilization of those production resources while meeting sales opportunities for the finished products. In this paper the production planning is studied under demand uncertainty. The consideration of uncertainty in manufacturing systems requires consideration not only of demand but also of alternative scenarios of variations in these demands. The aim of this study is to evaluate the robustness of a system consists of satisfying the total demand in a multi-facility plant forming a production-inventory network. To consider the demand uncertainty, a set of possible scenarios for demands is created based on the Monte Carlo simulation. The deterministic model takes the form of a Mixed Integer Linear Program (MILP) which objective is to maximize the customer demand satisfaction (CDS) level. The proposed model provides an effective tool for evaluating the exposure of a firm assets to market uncertainties. The key features of the integrated model is illustrated with a case study of fertilizers production industry. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1213",
+    "title": "Prediction of 'bad postures' based on Machine Learning models",
+    "journal": "Proceedings - 2022 8th International Engineering, Sciences and Technology Conference, IESTEC 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IESTEC54539.2022.00039",
+    "abstract": "The advances of the Internet, mobile communications and computing have opened new frontiers for a society that is increasingly focused on data analysis. New applications increasingly rely on machine-To-machine communications, which in turn create workloads that demand innovative systems, as network devices, sensors, and intelligent systems now generate vast amounts of data that can be processed to solve everyday problems, there is no doubt that new technologies have made our lives easier. However, despite all the advantages they bring, they have also brought some discomfort to our health. Especially, behind our back, which can be harmful to the spine. For these reasons, the purpose of this work was to design and build a prototype system that 'detects and corrects bad posture' of a person when performing their daily activities. To do this, we use a prediction system with the help of three inertial sensors. The developed device consists of a monitoring system that includes 3 risk posture factors and is capable of providing feedback, through an application that alerts the user in order to prevent poor posture or inadequate posture that can become chronic. , causing neck pain, back pain, etc. In this way, a message is sent in case the posture of the human subject is outside the established threshold. The experimental results carried out with various machine learning algorithms demonstrate the abilities of the system to distinguish an improper head posture from a correct one. Different algorithms were applied, finding that by applying Neural Networks Artificial (ANN) we obtain better results. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1214",
+    "title": "Using Chatbot Technologies to Help Individuals Make Sound Personalized Financial Decisions",
+    "journal": "2021 IEEE International Humanitarian Technology Conference, IHTC 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IHTC53077.2021.9698928",
+    "abstract": "Those that struggle with debt and poor financial management can find many sources of online content to increase their financial literacy. However, consumption of educational content often does not translate to behavioural change. Software-based on just-in-time education can make use of nudge theory and gamification to help increase financial literacy while also influencing positive financial behaviour. Using chatbot technology as a conversational interface to this educational software increases convenience and usability, especially among those that struggle with learning to use technology. We present the design for a financial education chatbot that defines core situations for providing suggestions and information to users. We also used a survey to evaluate its usefulness and found that 82 per cent of 68 participants consider the chatbot strongly beneficial to their financial education and behaviour. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1215",
+    "title": "Is Artificial Intelligence Transforming the CRM (Customer Relationship) Experience? An Empirical Study in Indian Retail Industry",
+    "journal": "International Conference on Intelligent and Innovative Practices in Engineering and Management 2024, IIPEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IIPEM62726.2024.10925741",
+    "abstract": "The environment of Customer Relationship Management (CRM) is rapidly evolving with substantial developments. Leading businesses are progressively applying automation and artificial intelligence technologies to understand buying behavior of customers, improve brand communication, and enhance relationships. Modern CRM systems generates extensive data sets on customer interactions and behaviors, which AI algorithms analyze to reveal hidden insights on individual preferences, future behaviors, and personalized cross-sell recommendations. AI-driven automation simplifies CRM processes, enabling businesses to personalize interactions, promptly respond to inquiries, and build loyalty. By consistently attracting and meeting customer needs, businesses increase customer value and foster stronger relationships. This paper delves into AI's pivotal role in enhancing CRM, specifically within the retail sector. The blend of machine learning and artificial intelligence has transformed CRM software. These technologies empower businesses to delve deeper into their customers' behaviors and preferences, automate repetitive tasks, and offer highly personalized experiences. For instance, ML algorithms can sift through extensive customer data, uncover patterns, and forecast future behaviors, allowing companies to customize their offerings and marketing approaches accordingly. AI-driven chatbots can deliver immediate customer support, addressing queries and resolving issues promptly, even beyond regular business hours. This piece examines the crucial impact of ML and AI in elevating CRM software capabilities. Sample of 213 people from Indian retail industry were considered for survey to know the \"impact of Artificial Intelligence Transforming the CRM (Customer Relationship) Experience in Indian Retail Industry\". It can be concluded that there is significant influence of Artificial Intelligence Transforming the CRM (Customer Relationship) Experience in Indian Retail Industry. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1216",
+    "title": "AI Chatbots in Banking: Exploring Key Factors Influencing Customer Satisfaction through the extended E-SQUAL Model",
+    "journal": "International Conference on Intelligent and Innovative Practices in Engineering and Management 2024, IIPEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IIPEM62726.2024.10925787",
+    "abstract": "Chatbots, an Artificial Intelligence conversational agent that interacts with human users, have become integral to modern banking, offering real-time customer support and automating routine inquiries. This study seeks to identify the primary factors affecting customer satisfaction with chatbots through the use of an online survey. A structured questionnaire with variables from the extended E-SQUAL model was employed in the study to assess customer satisfaction with chatbot services. The findings indicate that key elements influencing customer satisfaction with banking-sector chatbots are performance expectancy, responsiveness, and reliability. The research offers valuable insights for technology providers and banking institutions to refine chatbot interactions, ultimately enhancing customer satisfaction. Future work can explore the integration of advanced technologies like AI and natural language processing, and personalization of chatbot interactions to cater to diverse customer needs. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1217",
+    "title": "Outage Performance of CDRT-based Cognitive NOMA Intelligent Transportation Systems with Imperfect Successive Interference Cancellation",
+    "journal": "IMCEC 2024 - IEEE 6th Advanced Information Management, Communicates, Electronic and Automation Control Conference",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IMCEC59810.2024.10575115",
+    "abstract": "With the dramatic development of wireless communication technology, intelligent transportation systems (ITS) are facing the problems of low spectrum utilization and unprotected quality of service (QoS) for edge users in secondary networks. In addition, successive interference cancellation (SIC) is the key aspect of the NOMA technology and has a significant impact on system performance. Cognitive radio (CR), non-orthogonal multiple access (NOMA) and coordinated direct and relay transmission (CDRT) are proved to be effective techniques for solving these problems. This work investigates the performance of a CDRT-based overlay cognitive NOMA ITS. Imperfect SIC of the full duplex secondary base station (SBS) is considered separately. Subsequently the closed expression for the outage probability of each user is obtained. Finally, simulation verification is performed and compared with classical NOMA transmission, concluding that the outage probability of edge users in the proposed system is smaller under better SIC capability. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1218",
+    "title": "ALQ: An Efficient Active Learning Recommendation Algorithm",
+    "journal": "IMCEC 2024 - IEEE 6th Advanced Information Management, Communicates, Electronic and Automation Control Conference",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IMCEC59810.2024.10575704",
+    "abstract": "With the rapid development of the Internet, the problem of information overload is becoming more and more serious, which makes it difficult for users to choose the content they are interested in from a large number of information. With the emergence of recommendation systems, the historical interaction information between users and information and items is used to provide users with topics of interest, which not only alleviates the problem of information overload, but also brings great satisfaction to users. However, training a model that can make accurate recommendations is not an easy task. In addition to an appropriate training strategy, it also requires a large amount of data support. Getting data, especially labeled data, takes a lot of time and money. Therefore, this paper proposes a new active learning algorithm. Firstly, the recommendation problem was transformed into a PU learning problem, and then the method was introduced in the positive sample learning process to achieve the purpose of increasing positive sample data, thereby reducing the cost of data labeling. Through experiments, the proposed method reduces the cost of data labeling in the recommendation task and further verifies the rationality of transforming the recommendation problem into a PU learning problem. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1219",
+    "title": "E-Health Bot to change the Face of Medicare",
+    "journal": "Proceedings of International Conference on Research, Innovation, Knowledge Management and Technology Application for Business Sustainability, INBUSH 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/INBUSH46973.2020.9392125",
+    "abstract": "Chatbot or conversational bot is a tool to ease the communication between human beings and computers. When someone talks to a chatbot, it seems as if you are talking to an actual human being. Chatbots carry out conversation in auditory and textual manner. Chatbots work on the principles of Artificial Intelligence and are automated devices. Their response is based upon the input of the user. They analyze the request, identify intent and entities and then compose their reply which may be data from the database or an API (application programming interface) call. These devices are trained with the help of actual data. The device matches the questions asked by the user to the best suitable answer using tools and models of machine learning. Chatbots seem to be self-sufficient after they go live but human intervention is very crucial in its configuration, training and implementation. Since the database for outputs is limited, it is possible that chatbot encounters an unknown query which is to be solved by a human being. However, chatbots do hold an advantage over human beings as they are available 24/7 and have access to huge amount of information. These chatbots use API for providing response to different requests of the user. This paper proposes the idea of a new chatbot which will assist the users with their medical needs, the Medicbot. This chatbot will be able to perform multiple functions with the combination of various Artificial Intelligence forms such as semantic understanding and natural language processing. Medicbot will be operated with the help of a virtual assistance (serves the purpose of a personal assistant) known as Medico. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1220",
+    "title": "AI-Driven in Hotel Operations: Enhancing Guest Experience and Operational Efficiency",
+    "journal": "Proceedings of the 2025 International Conference on Technology Enabled Economic Changes, InTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/InTech64186.2025.11198279",
+    "abstract": "The Artificial Intelligence (AI) integration in hotel operations has completely changed the hospitality industry through better guest encounter quality alongside better operational effectiveness. The research investigates different AI technology implementations across hotel managerial domains which include guest services and reservations along with personal recommendations and housekeeping management and energy systems. The innovative approach of AI-based systems helps hotels create individualized effortless guest interactions while predicting guest wants and answering questions in real-time thus boosting satisfaction and guest loyalty. The application of AI resulted in improved hotel operations because it eliminated repeated tasks while simultaneously improving resource usage and reducing operational costs. AI-based check-in technology supports automatic system operations along with real-time price adjustment tools since they decrease human mistakes and enhance decision making capabilities. The implementation of contemporary hospitality technologies enables systems to connect with each other so guest experience improves while operation efficiency increases. AI implementation in hospitality creates multiple hurdles which include privacy concerns about collected data along with employment risks as well as determining correct technology adoption levels that preserve human service quality standards. AI development will create substantial effects on guest satisfaction levels while bettering operational efficiency standards across the hospitality field. Hotel customer satisfaction depends increasingly on the adoption of smart services. Research will evaluate AI's impact on hotel management techniques and guest perceptions in order to reveal present industry trends and prospective future changes to hospitality standards. These results will help hotels better understand the methods of using AI technologies to achieve operational excellence while maintaining a humanfocused hospitality structure. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1221",
+    "title": "IoT-Based Intelligent Packaging System: Transforming Logistics with Real-Time Monitoring",
+    "journal": "Proceedings of the 2025 International Conference on Technology Enabled Economic Changes, InTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/InTech64186.2025.11198305",
+    "abstract": "Through Internet of Things (IoT) various industries have achieved revolution, thanks to independent networked devices which automate the monitoring of system parameters. The traditional packaging used in logistics operations has weaknesses in tracking and environmental surveillance and transit security especially when dealing with valuable or sensitive goods. This paper presents Intelligent Packaging System (IPS) which combines multiple sensors alongside IoT platforms and real-time communication elements to resolve existing challenges. The main purpose of this research analyzes IPS performance compared to current systems Verifiable Smart Packaging and RFID-based courier systems and map-matching services. IPS sustains logistics efficiency through meaningful real-time package locational data which ensures lasting security as well as environment protection. The IPS evaluates real-time data records to shield packages against environmental conditions that might endanger quality and security. The research presents how IPS delivers operational transformation to logistics by improving user interface while providing secure and intelligent package management which develops advanced supply chain technology. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1222",
+    "title": "AI-Driven Solutions in Hospitality: Transforming Guest Experience and Streamlining Hotel Operations",
+    "journal": "Proceedings of the 2025 International Conference on Technology Enabled Economic Changes, InTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/InTech64186.2025.11198397",
+    "abstract": "AI-based solutions for the hospitality industry receive analysis in this paper to demonstrate how AI technologies modify hotel guest interactions as well as enhance operational procedures. Practice and research show that AI tools including chatbots and personalized recommendation engines along with dynamic pricing models and automated check-ins deliver substantial improvements to hotel operational efficiency and guest satisfaction levels. The research combines existing literature review and case studies of leading hotels using AI solutions and expert interviews to acquire information. The analysis of results reveals how AI systems perform in operational enhancement and individual guest service delivery. Research findings demonstrate that artificial intelligence solutions have produced major advances in guest relationships together with operation enhancement and monetary oversight. The introduction of chatbots together with virtual concierge services decreased customer waiting times but AI-based dynamic pricing algorithms improved income generation effectiveness. Funding expenses and employee resistance make up crucial obstacles for AI system implementation throughout the industry. The research indicates hotels using AI-based systems will achieve operational excellence together with better guest satisfaction yet requires detailed planning and financial resources for successful implementation. Future studies should address how AI technology affects employment stability in hospitality services together with how it influences upcoming guest requirements. The paper conducts an extensive exploration into how AI transforms hospitality by creating higher operational advantages with better customer experience. The study expands the AI adoption research in service industries and provides essential knowledge for hotel managers and technology developers who study AI applications in hospitality. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1223",
+    "title": "Transforming Indian Banking: The Impact of Intelligent Systems and Process Automation on Financial Innovation",
+    "journal": "Proceedings of the 2025 International Conference on Technology Enabled Economic Changes, InTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/InTech64186.2025.11198506",
+    "abstract": "The research conducted for 15 different banks shows how different attitudes of the participants span from very optimistic to conservative. The State Bank of India and Punjab National Bank say they will benefit more, while some like Dhan Laxmi Bank are more cautious. This dichotomy is a strong indication of the determinants that influence the level of AI readiness within an institution, including but not limited to, the firm's culture, technological endowment and the customer base. These findings are further complemented by the results of the Chi-Square Test, which elucidate the inconsistency of the opinions of financial institutions regarding the impact of AI and automation. These differences give rise to the need of strategic diversity that is suited to particular characteristics of each bank. While banks continue to undergo AI mediated transformations, it will be important to deal with the specific issues and expectations posed by different institutional contexts in order to facilitate acceptance and advancement. Additionally, considering the views of banking experts from different positions, there is a wide range of viewpoints and there is a clear need for approaches that are suited to the specific roles that operate in different banks. Incorporating AI and automation into the operating processes of the bank is a complex issue and requires a proper understanding of the unique setting of every company. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1224",
+    "title": "Transforming Investment Management Strategies: The Impact of Intelligent Systems on Modern Financial Planning Utilizing Robo-Advisor",
+    "journal": "Proceedings of the 2025 International Conference on Technology Enabled Economic Changes, InTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/InTech64186.2025.11198530",
+    "abstract": "In recent years, the introduction of new communication technologies and the internet facilitated the rise of Robo-Advisors powered by Artificial Intelligence (AI), allowing people to approach investment management in a completely different way. The research assesses the paradigm shift AI provides in the field of personal finance, in regard to the aspects of investment planning, risk assessment and portfolio management. Robo-Advisors manage investments passively on behalf of the client, relying on intelligent algorithms and requiring low human input. This research aims to accomplish a comprehensive analysis of the core technologies which form the basis of Robo-Advisors, focusing on the AI technologies which enable Active Index to create accurate tailored portfolio. After the review of the literature, we discuss the recent trends in financial advisory systems that combine AI and big data analytics. In addition, we consider an original model that is focused on improving the performance of Robo-Advisors through the integration of advanced AI technologies. The improvement in decision making accuracy and the effective portfolio management practice using real data is astonishing in our proposed framework as the results of our analysis show. Our analysis emphasizes the benefits of AI powered Robo-Advisors when compared with conventional Robo advisers in adapting the investment approach to the specific goals of individual users. This study is a further step in the debate concerning the impact of AI on personal finance in the sense that it shows what is possible as well as what is not. Addressing the issue of combining technological advancements with finance, this study shows how AI can help improve and make investment management more accessible to everyone. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1225",
+    "title": "Customer Support Chatbot for Electronic Components",
+    "journal": "2022 International Conference on Interdisciplinary Research in Technology and Management, IRTM 2022 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IRTM54583.2022.9791730",
+    "abstract": "Customer satisfaction is a key metric for any company providing products or services. A great deal of customer satisfaction is directly related to the support provided by the company to its customers. This paper describes an automated solution to achieving good customer support. The focus is on an e-commerce industry selling various electronics components such as sensors, micro-controllers and actuators. One of the key challenges is in the large variation in the types of queries and possible solutions. Different NLP based data exploration techniques are employed before moving on to exploring different model architectures. The solution described in this paper is based on a Seq2Seq LSTM model with Attention. The data from a private company is used and an evaluation accuracy of about 0.90 is achieved. However, this could be misleading since the dataset is very small, and additional evaluation metrics need to be measured and compared. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1226",
+    "title": "Fuzzy Linguistic Summaries for Explaining Online Semi-Supervised Learning",
+    "journal": "2022 IEEE 11th International Conference on Intelligent Systems, IS 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/IS57118.2022.10019636",
+    "abstract": "Intelligent systems for the medical domain often require processing data streams that evolve over time and are only partially labeled. At the same time, the need for explanations is of utmost importance not only due to various regulations, but also to increase trust among systems' users. In this work, an online data-driven learning method with focus on the explainability of evolving models equipped with incremental semi-supervised learning algorithms is considered. The proposed method combines: (i) the Dynamic Incremental Semi-Supervised Fuzzy C-Means (DISSFCM) algorithm to incrementally classify subsets of data; with (ii) Linguistic Summarization, which provides explanations of the classification results in terms of short sentences in a natural language. The approach has been illustrated for streaming data collected from voice calls of patients affected by Bipolar Disorder. The results show the effectiveness of the proposed method in classifying instances belonging to healthy and affective states, and explaining the approximate reasoning behind the classification of new acoustic data related to patients. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1227",
+    "title": "Implementation of Optimized Resource Allocation Algorithm in Grid Computing System",
+    "journal": "2025 4th International Symposium on Computer Applications and Information Technology, ISCAIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISCAIT64916.2025.11010282",
+    "abstract": "In this paper, a grid computing system based on resource optimization allocation algorithm is proposed. The system consists of four modules: grid user, grid administrator, grid resource and grid information service center. The resource allocation of the system includes two aspects: one is resource allocation on the user side, and the other is request ordering on the resource side. The two-stage optimization allows the requirements to be assigned to the most appropriate resource based on the user's requirements. The main implementation methods of cloud computing service layer and the design of mobile Agent in the system are discussed in detail. This system can fully concentrate high-quality education resources in urban and rural areas. And through the cloud server for automatic management, to achieve the maximum degree of resource sharing. This is of great significance for improving the distribution of educational resources and public services in rural areas of China. In addition, the intelligent segmentation algorithm based on mobile agent is used to improve the intelligence of the system. Personalized learning service for users and real-time update of teaching resources are realized. The methods proposed in this paper are compared from three aspects: request completion success rate, completion time and average delay. The results fully illustrate the advantages of this system. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1228",
+    "title": "Design and Implementation of RFID-based Student Management System for Higher Education Students",
+    "journal": "2025 4th International Symposium on Computer Applications and Information Technology, ISCAIT 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISCAIT64916.2025.11010335",
+    "abstract": "This paper presents the design and implementation of an RFID-based student management system for higher education institutions. The system adopts a B/S architecture integrating RFID technology, cloud database, and web platform to achieve automated student attendance tracking and access management. Through functional and performance testing with 500 simulated users, the system demonstrated high reliability with over 98% success rate in data collection and attendance management, maintaining response times under 280 ms at peak loads. The results indicate that RFID technology significantly improves automation efficiency and management accuracy in campus environments, providing a practical solution for intelligent student management. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1229",
+    "title": "IoT Based Smart Systems using Artificial Intelligence and Machine Learning: Accessible and Intelligent Solutions",
+    "journal": "2023 6th International Conference on Information Systems and Computer Networks, ISCON 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISCON57294.2023.10112093",
+    "abstract": "The Internet of Things (IoT) has grown in importance in both the technological and social spheres as consumers want smarter homes, more efficient businesses, and more efficient healthcare systems. The social setting is very important for this. Communication networks provide uninterrupted internet connectivity for both fixed and mobile devices like PCs and smartphones. Customers may now keep up their level of engagement while interacting with one or more apps at any time and from any location, thanks to developments in information and communication technologies. Many kinds of smart devices might potentially coordinate their responses to events, sending out alerts or keeping records of the system's condition in line with a predetermined policy. Constant progress toward intelligent solutions is improving many facets of modern life, including manufacturing, transportation, electronic healthcare, electronic education, and many more. Machine-to-machine (M2M) communication in the IoT is autonomous and dynamic. Diverse approaches are being developed to address the challenges posed by disparate data sources, fluctuating signal quality, and overwhelming quantities of data. From the perspectives of intelligent system technologies, security, vulnerabilities, and the potential role that intelligent solutions based on Machine Learning (ML) and Artificial Intelligence (AI) may play, this article examines the IoT. Concerns about privacy and safety have arisen as a major obstacle to the widespread adoption of the Internet of Things (IoT). We propose that the Standard Security Framework (SSF) be made mandatory for all distributed networks to ensure that hardware and software modules may communicate with one another regardless of their respective platforms. In addition, the effectiveness and security of new innovations in using fog and edge computing in conjunction with cloud applications have been studied. . © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1230",
+    "title": "Ontology Based Agriculture Data Mining using IWO and RNN",
+    "journal": "2023 6th International Conference on Information Systems and Computer Networks, ISCON 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISCON57294.2023.10112187",
+    "abstract": "An ontology is a machine-interpretable formal description of domain knowledge. In current years, ontologies have risen to prominence as a key tool for demonstrating domain knowledge and a key element of several knowledge management systems, decision-support systems (DSS) and other intelligent systems including in agriculture. However, a study of the current literature on agricultural ontologies suggests that the majority of research that suggest agricultural ontologies lack a clear assessment mechanism. This is unwanted because this is impossible to assess the value of ontologies in research and practise without well-structured assessment mechanisms. Furthermore, relying on such ontologies and sharing them on the Semantic Web or amongst semantic-aware apps is problematic. This paper presents a framework for selecting appropriate assessment techniques for Ontology Based Agriculture Data Mining utilizing Invasive Weed Optimization (IWO) and Re-current Neural Network (RNN) that appears to be absent from most recent agricultural ontology research. The framework facilitates the selection of relevant evaluation techniques for a particular ontology based on its intended user. . © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1231",
+    "title": "Deep Learning-Driven Detection of Traffic Signals Using Neural Network Architectures",
+    "journal": "2025 7th International Conference on Information Systems and Computer Networks, ISCON 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISCON65210.2025.11341202",
+    "abstract": "As you are already aware, automatic cars are capable of self-control. All traffic signals must be easily understood and recognized by cars. Businesses like Google, Tesla, Toyota, Mercedes-Benz, Audi, Ford, and others are utilizing the technology to improve their customer experience to incorporating features like autonomous drive and pursuing innovation in that area (Michael Berthold, et al). Therefore, if we want to use this technology efficiently, the car's ability to differentiate as in different signs-like as no entry area, height restriction, turning point, schools, hospitals, and other many more-is essential. The technique of separating traffic signals into related classifications is known as traffic sign recognition. Here, we developed a deep neural network system capable of distinguishing between distinct traffic signs. This system allows us to process and evaluate various traffic signals, which are essential to all automated cars. Our proposed automated system for traffic sign detection uses CNN. First, a few vector machines are utilized to convert the original image to a greyscale image, and then a CNN with for analysis, a constrained and learnable layer is used. In this case, it makes an effort to crop the image's border to match the original. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1232",
+    "title": "Study of Community Event Introduction Service for Promoting In-Home Elderly Social Participation",
+    "journal": "Proceedings - 2024 International of Seminar on Application for Technology of Information and Communication: Smart And Emerging Technology for a Better Life, iSemantic 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/iSemantic63362.2024.10762097",
+    "abstract": "Currently, the proportion of elderly population to the total population in Japan is the highest in the world, and the proportion of elderly population is expected to continue to rise in the future. Also, the proportion of elderly people living alone is increasing year by year, and the proportion of lonely and isolated elderly people is increasing. In such a situation, our research group is developing a virtual agent (VA) listening service to listen to the daily lives of elderly people at home. However, this service lacked functionality to engage users in social activities, so there was a challenge in promoting user social participation. Hence, in this study, we proposed and implemented a \"Community Event Introduction Service\"to promote social participation of elderly people at home by allowing them to learn about community events while interacting with virtual agent. As a result, we were able to implement a service to propose and remind community events through the Virtual Agent Listening Service, promoting social participation of elderly people at home. In the future, we plan to evaluate the Community Event Introduction Service based on the results of long-term evaluation experiments and implement a function to estimate preferences from the dialogue content of the elderly. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1233",
+    "title": "Analyzing Customer Satisfaction Using Chatbots in the Indonesian Banking Sector",
+    "journal": "Proceedings - 2024 International of Seminar on Application for Technology of Information and Communication: Smart And Emerging Technology for a Better Life, iSemantic 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/iSemantic63362.2024.10762320",
+    "abstract": "Chatbot is a technology used to provide chat services to perform a function or convey information via voice or text. Currently, chatbots are widely used in various industries, including the banking sector. The purpose of this research is to analyze the level of customer satisfaction with chatbot services in the banking sector and determine their impact on customer retention and loyalty. Research results from a survey of 385 respondents who actively use chatbot services from various banks show that the majority of customers are satisfied with the availability and responsiveness of chatbots. However, some technical and interactive aspects are considered to need improvement. In summary, chatbots have contributed positively to customer satisfaction. Therefore, ongoing improvements are needed to ensure chatbots remain relevant and meet customer expectations in the future. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1234",
+    "title": "Capacity Valuation of Demand Response in the Presence of Variable Generation through Monte Carlo Analysis",
+    "journal": "2019 IEEE Power and Energy Society Innovative Smart Grid Technologies Conference, ISGT 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISGT.2019.8791619",
+    "abstract": "While smart demand-side management technologies have significant potential to support the integration of variable renewable generation sources in the electricity system, rigorously quantifying the contribution of demand response to meeting peak demand remains a challenge due to the nontrivial intertemporal considerations involved in demand response operations. This paper contributes to the field of capacity value by studying the effect of customer participation in DR programs, investigating the contribution that shiftable loads can provide for capacity value in a smart, standalone system. This paper uses a Monte Carlo simulation to investigate the effect of DR on the loss of load probability in a sequential simulation framework. Also presented here is a load-shifting model for customer loads where time of use is based on need, priority, and the availability of generation. Results of this work present a quantitative value for the equivalent firm capacity of demand response programs for a specific test case that depends on the participation rate among consumers. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1235",
+    "title": "A Framework for a Large-Scale B2B Recommender System",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170298",
+    "abstract": "The aim of a recommender system is to suggest relevant items in order to improve purchasing experience and minimise information overload. Despite extensive research in the area of B2C recommender systems, business-to-business (B2B) distributors can not directly benefit from the results. Mainly because the data from these large scale retailers is not publicly available to researchers and also their problems are not widely known to the outside world. These companies have complex structures for their items and customers, e.g. the huge number of items and customers leading to data sparsity or the high level of accuracy required in recommending safety items. Furthermore, one of the key requirements for such businesses is bulk recommendations to be able to meet their market demands. A unique hybrid approach to recommendation with an emphasis on knowledge components is needed for such businesses. It is critical to have a careful analysis of item-category specific features for any recommendation as well as the customer context. In this paper, we propose a large scale B2B recommender framework to address the above requirements. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1236",
+    "title": "A Secure Multi-Party Computing System Based on SGX Technology for Trusted Data Circulation",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170307",
+    "abstract": "The security of data circulation is the core technology of data fusion and sharing service. The paper proposes multi-party circulation mechanism of the trusted data using to MPI communication. In order to achieve the trusted computing, this study proposes the computing service platform based on SMPC, which encapsulates the operation of sensitive data such as encryption key, password, user data, and etc.by trusted hardware using the security extension of Intel SGX. Meanwhile, aiming at these problems of semantic security and efficient processing ability, we chooses ElGamal homomorphic encryption system. In additional, SGX is extended to the remote authentication mechanism. System can support the deployment of hybrid cloud mode. Thus, the data security circulation can be satisfied. Compared to other methods, it has the advantage of model security and efficient communication. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1237",
+    "title": "Predicting a User's Purchase Intention Using AdaBoost",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170316",
+    "abstract": "The goal of ecommerce recommender systems is to increase sales by providing accurate recommendations to the users. However, users purchase intention plays a vital role in making a purchase and ignoring their desire to make a purchase before providing a recommendation can negatively influence recommendation accuracy because it does not target the specific users. The proposed model identifies eight factors that can influence a user's purchase intention and categorises them as user and population behaviors. These factors are fed into the AdaBoost algorithm to predict a user's purchase intention. The results show that we achieve high accuracy and the ROC area is 0.91, when we use the identified factors to predict a user's purchase intention. The proposed model outperforms two state-of-the-art models that have been used to predict a user's purchase intention. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1238",
+    "title": "FreshGraph: A Spam-Aware Recommender System for Cold Start Problem",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170319",
+    "abstract": "Recommender systems provide personalized recommendation to help users levitating from information overload. Collaborative filtering based recommendation methods are playing a dominant role in the industry because of its versatility and simplicity. However, its performance suffers from sparse data, and being less effective in cold-start problem settings. In real world scenario, when users are recommended with items, it is very easy to overwhelm the target users with impersonalized information, which drives away valuable audience. In this paper, we propose a two-steps spam aware recommendation framework to effectively recommend new items to target users. By utilizing heterogeneous information graph structure, we first use item-user Meta-Path similarity measure for user candidate selection. Then we use entropy encoding measurement to identify false positive from candidate list to prevent possible spam from happening. The proposed method leverages the semantic information that persists inside the graph structure, which not only considers item content features, but also take user activeness into account for more effective audience targeting. The proposed method produces an explainable top-K user list for the new item, while K is a trailed number to each given item individually. Meanwhile, the proposed method is also adaptive to data change overtime, while capable of processing requests in a real-time fashion. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1239",
+    "title": "Collaborative Filtering Recommendation Algorithm Based on Linguistic Concept Lattice with Fuzzy Object",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170332",
+    "abstract": "With the coming of the era of big data, the recommendation system has become the most important way for all industries to obtain more effective information. Aiming at the problem of recommendation fuzzy explanation in recommendation system, we propose a collaborative filtering algorithm (CF) based on linguistic concept lattice with fuzzy object. Specifically, we introduce two operators between objects and linguistic concepts, and discuss their properties. Based on that, we construct a linguistic concept lattice with fuzzy object. Furthermore, considering the similarity between objects in the linguistic formal context with fuzzy object, we also propose an aggregation operator between linguistic concepts to obtain more accurate recommendation results for users. Finally, a practical example which concerned the movie recommendation is given to intuitively illustrate the applicability and effectiveness of the algorithm. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1240",
+    "title": "User Experience Evaluation of Shared Bikes with Intuitionistic Fuzzy Information",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170350",
+    "abstract": "User experience could be considered as a comprehensive experience that includes the user's attitude towards a product or company service. The target of this paper is to provide a framework to evaluate user experience of shared bikes. Firstly, the evaluation index framework of shared bikes is established from the aspects of payment, safety problems, distribution pattern, Internet services. Then, we obtained the satisfaction scores of users on various indexes of shared bikes by means of questionnaire. We apply this quantitative result to the ranking of shared bike brands and find the difference between actual user experience and ideal user experience, so as to improve of the insufficient performance of shared bikes. The ranking of shared bike brands can be deemed to a multiple criteria decision making (MCDM) problem. The ratings of shared bikes on criteria can be expressed in the form of intuitionistic fuzzy sets(IFSs), the reason for using this form is that determining them is commonly depended on the decision maker's intuition in some situations. Finally, we analyze the data from the survey to obtain user experience evaluation of shared bikes. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1241",
+    "title": "Towards Automatic Personality Prediction Using Facebook Likes Metadata",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170375",
+    "abstract": "We demonstrate that easy accessible digital records of behavior such as Facebook Likes can be obtained and utilized to automatically distinguish a wide range of highly delicate personal traits such as the Big Five personality traits. The analysis presented based on a dataset of over 738,000 users conferred their Facebook Likes (95 million unique Like objects), social network activities, posts, egocentric network, demographic characteristics, and results of various self-reported psychometric tests. The proposed model uses a new and unique mapping technique between each Facebook Like object to their corresponding Facebook page category/sub-category object extracted from the API calls as Likes metadata, which is then evaluated as features for a set of machine learning algorithms to predict individual psychodemographic profiles from users Likes. Traditionally, entities where able to access an individual's personality through having them fill out psychological questionnaires. In this paper, we present a method which indicates that a person's Big Five personality score can be easily predicted by leveraging the information about the pages a person liked on Facebook. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1242",
+    "title": "An Intelligent Customer Churn Prediction and Response Framework",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170380",
+    "abstract": "Customer retention is one of the most important issues for companies. Companies always seek to reduce customer churn in order to increase the customer lifetime value and reduce the cost of acquisition of new customers. By focusing on customer churn prediction and identification, companies can predict in advance which customers are going to churn and therefore decrease customers churn rate through related personalized actions. The key issue here is how to predict customer churn at an early stage. This paper identifies related issues in customer churn prediction and provides new definitions and classifications on customer churn identification and strategies. This paper also establishes a customer churn prediction and response framework consists of three main stages: customer churn prediction, customer churn understanding and customer churn response. The framework presents the characteristics and challenges of related stages of customer churn as well. These outcomes can be used for customized or personalized product and service developments, to improve customer service efficiency and related decision-making more effective and more particularly enabling strategic promotion campaigns to customers with high churn risk. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1243",
+    "title": "Multicriteria Market Segmentation: An Outranking Approach",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170388",
+    "abstract": "In this article, we offer a novel multicriteria decision analysis method for the segmentation of the market. The proposed method combines the analysis of preferences of the customer and the application of decision aiding on the segmentation problem. To explore the preferences of each customer in a strong way, the method applies the aggregation-disaggregation paradigm and a genetic algorithm to derive multiple sets of preference parameters of the ELECTRE III method compatible with the preference information supplied by each customer. Next, the preferences of each customer are characterized by the dispersion of potential rankings of products by applying the derived valued outranking relations. A novel metric is used to quantify the similitude among preferences of diverse customers, and a procedure of clustering is established to complete the segmentation of the market. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1244",
+    "title": "Image Segmentation Based on Similarity of Hierarchical Regions",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170400",
+    "abstract": "This paper addresses the problem of hierarchical selection in multi-level image segmentation. In this paper, we propose a new framework: First, we use the hidden regional properties of multi-level image segmentation, selecting the finer object segment regions through the comparison between hierarchies without the aid of ground truth or the users prior knowledge of the object, using the saliency of the object for auxiliary analysis, and optimizing its combination. In the next step, we regard the obtained object segment regions as the seed regions, and Graph Cut is performed on the bottom layer of the multi-level image segmentation result to obtain the segmentation result. The experimental results show that our framework is even better than those of the hierarchical segmentation selected in the multi-level image segmentation results. The proposed framework can be applied to solve the hierarchical selection problem in other cases. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1245",
+    "title": "Robust Secure Beamforming for Integrated Satellite Terrestrial Relay Networks Coexisting with Cognitive Terrestrial User",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170401",
+    "abstract": "This paper investigates the robust beamforming (BF) schemes for an integrated satellite terrestrial relay network coexisting with a cognitive terrestrial user. Owing to the unavailable line-of-sight (LOS) between satellite and intended terminal, a multi-antenna base station (BS) is used to be a relay. By assuming that only the imperfect channel state information (CSI) is available, we propose two schemes based on loose robust BF and tight robust BF schemes, respectively. Due to the non-convexity and mathematically intractability of the initial optimization problem, we develop a reformulation and transformation approach. Finally, the validity and effectiveness of the proposed schemes are confirmed. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1246",
+    "title": "Sound and Keystroke Dynamics Analysis for User Authenticity Verification",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170404",
+    "abstract": "The paper presents an approach to solving one of the main security problems of modern information systems. This problem is related to unauthorized access to its resources. To prevent unauthorized access, it is necessary to improve the user authentication procedure. Currently, there are several basic approaches to user identity verification, but the most challenging is undoubtedly the verification of the user's authenticity using its biometric features. One of such biometric features which can be used in computer systems is the dynamics of typing. The most interesting and popular ways how the authentication is performed in modern systems have been discussed in the first part of this work. The paper presents the outcome of research which used the following elements characterizing user style of typing: time intervals between keypress; duration of pressing the key; the speed of writing and sound. The novelty of the paper is related to combining the frequently used dynamic elements of typing with the sound spectrogram associated with the process of typing. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1247",
+    "title": "Simulation Based Scheduling Strategies Comparison of O2O Instant Delivery System",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170408",
+    "abstract": "O2O instant delivery is a key success factor for internet-driven traditional business revolution such as 020 fast food delivery and fetch and carry services. With its rapid development, it has to face a variety of instant delivery scheduling problems. These have become a major bottleneck for the instant delivery platforms and it's decision makers. The traditional method based on human experience has been no longer suitable for the current scenarios with large-scale orders and randomness. Therefore, we define the scheduling problem and scheduling strategies of instant orders delivery based on the real-world investigation, and verify the feasibility of order scheduling strategies by establishing an integrated simulation platform including traffic, orders, customers and merchants based on the DRL's sumo simulation library and the comparison of the three scheduling strategies are used to select the optimal strategy. We simply designed these three scheduling strategies: (1) RD: The platform randomly assigns the order to the rider. (2) SP-D: The generated order is dispatched in real time to the rider closest to the order. (3) BPD: After all the orders generated in a fixed period of time are put together, all the orders are dispatched to several riders. It was found that the performance of BP-D was better in the comparison of SP-D and BP-D. And we found that when it comes to dealing with large-scale orders, the BP-D can most effectively dispatch passengers, maximizing the benefits of merchants, passengers and platforms. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1248",
+    "title": "A Recommender System for Cold-start Items: A Case Study in the Real Estate Industry",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170411",
+    "abstract": "The recommender systems provide users with what they prefer and filter unnecessary information. In the fierce marketing environment, it is crucial to recommend items to users in an early stage to keep user's interests and loyalty. With the fast product renewal, classical recommendation methods such as collaborative filtering cannot handle the cold-start item problem. In many real-world applications, content information of items or users is available and can be used to assist recommendation. Besides, user may interact with the items in different behaviors such as view, click or subscribe. How to use the complex content information and multiple user behaviors are real problems that are not well solved in applications. In this paper, we propose a content-based recommender system to deal with the practical problem. Boosting tree model also added to the system to avoid potential Spam. We applied our developed method to real estate application to recommend new property which just landed into the market to users. Experimental results with three data subsets and three recommendation scenarios demonstrate that the proposed method can outperform the baseline on recommendation accuracy. The results indicate that our method can effectively reduce potential Spam to users, so that user experience will be improved. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1249",
+    "title": "CTR Prediction with User Behavior: An Augmented Method of Deep Factorization Machines",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170417",
+    "abstract": "In Click-Through-Rate(CTR) prediction problems, video and comment thumbs-up prediction has important commercial values. The click rate prediction system can find the target population more accurately, which not only improves the user experience but also brings profits to the companys. Click behavior has a great correlation with personal habits. The Deep Factorization Machine(DeepFM) model is at the cutting edge of CRT by learning both high-level and low-level features. But it cannot hightlight the impact of user's personal behavior with has a great correlation with click behavior. In this paper, we propose behavior-empahsized algorithms, DeepFM Habit (Pro) and DeepFM Habit (LR), for different situations. The experimental results on TikTok dataset (short video data) demonstrate that our proposed methods achieve superior performance with less time consumption on this CTR prediction problems. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1250",
+    "title": "Web Content Outlier Framework for Enhancing Web Search Results through Mathematical Approaches",
+    "journal": "Proceedings of IEEE 14th International Conference on Intelligent Systems and Knowledge Engineering, ISKE 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ISKE47853.2019.9170423",
+    "abstract": "Nowadays, plenty, diverse and changing features of web persuades most of the users for seeking and retrieving the interesting information. On searching information on the web through the search engine, the unnecessary irrelevant and redundant information waste the user time and effort, lower the quality of web search results, increase indexing space and time complexity. So, it becomes an important issue to provide high quality and effective search results to retrieve information. Web content outliers mining studies on mining the insignificant and repetitive website pages from the remainder of other website pages under the ideal same class. Removal of content outliers from web enhances and upgrades the quality of web search results providing to the needs of the user. In this paper, the framework for web content outlier mining based on mathematical approaches is used. The experimental results show this framework provides better results in terms of Flmeasure and accuracy. © 2019 IEEE."
+  }
+]

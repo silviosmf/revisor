@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1101",
+    "title": "Expression of Concern: IoT based Chatbots using NLP and SVM Algorithms (2022 3rd International Conference on Intelligent Engineering and Management (ICIEM) DOI: 10.1109/ICIEM54221.2022.9853095)",
+    "journal": "Proceedings of 3rd International Conference on Intelligent Engineering and Management, ICIEM 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIEM54221.2022.10703469",
+    "abstract": "As of late, there has been a developing revenue in creating AI-empowered chatbot-based indication checker (CSC) applications in the medical services market. CSC applications give expected determinations to clients and help them with self-triaging in light of Artificial Intelligence (AI) procedures utilizing human-like discussions. The review presents an original PC application going about as an individual virtual specialist that has been ideally planned and broadly prepared to collaborate with patients like people. This application depends on a serverless engineering and it totals the administrations of a specialist by giving preventive measures, home cures, intuitive directing meetings, medical care tips, and side effects covering the most pervasive sicknesses in provincial India. Man-made reasoning (AI) is progressively being utilized in medical services. Here, AI-based chatbot frameworks can go about as robotized conversational specialists, equipped for advancing wellbeing, giving schooling, and conceivably provoking conduct change. Investigating the inspiration to utilize wellbeing chatbots is expected to foresee take-up. This conversational application has brought about diminishing the hindrances for admittance to medical services offices and secures shrewd interviews from a distance to permit opportune consideration and quality therapy, along these lines really helping the general public. This conversational application has achieved decreasing the obstructions for permission to clinical benefits workplaces and ties down canny meetings from a distance to allow perfect thought and quality treatment, thusly truly helping the overall population [1]. Therefore, in this research paper, we have discussed about the different roles of artificial intelligence, the way it uniquely involves itself in chatbots and cover it a © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1102",
+    "title": "IoT based Chatbots using NLP and SVM Algorithms",
+    "journal": "Proceedings of 3rd International Conference on Intelligent Engineering and Management, ICIEM 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIEM54221.2022.9853095",
+    "abstract": "As of late, there has been a developing revenue in creating AI-empowered chatbot-based indication checker (CSC) applications in the medical services market. CSC applications give expected determinations to clients and help them with self-triaging in light of Artificial Intelligence (AI) procedures utilizing human-like discussions. The review presents an original PC application going about as an individual virtual specialist that has been ideally planned and broadly prepared to collaborate with patients like people. This application depends on a serverless engineering and it totals the administrations of a specialist by giving preventive measures, home cures, intuitive directing meetings, medical care tips, and side effects covering the most pervasive sicknesses in provincial India. Man-made reasoning (AI) is progressively being utilized in medical services. Here, AI-based chatbot frameworks can go about as robotized conversational specialists, equipped for advancing wellbeing, giving schooling, and conceivably provoking conduct change. Investigating the inspiration to utilize wellbeing chatbots is expected to foresee take-up. This conversational application has brought about diminishing the hindrances for admittance to medical services offices and secures shrewd interviews from a distance to permit opportune consideration and quality therapy, along these lines really helping the general public. This conversational application has achieved decreasing the obstructions for permission to clinical benefits workplaces and ties down canny meetings from a distance to allow perfect thought and quality treatment, thusly truly helping the overall population [1]. Therefore, in this research paper, we have discussed about the different roles of artificial intelligence, the way it uniquely involves itself in chatbots and cover it and make it to the most important working part of the model. Specifically, in this, we have discussed about the role in medical healthcare related chatbots along with the integration of IoT devices such as batteries and sensors in this case with the chatbot. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1103",
+    "title": "Self-Learning Chatbots using Reinforcement Learning",
+    "journal": "Proceedings of 3rd International Conference on Intelligent Engineering and Management, ICIEM 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIEM54221.2022.9853156",
+    "abstract": "There has been a surge in the development of dialogue generation systems also called chatbots in Recent years. Research on sequence-to-sequence architectural chatbots has led to a number of efficient and adaptive chatbots. Several of them worked on goal-oriented chatbots, some worked on open domain chatbots and others developed emotional chatbots called CheerBots that respond to people's emotions. Be it in the IT field or in Education, these Dialogue systems have proven their worth in every industry. This paper discusses, the proposal of a SEQ2SEQ architecture-based chatbot that uses a Reinforcement Learning Algorithm to respond to user queries. This allows the model to explore the domain of all possible responses that can be generated by the SEQ2SEQ model by learning novel utterances/queries. The model answered all the queries, making it a suitable chitchat system for open-domain applications like SIRI and ALEXA. It responded in an engaging and interactive manner which led to an interesting conversation. The model, despite being complex, showed remarkable accuracy. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1104",
+    "title": "Healthcare Chatbot System: A Survey",
+    "journal": "Proceedings of 3rd International Conference on Intelligent Engineering and Management, ICIEM 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIEM54221.2022.9853158",
+    "abstract": "A chatbot is a software that produces a computer model of conversation through auditory or textual method between the user and the computer. Such bots use AI and NLP to understand user's questions and automate responses to them, simulating human conversation. In this modern technology almost, every person utilize smartphones in their day to day lives. Simply because, it has made life of a person simple by the touch of the screen, from extracting information from the internet, to provide personal assistance to entertainment everything happens just by the click of a button. Today Chatbots are used in various domains like education, customer service, medical, website help etc for seeking information, FAQ answering and guidance. Due to the advancements in AI and techniques used in data mining, healthcare chatbots are often used for medical screening. The aim of this paper is to do detailed study of various research papers related to chatbots and analyze the different tools, algorithms, software and platforms that are utilized. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1105",
+    "title": "Advancements in Fin-Tech and Security Challenges of Banking Industry",
+    "journal": "4th International Conference on Intelligent Engineering and Management, ICIEM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIEM59379.2023.10165876",
+    "abstract": "'The Financial Technology' or 'Fintech' is currently the most recognized term, which simply explains or the term itself describe its meaning - Fintech means relationship between information technology and financial services. Due to the technological advancement these two prominent topics are revolving around each other. FinTech is viewed as a component of the progression of financial innovation, a concept that has been theoretically recognized as both hazardous and beneficial. Recent empirical evidence suggests that it generates considerable value for investors. Over the years technological advancement has established its authority everywhere. The integration of Machin Learning and Artificial Intelligence being explored in the realm of fintech and banking security. Fintech has the ability to handle vast amounts of data and make predictions for future more accurately in comparison to humans. The technological advancement in computing techniques has led towards the growth of Fintech with the help of new, advanced and emerging technologies such as Industrial Internet of Things (IIOT), AI, Smartphone Apps, Cryptocurrencies, Virtual Reality (VR), digital twins and 5G. Some of the current technological trends in the field of fintech and security of banking sector include Fraud detection and prevention, Personalized financial advisiory, Robo Advisory, Credit underwriting, Chatbots and virtual assistants, Risk management, Blockchain Integration. An additional development in the finance industry is the growing utilization of cloud computing, enabling the secure and effective storage and management of vast quantities of financial data. Moreover, fintech firms are also dedicating resources towards implementing cybersecurity measures to safeguard against cyber threats like fraud and hacking. The implementation of authentication technologies, such as biometrics, for securing online transactions is also noteworthy. All in all, these trends are propelling the expansion of the fintech sector and revolutionizing the approach to delivering financial services. They are enhancing accessibility, efficiency, and safety for both consumers and businesses, thus transforming the finance landscape. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1106",
+    "title": "Framework for Design and Implementation of Chat Support System using Natural Language Processing",
+    "journal": "4th International Conference on Intelligent Engineering and Management, ICIEM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIEM59379.2023.10166939",
+    "abstract": "Companies have increasingly started adopting chatbots as a customer service support system to provide more personalized service experience to customers. This technology is catching attention in the customer service context because chatbots can support multiple customers at one, have the ability to provide multi-lingual support, they are available 24-7 with no extra cost, relieves humans from repetitive task and can respond to a variety of troubleshooting queries without any latency. This research paper aims at developing a customer support chatbot called 'Anjore' for the Chhattisgarh State Power Distribution Company Limited. The word Anjore (pronounced as n.d3o:r is derived from chhattisgarhi language which means 'light'. The chatbot is developed in django web frame work and spaCy NLP library for Python has been employed to understand utterances in English language. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1107",
+    "title": "A User-Centered Design of Natural Language Processing for Maternal Monitoring Chatbot System",
+    "journal": "Proceedings - 4th International Conference on Informatics, Multimedia, Cyber and Information System, ICIMCIS 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMCIS56303.2022.10017517",
+    "abstract": "A self-monitoring device and remote counseling system for pregnant mothers using interactive chat is an effective method due to the reduction of maternal care visits caused during the pandemic. The employment of an artificial intelligence (AI) based system using natural language processing (NLP) for decision support has prospectively enhanced the conversational access of patient to improve health awareness and knowledge. This research was conducted to develop an AI-based system which focuses on education and monitoring with regard to danger signs during pregnancy using NLP. The Telegram chatbot was used to develop the system after investigating user needs based on the danger sign monitoring guideline from WHO and the Ministry of Health of the Republic of Indonesia. The inputs from users were recognized by NLP and forwarded to the testing data for decision system. Furthermore, the analysis result was sent to the user which provides educational information and a personalized monitoring result. System Usability Scale (SUS) was undertaken to assess the user ability to use the application. The SUS score average for the chatbot system was 62.3 which was classified as 'OK' for the adjective ratings. The implication of the maternal monitoring using a chatbot system is the improvement of maternal care with regard to early detection of danger signs and relevant suggestions using an effective and interactive system which could be very promising especially in a limited healthcare resource environment. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1108",
+    "title": "Impact of Service Communication Technology, and Effectiveness on Public Service Performance by Chatbot Service on Ticket Sales Services at PT KAI",
+    "journal": "Proceedings - 4th International Conference on Informatics, Multimedia, Cyber and Information System, ICIMCIS 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMCIS56303.2022.10017696",
+    "abstract": "The adaptation of technology used in industries increases and benefits companies. The use of IoT in Chatbots is one of the company's choices to create communication with its consumers. This study aims to determine the influence of service communication technology, value creation, and effective use of chatbot programs on public service performance on ticket sales services at PT KAI. Data collection was carried out by survey with a purposive sampling technique. Hypothesis testing of the study was carried out with PLS-SEM. The results showed that service communication technology does not have an influence either directly or indirectly on public service performance through effective use. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1109",
+    "title": "Chatbot Application to Automate Services in FnB Business Using Seq2Seq LSTM",
+    "journal": "Proceedings - 4th International Conference on Informatics, Multimedia, Cyber and Information System, ICIMCIS 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMCIS56303.2022.10017854",
+    "abstract": "The relevancy of food and beverage business will never fade. With that in mind, using the tech in order to improve its process will allow the business to thrive and improve its efficiency. Customer service is a fitting role for tech to work, as artificial intelligence might prove to be able to do the job efficiently and effectively. This paper tries to implement a customer service chatbot for restaurants so they may leverage its advantages in order to improve in terms of performance and efficiency. The implementation is done using the LSTM model which has proven to have decent results in chatbot implementation. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1110",
+    "title": "The impact of AI chatbots on customer satisfaction and booking intentions among Filipino travelers using global online travel agencies: A structural equation modeling approach",
+    "journal": "Proceedings - 13th International Conference on Information Management and Engineering, ICIME 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIME66598.2025.00033",
+    "abstract": "This study examines the influence of AI chatbot features - response time, personalization, and user-friendlinesson customer satisfaction and booking intention among Filipino users of global online travel agencies (OTAs). Anchored in the Technology Acceptance Model (TAM), SERVQUAL, and Expectation-Confirmation Theory (ECT), the research employs a quantitative approach using Structural Equation Modeling (SEM) based on survey data from 385 respondents. The findings indicate that personalization and user-friendliness significantly positively affect customer satisfaction, which in turn significantly predicts booking intention. However, response time does not significantly influence satisfaction, suggesting that users value interaction quality and interface usability over speed. These results provide empirical support for the mediating role of satisfaction between chatbot attributes and behavioral intention. The study offers practical implications for OTA platforms, emphasizing the importance of designing AI chatbots that are adaptive, userfriendly, and contextually relevant. Additionally, the research highlights the need for tourism technology developers to prioritize intuitive and culturally responsive design. As digital adoption in travel continues to grow in Southeast Asia, particularly in the Philippines, this study contributes localized insights to the broader discourse on AI integration in tourism and hospitality services. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1111",
+    "title": "The Application of AGNES Algorithm to Optimize Knowledge Base for Tourism Chatbot",
+    "journal": "Proceedings of 2018 International Conference on Information Management and Technology, ICIMTech 2018",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech.2018.8528174",
+    "abstract": "Most tourists have limited time and schedule when they are visiting a particular tourism area. One of the main issues faced by those tourists is that they can not make simple queries to search engines about, for example, which sites or places to visit optimally if we only have one day or two-day visit? Search engines are better and better in replying users' queries with relevant answers. However, search engines are not always able to respond queries suited to users' characteristics such as their styles, personalities, knowledge backgrounds, etc. Also, search engines are not as flexible as chatbots in enabling dialogical-communication-queries. This case study aims to respond aformentioned issue by applying hierarchical cluster analysis on a set of tourism sites around Malang city, Malang regency, and Batu city based on AGNES (Agglomerative Nesting) algorithm. The result, then, is fed into chatbot's knowledge base. This chatbot will assist tourists to get information on which possible sites they have to visit optimally if they are under limited vacancy-Time constraints. © 2018 IEEE."
+  },
+  {
+    "article_id": "CA_1112",
+    "title": "Enabling a massive data collection for hotel receptionist chatbot using a crowdsourcing information system",
+    "journal": "Proceedings of 2020 International Conference on Information Management and Technology, ICIMTech 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech50083.2020.9211162",
+    "abstract": "With the heavy utilization of deep learning, modern chatbot systems require massive training dataset to achieve their peak performance. Without exception, the development of chatbot for the hotel receptionist tasks also demands a massive training dataset. Unfortunately, laborious effort and hefty time are needed to manually collect a dataset with that size. Therefore, an information system is needed to assist the dataset collection. In regards to solve the problem, this research contributes in developing the information system that enables a massive data collection for training a hotel receptionist chatbot in a reasonable time. In detail, the contribution of this research are twofold: (1) developing a realiable crowdsourcing information system design to collect and store the dataset for training hotel receptionist chatbot; and (2) developing a user experience that can stimulate the crowdworkers to provide more data. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1113",
+    "title": "Analysis of chatbot program features towards customer satisfaction in the era of digitalization",
+    "journal": "Proceedings of 2021 International Conference on Information Management and Technology, ICIMTech 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech53080.2021.9535034",
+    "abstract": "The development of the digital era today is very closely related to technological sophistication. Thus, today we can recognize the existence of artificial intelligence. Companies or organizations widely use artificial intelligence to maximize and optimize services to consumers. PT Asuransi Wahana Tata as a general insurance company, is also very aware of this. This study aims to determine the effect of chatbot services on customer satisfaction in this digitalization era. The research method used is quantitative. The data obtained from the questionnaire were analyzed using inferential analysis. Analysis of ASWATA's chatbot program. This study used a sample size of 339 consumers. For sampling, the author used probability sampling techniques as a technique for data collection. The author used the SEM method by processing the data from the questionnaire using the Warp PLS 7.0 application. Samples were taken from ASWATA consumers who had used the VANIA program at least once. The results of this study found that the entertainment indicator in the marketing effort variable got the highest loading factor value compared to the others. So it can be concluded that communicating with VANIA is very fun. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1114",
+    "title": "Exploring AI-Driven Chatbots for Enhanced Learning Experiences in Dental Education with Deep Learning",
+    "journal": "Proceedings of 2024 International Conference on Information Management and Technology, ICIMTech 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech63123.2024.10780793",
+    "abstract": "The integration of chatbots has been extensively explored across various fields. However, the clinical domain, particularly in medical education, presents a critical need for im- plementing AI-powered chatbots. To address this, we developed Dentbot, a custom AI-driven chatbot tailored for a predoctoral implant program in dental education. This initiative aims to leverage technology to improve learning outcomes and streamline teaching processes for students. The development of Dentbot involved several key stages, including data preprocessing, model training, and model evaluation, ultimately resulting in the creation of the chatbot. User testing was conducted within a dental institution to gather feedback on Dentbot's usability and effectiveness in the educational context. We evaluated three deep learning models, LSTM and Bi-LSTM, and BERT for chatbot implementation. LSTM and Bi-LSTM both achieved good accuracy rates of 80% and 89%, respectively. Additionally, our study highlights BERT as the most efficient deep learning algorithm for multiclass intent classification, achieving an im- pressive accuracy rate of 94%. These findings demonstrate that Dentbot's development underscores the growing importance of leveraging AI technologies to address specific educational needs within the healthcare sector by streamlining the teaching process and setting a precedent for innovative solutions in medical training and beyond. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1115",
+    "title": "Implementation of Chatbots in E-Commerce: Factors Influencing User Adoption",
+    "journal": "Proceedings of 2024 International Conference on Information Management and Technology, ICIMTech 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech63123.2024.10780797",
+    "abstract": "In the modern era of technology, e-commerce chatbots in Indonesia have been growing quickly. One industry that utilizes this technology is e-commerce, especially chatbot services as a substitute for customer service. Finding every aspect impacting Indonesia's adoption of e-commerce chatbots is the aim of this study. The online shopping industry and users of e-commerce chatbot features in Indonesia will be the newly targeted industry and respondents. Utilizing online data from 261 respondents to analyze the hypothesis using the developed research model. Data analysis was done using the partial lease squares-structural equation modeling (PLS-EM) method. According to this study, perceived usefulness is the variable that has the biggest impact on Indonesian e-commerce chatbot adoption rates, Perceived enjoyment, perceived trust, and information quality are the next most important variables. It also discovered that usage behavior was greatly influenced by user satisfaction. When deploying e-commerce chatbot features in Indonesia, e-commerce chatbot service providers may utilize this result to guide their strategic decisions. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1116",
+    "title": "Exploring the use of GPT Chatbots, in Education: A Comparative Study on User Experiences, in Taiwan and Vietnam",
+    "journal": "Proceedings of 2024 International Conference on Information Management and Technology, ICIMTech 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech63123.2024.10780856",
+    "abstract": "The rise of ChatGPT has brought about transformations. There exist hurdles related to its adoption and potential risks. This research explores the reasons, behind individuals opting for ChatGPT based on insights, from the Unified Theory of Acceptance and Use of Technology (UTAUT). It identifies seven factors that impact these decisions. A comparison between users in Taiwan (N=63) and Vietnam (N=136) sheds light on different perspectives. Through the use of PLS 4.0 for structural equation modeling, we assessed the reliability and validity of the relationships among these factors. Our results indicate that aspects like performance expectations, habits and perceived learning value significantly influence user's intentions to embrace ChatGPT across various demographics. However, ease of use, social influence, support conditions and perceived task efficiency do not appear to be strong predictors of adoption intentions. One notable distinction is that Taiwanese users prioritize habits and learning value over performance expectations when opting for ChatGPT, while Vietnamese users consider both performance expectations and habits alongside learning value as important factors. Both groups agree on the significance of perceived learning value in adopting ChatGPT. The findings imply that strategically incorporating ChatGPT as a user centric platform could enhance both effectiveness and efficiency. Nevertheless, further research is needed to investigate the impact of task efficiency on technology adoption. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1117",
+    "title": "Bibliometric Analysis to Explore the Influence of Artificial Intelligence on Consumer Behavior and Marketing Research: A Comprehensive Review and Suggestions for Future Exploration",
+    "journal": "Proceedings of 2024 International Conference on Information Management and Technology, ICIMTech 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech63123.2024.10780894",
+    "abstract": "In the nexus of AI, marketing, and consumer behavior, a systematic consolidation of the theoretical and practical implications remains elusive. Addressing this, our study embarks on a Systematic Literature Review (SLR) with bibliometric analysis, leveraging the PRISMA framework to unearth and integrate findings from existing research. The objective is to map out the scholarly landscape, identifying key themes and gaps within the expansive body of literature on AI's role in shaping marketing strategies and consumer perceptions. Our analysis uncovers a dual impact of AI: operational enhancement and deep-rooted changes in consumer-brand dynamics, highlighting a shift toward more sophisticated theoretical frameworks like the Uses and Gratification Theory and the UTAUT model. The study not only synthesizes these insights but also sets the stage for future research, calling for a broader inclusion of databases to mitigate current limitations and empirical studies to validate and refine theoretical models, ensuring a comprehensive understanding of AI's transformative potential and its ethical implications in the marketing domain. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1118",
+    "title": "Assessing the Determinants of AI-Driven Consumer Online Purchase Intentions by Amalgamating Extended Technology Acceptance Model and the Information Systems Success Model",
+    "journal": "Proceedings of 2025 International Conference on Information Management and Technology, ICIMTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech67074.2025.11264904",
+    "abstract": "This study examines key factors influencing AI-driven online purchase intentions in Indonesia by amalgamating the Extended Technology Acceptance Model (TAM) and Information Systems Success Model (ISSM). Data from 731 ethnically diverse respondents were analyzed using Partial Least Squares Structural Equation Modeling (PLS-SEM). The proposed framework highlights mutual interconnections, where Attitude Toward AI (ATA) and Perceived Ease of Use (PEOU) influence Satisfaction (SAT), and Information Quality (IQ) impacts Perceived Usefulness (PU). All nine hypotheses were supported. Information Quality exhibited a very strong effect on Perceived Usefulness and a fairly strong influence on Satisfaction, with Satisfaction (SAT) having a fairly strong impact on Purchase Intention (PI). These findings point to the essential contribution of developing AI-driven e-commerce platforms, particularly chatbots and recommendation systems, that consistently deliver high information quality, promote perceived usefulness, and foster user satisfaction to enhance customer purchase intentions. Additionally, it signifies the importance of future research in examining cross-cultural variations in AI adoption by incorporating cultural factors into technology acceptance frameworks. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1119",
+    "title": "Is the Presence of AI Agents a Threat or Opportunity for MSME Entrepreneurs in Indonesia?",
+    "journal": "Proceedings of 2025 International Conference on Information Management and Technology, ICIMTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech67074.2025.11265379",
+    "abstract": "The use of AI systems in business has sparked discussions about its impact on micro, small, and medium enterprises (MSMEs). These companies form the fundamental economic structure of various industries. The operational efficiency potential of AI remains unclear to MSME business owners as they are confused about accessibility and pricing structures as well as its benefits for their specific problems. This study investigates how AI agents impact MSME entrepreneurs by examining their first-hand experiences and awareness of these agents. The study analyzed data from 15 MSME owners selected from various industries through structured interview questions. Participants showed mixed views on AI as most viewed it as beneficial for helping automated processes as well as data-driven choices and customer relationship advancements although some entrepreneurs viewed AI as a threat due to implementation costs and fears of employee displacement along with lack of skills. Companies operating in the technology sector showed greater optimism about AI implementation along with professionals who have previously used digital resources. AI literacy programs need to be specifically designed to help MSMEs use AI effectively along with affordable AI tools. The community and industry need to solve funding and training issues to provide equal access to AI. This study provides concrete recommendations that build an AI-based digital environment where MSMEs find success during AI transformation. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1120",
+    "title": "The Role of Chatbot Conversational Skill and Social Presence in Building Trust and User Engagement within E-commerce",
+    "journal": "Proceedings of 2025 International Conference on Information Management and Technology, ICIMTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech67074.2025.11265518",
+    "abstract": "The rapid adoption of chatbots in e-commerce has significantly transformed customer service by enabling instant, automated, and personalized interactions. However, the effectiveness of chatbots in building deep user engagement remains under-researched, especially in terms of the underlying psychological mechanisms. This study examines the influence of chatbot conversational skills on user engagement through social presence and trust. Data were collected through a survey of e-commerce users in Indonesia who recently interacted with a chatbot and also made a transaction within the last three months. Analysis using PLS-SEM or Partial Least Squares Structural Equation Modeling shows that conversational skills have direct and indirect effects on trust and engagement, with social presence as an important mediator. These findings emphasize the importance of building social presence through responsive chatbot interactions to improve trust and user experience. Limitations of this study include the use of self-report data and the limited context of e-commerce users in Indonesia. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1121",
+    "title": "AI Agents in Customer Service: Enhancing MSME Competitiveness through Automatic Systems",
+    "journal": "Proceedings of 2025 International Conference on Information Management and Technology, ICIMTech 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIMTech67074.2025.11265633",
+    "abstract": "Artificial intelligence (AI) agents have become a game changer for micro, small and medium enterprises (MSMEs) to improve their customer service, however, AI finds its place in the market by targeting MSMEs that do not have access to resources for the creation of AI agents. Automation of system-independent operations for the use of interactions is a competent tool that helps MSMEs to increase their competitiveness based on an automated customer management system, which functions at a lower level of operating costs. AI agents are transformed to improve MSMEs' operations in customer service by changing their interaction systems while this study will determine the basic success factors during implementation. This research method uses qualitative interviews with 10 MSME owners who implement AI Chatbot for customer services in their businesses. The customer benefits of AI agents are the fact that the system is effective in answering standard questions that enable people to solve complex problems while providing the same quality of service at scale. System design and user acceptance need to be addressed as these barriers are against the implementation of technological solutions. AI agents enable small businesses to experience equal access to highly sophisticated customer service tools, giving them the ability to compete in the digital business market. Business stakeholders need to target the development of support systems and policies that are accessible to MSMEs by addressing AI in their movement to realize economic equality through technological advancement. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1122",
+    "title": "Intent-Based Network Management with User-Friendly Interfaces and Natural Language Processing",
+    "journal": "Proceedings of the 27th Conference on Innovation in Clouds, Internet and Networks, ICIN 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIN60470.2024.10494458",
+    "abstract": "This paper investigates the scaling of business ordering, delivery and fulfillment of 5G/6G services especially applied to network slicing. We propose a system including architecture and methods to translate customer expectations expressed as intents into management services enabling network elements configuration. Our architecture uses a clear separation between engagement channels and the actual management of services and is compatible with the TM Forum Open Digital Architecture (ODA). Some components of the solution were successfully demonstrated such as a business intent resolver that interfaces with two engagement channels offering customers the choice of the user experience and to benefit from a Natural Language Processing based (NLP) interaction with a chatbot. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1123",
+    "title": "Movie recommender system using sentiment analysis",
+    "journal": "Proceedings of International Conference on Innovative Practices in Technology and Management, ICIPTM 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIPTM52218.2021.9388340",
+    "abstract": "In Todays era, Recommendation systems are the most important intelligent systems that plays in giving the information to the users. Previously approaches in recommendation systems (RS) include Content-based-filtering and collaborative filtering. Thus, these approaches has certain limitations as like the necessity of the user history as they visit. So as to make back the effect of such dependencies, this research paper provides a hybrid RS are those which mixes both Collaborative filtering, Content based filtering with sentiment analysis of movies. In this research paper, we developed a recommender system based on the sentiment of the user to suggest the movie to the user based on their view history. © 2021 IEEE."
+  },
+  {
+    "article_id": "CA_1124",
+    "title": "A novel Genetic Algorithm based Encryption Technique for Securing Data on Fog Network Using DNA Cryptography",
+    "journal": "Proceedings of 2nd International Conference on Innovative Practices in Technology and Management, ICIPTM 2022",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIPTM54933.2022.9754031",
+    "abstract": "The data generated by the intelligent systems is enormous, hence storing and analyzing it over the cloud environment is a wise decision. However, most state of the art applications demands minimal network latency in the network so that the response can reach the user within fraction of seconds. To meet this requirement, fog computing came into existence, where computing and analysis of data is carried out at the fog nodes instead at the cloud. In such a scenario, security is of utmost concern since each fog node and each IoT device generating the data is vulnerable to attack. Industries such as healthcare in particular, need to practice security measures because it contains Patient's Identifiable Information (PII). Encryption is one of the most effective techniques to provide security to data. Various encryption techniques are available but they all suffer from some limitations. In this paper, a new encryption technique is proposed, which is based on genetic science and works in two phases. In the first phase, the plaintext is converted to a complex cipher text by making use of a complicated key. The key is randomly selected from the DNA population and is made further complex by using logical operators. The cipher text obtained in the first phase is made more impenetrable in the second phase, by using genetic science principles of crossover and mutation. The simulation and results of the proposed technique indicate that it provides more security to the data as compared to the existing encryption techniques. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1125",
+    "title": "Artificial Intelligence Revolutionizing The Restaurant Industry - Analyzing Customer Experience Through Data Mining and Thematic Content Analysis",
+    "journal": "Proceedings of 2023 3rd International Conference on Innovative Practices in Technology and Management, ICIPTM 2023",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICIPTM57143.2023.10117897",
+    "abstract": "Artificial intelligence is rapidly changing the way restaurants operate. AI can help restaurants increase productivity, streamline processes, and boost customer satisfaction. AI can assist restaurants in creating menus that are suited to their customer's interests and preferences by evaluating data on consumer preferences and purchase history. Moreover, chatbots and virtual assistants powered by AI can be used to collect purchases, respond to consumer inquiries, and make tailored recommendations. As a result, consumers can enjoy a more smooth and delightful dining experience while also saving time and money on labour. Predictive analytics, which may forecast demand for specific items, is another method AI is utilised in restaurants. The intent of this study is to examine the application of Artificial Intelligence in restaurant industry and review the opinion of people on the introduction of Humanoid Robots in restaurants. AI is a game-changer in the industry, fully transforming the way the industry operates, hence giving a futuristic spin to dining. This research is based on reviews of people about content related to humanoid robots through YouTube videos. Data mining techniques were applied, and Thematic Content Analysis was done to analyze the attitude of people towards human-robot interaction. © 2023 IEEE."
+  },
+  {
+    "article_id": "CA_1126",
+    "title": "Investigating Resilient Supply Chain Design Determinants Using Monte Carlo Simulation",
+    "journal": "Proceedings of 2019 8th International Conference on Industrial Technology and Management, ICITM 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITM.2019.8710671",
+    "abstract": "Modern supply chains are faced by various internal and external disruptions with random severities that may affect the production capacities of different facilities (suppliers, factories and distributors). In order to minimize the reduction in profit when disruption hits facilities, the resilient supply chain network structure must be reached that has ability to resist disruptions. The proposed research presents a tool for designing resilient supply chain networks. Different structures are proposed considering the design determinants of supply chain density and node criticality. The ability of each structure to resist disruptions is tested by randomly disrupting factory production capacities using Monte Carlo simulation. Reductions in profit due to disruption are calculated and compared to reach the resilient structure with optimum determinants values. The proposed research shows the effect of increasing customer demand on reaching resilient supply chain network structures. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1127",
+    "title": "Classification of Road Damage Using Supervised Learning to Assist Visual Assessment of Road Damage",
+    "journal": "2022 International Conference on Information Technology Systems and Innovation, ICITSI 2022 - Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICITSI56531.2022.9971082",
+    "abstract": "Roads are an important aspect of improving the welfare and productivity of the people that affect the country's economic growth. Therefore, monitoring of road conditions must be carried out. The Department of Highways and Spatial Planning of West Java Province in collaboration with the Bandung Institute of Technology has developed the Road Pavement Condition Survey application which makes it easier to monitor road conditions. However, some features of this application are still carried out semi-automatically, one of which is the road damage classification feature. This causes long working time. Classification of road damage itself needs a visual assessment by humans. Therefore, a solution is needed in the form of a machine learning-based road damage classification system that can help users visually assess road damage. The system uses the supervised learning method to build a classification model. The system still requires a visual assessment by the user to validate the system classification results. The system that has been built is considered to be able to help classify road damage by assisting the user's visual assessment, although the classification results by the system have not been able to provide a correct classification of road damage. © 2022 IEEE."
+  },
+  {
+    "article_id": "CA_1128",
+    "title": "Intelligent online shopping store for specialties of fujian",
+    "journal": "Proceedings of the 3rd IEEE International Conference on Knowledge Innovation and Invention 2020, ICKII 2020",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICKII50300.2020.9318884",
+    "abstract": "The development of Internet technology has enabled online shopping stores to continue to increase in Fujian. People use online shopping stores to reduce transaction costs and products distribution to sell regional specialties. On the other hand, users buy the various specialties of Fujian from all over the country. OpenCart is an open source with PhpStudy software that integrates PHP language, MySQL database and Apache server. This paper uses OpenCart to design an intelligent online shopping store for specialties of Fujian. It first introduces useful information technologies to design the online shopping store. Furthermore, we use the Apriori algorithm to recommend valuable specialties of Fujian for users intelligently. © 2020 IEEE."
+  },
+  {
+    "article_id": "CA_1129",
+    "title": "Intelligent Attribution Modeling for Higher Education Marketing using Bayesian Networks",
+    "journal": "2025 International Conference on Metaverse and Current Trends in Computing, ICMCTC 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMCTC62214.2025.11196380",
+    "abstract": "Digital platforms are essential for attracting potential students in the context of marketing for higher education. however, because of the intricacy of students' decision-making processes and the shortcomings of conventional attribution models, precisely determining the influence of each channel on lead conversion continues to be difficult. In order to maximize marketing attribution, this study suggests that Taylor University create and apply a Bayesian network model. The goals include researching machine learning techniques for attribution modeling, assessing how accurate they are, and creating a way to gauge each marketing channel's unique influence. The approach is quantitative research that models causal correlations between different marketing touchpoints and lead conversion results using past information from the university's Customer Service Management (CRM) system. Finding efficient marketing channels, allocating resources as efficiently as possible, and improving student recruiting tactics are among the anticipated results. The importance resides in offering practical insights that help boost hiring initiatives, raise return on investment, and preserve a competitive edge in marketing for higher education. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1130",
+    "title": "A Comprehensive Approach to Climate Action: Real-Time Carbon Footprint Tracking and Personalized Solutions",
+    "journal": "2025 International Conference on Metaverse and Current Trends in Computing, ICMCTC 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMCTC62214.2025.11196403",
+    "abstract": "The proposed mobile application acts as an innovative platform that allows users to carry out various climate action initiatives. Results in improved sustainability become achievable by users through the application that integrates technology with customized solutions and instant monitoring of carbon emissions. The new section of the application implements Gemini AI for personalized recommendations which combines features such as climate news updates and weather predictions and emission assessment using interactive weather mapping and guidance on reducing emissions. Through its new functionality the system unites community pages with goal tracking abilities to boost platform user activity. The platform achieves its extensive purpose by delivering efficient education together with direct climate protection action steps. Through its features the application helps users create an environmental community because they can share their progress and face challenges with other users who become united in sharing environmental goals. Users of this platform participate through social integration features that let them become part of climate challenges and exchange sustainable living advice while following overall environmental progress. The app continuously analyzes data together with individualized feedback to make sustainable living both reachable and rewarding along with fascinating for its users. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1131",
+    "title": "AI-Driven Approaches for Milk Adulteration Detection: A Comprehensive Review",
+    "journal": "2025 International Conference on Metaverse and Current Trends in Computing, ICMCTC 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMCTC62214.2025.11196410",
+    "abstract": "Milk adulteration is a critical issue affecting public health, necessitating the development of accurate and efficient detection techniques. This study presents a detailed review and comparative analysis of recent advancements in deep learning and machine learning approaches for detecting milk adulteration. The research examines algorithms such as CNNs, LSTM, Artificial Neural Networks, Gated Recurrent Units (GRUs), and Hybrid Blended Deep Learning Models (HyBDL) which integrate CNN, CNN-LSTM, and CNN-GRU. Furthermore, machine learning models such as XGBoost, RandomForestAlgorithm(RF), K-Nearest Neighbors (KNN), and CatBoost are analyzed in conjunction with hyperspectral imaging, PCAM-ResNet50, and MALDI-MS-based methods. The comparative study highlights that CNN and hybrid deep learning architectures achieve high accuracy in image-based adulteration detection, while machine learning models effectively analyze tabular data derived from spectroscopy and sensor-based techniques. Raman spectroscopy, although not AI-based, is essential for detecting microplastics in dairy products. The findings indicate that combining techniques in deep learning and machine learning. can enhance adulteration detection accuracy, offering a scalable and robust solution for ensuring dairy quality and consumer safety. Future research should focus on integrating AI with portable sensor-based solutions for real-time monitoring of milk adulteration. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1132",
+    "title": "Enhancing QoS and energy efficiency through hybrid heuristic and metaheuristic techniques in ultra dense small cell deployment",
+    "journal": "2025 International Conference on Metaverse and Current Trends in Computing, ICMCTC 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMCTC62214.2025.11196594",
+    "abstract": "In an extremely dense network, the utilization of energy-efficient small cells contributes to the development of a wireless infrastructure that is both greener and better for the environment. In the present cell frameworks, there is a developing interest for enormous network and higher information rates, which small cell networks plan to satisfy. By decisively conveying small cells and improving their use, energy utilization can be fundamentally diminished. The emphasis is on accomplishing ideal asset use and amplifying energy effectiveness, guaranteeing that the small cells work at their maximum capacity while limiting their natural effect. This approach lines up with the rising requirement for manageable and eco-accommodating arrangements in the media communications industry. This paper presents a methodology that consolidates cross breed heuristic and metaheuristic procedures for the arrangement of super thick small cells. The primary objective is to enhance the network's energy efficiency and quality of service (QoS). By shrewdly upgrading the position and boundaries of small cells, we can improve the general organization execution, guarantee solid network, and limit energy utilization. Our multi-objective artificial flora optimization (MOAFO) algorithm aids in user clustering by enabling the efficient offloading of data traffic from macro cells and an increase in the number of users in small cells. Thusly, it prompts upgraded information throughput for large scale cell clients. The assurance of ideal small cell areas is brought out through the modified anopheles search (MAS) calculation, which considers different plan imperatives. The quality of small base station deployment is also enhanced by our use of a Siamese neural network (SNN) to characterize the traffic distribution model. To evaluate the performance of our proposed methodology, we conduct extensive simulations under different scenarios. These simulations demonstrate the effectiveness of our approach in achieving improved energy efficiency and meeting QoS constraints. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1133",
+    "title": "A Mental Health Chatbot system for creating Self-awareness",
+    "journal": "2025 International Conference on Metaverse and Current Trends in Computing, ICMCTC 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMCTC62214.2025.11196736",
+    "abstract": "Mental health has been a long-term issue around the world and people failed to acknowledge that. Fail to do so will have negative impact on our human health. Therefore, it is time to explores the potential tools for improving mental health and educate people with the correct information. As a result, a web-based chatbot system specifically for mental health has been proposed and implemented. This chatbot is developed using AI technology such as Natural Language Processing to improve the overall conversation experience. It also has proved and certified activities that can help improve mental health like mindfulness exercise. It also allows users to write journal which is great way to track their mood and increase self-awareness. As a result, people can greatly improve their mental health and acquire the correct knowledge regarding mental health. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1134",
+    "title": "Towards real-time detection and mitigation of driver frustration using SVM",
+    "journal": "Proceedings - 18th IEEE International Conference on Machine Learning and Applications, ICMLA 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMLA.2019.00039",
+    "abstract": "Driving in stressful and frustrating situations remains a common issue in daily traffic scenarios and has been shown to increase the risk for hazardous and aggressive driving style. Aiming to improve road safety with intelligent systems, frustration has to be detected continuously as well as robust and mitigation strategies must be applied effectively. Since both, the modeling of frustration over time as well as the design and timing of applications for frustration mitigation, are complex tasks, we divided this work in two parts: (1) A driving simulator experiment was conducted to collect a dataset and to validate a driving context related frustration induction method. With this dataset we developed a bimodal frustration detection for the driving context using a temporal support vector machine. The detection combines drivers' visual facial features with heart rate measurements and yields an accuracy of 88.7% (AUC of ROC). (2) We applied the real-time frustration detection in a second simulator study to evaluate two application scenarios for frustration mitigation, which include a frustration sensitive ambient light and an autonomous driving assistant. Both applications were examined for their frustration mitigating effect as well as in terms of user experience. The results provide a helpful basis to develop future intelligent frustration mitigation systems. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1135",
+    "title": "A voice interactive multilingual student support system using IBM watson",
+    "journal": "Proceedings - 18th IEEE International Conference on Machine Learning and Applications, ICMLA 2019",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICMLA.2019.00309",
+    "abstract": "Systems powered by artificial intelligence are being developed to be more user-friendly by communicating with users in a progressively 'human-like' conversational way. Chatbots, also known as dialogue systems, interactive conversational agents, or virtual agents are an example of such systems used in a wide variety of applications ranging from customer support in the business domain to companionship in the healthcare sector. It is becoming increasingly important to develop chatbots that can best respond to the personalized needs of their users, so that they can be as helpful to the user as possible in a real human way. This paper investigates and compares three popular existing chatbots API offerings and then propose and develop a voice interactive and multilingual chatbot that can effectively respond to users' mood, tone, and language using IBM Watson Assistant, Tone Analyzer, and Language Translator. The chatbot was evaluated using a use case that was targeted at responding to users' needs regarding exam stress based on university students survey data generated using Google Forms. The results of measuring the chatbot effectiveness at analyzing responses regarding exam stress indicate that the chatbot responding appropriately to the user queries regarding how they are feeling about exams 76.5%. The chatbot could also be adapted for use in other application areas such as student info-centers, government kiosks, and mental health support systems. © 2019 IEEE."
+  },
+  {
+    "article_id": "CA_1136",
+    "title": "A Cross-Cultural Adaptation of Chatbot Usability Questionnaire (CUQ): Indonesian Version",
+    "journal": "ICOIACT 2021 - 4th International Conference on Information and Communications Technology: The Role of AI in Health and Social Revolution in Turbulence Era",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICOIACT53268.2021.9563926",
+    "abstract": "Chatbots are a highly developed technology, especially in the current COVID-19 pandemic to apply contactless activities. Unfortunately, most of companies that have been implemented chatbot has failed gained benefit from the chatbot. This shows companies need to evaluate usability of the chatbot. One of specific questionnaire to evaluate usability of chatbot is Chatbot Usability Questionnaire (CUQ). Currently CUQ is only available in English and there is no research that provides CUQ in the Indonesian version. This research focuses on translating CUQ and producing a reliable Indonesian version of CUQ. CUQ needs to be adapted naturally into Indonesian so it can be understood by all types of users. Cross-cultural adaptation approach is used to translate CUQ to Indonesia. The reliability test was run with 100 respondents and resulted in Cronbach's alpha value of 0.749. This value indicated that CUQ is reliable and can be used in chatbot research and evaluation. © 2021 IEEE"
+  },
+  {
+    "article_id": "CA_1137",
+    "title": "Quantitative Analysis of Post-Pandemic Customer Satisfaction in Fintech-Driven Indonesian Banking Chatbot Services",
+    "journal": "ICONDBTM 2024 - Proceedings: International Conference on Digital Business and Technology Management",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONDBTM64135.2024.11122804",
+    "abstract": "This study assesses the variables influencing users' satisfaction with Indonesian banking chatbots following the COVID-19 outbreak. Purposive sampling was used to get information from respondents. According to the research criteria, participants had to be Greater Jakarta locals and have used Indonesia's banking chatbot services before. Using the GPower approach, the sample size of 161 respondents was established. The study examined factors including system quality, information quality, service quality, perceived value, and situational factors were all examined in the study. The impact of each variable on customer satisfaction with Indonesia's banking chatbot services and intention to use (as an intervening variable) was noted. After gathering the data, the results were analyzed using PLS-SEM 4.0 (Partial Least Squares Structural Equation Modelling). The study's findings indicate that situational factors and perceived value elements indirectly but positively influence consumer satisfaction, whereas intention to use has a direct and positive impact. By Focusing on these aspects and associated indications, Indonesia's banking management can use this model to improve customer satisfaction and intention to use Chatbot services. ©2024 IEEE."
+  },
+  {
+    "article_id": "CA_1138",
+    "title": "Content Filtering Based Navigation Recommendation System Using NLP",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568589",
+    "abstract": "The surge in tourism information necessitates intelligent systems for efficient decision-making during trip planning. This paper introduces a Context-Aware Navigation Recommen- dation System (CANRS) using Natural Language Processing (NLP) and content filtering. The focus is on improving relevance and personalization by extracting insights from textual data. The framework integrates collaborative filtering, Content-Based Filtering, and NLP, analyzing textual data from social media, reviews, and descriptions for nuanced user preferences. The system utilizes TF-IDF, sentiment analysis, and semantic analysis for precise feature extraction, facilitating personalized travel itineraries. The paper introduces an optimization algorithm refining content filtering, considering location, user history, and real-time events for dynamic recommendation scores. Through experiments, the CANRS demonstrates accuracy and contextually relevant navigation recommendations, adapting to changing user preferences and dynamic contexts. This research leverages NLP to enhance content filtering, providing personalized and contextually aware recommendations. Implications include the development of advanced navigation systems prioritizing user preferences and dynamic contextual information in tourism. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1139",
+    "title": "Conversational Chabot Builder-Smarter Virtual Assistants with Domain Specified AI",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568607",
+    "abstract": "The term chatbot also known as Virtual assistant agents have grown in popularity over the past several years across a variety of domain. In, this paper the domain specified chatbot for the domain 'E-Commerce' is introduced with multi-functional services. The user can make use of the chatbots camera or file upload to seek product recommendations. Ordering a Product of user's choice through the bot is introduced. The details of their order can be confirmed via e-mail. The additional feature focused here is the security authentication through a feature called 'one time password' that consists of numeric values to be entered while signing up. The chatbot is focused to improve the customer satisfaction and to increase the efficiency of the bot by enhancing the features in an accurate way. Here, the recommendations that are suggested is based on the user input which will eventually derive the output for the following search. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1140",
+    "title": "Self-Adaptive Electronics using Artificial Neural Networks",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568609",
+    "abstract": "Electronic gadgets and systems are growing rapidly, requiring new adaptability methods. This research uses Artificial Neural Networks to self-adapt electronic systems. ANNs, inspired by the brain, can optimize electronic circuits and devices in real time.Self-adaptive electronics uses ANNs for system control and decision-making. ANNs learn to adapt to changing operational circumstances, environmental factors, and user preferences through supervised and reinforcement learning. Feedback systems let neural networks improve energy usage, system parameters, and performance without operator interaction.A sensor array, artificial neural network-based control unit, and actuators make up the self-adaptive electronics system. The system smoothly integrates sensors and computing. Self-adaptive electronics could be used in loT, wearable, and autonomous systems, the research says. Electronic systems operate in unpredictable and dynamic contexts, thus the architecture is adaptable.Experimentally, self-adaptive electronics outperform static systems in performance, energy efficiency, and adaptability. Artificial neural networks can enable smarter, more responsive, and autonomous gadgets, according to the findings. Finally, self-adapting artificial neural networks in electronics could lead to intelligent systems. This research advances adaptive electronics, enabling new applications in the ever-changing electronics and technology environment. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1141",
+    "title": "Designing an Ml-Powered Assistive Technology for People With Cognitive and Mental Disabilities",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568651",
+    "abstract": "The development of an assistive device powered by machine learning (ML) for people with cognitive and mental disorders is highlighted in this abstract. The objective is to develop an intelligent system that will improve these people's independence, communication, and quality of life. This technology's design incorporates ML algorithms, sensorbased data collecting, and an intuitive user interface. The system can understand and adapt to the particular requirements and difficulties faced by people with cognitive and mental disorders by employing ML approaches. The machine learning algorithms are taught to comprehend and interpret user inputs including gestures, speech, and facial expressions and offer the proper help or interventions. The system may gather real-time data on the user's environment, activity, and emotional state thanks to the sensor-based data gathering, enabling personalized and context-aware support. People with different levels of cognitive ability can readily interact with the system thanks to the user-friendly interface. It features visual signals, natural language processing, and adjustable settings to suit personal tastes. The keywords for this abstract include: machine learning, assistive technology, cognitive disabilities, mental disabilities, independence, communication, quality of life, ML algorithms, sensor-based data collection, user-friendly interface, gestures, speech, facial expressions,personalized support, context-aware support, natural language processing, visual cues, and customizable settings. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1142",
+    "title": "Advancements in Chatbot Technology for Enhanced Customer Support in Online Retail",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568654",
+    "abstract": "In order to improve customer service and boost sales, this paper describes the creation of an ecommerce sales chatbot. In order to grasp natural language, the system employs machine learning. It is based on a chatbot that is modular. Framework. There are several parts to the system. A web-based framework for natural language teaching comes first. Chat bots are employed in a variety of industries, including e-commerce, healthcare, and education. The objective of this venture is to make Hebron, an online chatbot for the Contract College People group Shopping center. Python and Respond are both utilized in the chatbot's creation. Conventional customer service chatbots frequently copy human discussion, yet they have serious protection and data adaptability issues. Here, we present SuperAgent, a customer support chatbot that utilizes broad and promptly open internet business data. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1143",
+    "title": "Exploring the Impact of AI-Powered Chatbots in Banking Services",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568656",
+    "abstract": "The study aims to examine how using bank chatbots affects customer satisfaction. It also aims to investigate how customer satisfaction impacts trust and bank reputation. In India, 324 clients who have utilized chatbots for financial transactions are participating in a survey. To investigate the associations between variables, the study using structural equation modeling (SEM). AMOS and SPSS 21 were used for data analysis. Customer satisfaction in using chatbots is significantly influenced by expectations, perceived performance, perceived trust, and business reputation. This study had a limited sample size, and the data was gathered via a structured questionnaire using the convenience and snowball sampling techniques. Hence, it is not possible to generalize the results to all over India. The results offer new perspectives on the channels through which banking services are delivered, which could be helpful to experts, scholars, bank executives, product development teams and design teams. The aim of this study is to raise community knowledge and provide them with information on chatbots, which should make their life easier. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1144",
+    "title": "AI Based Chatbot for Educational Institutions",
+    "journal": "Proceedings of 9th International Conference on Science, Technology, Engineering and Mathematics: The Role of Emerging Technologies in Digital Transformation, ICONSTEM 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM60960.2024.10568662",
+    "abstract": "In this era of digital transformation, the integration of cutting-edge technologies has become paramount in various domains. Our project focuses on the development and implementation of an AI ChatbotBased Smart Kiosk System tailored to enhance user experiences in institutional settings. Leveraging state-of-theart techniques in natural language processing (NLP) and machine learning, our system aims to provide intuitive and contextually relevant support to users. The core functionality of our AI Chatbot-Based Smart Kiosk System revolves around its ability to interact with users seamlessly through text and speech inputs. The system employs large language models (LLMs), to understand and interpret user queries effectively. By harnessing the power of LLMs, our chatbot can perform a wide range of tasks, including answering questions, providing information on academic programs, faculty details, and institutional policies. The AI Chatbot-Based Smart Kiosk System represents a significant advancement in user-centric technology solutions for institutional environments. Through its intuitive interface and intelligent capabilities, the system aims to streamline information dissemination, enhance user satisfaction, and promote seamless interactions between users and institutional resources. © 2024 IEEE."
+  },
+  {
+    "article_id": "CA_1145",
+    "title": "Adaptive Power Control in Cognitive VANETs via Quantum-Behaved Particle Swarm Optimization",
+    "journal": "Proceedings of 2025 10th International Conference on Science Technology, Engineering and Mathematics, ICONSTEM 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM65670.2025.11374345",
+    "abstract": "The Vehicular Ad Hoc Network (VANETs) are also progressing very fast to provide support to intelligent transportation systems in which the scarcity of spectrum and dynamic mobility patterns are major issues. Cognitive VANETs which are based on the cognitive radios provide the solution as secondary users (SUs) have the opportunity to use the unused licensed spectrum. Nevertheless, the unregulated transmission of the SUs can lead to the detrimental interference of the primary users (PUs), which requires intelligent control of power. This paper proposes an adaptive power management system that applies the Quantum-Behaved Particle Swarm Optimization (QPSO) to optimise the power of transmission with reference to current spectrum availability, interference limits, and vehicle movement. The use of quantum-inspired probabilistic exploration makes QPSO superior to traditional PSO, Genetic Algorithm (GA), and fixed power allocation models due to its faster and more accurate convergence. The results of the simulation prove that the proposed model supports a throughput of 7.20 Mbps, ratio of packet delivery of 97.4, and interference of -93.8 dBm, and it reduces the average transmission power more than 55 % relative to fixed power schemes. Besides, it experiences a very low decision latency of about 15 ms, which is appropriate in real-time use in high-mobility automobile systems. The suggested QPSO-based solution not only allows making the spectral use more efficient, but also makes the use of energy more economical and protects PU transmissions. These enhancements facilitate the high, interference conscious, and power efficiency communications of VANETs. This article demonstrates the potential of novel combinations of advanced swarm intelligence and cognitive radio technologies to overcome the associated limitations inherent in fixed and sub-optimal ways of managing power. The framework preconditions the further extensions to a more intricate deep reinforcement learning and edge-assisted cooperative optimization of large-scale and real-world applications of VANET. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1146",
+    "title": "MEDGPT: Leveraging Transformer-Based Intent Classification for Accurate Drug Query Resolution",
+    "journal": "Proceedings of 2025 10th International Conference on Science Technology, Engineering and Mathematics, ICONSTEM 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM65670.2025.11374496",
+    "abstract": "Timely and accurate access to drug-related information is essential in today's digital healthcare environment to ensure patient safety and enable well-informed medical decisions. In this work, we introduce MEDGPT, a lightweight, domain-specific conversational agent that can provide structured, contextually relevant answers to user questions about medications. Unlike traditional systems that rely on fuzzy string matching or keyword-based retrieval, MEDGPT performs intent classification and drug entity recognition using transformer-based Natural Language Processing (NLP) models, specifically fine-tuned BERT architectures. The Flask and Python-developed system interacts with a structured pharmaceutical dataset that contains drug names, dosages, usage instructions, safety measures, and potential side effects. Thanks to the integration of modern NLP approaches and a robust training-validation pipeline, MEDGPT can reliably understand free-form inquiries, even when they are asked informally or ambiguously. Because of its lightweight and flexible design, it can be used in a range of contexts, including rural clinics, educational platforms, and healthcare facilities with limited resources. Future enhancements will include multilingual support, integration of speech interfaces, and continuous training on updated pharmaceutical corpora to improve response diversity and practical application. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1147",
+    "title": "Emotion-Aware Conversational Agents That Teach Literary Devices Through Adaptive Dialogue and Reinforcement Learning Strategies",
+    "journal": "Proceedings of 2025 10th International Conference on Science Technology, Engineering and Mathematics, ICONSTEM 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM65670.2025.11374702",
+    "abstract": "The evolution of emotion-sensitive conversational agents that instruct literary devices based on adaptive dialogues and reinforcement learning (RL). A hybrid strategy where the Deep Reinforcement Learning is combined with affective computing systems like EmoRL or the emotion recognition systems of OpenAI will allow the agent to dynamically interpret the feelings of learners curious, confused, or engaged and change its teaching approach. The system uses sentiment and dialogue indicators to personalize explanations, examples, and problems regarding the literary technique of metaphor, irony, and symbolism. The RL model will continually update its response upon receiving feedback signals that will be based on user satisfaction and the learning progression. This emotional pedagogy will boost user motivation, increase the understanding and create interactive learning of literature. The suggested approach will show the way in which the introduction of affectbased adaptation can rebuild the rigid tutoring systems into understanding, conversational tutors that can maintain the interest and customize learning in inventive language areas. This research could bring forth some promising possibilities on the intelligence, human-based learning technologies. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1148",
+    "title": "Design and Evaluation of a VR-Based Interactive Property Tour System for Real Estate Applications",
+    "journal": "Proceedings of 2025 10th International Conference on Science Technology, Engineering and Mathematics, ICONSTEM 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM65670.2025.11374707",
+    "abstract": "This paper introduces the design and assessment of a VR-Based Interactive Property Tour System as a means of improving the visualization of real estate and interaction with customers. It combines Z-Score Normalization to preprocess data, consistency of data to all metrics of user interaction, and Recursive Feature Elimination (RFE) to determine the most powerful behavioral and environmental variables that can influence the user experience. Gradient Boosting Machine (GBM) is a classifier that was built with the help of the TensorFlow software to predict the user engagement and their intentions to buy the product with a high accuracy. The experimental analysis shows that the accuracy of the system, spatial perception and the quality of interaction are considerably enhanced in comparison with the old models of virtual tours. The findings suggest the increased user satisfaction and lesser navigation latency, confirming the efficiency of the machine learning-immersive virtual reality combination. The presented research adds to the scalable, AI-powered intelligent property visualization, which is a more realistic, data-driven, and interactive solution to the modern real estate applications. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1149",
+    "title": "A Cost-Effective Prosthetic Hand Design through sEMG Feature Extraction and Grasp Security Model with Optimised Support Vector Machines",
+    "journal": "Proceedings of 2025 10th International Conference on Science Technology, Engineering and Mathematics, ICONSTEM 2025",
+    "journal_impact_factor": null,
+    "doi": "10.1109/ICONSTEM65670.2025.11374762",
+    "abstract": "A mixed-actuation prosthetic hand system has been developed that integrates Surface electromyography (sEMG)-based gesture recognition with a real-time graspsecurity predictor for improved user feedback and control. So, we developed the CPHFGO model for a cost-effective prosthetic hand via sEMG features and optimised Support Vector Machine (SVM)-based grasp security. The prosthetic, made from a 3D scan of a human hand, includes a rotary thumb MCP and silicone-coated fingertips for enhanced grip, supplemented by lightweight 3D-printed components. It utilises three DC motors for intricate hand movements. Tactile sensing at the fingertips is achieved through normal and torque channels, as well as shear sensors, to provide real-time shear magnitude data. Multiple classifiers' outputs are combined by an inference mechanism through majority voting, whereas a support vector machine (SVM) regressor that considers, among other things, torque and shear sensor responses is used for security estimation. The metrics of the performance to measure accuracy, precision, and F1-score were put in comparison with the existing models such as BCIEH, MLULM, GMPRF, and the proposed CPHFGO model. The high error rate is less than that of the existing models, CPHFGO with 20 % error rate. After we perform the speed calculation, we get 0.61 ms which is relatively higher, F1-Score at 86 %, the validation accuracy from 95 % to 96 % and the linear SVM got 75 % accuracy that was increased by RBF kernel to 85 % accuracy. © 2025 IEEE."
+  },
+  {
+    "article_id": "CA_1150",
+    "title": "Framework for the mobile and web development of NU Guidance Service System (NUGSS)",
+    "journal": "Proceedings - 2021 1st International Conference in Information and Computing Research, iCORE 2021",
+    "journal_impact_factor": null,
+    "doi": "10.1109/iCORE54267.2021.00047",
+    "abstract": "Mental health is similarly valuable as physical health. The students mainly focused on their academic accomplishments and performances and tended to forget to assess themselves and take care of their mental health. Guidance Associates play a significant role in students' university life. They help students to understand what they are feeling and how to deal with their problems. The proponents conducted a pre-survey to know the students' take on the guidance office services before and during the pandemic. The survey results show that the schedule of the Guidance throughout conflicts with the students' busy time. On the other hand, the students' difficulty in virtual practice usually happens when different platforms are used by the guidance department that confuses students. The target client of this study will be the National University-Manila. This study is significant as it aims to help the Guidance Department reach out to students in an organized manner. Furthermore, this study will help them promote and manage their offered services in a more convenient way. National University Guidance Service System (NUGSS) aims to develop a mobile and web application used for the Guidance Department. This study aims to help the students: to request their needed guidance services, know the status of their requested service, conduct counseling with their respected guidance associates, Student Individual Inventory (SII), track their mood; and a chatbot for frequently asked questions (FAQs) about the guidance department services. © 2021 IEEE."
+  }
+]

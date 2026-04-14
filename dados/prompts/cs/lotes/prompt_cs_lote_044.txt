@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_2151",
+    "title": "A review of big data analytics on customer complaints in the electricity industry",
+    "journal": "International Journal of Business Continuity and Risk Management",
+    "journal_impact_factor": 0.393,
+    "doi": "10.1504/IJBCRM.2021.116280",
+    "abstract": "Fulfilling customer satisfaction gives significant impact to any business including in the electricity industry. The key to achieving customer satisfaction is by providing them the best quality services at fair and reasonable costs. Customer complaints must be managed professionally and appropriately, and be leveraged to improve the quality of services and operational efficiency. In this regard, identifying the root cause of the problems becomes paramount in improving customer service for future improvement. The accumulated customer complaints generate massive data which can be fully utilised by using big data analytics. The purpose of this paper is to determine frequent customer complaint regarding electricity issue and review various methods of big data analytics that have been used to identify valuable insights within the data and to analyse the pattern that can be useful to find solutions to the problem, thus improving the electricity industry services especially in terms of complaint management. On the basis of a study of the different researches, different techniques of machine learning have been used because of its accuracy and in finding a pattern to solve the relevant electrical problem such as predicting power demand, managing power loads, and enhancing strategic planning. Copyright © 2021 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2152",
+    "title": "Developing a typology of customer misbehaviours (case study: Hotel industry, Iran five stars' hotels, Homa, Parsian Azadi, Esteghlal, Evin)",
+    "journal": "International Journal of Business Excellence",
+    "journal_impact_factor": 0.443,
+    "doi": "10.1504/IJBEX.2018.094569",
+    "abstract": "The aim of this study is to explore and identify the different types of customer misbehaviours from service providers' side (hotel employees) in hotel industry. Data were collected by semi structured in-depth interviews and narratives of service employees of five starts hotels in Iran using critical incident technique (CIT) (n = 60) and then analysed through ATLAS software. Thematic coding was used to identify emergent themes and patterns of consumer misbehaviour. Thematic coding resulted in a comprehensive typology of customers' misbehaviour and identified two main categories of consumer misbehaviour (interpersonally directed and property directed) which interpersonally directed divided into five subcategories: verbal aggression, physical aggression, refusal to participate, illegitimate complaints and needless engagement and property directed misbehaviour classify into theft, vandalism and sabotage and fraudulence behaviour. The results of the findings contribute to identify the most common types of misbehaviour during the interactions. © 2018 Inderscience Enterprises Ltd. All rights reserved."
+  },
+  {
+    "article_id": "CS_2153",
+    "title": "Integrating justice dimensions and expectation-confirmation model in measuring customer satisfaction and continuance intention in private higher education in Malaysia: A conceptual model",
+    "journal": "International Journal of Business Excellence",
+    "journal_impact_factor": 0.443,
+    "doi": "10.1504/IJBEX.2020.106365",
+    "abstract": "In providing a better service in higher education institutions, the aim of implementing online services is to manage customers more efficiently. Higher education institutions often focus on doing it right the first time and tend to ignore the importance of service recovery through justice dimensions when a service failure occurs. Service failure brings many disadvantages to the institutions and this is where justice dimensions through distributive, procedural, interpersonal and informational justice play an important role. The expectation-confirmation model (ECM) is suggested for examining customer satisfaction and continuance intention in the use of online services in the service failure context. The relationships among justice dimensions, ECM, customer satisfaction and continuance intention are given less attention compared to service quality in private higher education institutions in Malaysia. Therefore, the purpose of this paper is to examine customer satisfaction and continuance intention at the post-consumption phase in service failure situation. Copyright © 2020 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2154",
+    "title": "Achieving excellence in services marketing: Roles in customer delight",
+    "journal": "International Journal of Business Excellence",
+    "journal_impact_factor": 0.443,
+    "doi": "10.1504/IJBEX.2020.106366",
+    "abstract": "Companies need to innovate and differentiate themselves to sustain in the competition. Services marketing gain in importance because it is difficult to innovate and differentiate physical products. It is difficult to imitate differentiation and innovation incorporated in services. The paper discusses the strategic initiatives companies need to adopt for achieving excellence in services marketing. The initiatives include a strategic orientation, commitment from the top management, maintaining high standards, having profit tiers, monitoring service performance and prompt action on customer complaints. The paper also discusses the roles of differentiation and innovation in achieving excellence. The paper focuses on those companies which excel in providing services to customers and analyses the strategies followed by them. Proper implementation and execution of strategies provides a direction for service companies to excel, delight their customers and build relationships with their customers. Copyright © 2020 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2155",
+    "title": "Internal marketing of Indian retail banks and the impact on employee job satisfaction",
+    "journal": "International Journal of Business Excellence",
+    "journal_impact_factor": 0.443,
+    "doi": "10.1504/IJBEX.2021.115749",
+    "abstract": "This paper statistically signified the impact of internal marketing factors on employee job satisfaction in retail banks. It answered the question: is there any significant impact of IM factors on EJS? The population of this study is the employees of retail banks in southern India. A sample of 183 employees surveyed for the purpose and the results indicate that the IM factors such as internal communication and employee reward have a significant positive impact on employee job satisfaction while supervision has an insignificant positive impact whereas employee commitment, training, and feedback has an antagonistic relationship with employee job satisfaction. Employees by gender, position, work experience, and bank sector has no significant difference in their opinions, but they have a significant difference in their opinions on individual IM factors. However, employees are highly favourable on IM practices of the banks. This study has recommendations on IM practices for the continuous improvement of employee commitment, supervision, training, and feedback in the retail banks. The implications of this study would prompt further research to signify the impact of work culture, work environment, workplace ethics, and other IM factors on employee job satisfaction in retail banking. Copyright © 2021 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2156",
+    "title": "Balancing reactions and actions between service receivers and service providers to resolve service failures",
+    "journal": "International Journal of Business Excellence",
+    "journal_impact_factor": 0.443,
+    "doi": "10.1504/IJBEX.2022.121604",
+    "abstract": "The research objective is to explore service receivers’ reactions and actions to deal with a service failure and their perceptions of the service providers’ reactions and actions to resolve the same service failure. Quantitative approaches based on a survey in the Mexican telecom market based on a series of hypotheses tested are reported. The findings indicate that the reactions and actions performed by the service receiver should be monitored and balanced by the service provider. The service receiver expectations and experiences of a service failure should be managed and resolved by the service provider adaptations and flexibility. This study frames through the teleological lens service receivers’ reactions and actions to deal with a service failure and their perceptions of the service providers’ reactions and actions to resolve the service failure. Copyright © 2022 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2157",
+    "title": "ServQual and modified Kano for process improvement – a case study of a medical device distributor",
+    "journal": "International Journal of Business Excellence",
+    "journal_impact_factor": 0.443,
+    "doi": "10.1504/ijbex.2022.126918",
+    "abstract": "Understanding customer needs in the service industry is a combination of art and science; as customer interaction is an important element in the firms’ offering. The research is a case study of a medical device distributor exploring possible improvement plan for their customers. The identification of customer needs was done with ServQual framework. Quantifying the customer attribute importance was done through combination of gap analysis and modified Kano model. The used Kano model was modified in order to offset possibility of coarse scoring in the original model. For the studied company, it was recommended to prioritise the top three action plans: ‘T8 – apply customer feedback/complaint form’, ‘T2 – perform sales effectiveness training’ and ‘T1 – socialised exchange procedure’. Copyright © 2022 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2158",
+    "title": "'It's the most ethical job I have ever had': Complaint handling and fair decision making in the financial industry",
+    "journal": "International Journal of Business Governance and Ethics",
+    "journal_impact_factor": 0.503,
+    "doi": "10.1504/IJBGE.2021.118602",
+    "abstract": "This exploratory study focuses on complaint handling in the financial industry to explore how complaint handling professionals interpret the requirement to treat customers fairly. Drawing on a small qualitative case study undertaken with a major UK financial institution, it is a novel attempt to integrate the literatures on ethical and fair decision making and apply them to the practice of complaint handling. Our contribution is to highlight: 1) the impact that institutional structures and processes play on the day to day practice of fair decision making; 2) how constructions of fairness vary between complaint handlers with some adopting an explicit ethical and moral focus; 3) the active role group support and dialogue plays in supporting individual complaint handler's fair decision making. Several practical implications arise from this in relation to how organisations can support fair decision making. © 2021 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2159",
+    "title": "Business intelligence: Fuzzy logic in the risk client analysis",
+    "journal": "International Journal of Business Intelligence and Data Mining",
+    "journal_impact_factor": 0.244,
+    "doi": "10.1504/ijbidm.2021.117094",
+    "abstract": "The following paper focuses on achieving accurate results through rough data. Using an inference model based on fuzzy logic, human reasoning was proactively stimulated, under certain conditions, in order to deal with the possibility of client-loss due to service quality. The experimentation is carried out by information related of complaint receipts from a period of two years (70,000 registers). For that effect, a prototypical program is set in C++ language, which receives as input the crisp values that result from the failure resolution for each relevant service. The proposed model is intended to classify clients according to the risk they may have in the contractual relationship with the company. Copyright © 2021 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2160",
+    "title": "An innovative topic-based customer complaints sentiment classification system",
+    "journal": "International Journal of Business Innovation and Research",
+    "journal_impact_factor": 0.341,
+    "doi": "10.1504/IJBIR.2019.102718",
+    "abstract": "Text mining helps to convert big text data into a small amount of most relevant data for a particular problem, and also helps providing knowledge provenance and interpreting patterns. Text mining has to do with further analysing the relevant data to discover the actionable knowledge that can be directly useful for decision making or many other tasks. In the previous work, authors have used conditional entropy with maxima/minima boundaries in identifying aspects from given text in identifying aspects. In the present work, we concentrated on mining word associations using mutual information in measuring co-occurrence of words. The objective of our research is to propose a novel probabilistic latent aspect rating regression (LARR) model. In which, natural language processing is used to represent the text, discovering and analysing topics using expectation maximisation (EM) algorithm. In addition to that, we compared the performance of the proposed model with multiple ordinal logistic regression classifier (MLRC) and fuzzy the rating obtained from the model. The finding in our research is the use of mutual information to mine synatagmatic relations helps in identifying the aspect at document level at greater extend, intern helps to multi level sentiment polarity prediction. Copyright © 2019 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2161",
+    "title": "Antecedents and outcomes of service recovery satisfaction: Perspectives on open and distance learning in Malaysia",
+    "journal": "International Journal of Business Innovation and Research",
+    "journal_impact_factor": 0.341,
+    "doi": "10.1504/IJBIR.2020.104034",
+    "abstract": "Researchers and practitioners in higher education often pay less attention to service recovery compared to service quality or customer satisfaction particularly in the context of open and distance learning (ODL) in Malaysia. More importantly, the outcomes of service recovery satisfaction are often given less emphasis by the ODL institutions and often focused on delivering services with the approach of getting it right the first time. Service failure is inevitable and when the service delivery fails at some point, the whole process will be disrupted, and the students will be dissatisfied. This is where service recovery through justice dimensions play its part. In this study, the relationship between justice dimensions (procedural, distribution, interpersonal and informational justice), service recovery satisfaction, and behavioural outcomes are being explored and the moderating effects of corporate image in the Malaysian ODL context are also being looked at and examined in this study. Copyright © 2019 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2162",
+    "title": "The influence of attitude, customer loyalty, and past experiences on students' complaining behaviour: The moderating role of gender",
+    "journal": "International Journal of Business Innovation and Research",
+    "journal_impact_factor": 0.341,
+    "doi": "10.1504/IJBIR.2020.107084",
+    "abstract": "Complaining about service failures can happen at any time and in any situation. This study applied the theory of reasoned action as the underpinning theory and opted to calibrate factors that influence the customers', specifically students in higher learning institution, about their complaint behaviour intention. A non-probability purposive sampling technique was utilised for data collection from respondents who have had experiences in making a complaint. A total of 559 students at a higher learning institution in Sarawak, Malaysia volunteered participated in the survey. SmartPLS 3.0 (version 3.2.6) was applied to assess the model developed based on path modelling and bootstrap for hypotheses testing. A salient finding of the study is that attitude, customer loyalty, and past experiences are strong determinants of customers' (students') complaint behaviour intention. Surprisingly, gender does not play a contributing role in the customers' complaint intention among the students. Both theoretical and practical implications were further discussed. Copyright © 2020 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2163",
+    "title": "The effect of service recovery on customers' satisfaction in e-banking: An empirical investigation",
+    "journal": "International Journal of Business Information Systems",
+    "journal_impact_factor": 0.669,
+    "doi": "10.1504/IJBIS.2018.096033",
+    "abstract": "The purpose of this paper is to analyse the service recovery strategies associated with customers' satisfaction level of an Iranian private bank. Therefore, by providing an appropriate framework, the relationship between the service failure, service recovery, customers' satisfaction and their subsequent behaviour is examined. In this paper after a survey on different frameworks in a service failure recovery domain from reviewing of literature, the most appropriate framework based on an Iranian private bank situation has been chosen. Then, the conceptual framework is adapted to the mentioned bank by qualitative case study. Since the main motivation of this paper is to provide empirical knowledge about the service failure and recovery in e-banking, therefore, they are determined and listed based on the frequency rate and the effect on the customers respectively by literature review and field studies in an Iranian private bank. Moreover, by combining two suitable frameworks of service recovery literature and adapted to this bank, a conceptual framework is proposed. Due to the short duration of surveying customers' satisfaction in Iranian e-bank, this paper provides an appropriate framework in order to compensate e-bank errors based on the service recovery literature and field studies on an Iranian private bank. Copyright © 2018 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2164",
+    "title": "Relationship between customer loyalty and service failure, service recovery and switching costs in online retailing",
+    "journal": "International Journal of Business Information Systems",
+    "journal_impact_factor": 0.669,
+    "doi": "10.1504/IJBIS.2019.102699",
+    "abstract": "Service failures in e-tailing are inevitable, understanding how service failure and recovery efforts affect customer loyalty forms an important topic for discussion among researchers and practitioners. This study investigates the relationship of service failure severity, service recovery justice and perceived switching costs with customer loyalty. It also studies the moderation relationship between service recovery justice and perceived switching costs. Data collected from 306 respondents tested against the research model adopted from previous studies suggests that, service failure severity. Interactional justice, procedural justice and perceived switching costs have a significant relationship with customer loyalty and that interactional justice can mitigate the negative relationship between service failure severity and customer loyalty. Copyright © 2019 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2165",
+    "title": "Recommendation system for improving churn rate based on action rules and sentiment mining",
+    "journal": "International Journal of Data Mining, Modelling and Management",
+    "journal_impact_factor": 1.284,
+    "doi": "10.1504/ijdmmm.2022.126665",
+    "abstract": "It is well recognised that customers are one of the most valuable assets to a company. Therefore, it is of significant value for companies to reduce the customer outflow. In this paper, we focus on identifying the customers with high chance of attrition and provide valid and trustworthy recommendations to improve their customer churn rate. To this end, we designed and implemented a recommender system that can provide actionable recommendations to improve customer churn rate. We used both transaction and survey data from heavy equipment repair and service sector from 2011 to 2017. This data was collected by a consulting company based in Charlotte, North Carolina. In the survey data, customers give their thoughts, feelings, expectations and complaints by freeform text. We applied aspect-based sentiment analysis on the review text data to gain insightful knowledge on customers’ attitudes toward the service. Action rule mining and meta-action triggering mechanism are used to recognise the actionable strategies to help with reducing customer churn. Copyright © 2022 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2166",
+    "title": "Customer relationship management practices affecting customer loyalty supporting small airline carriers in Ghana",
+    "journal": "International Journal of Electronic Customer Relationship Management",
+    "journal_impact_factor": 0.278,
+    "doi": "10.1504/IJECRM.2018.096249",
+    "abstract": "The airline industry in Ghana has experienced some significant growth largely driven by the influx of local and foreign airline operators. In this paper, six CRM practices namely: complaint handling, trust, commitment, communication, competences and social bonds were identified and proposed as drivers of customer loyalty through satisfaction. 341 passengers of small airline carriers in Ghana were sampled for this research. SEM was used to analyse the filed data. While the paper found a partial mediation, trust and compliant handling are the two significant drivers of customer loyalty of which the latter is the strongest predictor of customer loyalty. The paper recommends that managers of small airlines carriers should be honest, provide reliable and quality services to boost trust and confidence of passengers. They must create strong social relation with passengers as a strategy to build trust and instil confidence in them. This paper has presented industry specific evidence for small airline carriers which is non-existent in academic literature. © Copyright 2018 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2167",
+    "title": "Evaluating the satisfaction index using automated interaction service and customer knowledgebase: A big data approach to CRM",
+    "journal": "International Journal of Electronic Customer Relationship Management",
+    "journal_impact_factor": 0.278,
+    "doi": "10.1504/IJECRM.2019.098976",
+    "abstract": "Organisations need to understand their customer's requirements to outlive in this competitive world. Today, the customer interaction bots, which can handle multiple customers anywhere-anytime are attracting many business communities to have better customer relationship management (CRM). Searching for specific information seems to be interesting to provide a real value to customers, but the challenge is to get the reliable information for the customer's queries. The implementation of customer interaction bot is carried out using text document dataset. We have used LUIS, which provides a platform to build intelligent customer-computer applications that can understand the customer's requirements and responds to their queries. Text document data is indexed; the database is connected to direct line bot framework. The knowledgebase is implemented for customer queries based on needs, expectations, wants/desires, and complaints/problems. The proposed system evaluates the customer satisfaction based on customer bot interaction knowledgebase to achieve a better CRM. © 2019 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2168",
+    "title": "Future research direction for customer satisfaction in relation to complaint handling and service recovery in e-commerce",
+    "journal": "International Journal of Electronic Customer Relationship Management",
+    "journal_impact_factor": 0.278,
+    "doi": "10.1504/IJECRM.2020.110037",
+    "abstract": "The aim of the paper has been to highlight a research gap based on review of literature published on customer satisfaction about complaint handling and service recovery in e-commerce from year 1996 to 2018. It identifies the e-search gap in existing literature, provides a categorization scheme and prepares the guidelines for future study. Existing studies have primarily focused on customer satisfaction with service recovery in different areas like hospitals, hotels and tourism sector but e-commerce remains untouched. Related with this mechanism most of studies have been carried out in different countries like Taiwan, Malaysia, and New York but little attention has been done in countries such as India and China to carry out the relationship of service recovery and complaint handling satisfaction in context of e-commerce. It will be great extensive source of information to the policy maker, and management that he wants to prepare the service recovery policy in e-commerce area. Copyright © 2020 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2169",
+    "title": "The role of communication channel in delivering service recovery in online shopping environment",
+    "journal": "International Journal of Electronic Marketing and Retailing",
+    "journal_impact_factor": 0.326,
+    "doi": "10.1504/IJEMR.2018.088589",
+    "abstract": "This study aims to investigate the effects the communication channels, which deliver service recovery on consumer satisfaction, word-of-mouth and loyalty intention, mediated through perceived quality of service recovery. In addition, this study examines the effect of service failure severity on perceived quality of service recovery. The results reveal that the type of communication channel has no significant effect on perceived quality of service recovery, whereas service recovery quality significantly affects consumer satisfaction and behavioural intentions. In addition, customers’ perceived severity of service failure significantly influences the quality of service recovery. The findings provide a considerable clue for managers to reduce expenditure and improve the effectiveness of service recovery activities, enabling companies to focus on the apology message rather than the communication channels. Furthermore, service providers should find a way to assess the degree of customers’ perception of service failure severity to enhance the quality of service recovery activities. Copyright © 2018 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2170",
+    "title": "Understanding customers' expectations for delivering satisfactory and competitive services experience",
+    "journal": "International Journal of Electronic Marketing and Retailing",
+    "journal_impact_factor": 0.326,
+    "doi": "10.1504/IJEMR.2018.092695",
+    "abstract": "This present study attempts to understand Nigeria mobile telecommunications (MT) consumers' voice call and data services expectations for delivering satisfactory and competitive service experiences. The multi-level qualitative research design with single face to face (F2F) interview and focus group (FG) approaches were employed. 22 samples were drawn from Nigeria MT sector heterogonous consumer population in Port Harcourt-Rivers State of Nigeria. One FG with 12 participants and ten single F2F interviews were held and data was analysed using content analysis technique with NVivo 11 software. Our result shows that some customers of selected firms are less satisfied with their offerings. This is because these firms lack knowledge of their customers' expectations. Also, five positively rated factors: service quality, price bundling, complaints management, consumer right education and consumer market research are key thematic expectations that support the delivery of satisfactory services experience and competitiveness. This study contributes to the literature on consumer behaviour research by revealing customers' expectation for MT voice and data services in Nigeria and how these expectations drive customer satisfaction (CSAT) and retention (CRT) as well as business competitiveness. However, continental MT operators and researchers should understand that factors of customers' expectations are peculiar to a specific country. Copyright © 2018 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2171",
+    "title": "An exploration of online shopping convenience dimensions and their associations with customer satisfaction",
+    "journal": "International Journal of Electronic Marketing and Retailing",
+    "journal_impact_factor": 0.326,
+    "doi": "10.1504/IJEMR.2020.106431",
+    "abstract": "The purpose of this paper is to extend our understanding of shopping convenience and customer satisfaction in the context of online shopping. Employing the critical incident technique, the authors content-analyse 1,134 customer-generated reviews regarding 31 US online retailers’ service performance. This study uncovers 51 original categories and further refines them into nine dimensions of online shopping convenience: access, search, evaluation/selection, configuration/customisation, transaction, delivery, possession/in-use, service recovery, and post-purchase communication convenience. Our findings indicate that, of the nine service convenience dimensions, four dimensions, such as delivery, service recovery, transaction, and possession/in-use convenience, tend to be the main sources of customer satisfaction/dissatisfaction. Copyright © 2020 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2172",
+    "title": "Electronic service recovery strategies and satisfaction with electronic service recovery: moderating role of value co-creation",
+    "journal": "International Journal of Electronic Marketing and Retailing",
+    "journal_impact_factor": 0.326,
+    "doi": "10.1504/ijemr.2023.127285",
+    "abstract": "Despite efforts made by organisations for the provision of high-quality services, service failure (SF) is still considered a serious challenge in most organisations. In previous studies, there has been less interest in factors affecting the behaviour and satisfaction of customers with e-service recovery. To fill the existing research gap, this study investigates the effect of e-service recovery strategies on customer satisfaction with service recovery. It also aims to show how value co-creation adjusts customer perceptions of justice towards online service recovery and restores customer satisfaction. The hypotheses were tested using structural equation modelling with the help of SMART PLS. To this end, a questionnaire including 25 items was distributed among Alpha Bank customers selected by stratified random sampling (560 questionnaires were finally analysed). According to the results, ESR strategies improved customer-perceived justice and eventually customer satisfaction with service recovery (SR). The moderating role of value co-creation was rejected in Alpha Bank. Copyright © 2023 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2173",
+    "title": "Return satisfaction with e-marketplaces: an investigation in Asia",
+    "journal": "International Journal of Electronic Marketing and Retailing",
+    "journal_impact_factor": 0.326,
+    "doi": "10.1504/IJEMR.2024.139378",
+    "abstract": "This study investigates return satisfaction with e-marketplaces in Asia. This multi-retailer structure, unified in a single storefront, can cause consumer confusion and dissatisfaction if something goes wrong. The research used a structural equation modelling approach to investigate the effect of service recovery quality and site ease of use on perceived value of the return and return satisfaction. A sample of consumers residing in Thailand who had previously returned a product was selected. Analysis found positive relationships between service recovery quality and site ease of use and perceived value of the return offering. However, the effect of site ease of use on return satisfaction was negative. Perceived value of the return offering had a significant mediation effect. The implication of this finding for practice is that online marketplaces must provide an easy, good quality and high value return process to ensure customer satisfaction. Copyright © 2024 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2174",
+    "title": "Large-scale data processing software and performance instabilities within HEP grid environments",
+    "journal": "International Journal of Grid and Utility Computing",
+    "journal_impact_factor": 0.642,
+    "doi": "10.1504/IJGUC.2019.100903",
+    "abstract": "Large tasks running on grids and clouds have introduced a need for stability guarantees from geographically spanning resources, where failures are handled pre-emptively. Detecting performance inefficiencies in such cases is difficult. While individual services implement fault-tolerance, the behaviour of interacting failures within tightly-coupled systems is less understood. This paper describes an approach to modelling performance of production tasks running within the ALICE grid. We provide an overview of the ALICE data and software workflow for production jobs. Event states are then constructed, based on data centre job, computing, storage and user behaviour. We then address the question of analysing failures within the context of operational instabilities, occurring in production grid environments. The results demonstrate that operational issues can be detected and described according to the principle service layers involved. This can guide users, central and data centre experts to take action in advance of service failure effects. Copyright © 2019 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2175",
+    "title": "Topic-aware staff learning material generation in complaint management systems",
+    "journal": "International Journal of Innovation and Learning",
+    "journal_impact_factor": 0.601,
+    "doi": "10.1504/IJIL.2018.088786",
+    "abstract": "In this paper, a topic-aware staff learning material generation approach is proposed in complaint management systems. Historical processing logs are extracted to form a complaint space. Complaint processing skills of staff members are assessed in terms of quantity, efficiency and quality on various topics. Similar staff members are clustered according to their behavioural characteristics. A resource recommendation algorithm is proposed to recommend complaint processing records from highly skilled colleagues in the cluster for the staff member to learn. Preliminary experiment results show good performance of the proposed method. © 2018 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2176",
+    "title": "Social network analysis: Potential quality tool for enterprise development",
+    "journal": "International Journal of Management and Enterprise Development",
+    "journal_impact_factor": 0.479,
+    "doi": "10.1504/IJMED.2015.073440",
+    "abstract": "The study evaluates the applicability of the social network analysis (SNA) as a quality tool for an electronic manufacturer. This firm looks for a suitable tool to help improve its delay time when handling a customer complaint. Despite the availability of various quality-related - tools, there is no specific technique to help analyse the bottlenecks in information flows. For instance, process analysis is applicability with the tangible objects. For the SNA's findings, the information bottlenecks are identified at the supervisor and product engineer section manager nodes. The feedback is gathered from all participants for their feedback on the future use of the SNA. They consider the SNA as useful in gaining the visibility and insightful knowledge on the linkages of all key tasks. Finally, the SNA has strong potential to be part of current quality tools being applied today for enterprise development. Copyright © 2015 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2177",
+    "title": "Indian consumers' tendency to exit amidst a complaint: a SEM approach",
+    "journal": "International Journal of Management Practice",
+    "journal_impact_factor": 0.402,
+    "doi": "10.1504/IJMP.2024.135189",
+    "abstract": "The purpose of this paper is to develop an integrated model with personality and situational factors to comprehensively understand the determinants of the consumer’s tendency to exit (TE) amidst complaints and to assess the psychometric properties of the conceptual model across three service sectors i.e., hotel and hospitality, automobile, and organised retail stores. The research uses survey-based data of 600 consumers by using quota sampling and employs structural equation modelling and multi-group invariance analysis. The results highlight the significant impact of personality factors on consumer’s attitude toward complaining (ATC). Further, ATC and situational factors, i.e., perceived likelihood of successful complaint and ease of complaint process, have a significant negative impact on consumers’ TE, whereas discouraging subjective norms, lower perceived switching cost, poor employee response, and negative past experience have a significant positive impact on consumers TE. This study is the first of its kind to explore the newly introduced concept of consumers’ ‘tendency to exit’ in the Indian setting. Copyright © 2024 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2178",
+    "title": "Removing the problem of locking not good in assembly of lever combination switch using continuous improvement process",
+    "journal": "International Journal of Manufacturing Technology and Management",
+    "journal_impact_factor": 0.136,
+    "doi": "10.1504/IJMTM.2017.088450",
+    "abstract": "Company Mindarika had reported poor quality of particular products in the assembly department which results in increasing cost, lead time, and customer complaints. The purpose of this study is to help the company Mindarika to improve the product quality and to manage the data for a continuous improvement plan by using continuous process improvement and the quality control techniques. This research paper is related with some modifications in the setting of hand press installed for locking the two plates of lever combination switch during its assembly. Methods and procedures of this study include a review of literature relevant to continuous improvement, quality control techniques, root cause analysis, seven tools of quality and assembly process of a specific automotive product (lever combination switch). After the causes of defects were identified, solutions and procedures were recommended to the company to eliminate defects in the assembly process of lever combination switch. Copyright © 2017 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2179",
+    "title": "Ranking electronic customer complaints by FMEA and TOPSIS with a case study in Isfahan Province Gas Company",
+    "journal": "International Journal of Process Management and Benchmarking",
+    "journal_impact_factor": 0.289,
+    "doi": "10.1504/IJPMB.2015.066027",
+    "abstract": "The purpose of this study is to propose an integrative approach of failure modes and effects analysis (FMEA) and technique for order preference by similarity to ideal solution (TOPSIS) for prioritising electronic customer complaints. The proposed approach includes six steps and has been examined in Isfahan Province Gas Company. Findings imply that lack of metre reading and lack of issuance and delay in sending bill are the highest ranked complaints. Speed in metre reading and issuance and sending subscribers' bills are effective in satisfaction of subscribers and also in preventing further failures like calculating gas price of next periods. Copyright © 2015 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2180",
+    "title": "Measuring service quality in Indian automobile aftersales: AutoIND scale",
+    "journal": "International Journal of Process Management and Benchmarking",
+    "journal_impact_factor": 0.289,
+    "doi": "10.1504/IJPMB.2023.129652",
+    "abstract": "The purpose of this paper is to examine the existing service quality measurement scales in the literature on automobile after-sales service. It seeks to develop and validate a service quality measurement scale for Indian passenger car industry’s after-sales segment, thereby enhancing service quality (SQ) and customer satisfaction. The study’s research design consists of a combination of literature review, exploratory interview and a questionnaire survey conducted through interviews. This paper develops a pilot SQ measurement scale to assess SQ in the Indian passenger car industry’s after-sales segment. Apart from the five SERVQUAL dimensions in the extant literature, two new dimensions of service failure and service recovery have been identified and included in the scale developed to address the specific features of the Indian automobile industry. The scale developed in this research will provide a framework towards the development of a measurement scale for after sales services in auto industry. Copyright © 2023 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2181",
+    "title": "Identifying and analysing components of customer relationship management influencing customer-oriented behaviour of employees: The case of Bank Mellat branches of Khouzestan Province",
+    "journal": "International Journal of Productivity and Quality Management",
+    "journal_impact_factor": 0.293,
+    "doi": "10.1504/IJPQM.2017.087304",
+    "abstract": "The aim of this study is to identify and analyse components of customer relationship management influencing customer-oriented behaviour of employees. This study has been conducted on two active elite communities in the banking system, i.e. managers and employees of Bank of Mellat in Khouzestan province of Iran. First, by using a local questionnaire and Delphi technique, ten experts selected by snowball method have been interviewed and the forming elements of the customer-oriented behaviours of employees and the components of customer relationship management have been determined. Then, a questionnaire has been developed including 36 questions and the data has been collected from a sample of 246 customers by which, the role of each component has been determined and the customer-oriented behaviours of employees have been analysed. Findings indicate that among the six components of identified customer relations, the quality of provided services, creating special approaching solutions for the customers and holding strong social networks with the customers had the strongest roles in customer satisfaction. © 2017 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2182",
+    "title": "The impact of total productive maintenance on key performance indicators (PQCDSM): A case study of automobile manufacturing sector",
+    "journal": "International Journal of Productivity and Quality Management",
+    "journal_impact_factor": 0.293,
+    "doi": "10.1504/IJPQM.2018.091794",
+    "abstract": "Total productive maintenance (TPM) is a maintenance program, which involves a customised approach for maintaining plants and equipment ensuring maximum availability, equipment effectiveness and promotes autonomous maintenance culture. The objective of this paper is to highlight the significant improvements of operational efficiency regarding TPM key performance indicators known as productivity (P), quality (Q), cost (C), delivery (D), safety (S) and morale (M) termed as ‘PQCDSM’ in selected two wheeler automobile sector. The study has focused on the tangible benefits gained regarding TPM key performance indicators. The results show that there was a significant improvement in production volume, customer complaints, the cost of operations, number of accidents and morale of the employees which the selected automobile plant achieved in the target period of three years. The findings of the research determine a significant contribution due to systematic TPM interventions to ‘PQCDSM’ indicators and hence motivated the workforce to contribute for improvement activities. An important aspect investigated from this study was the intangible outcomes achieved by implementing TPM. Copyright © 2018 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2183",
+    "title": "Evaluating bikesharing service quality: A case study for BIXI, Montreal",
+    "journal": "International Journal of Productivity and Quality Management",
+    "journal_impact_factor": 0.293,
+    "doi": "10.1504/ijpqm.2020.10026184",
+    "abstract": "Public transportation is vital to city’s economy and public health. It has always been an important part of human life, which has aided not only in travel time savings but also giving a medium of leisure and health in more ways than one. In this paper, we address the subject of bikesharing with focus on customer satisfaction and quality. A SERVQUAL-based approach is proposed to measure bikesharing service quality. Five dimensions namely tangibility, reliability, empathy, assurance and responsiveness are investigated. A questionnaire study with users of bikesharing service called BIXI in Montreal is conducted. Three hundred and thirteen responses are received. SERVQUAL and compliment/complaint analysis is done to identify areas of improvement or negative gaps where customer perceptions are lower than expectations. Suggestions to cover these service quality gaps are provided. Copyright © 2020 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2184",
+    "title": "Designing chicken feeder aids using Kano-ergonomic function deployment in West Sumatra small and medium sized enterprise",
+    "journal": "International Journal of Productivity and Quality Management",
+    "journal_impact_factor": 0.293,
+    "doi": "10.1504/ijpqm.2022.124905",
+    "abstract": "This study aims to design aids for layer chicken feeders in an ergonomic traditional coop using Kano-ergonomic function deployment (EFD). The integration of Kano model and EFD was used to identify design attributes that affect customer satisfaction and to translate customer requirements into technical requirements that are used to determine the priorities for the design of layer chicken feeder aids. The findings of this study are layer chicken feeder aids that are used with pushing movement to overcome musculoskeletal complaints, speed up work time, and reduce feed wastage. This design product is useful to facilitate the feeding of layer chicken as it can reduce musculoskeletal complaints, speed up work time, and reduce feed wastage so that work productivity can increase. In addition, the design of the resulting aids can be used as a reference by chicken layer livestock entrepreneurs to increase the productivity of their companies and especially their workers. © 2022 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2185",
+    "title": "Complaints management: quality of response to customer complaints in an automotive company",
+    "journal": "International Journal of Productivity and Quality Management",
+    "journal_impact_factor": 0.293,
+    "doi": "10.1504/IJPQM.2025.143968",
+    "abstract": "Complaints management is an essential process of customer service by providing valuable information to review organisational performance and to support decision-making, holding accountable different stakeholders, including suppliers of product parts and services. The automotive industry requires high-quality standards and internal compliance procedures to assure the reliability of manufacturing processes and quality of product parts, even though with these stringent measures complaints are issued, and they must be promptly handled and solved. This article analysis the processing time of customer complaints, to figure out, the causes leading an automotive industrial unit to not comply with internal and customer response time targets, proposing improvements to minimise the cost of contractual fines. To accomplish these outcomes a top-bottom approach was used, detailing critical factors to describe and analyse the complaints handling process and to identify the underlying problems to advance improvement opportunities that can enhance the efficiency and effectiveness of the complaints management system. © 2025 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2186",
+    "title": "Achieving excellence in business practices through artificial intelligence: a case study of the Dubai public sector",
+    "journal": "International Journal of Public Sector Performance Management",
+    "journal_impact_factor": 0.31,
+    "doi": "10.1504/IJPSPM.2024.140550",
+    "abstract": "Artificial intelligence (AI) is all over the globe seen as a means of smooth running of business and increasing operational efficiency and excellence of business organisations with least human interference. For example, robots may do better jobs and perform well than humans, and give better customer satisfaction. Government enterprises should also benefit from AI. Hence, this paper is an investigation of the impact of the recourse to AI or Intelligent machines on operational excellence in three public sector enterprises of the government of Dubai, namely, RTA, DEWA and DM in terms of costs, revenue, service delivery, grievance redressal, transaction time, and customer satisfaction. Significant improvements had come across in terms of all these operational excellence parameters in the sampled Dubai Government entities. Based on these results, extension of AI to all prime government organisations and services is suggested, through any employee re-allocation needed. Copyright © 2024 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2187",
+    "title": "Relationship marketing tactics, customer entitlement, and customer behavioural responses",
+    "journal": "International Journal of Services, Economics and Management",
+    "journal_impact_factor": 0.266,
+    "doi": "10.1504/IJSEM.2021.117244",
+    "abstract": "This study aims at examining the effects of relationship marketing tactics on customer entitlement which then affects customer citizenship behaviour and customer complaint behaviour. The data were collected through surveys on customers of cosmetics companies in Vietnam. The results show that emailing and messaging do not have a significant effect on customer entitlement while firm's preferential treatment towards customers, provision of tangible rewards, and interpersonal communication are significantly associated to customer entitlement. The results also indicate that customer entitlement dramatically influences customer complaint behaviour while the impact of customer entitlement on customer citizenship behaviour is significant, but the magnitude of the effect is modest. Interestingly, customer entitlement serves as a significant partial mediator in the effects of relationship marketing tactics on customer citizenship behaviour and complaint behaviour. The study concludes with significant theoretical and practical implications for service management. Copyright © 2021 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2188",
+    "title": "'We' want apology! Tailoring service recovery and self-construal to earn customer forgiveness",
+    "journal": "International Journal of Services, Economics and Management",
+    "journal_impact_factor": 0.266,
+    "doi": "10.1504/ijsem.2022.126216",
+    "abstract": "The purpose of this study is to examine the impacts of service recovery strategies and self-construal on customer forgiveness. A 2-service recovery (manipulated: apology vs. economic) × 2-self-construal (median: independent vs. interdependent) between-subject experiment was conducted with 164 subjects. Results showed: 1) when apology is given, customers with interdependent self-construal are more likely to forgive compared to customers with independent self-construal; 2) forgiveness negatively influences negative-word-of-mouth. This study provides insight to the literature by indicating that service recovery strategies need to be compatible with customers' self-construal in order to earn forgiveness following a service failure. Copyright © 2022 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2189",
+    "title": "Requirements analysis of customer service recovery system in hospitality industry using fuzzy DEMATEL and ANP",
+    "journal": "International Journal of Services, Economics and Management",
+    "journal_impact_factor": 0.266,
+    "doi": "10.1504/IJSEM.2023.129596",
+    "abstract": "Companies can adopt reactive and proactive strategies for service recovery. This study aimed to identify the requirements of the customer service recovery system in the hospitality industry. Using fuzzy DEMATEL technique, the cause-effect relations between the requirements of the service recovery system were identified and then ranked using the fuzzy ANP (FANP) technique. A model was developed to represent the effective and affected requirements of the service recovery system in the hospitality industry. The senior management support and customer relationship management (CRM) were the most effective and affected requirements, respectively. The literature has traditionally focused more on the basic concepts and conceptual model of service recovery and not covered the requirements of creating a service recovery system. In this regard, this study helps to develop the service recovery theory by identifying the requirements for creating a service recovery system and prioritising them. Copyright © 2023 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2190",
+    "title": "Understanding the conceptualisation and strategies of service recovery processes in service organisations",
+    "journal": "International Journal of Services, Economics and Management",
+    "journal_impact_factor": 0.266,
+    "doi": "10.1504/IJSEM.2023.131132",
+    "abstract": "Many service providers struggle with service recovery (SR) processes, since they do not directly involve customers, and have no bearing on the needs and expectations of customers. The way in which compensation and complaint resolutions are delivered can have a significant impact on how customers perceive of SR and retention efforts in organisations. This study unpacks conceptualisations and the practicality of SR processes in service providing organisations. To meet these objectives, data were collected from reputed public banks using online reviews, semi-structured interviews, and focus group discussion. The results reveal that disruption and frustration typically occur during the first stage of service failure, and there is therefore a need to redesign SR processes so that employees can identify the causes of disruption and understand what customers expect from service providers. This study highlights that focussed engagement, help, feedback, improvements, complaint handling, fair compensation, fast services, apologies, customer participation, the credibility of feedback, and competence are some important factors that can improve the SR processes of public banking organisations. This study presents a conceptual framework that illustrates how SR processes can help banking organisations improve the usefulness of SR processes. © 2023 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2191",
+    "title": "Complaint behaviour by third parties: Exploring service quality, customer satisfaction and word-of-mouth in health clubs",
+    "journal": "International Journal of Sport Management and Marketing",
+    "journal_impact_factor": 0.4,
+    "doi": "10.1504/IJSMM.2016.077923",
+    "abstract": "In recent years, in the services market, we have witnessed a growing importance of concepts such as service quality, satisfaction, word-of-mouth and complaint behaviour. The proposed conceptual model aimed to examine the existing relationships among these dimensions in the context of health clubs. Data was collected through questionnaires and analysed using structural equations modelling (SEM) to simultaneously test all the relationships in the model. Overall, the results suggest that quality is assessed through staff, programme and facilities evaluation, and that service quality is crucial for both satisfaction and word-of-mouth generation. Customers do not complain to third parties, i.e., to external parties that are not involved, but have some influence on the service provider even when low quality is delivered or they are dissatisfied. © 2016 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2192",
+    "title": "The effects of perceived justice and experience on service recovery satisfaction and post-purchase behaviours in the airline industry",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2015.069378",
+    "abstract": "Customers tend to measure the fairness of the service recovery provided by businesses and such evaluations can vary based on different customer experiences. While both perceived justice and consumer experiences play critical roles in service recovery, few studies discuss the effects of the second of these. This study thus examines the effects of perceived justice and consumer experiences on service recovery satisfaction. The results show that perceived justice significantly influences service recovery satisfaction. Moreover, a consumer experience has moderating effects between distributive and interactive justice and service recovery satisfaction. The high consumer experiences group examined in this work paid more attention to factual compensation, while the low consumer experiences group emphasised high interactive justice behaviours. Finally, service recovery satisfaction could reduce negative word-of-mouth and enhance repurchase intention. It is anticipated that the results of this work could help businesses to limit the damage due to service failures by engaging in appropriate service recovery actions and thus prevent negative experiences from spreading and further promote repurchase intention. Copyright © 2015 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2193",
+    "title": "Performance measurement system in supply chain management: Application in the service sector",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2016.074816",
+    "abstract": "This study aims at proposing a performance measurement system (PMS) to assist in the supply chain management. This paper followed these steps: 1) conceptual theoretical structure's definition; 2) focal company choice; 3) mapping of current and beneath supply chains; 4) performance indicators' definition; 5) performance metric's definition; 6) checking for the significance of processes and metrics with AHP. The study proposes a PMS based on the SCOR model and it was applied to a company in the service sector and a supplier. Starting from the conducted analysis it was found that the most important processes in decreasing order were: source, planning, delivering, making and returning. For metrics, the most important were: perfect order fulfillment, stock cost, average answer time to a service request, deliveries carried out without failures, and customer complaint. According to the results, it is possible to settle the most important metrics between focal company and supplier, expecting the relationship's performance to be improved. Copyright © 2016 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2194",
+    "title": "Exploring the impact of service recovery on customer affection, perceived value, and sabotaging behaviour: Does gender make a difference?",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2016.075246",
+    "abstract": "This empirical study aims to investigate the impact of service recovery on customer affection, perceived value, and sabotaging behaviour in a service industry context in Penang/Malaysia. Data for this empirical investigation were gathered from a sample of international hotel guests. A total number of 248 questionnaires were obtained in the research location. Results based on hierarchical regression analysis reveal that all hypothesised relationships were supported. Specifically, the current study by examining untested relationships such as the effect of service recovery on customer perceived value and sabotaging behaviour in a hotel context lends further contribution to tourism and hospitality management literature and provides useful guidelines to practitioners as well. © Copyright 2016 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2195",
+    "title": "Emotional management and behavioural inhibition system in service failures",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2017.083763",
+    "abstract": "This study incorporates individual psychological differences - emotional management ability, behavioural inhibition system (BIS) and appraisal of service failure into the framework model of consumer coping. The model was tested on a sample of 301 respondents. Structural equation modelling was employed to assess data and the six hypothesised relationships. The findings reveal that customers' emotional management ability does affect their assessment and their behavioural inhibition system sensitivity. Severity perceived is positively linked to active and expressive coping while diminishing avoidance coping. Furthermore, BIS sensitivity leads to a greater intention to use both expressive and avoidance coping mechanisms in dealing with service failures. These results propose implications for how service providers should act in service recovery in order to obtain the most optimal outcome. Copyright © 2017 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2196",
+    "title": "Service recovery strategies using social media sites",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2017.087853",
+    "abstract": "This study investigates a service organisation's service recovery strategies using social media sites. Based on 347 mini-cases from the Twitter accounts of a sample of major airlines, we conducted qualitative analysis using grounded theory approach. We analysed the relationships between the three elements of service recovery including customers' motivations to complain, service failure types and agent responses. This study offers service providers practical implications to design their recovery strategies. Identification of customers' motivations to complain supports the role of social media sites as a complementary service recovery channel and more importantly, as the final defence of an organisation's service recovery system. The investigation on the relationship between customers' motivations to complain and service failure types indicates that customers utilise social media sites no differently when different failure types occur. However, different failure types do trigger different sets of agent responses. Further, social media agents respond differently according to customers' motivations to complain. Copyright © 2017 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2197",
+    "title": "House of reverse logistics: An approach to analyse the factors influencing company performance and customer complaint",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2018.095561",
+    "abstract": "This paper presents a house of reverse logistics (HRL). HRL is proposed as an effective design method for integrating reverse logistics (RL) problems and creating consumers satisfaction. HRL explicitly addressed the translation of customer needs into reverse logistics perspective. HRL is very important because this approach successfully meets customer expectations, requirement and complaint. The complaint is signalling of customer dissatisfaction that indicates the important information directly from customers. The design of HRL was adopted from quality function deployment (QFD). Copyright © 2018 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2198",
+    "title": "SERVQUIX: a tool for service quality measurement in Indian banks",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2023.136108",
+    "abstract": "The paper aims to propose a comprehensive instrument to measure service quality of banks in India. A standard methodology has been used for scale and index development. The findings clearly depict service quality of banks as a multi-dimensional construct having factors as employee attitude, service recovery, physical and technological infrastructure, assurance and online banking facilities. At last, an easy to use template has been proposed for practitioners to calculate and assess their competitive scores based on service quality. The originality of this work lies in the fact that the index captures the customers’ perspective of service quality and provides an indication for further improvement for better satisfaction and retention of its customer base. The present study may further be extended in terms of large and diversified sample size to validate the proposed index. Copyright © 2023 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2199",
+    "title": "A Six Sigma approach for package management process in a courier company",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2024.136794",
+    "abstract": "This research presents an approach based on the Six Sigma methodology as a management tool for the package management process in an international courier. This research uses a research-action approach to investigate the benefits of implementing the Six Sigma methodology in a courier company. The paper presents the background and step by step of the Six Sigma implementation. Specifically, the Cartagena (Colombia) - Fort Lauderdale the USA shipping route is analysed, which shows the highest number of customer complaints and the worst package management metrics. Finally, the monetary impact of nonconformities is delivered. The study results indicate that implementing Six Sigma to a package management process generates valuable and objective information to the decision-makers in the company. Copyright © 2024 Inderscience Enterprises Ltd."
+  },
+  {
+    "article_id": "CS_2200",
+    "title": "Analysis of critical success factors of e-commerce service supply chain",
+    "journal": "International Journal of Services and Operations Management",
+    "journal_impact_factor": 0.199,
+    "doi": "10.1504/IJSOM.2024.136802",
+    "abstract": "The purpose of this research is to identify, establish interrelationships and levels among the enablers of the e-commerce service supply chain (SSC). Nineteen enablers were selected after extensive literature review and suggestions of the experts. Interpretive structure modelling was used for analysing the enablers of e-commerce SSC and MICMAC analysis categorised the enablers into four clusters. For data validity and applicability an empirical case study was taken from an Indian e-commerce SSC. Major findings are that enablers - 'information and technology management', 'commitment from top management', 'maintaining a relationship with logistics service integrator', 'knowledge flow management', 'updating suppliers, LSI and customers in real-time', 'information flow management' and 'service recovery management' are having high driving and low dependence power. These enablers are identified as independent enablers and are required to be handled carefully. This study will help managers in making better decisions, enabling them to operate e-commerce SSC more effectively and efficiently. Copyright © 2024 Inderscience Enterprises Ltd."
+  }
+]

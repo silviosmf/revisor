@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_1051",
+    "title": "May the force be with you: Star Wars and the gamified hotel journey",
+    "journal": "Scandinavian Journal of Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15022250.2024.2372305",
+    "abstract": "Although gamification has gained traction in the tourism literature, its application in the hospitality field of work has received little attention. This commentary presents a new avenue in the hospitality sector to embrace gamification through the gamified journey. We demonstrate how the concept works in the Star Wars hotel by illuminating how hospitality services could imbue gamification elements in every part of the service encounter to create the WOW effect. In essence, the Star Wars accommodation renders a unique service potential that could bring new fantasy experiences to every part of the guest dwelling, as it turns an ordinary accommodation into a game showroom where guests could indulge in a fantasy-like setting. Although the gamified hotel model casts new revelations on the accommodation business, it also suffers a series of fatal issues that lead to service failures as well as customer complaints and even avoidance. This research note takes a leap forward to present a research agenda on gamification in tourism/hospitality service, while showcasing opportunities and challenges that lie ahead. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1052",
+    "title": "The Use of Consumer-Generated Feedback in the Hotel Industry: Current Practices and Their Effects on Quality",
+    "journal": "International Journal of Hospitality and Tourism Administration",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15256480.2015.1054754",
+    "abstract": "Consumer-generated feedback is hard to ignore these days. Word-of-mouth has expanded beyond a customer’s immediate friends and family; with the help of technology it reaches thousands of current and prospective guests. In light of this, scholars and practitioners are exploring the subject of consumer-generated feedback. Today, most of the research regarding this subject focuses on the use of consumer-generated feedback to make purchase decisions. In contrast, the present study explores the use of such information for the purposes of improving hotel operations. This article examines the amount of value placed on consumer-generated feedback, the relative importance placed on positive and negative feedback, and its effects on perceived quality. Furthermore, this study inquires as to the specific uses given to consumer-generated feedback in the hotel industry. It is the researchers’ contention that valuing feedback has positive effects on perceived quality. The findings conclude that hotels can use consumer-generated feedback to take actions such as modifying training programs and operating procedures, as well as identifying patterns of complaint and praise. Copyright © Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1053",
+    "title": "Sources of Value co-creation, co-destruction and co-recovery at Airbnb in the Context of the COVID-19 Pandemic",
+    "journal": "International Journal of Hospitality and Tourism Administration",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15256480.2022.2092249",
+    "abstract": "This study explored the sources of value co-creation, co-destruction and co-recovery amid the COVID-19 outbreak using 415 online reviews of guests’ experiences with Airbnb. Data analysis using the grounded theory approach identified two main sources: Airbnb’s customer service and hosts’ conduct. Four sub-themes (quality of interactions with customer service representatives, difficulties in achieving resolution, dissatisfaction or satisfaction with the resolution offered and costs incurred by the consumer) comprised the main theme of Airbnb’s customer service. Two sub-themes (the role of the host’s communication in service recovery and perceived unethical actions by the host) comprised the main theme of hosts’ conduct. The findings indicate that collaborative engagement in the restoration of service failure by actors results in value co-recovery. © 2022 The Author(s). Published with license by Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1054",
+    "title": "Job Embeddedness in the Hospitality Industry: Developing a Model of Psychological Antecedents and Behavioral Consequences",
+    "journal": "International Journal of Hospitality and Tourism Administration",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15256480.2023.2276959",
+    "abstract": "This study examines interpersonal psychological factors as antecedents and crisis/supportive behavior factors as consequences of organizational job embeddedness (OJE) in the hospitality industry. Workplace fun (WF) and humor (WH) as psychological factors, quitting intention (QI) as a crisis factor, and service recovery performance (SRP) and proactive customer service performance (PCSP) as supportive behavior factors were studied. Data from 333 hotel employees and 40 supervisors were collected through a questionnaire, analyzed using SEM-PLS3. WF and WH serve as a valuable framework for understanding OJE. WH influences WF, which positively impacts OJE. Increased OJE results in SRP and PCSP, reducing QI. © 2023 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1055",
+    "title": "The Role of Meaningfulness and Customer Incivility Between HRM Practices and Service Recovery Performance",
+    "journal": "International Journal of Hospitality and Tourism Administration",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15256480.2025.2534703",
+    "abstract": "This study investigates the mediating role of meaningfulness in the connection between human resource management practices (HRMPs) and service recovery performance (SRP) and the moderating effects of customer incivility in the relationship between meaningfulness and SRP. The current study employs convenience sampling to collect cross-sectional data from 454 hotel employees in Bangladesh and analyses using SmartPLS. HRMPs and meaningfulness are significantly correlated, as is meaningfulness with SRP. Meaningfulness mediates the relation between HRMPs and SRP. Employee-perceived customer incivility also negatively moderates the connection between meaningfulness and SRP. This study contributes to existing research by applying the theory of self-concordance and the cognitive appraisal theory of stress to test the mediating and moderating effects of meaningfulness and employee-perceived customer incivility, respectively. The implications are discussed. © 2025 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1056",
+    "title": "There is No ‘I’ in Recovery: Managements’ Perspective of Service Recovery",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2014.902348",
+    "abstract": "In the services industry, service failures occur on a daily basis, therefore it has received heightened attention from academia as well as practitioners over the past years. However, the majority of research and practices are based on either the customers’ or front line employees’ point of view. In the present study, we claim that it is the way that managers approach service recovery strategies that makes the difference between successful and unsuccessful operations. Thus, this case study addressed managements’ involvement in the service recovery process by highlighting the effective and efficient service recovery strategies that are implemented by practitioners utilizing justice theories. In order to investigate this issue, a qualitative case study approach was adopted. The findings confirm three distinct service recovery phases, namely, the pre-recovery stage, the immediate recovery stage, and the follow-up recovery stage. Further, we discovered another stage, “lessons learned,” which has a direct impact on each phase of the service recovery, guiding managers in shaping their service recovery policies and procedures. Copyright © Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1057",
+    "title": "The Moderating Role of Severity of Service Failure in the Relationship among Regret/Disappointment, Dissatisfaction, and Behavioral Intention",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2016.1169470",
+    "abstract": "This study examines the moderating role of severity of service failure between emotions and dissatisfaction, as well as between dissatisfaction and behavioral intention. Results showed that when customers’ regret and disappointment are low, service failure severity has an amplifying impact on their dissatisfaction. It also demonstrates that when customers’ dissatisfaction levels are low, service failure severity plays an important role in their negative word of mouth and switching intention. Therefore, if a restaurant can reduce its number and frequency of critical service failures, then restaurant operators can dramatically enhance customers’ word of mouth testimonials and customer retention. © 2017 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1058",
+    "title": "Interactions between Service Recovery Efforts and Customer Characteristics: Apology, Compensation, and Empowerment",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2020.1769523",
+    "abstract": "This study examines the effects of customer characteristics (i.e., number of visits and complaint tendencies) on recovery efforts. Sixteen scenario-based types of service-recovery strategies (i.e., 4 types of compensation x 2 types of apology x 2 conditions of empowerment) along with a given service failure (i.e., foreign items in food) were provided to 774 participants recruited from nationwide online panels in the U.S. The results reveal that one-time compensation at the point of incident, cue-based apologies, and empowered servers are the most effective service-recovery strategies. It also reveals that active complainers tend to recommend the restaurant after service recovery actions, whereas passive complainers tend to have better distributive fairness and interactional fairness after service recovery actions. These research findings are expected to establish more appropriate service-recovery strategies manuals. © 2020 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1059",
+    "title": "The Role of Anger in a Leisure-Based Service Failure: Lessons for Recovery",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2020.1854921",
+    "abstract": "Client upset is one of the greatest challenges for service providers. Anger, in particular, can have dramatic and negative effects on clients’ responses to hospitality services and to the service providers themselves. This study explores how staff might best respond to angry clients. Guided by justice theory, psychological coping theory, and the service recovery literature, we examine conditions that generate anger among clients and how angry clients prefer to be involved in service recovery efforts. Specifically, we consider whether anger predicts clients’ desire to co-create the recovery process. Participants (n = 271) responded to a hypothetical scenario describing a service failure common to hospitality and tourism settings. As expected, participants were most angry when the problem was perceived as severe and when they attributed blame to the provider. Further, anger (and not clients’ personal traits) predicted greater preferences for co-created service recovery. We conclude with implications as they relate to understanding service recovery. © 2020 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1060",
+    "title": "Understanding the Subjective and Objective Assessments of Service Quality through Spa Customers’ E-complaints in Bangkok",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2021.1891598",
+    "abstract": "Despite there being several studies about customers’ e-complaints in hotels and other tourism businesses, little research has focused on the spa business and service quality. In particular, there is very limited literature investigating the subjective and objective assessments of service quality in hospitality and tourism research. This study, therefore, aims to examine the subjective and objective assessments of service quality through spa customers’ e-complaints in Bangkok. Content analysis and descriptive statistics were employed to analyze the data collected from a secondary source. The findings revealed that most e-complaints (53%) involved the subjective assessment of service quality reflecting customers’ personal feelings, and the remainder (47%) involved the objective assessment based on factual information. The study has conceptualized the subjective and objective assessments of spa service quality in regard to how customers complained about spa services. The findings not only assist spa businesses in acquiring a more thorough understanding of their service quality problems through customer complaints, but also support service improvements. The study contributes to the literature by offering another perspective and a better understanding of service quality assessment. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1061",
+    "title": "The Effects of Language Errors in Service Recovery Communication on Customers’ Hotel Perceptions and Booking Intentions",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2021.1897919",
+    "abstract": "Research in the field of marketing and crisis communication has shown that language errors negatively affect consumers’ image of a company and their buying intentions. We extended this line of research to the hospitality industry. Using a between-subjects design, we tested whether language errors in a hotel response to a negative online guest review affect customers’ perceptions of the hotel and their booking intentions in two service recovery contexts: a customer complaint regarding a service failure and a customer complaint which the hotel could not be held responsible for. The results show that language errors negatively influence customers’ perceptions of the hotel’s expertise, its reputation, and its trustworthiness and affect their booking intentions, irrespective of the type of complaint. Therefore, hotels should pay significant attention to avoid language errors in their online service recovery communication. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1062",
+    "title": "Does Electronic Word-of-mouth Differently Influence Traditional Economy Vs. Collaborative Economy Tourist Accommodation? An Empirical Study",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2021.1913692",
+    "abstract": "This study aims to analyze three main variables of electronic word-of-mouth (eWOM)–impact on bookings volume, main attributes of client satisfaction, and best strategy for responding to unfavorable opinions–in a traditional (TripAdvisor) and a collaborative (Airbnb) accommodation system. This is the first study to address these themes together in the same analysis area (New York City) and for both accommodation models simultaneously. A mixed analysis methodology was employed, combining quantitative analysis (a linear logarithmic model) with a qualitative analysis of comments (through Nvivo 12), completed by a series of online surveys. The results confirm that, in the three variables analyzed in the eWOM, there are strong similarities in the two accommodation systems, with basic characteristics common to both systems: the influence of online comments on the number of bookings, the characteristics of the accommodation and the room as the most important attribute in customer satisfaction, and the response of the accommodation, in the face of negative criticism, is what increases the possibility of booking by other customers. From this point onwards, each system has its own peculiarities that make it different. Numerous practical and theoretical implications are discussed. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1063",
+    "title": "Securing Customer Loyalty in the Highly Competitive Chinese Hospitality Market: An Examination of the Influence of Sustainability, Service Quality, and Brand Equity",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2025.2460202",
+    "abstract": "In China’s competitive digital hospitality market, this study of 650 hotel customers examined the drivers of long-term loyalty within the context of sustainable practices. Using structural equation modeling, the study found brand equity significantly impacted loyalty, supporting brand equity theory in a digital, sustainability-focused context. Trust positively influenced both commitment and loyalty, validating Commitment-Trust Theory. Emotional attachment mediated the brand equity-loyalty link, while customer satisfaction mediated the social exchange-loyalty relationship, extending Social Exchange Theory. Finally, market competition significantly moderated the loyalty-advocacy relationship, highlighting loyalty’s crucial role in competitive markets. The study suggests hotels invest in brand equity (particularly sustainability and digital engagement), build trust through transparency, foster emotional connections, prioritize customer satisfaction via service recovery, and recognize the importance of loyalty for competitive advantage. © 2025 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1064",
+    "title": "The Impact of Customers’ Perceived Justice, Trust, and Satisfaction with Service Recovery on Restaurant Revisit Intention",
+    "journal": "Journal of Quality Assurance in Hospitality and Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/1528008X.2025.2554066",
+    "abstract": "Drawing on cognitive appraisal theory, this study aims to investigate customers’ responses to service recovery in the catering context, including trust, satisfaction, and loyalty. The respondents included residents and tourists who experienced service failure in Macao in the recent three months. A total of 484 valid responses were used for structural equation modeling analysis. The major findings indicate that customers’ trust mediates the relationship between perceived justice and satisfaction with service recovery and that trust and satisfaction predict revisit intention. The theoretical implication lies in the role of customers’ trust in contributing to customer loyalty, together with satisfaction with service remediation. © 2025 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1065",
+    "title": "Administrative Delay, Red Tape, and Organizational Performance",
+    "journal": "Public Performance and Management Review",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15309576.2018.1474770",
+    "abstract": "We focus on the relationships among administrative delay, red tape, and red tape–related organizational performance. We hypothesize that administrative delay leads to more red tape, more complaints from clients about red tape, and makes it more difficult for organizations to serve their clients. We test our hypotheses using data from the National Administrative Studies Project - Citizen, gathered on Amazon Mechanical Turk in late 2014 (n = 1,254). The results support each of the hypotheses. The findings imply that managers may improve organizational performance by identifying and addressing the specific sources of administrative delay, rather than focusing on general perceptions of organizational red tape. © 2018, Published with license by Taylor & Francis © 2018 Wesley Kaufmann, Gabel Taggart, and Barry Bozeman."
+  },
+  {
+    "article_id": "CS_1066",
+    "title": "Customers’ Attribution of Blame in Chain Store Settings: The Perspectives of Relationship Orientation",
+    "journal": "Journal of Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332667.2015.1069526",
+    "abstract": "In this study, we used chain store settings to confirm pseudorelationships (brand or branch relationship orientations) and to investigate customers’ attribution of blame. We devised 6 scenarios to measure customers’ attribution of blame: when customers are satisfied with transactions, when service personnel cause dissatisfactory transactions, and when products yield dissatisfactory transactions in industries with both branch-oriented relationships (i.e., hair salons) and brand-oriented relationships (i.e., supermarkets). The results showed that customers’ attribution of blame varies slightly with different relationship orientations and transaction scenarios. To whom customers attribute blame must be understood to effectively mitigate service failures. © 2015, Copyright © Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1067",
+    "title": "Conceptual Study of Relationship Signals in the IT Services Sector in India",
+    "journal": "Journal of Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332667.2016.1209049",
+    "abstract": "Technology trap is a term coined by Indian IT professionals to indicate when both client and IT service providers are lured into an enormous scope creep in the client's requirements. As a consequence, the mood of the business is subjected to disabling stress, and service delivery problems become difficult to avoid and not uncommon in the Indian scenario. There are instances where it can be disproportionately large and critical. These circumstances and growing uncertainty in the business scenario anticipate the relationship manager to be armed with a sense of preparedness by reading and deciphering the relationship signals—a new term coined and defined in this study. This article examines the signals or messages of clients emerging out of the relationship temperament matrix. The signals are interpreted in terms of different combinations of stress and conflict with respect to proactive and reactive service providers. Signals are mapped with matrix components and their corresponding outcome, as well as the actions to be taken to offset the negative effects. Attempts have been made to corroborate appropriate deductions using literature dealing with business relationship conflicts and issues in the IT sector. Eliciting academic potential of this study is not this study's only objective, but it is important to be aware of the ordeals and chaos faced by the relationship managers. Including relationship signals in the literature of relationship marketing is proposed. © 2016 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1068",
+    "title": "The Effect of Trust, Commitment, and Conflict Handling on Customer Retention: The Mediating Role of Customer Satisfaction",
+    "journal": "Journal of Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332667.2018.1440146",
+    "abstract": "Previous studies have investigated drivers of customer retention in the mobile telecommunications industry worldwide. These studies call on scholars pay to attention to these factors in the scholarly marketing literature, since customer retention is the basic tenet of relationship marketing. Drawing on relationship marketing theory, this study analyzes the direct and indirect relationships amongst trust, commitment, and conflict handling on customer retention. A cross-sectional survey using a structured questionnaire was employed to gather data from customers of mobile telecommunication operators. The findings revealed that only conflict handling had a direct significant effect on customer retention. Also, trust and conflict handling had a direct and significant effect on customer satisfaction. However, trust and conflict handling were seen to have an indirect significant effect on customer retention via customer satisfaction. The study recommends that managers should effectively resolve customer complaints as well as build their trustworthiness in order to satisfy and retain their customers. © 2018, © 2018 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1069",
+    "title": "Can the Retailer’s ICT Enhance the Impact of Service Recovery Efforts on Customer Satisfaction?",
+    "journal": "Journal of Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332667.2019.1705744",
+    "abstract": "Service recovery remains a topic of considerable interest for both academics and practitioners. This paper aims to explore the relations between recovery efforts and causal attributions, satisfaction, and both conventional and online word-of-mouth, as well as the moderating role of information and communication technologies (ICT) on the relationship between retailer’s efforts and satisfaction with the service recovery. On a sample of 336 retail customers who experienced service failure, we use SEM and multigroup analysis. As a result of the data analysis, there is evidence supporting the positive impact of attributions and recovery efforts on satisfaction, and the influence of the latter on both conventional and online word-of-mouth. Furthermore, the moderating influence of technology in the “recovery efforts-satisfaction” relationship is evidenced. Practical implications for retail managers and further research are presented. © 2019 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1070",
+    "title": "Effects of Perceived Justice on the Behavioral Intention of Customers in the Banking Sector",
+    "journal": "Journal of Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332667.2020.1855069",
+    "abstract": "This research verifies whether perceived justice, from customers in the treatment of a complaint, influences satisfaction and generates positive behavioral intention, the trust and affective commitment acting as moderators of the relationship between perceived justice and satisfaction. Data were collected with an questionnaire from 324 bank customers who had made at least one claim against their bank. The perceived justice during the handling of complaints generates satisfaction. Satisfied customers tend to arouse a positive intention, which can generate benefits in terms of loyalty and word of mouth. Increased trust and affective commitment can contribute to greater personalization of banking services. © 2020 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1071",
+    "title": "Moderating Role of Consumers’ Attachment Style on Post-Recovery Satisfaction Behavior",
+    "journal": "Journal of Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332667.2023.2205280",
+    "abstract": "This study examines the moderating role of consumers’ attachment anxiety and attachment avoidance, on the relationship between recovery satisfaction and their behavior after service recovery. This study analyzes the moderating effect of consumers’ attachment styles to explain the differences in their behavior after service recovery efforts, which has not been explored previously. Primary data was collected from hand-phone users, and the effect of consumers’ attachment styles was examined in the context of the telecommunication sector. Findings indicate that consumers high in attachment anxiety were more likely to repurchase but not to engage in positive word-of-mouth after recovery satisfaction. Attachment avoidance did not impact consumers’ behavioral intentions. In addition, the interaction of anxiety and avoidance positively influenced word-of-mouth intentions upon satisfaction with recovery efforts. However, the interaction did not affect repurchase intentions. This study provides insight into how consumer’s attachment style influences their positive behavioral intentions after recovery satisfaction. We present segment-specific relationship marketing strategies that can aid service providers in managing service recoveries and minimizing the adverse effects of service failures on customer retention. © 2023 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1072",
+    "title": "Does Service Recovery Performance Vary according to a Service Provider’s Perception of Customer Type? The Application of Attachment Theory",
+    "journal": "Journal of Relationship Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332667.2023.2216374",
+    "abstract": "Providing a consistently high level of service recovery performance is important to minimize the negative impact of service failure, such as negative word-of-mouth and plunging satisfaction. Thus, examining factors that promote service recovery performance is important. Service providers’ perception of the customers influences their service performance; and yet, its implications for service recovery performance have not been well understood. By applying McGregor’s classification of employee types to service consumers, this study examines whether a service provider’s perception of type Y customers influences their service recovery performance. Across a survey to 150 service providers, this study revealed that service recovery performance increases (decreases) when the customers are perceived to have a high (low) level of type Y characteristics (responsible and capable of directing and controlling themselves). In line with attachment theory, when the service providers perceive a high level of type Y customers, they are motivated to establish a strong rapport with the customers and hence, increase the service recovery performance to prevent the customers from leaving the company. More importantly, service providers’ perception of customers is positively influenced by their customer orientation. Therefore, management can promote customer orientation in order to promote service providers’ positive perceptions of the customers, rapport with the customers, and service recovery performance. © 2023 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1073",
+    "title": "Managing Negative Reviews: The Persuasive Role of Webcare Characteristics",
+    "journal": "Journal of Internet Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332861.2017.1305254",
+    "abstract": "This article provides insight into a less investigated area that deals with marketers’ responses to negative reviews—a phenomenon known as webcare. Specifically, it examines the effects of (a) salient webcare characteristics like strength and timeliness on consumer forgiveness in the presence of review helpfulness as a moderator, and (b) forgiveness on consumers’ cognitive, affective, and conative loyalty. A 2 (webcare strength: strong vs. weak) × 2 (webcare timeliness: timely vs. delayed) × 2 (review helpfulness: high vs. low) between-subjects experiment in a fictitious casual dining restaurant context reveals that webcare timeliness and strength of webcare play affect consumer forgiveness positively which subsequently affects consumer loyalty. These findings are distinctive from previous research because it opens up a new area that deals with managers’ responses to negative reviews. It also explores how the detrimental effects of these reviews can be reduced by manipulating salient characteristics of managers’ responses, i.e., webcare. © 2017 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1074",
+    "title": "Gulping the Poison: How Webcare Attributes Reduce Damages to Brands Caused by Negative Reviews",
+    "journal": "Journal of Internet Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332861.2018.1463793",
+    "abstract": "Negative reviews written by unsatisfied consumers can significantly erode the image of a brand. Therefore, marketers regularly respond to these reviews through written messages posted on online channels: a practice known as webcare. The present article seeks to explore whether selected webcare attributes, such as strength, sidedness, and ownership, have any effects on consumers’ forgiveness of the service failures caused by transgressing firms. Furthermore, the effects of consumer forgiveness on satisfaction with webcare, brand attitudes, and purchase intentions are also investigated. The article examines these relationships in the context of a fine dining restaurant (Study 1) and a hotel (Study 2). The results reveal that webcare attributes play a salient role in achieving consumer forgiveness. Furthermore, the studies also reveal that consumer forgiveness leads to satisfaction with webcare and improved brand attitudes and purchase intentions. © 2018, © 2018 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1075",
+    "title": "Testing the Various Guises of Conversational Human Voice: The Impact of Formality and Personalization on Customer Outcomes in Online Complaint Management",
+    "journal": "Journal of Internet Commerce",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332861.2020.1848060",
+    "abstract": "In this study, we examine the effects of degree of personalization and formality on customers’ attitudes and behavioral intentions in complaint replies on social media. This study differs from previous research in examining less extreme manipulations of personalization and formality, and in operationalizing personalization in the shape of routinized and individualized answers to multiple posts. In two experimental studies, we test the impact of personalization and formality on customers’ satisfaction with how the complaint is handled, their perception of the customer service agent in terms of how well the agent treated them (perceived interactional justice) and to what extent the agent made efforts to have an engaging conversation with them (perceived conversational human voice), and on four semantic differentials (professional-unprofessional, fake-genuine, friendly-unfriendly and respectful-disrespectful). The results show a positive main effect of increased personalization and informality and clearly foreground the importance of individualized responses as the stronger effect. The results also support the Persuasion Knowledge Model in showing how informality may backfire in routinized responses, suggesting that informal but routinized language use triggers suspicion with customers that the company is trying to persuade and manipulate them. © 2020 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1076",
+    "title": "Silent Voices: Nonbehavioral Reactions to Service Failures",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2015.1014230",
+    "abstract": "Past research has focused on complainers and their behavioral responses to service failures, yet research on “silent voices” or noncomplainers is scant. To bridge that gap, this study investigates two types of nonbehavioral dissatisfaction responses, namely loyalty and neglect. The study results, based on 177 noncomplainers in restaurant, auto-repair, and medical services, indicate that a higher emotional bonding leads customers to choose loyalty over neglect. Also, return intentions were higher for loyalty than neglect in restaurant and auto-repair contexts but they were not different in the medical services context. The implications for service managers and researchers are discussed. © 2015, Copyright © Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1077",
+    "title": "Compensatory Solution: Can it Save a Company from a Service Failure?",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2016.1154728",
+    "abstract": "This article develops a framework incorporating the relationship between service failure and customer behaviors, as well as moderation effects of compensatory mechanism. Based on 321 responses from two cultures (United States = 180, Indonesia = 141), using the partial least squares path modeling approach, we found that service failure severity was negatively associated with customer loyalty and positively associated with customer's need for avoidance and need for revenge. The findings also suggest that the impact of service failure severity on customer loyalty is mediated by the need for avoidance, but not revenge. Theoretical and managerial implications are also discussed. © 2016 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1078",
+    "title": "Managing Customer Switching Behavior in the Banking Industry",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2017.1325644",
+    "abstract": "This study aimed to explore the factors that lead to the intention to stay and the intention to switch in the banking industry. The research adopted a qualitative, inductive approach to data collection using a sample of 19 Australians customers who use banking services, and two Australian bank managers. The factors that are important to the customers' decision to change banks or to diversify their accounts include: (a) customer service and customer intimacy; (b) response to service failure; (c) effect of advertising; (d) reputation; (e) ease of banking; and (f) customer value. © 2017 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1079",
+    "title": "Service Recovery, Justice Perception, and Forgiveness: The “Other Customers” Perspectives",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2017.1398021",
+    "abstract": "While extant research has examined the effects of service recovery on customer attitude and behavior, little is known about whether customers react differently to the same recovery depending on whether they are victims or observers of a service failure. Adopting the “other customers” perspectives, this study used a quasiexperimental design using scenarios in a professional services context with 267 U.S. respondents recruited from Qualtrics national online panel. We found that when compensation is offered, victims will perceive a higher level of distributive justice than observers. However, the effects of service recovery on forgiveness intention is stronger among observers than victims. © 2018 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1080",
+    "title": "Scoring More After Service Failures: Why Do Customers Overclaim?",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2018.1436790",
+    "abstract": "More and more customers attempt to claim what they can, rather than what they are offered by the service firm after service failures. The present article empirically investigates the role of situational characteristics in triggering the intention to overclaim through a mediating process of customer's cognitive and emotional responses to the service failure. The model goes beyond predicting the likelihood of overclaiming behavior and offers some insights related to the magnitude or the extent of such claims. The results indicate that cognitive and affective drivers of overclaiming behavior have different impacts on the magnitude or the extent of such claims. © 2018 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1081",
+    "title": "Receiving, Recording, and Responding to Customer Complaints: The Effects of Formalizing Customer Complaint Handling Policies in Retail Firms",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2018.1472982",
+    "abstract": "Given the critical need for retail firms to provide high quality customer service and satisfaction, this article investigates the importance of formalizing customer complaint handling policies and procedures with regard to its relationship to the ways in which retail companies receive, record, and respond to customer complaints. A survey of 184 firms from the retail environment of a midsized community reveals that the existence of such formalized procedures is significantly associated with firm size, better channels of communication with customers, mechanisms of recording customer feedback, and better-trained employees, which have been shown to relate to higher firm performance. © 2018, © 2018 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1082",
+    "title": "Psychological Contract Breach and Customer Satisfaction: A Study of Online Shopping",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2019.1592863",
+    "abstract": "Relying on customer attribution theory and psychological contract model, we find that customers perceive a psychological contract breach more severe and experience more intense emotions when they attribute the service failure to external factors rather than internal factors (Experiment 1), and message construal level (Experiment 2) moderates the effect of psychological contract breach on the formation of their intense affective reactions. The study demonstrates that the way a firm communicates to customers about the unfulfilled promises affects their interpretation of the breach and thus the intensity of the emotional reactions. © 2019 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1083",
+    "title": "Collaboration in Service Recovery: Control, Effort, and Self-Serving Bias",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2021.1986617",
+    "abstract": "Studies advocate co-creation of service recovery is an effective strategy, enhancing customers’ equity and loyalty. This study examines the impacts of perceived control and effort as the key benefit and the cost associated with the co-creation strategy, in addition to the effect of self-serving bias to explain how co-creation induces a favorable recovery outcome. A scenario-based experiment with 319 U.S. consumers indicates control enhanced with co-creation is a significant benefit, whereas the negative impact of increased effort depends on the recovery outcome. The findings show that a firm recovery is prone to self-serving bias while a co-creation of recovery is not. © 2021 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1084",
+    "title": "The Role of Customer Complaint Management on Switching Intention and Customer Exit in Fitness Centers",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2022.2126081",
+    "abstract": "Service failures are common, and the absence of an adequate response may increase switching intentions and customer exit. Thus, it is important to address the influence of customer satisfaction with complaint handling on switching intentions and customer exit. We tested hypotheses using data collected in two stages from a total of 821 customers who experienced service failure in 38 Brazilian gyms. The results indicate that perceptions of justice positively affect satisfaction with complaint handling, which reduces switching intention and customer exit. Moreover, failure severity is shown to increase switching intention and customer exit. Theoretical, methodological, and managerial implications are discussed. © 2022 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1085",
+    "title": "I Deserve That Deal! Effects of New Customer Exclusive Promotions on Existing Service Customers",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2022.2143037",
+    "abstract": "Given the inherent profitability in retaining existing customers over recruiting new ones, this research examines negative consequences of exclusive promotions used to recruit new customers to a service organization. It explores existing, loyal customer perceptions of the distributive justice of such promotions and their subsequent behavior toward the organization. Findings suggest that receiving a similar or better offer may increase feelings of distributive justice among existing customers for a new customer promotion. Further, higher loyalty increased feelings of distributive justice. Negative perceptions of distributive justice regarding the exclusive offer drive customer alienation and entitlement, which can then lead to negative relational behavior from existing customers such as lower repurchase intentions, intent to switch service providers, and complaint behavior. © 2022 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1086",
+    "title": "Conservation of Resources Theory Interpretation of Co-Destructed After-sales Service Encounters",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2023.2241000",
+    "abstract": "The current study investigates the consumers’ co-destructed experiences with after-sales services (AS) through the lens of Conservation of Resources (COR) theory and Service Dominant Logic. The research is carried out in two phases. First, a qualitative study is conducted by analyzing consumer stories about co-destructed AS experiences with data collected from a public complaint website and three focus group interviews. Second, the proposed model is empirically tested on 207 consumer responses collected through a survey. The results reveal different paths on which consumers’ secondary losses either lead to low AS satisfaction or punitive behaviors after experiencing a co-destructed AS interaction. © 2023 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1087",
+    "title": "The Perils of Using Self-Deprecating Humor in Service Recovery Communication: Customer Evaluations of the Firm",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2025.2527498",
+    "abstract": "While the use of self-deprecating humor has garnered increasing attention in marketing, limited research considers its efficacy as a tool in service recovery communication. In this study, we assess the potential harm of self-deprecating humor to consumer responses in the context of service failure and describe the mechanism explaining this relationship, as well as a boundary condition that exacerbates this effect. Through two studies of service recovery communications, we show that self-deprecating humor can result in feelings of consumer discomfort, reducing forgiveness and revisit intentions. Moreover, when the humorous message is perceived as less benign, this effect is enhanced due to feelings of discomfort. © 2025 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1088",
+    "title": "Service Recovery for Deaf and Hard of Hearing Customers: A Transformative Service Research Perspective",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2025.2537540",
+    "abstract": "Drawing on transformative service research (TSR) and social exchange theory, we conducted a study that examines the service failure and recovery dynamics among consumers who experience vulnerability. An empirical study was conducted in the service failure context with deaf and hard-of-hearing (HoH) customers and their service provider. The results show the primary importance of customer-oriented, prosocial service for these customers during service failure. Finally, customers’ self-attribution was found to positively influence their attitude toward the service, boosting their intent to continue the relationship. Overall, the findings offer pertinent strategic insight to inform firms’ service recovery strategies. © 2025 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1089",
+    "title": "Automated Agents in Tourism: Service Recovery Satisfaction, Trust, and the Need for Human Interaction",
+    "journal": "Services Marketing Quarterly",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15332969.2026.2632517",
+    "abstract": "This study examines customer responses to automated service recovery in online travel booking platforms using Expectancy Disconfirmation Theory and the Stimulus–Organism–Response framework. Survey data from 420 Indonesian users were analyzed using Partial Least Squares Structural Equation Modeling. The results show that automated service recovery quality influences switching intention indirectly through recovery satisfaction and trust. Contrary to expectations, higher recovery quality is negatively associated with satisfaction, revealing a boundary condition of Expectancy Disconfirmation Theory in technology mediated recovery. The Need for human interaction functions as a quasi-moderator, shaping satisfaction, trust, and switching intentions. © 2026 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1090",
+    "title": "Tourists’ online reviews of convention centers",
+    "journal": "Journal of Convention and Event Tourism",
+    "journal_impact_factor": null,
+    "doi": "10.1080/15470148.2019.1582390",
+    "abstract": "Investigating both the valence of online reviews and convention centers’ performance is an effective approach towards understanding convention center visitors’ needs, wants, and expectations. Understanding convention center experiences from the customer perspective can improve venue services and event products for both convention centers and event organizers in a business-to-business context. This study examined TripAdvisor online reviews using a combined automated and non-automated content analysis to explore the dynamic experiences of convention centers. The dual analysis of qualitative and quantitative characteristics resulted in the identification of key concepts, satisfaction/dissatisfaction factors, center-and event-related complaint issues, and tips/suggestions. © 2019, © 2019 Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1091",
+    "title": "Exploring the factors to improve complaint management system in building management through a case study",
+    "journal": "International Journal of Construction Management",
+    "journal_impact_factor": 1.603,
+    "doi": "10.1080/15623599.2025.2567749",
+    "abstract": "The complaint response time influences user satisfaction in the facility management system. Unfortunately, the complaint resolution process is slow, resulting in discomfort for users. This study aims to investigate and validate the factors that impact complaint resolution and develop strategies for its improvement, utilizing surveys and a case study. Initially, 27 factors were identified through a literature review, which was refined to 24 factors using the Delphi technique. A structured questionnaire survey was conducted, and 55 facilities management professionals were surveyed using random stratified sampling. Descriptive statistics and principal component analysis (PCA) were employed to rank and classify these factors, revealing that factors such as availability of funds, availability of material, and timely communication are top-ranked. The identified factors were grouped into 10 factors namely organization team dynamics, strategic governance mechanisms, operational excellence, and others. Subsequently, another questionnaire survey was conducted to develop strategies aligned with these factor groups. To validate the effectiveness of these strategies, a case study was conducted at three complaint management centers. Notably, the availability of skilled manpower, timely communication, and availability of stores emerged as the top-ranked practices identified by the respondents This research provides a framework for improving complaint response times in facility management. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1092",
+    "title": "A multidimensional performance measurement model from customer complaint records for residential building companies",
+    "journal": "International Journal of Construction Management",
+    "journal_impact_factor": 1.603,
+    "doi": "10.1080/15623599.2026.2619663",
+    "abstract": "Customer complaint databases can be used to assess project performance and provide feedback to quality management systems. However, many companies face difficulties in managing customer complaints: those databases are poorly structured and incomplete, and it is challenging to process text data, generated by a customer complaint. Moreover, previous studies have focused on performance evaluation based on isolated quality metrics and have not provided a comprehensive project assessment that consider different perspectives. This study aims to develop a multidimensional performance measurement (MPM) model from customer complaints records to provide feedback to quality management systems of residential building companies. Using Design Science Research as the methodological approach, this investigation was conducted in partnership with a Brazilian residential building company. The MPM model contains several elements, including a complaint database structure, data processing procedures, solutions to data limitations, and a set of quality indicators: defect frequency, cost impact, severity, recurrence, and customer’s purchase intention. The main contribution of this model is to combine metrics that represent different impacts and considers the perspective of both customers and companies. From a practical perspective, recommendations on how to improve the quality of customer complaint information are proposed, in order to create opportunities for quality improvement. © 2026 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1093",
+    "title": "Consumer behaviour toward a new league and teams: television audiences as a measure of market acceptance",
+    "journal": "European Sport Management Quarterly",
+    "journal_impact_factor": 2.179,
+    "doi": "10.1080/16184742.2020.1770310",
+    "abstract": "Research question: Research into new sport teams has maintained a narrow focus on season ticket holders. This is redressed in this study by determining whether immediate preferences towards new local teams can be observed in the broader viewing behaviour of the general population within local markets. The consumption of new sport teams is then tracked longitudinally to understand the influence of consumer novelty on market behaviour. Research methods: The study analysed television ratings data of a new Australian cricket league. The period of analysis spanned five seasons from 2013/2014 through to 2017/2018. Data analysis included independent samples t-tests and hierarchical linear modelling. Results and findings: Each local market exhibited an immediate preference for their local team. Local viewing preference for local teams did not grow over time, with the relative audience of local and non-local team fixtures increasing proportionally over the period. The league appears to be towards the end of its novelty phase, evidenced by a stabilisation in viewing commitment yet retraction in base audience size between season three and five. Implications: The ability of new teams to solicit immediate local viewing preferences within the general population confirms the salience of geography as a foundational component of team identity. New teams should strategically consider their alignment to a suburban, city, state, or regional identity. That preference towards local teams did not increase within local markets reflects a critical theoretic distinction from more identified fan segments in which connection to team is thought to typically grow over time. © 2020 European Association for Sport Management."
+  },
+  {
+    "article_id": "CS_1094",
+    "title": "Netflix’s community relationship management. An analysis of its Facebook-USA page",
+    "journal": "Journal of Media Business Studies",
+    "journal_impact_factor": null,
+    "doi": "10.1080/16522354.2021.1932396",
+    "abstract": "This paper explores how Netflix employs brand community relationship management on its United States Facebook page. Methodologically, this study uses qualitative thematic analysis to dissect 100 posts published by Netflix’s community manager on Facebook and 826 comments posted by the company and internet-users. Results suggest that Netflix keeps an active and regular posting schedule with new content and portrays the brand as a humorous and a relatable peer. However, Netflix does not encourage Facebook users to engage in the content on the platform. The brand also seems to ignore complaints received from Facebook users as well as identified internaut-to-internaut conflicts. Findings are relevant to researchers in the fields of digital media and marketing and to practitioners working in those two fields. © 2021 The Author(s). Published by Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1095",
+    "title": "Determination of optimal warranty length for smart wearable device considering customer complaint",
+    "journal": "Quality Technology and Quantitative Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/16843703.2023.2214389",
+    "abstract": "This study investigates optimal warranty length for a new type of smart wearable device to maximize manufacturer’s profit in a competitive market. Most studies explore optimal warranty length based on product performance without considering customer complaints. In this study, unlike existing models, the optimal warranty length is obtained by maximizing an expected profit function comprising essential factors such as customer complaints, early and late warranty periods, product reliability, and reduced profit, using Bayesian analysis. Managers can effectively integrate these factors, and can be more confident about the accuracy of estimated optimal warranty length. This study’s contribution is to propose a methodology to develop new types of smart wearable devices considering their long-term commercial prospects. Sensitivity analyses indicate that in the early warranty period, managers should be more concerned about average reduced profit due to customer complaints and reduced profit percentage due to complaint handling costs. In the late warranty period, improved profit percentage due to good response to complaints is essential in smart wearable device sales. Consequently, managers should adequately deal with customer complaints about smart wearable devices, whether in the early or late warranty period. © 2023 International Chinese Association of Quantitative Management."
+  },
+  {
+    "article_id": "CS_1096",
+    "title": "A data-driven customer complaint management model for residential building companies",
+    "journal": "Architectural Engineering and Design Management",
+    "journal_impact_factor": 1.95,
+    "doi": "10.1080/17452007.2024.2306847",
+    "abstract": "Many companies in charge of the development and construction of residential building projects do not appropriately manage customer complaint records, especially regarding providing feedback about quality. Data collection and procedures for data analysis are often ineffective, which limits the generation of knowledge. Previous studies on customer complaints have been mostly focused on the analysis of large databases but do not propose overall solutions for managing this type of information, including data collection and analysis. This investigation aims to devise a data-driven customer complaint management model for providing feedback to the design and production phases of residential building projects. This model has a set of protocols for: (i) data collection that can be used for developing digital applications; and (ii) analyzing defect cause–effect relationships, considering the experts’ perspective, by using Directed Acyclic Graph and Bayesian Network. This investigation was conducted in collaboration with a Brazilian residential building company, using Design Science Research as methodological approach. The main outcome of this investigation is a set of data collection and analysis protocols that support the migration from the traditional approach of simply providing repair services during the defect liability period to a data-driven customer complaint management approach that provides feedback to quality management systems. HIGHLIGHTS A customer complaint management model must consider several perspectives; Digital applications must be used to support the implementation of data collection on defects; A complaint management model must deal with the complexity of defect formation. © 2024 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1097",
+    "title": "A performance assessment model for warranty services during defect liability period in residential building companies: a case study from Brazil",
+    "journal": "Architectural Engineering and Design Management",
+    "journal_impact_factor": 1.95,
+    "doi": "10.1080/17452007.2025.2578447",
+    "abstract": "Residential building companies provide warranty services to repair defects caused by failures in the design and production phases. Those defects are often highly unpleasant for customers, but delivering property warranty services can create or recover positive relationships with customers. However, many residential building companies have not appropriately managed warranty services, resulting in a large share of non-value-adding work. In addition, previous studies on customer complaints have been mostly focused on the analysis of large databases in order to implement improvements in building quality, providing very few contributions for improving warranty service performance. The aim of this investigation is to devise a performance assessment model for warranty services for residential building companies during the defect liability period. This model includes (i) a set of service performance indicators, including process and outcome metrics, and (ii) a repair time forecast tool to estimate the repair time of services. This investigation was conducted in collaboration with a Brazilian residential building company, using Design Science Research as a methodological approach. From a practical perspective, the outcomes of this investigation can be used to guide companies to improve warranty services and change the traditional approach of simply delivering repairs into a specialized service focused on customer experience. © 2025 Informa UK Limited, trading as Taylor & Francis Group."
+  },
+  {
+    "article_id": "CS_1098",
+    "title": "Investigating critical criteria for supplier quality development",
+    "journal": "International Journal of Management Science and Engineering Management",
+    "journal_impact_factor": 3.265,
+    "doi": "10.1080/17509653.2017.1387821",
+    "abstract": "Identifying critical criteria for supplier quality development is vital for improving the performance of suppliers. In this paper, we determine critical criteria for supplier quality development based on review of literature and discussion with supplier quality experts from industry. The criticality of the criteria is determined based on: (a) Kano’s model (must haves, satisfiers, dissatisfiers); (b) Hill’s manufacturing strategy (order winners and order qualifiers); and (c) criteria weights. The results of the study yield the following as the must-be and order winning elements for supplier quality evaluation: price; delivery performance; service; environment; health and safety; ISO 9000; European Foundation for Quality Management; quality management policy; understanding of customer requirements; supplier product quality; process control; quality inspection programs; process for handling complaints; and a system for corrective action. For supplier quality development, the must-haves and order winning elements are: honoring outstanding suppliers; involving suppliers early in product and process development; and sending instructors and technical consultants to the supplier’s site. The proposed results have strong practical applicability and can be used by decision makers for supplier performance evaluation, setting targets for performance improvement, resource allocation for supplier quality development, and designing necessary operations for improving the performance of their suppliers. © 2018, © 2018 International Society of Management Science and Engineering Management."
+  },
+  {
+    "article_id": "CS_1099",
+    "title": "Retraction:Online Consumer Complaints About Southeast Asian Luxury Hotels",
+    "journal": "Journal of Hospitality Marketing and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/19368623.2014.893222",
+    "abstract": "Companies who have delivered unexpected services or products will have problems because of the negative word-of-mouth diffusion arising from dissatisfied customers. With the aid of the Internet, every single negative experience can be distributed to millions around the world in just one second. This study focuses on the content analysis methodology and investigates the behaviors of hotel guests who stayed at hotels in Kuala Lumpur, the capital of Malaysia; the guests made complaints on the TripAdvisor website. In this study, three main constructs are explored: inferior quality of hotel facilities, inadvertence towards the orders of guests, and inappropriate comportment of hotel staff. TripAdvisor was chosen for this study since it is the largest travel review website, and reviews for Kuala Lumpur luxury hotels were selected as this location is one of the most visited places in the world. Interestingly, dissatisfied guests who spread negative electronic word-of-mouth have been significant challenges for hotel management. Despite the significant importance, relatively little content has been written about how guests use the Internet to share their experiences. Thus, this study sheds light on the importance of online reviews by hotel guests to provide better hotel services. © , Copyright © Taylor & Francis Group, LLC."
+  },
+  {
+    "article_id": "CS_1100",
+    "title": "Customer Dissatisfaction Responses to Restaurant Service Failures: Insights Into Noncomplainers From a Relational Perspective",
+    "journal": "Journal of Hospitality Marketing and Management",
+    "journal_impact_factor": null,
+    "doi": "10.1080/19368623.2014.910481",
+    "abstract": "This research investigates the reasons for noncomplaining and compares the return intentions of complainers and noncomplainers after a service failure in the restaurant context. Particularly, this research focuses on differentiating the two types of dissatisfaction responses from noncomplainers: loyalty and neglect. A survey of 171 respondents (81 complainers and 90 noncomplainers) is analyzed. Regarding the reasons for noncomplaining, four dimensions are identified and two dimensions (compassionate trust and lack of responsiveness) provide evidence for distinguishing loyalty from neglect. The loyalty customers show higher compassionate trust for and higher perception of responsiveness from the company than neglect customers. Customers’ return intentions are examined via two types of complainers (recovery satisfied and recovery dissatisfied) and two types of noncomplainers (loyalty and neglect). The findings suggest that loyalty customers have higher return intentions than neglect customers and their return intentions are as high as those of complainers who received satisfactory service recoveries. © , Copyright © Taylor & Francis Group, LLC."
+  }
+]

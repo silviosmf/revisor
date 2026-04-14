@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CA intersection:
+Consumers' Interpretation of AI (AI Literacy).
+
+This intersection includes studies that analyze:
+- How consumers interpret AI systems (chatbots, virtual assistants, AI agents)
+- AI literacy and understanding of AI capabilities
+- Trust, perception, attitudes, and cognitive evaluation of AI
+- Attribution of responsibility and interpretation of automated decisions
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CA intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CA"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical/engineering AI studies (e.g., algorithm development)
+- Studies without business/management implications
+- Articles focused only on B2C without relevance to B2B or interorganizational context
+- Studies about AI that do NOT involve consumer perception or interpretation
+- Articles where AI is mentioned only peripherally
+- Studies not related to service contexts
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CA" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CA_1351",
+    "title": "A Narrative Review of Three Streams of Avatar Marketing with Potential, Examples, and Challenges",
+    "journal": "International Journal of Innovation and Technology Management",
+    "journal_impact_factor": 0.906,
+    "doi": "10.1142/S0219877024300040",
+    "abstract": "Purpose: Recently, there has been enthusiasm for the relatively new technology, the metaverse. One technology related to and important for the metaverse is the Avatar, which is the graphical representation of users. Avatar has been studied for many years and is beginning to be used as a marketing tool. Although we think that there are three streams of avatar marketing (i.e. Virtual Social and Game World (VSGW) Avatar Marketing; Model Avatar and Virtual Fitting Room Marketing (MAVFR) Marketing; Virtual Assistant Marketing), little research has summarized them. This absence of categorization of three types of avatar marketing results in a disorder of research findings and makes it difficult for researchers and marketers to conduct avatar marketing research and best practices. This paper aims to explore the potential, specific examples, and challenges of each of the three types of avatar marketing. Approach and Contributions: In this narrative review paper, the authors first explore the definition and brief history of each type of avatar marketing. Then, the authors explore the potential, specific examples, and challenges of each type of avatar marketing by reviewing and referencing research papers, websites, newspaper articles, and books. Related to this, this paper discusses the importance of understanding each kind of avatar marketing in the developed future virtual worlds. Originality: To the best of our knowledge, this is the first review paper that covers three streams of avatar marketing that will inspire practitioners and researchers about the challenges and opportunities of the three types of avatar marketing with specific examples. © 2024 World Scientific Publishing Company."
+  },
+  {
+    "article_id": "CA_1352",
+    "title": "Reconfiguring the Customer Service Domain: Perspectives of Managers, Conversational Designers, and Human Agents on Human–Chatbot Collaboration",
+    "journal": "International Journal of Innovation and Technology Management",
+    "journal_impact_factor": 0.906,
+    "doi": "10.1142/S0219877024500287",
+    "abstract": "This study explored the criteria for evaluating human–chatbot collaboration in customer service using the socio-technical systems theory. Interviews with 28 customer service managers, conversational designers, and human agents revealed their evaluation criteria diverged. Managers prioritized the chatbot's technical capabilities and preferred a standalone customer service chatbot, while conversational designers prioritized the social aspect, focusing on the chatbot as a support tool for human agents and customers. Human agents mainly evaluated the chatbot as a means to increase job satisfaction. These distinct criteria highlight the importance of an aligned approach in human–chatbot collaboration. To improve this collaboration, integrating the chatbot into customer data systems was suggested. © World Scientific Publishing Company."
+  },
+  {
+    "article_id": "CA_1353",
+    "title": "DeepMob: Learning deep knowledge of human emergency behavior and mobility from big and heterogeneous data",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3057280",
+    "abstract": "The frequency and intensity of natural disasters has increased significantly in recent decades, and this trend is expected to continue. Hence, understanding and predicting human evacuation behavior and mobility will play a vital role in planning effective humanitarian relief, disaster management, and long-Term societal reconstruction. However, existing models are shallow models, and it is difficult to apply them for understanding the \"deep knowledge\" of human mobility. Therefore, in this study, we collect big and heterogeneous data (e.g., GPS records of 1.6million users over 3 years, data on earthquakes that have occurred in Japan over 4 years, news report data, and transportation network data), and we build an intelligent system, namely, DeepMob, for understanding and predicting human evacuation behavior and mobility following different types of natural disasters. The key component of DeepMob is based on a deep learning architecture that aims to understand the basic laws that govern human behavior and mobility following natural disasters, from big and heterogeneous data. Furthermore, based on the deep learning model, DeepMob can accurately predict or simulate a person's future evacuation behaviors or evacuation routes under different disaster conditions. Experimental results and validations demonstrate the efficiency and superior performance of our system, and suggest that human mobility following disasters may be predicted and simulated more easily than previously thought. © 2017 ACM."
+  },
+  {
+    "article_id": "CA_1354",
+    "title": "SMOOTH: Improved short-distance mobility for a smarter city",
+    "journal": "Proceedings - 2017 2nd International Workshop on Science of Smart City Operations and Platforms Engineering, in partnership with Global City Teams Challenge, SCOPE 2017",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3063386.3063760",
+    "abstract": "OSU SMOOTH (Smart Mobile Operation: OSU Transportation Hub) is an autonomous vehicle test bed that aims at providing intelligent transportation systems research for the first and last mile of an individualfis commute. It augments current public transportation infrastructure by providing users with access to a heterogeneous network of on-demand autonomous vehicles. We use demand and usage data to provide optimized scheduling and dispatching services, which provide passengers access to multiple choices of transportation through different automated shuttle sizes and speeds. The system has been designed to maximize the replicability and scalability for future city-wide deployments. It conforms to the National ITS Architecture to maintain the benefits of possible cooperation with other subsystems of ITS. © 2017 ACM."
+  },
+  {
+    "article_id": "CA_1355",
+    "title": "Curious cat-mobile, context-aware conversational crowdsourcing knowledge acquisition",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3086686",
+    "abstract": "Scaled acquisition of high-quality structured knowledge has been a longstanding goal of Artificial Intelligence research. Recent advances in crowdsourcing, the sheer number of Internet and mobile users, and the commercial availability of supporting platforms offer new tools for knowledge acquisition. This article applies context-aware knowledge acquisition that simultaneously satisfies users' immediate information needs while extending its own knowledge using crowdsourcing. The focus is on knowledge acquisition on a mobile device, which makes the approach practical and scalable; in this context, we propose and implement a new KA approach that exploits an existing knowledge base to drive the KA process, communicate with the right people, and check for consistency of the user-provided answers. We tested the viability of the approach in experiments using our platform with real users around the world, and an existing large source of commonsense background knowledge. These experiments show that the approach is promising: the knowledge is estimated to be true and useful for users 95% of the time. Using context to proactively drive knowledge acquisition increased engagement and effectiveness (the number of new assertions/day/user increased for 175%). Using pre-existing and newly acquired knowledge also proved beneficial. © 2017 ACM."
+  },
+  {
+    "article_id": "CA_1356",
+    "title": "IDM 2017:Workshop on interpretable data mining-bridging the gap between shallow and deep models",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3132847.3133198",
+    "abstract": "Intelligent systems built upon complex machine learning and data mining models (e.g., deep neural networks) have shown superior performances on various real-world applications. However, their effectiveness is limited by the difficulty in interpreting the resultant prediction mechanisms or how the results are obtained. In contrast the results of many simple or shallow models, such as rule-based or tree-based methods, are explainable but not sufficiently accurate. Model interpretability enables the systems to be clearly understood properly trusted, effectively managed and widely adopted by end users. Interpretations are necessary in applications such as medical diagnosis, fraud detection and object recognition where valid reasons would be significantly helpful, if not necessary, before taking actions based on predictions. This workshop is about interpreting the prediction mechanisms or results of the complex computational models for data mining by taking advantage of simple models which are easier to understand. We wish to exchange ideas on recent approaches to the challenges of model interpretability identify emerging fields of applications for such techniques and provide opportunities for relevant interdisciplinary research or projects. © 2017 Copyright held by the owner/author(s)."
+  },
+  {
+    "article_id": "CA_1357",
+    "title": "CLuAI - Conversational Learning using Artificial Intelligence: An Interactive and Adaptive Chatbot Learning Framework for Teaching Programming",
+    "journal": "Annual Conference on Innovation and Technology in Computer Science Education, ITiCSE",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3341525.3393979",
+    "abstract": "The purpose of this publication is twofold. Firstly, we would like to present an over-arching research proposal idea concerning the development of an interactive and adaptive learning framework that harnesses powerful tools from Artificial Intelligence, such as Data Mining, Natural Language Processing and Dynamic Difficulty Adjustment, in order to adapt the learning experience to the individual user's needs. Secondly, we would like to outline some of the preliminary work that we have carried out to date. This involved developing a prototype system to interactively teach Java programming and was developed as a Final Year Project by Michael Gavin, a fourth-year undergraduate computer science student at NUI Galway. This prototype system, developed using the Spring boot framework with a Rest API and MySQL backend, acts as an early \"\\emphproof of concept '' for developing these ideas further. © 2020 ACM."
+  },
+  {
+    "article_id": "CA_1358",
+    "title": "Why does my model fail? Contrastive local explanations for retail forecasting",
+    "journal": "FAT* 2020 - Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3351095.3372824",
+    "abstract": "In various business settings, there is an interest in using more complex machine learning techniques for sales forecasting. It is difficult to convince analysts, along with their superiors, to adopt these techniques since the models are considered to be “black boxes,” even if they perform better than current models in use. We examine the impact of contrastive explanations about large errors on users' attitudes towards a “black-box” model. We propose an algorithm, Monte Carlo Bounds for Reasonable Predictions. Given a large error, MC-BRP determines (1) feature values that would result in a reasonable prediction, and (2) general trends between each feature and the target, both based on Monte Carlo simulations. We evaluate on a real dataset with real users by conducting a user study with 75 participants to determine if explanations generated by MC-BRP help users understand why a prediction results in a large error, and if this promotes trust in an automatically-learned model. Our study shows that users are able to answer objective questions about the model's predictions with overall 81.1% accuracy when provided with these contrastive explanations. We show that users who saw MC-BRP explanations understand why the model makes large errors in predictions significantly more than users in the control group. We also conduct an in-depth analysis of the difference in attitudes between Practitioners and Researchers, and confirm that our results hold when conditioning on the users' background. © 2020 Copyright held by the owner/author(s). Publication rights licensed to ACM."
+  },
+  {
+    "article_id": "CA_1359",
+    "title": "Multi-interest network with dynamic routing for recommendation at Tmall",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3357384.3357814",
+    "abstract": "Industrial recommender systems have embraced deep learning algorithms for building intelligent systems to make accurate recommendations. At its core, deep learning offers powerful ability for learning representations from data, especially for user and item representations. Existing deep learning-based models usually represent a user by one representation vector, which is usually insufficient to capture diverse interests for large-scale users in practice. In this paper, we approach the learning of user representations from a different view, by representing a user with multiple representation vectors encoding the different aspects of the user's interests. To this end, we propose the Multi-Interest Network with Dynamic routing (MIND) for learning user representations in recommender systems. Specifically, we design a multi-interest extractor layer based on the recently proposed dynamic routing mechanism, which is applicable for modeling and extracting diverse interests from user's behaviors. Furthermore, a technique named label-aware attention is proposed to help the learning process of user representations. Through extensive experiments on several public benchmarks and one large-scale industrial dataset from Tmall, we demonstrate that MIND can achieve superior performance than state-of-the-art methods in terms of recommendation accuracy. Currently, MIND has been deployed for handling major online traffic at the homepage on Mobile Tmall App. © 2019 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1360",
+    "title": "Key player identification in underground forums over attributed heterogeneous information network embedding framework",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3357384.3357876",
+    "abstract": "Online underground forums have been widely used by cybercriminals to exchange knowledge and trade in illicit products or services, which have played a central role in the cybercriminal ecosystem. In order to combat the evolving cybercrimes, in this paper, we propose and develop an intelligent system named iDetective to automate the analysis of underground forums for the identification of key players (i.e., users who play the vital role in the value chain). In iDetective, we first introduce an attributed heterogeneous information network (AHIN) for user representation and use a meta-path based approach to incorporate higher-level semantics to build up relatedness over users in underground forums; then we propose Player2Vec to efficiently learn node (i.e., user) representations in AHIN for key player identification. In Player2Vec, we first map the constructed AHIN to a multi-view network which consists of multiple single-view attributed graphs encoding the relatedness over users depicted by different designed meta-paths; then we employ graph convolutional network (GCN) to learn embeddings of each single-view attributed graph; later, an attention mechanism is designed to fuse different embeddings learned based on different single-view attributed graphs for final representations. Comprehensive experiments on the data collections from different underground forums (i.e., Hack Forums, Nulled) are conducted to validate the effectiveness of iDetective in key player identification by comparisons with alternative approaches. © 2019 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1361",
+    "title": "MusicBot: Evaluating critiquing-based music recommenders with conversational interaction",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3357384.3357923",
+    "abstract": "Critiquing-based recommender systems aim to elicit more accurate user preferences from users' feedback toward recommendations. However, systems using a graphical user interface (GUI) limit the way that users can critique the recommendation. With the rise of chatbots in many application domains, they have been regarded as an ideal platform to build critiquing-based recommender systems. Therefore, we present MusicBot, a chatbot for music recommendations, featured with two typical critiquing techniques, user-initiated critiquing (UC) and system-suggested critiquing (SC). By conducting a within-subjects (N=45) study with two typical scenarios of music listening, we compared a system of only having UC with a hybrid critiquing system that combines SC with UC. Furthermore, we analyzed the effects of four personal characteristics, musical sophistication (MS), desire for control (DFC), chatbot experience (CE), and tech savviness (TS), on the user's perception and interaction of the recommendation in MusicBot. In general, compared with UC, SC yields higher perceived diversity and efficiency in looking for songs; combining UC and SC tends to increase user engagement. Both MS and DFC positively influence several key user experience (UX) metrics of MusicBot such as interest matching, perceived controllability, and intent to provide feedback. © 2019 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1362",
+    "title": "Offline and online satisfaction prediction in open-domain conversational systems",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3357384.3358047",
+    "abstract": "Predicting user satisfaction in conversational systems has become critical, as spoken conversational assistants operate in increasingly complex domains. Online satisfaction prediction (i.e., predicting satisfaction of the user with the system after each turn) could be used as a new proxy for implicit user feedback, and offers promising opportunities to create more responsive and effective conversational agents, which adapt to the user's engagement with the agent. To accomplish this goal, we propose a conversational satisfaction prediction model specifically designed for open-domain spoken conversational agents, called ConvSAT. To operate robustly across domains, ConvSAT aggregates multiple representations of the conversation, namely the conversation history, utterance and response content, and system- and user-oriented behavioral signals. We first calibrate ConvSAT performance against state of the art methods on a standard dataset (Dialogue Breakdown Detection Challenge) in an online regime, and then evaluate ConvSAT on a large dataset of conversations with real users, collected as part of the Alexa Prize competition. Our experimental results show that ConvSAT significantly improves satisfaction prediction for both offline and online setting on both datasets, compared to the previously reported state-of-the-art approaches. The insights from our study can enable more intelligent conversational systems, which could adapt in real-time to the inferred user satisfaction and engagement. © 2019 Copyright held by the owner/author(s). Publication rights licensed to ACM."
+  },
+  {
+    "article_id": "CA_1363",
+    "title": "Concet: Entity-aware topic classification for open-domain conversational agents",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3357384.3358048",
+    "abstract": "Identifying the topic (domain) of each user's utterance in open-domain conversational systems is a crucial step for all subsequent language understanding and response tasks. In particular, for complex domains, an utterance is often routed to a single component responsible for that domain. Thus, correctly mapping a user utterance to the right domain is critical. To address this problem, we introduce ConCET: a Concurrent Entity-aware conversational Topic classifier, which incorporates entity-type information together with the utterance content features. Specifically, ConCET utilizes entity information to enrich the utterance representation, combining character, word, and entity-type embeddings into a single representation. However, for rich domains with millions of available entities, unrealistic amounts of labeled training data would be required. To complement our model, we propose a simple and effective method for generating synthetic training data, to augment the typically limited amounts of labeled training data, using commonly available knowledge bases as to generate additional labeled utterances. We extensively evaluate ConCET and our proposed training method first on an openly available human-human conversational dataset called Self-Dialogue, to calibrate our approach against previous state-of-the-art methods; second, we evaluate ConCET on a large dataset of human-machine conversations with real users, collected as part of the Amazon Alexa Prize. Our results show that ConCET significantly improves topic classification performance on both datasets, including 8-10% improvements over state-of-the-art deep learning methods. We complement our quantitative results with detailed analysis of system performance, which could be used for further improvements of conversational agents. © 2019 Copyright held by the owner/author(s). Publication rights licensed to ACM."
+  },
+  {
+    "article_id": "CA_1364",
+    "title": "2nd Workshop on knowledge-aware and conversational recommender systems - KaRS",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3357384.3358805",
+    "abstract": "Over the last years, we have been witnessing the advent of more and more precise and powerful recommendation algorithms and techniques able to effectively assess users' tastes and predict information that would probably be of interest for them. Most of these approaches rely on the collaborative paradigm (often exploiting machine learning techniques) and do not take into account the huge amount of knowledge, both structured and non-structured ones, describing the domain of interest of the recommendation engine. Although very effective in in predicting relevant items, collaborative approaches miss some very interesting features that go beyond the accuracy of results and move into the direction of providing novel and diverse results as well as generating an explanation for the recommended items or support interactive and conversational recommendation processes. © 2019 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1365",
+    "title": "Challenges in Building Intelligent Open-domain Dialog Systems",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3383123",
+    "abstract": "There is a resurgent interest in developing intelligent open-domain dialog systems due to the availability of large amounts of conversational data and the recent progress on neural approaches to conversational AI [33]. Unlike traditional task-oriented bots, an open-domain dialog system aims to establish long-term connections with users by satisfying the human need for communication, affection, and social belonging. This article reviews the recent work on neural approaches that are devoted to addressing three challenges in developing such systems: Semantics, consistency, and interactiveness. Semantics requires a dialog system to not only understand the content of the dialog but also identify users' emotional and social needs during the conversation. Consistency requires the system to demonstrate a consistent personality to win users' trust and gain their long-term confidence. Interactiveness refers to the system's ability to generate interpersonal responses to achieve particular social goals such as entertainment and conforming. The studies we select to present in this survey are based on our unique views and are by no means complete. Nevertheless, we hope that the discussion will inspire new research in developing more intelligent open-domain dialog systems. © 2020 ACM."
+  },
+  {
+    "article_id": "CA_1366",
+    "title": "Utility-Driven Mining of Trend Information for Intelligent System",
+    "journal": "ACM Transactions on Management Information Systems",
+    "journal_impact_factor": 5.07,
+    "doi": "10.1145/3391251",
+    "abstract": "Useful knowledge, embedded in a database, is likely to change over time. Identifying the recent changes in temporal data can provide valuable up-to-date information to decision makers. Nevertheless, techniques for mining high-utility patterns (HUPs) seldom consider recency as a criterion to discover patterns. Thus, the traditional utility mining framework is inadequate for obtaining up-to-date insights about real-world data. In this article, we address this issue by introducing a novel framework, named utility-driven mining of recent/trend high-utility patterns (RUPs), in temporal databases for intelligent systems, based on user-specified minimum recency and minimum utility thresholds. The utility-driven RUP algorithm is based on novel global and conditional downward closure properties, and a recency-utility tree. Moreover, it adopts a vertical compact recency-utility list structure to store the information required by the mining process. The developed RUP algorithm recursively discovers recent high-utility patterns. It is also fast and consumes a small amount of memory due to its pattern discovery approach that does not generate candidates. Two improved versions of the algorithm with additional pruning strategies are also designed to speed up the discovery of patterns by reducing the search space. Results of a substantial experimental evaluation show that the proposed algorithm can efficiently identify all recent HUPs in large-scale databases, and that the improved algorithm performs best. © 2020 ACM."
+  },
+  {
+    "article_id": "CA_1367",
+    "title": "Conversations with Search Engines: SERP-based Conversational Response Generation",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3432726",
+    "abstract": "In this article, we address the problem of answering complex information needs by conducting conversations with search engines, in the sense that users can express their queries in natural language and directly receive the information they need from a short system response in a conversational manner. Recently, there have been some attempts towards a similar goal, e.g., studies on Conversational Agents (CAs) and Conversational Search (CS). However, they either do not address complex information needs in search scenarios or they are limited to the development of conceptual frameworks and/or laboratory-based user studies.We pursue two goals in this article: (1)the creation of a suitable dataset, the Search as a Conversation (SaaC) dataset, for the development of pipelines for conversations with search engines, and(2)the development of a state-of-the-art pipeline for conversations with search engines, Conversations with Search Engines (CaSE), using this dataset. SaaC is built based on a multi-turn conversational search dataset, where we further employ workers from a crowdsourcing platform to summarize each relevant passage into a short, conversational response. CaSE enhances the state-of-the-art by introducing a supporting token identification module and a prior-aware pointer generator, which enables us to generate more accurate responses.We carry out experiments to show that CaSE is able to outperform strong baselines. We also conduct extensive analyses on the SaaC dataset to show where there is room for further improvement beyond CaSE. Finally, we release the SaaC dataset and the code for CaSE and all models used for comparison to facilitate future research on this topic. © 2021 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1368",
+    "title": "Optimizing Ontology Alignment through an Interactive Compact Genetic Algorithm",
+    "journal": "ACM Transactions on Management Information Systems",
+    "journal_impact_factor": 5.07,
+    "doi": "10.1145/3439772",
+    "abstract": "Ontology provides a shared vocabulary of a domain by formally representing the meaning of its concepts, the properties they possess, and the relations among them, which is the state-of-the-art knowledge modeling technique. However, the ontologies in the same domain could differ in conceptual modeling and granularity level, which yields the ontology heterogeneity problem. To enable data and knowledge transfer, share, and reuse between two intelligent systems, it is important to bridge the semantic gap between the ontologies through the ontology matching technique. To optimize the ontology alignment's quality, this article proposes an Interactive Compact Genetic Algorithm (ICGA)-based ontology matching technique, which consists of an automatic ontology matching process based on a Compact Genetic Algorithm (CGA) and a collaborative user validating process based on an argumentation framework. First, CGA is used to automatically match the ontologies, and when it gets stuck in the local optima, the collaborative validation based on the multi-relationship argumentation framework is activated to help CGA jump out of the local optima. In addition, we construct a discrete optimization model to define the ontology matching problem and propose a hybrid similarity measure to calculate two concepts' similarity value. In the experiment, we test the performance of ICGA with the Ontology Alignment Evaluation Initiative's interactive track, and the experimental results show that ICGA can effectively determine the ontology alignments with high quality. © 2021 ACM."
+  },
+  {
+    "article_id": "CA_1369",
+    "title": "Why or Why Not? The Effect of Justification Styles on Chatbot Recommendations",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3441715",
+    "abstract": "Chatbots or conversational recommenders have gained increasing popularity as a new paradigm for Recommender Systems (RS). Prior work on RS showed that providing explanations can improve transparency and trust, which are critical for the adoption of RS. Their interactive and engaging nature makes conversational recommenders a natural platform to not only provide recommendations but also justify the recommendations through explanations. The recent surge of interest inexplainable AI enables diverse styles of justification, and also invites questions on how styles of justification impact user perception. In this article, we explore the effect of \"why\"justifications and \"why not\"justifications on users' perceptions of explainability and trust. We developed and tested a movie-recommendation chatbot that provides users with different types of justifications for the recommended items. Our online experiment (n = 310) demonstrates that the \"why\"justifications (but not the \"why not\"justifications) have a significant impact on users' perception of the conversational recommender. Particularly, \"why\"justifications increase users' perception of system transparency, which impacts perceived control, trusting beliefs and in turn influences users' willingness to depend on the system's advice. Finally, we discuss the design implications for decision-assisting chatbots. © 2021 Copyright held by the owner/author(s). Publication rights licensed to ACM."
+  },
+  {
+    "article_id": "CA_1370",
+    "title": "From users' intentions to IF-THEN Rules in the internet of things",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3447264",
+    "abstract": "In the Internet of Things era, users are willing to personalize the joint behavior of their connected entities, i.e., smart devices and online service, by means of trigger-action rules such as \"IF the entrance Nest security camera detects a movement, THEN blink the Philips Hue lamp in the kitchen.\"Unfortunately, the spread of new supported technologies makes the number of possible combinations between triggers and actions continuously growing, thus motivating the need of assisting users in discovering new rules and functionality, e.g., through recommendation techniques. To this end, we present , a semantic Conversational Search and Recommendation (CSR) system able to suggest pertinent IF-THEN rules that can be easily deployed in different contexts starting from an abstract user's need. By exploiting a conversational agent, the user can communicate her current personalization intention by specifying a set of functionality at a high level, e.g., to decrease the temperature of a room when she left it. Stemming from this input, implements a semantic recommendation process that takes into account (a) the current user's intention, (b) the connected entities owned by the user, and (c) the user's long-term preferences revealed by her profile. If not satisfied with the suggestions, then the user can converse with the system to provide further feedback, i.e., a short-term preference, thus allowing to provide refined recommendations that better align with the original intention. We evaluate by running different offline experiments with simulated users and real-world data. First, we test the recommendation process in different configurations, and we show that recommendation accuracy and similarity with target items increase as the interaction between the algorithm and the user proceeds. Then, we compare with other similar baseline recommender systems. Results are promising and demonstrate the effectiveness of in recommending IF-THEN rules that satisfy the current personalization intention of the user. © 2021 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1371",
+    "title": "MyrrorBot: A Digital Assistant Based on Holistic User Models for Personalized Access to Online Services",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3447679",
+    "abstract": "In this article, we present MyrrorBot, a personal digital assistant implementing a natural language interface that allows the users to: (i) access online services, such as music, video, news, andfood recommendations, in a personalized way, by exploiting a strategy for implicit user modeling called holistic user profiling; (ii) query their own user models, to inspect the features encoded in their profiles and to increase their awareness of the personalization process.Basically, the system allows the users to formulate natural language requests related to their information needs. Such needs are roughly classified in two groups: quantified self-related needs (e.g., Did I sleep enough? Am I extrovert?) and personalized access to online services (e.g., Play a song I like). The intent recognition strategy implemented in the platform automatically identifies the intent expressed by the user and forwards the request to specific services and modules that generate an appropriate answer that fulfills the query.In the experimental evaluation, we evaluated both qualitative (users' acceptance of the system, usability) as well as quantitative (time required to complete basic tasks, effectiveness of the personalization strategy) aspects of the system, and the results showed that MyrrorBot can improve the way people access online services and applications. This leads to a more effective interaction and paves the way for further development of our system. © 2021 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1372",
+    "title": "How Am I Doing?: Evaluating Conversational Search Systems Offline",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3451160",
+    "abstract": "As conversational agents like Siri and Alexa gain in popularity and use, conversation is becoming a more and more important mode of interaction for search. Conversational search shares some features with traditional search, but differs in some important respects: conversational search systems are less likely to return ranked lists of results (a SERP), more likely to involve iterated interactions, and more likely to feature longer, well-formed user queries in the form of natural language questions. Because of these differences, traditional methods for search evaluation (such as the Cranfield paradigm) do not translate easily to conversational search. In this work, we propose a framework for offline evaluation of conversational search, which includes a methodology for creating test collections with relevance judgments, an evaluation measure based on a user interaction model, and an approach to collecting user interaction data to train the model. The framework is based on the idea of \"subtopics\", often used to model novelty and diversity in search and recommendation, and the user model is similar to the geometric browsing model introduced by RBP and used in ERR. As far as we know, this is the first work to combine these ideas into a comprehensive framework for offline evaluation of conversational search. © 2021 Copyright held by the owner/author(s). Publication rights licensed to ACM."
+  },
+  {
+    "article_id": "CA_1373",
+    "title": "Dialogue History Matters! Personalized Response Selection in Multi-Turn Retrieval-Based Chatbots",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3453183",
+    "abstract": "Existing multi-turn context-response matching methods mainly concentrate on obtaining multi-level and multi-dimension representations and better interactions between context utterances and response. However, in real-place conversation scenarios, whether a response candidate is suitable not only counts on the given dialogue context but also other backgrounds, e.g., wording habits, user-specific dialogue history content. To fill the gap between these up-to-date methods and the real-world applications, we incorporate user-specific dialogue history into the response selection and propose a personalized hybrid matching network (PHMN). Our contributions are two-fold: (1) our model extracts personalized wording behaviors from user-specific dialogue history as extra matching information; (2) we perform hybrid representation learning on context-response utterances and explicitly incorporate a customized attention mechanism to extract vital information from context-response interactions so as to improve the accuracy of matching. We evaluate our model on two large datasets with user identification, i.e., personalized Ubuntu dialogue Corpus (P-Ubuntu) and personalized Weibo dataset (P-Weibo). Experimental results confirm that our method significantly outperforms several strong models by combining personalized attention, wording behaviors, and hybrid representation learning. © 2021 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1374",
+    "title": "CoST: An annotated Data Collection for Complex Search",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3459637.3481998",
+    "abstract": "While great progress is made in the area of information access, there are still open issues that involve designing intelligent systems supporting task-based search. Despite the importance of task-based search, the information retrieval and information science communities still feel the lack of open-ended and annotated datasets that enable the evaluation of a number of related facets of search tasks in downstream applications. Existing datasets are either sampled from large-scale logs but provide poor annotations, or sampled from lower-scale user studies but focus on ranked list evaluation. In this work, we present CoST: a novel richly annotated dataset for evaluating complex search tasks, collaboratively designed by researchers from the computer science and cognitive psychology domains, and intended to answer a wide range of research questions dealing with task-based search. CoST includes 5667 queries recorded in 630 task-based sessions that result from a user study involving 70 french native participants who are expert in one among 3 different domains of expertise (computer science, medicine, psychology). Each participant completed 15 tasks with 5 different types of cognitive complexity (fact-finding, exploratory learning, decision-making, problem-solving, multicriteria-inferential). In addition to search data (e.g., queries and clicks), CoST provides task and session-related data, task annotations and query annotations. We illustrate possible usages of CoST through the evaluation of query classification models and the understanding of the effect of task complexity and domain on user's search behavior. © 2021 ACM."
+  },
+  {
+    "article_id": "CA_1375",
+    "title": "Learning Implicit User Profile for Personalized Retrieval-Based Chatbot",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3459637.3482269",
+    "abstract": "In this paper, we explore the problem of developing personalized chatbots. A personalized chatbot is designed as a digital chatting assistant for a user. The key characteristic of a personalized chatbot is that it should have a consistent personality with the corresponding user. It can talk the same way as the user when it is delegated to respond to others' messages. Many methods have been proposed to assign a personality to dialogue chatbots, but most of them utilize explicit user profiles, including several persona descriptions or key-value-based personal information. In a practical scenario, however, users might be reluctant to write detailed persona descriptions, and obtaining a large number of explicit user profiles requires tremendous manual labour. To tackle the problem, we present a retrieval-based personalized chatbot model, namely IMPChat, to learn an implicit user profile from the user's dialogue history. We argue that the implicit user profile is superior to the explicit user profile regarding accessibility and flexibility. IMPChat aims to learn an implicit user profile through modeling user's personalized language style and personalized preferences separately. To learn a user's personalized language style, we elaborately build language models from shallow to deep using the user's historical responses; To model a user's personalized preferences, we explore the conditional relations underneath each post-response pair of the user. The personalized preferences are dynamic and context-aware: we assign higher weights to those historical pairs that are topically related to the current query when aggregating the personalized preferences. We match each response candidate with the personalized language style and personalized preference, respectively, and fuse the two matching signals to determine the final ranking score. We conduct comprehensive experiments on two large datasets, and the results show that our method outperforms all baseline models. © 2021 ACM."
+  },
+  {
+    "article_id": "CA_1376",
+    "title": "QuAX: Mining the Web for High-utility FAQ",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3459637.3482289",
+    "abstract": "Frequently Asked Questions (FAQ) are a form of semi-structured data that provides users with commonly requested information and enables several natural language processing tasks. Given the plethora of such question-answer pairs on the Web, there is an opportunity to automatically build large FAQ collections for any domain, such as COVID-19 or Plastic Surgery. These collections can be used by several information-seeking portals and applications, such as AI chatbots. Automatically identifying and extracting such high-utility question-answer pairs is a challenging endeavor, which has been tackled by little research work. For a question-answer pair to be useful to a broad audience, it must (i) provide general information - not be specific to the Web site or Web page where it is hosted - and (ii) must be self-contained - not have references to other entities in the page or missing terms (ellipses) that render the question-answer pair ambiguous. Although identifying general, self-contained questions may seem like a straightforward binary classification problem, the limited availability of training data for this task and the countless domains make building machine learning models challenging. Existing efforts in extracting FAQs from the Web typically focus on FAQ retrieval without much regard to the utility of the extracted FAQ. We propose QuAX: a framework for extracting high-utility (i.e., general and self-contained) domain-specific FAQ lists from the Web. QuAX receives a set of keywords from a user, and works in a pipelined fashion to find relevant web pages and extract general and self-contained questions-answer pairs. We experimentally show how QuAX generates high-utility FAQ collections with little and domain-agnostic training data, and how the individual stages of the pipeline improve on the corresponding state-of-the-art. © 2021 Owner/Author."
+  },
+  {
+    "article_id": "CA_1377",
+    "title": "Evaluating Human-AI Hybrid Conversational Systems with Chatbot Message Suggestions",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3459637.3482340",
+    "abstract": "AI chatbots can offer suggestions to help humans answer questions by reducing text entry effort and providing relevant knowledge for unfamiliar questions. We study whether chatbot suggestions can help people answer knowledge-demanding questions in a conversation and influence response quality and efficiency. We conducted a large-scale crowdsourcing user study and evaluated 20 hybrid system variants and a human-only baseline. The hybrid systems used four chatbots of varied response quality and differed in the number of suggestions and whether to preset the message box with top suggestions. Experimental results show that chatbot suggestions - -even using poor-performing chatbots - -have consistently improved response efficiency. Compared with the human-only setting, hybrid systems have reduced response time by 12% - 35% and keystrokes by 33% - 60%, and users have adopted a suggestion for the final response without any changes in 44% - 68% of the cases. In contrast, crowd workers in the human-only setting typed most of the response texts and copied 5% of the answers from other sites. However, we also found that chatbot suggestions did not always help response quality. Specifically, in hybrid systems equipped with poor-performing chatbots, users responded with lower-quality answers than others in the human-only setting. It seems that users would not simply ignore poor suggestions and compose responses as they could without seeing the suggestions. Besides, presetting the message box has improved reply efficiency without hurting response quality. We did not find that showing more suggestions helps or hurts response quality or efficiency consistently. Our study reveals how and when AI chatbot suggestions can help people answer questions in hybrid conversational systems. © 2021 ACM."
+  },
+  {
+    "article_id": "CA_1378",
+    "title": "\"What Can I Cook with these Ingredients?\" - Understanding Cooking-Related Information Needs in Conversational Search",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3498330",
+    "abstract": "As conversational search becomes more pervasive, it becomes increasingly important to understand the users' underlying information needs when they converse with such systems in diverse domains. We conduct an in situ study to understand information needs arising in a home cooking context as well as how they are verbally communicated to an assistant. A human experimenter plays this role in our study. Based on the transcriptions of utterances, we derive a detailed hierarchical taxonomy of diverse information needs occurring in this context, which require different levels of assistance to be solved. The taxonomy shows that needs can be communicated through different linguistic means and require different amounts of context to be understood. In a second contribution, we perform classification experiments to determine the feasibility of predicting the type of information need a user has during a dialogue using the turn provided. For this multi-label classification problem, we achieve average F1 measures of 40% using BERT-based models. We demonstrate with examples which types of needs are difficult to predict and show why, concluding that models need to include more context information in order to improve both information need classification and assistance to make such systems usable. © 2022 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1379",
+    "title": "Dynamic Graph Reasoning for Conversational Open-Domain Question Answering",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3498557",
+    "abstract": "In recent years, conversational agents have provided a natural and convenient access to useful information in people's daily life, along with a broad and new research topic, conversational question answering (QA). On the shoulders of conversational QA, we study the conversational open-domain QA problem, where users' information needs are presented in a conversation and exact answers are required to extract from the Web. Despite its significance and value, building an effective conversational open-domain QA system is non-trivial due to the following challenges: (1) precisely understand conversational questions based on the conversation context; (2) extract exact answers by capturing the answer dependency and transition flow in a conversation; and (3) deeply integrate question understanding and answer extraction. To address the aforementioned issues, we propose an end-to-end Dynamic Graph Reasoning approach to Conversational open-domain QA (DGRCoQA for short). DGRCoQA comprises three components, i.e., a dynamic question interpreter (DQI), a graph reasoning enhanced retriever (GRR), and a typical Reader, where the first one is developed to understand and formulate conversational questions while the other two are responsible to extract an exact answer from the Web. In particular, DQI understands conversational questions by utilizing the QA context, sourcing from predicted answers returned by the Reader, to dynamically attend to the most relevant information in the conversation context. Afterwards, GRR attempts to capture the answer flow and select the most possible passage that contains the answer by reasoning answer paths over a dynamically constructed context graph. Finally, the Reader, a reading comprehension model, predicts a text span from the selected passage as the answer. DGRCoQA demonstrates its strength in the extensive experiments conducted on a benchmark dataset. It significantly outperforms the existing methods and achieves the state-of-the-art performance. © 2022 Association for Computing Machinery."
+  },
+  {
+    "article_id": "CA_1380",
+    "title": "FinBot: A Memory-Augmented Intelligent Financial Assistant",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3511808.3557199",
+    "abstract": "Task-oriented chatbots have been drawing a major demand in industry. In this demo, we present FinBot, a Chinese intelligent financial assistant, which is designed to help customers solve various financial investment problems with good expertise. Our FinBot may automatically understand user queries and respond with proper information accordingly in a dialogue session. To solve the difficulties of modeling financial dialogue histories, we adopt a multi-task model jointly capturing the intent and slots, in which the memory from previous dialogue turns and external user behaviors are exploited to further promote the performance of the dialogue response for better interpretability and user experience. The presented FinBot has been deployed in a mobile application that serves hundreds of millions of users. © 2022 ACM."
+  },
+  {
+    "article_id": "CA_1381",
+    "title": "Dr. Can See: Towards a Multi-modal Disease Diagnosis Virtual Assistant",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3511808.3557296",
+    "abstract": "Artificial Intelligence-based clinical decision support is gaining ever-growing popularity and demand in both the research and industry communities. One such manifestation is automatic disease diagnosis, which aims to assist clinicians in conducting symptom investigations and disease diagnoses. When we consult with doctors, we often report and describe our health conditions with visual aids. Moreover, many people are unacquainted with several symptoms and medical terms, such as mouth ulcer and skin growth. Therefore, visual form of symptom reporting is a necessity. Motivated by the efficacy of visual form of symptom reporting, we propose and build a novel end-to-end Multi-modal Disease Diagnosis Virtual Assistant (MDD-VA) using reinforcement learning technique. In conversation, users' responses are heavily influenced by the ongoing dialogue context, and multi-modal responses appear to be of no difference. We also propose and incorporate a Context-aware Symptom Image Identification module that leverages discourse context in addition to the symptom image for identifying symptoms effectively. Furthermore, we first curate a multi-modal conversational medical dialogue corpus in English that is annotated with intent, symptoms, and visual information. The proposed MDD-VA outperforms multiple uni-modal baselines in both automatic and human evaluation, which firmly establishes the critical role of symptom information provided by visuals . The dataset and code are available at https://github.com/NLP-RL/DrCanSee © 2022 ACM."
+  },
+  {
+    "article_id": "CA_1382",
+    "title": "From Product Searches to Conversational Agents for E-Commerce",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3511808.3557514",
+    "abstract": "As consumers' demand for online shopping substantially increased in the last few years, e-commerce companies are still far from providing a high-quality user experience that may compete with in-store experiences. On the one hand, matching search queries with highly relevant products for discovery and browsing is still a challenge within existing search technologies. Available e-commerce solutions hardly provide tools to optimize product search relevance and fail to integrate user behavior signals into the search optimization pipeline. On the other hand, accessing the rich and complex information concealed in an e-commerce catalog through a search bar has not evolved far since its initial adoption. In this talk, we illustrate how the VUI conversational AI platform has been successfully adopted to both improve the user's experience quality with highly relevant search and discovery results and expand the traditional search bar with conversational agents' technology, enriching the user's experience at each stage of the e-commerce product life cycle. We review in depth some of the key deep learning models as part of the query understanding component and discuss the overall conversation architecture as it integrates with an existing e-commerce catalog. We include real-life demonstrations derived from use cases extracted from deployed systems. © 2022 Owner/Author."
+  },
+  {
+    "article_id": "CA_1383",
+    "title": "Intent Disambiguation for Task-oriented Dialogue Systems",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3511808.3557516",
+    "abstract": "Task-Oriented Dialogue Systems (TODS) have been widely deployed for domain specific virtual assistants at contact centres to route customers' calls or deliver information needs of the customer in a conversational interaction. TODS employ natural language understanding components in order to map user commands to a set of pre-defined intents. However, Contact Centre users often fail to formulate their complex information needs in a single utterance which leads to formulating ambiguous user commands. This can negatively impact intent classification, and consequently customer satisfaction. To avoid feeding ambiguous user commands to the intent classifier of virtual assistants and help users in formulating their commands, we have implemented a solution that (1) identifies when a user is ambiguous and the virtual assistant should ask a clarification question, (2) disambiguates the user command and provides top-N most likely intents in a form of a clarification question. Our experimental result shows that our proposed intent disambiguation solution has a statistically significant improvement over a popularity based intent disambiguation model and an Intent Ranking Model of the Natural Language Understanding engine for a virtual assistant of a contact centre in terms of intent disambiguation accuracy and Mean Reciprocal Rank. © 2022 Owner/Author."
+  },
+  {
+    "article_id": "CA_1384",
+    "title": "Personal Entity, Concept, and Named Entity Linking in Conversations",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3511808.3557667",
+    "abstract": "Building conversational agents that can have natural and knowledge-grounded interactions with humans requires understanding user utterances. Entity Linking (EL) is an effective technique for understanding natural language text and connecting it to external knowledge. It is, however, shown that the existing EL methods developed for annotating documents are suboptimal for conversations, where concepts and personal entities (e.g., \"my cars\") are essential for understanding user utterances. In this paper, we introduce a collection and a tool for entity linking in conversations. We provide EL annotations for 1,327 conversational utterances, consisting of links to named entities, concepts, and personal entities. The dataset is used for training our toolkit for conversational entity linking, CREL. Unlike existing EL methods, CREL is developed to identify both named entities and concepts. It also utilizes coreference resolution techniques to identify personal entities and their references to the explicit entity mentions in the conversations. We compare CREL with state-of-the-art techniques and show that it outperforms all existing baselines. © 2022 Owner/Author."
+  },
+  {
+    "article_id": "CA_1385",
+    "title": "AI in the Gray: Exploring Moderation Policies in Dialogic Large Language Models vs. Human Answers in Controversial Topics",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3583780.3614777",
+    "abstract": "The introduction of ChatGPT and the subsequent improvement of Large Language Models (LLMs) have prompted more and more individuals to turn to the use of ChatBots, both for information and assistance with decision-making. However, the information the user is after is often not formulated by these ChatBots objectively enough to be provided with a definite, globally accepted answer. Controversial topics, such as “religion”, “gender identity”, “freedom of speech”, and “equality”, among others, can be a source of conflict as partisan or biased answers can reinforce preconceived notions or promote disinformation. By exposing ChatGPT to such debatable questions, we aim to understand its level of awareness and if existing models are subject to socio-political and/or economic biases. We also aim to explore how AI-generated answers compare to human ones. For exploring this, we use a dataset of a social media platform created for the purpose of debating human-generated claims on polemic subjects among users, dubbed Kialo. Our results show that while previous versions of ChatGPT have had important issues with controversial topics, more recent versions of ChatGPT (gpt-3.5-turbo) are no longer manifesting significant explicit biases in several knowledge areas. In particular, it is well-moderated regarding economic aspects. However, it still maintains degrees of implicit libertarian leaning toward right-winged ideals which suggest the need for increased moderation from the socio-political point of view. In terms of domain knowledge on controversial topics, with the exception of the “Philosophical” category, ChatGPT is performing well in keeping up with the collective human level of knowledge. Finally, we see that sources of Bing AI have slightly more tendency to the center when compared to human answers. All the analyses we make are generalizable to other types of biases and domains. © 2023 Copyright held by the owner/author(s). Publication rights licensed to ACM."
+  },
+  {
+    "article_id": "CA_1386",
+    "title": "On the Reliability of User Feedback for Evaluating the Quality of Conversational Agents",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3583780.3615286",
+    "abstract": "We analyse the reliability of users' explicit feedback for evaluating the quality of conversational agents. Using data from a commercial conversational system, we analyse how user feedback compares with human annotations; how well it aligns with implicit user satisfaction signals, such as retention; and how much user feedback is needed to reliably evaluate the quality of a conversational system. © 2023 Copyright held by the owner/author(s)."
+  },
+  {
+    "article_id": "CA_1387",
+    "title": "Towards Effective Modeling and Exploitation of Search and User Context in Conversational Information Retrieval",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3583780.3616005",
+    "abstract": "Conversational information retrieval has garnered considerable attention in recent years. A major challenge in conversational search is formulating the most effective query during the dialogue between the searcher and the conversational agent. Unlike traditional information retrieval systems that assume users can independently create queries, conversational settings allow agents to assist users in query formulation. This alleviates the burden on users by leveraging the multi-turn nature of the conversation to aid them in reaching their information goals. Conversational context plays a vital role in the query process. In this work, we focus on understanding and leveraging conversational context from two dimensions: conversational history and knowledge history. The goal is to identify and model the relevant portions from the search dialogue and the knowledge history and to use this within the search process to improve the overall performance of conversational information retrieval systems. © 2023 Copyright held by the owner/author(s)."
+  },
+  {
+    "article_id": "CA_1388",
+    "title": "Towards Efficient Coarse-grained Dialogue Response Selection",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3597609",
+    "abstract": "oarse-grained response selection is a fundamental and essential subsystem for the widely used retrievalbased chatbots, aiming to recall a coarse-grained candidate set from a large-scale dataset. The dense retrievaltechnique has recently been proven very effective in building such a subsystem. However, dialogue denseretrieval models face two problems in real scenarios: (1) the multi-turn dialogue history is re-computed ineach turn, leading to inefficient inference; (2) the index storage of the offline index is enormous, significantlyincreasing the deployment cost. To address these problems, we propose an efficient coarse-grained responseselection subsystem consisting of two novel methods. Specifically, to address the first problem, we proposethe Hierarchical Dense Retrieval. It caches rich multi-vector representations of the dialogue history and onlyencodes the latest user’s utterance, leading to better inference efficiency. Then, to address the second problem,we design the Deep Semantic Hashing to reduce the index storage while effectively saving its recall accuracynotably. Extensive experimental results prove the advantages of the two proposed methods over previousworks. Specifically, with the limited performance loss, our proposed coarse-grained response selection modelachieves over 5x FLOPs speedup and over 192x storage compression ratio. Moreover, our source codes havebeen publicly released. © 2023 Association for Computing Machinery. All rights reserved."
+  },
+  {
+    "article_id": "CA_1389",
+    "title": "A Modular Social Sensing System for Personalized Orienteering in the COVID-19 Era",
+    "journal": "ACM Transactions on Management Information Systems",
+    "journal_impact_factor": 5.07,
+    "doi": "10.1145/3615359",
+    "abstract": "Orienteering or itinerary planning algorithms in tourism are used to optimize travel routes by considering user preference and other constraints, such as time budget or traffic conditions. For these algorithms, it is essential to explore the user preference to predict potential points of interest (POIs) or tourist routes. However, nowadays, user preference has been significantly affected by COVID-19, since health concern plays a key tradeoff role. For example, people may try to avoid crowdedness, even if there is a strong desire for social interaction. Thus, the orienteering or itinerary planning algorithms should optimize routes beyond user preference. Therefore, this article proposes a social sensing system that considers the tradeoff between user preference and various factors, such as crowdedness, personality, knowledge of COVID-19, POI features, and desire for socialization. The experiments are conducted on profiling user interests with a properly 1 trained fastText neural network and a set of specialized Naïve Bayesian Classifiers based on the “Yelp!” dataset. Also, we demonstrate how to approach and integrate COVID-related factors via conversational agents. Furthermore, the proposed system is in a modular design and evaluated in a user study; thus, it can be efficiently adapted to different algorithms for COVID-19-aware itinerary planning. © 2023 Copyright held by the owner/author(s)."
+  },
+  {
+    "article_id": "CA_1390",
+    "title": "Empowering Private Tutoring by Chaining Large Language Models",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3627673.3679665",
+    "abstract": "Artificial intelligence has been applied in various aspects of online education to facilitate teaching and learning. However, few approaches have been made towards a complete AI-powered tutoring system. In this work, we explore the development of a full-fledged intelligent tutoring system based on large language models (LLMs). The proposed system ChatTutor, powered by state-of-the-art LLMs, is equipped with automatic course planning and adjusting, informative instruction, and adaptive quiz offering and evaluation. ChatTutor is decomposed into three inter-connected core processes: interaction, reflection, and reaction. Each process is implemented by chaining LLM-powered tools along with dynamically updated memory modules. To demonstrate the mechanism of each working module and the benefits of structured memory control and adaptive reflection, we conduct a wide range of analysis based on statistical results and user study. The analysis shows the designed processes boost system consistency and stability under long-term interaction and intentional disruptions, with up to 5% and 20% increase in performance respectively. Meanwhile, we also compare the system with scripts from real-world online learning platform and discuss the potential issues unique to LLM-based systems. © 2024 Owner/Author."
+  },
+  {
+    "article_id": "CA_1391",
+    "title": "Forecasting Live Chat Intent from Browsing History",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3627673.3679928",
+    "abstract": "Customers reach out to online live chat agents with various intents, such as asking about product details or requesting a return. In this paper, we propose the problem of predicting user intent from browsing history and address it through a two-stage approach. The first stage classifies a user's browsing history into high-level intent categories. Here, we represent each browsing history as a text sequence of page attributes and use the ground-truth class labels to fine-tune pretrained Transformers. The second stage provides a large language model (LLM) with the browsing history and predicted intent class to generate fine-grained intents. For automatic evaluation, we use a separate LLM to judge the similarity between generated and ground-truth intents, which closely aligns with human judgments. Our two-stage approach yields significant performance gains compared to generating intents without the classification stage. © 2024 Owner/Author."
+  },
+  {
+    "article_id": "CA_1392",
+    "title": "REAPER: Reasoning based Retrieval Planning for Complex RAG Systems",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3627673.3680087",
+    "abstract": "Complex dialog systems often use retrieved evidence to facilitate factual responses. Such RAG (Retrieval Augmented Generation) systems retrieve from heterogeneous data stores that are architected as multiple indexes or APIs instead of a single monolithic source. For a given query, relevant evidence needs to be retrieved from one (or few) retrieval source. Complex queries can even require multi-step retrieval. For example, a conversational agent on a retail site answering customer questions about past orders need to retrieve the appropriate customer order first and then the evidence relevant to the customer's question in the context of the ordered product. Most RAG Agents handle such Chain-of-Thought (CoT) tasks by interleaving reasoning and retrieval steps. However, each reasoning step directly adds to the latency of the system. For large models this latency cost is significant - in the order of multiple seconds. Multi-agent systems may classify the query to a single Agent associated with a retrieval source, which means that a (small) classification model dictates the performance of a large language model. To address this problem, we present REAPER (REAsoning-based PlannER), an LLM-based retrieval planner that we evaluate on a conversational shopping assistant, which shows significant gains in latency over Agent-based systems and scalability to new and unseen use cases when compared to classification-based planning. © 2024 ACM."
+  },
+  {
+    "article_id": "CA_1393",
+    "title": "iRAG: Advancing RAG for Videos with an Incremental Approach",
+    "journal": "International Conference on Information and Knowledge Management, Proceedings",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3627673.3680088",
+    "abstract": "Retrieval-augmented generation (RAG) systems combine the strengths of language generation and information retrieval to power many real-world applications like chatbots. Use of RAG for understanding of videos is appealing but there are two critical limitations. One-time, upfront conversion of all content in large corpus of videos into text descriptions entails high processing times. Also, not all information in the rich video data is typically captured in the text descriptions. Since user queries are not known apriori, developing a system for video to text conversion and interactive querying of video data is challenging. To address these limitations, we propose an incremental RAG system called iRAG, which augments RAG with a novel incremental workflow to enable interactive querying of a large corpus of videos. Unlike traditional RAG, iRAG quickly indexes large repositories of videos, and in the incremental workflow, it uses the index to opportunistically extract more details from select portions of the videos to retrieve context relevant to an interactive user query. Such an incremental workflow avoids long video to text conversion times, and overcomes information loss issues due to conversion of video to text, by doing on-demand query-specific extraction of details in video data. This ensures high quality of responses to interactive user queries that are often not known apriori. To the best of our knowledge, iRAG is the first system to augment RAG with an incremental workflow to support efficient interactive querying of a large corpus of videos. Experimental results on real-world datasets demonstrate 23x to 25x faster video to text ingestion, while ensuring that latency and quality of responses to interactive user queries is comparable to responses from a traditional RAG where all video data is converted to text upfront before any user querying. © 2024 ACM."
+  },
+  {
+    "article_id": "CA_1394",
+    "title": "When Human-AI Interactions Become Parasocial: Agency and Anthropomorphism in Affective Design",
+    "journal": "2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3630106.3658956",
+    "abstract": "With the continuous improvement of large language models (LLMs), chatbots can produce coherent and continuous word sequences that mirror natural human language. While the use of natural language and human-like conversation styles enables the use of chatbots within a range of everyday settings, these usability-enhancing features can also have unintended consequences, such as making fallible information seem trustworthy by emphasizing friendliness and closeness. This can have serious implications for information retrieval tasks performed with chatbots. In this paper, we provide an overview of the literature on parasociality, social affordance, and trust to bridge these concepts within human-AI interactions. We critically examine how chatbot \"roleplaying\"and user role projection co-produce a pseudo-interactive, technologically-mediated space with imbalanced dynamics between users and chatbots. Based on the review of the literature, we develop a conceptual framework of parasociality in chatbots that describes interactions between humans and anthropomorphized chatbots. We dissect how chatbots use personal pronouns, conversational conventions, affirmations, and similar strategies to position the chatbots as users' companions or assistants, and how these tactics induce trust-forming behaviors in users. Finally, based on the conceptual framework, we outline a set of ethical concerns that emerge from parasociality, including illusions of reciprocal engagement, task misalignment, and leaks of sensitive information. This paper argues that these possible consequences arise from a positive feedback cycle wherein anthropomorphized chatbot features encourage users to fill in the context around predictive outcomes. © 2024 Owner/Author."
+  },
+  {
+    "article_id": "CA_1395",
+    "title": "My Future with My Chatbot: A Scenario-Driven, User-Centric Approach to Anticipating AI Impacts",
+    "journal": "2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3630106.3659026",
+    "abstract": "As a general purpose technology without a concrete pre-defined purpose, personal chatbots can be used for a whole range of objectives, depending on the personal needs, contexts, and tasks of an individual, and so potentially impact a variety of values, people, and social contexts. Traditional methods of risk assessment are confronted with several challenges: the lack of a clearly defined technology purpose, the lack of clearly defined values to orient on, the heterogeneity of uses, and the difficulty of actively engaging citizens themselves in anticipating impacts from the perspective of their individual lived realities. In this article, we leverage scenario writing at scale as a method for anticipating AI impact that is responsive to these challenges. The advantages of the scenario method are its ability to engage individual users and stimulate them to consider how chatbots are likely to affect their reality and so collect different impact scenarios depending on the cultural and societal embedding of a heterogeneous citizenship. Empirically, we tasked 106 US-based participants to write short fictional stories about the future impact (whether desirable or undesirable) of AI-based personal chatbots on individuals and society and, in addition, ask respondents to explain why these impacts are important and how they relate to their values. In the analysis process, we map those impacts and analyze them in relation to socio-demographic as well as AI-related attitudes of the scenario writers. We show that our method is effective in (1) identifying and mapping desirable and undesirable impacts of AI-based personal chatbots, (2) setting these impacts in relation to values that are important for individuals, and (3) detecting socio-demographic and AI-attitude related differences of impact anticipation. © 2024 Owner/Author."
+  },
+  {
+    "article_id": "CA_1396",
+    "title": "(A)I Am Not a Lawyer, But?: Engaging Legal Experts towards Responsible LLM Policies for Legal Advice",
+    "journal": "2024 ACM Conference on Fairness, Accountability, and Transparency, FAccT 2024",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3630106.3659048",
+    "abstract": "Large language models (LLMs) are increasingly capable of providing users with advice in a wide range of professional domains, including legal advice. However, relying on LLMs for legal queries raises concerns due to the significant expertise required and the potential real-world consequences of the advice. To explore when and why LLMs should or should not provide advice to users, we conducted workshops with 20 legal experts using methods inspired by case-based reasoning. The provided realistic queries (\"cases\") allowed experts to examine granular, situation-specific concerns and overarching technical and legal constraints, producing a concrete set of contextual considerations for LLM developers. By synthesizing the factors that impacted LLM response appropriateness, we present a 4-dimension framework: (1) User attributes and behaviors, (2) Nature of queries, (3) AI capabilities, and (4) Social impacts. We share experts' recommendations for LLM response strategies, which center around helping users identify 'right questions to ask' and relevant information rather than providing definitive legal judgments. Our findings reveal novel legal considerations, such as unauthorized practice of law, confidentiality, and liability for inaccurate advice, that have been overlooked in the literature. The case-based deliberation method enabled us to elicit fine-grained, practice-informed insights that surpass those from de-contextualized surveys or speculative principles. These findings underscore the applicability of our method for translating domain-specific professional knowledge and practices into policies that can guide LLM behavior in a more responsible direction. © 2024 Owner/Author."
+  },
+  {
+    "article_id": "CA_1397",
+    "title": "Mitigating Algorithm Aversion in Recruiting: A Study on Explainable AI for Conversational Agents",
+    "journal": "Data Base for Advances in Information Systems",
+    "journal_impact_factor": null,
+    "doi": "10.1145/3645057.3645062",
+    "abstract": "The use of conversational agents (CAs) based on artificial intelligence (AI) is becoming more common in the field of recruiting. Organizations are now adopting AI-based CAs for applicant (pre-)selection, but negative news coverage, especially the black-box character of AI, has hindered adoption. So far, little is known about the contextual factors influencing users' perception of AI-based CAs in general and the effect of provided explanations by explainable AI (XAI) in particular. While research on algorithm aversion provides some initial explanations, information regarding the effects of different XAI approaches on different types of decisions on the attitudes of (potential) applicants is scarce. Therefore, in this study, we use a quantitative, quota-representative study (n = 490) to assess the acceptance of CAs in recruiting. By applying an experimental within-subject design, we provide a more nuanced perspective on why and when providing explanations increases user acceptance. We also show that contextual factors such as the type of assessed skills are major determinants of this effect, and we conclude that XAI is not a \"one-size-fits-all approach.\"Based on the insight that contextual factors of the decision problem are more important than the type of XAI approach itself, we argue that the use and the effects of explainability in recruiting need a more nuanced perspective, focusing on the fit of explanations with the user's characteristics and preferences. © 2024 Copyright is held by the owner/author(s)."
+  },
+  {
+    "article_id": "CA_1398",
+    "title": "Cooking with Conversation: Enhancing User Engagement and Learning with a Knowledge-Enhancing Assistant",
+    "journal": "ACM Transactions on Information Systems",
+    "journal_impact_factor": 9.687,
+    "doi": "10.1145/3649500",
+    "abstract": "We present two empirical studies to investigate users' expectations and behaviours when using digital assistants, such as Alexa and Google Home, in a kitchen context: First, a survey (N = 200) queries participants on their expectations for the kinds of information that such systems should be able to provide. While consensus exists on expecting information about cooking steps and processes, younger participants who enjoy cooking express a higher likelihood of expecting details on food history or the science of cooking. In a follow-up Wizard-of-Oz study (N = 48), users were guided through the steps of a recipe either by an active wizard that alerted participants to information it could provide or a passive wizard who only answered questions that were provided by the user. The active policy led to almost double the number of conversational utterances and 1.5 times more knowledge-related user questions compared to the passive policy. Also, it resulted in 1.7 times more knowledge communicated than the passive policy. We discuss the findings in the context of related work and reveal implications for the design and use of such assistants for cooking and other purposes such as DIY and craft tasks, as well as the lessons we learned for evaluating such systems. © 2024 Copyright held by the owner/author(s)."
+  },
+  {
+    "article_id": "CA_1399",
+    "title": "ICA-CRMAS: Intelligent Context-Awareness Approach for Citation Recommendation based on Multi-Agent System",
+    "journal": "ACM Transactions on Management Information Systems",
+    "journal_impact_factor": 5.07,
+    "doi": "10.1145/3680287",
+    "abstract": "Navigating the ever-expanding sea of scientific literature presents a daunting challenge for researchers seeking relevant and up-to-date information. Traditional citation recommendation systems, while well-intentioned, often fall short due to their limited focus on text-based features and lack of contextual awareness. In this article, we introduce the ICA-CRMAS (Intelligent Context-Aware Approach for Citation Recommendation based on Multi-Agent System), an intelligent system that leverages the power of deep learning, semantic analysis, and multimodal learning to overcome these limitations. ICA-CRMAS goes beyond the surface, delving into the rich tapestry of information within academic papers, including figures, which often hold vital contextual clues. By weaving this contextual data directly into its recommendation models, ICA-CRMAS generates highly personalized and relevant suggestions. This comprehensive approach unlocks enhanced accuracy, diversity, and serendipity, enabling researchers to effectively discover papers aligning with their interests and research objectives. ICA-CRMAS illuminates its reasoning. Instead of opaque suggestions, the system provides clear explanations that justify and illustrate recommended citations. This transparency builds user confidence, allowing researchers to critically engage with and trust the system's recommendations. Evaluation experiments conducted on real-world academic datasets demonstrate that ICA-CRMAS outperforms existing approaches across various metrics. it surpassing its closest competitor by a margin of 7.53 on accuracy, 6.07% on MRR and by 5.87 on Recall. User feedback further reinforces its effectiveness, with an Overall System Usability Scale (SUS) score of 76.73, exceeding benchmark scores for comparable systems. © 2024 held by the owner/author(s)."
+  },
+  {
+    "article_id": "CA_1400",
+    "title": "On Leveraging Large Language Models for Multilingual Intent Discovery",
+    "journal": "ACM Transactions on Management Information Systems",
+    "journal_impact_factor": 5.07,
+    "doi": "10.1145/3688400",
+    "abstract": "Intent discovery is vital for any real-world dialogue systems such as chatbot. Since the intents of users naturally change over time, models only trained on a static training set of intents will inevitably fail to detect new intents. While this topic has been widely studied, existing work only focuses on monolingual datasets, rendering it less practical for international businesses, where it is far more common to work with multilingual data. In this work, we present a method for multilingual intent discovery through leveraging the multilingual capabilities of recent large language models. By performing joint extraction of intent and keyphrases, as well as a chain-of-thought–styled reasoning, our method is able to efficiently produce clustering results that are easy to interpret. Experimental results on two different datasets show that our proposed method consistently surpasses all baselines, with up to 15% gain in adjusted Rand index. © 2025 Copyright held by the owner/author(s) Publication rights licensed to ACM."
+  }
+]

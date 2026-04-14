@@ -1,0 +1,474 @@
+You are an expert researcher supporting a systematic literature review using PRISMA and the Lotus Protocol.
+
+This prompt focuses ONLY on the CS intersection:
+Consumer Experience and Service Recovery.
+
+This intersection includes studies that analyze:
+- Consumer reactions to service failure and recovery
+- Perceived justice, satisfaction, trust, and expectations
+- Behavioral and emotional responses after service recovery
+- Customer engagement and relationship outcomes
+
+You will receive a LIST of academic articles. Each article contains:
+- article_id
+- title
+- journal
+- journal_impact_factor
+- doi
+- abstract
+
+Your task is to analyze EACH article independently.
+
+Instructions:
+1. Determine whether the article is relevant to the CS intersection.
+2. If relevant:
+   - set "relevance" to "relevant"
+   - set "intersection" to "CS"
+   - provide summary in English and Portuguese
+   - extract relevant excerpts in English and Portuguese
+3. If not relevant:
+   - set "relevance" to "not_relevant"
+   - set "intersection" to null
+   - justify clearly why the article should be excluded
+
+EXCLUSION CRITERIA:
+- Conference proceedings, book chapters, editorials, commentaries, working papers
+- Purely technical or engineering studies
+- Articles that do not involve consumers or customer perception
+- Studies about AI WITHOUT connection to service recovery
+- Articles focused exclusively on B2C without conceptual relevance to B2B
+- Studies not involving service failure or recovery
+- Peripheral treatment of service recovery
+- Duplicate records
+
+DECISION RULES:
+- Use only the information available in the title and abstract
+- Be conservative and classify as relevant only when the article clearly matches the intersection scope
+- Preserve the input metadata exactly as received
+- Return one JSON object for each input article
+- Keep the same order as the input list
+- Return ALL articles from the input list in the output
+- Return ONLY a valid JSON array
+- Do not include markdown fences
+- Do not include commentary before or after the JSON array
+
+OUTPUT FORMAT FOR EACH ARTICLE:
+{
+  "article_id": "...",
+  "title": "...",
+  "journal": "...",
+  "journal_impact_factor": "...",
+  "doi": "...",
+  "relevance": "relevant" or "not_relevant",
+  "intersection": "CS" or null,
+  "summary_en": "...",
+  "summary_pt": "...",
+  "relevant_excerpts_en": ["...", "..."],
+  "relevant_excerpts_pt": ["...", "..."],
+  "justification": "...",
+  "confidence": 0.0
+}
+
+ARTICLE LIST TO ANALYZE:
+[
+  {
+    "article_id": "CS_0101",
+    "title": "Consumer Reactions to Dynamic Pricing as a Norm-Breaking Practice with Increasing Levels of Company Clarifications: An Abstract",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-95346-1_5",
+    "abstract": "Companies that use pricing tactics such as dynamic pricing risk being considered norm-violating particularly by customers who pay higher prices than others. Price-disadvantaged customers are likely to develop lower fairness perceptions and to engage in retaliatory behavior. As few companies disclose information about the pricing criteria, customers are often left feeling confused, which can result in higher perceptions of price complexity. Therefore, to better understand price-disadvantaged consumers’ perceptions of price fairness and price complexity, complaint and purchase intentions in the context of dynamic pricing, we examine and compare four pricing scenarios. Uniform pricing represents the non-norm-violating pricing practice, and dynamic pricing is present in the three remaining situations, with various degrees of explanations (none, a short description of dynamic pricing, and a complete explanation of the differentiation criteria). There is currently no research on how service providers’ explanations of dynamic pricing influence consumers’ perceptions and behaviors, particularly of the price-disadvantaged customers. This study will lead to a better understanding of whether companies can use dynamic pricing strategies without forming negative perceptions by customers, and if service providers’ attempts to mitigate any negative customer responses through explanations are effective. We tested four pricing tactics (uniform pricing, dynamic pricing without an explanation, a short, or a complete explanation) applied to a touristic flight. In the scenarios with dynamic pricing, the customer was always in a disadvantaged price position. We measured price fairness and complexity perceptions, as well as purchase and complaint intentions. The study results show that marketers who use dynamic pricing can increase customers’ fairness perceptions by explaining the criteria used to set the varying prices. Interestingly, both complete and short explanations can bring fairness perceptions up to the same level of fairness, as in the case of uniform pricing. Furthermore, perceptions of complexity decrease with the amount of additional information provided on dynamic pricing. However, even a complete explanation of the criteria leading to the varying prices cannot bring down perceived complexity to the level that is measured for uniform pricing. Therefore, additional explanations on pricing criteria can fully restore consumers’ fairness perceptions but at the same time do not fully eliminate complexity perceptions. The results for purchase and complaint intentions, which represent consequences of immediate fairness or complexity perceptions indicate that a complete explanation of the criteria used for dynamic pricing helps to establish intentions similar to those in the case of uniform prices. © 2022, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CS_0102",
+    "title": "How Fair is the Handling of the Claimant Customer? A Comparison Between the e-mail and Telephone Channels",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-95809-1_7",
+    "abstract": "Context: Our study re-examines, in a comparative way, the impact of the reactivity on the satisfaction of the claiming customer from two channels: the email and the telephone. Method: Based on the foundations of the theory of justice, we analyze which of the two channels generates better responsiveness, better justice and ultimately greater satisfaction of the claimant customers. A logistic equation was constructed from 653 customer responses following the processing of their claim, which integrated the impact of responsiveness on the three levels of justice theory (procedural, distributive and interactional). Results: The results of this study underline a greater reactivity and a better satisfaction within the framework of the email channel compared to the telephone channel. The level of procedural fairness was found to be the most important for customers claiming via this channel. Conclusion: This study underlines, on the one hand, the importance of the reactivity of the email channel compared to the telephone in the management of complaints. On the other hand, it shows the impact of a smooth and clear process to satisfy the complaining customer and increase his perceived justice. © 2022, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CS_0103",
+    "title": "“Threatening Livelihoods”: Nordic Enemy Images of Peddlers from the Russian Empire",
+    "journal": "Encounters and Practices of Petty Trade in Northern Europe, 1820–1960: Forgotten Livelihoods",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-030-98080-1_10",
+    "abstract": "This chapter explores Nordic press portrayals of four mobile groups from the multi-ethnic Russian Empire in the late nineteenth and early twentieth centuries: “Rucksack Russians,” Eastern Jews, Tatars and Novgorodian saw grinders. Building on articles and short paragraphs in Swedish and Finnish periodicals, the article illustrates the ways in which these mobile groups were depicted as a threat, and the economic, moral, and political motives behind such expressions. The chapter discloses an aspect of reality that mobile Russians seeking a livelihood in the Nordics faced, as well as the mechanisms through which enemy images were created. The complaints mainly represented voices beyond the traders and their customers. They primarily emanated from local merchants, who viewed the peddlers as unfair competitors, authorities who sought to maintain order and offer security, and political actors. © The Author(s) 2022."
+  },
+  {
+    "article_id": "CS_0104",
+    "title": "Gaining Insights on Student Satisfaction by Applying Social CRM Techniques for Higher Education Institutions",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-04216-4_17",
+    "abstract": "Social Media and Customer Relationship Management (CRM) are already widely used in business settings, but other non-commercial sectors started only recently to adopt them. Among them are Higher Education Institutions (HEIs). Even though research shows positive effects on the quality of services, student satisfaction, and attractiveness towards international students, the adoption is very low. This research in progress reviews the state of research about Social CRM in HEIs and gives an example of the potential of social media for CRM approaches of HEIs by applying Social CRM concepts and techniques for better understanding the negative service experiences of students. By applying analytical Social CRM techniques on large amounts of User-Generated-Content (UGC) in complaint platforms the paper gives insights into problem chains inaccessible with manual methods. Based on the scarce research about Social CRM as well as the demonstrated potential of social media for CRM strategies of HEIs, this paper concludes with a call for further research on Social CRM in HEIs. © 2022, Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CS_0105",
+    "title": "Complaint Handling and Channel Selection in the Interactive Marketing Era",
+    "journal": "The Palgrave Handbook of Interactive Marketing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-14961-0_25",
+    "abstract": "Complaint behavior in interactive channels has ceased to be a new phenomenon. Consumers are instead turning to new interactive tools to express dissatisfaction with companies that fail to meet their expectations due to the wide array of private (e.g., WhatsApp) and public (e.g., review platforms) channels presently available. While private complaint channels provide the advantage of dealing with the complaint out of the public eye, observers never become aware of the firm’s effectiveness. In contrast, while public complaint channels enable brands to demonstrate how much they care about customers, they also entail the risk of damaging the brand’s reputation if the resolution does not evolve smoothly and satisfactorily. Complainants will choose a channel to voice their demands depending on their goals (i.e., revenge vs. redress-seeking) and the benefits they associate with the respective channels. In this context, companies must decide which channels to rely on and the procedure to follow in the event of a complaint. As such, brands should not only pay attention to the types of responses that engender more favorable customer responses but also to prevention and brand-building strategies, as these have become especially salient in this interactive era and may support the implementation of an integral complaint handling strategy. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023."
+  },
+  {
+    "article_id": "CS_0106",
+    "title": "Consumer Well-Being, Consumer Complaints",
+    "journal": "Encyclopedia of Quality of Life and Well-Being Research",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-17299-1_3528",
+    "abstract": "[No abstract available]"
+  },
+  {
+    "article_id": "CS_0107",
+    "title": "Impact, Recovery and Resilience of the Events and Festivals Sector from COVID-19 Crisis: Lessons from Zimbabwe",
+    "journal": "COVID-19, Tourist Destinations and Prospects for Recovery: an African Perspective: Volume 2",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-24655-5_7",
+    "abstract": "The COVID-19 pandemic spawned several challenges for the events and festivals sector in Zimbabwe. However, scant scholarly attention has been paid to the COVID-19 pandemic-induced impacts on events and festivals with specific ref­erence to Zimbabwe. This chapter examines the impacts of COVID-19 on Zimbabwe’s events and festivals sector and unpacks the recovery and resilient strat­egies deployed. A qualitative approach was adopted where 16 semi-structured in­depth telephone interviews were employed to collect data from events and festivals stakeholders selected through snowballing sampling. Data were analysed, and find­ings were presented under four themes: types of festivals and special events impacted, socioeconomic impacts, recovery and resilience strategies and festivals’ consumer mindset shift. Findings revealed that the events sector suffered the worst brunt of COVID-19 through blanket bans of gatherings that restricted mobility between 2020 and 2021. Additionally, COVID-19 induced multiple socioeconomic impacts, notably loss of income and sources of livelihood in the events value chain encompassing exhibitions, shopping, transportation, décor, artefacts, security ser­vices, food and beverages. The recovery and resilience enhancement strategies were implemented by using contactless payment platforms, holding hybrid events and migrating to virtual platforms. Employee training in digital skills is recommended for the events sector to keep pace with technological developments in the events tourism sector. © The Editor(s) (if applicable) and The Author(s), under exclusive license to Springer Nature Switzerland AG 2023."
+  },
+  {
+    "article_id": "CS_0108",
+    "title": "Effects of Complaint Management Strategies in Social Networks on Observers’ Emotional Attachment and Brand Commitment: An Abstract",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-24687-6_147",
+    "abstract": "Many companies with a social network presence face the growing challenge to handle public customer complaints in social networks in an appropriate and customer-oriented manner that considers effects on both the complaining customers and other consumers observing the interaction. Social network communication is crucial for a company’s customer relationship management and corporate success as it not only affects the attitude, emotions and behavioural intentions of the complaining customer but also of many other consumers who observe the complaint handling process and follow the company-customer interaction in the social network. While previous research has already examined the reactions of the complaining customers to such social media company-customer interactions, the research on observer reactions is limited. In addition, there is no research on the emotional and attitudinal impact on observers. Therefore, we examine the effect of three complaint management approaches on observers’ emotional attachment and brand commitment. From a marketing perspective, we argue that strong emotional attachment and brand commitment drive the success of customer acquisition and the development of sustainable customer relations. In our study, we test the effects of three commonly used corporate response strategies for online complaints (accommodative, defensive and redirecting) in a service context (hotel stay) on the emotional attachment and brand commitment of social network users observing the interaction between a complaining customer and the hotel. We simulated the social network experience using a video. Our results show that emotional attachment and brand commitment of consumers observing how a company handles the complaint of another customer are higher when the company either manages the complaint in a customer-friendly way (accommodative) or refuses to find a solution (defensive). The latter result might be explained as follows. Observers who are not involved in the interaction between the company and a complaining customer seem to appreciate the company’s public reactions as diagnostic and transparent regardless of whether they are in the interest of the complaining customer. The strategy that directs the conversation out of the network and out of the observer’s sight leads to lower levels of emotional attachment and brand commitment. While social media managers might intuitively try to isolate the interaction with complaining customers in social networks from other customers because this strategy has been proven to be successful in offline contexts, our results suggest that the complaint handling should be continued within the social network because this can positively affect observing customers’ emotional attachment and brand commitment. © 2023, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CS_0109",
+    "title": "A Distributed Multi-key Generation Protocol with a New Complaint Management Strategy",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-30694-5_12",
+    "abstract": "Privacy protection is a main goal in the majority of the Blockchain studies. However some dishonest users may abuse from the benefits of this property and the fact of not being identified to do illegal crimes. That is why several researches focus on implementing identity tracing to avoid the flaws related to privacy protection in Blockchain applications. In this paper, we propose a Distributed Multi-Key Generation (DMKG) protocol without private channels built on the DMKG protocol of the Blockchain Traceable Scheme with Oversight Function (BTSOF) presented in [8]. Our protocol introduces a new strategy to manage complaints between participants that avoids them to publicly reveal the values of their shares of secrets. This new management of complaints and the use of public channels allow a precise identification of malicious participants. We prove that our solution satisfies the security requirements of the Verifiable Multi-Secret Sharing (VMSS) schemes and DMKG protocols. © 2023, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CS_0110",
+    "title": "Understanding Multi-platform Social VR Consumer Opinions: A Case Study in VRChat Using Topics Modeling of Reviews",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-32302-7_4",
+    "abstract": "Due to the significant advancements in virtual reality (VR) technologies over the years, more research has been done on how these technologies could promote more effective communication in social applications to enhance collaboration and social connectivity. Most studies about social VR conducted experimental tasks in different communication contexts to evaluate communication quality, which has limited relevance to the VR industries and ambiguous generalizability of findings outside of lab settings. This study tries to solve this problem by conducting a case study on one of the most popular commercial social VR applications to understand what factors impact consumers’ user experience in social VR applications. We used the Structural Topic Model (STM) based text mining of VRChat’s steam reviews to explore topics that users discuss and classified the topics into four clusters, including avatars and behaviors, complaints, hardware and connection, and recommendation. The implications for game developers and future social VR research are discussed. © 2023, The Author(s), under exclusive license to Springer Nature Switzerland AG."
+  },
+  {
+    "article_id": "CS_0111",
+    "title": "Employee-to-customer improvisation: A value creation strategy for navigating the contemporary consumption experience",
+    "journal": "The Future of Consumption: How Technology, Sustainability and Wellbeing will Transform Retail and Customer Experience",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-33246-3_21",
+    "abstract": "The potential contribution that employees can make to retail firms is changing as retailing is increasingly embracing online and digital capabilities. Retailers are tasked with the role of supplementing their primary commercial role by providing unique experiences. Existing theories in service management, for example, job autonomy and service scripting, can only provide part of the solution to the inevitable variability that emerges as employees work with customers to proactively create moments of delight and reactively recover from service failures. The importance of customer service and the customer experience is becoming critical. We propose a new concept of employee-to-customer improvisation, which draws on the strengths of existing theoretical approaches while providing retail managers with fresh insights. We clarify the domain of the employee-to-customer improvisation construct and propose a conceptual framework that integrates individual and organizational antecedents, as well as contingency factors that enable employee-to-customer improvisation. Overall, our work highlights a new concept important to meeting the changing demands associated with contemporary retail encounters. © 2024. This book is an open access publication. All rights reserved."
+  },
+  {
+    "article_id": "CS_0112",
+    "title": "Customer-brand interactions and service failure recovery",
+    "journal": "Digital Transformation for Fashion and Luxury Brands: Theory and Practice",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-35589-9_15",
+    "abstract": "The internet has altered customer-brand interactions and service delivery. Online service failures are inevitable, but social media provides opportunities for efficient service recovery. In light of the lack of research on the drivers of customer satisfaction among luxury fashion customers, this chapter focuses on customer satisfaction in relation to luxury fashion brand customers and explores the motivations and barriers to satisfaction following a negative service experience. The chapter considers the range of recovery strategies that can be adopted and provides managerial and marketing insights for fashion and luxury managers seeking to improve customer satisfaction using various strategies. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024. All rights reserved."
+  },
+  {
+    "article_id": "CS_0113",
+    "title": "Evaluating Turkish banks' complaint management performance using multi-criteria decision analysis",
+    "journal": "Data Analytics for Management, Banking and Finance: Theories and Application",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-36570-6_9",
+    "abstract": "Digitalization increased the number of transactions made by individual customers in the banking market because of the ease of access and use of digital banking systems. Also, the proliferation of e-commerce applications triggered this increase-consequently, the number of service failures and customer complaints also increased. Today, bank consumers can raise their voices quickly through online complaint platforms. By analyzing a dataset taken from one of these platforms (sikayetvar. com), this study aimed to evaluate the performance of 19 banks that are operating in Turkey in terms of customer complaint management. In the first phase, the Fuzzy Analytical Hierarchy Process (FAHP) is used to analyze data provided by seven experts who were asked to make pairwise comparisons to weigh the evaluation criteria. Following this, the weights obtained by FAHP were used in the technique for order preference by similarity to an ideal solution (TOPSIS) to evaluate banks based on the following criteria: satisfaction score, solved complaint rate, complaint response rate, and complaint rate. Finally, to test the sensitivity of the results obtained with TOPSIS, the resolution is applied with the ARAS (Additive Ratio Assessment System), COPRAS (Complex Proportional Assessment), WASPAS (Weighted Aggregated Sum Product Assessment), MABAC (Multi-Attributive Border Approximation Area Comparison), and GRA (Gray Relation Analysis) methods. Findings illustrated that the most important criterion was satisfaction score. Solved complaint rate, complaint response rate, and complaint rate followed this criterion. The criteria weights were used in TOPSIS, and the bank with the best complaint management performance was found as Odea Bank (private and foreign bank). This bank was followed by HSBC (private and foreign bank), QNB (private and foreign bank), and Albaraka (participation and foreign bank) banks, respectively. Overall, it is found that private banks performed better than public and participation banks in terms of complaint management. The procedure that followed during the analysis exemplified how banks can benefit from third-party complaint datasets in benchmarking. The literature lacks studies investigating customer satisfaction through complaint management criteria derived from a real dataset; accordingly, the current study attempts to inspire further investigations in this context. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2023."
+  },
+  {
+    "article_id": "CS_0114",
+    "title": "In[the Hate Booth]: A Case Study on How to Deal with Online Hate Speech",
+    "journal": "Springer Series in Design and Innovation",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-41770-2_15",
+    "abstract": "In today's hyper-connected world, digital games and online gaming communities occupy a prominent place in the communication system, in social media, forums or Internet communities, where online hate speech (OHS) takes place, frequently and publicly, triggering toxic environments. In this chapter we present a case study based on interviews, distributed in two sessions, to ten participants with 12 and 13 years old, and an experience over the SG In[The Hate Booth], as a counterproposal to address OHS. The qualitative data approaches three aspects: the experiences with OHS, the perspectives about OHS and the possible solutions to counteract OHS. We conclude that OHS is a common complaint from players and a characteristic behavior in game communities. Data shows that even users who don’t identify themselves with this behavior accept it as part of online environments and agree that this toxicity continues outside the in-game screen with effects in everyday life. The pedagogical approach, namely through SG, is perceived as a possible measure to counteract the OHS. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024."
+  },
+  {
+    "article_id": "CS_0115",
+    "title": "Exploring an Appropriate Legal Mechanism for Consumers in Halal Food Abuse Cases",
+    "journal": "Contributions to Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-48770-5_58",
+    "abstract": "This preliminary study aims to explore a legal mechanism dedicated to addressing issues related to consumer rights and protection in cases of Halal food abuse. Halal food, which adheres to Islamic dietary laws and guidelines, holds a significant importance for Muslim consumers worldwide. Ensuring the authenticity and integrity of Halal food is essential, given the growing global demand for these items. This study employed a multidisciplinary approach, drawing data from Islamic jurisprudence, consumer protection laws, and existing models concerning dispute resolution mechanisms. It explored contemporary challenges faced by consumers in verifying the Halal status of food products and seeking redress in cases of fraud, mislabelling, or contamination through an extensive review of literature, legal frameworks, and case studies. Effective law enforcement is essential in efforts to guarantee that halal food producers fulfill their legal requirements and, more crucial, increase Muslim customers’ trust in halal food products. Therefore, the objective of this study is to propose a consumer protection mechanism for addressing Halal abuse in Malaysia. This qualitative study obtained information and data from interviews and document analyses involving statutes, articles, and journals. Findings indicated a lacuna in the consumer remedy and an avenue for claims in Halal food abuse cases. It is suggested that the current legislation pertaining to consumer rights should be consolidated and an avenue proposed for consumers to vindicate their rights and receive protection against Halal food abuse cases. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024."
+  },
+  {
+    "article_id": "CS_0116",
+    "title": "Understanding Customers’ Insights Using Attribution Theory",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-53286-3_3",
+    "abstract": "This study attempts to detect associations between complaint attributions and specific consequences by guests of different star-rated hotels. A multifaceted approach is applied. First, a content analysis is conducted to transform textual complaints into categorically structured data. Then, an association rule technique is applied to discover potential relationships amongst complaint antecedents and consequences. Utilizing an Apriori rule-based machine learning algorithm, optimal priority rules for this study were determined for the respective complaining attributions for both the antecedents and consequences. Based on attribution theory, this study found that Customer Service, Room Space and Miscellaneous Issues received more attention from guests staying at higher star-rated hotels. Conversely, Cleanliness was a consideration more prevalent amongst guests staying at lower star-rated hotels. Practical implications are also discussed. © Academy of Marketing Science 2024."
+  },
+  {
+    "article_id": "CS_0117",
+    "title": "Using Datalog for Effective Continuous Integration Policy Evaluation",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-56281-5_3",
+    "abstract": "Containerisation and microservices have introduced unprecedented complexity in system configurations, exacerbating the blast zone of misconfigurations and system failures. This complexity is further amplified within the DevOps paradigm, where developers are entrusted with the entire software development lifecycle, often without comprehensive insights into the impact of their configurations. This article explores using the declarative logic programming language Datalog in automating and optimizing configuration validation to mitigate these challenges. We present an overview of a real-world case involving a software company with approximately 300 engineers, highlighting the challenges that lead to delegating mission-critical configuration validation to a declarative language. With Datalog, we spearheaded an initiative to entirely deprecate a non-declarative solution in order to attempt to circumvent the problem of writing business logic alongside its evaluation. The outcome revealed a substantial reduction in maintenance efforts and user complaints, providing further evidence of Datalog’s potential in streamlining internal policy enforcement. We propose a set of best practices, extrapolated from our findings, to guide organizations in both implementing and optimizing automatic configuration validation. These insights offer a strategic roadmap for harnessing declarative languages like Datalog to effectively navigate the intricate configuration landscapes of contemporary software systems. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024."
+  },
+  {
+    "article_id": "CS_0118",
+    "title": "Unveiling Negative Dimensions of Customer-Brand Relationships in Tourism: A Bibliometric Analysis",
+    "journal": "Tourism, Hospitality and Event Management",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-59535-6_28",
+    "abstract": "This chapter delves into the intricate landscape of negative facets and adverse dimensions within consumer-brand relationships in the tourism industry context. The primary focus of this inquiry revolves around the various constructs associated with unfavorable aspects of consumer interactions with tourism brands. The overarching goal is to provide a comprehensive landscape overview, shed light on critical issues, and chart a course for future research endeavors. We systematically identify, locate, evaluate, and analyze relevant literature using bibliometric review methodology. Through a meticulous selection process, we have curated a dataset comprising 80 journal articles published in English for in-depth scrutiny. A thorough literature examination revealed seven thematic clusters encapsulating these negative dimensions and their ensuing ramifications. These thematic clusters encompass service failures and negative experiences, overcrowding and sustainability, complaints and issues, technology and negative impacts, brand reputation and negative aspects, and cultural and heritage tourism challenges. Our findings underscore the pivotal role of service failures and negative experiences as significant contributors to the growing chasm between tourists and tourism brands. This divide often results in the dissemination of unfavorable word-of-mouth communication. Furthermore, service recovery mechanisms and complaint resolution procedures need to be improved. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024."
+  },
+  {
+    "article_id": "CS_0119",
+    "title": "Understanding Consumers’ Negative Word-of-Mouth Intention in the Aftermath of AI-Based Service Failure Through Attribution Theory",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-60264-1_17",
+    "abstract": "This article explores the consequences of AI-based service failures on consumers’ negative word-of-mouth (NWOM) communication. Utilizing attribution theory, the study investigates how consumers’ attributions of failure, including locus, stability, and controllability, influence their NWOM intentions, taking into account their trust in AI-based services. Through eight scenario experiments and questionnaires, the research unveils that internal attributions or attributions to high stability and controllability increase NWOM intention, with controllability having a stronger negative impact. Interactive effects between locus and stability/controllability are observed, mediated by trust in AI-based services. This study contributes to understanding consumer behavior in AI-based service environments, providing theoretical and practical insights for service providers to navigate the impact of AI-based service failures. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024."
+  },
+  {
+    "article_id": "CS_0120",
+    "title": "An Integrated Model to Understand Online Complaint to the Firm, Online Negative Word of Mouth and Exit: Application of the Theory of Planned Behavior and the Theory of Trust-Commitment",
+    "journal": "Springer Proceedings in Business and Economics",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-62135-2_10",
+    "abstract": "Because of the proliferation of social media platforms, consumers can share both gratifying and dreadful experiences with brands, and can voice their needs more openly and prominently than ever before. In this study, we propose an integrative model linking psychological and social factors based on the theory of planned behavior and the theory of trust and commitment to analyze three types of complaint behavior: complaints to the firm’s official channels, electronic negative word of mouth, and exit. To empirically validate our model, we conducted a rigorous study involving 600 Tunisian supermarket customers, prompting them to recall recent negative shopping encounters. We conducted a two-stage analysis: exploratory and confirmatory to verify the reliability and validity of the measurement scales. To test the research hypotheses, we used the structural equation method. The results show that dissatisfaction has a significant impact on the intention to complain to the firm’s official channels. It does not, however, impact either the intention to spread negative word of mouth on social media or the intention to exit. We have also shown that trust in the firm has a positive impact on the positive attitude towards complaints, subjective norms, and perceived control. Favorable attitude towards complaints and relational commitment drive consumers to complain through the firm’s official channels at the expense of negative word of mouth on social media. Finally, we found that price-sensitive consumers are more likely to file complaints through the brand’s official channels to maintain a long-term relationship with the brand. Based on our results, we propose theoretical and managerial implications. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2024."
+  },
+  {
+    "article_id": "CS_0121",
+    "title": "Value of customer co-created engagements in service failure and recovery",
+    "journal": "Contemporary Marketing Solutions: Strategies for Growth in a Competitive Consumer Landscape",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-74657-4_11",
+    "abstract": "The advantages of customer co-creation of value within the context of a service are widely acknowledged. Despite the importance of customer expectations to service failures in a high-engagement service context, there is little research on the relationships between customer engagement, customer expectation of service recovery, and service outcomes (e.g., word-of-mouth [WOM]). Even more urgent is the lack of research on the type of service recovery that can counteract customers' exaggerated expectations of service recovery and restore service outcomes. Given that an increasing number of businesses are encouraging customers to co-create services and that failures are unavoidable, it is crucial to comprehend how to regain customer satisfaction and how to generate positive behavioural intentions in the context of co-created service failure. In an effort to fill research gaps, the current study attempts to determine which service recovery strategy (e.g., assistance, compensation, apology only, assistance plus compensation) that reflects industry practises has the greatest impact on co-created service failure recovery. This study aims to demonstrate that a high level of customer input at the outset of the service provision process is correlated with high expectations of recovery and low levels of customer satisfaction. The results also indicated that co-created service recovery, as opposed to firm and customer recovery, has a greater impact on customer satisfaction. Additionally, the contrasting effects of each service recovery type on positive and negative WOM are presented. In addition, when customers engage in the service recovery process in self-service technology contexts, they are more likely to report higher levels of role clarity, perceived value of future co-creation, satisfaction with the service recovery, and intention to co-create future value. The current research has significant implications for academics and managers who wish to recover failed high-engagement service encounters effectively. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025. All rights reserved."
+  },
+  {
+    "article_id": "CS_0122",
+    "title": "The roles of brands in consumer protection",
+    "journal": "Brands, Branding, and Consumerism: Personal and Social Influences on Consumption",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-80859-3_10",
+    "abstract": "Branding ensures product quality and transparency to complying with legal regulations and resolving complaints for consumers. Through brand recognition and reputation, consumers are better able to make informed choices, confident in the safety and reliability of their purchases. For marketers brands are crucial for distinguishing products and communicating a company's values and commitments to consumers. Trademarks, copyrights, and patents safeguard these brand assurances, preventing counterfeit products and protecting intellectual property. The role of bands in consumer protection is multifaceted and it has undergone a significant shift over the years. With the rapid evolution of markets and their expansion, coupled with technological advancement, concerns about consumer protection has become a major issue. Even though consumer protection laws exist to address these concerns, there is a need to understand the role of brands in consumer protection. It is in this regard that the chapter examines the role of brands in consumer protection. © Springer Nature Switzerland AG 2025. All rights reserved."
+  },
+  {
+    "article_id": "CS_0123",
+    "title": "Consumer Behavior in the Era of Artificial Intelligence",
+    "journal": "Contributions to Management Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-93875-7_9",
+    "abstract": "Artificial intelligence and robots have changed and will continue to change our society and business environment in many ways. The increased efficiency of AI and robots can improve business processes, marketing communication, and consumers’ everyday lives in many ways. For this reason, their integration into the business and marketing field will become necessary for consumers to adapt. In this chapter, we focus on determining the perception of consumers from different age groups regarding the efficiency and productivity of AI and robots in improving business processes. In addition, we analyze AI and robots’ ability to do their activities correctly, as well as the approach toward potential service failures. The results show that younger consumers are more tolerant of AI activity, while older age groups have higher expectations and require more accountability from AI and robots. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CS_0124",
+    "title": "Can “Sorry” Really Solve It? Exploring the Impact of Apology Strategies and Service Types on User Forgiveness in Conversational AI",
+    "journal": "Lecture Notes in Business Information Processing",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-031-94190-0_13",
+    "abstract": "With the rapid development of artificial intelligence technology, conversational AI is increasingly widely used in daily life. However, technical limitations and scenario complexity make AI service failure inevitable. After service failure, how to repair it effectively becomes the key to maintaining user trust. This study takes conversational AI as the research object to explore the impact of different apology strategies and service types on user forgiveness. Through two experiments, the results show that general humility and intellectual humility positively affect user forgiveness; Compared with no apology, both can significantly improve user forgiveness; Service type moderates the effect of apology strategy. In tool-type service, an intellectual humble apology is more effective, while in chat-type service, a humble apology is more favored by users. The results of this study provide empirical evidence and practical guidance for developers of conversational AI to optimize user experience and improve user satisfaction. Developers need to pay attention to users’ perceptions and understandings of different apology strategies and constantly optimize their design and expression to align with users’ expectations and emotional needs. © The Author(s), under exclusive license to Springer Nature Switzerland AG 2025."
+  },
+  {
+    "article_id": "CS_0125",
+    "title": "The Effect of Complaint Handling on Consumer Word-Of-Mouth: Assessing Difference Between Wom Givers and Receivers",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10864-3_18",
+    "abstract": "This study compares how consumers who experience a successful service recovery differ in their assessment of the encounter from consumers who hear about the event through word of mouth (WOM). We test whether givers of WOM focus more on the recovery while receivers focus on the failure in evaluating the event. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0126",
+    "title": "An Expanded Model of Consumer Evaluations of Live Musical Performance: Antecedents and Behavioral Outcomes",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10864-3_31",
+    "abstract": "In this paper we test a model of satisfaction with live musical performance. The model redresses the paucity of research in this services area by expanding our understanding of the multiple attributes impacting satisfaction and its behavioral outcomes. It is this emphasis on attributes that provides managerial insights necessary to maximize profitability. The next sections will propose a model of satisfaction with live musical performance using the services literature; developing a more robust model including hyperinvolvement. Behavioral intentions, with respect to both the venue and the band, and consumer spending, in terms of both time and money, are also incorporated into this model. Finally, managerial recommendations are made based on findings and extensions into other service settings are proposed. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0127",
+    "title": "Real-Time Service Encounters and Customer Satisfaction: Online Monitoring of Core Service Delivery",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10864-3_32",
+    "abstract": "Previous research suggests that technology infused service encounters have the potential to delight, satisfy, irritate or enrage customers. But what if the technology encounter is secondary to a primary service encounter (e.g. tracking a pizza delivery online)? To address this gap in the literature, an empirical experiment is proposed. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0128",
+    "title": "Customer Dissatisfaction and Retaliatory Behavior: The Moderating Effect of Consumer Participation",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_192",
+    "abstract": "Customer dissatisfaction and response to dissatisfaction have been widely researched and subjected to a number of typographies. The primary logic of our theory is that consumer participation has a moderating effect on the retaliatory behavior that results from dissatisfaction. Consumer Participation is a multi-dimensional construct. Our contention is based upon previous literature in four of these dimensions. Of particular interest is the relationship between participation and satisfaction/dissatisfaction; service failure; attribution; and socialization. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0129",
+    "title": "Consumer Boycotts in International Marketing: A Multidisciplinary Assessment and Review",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_195",
+    "abstract": "There is no shortage of discipline-specific literature on consumer boycotts. On the other hand, there are no studies available in international marketing that specifically investigate and analyze consumer boycotts and their multidisciplinary contents and issues. Basically the literature in this area is sparse and limited. Consumer boycotts originate from consumer activism and have been around for a long time. A well-planned consumer boycott can also turn into a large-scale social movement (see Nestle's baby formula case). From firms' perspectives, consumer boycotts are menace and can bring major disruptions to multinational corporations (MNCs). Business history reveals that most of the consumer boycotts remain unpredictable in their origins and outcomes because of product/firm-specific causes (P/FSC) as well as country-specific causes (CSC). MNCs and businesses can also be penalized because of their county-of- origin (COO) and home country locations. From consumers' perspectives, product- and company-related blunders lead to consumer boycotts that are the results of corporate negligence, deception, and insensitivities. Regardless of the blame game and other complexities, consumer-based activism emanates from a multitude of factors such as consumer complaints, economic nationalism/ethnocentrism, product failures, consumer animosity, and negative publicity. Other causes are corporate blunders, consumer frustrations, social/human rights problems, and acts of war. Additional research topics and literature that relate to consumer boycotts encompass issues of activism, consumer ethnocentrism, consumer animosity, economic nationalism, product ethnicity and negative brand publicity and product harm issues. Other topics are national boundaries and border zones, national character and culture, customer revenge and avoidance, etc. There is a strong need in international marketing to understand consumer boycotts from multidisciplinary and interdisciplinary perspectives. Current literature seems to be somewhat myopic and disjointed and could be the result of limited attention to interdisciplinary investigations, discipline-specific squabbles, and philosophical differences. This paper attempts to bridge the gap by investigating and reviewing multidisciplinary issues of consumer boycotts in global marketing because of the need for cross-disciplinary interests. We included empirical and non-empirical studies based on their multidisciplinary characteristics and affiliation with other areas of social sciences. We selected those topics that have not been covered in marketing journals. The present study is one of the few attempts to bring and synthesize literature from multidisciplinary fields. The paper's major contribution is to lay the foundation for other review-based studies that may be interested in interdisciplinary discussions. Future academic research can benefit by looking at those issues that remain hidden in other disciplines. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0130",
+    "title": "Suggestions are Welcome: Provider Responses to Unsolicted Advice Feedback",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_203",
+    "abstract": "In today’s competitive business landscape many companies are increasingly encouraging customers to take a more active role in producing goods and services. Many researchers have argued that inviting customers to co-produce enhances service quality and satisfaction (Meuter and Bitner 1998). To date, little is known on how a company should respond when a customer voluntarily participates in the production process as an advisor and advocate. A notable phenomenon is the customer’s desire for advocacy that results in the customer volunteering ideas and suggestions to the service provider. From the service provider perspective this trend is exciting, yet equally troublesome, as managers must consider whether to implement a customer’s suggestion, whether to respond, and if so, how to respond without damaging the relationship. Often individual suggestions disappear in a black hole and the advice-giver receives no acknowledgement that the organization values their efforts. The marketing literature has not addressed the importance of advice acknowledgement and ways to negate repercussions of not implementing customer advice. Prior research has examined the impact of acknowledging customer complaints and compliments on customer attitudes (Bone et al. 2009). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0131",
+    "title": "The Forgetful Customer: Regeneration of Sales After Service Failure",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_250",
+    "abstract": "Most research on service recovery examines those customers that complain to the provider, often neglecting that up to 90% of customers do not even voice their dissatisfaction after having experienced a service failure (TARP 1979, 1996; Voorhees et al. 2006). A key implication is to stimulate noncomplainers to voice their dissatisfaction toward the provider (e.g., Mattila and Wirtz 2004; Voorhees et al. 2006) as this provides the company with the opportunity to recover the customers. Findings suggest that complaint stimulation is a good strategy to minimize negative outcomes of dissatisfaction after critical incidents such as negative word-of-mouth and switching behavior. However, little is known about the mid- to long-term behavioral consequences of not recovering customers. In light of this, our study attempts to better understand actual purchase behavior of noncomplainers after a service failure. Particularly, in service settings characterized by low switching barriers and low to medium involvement, it is unclear which behavioral patterns would emerge after the failure. Research on customer memory suggests that customers almost automatically “forget” the negative incident over time (Brown, 1958; Peterson and Peterson, 1959; Keppel and Underwood, 1962; McGeoch, 1932; Waugh and Norman, 1965). Hence, our research question is: Does time heals everything – even the dissatisfying experience of a service failure? © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0132",
+    "title": "Consumer Choice Between Hedonic and Utilitarian Recovery Options in Service Failures: A Mood Regulation Perspective",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_253",
+    "abstract": "The need for affect regulation can be explained by the hedonic principle which states that people are motivated to approach pleasure and avoid pain. Mood maintenance theories (e.g., Isen and Means 1983) indicate that a positive mood is more likely to trigger immediate affect regulation compared to a negative mood. In contrast, mood repair theories (e.g., Tice, Bratslavsky, and Baumeister 2001) argue that people who feel upset (vs. happy) are more likely to regulate immediate affect in order to repair their mood. Building on the motivational hierarchy perspective of the 3M Model (Mowen 2000), we propose that individuals’ need to improve their mood as prompted by their regulatory focus may determine their tendency to engage in immediate affect regulation. In particular, our framework suggests that the difference in the need for mood repair experienced by promotion- and prevention-focused consumers may influence their choice between a hedonic and a utilitarian service recovery alternative. The regulatory fit state arising from these choices is then predicted to enhance loyalty behavior toward the service provider. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0133",
+    "title": "Cross-Generational Perceptions of Disciplining and the Implications for the Sustainability of Disciplining Practices of Service Providers",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_69",
+    "abstract": "Marketing research tends to focus on customer centricity, empowerment, and related topics. The assumptions underlying such analysis have recently been questioned in studies of disciplining and compliance. Building upon such research an empirical study seeks to provide a better understanding of the perceptions and reactions to disciplining and compliance by members of two significant generations: baby boomers and generation Y. Cross-generational differences were uncovered in terms of customers’ expectations of service provision and service recovery interactions, demonstrating the importance of studying and understanding the interplay between generational and disciplining-related service interaction factors. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0134",
+    "title": "Service in the Hospitality Industry: A Chinese and American Comparison of Failures and Recovery Strategies",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_71",
+    "abstract": "As an evolving area of academic investigation, service failure and recovery research is particularly relevant in the pervasive hospitality field where there is a high frequency and diversity of customer and service provider interactions. International research in service failure and recovery, however, has been limited. Consumers’ perceptions of (dis)satisfactory critical incidents in the hospitality sector are likely to differ due to national culture variations, especially across highly collectivist and highly individualistic societies (Chan and Wan 2008). As hospitality based organizations increasingly operate internationally, a better understanding of the relationship between culture and customer behaviors is likely to be fruitful by providing insights for managing customer relationships (Chan et al. 2010; Furrer et al. 2000). The findings of this study can assist global hospitality and tourism providers to better understand the subtle influences that culture plays in customer behaviors, as well as providing direction to formulate strategies and tactics to better manage the complaint process. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0135",
+    "title": "Service Quality, Customer Satisfaction, Value and Loyalty: An Empirical Investigation of the Airline Services Industry",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10873-5_98",
+    "abstract": "Successful businesses are increasingly aware of the importance of service delivery in generating competitive advantages, loyal customers, and long-term economic success (Wagner 1994; Jones and Sasser 1995; Liu et al., 2000). It is widely acknowledged that well-designed customer-service programs enhance customer satisfaction, customer retention, market share, revenue, and profits (Reichheld and Sasser, 1990; Rust and Zahorik, 1993, 1995; Anderson et al., 1994; Jones and Sasser, 1995; Anderson et al., 1997; Loveman, 1998; Hoffman and Kelley, 2000; Johnston, 2001). These issues are of particular importance in the airline industry, in which the delivery of high-quality service to passengers has been shown to be essential (Sultan and Simpson, 2000; Aksoy et al., 2003; Park et al., 2004; Chen and Chang, 2005; Chen, 2008). However, although the link between airline service quality and passenger satisfaction has been established empirically, the exact nature of the relationships that exist among the constructs of airline service quality, passenger satisfaction, and loyalty remains unclear (Park et al., 2004). The role of value in the airline industry is also unclear. Because service failures can occur in airline services as they can occur in the best-run companies in any business setting, improved complaint management and service recovery are obviously important (Boshoff, 1997, 1999; Johnston, 1995). The providers of airline services, like all service providers, need to implement effective complaint-management and service-recovery strategies to ensure (or at least enhance) consumer retention (Liu et al., 2000). However, there is lack of a reliable measurement tool to capture the impact of particular airline service-quality attributes and service-recovery actions on passengers’ behavioural intentions. The purposes of this study are, therefore: (i) to develop an integrated model of customer satisfaction and loyalty in the context of airline service failure; (ii) to undertake empirical testing of the position and effect of perceived value in such a model; (iii) to identify a set of pertinent service-quality dimensions for airline services; and (iv) to provide evidence for the causal relationships among the constructs of service quality, perceived value, overall customer satisfaction, and loyalty. The questionnaire contained items extracted from the existing literature on airline service quality (Park et al., 2004; Chen, 2008; Chen and Chang, 2005). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0136",
+    "title": "Binational Study of the Impact of Brand Image, Brand Personality and Brand Love on Word of Mouth: The Case of Fashion Brands in UK and Switzerland",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10912-1_151",
+    "abstract": "This study seeks to test a research framework designed to explain the direct effects of brand love, image and personality upon word of mouth in different two contexts. Using data collected from two different countries (United Kingdom and Switzerland), the survey instrument was tested for reliability and validity using confirmatory factor analysis. Hypotheses are then developed related to the consumer-brand relationship across the two countries which are then tested using structural equation modeling. The findings showed that, there is a significant relationship between excitement and brand image, brand love and word of mouth. This is particularly true in both samples. The impact of brand image on word of mouth was not found significant in the two countries in the study. The primary limitation of the study is that the two sampled countries were European. The study explains the relationships among different branding constructs to maximize word of mouth in a wide range of market environments. Although aspects of consumer-brand relationships heavily studied in the US market, much less research exists across markets and in non-US context. This paper redresses this imbalance. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0137",
+    "title": "Service Quality, Customer Satisfaction, Value and Loyalty An Empirical Investigation In A Service Failure Context",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10912-1_55",
+    "abstract": "It is widely acknowledged that well-designed customer-service programs enhance customer satisfaction, customer retention, market share, revenue, and profits. These issues are of particular importance in the airline industry, in which the delivery of high-quality service to passengers has been shown to be essential. However, although the link between airline service quality and passenger satisfaction has been established empirically, the exact nature of the relationships that exist among the constructs of airline service quality, passenger satisfaction, and loyalty remains unclear (Park et al., 2004). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0138",
+    "title": "The Dark Side of Customer Co-Creation – What Happens When Technology-Based Co-Created Services Fail?",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10912-1_85",
+    "abstract": "In recent years, technology-based services (TBS) are on the rise. Such services often require an active engagement of the customer within service provision and consumption, which is referred to as customer co-creation. Although the topic of customer co-creation is very popular among researchers and practitioners, extant literature on customer co-creation is still in its infancy. Especially, no one has yet examined customer reactions to service failures within the context of co-created TBS. Thus, the purpose of our paper is to close this research gap by studying the dark side of customer co-creation for TBS. Specifically, we test the mutual influence of service failure and level of customer co-creation on customer satisfaction. Moreover, depending on the level of customer co-creation we examine the effectiveness of different types of service recovery strategies to restore customer satisfaction. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0139",
+    "title": "Customers Service Experience in Hospitals: A Dip and SOS Construct of Negative Encounters",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10912-1_94",
+    "abstract": "In order to keep a competitive advantage and to fullfill the needs of customers, service companies must offer favorable customer experiences and services. A service experience may be seen as a service process that creates customers’ cognitive, emotional and behavioral responses, resulting in a mental mark, a memory (Johnston and Clark, 2001). If the service experience is negative, the customers’ perceived justice influences complaint behaviors (Schoefer and Diamantopoulos, 2008), as well as their emotions and loyalty towards the firm (DeWitt et al., 2008). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0140",
+    "title": "Perceived Justice & Emotions in a Negative Service Encounter: A Latin American Perspective",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_157",
+    "abstract": "Homburg and Fürst (2007) concluded that their study, on a very general level, underlined the high managerial relevance of an effective complaint management. This relevance becomes visible by the fact that a poor solicitation, handling, and analysis of complaints inevitably lead to substantial negative consequences for a company (i.e., unfavorable customer post-complaint reactions). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0141",
+    "title": "Understanding Reactions of Brazilian Consumers in Service Failures",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_158",
+    "abstract": "Understanding the reasons consumers break up their relationships with business organizations has been the motivation for several researchers (Bitner, Booms & Tetreault, 1990, Coulter & Ligas, 2000). Tähtinen and Havila (2004) affirm that not much attention this topic has been given until the 90s in terms of understanding how, why and when this relationship was ended. However, the main focus is still related to the understanding of the reasons, and their predictors. Thus, the process and its consequences of the ruptures are still not much discussed in the academia, despite its relevance to the marketing management impacts and managerial performances. Gedeon, Fearne and Poole (2009) suggest that this understanding is still a challenge for empirical researches. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0142",
+    "title": "Enhancing Contact Employees’ Fit With Their Environment and Willingness to Report Service Complaints",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_159",
+    "abstract": "This study adopts a multilevel research design in order to illustrate the importance of supervisor’s adoption of Internal Market Orientation (IMO) for shaping positive employee consequences. The equity theory and the fit theory are integrated so as to provide the theoretical background of the impact of IMO on employees’ fit with their organization and their supervisor. Evidence is provided regarding the effect of IMO on employees’ perceptions of IMO as well as on different fit types and behaviours beneficial towards the firm and their supervisor (i.e. willingness to report service complaints). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0143",
+    "title": "Enhancing Customer Service through Theatre Improvisation: A Theory",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_205",
+    "abstract": "Within marketing, customer service and customer satisfaction are key concepts: broadly defined, customer service is an activity designed to increase customer satisfaction (Innis & La Londe, 1994) and customer satisfaction is a customer’s judgment about whether they are pleased or displeased with a product or service (Malik, 2012). Anderson, Fornell, and Lehmann (1994) argue that customer satisfaction is linked to both market share and profitability. In addition, customer satisfaction is a significant determinant of in-store (Cronin & Taylor, 1992; Bogomolova, 2011) and mobile repeat sales (Kuo, Wu, & Deng, 2009). As a result, the importance of customer satisfaction cannot be understated: profits are generated through satisfying customer needs and wants during service encounters (Churchill & Surprenant, 1982). Overall, customer satisfaction – and therefore customer service – is recognized as an important part of corporate strategy (Fornell, 1992). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0144",
+    "title": "Brand Reputation: Does it Help Customers Cope with Service Failure?",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_253",
+    "abstract": "When service failure occurs, customers experience disconfirmation and feel displeased (Smith, Bolton and Wagner, 1999). Prior studies indicate that customers maintain different levels of service expectations for high and low reputed brands (Roggeveen, Bharadwaj, and Hoyer. 2007). For high reputed brands, customers have high expectations, and view them as delivering superior services. The brand name acts as a predictive cue enabling customers to anticipate more accurately the service delivery process and outcome (Selnes, 1998). Research findings have confirmed that customers positively relate to brand reputation affecting the perceptions of service performance and benefits (Brodie, Whittome and Brush, 2009). Customers evaluate the characteristics of the service failure and assess the perceived stress in the given situation (Lazarus and Folkman, 1984; Gabbott, Tsarenko and Mok, 2011). This appraisal process influences the use of different coping strategies in managing the negative emotions. The stress encountered is contingent upon the expectations one has from the service provider. This indicates that customers might use different coping strategies depending upon the expectation associated with the brand that fails to serve appropriately. However, there is little systematic research on the linkages between brand reputation, customer coping strategies and failure outcomes. The primary goal of this study is to conceptualize the different coping strategies that customers use in managing service failures and to determine the role of brand reputation in determining the coping strategies and service failure outcomes. The current study uses expectancy-disconfirmation and uncertainty management theory to build the conceptual model of customers coping strategy to deal with the service failure. More specifically, the present study highlights the presence of “buffering effect” of brand reputation following the service failure. This study uses coping mechanism to propose that brand reputation reduces the negative effects of failure severity on customer satisfaction. Finally, the study proposes that coping mediates the relationship between failure severity and customer satisfaction. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0145",
+    "title": "A Rhetorical Perspectve on Quelling Negative Word-of-Mouth",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_28",
+    "abstract": "Negative word-of-mouth (NWOM) is recognized as a powerful and pervasive problem for many businesses (Luo 2009). Indeed, numerous studies link NWOM to large-scale detrimental outcomes (e.g., Luo 2009; Voorhees, Brady, and Horowitz 2006; Wangenheim 2005), but limited to the intentions of directly dissatisfied consumers to commit NWOM. In addition, original complaints, often referred to as the “tip of the iceberg” (Andreasen and Best 1977), are not nearly as devastating as subsequent exaggerations made during message retransmissions by cynical consumers who are prepared to believe the worst about businesses (Marketing Week, 2007). Unfortunately, these potentially larger and more detrimental impacts of NWOM through viral spread are typically ignored in research. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0146",
+    "title": "Embarrassment During Social Coupon-Redemption in Sit-Down Dining Restaurants: Antecedents and Consequences",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_4",
+    "abstract": "This paper proposes the conceptual framework of the antecedents and consequences of embarrassment during social couponredemption in sit-down dining restaurants. I specifically propose that perceived discrimination from the waiter or waitress will trigger the elicitation of embarrassment during social coupon-redemption. Furthermore, by applying halo and domino effects of service failures in a multiple-service encounter context, I further propose that embarrassment occurred during stage 2 (ordering taking and delivery stage) will negatively influence dining experiences during stage 3 (meal consumption), dinging experience during stage 4 (checkout), and overall dining experience satisfaction. Consistent with service satisfaction effect, I propose that low-level of overall dining experience satisfaction will negatively influence tip amount, negatively influence repatronage, and positively influence negative word-of-mount likelihood. Finally, I propose that the two moderators that will attenuate this embarrassment effect including social coupon-redemption familiarity in sit-down dining restaurant and a number of other social coupon consumers in the same sit-down dining restaurants. Finally, I discuss some theoretical contributions for services researchers and some managerial contributions for sit-down dining restaurant managers. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0147",
+    "title": "Predicting Business Customer Potential DISLOYALTY and Share of Wallet: Proposition of a New Theory and Moderating Effects",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_71",
+    "abstract": "This research suggests the existence of a theoretical relationship between business customers’ dissatisfaction, late payment, and their potential disloyalty and share of wallet. We test a new proposition which states that business customer potential disloyalty may be revealed by the accounting figure of Days’ Sales Outstanding (DSO –average number of days a company takes to collect revenue after a sale), which is associated to share or wallet. We also introduce and test moderating effects pertaining to service recovery quality (i.e. distributive, procedural, interactional justice). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0148",
+    "title": "Expressing Consumer Dissatisfaction Online: Antecedents and Effects of Negative Wom in Social Media",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10951-0_99",
+    "abstract": "Based on the models of consumer satisfaction/dissatisfaction (CS/D) studied in past research (Churchill and Surprenant 1982; Oliver 1980), complaint behavior occurs when consumer become dissatisfied with a purchase that did not meet their expectations about quality or performance. Satisfaction or dissatisfaction are among the main reasons for customer to engage in either positive or negative word-of-mouth (WOM), respectively (Sundaram et al. 1998). According to Keller and Libai (2009), more than 75% of WOM occurs in face-to-face settings, but the emergence of Internet communications has given rise to concerns from companies regarding complaining behavior of their consumers online (Harrison-Walker 2001). © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0149",
+    "title": "Do Complaining Customers Signal Manufacturing Success?",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10963-3_141",
+    "abstract": "This paper synthesizes Better Business Bureau and COMPUSTAT data to examine how customer complaining and organizational responsiveness impact performance. The results provided by a sample of 344 US manufacturing firms suggests that complaints about service are positively related to performance, as is general responsiveness to complaints of any form. © 2015, Academy of Marketing Science."
+  },
+  {
+    "article_id": "CS_0150",
+    "title": "Perceptions of Value in Complaint Handling Service Encounters",
+    "journal": "Developments in Marketing Science: Proceedings of the Academy of Marketing Science",
+    "journal_impact_factor": null,
+    "doi": "10.1007/978-3-319-10963-3_7",
+    "abstract": "Recently, Woodruff and Flint (2006) have backed Vargo and Lusch’s (2004) service-dominant (S-D) logic model stressing the role of value as a customer experiential phenomenon. According to the model, value is not embedded in products or services but always “value-in-use”, which means that customers experience value during interactions with service or product bundles in use situations. Companies, therefore, can only make value propositions as customers eventually decide what they regard as being of value to them. The following paper focuses on what complaining customers value in personal complaint handling service encounters. In particular, the aim of the paper is to investigate whether male and female complainants value the same or different aspects in these encounters. Complaint satisfaction can prevent customers from switching to other providers, reduce negative word-of-mouth communication and even generate positive communication about the company (Stauss 1999). Customer complaints are still most likely to be made in person to a contact employee (Brown 2000), and so such employees play a crucial role in creating complaint satisfaction. This study suggests that in such face-to-face situations, the perception of the complaint handling encounter and the overall evaluation of the company’s complaint resolution process will be largely influenced by the employee’s response. Direct contact employees may try to categorize their customers in order to better organize, interpret, and evaluate their interaction (Sharma and Levy 1995; Szymanski 1988). Such categorization can help contact employees to reduce complexity and to structure the customer complaint interaction more effectively. They could adjust the complaint handling process to customers’ expectations and needs based on their observable characteristics such as gender, which is a category that is frequently used to segment target groups and to explain consumer behavior. Although several research studies have already demonstrated that male and female customers have different preferences, information processing and decision-making styles (e.g. Iacobucci and Ostrom 1993), only a few (e.g. Keng et al. 1995) have investigated whether male and female customers differ in their complaining behavior. © 2015, Academy of Marketing Science."
+  }
+]
